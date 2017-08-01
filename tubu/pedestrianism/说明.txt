@@ -1,0 +1,36 @@
+html/报名活动/mzsm.html				-》免责说明
+html/报名活动/bm_choose.html			-》选择个人报名或团队报名
+html/报名活动/bm_form.html			-》填写团队信息等
+html/报名活动/bm_index.html			-》报名活动信息详情
+html/报名活动/bm_index2.html			-》原报名活动详情
+html/报名活动/bm_list.html			-》报名活动团队信息
+html/报名活动/bm_list2.html			-》原报名活动团队信息
+html/报名活动/bm_model.html			-》报名活动模板页
+html/报名活动/bm_success.html			-》报名成功返回页面
+
+
+
+
+html/创建团队/td_form.html			-》创建团队信息页面
+html/创建团队/td_index.html			-》排行榜及雷达图页面
+html/创建团队/td_phb.html			-》排行榜信息详情页面
+html/创建团队/td_search.html			-》团队内个人信息排行情况页面
+
+
+html/个人中心/grzx_datum.html			-》个人中心信息填写页面
+html/个人中心/grzx_index.html			-》个人中心首页
+html/个人中心/grzx_message.html			-》个人中心我的消息页面
+html/个人中心/grzx_message_detail.html		-》个人中心我的消息未读消息页面
+
+
+html/hddd.html					-》活动地点页面
+html/jkzd.html					-》健康指导页面
+html/tbbj.html					-》徒步北京页面
+html/tbhd.html					-》徒步活动页面
+html/wddy.html					-》我的订阅页面
+html/wdtb.html					-》我的徒步页面
+html/wdzl.html					-》我的资料页面
+html/zmpx.html					-》最美评选页面
+html/zmsp.html					-》最美视频页面
+html/zmtb.html					-》最美徒步页面
+html/zmtp.html					-》最美图片页面

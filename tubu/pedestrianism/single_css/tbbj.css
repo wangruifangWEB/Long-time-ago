@@ -1,0 +1,13 @@
+body{
+	background-image: none;
+}
+.outerScroller{
+	width: 7.5rem;
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+	background-image: url(../images/qu/beijing-img.png);
+}	
+.biaoge{
+	margin-left: 0.58rem;
+}

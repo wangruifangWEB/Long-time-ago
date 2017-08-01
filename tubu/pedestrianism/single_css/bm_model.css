@@ -1,0 +1,58 @@
+.bm_mx{
+	padding: 0.32rem 0.63rem;
+	font-size: 0.37rem;
+	line-height: 0.52rem;
+	
+}
+.bm_bg{
+	background-color:#EFEFF4;
+	margin-top: 0.98rem;		
+	overflow: hidden;
+}
+.download{
+	display: block;
+	margin: 0 auto;
+	width: 6.24rem;
+	height: 0.88rem;
+	text-align: center;
+	line-height: 0.88rem;
+	font-size: 0.37rem;
+	color: #f6f6f6;
+	background-color: #FD663C;
+	border-radius: 0.1rem;
+	outline: none;
+	border: none;
+	box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+	margin-bottom: 0.64rem;
+	font-family: PingFangSC-Medium;
+}
+			
+.txt_c{
+	   padding-top:.82rem;
+	   margin-left: 0.63rem;
+	   margin-right: 0.63rem;
+}
+.txt_c span{
+    height: .88rem;
+    line-height: .88rem;
+    display: block;
+    float: left;
+    background: #F6F6F6;
+    width: 40%;
+    font-size: .32rem;
+    text-align: center;
+    border-radius:0 .12rem .12rem 0;
+}
+.txt_c input{
+	background: #F6F6F6;
+    text-align: center;
+    font-size: .32rem;
+    box-shadow: 0px 0px 0.1rem rgba(174,174,174,.5) inset;
+    width: 60%;
+    display: block;
+    height: .88rem;
+    line-height: .88rem;
+    border: none;
+    border-radius:.12rem 0 0 .12rem;
+    float: left;
+}

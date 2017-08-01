@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html  class="bg1">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/fontSize.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			body,html{
+				background-color: #EFEFF4;
+				height: 100%;
+				overflow-x: hidden;
+			}
+			
+			.xd-tab-ul-box{
+				width: 7.5rem;
+				left: 50%;
+				margin-left: -3.75rem;
+			}
+			.swiper-container{
+				overflow: hidden;
+			}
+			header{
+				width: 7.5rem;
+				left: 50%;
+				margin-left: -3.75rem;
+				position: absolute;
+			}
+			.outerScroller{
+				width: 7.5rem;
+				margin: 0 auto;
+			}	
+			.scroll{
+				position: relative;
+				overflow: hidden;
+			}
+			.swiper-container, .w{height: calc(100vh - 60px);}
+			.xd-tab-div{
+				margin: 0 auto;
+			}
+			
+			.init-loading img{
+				width: 1.2rem;
+				height: 1.2rem;
+				display: block;
+				margin: 0.05rem auto;
+			}
+			.loadtip p{
+				font-size: 0.26rem;
+				text-align: center;
+				padding-top: 0.1rem;
+				padding-bottom: 0.1rem;
+				position: fixed;
+				bottom: 0;
+				width: 6.87rem;
+				text-align: center;
+				background-color: #EFEFF4;
+				z-index: 10;
+				font-size: 0.26rem;
+				text-align: center;
+			}
+			.z-alert{
+				position: absolute;
+			}
+		</style>
+	</head>
+
+	<body  class="bg1">
+		<div class="outerScroller">
+			<div class="scroll">
+				<header>
+					<div class="d-title">
+						<a href="#">
+							<img src="images/cd.png" alt="" />
+						</a>
+						<span>我的徒步</span>
+					</div>
+				</header>
+				<div class="xd-tab-ul-box">
+					<ul class="xd-tab-ul">  
+						<li class="active"><a href="#aaa">已订阅</a></li>
+						<li><a href="#aaa">未订阅</a></li>
+					</ul>
+				</div> 
+				<section class="width-box bg1" id="aaa" style="height: auto;">
+					<div class="su-tab">
+						<div class="swiper-container">
+								<div class="swiper-wrapper w">
+									<div class="swiper-slide d">
+										<div class="init-loading list-group-item text-center" style="display: none;"><img src="images/loading.gif"/></div>
+										<div class="swiper-container2">
+											<div class="swiper-wrapper ">
+												<div class="swiper-slide list-group">
+													<div class="active xd-tab-div xd-tab-div1 show111">
+														<div class="box-img">
+															<div class="box-img-img">
+																<img src="images/yi3.jpg" alt="" class="img" />
+																<div class="introduce">
+																	<img src="images/mc.png" alt="" class="mc" />
+																	<span>徒步<br />活动</span>
+																</div>
+															</div>
+															<img src="images/wei.png" alt="" class="weixin" />
+														</div>
+														<div class="box-img">
+															<div class="box-img-img">
+																<img src="images/yi2.jpg" alt="" class="img" />
+																<div class="introduce">
+																	<img src="images/mc.png" alt="" class="mc" />
+																	<span>徒步<br />活动</span>
+																</div>
+															</div>
+															<img src="images/wei.png" alt="" class="weixin" />
+														</div>
+													</div>
+													<div class="xd-tab-div xd-tab-div2">
+														<div class="box-img"> 
+															<div class="box-img-img">
+																<img src="images/wei1.jpg" alt="" class="img" />
+																<div class="introduce">
+																	<img src="images/mc.png" alt="" class="mc" />
+																	<span>徒步<br />活动</span>
+																</div>
+															</div>
+															<img src="images/yi.png" alt="" class="weixin" />
+														</div>
+														<div class="box-img"> 
+															<div class="box-img-img">
+																<img src="images/wei1.jpg" alt="" class="img" />
+																<div class="introduce">
+																	<img src="images/mc.png" alt="" class="mc" />
+																	<span>徒步<br />活动</span>
+																</div>
+															</div>
+															<img src="images/yi.png" alt="" class="weixin" />
+														</div>
+													</div> 
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						<div class="loadtip"><p></p></div>
+						<div class="swiper-scrollbar"></div>
+					</div>	
+					<div class="z-alert">
+						<ul>
+							<li>
+								<a href="#"><img src="images/list-a-1.png" alt="" class="nm" /><img src="images/list-a-2.png" class="zx" />徒步活动</a>
+							</li>
+							<li> 
+								<a href="#"  class="active"><img src="images/list-b-1.png" alt="" class="nm" /><img src="images/list-b-2.png" class="zx" />徒步活动</a>
+							</li>
+							<li>
+								<a href="#"><img src="images/list-c-1.png" alt="" class="nm" /><img src="images/list-c-2.png" class="zx" />徒步活动</a>
+							</li>
+							<li>
+								<a href="#"><img src="images/list-d-1.png" alt="" style="width: .32rem;height: .48rem;margin-left: 0.05rem;" class="nm" /><img src="images/list-d-2.png" class="zx" />徒步活动</a>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</div>
+		</div>
+		
+	<div class="box-transparent"></div>
+	</body>
+
+	<script>
+		$(".xd-tab-ul li").click(function() {
+			$(".xd-tab-div").hide(); 
+			$(".xd-tab-ul li").removeClass("active");
+			$(this).addClass("active");
+			$(".su-tab .xd-tab-div").eq($(this).index()).show();
+//			$(document).scrollTop(0)
+			$('body,html').animate({scrollTop:0},0); 
+			var i=$(this).index();
+			if(i==0){
+				$('.xd-tab-div1').addClass('show111').siblings().removeClass('show111');
+				$.ajax({
+					url:"",
+					type:"post",
+					success:function(data){
+						
+					},
+					error:function(){
+						$('.init-loading').css('display','block');
+						setTimeout(function() {
+							for(var i =0;i<6;i++) {
+								$(".list-group .xd-tab-div1").eq(mySwiper2.activeIndex).append(`
+									<div class="box-img">
+										<div class="box-img-img">
+											<img src="images/yi2.jpg" alt="" class="img" />
+											<div class="introduce">
+												<img src="images/mc.png" alt="" class="mc" />
+												<span>徒步<br />活动</span>
+											</div>
+										</div>
+										<img src="images/wei.png" alt="" class="weixin" />
+									</div>
+								`);
+							}
+							$('.init-loading').css('display','none');
+							mySwiper.update(); // 重新计算高度;
+						}, 800);
+//								
+					}
+					
+				});
+			}
+			if(i==1){
+				$('.xd-tab-div2').addClass('show111').siblings().removeClass('show111');
+				$.ajax({
+					type:"post",
+					url:"",
+					success:function(data){
+						
+					},
+					error:function(){
+						$('.init-loading').css('display','block');
+						setTimeout(function() {
+							for(var i =0;i<6;i++) {
+								$(".list-group .xd-tab-div2").eq(mySwiper2.activeIndex).append(`
+									<div class="box-img"> 
+										<div class="box-img-img">
+											<img src="images/wei1.jpg" alt="" class="img" />
+											<div class="introduce">
+												<img src="images/mc.png" alt="" class="mc" />
+												<span>徒步<br />活动</span>
+											</div>
+										</div>
+										<img src="images/yi.png" alt="" class="weixin" />
+									</div>
+								`);
+							}
+							$('.init-loading').css('display','none');
+							mySwiper.update(); // 重新计算高度;
+						}, 800);
+						
+					}
+				});
+			}
+		})
+		// 加载刷新
+		var loadFlag = true;
+		var oi = 0;
+		var mySwiper = new Swiper('.swiper-container',{
+			direction: 'vertical',
+			scrollbar: '.swiper-scrollbar',
+			slidesPerView: 'auto',
+			mousewheelControl: true,
+			freeMode: true,
+			onTouchMove: function(swiper){		//手动滑动中触发
+				var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+				var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+				var translateY=parseInt(mySwiper.getWrapperTranslate('y'));
+				if(translateY < 0){
+					$('.z-bg,.z-bg img').slideUp(400);
+				}else{
+				}
+			},
+			onTouchEnd: function(swiper) {
+				var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+				var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+				
+				 // 上拉加载
+				if(mySwiper.translate <= _viewHeight - _contentHeight - 50 && mySwiper.translate < 0) {
+					if($('.xd-tab-div1').hasClass('show111')){
+						if(loadFlag){
+							$(".loadtip p").html('正在加载...');
+						}else{
+							$(".loadtip p").html('没有更多啦！');
+						}
+						$.ajax({
+							url:"",
+							type:"post",
+							success:function(data){
+								
+							},
+							error:function(){
+								setTimeout(function() {
+									for(var i =0;i<6;i++) {
+										$(".list-group .xd-tab-div1").eq(mySwiper2.activeIndex).append(`
+											<div class="box-img">
+												<div class="box-img-img">
+													<img src="images/yi2.jpg" alt="" class="img" />
+													<div class="introduce">
+														<img src="images/mc.png" alt="" class="mc" />
+														<span>徒步<br />活动</span>
+													</div>
+												</div>
+												<img src="images/wei.png" alt="" class="weixin" />
+											</div>
+										`);
+									}
+									 $(".loadtip p").html('');
+									mySwiper.update(); // 重新计算高度;
+								}, 800);
+							}
+						});
+					}
+					if($('.xd-tab-div2').hasClass('show111')){
+						if(loadFlag){
+							$(".loadtip p").html('正在加载...');
+						}else{
+							$(".loadtip p").html('没有更多啦！');
+						}
+						$.ajax({
+							type:"post",
+							url:"",
+							success:function(data){
+								
+							},
+							error:function(){
+								setTimeout(function() {
+									for(var i =0;i<6;i++) {
+										$(".list-group .xd-tab-div2").eq(mySwiper2.activeIndex).append(`
+											<div class="box-img"> 
+												<div class="box-img-img">
+													<img src="images/wei1.jpg" alt="" class="img" />
+													<div class="introduce">
+														<img src="images/mc.png" alt="" class="mc" />
+														<span>徒步<br />活动</span>
+													</div>
+												</div>
+												<img src="images/yi.png" alt="" class="weixin" />
+											</div>
+										`);
+									}
+									 $(".loadtip p").html('');
+									mySwiper.update(); // 重新计算高度;
+								}, 800);
+							}
+						});
+					}	
+				}
+				// 下拉刷新
+				if(mySwiper.translate >= 50) {
+					if($('.xd-tab-div1').hasClass('show111')){
+						$.ajax({
+							url:"",
+							type:"post",
+							success:function(data){
+								
+							},
+							error:function(){
+								$('.init-loading').css('display','block');
+								setTimeout(function() {
+									for(var i =0;i<6;i++) {
+										$(".list-group .xd-tab-div1").eq(mySwiper2.activeIndex).append(`
+											<div class="box-img">
+												<div class="box-img-img">
+													<img src="images/yi2.jpg" alt="" class="img" />
+													<div class="introduce">
+														<img src="images/mc.png" alt="" class="mc" />
+														<span>徒步<br />活动</span>
+													</div>
+												</div>
+												<img src="images/wei.png" alt="" class="weixin" />
+											</div>
+										`);
+									}
+									$('.init-loading').css('display','none');
+									mySwiper.update(); // 重新计算高度;
+								}, 800);
+//								
+							}
+							
+						});
+						
+					}
+					if($('.xd-tab-div2').hasClass('show111')){
+						$.ajax({
+							type:"post",
+							url:"",
+							success:function(data){
+								
+							},
+							error:function(){
+								$('.init-loading').css('display','block');
+								setTimeout(function() {
+									for(var i =0;i<6;i++) {
+										$(".list-group .xd-tab-div2").eq(mySwiper2.activeIndex).append(`
+											<div class="box-img"> 
+												<div class="box-img-img">
+													<img src="images/wei1.jpg" alt="" class="img" />
+													<div class="introduce">
+														<img src="images/mc.png" alt="" class="mc" />
+														<span>徒步<br />活动</span>
+													</div>
+												</div>
+												<img src="images/yi.png" alt="" class="weixin" />
+											</div>
+										`);
+									}
+									$('.init-loading').css('display','none');
+									mySwiper.update(); // 重新计算高度;
+								}, 800);
+								
+							}
+						});
+						
+					}
+				}	
+//				}else if(mySwiper.translate >= 0 && mySwiper.translate < 50){
+//					$(".init-loading").html('').hide();
+//				}
+				return false;
+			}
+		});
+		var mySwiper2 = new Swiper('.swiper-container2',{
+			onTransitionEnd: function(swiper){
+//				$('.w').css('transform', 'translate3d(0px, 0px, 0px)')
+				$('.swiper-container2 .swiper-slide-active').css('height','auto').siblings('.swiper-slide').css('height','0px');
+				mySwiper.update();
+				$('.tab a').eq(mySwiper2.activeIndex).addClass('active').siblings('a').removeClass('active');
+			}
+			
+		});
+
+		// 左滑
+		$(document).ready(function(e) {
+			// 设定每一行的宽度=屏幕宽度+按钮宽度
+			// 设定常规信息区域宽度=屏幕宽度 
+			$(".dy").width($(document).width());
+			$(".dingyue").width($(".dy").width() + $(".c-qxdy").width());
+
+			// 获取所有行，对每一行设置监听
+			var lines = $(".xd-tab-div .box-img-img");
+			var len = lines.length;
+			var lastX, lastXForMobile;
+
+			// 用于记录被按下的对象
+			var pressedObj; // 当前左滑的对象
+			var lastLeftObj; // 上一个左滑的对象
+
+			// 用于记录按下的点
+			var start;
+
+			// 网页在移动端运行时的监听
+			for(var i = 0; i < len; ++i) {
+				lines[i].addEventListener('touchstart', function(e) {
+					lastXForMobile = e.changedTouches[0].pageX;
+					pressedObj = this; // 记录被按下的对象 
+
+					// 记录开始按下时的点
+					var touches = event.touches[0];
+					start = {
+						x: touches.pageX, // 横坐标
+						y: touches.pageY // 纵坐标
+					};
+				});
+
+				lines[i].addEventListener('touchmove', function(e) {
+					var touches = event.touches[0];
+					delta = {
+						x: touches.pageX - start.x,
+						y: touches.pageY - start.y
+					};
+					if(Math.abs(delta.x) > Math.abs(delta.y)) {
+						event.preventDefault();
+					}
+				});
+
+				lines[i].addEventListener('touchend', function(e) {
+					if(lastLeftObj && pressedObj != lastLeftObj) { // 点击除当前左滑对象之外的任意其他位置
+						$(lastLeftObj).animate({
+							left: "0"
+						}, 100); // 右滑  
+						lastLeftObj = null; // 清空上一个左滑的对象 
+					}
+					var diffX = e.changedTouches[0].pageX - lastXForMobile;
+					if(diffX > 100) {
+						$(pressedObj).animate({
+							left: "0.63rem"
+						}, 100); // 左滑 
+						lastLeftObj && lastLeftObj != pressedObj &&
+							$(lastLeftObj).animate({
+								left: "0"
+							}, 100); // 已经左滑状态的按钮右滑
+						lastLeftObj = pressedObj; // 记录上一个左滑的对象 
+					} else if(diffX < 100) {
+						if(pressedObj == lastLeftObj) {
+							$(pressedObj).animate({
+								left: "0"
+							}, 100); // 右滑
+							lastLeftObj = null; // 清空上一个左滑的对象  
+						}
+					} 
+				});
+			}
+		});
+ 
+		$(".weixin").click(function() { 
+			var _this = $(this)
+			$(this).parent('.box-img').find(".box-img-img").css('visibility','hidden');
+			$(this).css('visibility','hidden');
+			$(this).parent('.box-img').animate({height: "0"}, 200,function(){
+				_this.parent('.box-img').remove();
+			});
+		}) 
+		
+		
+		
+		
+		
+		
+	</script>
+
+</html>

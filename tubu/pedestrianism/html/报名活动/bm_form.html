@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>填写信息</title>
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/css.css"/>
+		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="../../single_css/global.css">
+		<link rel="stylesheet" href="../../single_css/bm_form.css">
+		<script src="../../single_js/bm_form.js"></script>
+	
+	</head>
+	<body>
+		<div class="outerScroller">
+			<form action="__CONTROLLER__/addteam/aid/<{$aid}>" method="post" id="subform" name="subform" enctype="multipart/form-data" >
+			<div class="scroll">
+				<header>
+					<div class="d-title">
+						<a href="#">
+							<img src="../../images/cd.png" alt="" />
+						</a>
+						<span>团队组建</span>
+					</div>
+				</header>
+		
+				<section class="width-box bg bm_bg">							
+					<div class="zl widthbox c_top">
+						<ul class="c">
+						 	<li>
+								<div>
+									<span id="teamN" style="color:#595959">团队名称</span>
+									<input type="text" class="teamname" name="team_name" id="teamname" value=""  onblur="checkName()"/>
+								</div>
+							</li>
+						 </ul>
+						 <ul class="c c_list">
+						 	<li>
+								<div>
+									<span class="tx_input" id="userN">领队名称</span>
+									<input type="text" name="user_name" id="username" value="" class="tx_input"  onblur="checkuser()"/>
+								</div>
+							</li>
+							<li>
+								<div>
+									<span class="tx_input" id="userT">手机号码</span>
+									<input type="text" name="mobile" id="usertel"  value="" class="tx_input"  onblur="checktel()" />
+								</div>
+							</li>
+							<li>
+								<div>
+									<span class="usercard" id="userC">身份证号</span>
+									<input type="text" name="id_number" id="usercard" value=""  onblur="checknum()"/>
+								</div>
+							</li>
+						 </ul>
+						 <div class="transparent"></div>
+					</div>
+					
+					<div class="d-information widthbox">
+						<div class="tx">
+							<input type="hidden" name="id" value=""  />
+						</div>
+					</div>
+					
+					<div class="radio_txt"><span class="c" style="background-image: url(../images/oval1.png)"></span>
+						<span style="position:relative;">我已阅读<a href="javascript:;">《免责说明》</a></span>
+					</div>	
+				</section>
+					
+				<div class="z-alert">
+					<ul>
+						<li>
+							<a href="#" class="active">徒步活动</a>
+						</li>
+						<li>
+							<a href="#">最美徒步</a>
+						</li>
+						<li>
+							<a href="#">健康指导</a>
+						</li>
+					</ul>
+				</div>
+				
+					<footer class="footer">
+						<ul class="bottom">
+							<li>
+								<a href="javascript:;">取消</a>
+							</li>
+							<li>
+								<a id="submit" href="#" name="submit" type="button">下一步</a>
+							</li>
+						</ul>
+					</footer> 
+				</div>
+			</form>
+			</div>
+			
+			<div class="alert_show alert_show1" style="display:none">
+				<div class="first_b">
+					<div class="first alert_txt_vail">
+						<p><span>手机号码</span>不对，</p >
+						<p>请重新填写。</p >
+					</div>
+				</div>
+				<div class="second">确认</div>
+			</div>
+			
+			<div class="alert_show alert_show2" style="display:none">
+				<div class="first_b alert_txt">									
+					<p style="text-align: center;">请填写团队名称！</p >			
+				</div>
+				<div class="second">确认</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="box-transparent"></div>	
+	
+	</div>
+	</div>
+	</body>	
+</html>

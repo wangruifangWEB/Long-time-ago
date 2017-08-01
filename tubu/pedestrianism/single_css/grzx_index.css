@@ -1,0 +1,51 @@
+
+.list_item{
+	width: 7.5rem;
+	height: auto;
+	margin-top: 1.21rem;
+}
+.list_item li{
+	width: 100%;
+	height: 0.96rem;
+	margin-bottom: 0.16rem;
+	background-image: url(../images/grzx_href.png);
+	background-position: 6.73rem center;
+	background-size: 0.14rem 0.24rem;
+	background-repeat: no-repeat;
+	background-color: #f6f6f6;
+}
+.list_item li a{
+	display: block;
+	font-size: 0.34rem;
+	padding-right: 0.63rem;
+	color: #595959;
+	width: 100%;
+	height: 0.96rem;
+	line-height: 0.96rem;
+	font-family: PingFangSC-Regular;
+	padding-left: 1.2rem;
+}
+.list_item_datum{
+	background-image: url(../images/grzx_datum.png);
+	background-repeat: no-repeat;
+	background-size: 0.4rem 0.4rem;
+	background-position: 0.63rem center;
+}
+.list_item_message{
+	background-image: url(../images/grzx_message.png);
+	background-repeat: no-repeat;
+	background-size: 0.4rem 0.44rem;
+	background-position: 0.63rem center;
+}
+.list_item_medal{
+	background-image: url(../images/grzx_medal.png);
+	background-repeat: no-repeat;
+	background-size: 0.4rem 0.48rem;
+	background-position: 0.63rem center;
+}
+.list_item_healthyScore{
+	background-image: url(../images/grzx_healthy_score.png);
+	background-repeat: no-repeat;
+	background-size: 0.4rem 0.36rem;
+	background-position: 0.63rem center;
+}

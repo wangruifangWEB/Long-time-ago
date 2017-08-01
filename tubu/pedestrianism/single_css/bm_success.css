@@ -1,0 +1,22 @@
+.bmcg{
+	height: auto;
+	width: 7.5rem;
+	font-family:PingFangSC-Regular; 
+	padding-left: 0.63rem;
+	padding-right: 0.29rem;
+	margin-top: 0.98rem;
+	overflow: scroll;
+	position: absolute;
+	top: 50%;
+	z-index: 0;
+	overflow: auto;
+	padding-bottom: 0.24rem;
+}
+.bmcg span{
+	font-weight: bold;
+}
+.bmcg li{
+	line-height: 0.85rem;
+	font-size:.44rem;
+	color:#595959;
+}

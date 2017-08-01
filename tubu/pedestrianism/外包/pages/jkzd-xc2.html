@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的徒步</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" href="css/css.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/fontSize.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body> 
+		<header>
+			<div class="d-title">
+				<a href="#">
+					<img src="images/cd.png" alt="">
+				</a>
+				<span>最美徒步</span>
+			</div>
+		</header>
+		<section class="zsec-bg zsec-bottom">
+			<div class="z-boxbg z-boxbg2">
+				<ul class="box-none">
+					<li>
+						<div class="z-boxl">
+							<div class="z-boxl1">
+								<h4>
+									<p>北京市</p>
+									<p>奥林匹克森林公园</p>
+								</h4>
+								<h5>2017.04.19</h5>
+							</div>
+							<div class="z-boxl2">
+								<h2>0</h2>
+								<p class="dz">点赞</p>
+							</div>
+							<div class="z-boxl2">
+								<h2>0</h2>
+								<p class="dz">评论</p>
+							</div>
+						</div>
+						<div class="z-boxr z-boxr-shadow1 z-boxr-shadow">
+							<img class="z-boxr-bg" src="images/z-hu_03.jpg" alt="">
+							<div class="z-boxr-bottom">
+								<img src="images/z-moon.png" alt="">
+								<span>拔剑乌托邦</span>
+								<p class="z-boxr-border">9</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="z-rnm z-release">
+				<div class="z-r1">
+					<span>地点</span>
+					<div class="select1 select" contenteditable="true"></div>
+					
+				</div>
+				<div class="z-r1 z-r2">
+					<span>售价</span>  
+					<input class="cc1 cc" type="number" >
+					<em>元</em>
+				</div>
+				<textarea class="z-textarea" name="" rows="" cols="" placeholder="写点什么描述下吧。"></textarea>
+			</div>
+			
+		</section>
+		<div class="z-alert">
+			<ul>
+				<li> 
+					<a href="#" class="active">徒步活动</a>
+				</li>
+				<li>
+					<a href="#">最美徒步</a>
+				</li>
+				<li>
+					<a href="#">健康指导</a>
+				</li>
+			</ul>
+		</div>
+		<div class="z-as z-as-fixed">
+			<a href="#">取消</a> 
+			<a href="#">发布</a>
+		</div>
+		<script>
+			$(".select").click(function(){
+				$(".select-option").hide();
+			}) 
+			$(".z-r1-em").click(function(){
+				$(".select-option").toggle();
+			})
+			$(".select-option p").click(function(){
+				$(".select").html($(this).html());
+				$(".select-option").hide();
+			})
+			$(".select").click(function(){
+				$(".select p").show();
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的徒步</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" href="css/css.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/fontSize.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			body,html{
+				background-color: #EFEFF4;
+				height: 100%;
+				overflow-x: hidden;
+			}
+			header{
+				width: 7.5rem;
+				margin-left: -3.75rem;
+				left: 50%;
+				position: absolute;
+			}
+			.outerScroller{
+				width: 7.5rem;
+				margin: 0 auto;
+			}	
+			.scroll{
+				position: relative;
+				overflow: hidden;
+			}
+			.z-alert{
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="outerScroller">
+			<div class="scroll">
+				<header>
+					<div class="d-title">
+						<a href="#">
+							<img src="images/cd.png" alt="" />
+						</a>
+						<span>我的订阅</span>
+					</div>
+				</header>
+				<section class="zsec-bg zsec-bottom">
+					<div class="z-boxbg z-boxbg2">
+						<ul>
+							<li class="no-shadow123 no-shadow">
+								<div class="z-boxl">
+									<div class="z-boxl1">
+										<h4>
+											<p>北京市</p>
+											<p>森林公园</p>
+										</h4>
+										<h5>2017.04.19</h5> 
+									</div>
+									<div class="z-boxl2">
+										<h2>0</h2>
+										<p class="dz">报名人数</p>
+									</div>
+									<div class="z-boxl2">
+										<h2>354</h2>
+										<p class="dz">评论</p>
+									</div>
+								</div>
+								<div class="z-boxr z-boxr-shadow">
+									<img class="z-boxr-bg bg-shadow-in" src="images/z-hu_03.jpg" alt="">
+								</div>
+							</li>
+						</ul>
+					</div>
+					
+					<div class="z-tabdivs">
+						<style>
+							html, body {
+							    height: 100%;
+							    width: 100%;
+							}
+						</style>
+						<div class="z-tab-box">
+							<div class="z-dz z-dz-box">
+								“走进通州 为北京三大球加油”2016（第三届）北京徒友嘉年华暨第六届“京都球侠”评 选启动仪式、通州区第三届徒步运动大会将 于10月23日上午7：30在通州大运河森林公 园举行。
+							</div>
+						</div>
+					</div>
+				</section>
+				<div class="z-alert">
+					<ul>
+						<li>
+							<a href="#" class="active"><img src="images/list-a-1.png" alt="" class="nm"/><img src="images/list-a-2.png" class="zx"/>徒步活动</a>
+						</li>
+						<li>
+							<a href="#"><img src="images/list-b-1.png" alt=""  class="nm" /><img src="images/list-b-2.png" class="zx"/>徒步活动</a>
+						</li>
+						<li>
+							<a href="#"><img src="images/list-c-1.png" alt=""  class="nm"/><img src="images/list-c-2.png" class="zx"/>徒步活动</a>
+						</li>
+						<li>
+							<a href="#"><img src="images/list-d-1.png" alt="" style="width: .32rem;height: .48rem;margin-left: 0.05rem;" class="nm"/><img src="images/list-d-2.png" class="zx"/>徒步活动</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="box-transparent"></div>
+		<script>
+			$('.scroll').height($(window).height());
+		</script>
+	</body>
+</html>

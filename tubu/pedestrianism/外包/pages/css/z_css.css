@@ -1,0 +1,53 @@
+html,
+@font-face {
+    font-family: '方正清刻本悦宋简体';
+    src: url('../font/方正清刻本悦宋简体.TTF');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+  width: 100%;
+  height: 100%;
+  font-family: '方正清刻本悦宋简体','PingFangSC-Regular','sans-serif';
+  background-image:url(../images/qu/beijing-img.png);
+}
+.width {
+  width: 100%;
+  box-sizing: border-box;
+} 
+.touch{
+	overflow:scroll;
+	height:100%;
+	-webkit-overflow-scrolling: touch; 
+}
+.bg-e {
+  background: #eeeeee;
+}
+.p-3 {
+  padding: 0 0.3rem;
+}
+.height {
+  height: 1rem;
+}
+.navs {
+  height: 100%;
+  width: 100%;
+  padding-top: 1.32rem;
+  padding-bottom:0;
+}
+.biaoge{
+  background:#F6F6F6;
+  border-radius:4px;
+}
+
+img{
+  width: 1.58rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+
+
+}
+

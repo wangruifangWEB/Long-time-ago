@@ -1,0 +1,46 @@
+
+.mzsm{
+	margin-top: 0.98rem;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+.mzsm .title{
+	font-size: 0.48rem;
+	text-align: center;
+	width: 7.5rem;
+	height: 0.56rem;
+	margin-top: 0.32rem;
+	line-height: 0.56rem;
+	color: #595959;
+	font-weight: 900;
+}
+.mzsm .cont{
+	font-size: 0.32rem;
+	padding: 0 0.24rem;
+	line-height: 0.56rem;
+	height: 0.56rem;
+}
+.mzsm .cont .color{
+	color: #FD663C;
+	height: 0.56rem;
+	line-height: 0.56rem;
+	font-weight: 700;
+	
+}
+.h24{
+	height: 0.24rem;
+	line-height: 0.24rem;
+}
+.h56{
+	height: 0.56rem;
+}
+.footer{
+	width: 7.5rem;
+	left: 50%;
+	margin-left: -3.75rem;
+	background-color:#f6f6f6;
+	font-weight: bold;
+}
+.h32{
+	height: 0.32rem;line-height: 0.32rem;
+}

@@ -1,0 +1,14 @@
+.message_detail{
+	width: 7.5rem;
+	height: 100%;
+	line-height: 0.49rem;
+	padding-left: 0.63rem;
+	padding-right: 0.63rem;
+	margin-top: 1.3rem;
+	font-size: 0.32rem;
+	font-family: PingFangSC-Regular;
+	color: #595959;
+}
+.bold{
+	font-weight: 700;
+}
