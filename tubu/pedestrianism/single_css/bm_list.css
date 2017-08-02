@@ -178,15 +178,50 @@
 .money .change{
 	width: 1.04rem;	
 }
-.modify{
+button{
 	width: 0.82rem !important;
 	height: 0.48rem !important;
 	line-height: 0.48rem !important;
 	border: solid 1px #fd663c;
 	border-radius: 0.1rem;
-	color: #fd663c;
 	background-color: transparent;
 	margin-top: 0.24rem !important;
 	margin-left: 0.24rem !important;
 	text-align: center !important;
+}
+.modify{
+	color: #fd663c;
+	background-color: #f6f6f6;
+}
+.confirm{
+	background-color: #fd663c;
+	color: #f6f6f6;
+}
+.mask1{
+	width: 7.5rem;
+	height: auto;
+	background-color: #000000;
+	opacity: 0.3;
+	z-index: 1;
+	top: 2.94rem;
+	display: none;
+	position: fixed;
+}
+.mask2{
+	width: 7.5rem;
+	height: auto;
+	background-color: #000000;
+	opacity: 0.3;
+	z-index: 1;
+	bottom: 0;
+	display: none;
+	position: fixed;
+}
+.modify_after{
+	background-color: #fff;
+	
+}
+.confirm_after{
+	background-color: #000;
+	opacity: 0.3;
 }

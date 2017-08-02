@@ -68,7 +68,7 @@ input{
 	box-shadow:0 2px 6px -2px #999;					
 }
 .radio_txt{		
-	position:absolute;
+	position:relative;
 	font-size:.32rem;
 	/*margin-top:.32rem;*/
 	margin-left:.7rem;
