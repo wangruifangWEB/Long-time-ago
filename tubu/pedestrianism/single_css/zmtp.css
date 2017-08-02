@@ -3,9 +3,24 @@
 	overflow: hidden;
 	min-height: 2rem;
 }
-.loadtip p{
+/*.loadtip p{
 	width: 100%;
 	z-index: 100;
+}*/
+.loadtip p{
+	font-size: 0.26rem;
+	text-align: center;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	position: fixed;
+	bottom: 0;
+	width: 7.5rem;
+	display: none;
+	text-align: center;
+	background-color: #EFEFF4;
+	z-index: 10000;
+	font-size: 0.26rem;
+	text-align: center;
 }
 .z-tab .active:after {
   content: '';
@@ -204,11 +219,9 @@
 	height: 0.28rem;
 	line-height: 0.28rem;
 }
-.talk_hidden{
-	
-}
+
 .talk_message{
-/*				position: fixed;*/
+/*position: fixed;*/
 	top: 5.22rem;
 	width: 7.5rem;
 	left: 7.5rem;
@@ -404,12 +417,12 @@
 	width: 7.02rem;
 }
 /* 输入部分 */
-	.read_cont{
-		width: 7.5rem;
-		position: fixed;
-		z-index: 1000;
-		background-color: #f6f6f6;
-	}
+.read_cont{
+	width: 7.5rem;
+	position: fixed;
+	z-index: 1000;
+	background-color: #f6f6f6;
+}
 .talk_message_cont{
 	width: 7.5rem;
 	height: 0.88rem;
@@ -471,4 +484,45 @@
 }
 .bg123{
 	z-index: 1000000;
+}
+
+/*回复  点赞 模块*/
+.talk_message_list_right_huifu{
+	margin-top: 0.08rem;
+	color: #25233A;
+	font-size: 0.32rem;
+	line-height: 0.45rem;
+	font-family: PingFangSC-Regular;
+}
+.talk_message_list_right_huifu span{
+	color: #25233A;
+	font-size: 0.32rem;
+	font-weight: bold;
+	font-family: PingFangSC-Medium;
+}
+.talk_message_list_right 
+.user_good,
+.user_good_qx{
+	float:right;
+	margin-top: -.85rem;
+	margin-right: .39rem;
+}
+
+.talk_message_list_right .user_good img{
+	margin-top: -0.4rem;
+}
+.talk_message_list_right span img{
+	width:.48rem;
+	height:.48rem;
+}
+.talk_message_list_right i{
+	font-size:.37rem;
+	font-family: PingFangSC-Medium;
+	color:#f69200;
+	left:.16rem;
+	position: relative;
+	top: -.05rem;
+}
+.talk_message_list div{
+	margin-bottom: .24rem;
 }
