@@ -61,11 +61,11 @@ $(function(){
 			var x=$(a).index(this);
 			var ev=ev||window.event;
 			var target=ev.target||ev.srcElement;
-	        i++;
-	        setTimeout(function () {
-	            i = 0;
-	        }, 500);
-	        if (i > 1) {
+		        i++;
+		        setTimeout(function () {
+		            i = 0;
+		        }, 500);
+		        if (i > 1) {
 	        	var temp=$('input.change').length;
 	        	if(temp>0){
 	        		var tt=$('input.change').val();
@@ -74,12 +74,11 @@ $(function(){
 	        	var td = $(this);
 			    // 根据表格文本创建文本框 并加入表表中--文本框的样式自己调整
 			    var text = td.text();
-			    alert(1);
+//			    alert(1);
 			    var txt = $("<input type='text' class='change' > ").val(text);
-			    alert(2);
-			    alert(3);
 			    txt.blur(function(){
 					// 失去焦点，保存值。于服务器交互自己再写,最好ajax
+					alert(1);
 					var newText = $(this).val();
 					target.className=c;
 			        $(this).remove();
@@ -100,7 +99,7 @@ $(function(){
 	    })
 	}
 	
-	new objFun('#right_table2 .name','name','red name','请正确填写姓名',/^(((\s?[\u4e00-\u9fa5]+\s?)+)|([a-zA-Z]+\s?)+)$/);
+		new objFun('#right_table2 .name','name','red name','请正确填写姓名',/^(((\s?[\u4e00-\u9fa5]+\s?)+)|([a-zA-Z]+\s?)+)$/);
 		new objFun('#right_table2 .idCard','idCard','red idCard','请填写格式正确的身份证号',/^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$|^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/);
 		new objFun('#right_table2 .tel','tel','red tel','请填写格式正确的手机号',/^1[3|4|5|8][0-9]\d{4,8}$/);
 		new objFun('#right_table2 .gend','gend','red gend','请正确填写性别',/^(男|女)$/);

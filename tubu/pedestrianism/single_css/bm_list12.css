@@ -24,7 +24,7 @@ body{
 	margin-top: 1.96rem;
 }
 #left_div{
-    width:1.3rem;
+    width:2.5rem;
     float: left;
 }
 #left_div1{
@@ -44,7 +44,7 @@ body{
 	line-height: 0.98rem;
 	color: #595959;
 	height: 0.98rem;
-	width: 1.3rem;
+	width: 2.5rem;
 	text-align: left;
 	
 }
@@ -54,7 +54,8 @@ body{
 #left_table2{
 	border-right: solid 0.02rem #d8d8d8;
 	height: 0.98rem;
-	width: 1.3rem;
+	width: 2.5rem;
+	margin-top: -0.98rem;
 }
 #left_table2 th{
 	font-size: 0.32rem;
@@ -70,7 +71,7 @@ body{
 }
 #right_div{
     float: left;
-    width: 6.2rem !important;
+    width: 5rem !important;
    
 }
 #right_div1{
@@ -98,6 +99,7 @@ body{
     white-space:nowrap;
     font-size: 0.32rem;
     width: 12.68rem;
+    margin-top: -0.98rem;
 }
 
 /*#right_table1 .idCard,#right_table2 .idCard{*/
@@ -196,51 +198,22 @@ button{
 	margin-top: 0.24rem !important;
 	margin-left: 0.24rem !important;
 	text-align: center !important;
+	color: #fd663c;
+	background-color: #f6f6f6;
 }
-.modify{
+/*.modify{
 	color: #fd663c;
 	background-color: #f6f6f6;
 }
 .confirm{
 	background-color: #fd663c;
 	color: #f6f6f6;
-}
-/*.mask1{
-	width: 7.5rem;
-	height: auto;
-	background-color: #000000;
-	opacity: 0.3;
-	z-index: 1;
-	top: 2.94rem;
-	display: none;
-	position: absolute;
-}
-.mask2{
-	width: 7.5rem;
-	background-color: #000000;
-	opacity: 0.3;
-	z-index: 1;
-	display: none;
-	position: absolute;
-}
-.mask{
-	width: 7.5rem;
-	height: 0.98rem;
-	background-color: #000000;
-	opacity: 0.3;
-	z-index: 1;
-	display: none;
-	position: fixed;
-}
-.modify_after{
-	background-color: #fff;
-	
-}
-.confirm_after{
-	background-color: #000;
-	opacity: 0.3;
 }*/
 
+.edit{
+	background-color: #fd663c;
+	color: #f6f6f6;
+}
 
 .shadow{
 	background-color: #AEA9B8 !important;
