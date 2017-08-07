@@ -9,67 +9,7 @@
 		<link rel="stylesheet" href="../../css/css.css" />
 		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../../js/jquery.event.drag-1.5.min.js"></script>
-		<script src="../../js/jquery.touchSlider.js"></script>
 		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
-		<style type="text/css">
-			body,html{
-				background-color: #EFEFF4;
-				height: 100%;
-				overflow-x: hidden;
-			}
-			.swiper-container{
-				overflow: hidden;
-			}
-			header{
-				width: 7.5rem;
-				margin-left: -3.75rem;
-				left: 50%;
-				position: absolute;
-			}
-			.swiper-container, .w{height: calc(100vh - 60px);}
-			
-			.init-loading img{
-				width: 1.2rem;
-				height: 1.2rem;
-				display: block;
-				margin: 0.05rem auto;
-			}
-			.loadtip p{
-				font-size: 0.26rem;
-				text-align: center;
-				padding-top: 0.1rem;
-				padding-bottom: 0.1rem;
-				position: fixed;
-				bottom: 0;
-				width: 6.87rem;
-				text-align: center;
-				background-color: #EFEFF4;
-				z-index: 10;
-				font-size: 0.26rem;
-				text-align: center;
-			}
-			.outerScroller{
-				width: 7.5rem;
-				margin: 0 auto;
-			}	
-			.scroll{
-				position: relative;
-				overflow: hidden;
-			}
-			.z-alert{
-				position: absolute;
-			}
-			.z-as-fixed{
-				width: 7.5rem;
-				left: 50%;
-				margin-left: -3.75rem;
-			}
-			.z-moon{
-				height: 1.29rem;
-				background: linear-gradient(to right, #ff9800 , #ff7043);
-			}
-		</style>
 	</head>
 	<body>
 		<div class="outerScroller">
@@ -115,6 +55,8 @@
 		</div>
 		<div class="box-transparent"></div>	
 		<script type="text/javascript">
+			$('.scroll').height($(window).height())
+			$('.swiper-container,.w').height($(window).height()-$('.z-as').height());
 			var loadFlag = true;
 			var oi = 0;
 			var mySwiper = new Swiper('.swiper-container',{
