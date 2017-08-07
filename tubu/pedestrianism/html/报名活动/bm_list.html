@@ -11,8 +11,226 @@
 		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" href="../../single_css/global.css">
-		<link rel="stylesheet" href="../../single_css/bm_list.css">
-		<script src="../../single_js/bm_list.js"></script>
+		<!--<link rel="stylesheet" href="../../single_css/bm_list12.css">-->
+		<!--<script src="../../single_js/bm_list14.js"></script>-->
+		<style>
+			.team_name{
+				width: 7.5rem;
+				height: 0.98rem;
+				background-color: #FD663C;
+				position: fixed;
+				top: 0.98rem;
+			}
+			body{
+				position: relative;
+			}
+			.team_name{
+				z-index: 100;
+			}
+			.team_name p{
+				text-align: center;
+				color: #f6f6f6;
+				font-size: 0.37rem;
+				font-family: PingFangSC-Medium ;
+				height: 0.52rem;
+				line-height: 0.52rem;
+				margin-top: 0.23rem;
+			}
+			.container-fluid1{
+				margin-top: 1.96rem;
+			}
+			#left_div{
+			    width:2.5rem;
+			    float: left;
+			}
+			#left_div1{
+			    width: 100%;
+			    height: 0.98rem;
+			    border-bottom: solid 0.02rem #d8d8d8;
+			    
+			}
+			#left_div2{
+			    height: 10rem;
+			    overflow: hidden;
+			}
+			#left_table1 th{
+				padding-left: 0.24rem;
+				font-size: 0.32rem;
+				font-family: PingFangSC-Medium;
+				line-height: 0.98rem;
+				color: #595959;
+				height: 0.98rem;
+				width: 2.5rem;
+				text-align: left;
+				
+			}
+			#left_table1{
+				border-right: solid 0.02rem #d8d8d8;
+			}
+			#left_table2{
+				border-right: solid 0.02rem #d8d8d8;
+				height: 0.98rem;
+				width: 2.5rem;
+				margin-top: -0.98rem;
+			}
+			#left_table2 th{
+				font-size: 0.32rem;
+				font-family: PingFangSC-Medium;
+				font-weight: 500;
+				overflow: hidden;
+				white-space: nowrap;
+				
+			}
+			#right_table1,#right_table1 td{
+				height: 0.98rem;
+				overflow: hidden;
+			}
+			#right_div{
+			    float: left;
+			    width: 5rem !important;
+			   
+			}
+			#right_div1{
+				z-index: 1000;
+			    width: 100%;
+			    overflow: hidden;
+			    height: 0.98rem;
+			    border-bottom: solid 0.02rem #d8d8d8;
+			}
+			#right_divx{
+			   width: 100%;
+			}
+			#right_div2{
+			    width:100%;
+			    overflow: auto;
+			}
+			#right_table1{
+			    height: 0.98rem;
+			    line-height: 0.98rem;
+			    font-size: 0.32rem;
+			    width: 12.68rem;
+			    border-bottom: solid 0.02rem #d8d8d8;
+			}
+			#right_table2{
+			    white-space:nowrap;
+			    font-size: 0.32rem;
+			    width: 12.68rem;
+			    margin-top: -0.98rem;
+			}
+			
+			/*#right_table1 .idCard,#right_table2 .idCard{*/
+				/*width: 31.8%;*/
+				/*width: 3.63rem;*/
+				/*padding-right: 0.24rem;*/
+				/*padding-left: 0.24rem;*/
+			}
+			
+			#right_table2 td{
+				padding-right: 0.24rem;
+				padding-left: 0.24rem;
+			    text-align:left;
+			    font-family: PingFangSC-Regular;
+			}
+			.odd{
+				background-color: #F6F6F6;
+				/*border-right: solid 0.02rem #d8d8d8;*/
+				height: 0.98rem;
+				line-height: 0.98rem;
+			}
+			.even{
+				background-color: #F0F0F0;
+				/*border-right: solid 0.02rem #d8d8d8;*/
+				height: 0.98rem;
+				line-height: 0.98rem;
+			}
+			.footer{
+				width: 7.5rem;
+				left: 50%;
+				margin-left: -3.75rem;
+				font-weight: bold;
+				background-color: #f6f6f6;
+			}
+			#left_div th{
+				text-align: left;
+			}
+			#right_div td{
+				overflow: hidden;
+				border-right: solid 0.02rem #d8d8d8;
+				text-align: center;
+			}
+			.red{
+				color: #f00 !important;
+			}
+			.add_people{
+				display: block;
+				width: 0.88rem;
+				height: 0.88rem;
+				background-color: #fd663c;
+				border-radius: 50%;
+				box-shadow: 0 0.03rem 0.07rem rgba(0,0,0,0.25);
+				position: absolute;
+				right: 0.32rem;
+				bottom: 0.32rem;
+				background-image: url(../images/add_people.png);
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: 0.56rem 0.56rem;
+				font-family: PingFangSC-Medium;
+			}
+			.change{
+				border: none;
+				outline: none;
+				height: 0.64rem;
+				line-height: 0.64rem;
+				font-size: 0.32rem;
+				display: block;
+				margin: 0 auto;
+			}
+			.name .change{
+				width: 1.35rem;	
+			}
+			.tel .change{
+				width: 2.14rem;	
+			}
+			.idCard .change{
+				width: 3.31rem;	
+			}
+			.gend .change{
+				width: 0.63rem;	
+			}
+			.sit .change{
+				width: 2.2rem;	
+			}
+			.money .change{
+				width: 1.04rem;	
+			}
+			button{
+				width: 0.82rem !important;
+				height: 0.48rem !important;
+				line-height: 0.48rem !important;
+				border: solid 1px #fd663c;
+				border-radius: 0.1rem;
+				background-color: transparent;
+				margin-top: 0.24rem !important;
+				margin-left: 0.24rem !important;
+				text-align: center !important;
+				color: #fd663c;
+				background-color: #f6f6f6;
+			}
+			
+			.edit{
+				background-color: #fd663c;
+				color: #f6f6f6;
+			}
+			
+			.shadow{
+				background-color: #AEA9B8 !important;
+				color: #f6f6f6 !important;
+			}
+			
+			
+
+		</style>
 	</head>
 	<body>
 		<div class="outerScroller">
@@ -39,7 +257,12 @@
 					    </div>
 					    <div id="left_div2">
 						    <table id="left_table2" class="">
-						    	<tr class="odd"><th><button class="modify">修改</button></th></tr>
+						    	<tr class="odd">
+						    		<th>
+						    			<button class="modify edit">修改</button>
+						    			<button class="confirm">确认</button>
+						    		</th>
+						    	</tr>
 						    </table>
 					    </div>
 					</div>
@@ -90,17 +313,233 @@
 				<footer class="footer">
 					<ul class="bottom">
 						<li>
-							<a href="zmtp_model.html">导入Excel</a>
+							<a href="javascript:;">导入Excel</a>
 						</li>
 						<li>
-							<a href="zmtbcg.html">完成</a>
+							<a href="javascript:;" id="continue">完成</a>
 						</li>
 					</ul>
 				</footer>
 			</div>
+			
 		</div>
 		<div class="box-transparent"></div>
-		<div class="mask1"></div>
-		<div class="mask2"></div>
+		<script type="text/javascript">
+			$(function(){
+				$('#right_table2 tr .money').attr('disabled','disabled');
+				$('#right_div2').height($(window).height() - $('header').height() - $('.team_name').height() - $('#right_div1').height() - $('footer').height());
+				$('#left_div2').height($('#right_div2').height());
+				$('.scroll').height($(window).height() - $('footer').height());
+				$('.container-fluid').height($(window).height() - $('footer').height());
+				var right_div2 = document.getElementById("right_div2");
+				right_div2.onscroll = function(){
+				    var right_div2_top = this.scrollTop;
+				    var right_div2_left = this.scrollLeft;
+				    document.getElementById("left_div2").scrollTop = right_div2_top;
+				    document.getElementById("right_div1").scrollLeft = right_div2_left;
+				}
+				//设置右边div宽度
+				document.getElementById("right_div").style.width=""+document.documentElement.clientWidth-130+"px";	
+				setInterval(function() {
+					document.getElementById("right_div").style.width=""+document.documentElement.clientWidth-130+"px";	
+				}, 0);
+				for(var i=0;i<10;i++){
+					$("#left_table2").append('<tr><th>'+'<button class="modify edit">修改</button> <button class="confirm">确认</button>'+'</th></tr>');
+					$('#right_table2').append('<tr><td class="name">'+'欧阳娜娜'+'</td><td class="idCard">'+'130132199008232669'+'</td><td class="tel">'+'13682646483'+'</td><td class="gend">'+'男'+'</td><td class="sit">'+'是'+'</td><td class="money">'+'￥1000'+'</td></tr>');                          
+				}
+				$('.add_people').click(function(){
+					if((!$('#right_table2 tr').children().hasClass('red')) && (!$('#right_table2 tr').hasClass('shadow'))){ // 全部输入正确  不含有修改
+						$("#left_table2").append('<tr class="shadow"><th>'+'<button class="modify">修改</button> <button class="confirm edit">确认</button>'+'</th></tr>');
+						$('#right_table2').append('<tr class="add_row shadow"><td class="name">'+''+'</td><td class="idCard">'+''+'</td><td class="tel">'+''+'</td><td class="gend">'+''+'</td><td class="sit">'+''+'</td><td class="money">'+''+'</td></tr>');                          
+						
+						for(var i=1;i<=$('#right_table2 tr').length;i++){
+							var isEven=i % 2;
+							if(isEven==0){
+								$('#right_table2 tr').eq(i).addClass('odd');
+								$('#left_table2 tr').eq(i).addClass('odd');
+							}else if(isEven==1){
+								$('#right_table2 tr').eq(i).addClass('even');
+								$('#left_table2 tr').eq(i).addClass('even');
+							}
+						}
+						new newObj('#right_table2 .shadow .name');
+						new newObj('#right_table2 .shadow .idCard');
+						new newObj('#right_table2 .shadow .tel');
+						new newObj('#right_table2 .shadow .gend');
+						new newObj('#right_table2 .shadow .sit');
+						$('#right_div2').scrollTop($('.add_row:last').offset().top);
+						$('.modify').on('click',function(){
+							$('#right_table2 tr td').css({'pointer-events': 'auto'});
+							var x=$('.modify').index(this);
+							$('#right_table2 tr').eq(x).addClass('shadow').siblings().removeClass('shadow');
+							$('#left_table2 tr').eq(x).addClass('shadow').siblings().removeClass('shadow');
+							$('.modify').eq(x).removeClass('edit').siblings().addClass('edit');
+							new newObj('#right_table2 .shadow .name');
+							new newObj('#right_table2 .shadow .idCard');
+							new newObj('#right_table2 .shadow .tel');
+							new newObj('#right_table2 .shadow .gend');
+							new newObj('#right_table2 .shadow .sit');
+							$('.modify').attr('disabled','disabled');
+							$('.confirm').parents().parents().eq(x).siblings().attr('disabled','disabled');
+						})
+						$('.confirm').on('click',function(){
+							$('.modify').attr('disabled','disabled');
+							var reg_idCard=/^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$|^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/;
+							var reg_name=/^(((\s?[\u4e00-\u9fa5]+\s?)+)|([a-zA-Z]+\s?)+)$/;
+							var reg_tel=/^1[3|4|5|8][0-9]\d{4,8}$/;
+							var reg_gend=/^(男|女)$/;
+							var reg_sit=/^(是|否)$/;
+							var x=$('.confirm').index(this);
+							
+							if($('#right_table2 tr .idCard').eq(x).html()=="" && $('#right_table2 tr .name').eq(x).html()=="" && $('#right_table2 tr .tel').eq(x).html()=="" && $('#right_table2 tr .gend').eq(x).html()=="" && $('#right_table2 tr .sit').eq(x).html()==""){
+								$('#right_table2 tr').eq(x).remove();
+								$('#left_table2 tr').eq(x).remove();
+								return;
+							}else if(!reg_name.test($('#right_table2 tr').eq(x).find('td.name').html())){
+								alert('姓名信息填写错误');
+								$('#right_table2 tr').eq(x).find('td.name').addClass('red');
+								return;
+							}else if(!reg_idCard.test($('#right_table2 tr').eq(x).find('td.idCard').html())){
+								alert('身份证信息填写错误');
+								$('#right_table2 tr').eq(x).find('td.idCard').addClass('red');
+								return;
+							}else if(!reg_tel.test($('#right_table2 tr').eq(x).find('td.tel').html())){
+								alert('手机号信息填写错误');
+								$('#right_table2 tr').eq(x).find('td.tel').addClass('red');
+								return;
+							}else if(!reg_gend.test($('#right_table2 tr').eq(x).find('td.gend').html())){
+								alert('性别信息填写错误');
+								$('#right_table2 tr').eq(x).find('td.gend').addClass('red');
+								return;
+							}else if(!reg_sit.test($('#right_table2 tr').eq(x).find('td.sit').html())){
+								alert('请选择是否乘坐摆渡车');
+								$('#right_table2 tr').eq(x).find('td.sit').addClass('red');
+								return;
+							}else{
+								$('#right_table2 tr').eq(x).find('td').removeClass('red');
+							}
+							
+							if($('#right_table2 tr').children().hasClass('red')){
+								var x=$('#left_table2 tr').index(this);
+								$('#right_table2 tr').eq(x).addClass('shadow').siblings().removeClass('shadow');
+								$('#left_table2 tr').eq(x).addClass('shadow').siblings().removeClass('shadow');
+							}else{
+								$('#right_table2 tr td').css({'pointer-events': 'none'});
+								var x=$('.confirm').index(this);
+								$('#right_table2 tr').eq(x).removeClass('shadow');
+								$('#left_table2 tr').eq(x).removeClass('shadow');
+								$('.confirm').eq(x).removeClass('edit').siblings().addClass('edit');
+								$('.modify').attr('disabled',false);
+								
+								
+								//  新增人数点击确认的ajax
+								
+							}
+						})
+					}else{
+						alert('请检查是否含有错误信息或编辑状态的信息');
+						return;
+					}
+					
+				})
+				for(var i=1;i<=$('#right_table2 tr').length;i++){
+					var isEven=i % 2;
+					if(isEven==0){
+						$('#right_table2 tr').eq(i).attr('class','odd');
+						$('#left_table2 tr').eq(i).attr('class','odd');
+					}else if(isEven==1){
+						$('#right_table2 tr').eq(i).attr('class','even');
+						$('#left_table2 tr').eq(i).attr('class','even');
+					}
+					
+				}
+				var newObj=function(clickEle){
+					$(clickEle).on('click', function (ev) {
+				        if(!$(this).is('.change')){
+				        	var x=$(clickEle).index(this);
+							$(this).html('<input type="text" class="change" value="'+ $(this).text() +'" />');
+							$(this).find('input').focus().blur(function(){
+								$(this).parent().html($(this).val());
+								/*var reg=regMatch;
+								if(!reg.test($(this).val())){
+									alert(layer_notice);
+									$(clickEle).eq(x).addClass('red');
+									return false;
+								}else{
+									$(clickEle).eq(x).removeClass('red');
+								}*/
+					      	});
+					    }
+				   	})
+				}
+				
+				
+				
+				$('.modify').on('click',function(){
+					$('#right_table2 tr td').css({'pointer-events': 'auto'});
+					var x=$('.modify').index(this);
+					$('#right_table2 tr').eq(x).addClass('shadow').siblings().removeClass('shadow');
+					$('#left_table2 tr').eq(x).addClass('shadow').siblings().removeClass('shadow');
+					$('.modify').eq(x).removeClass('edit').siblings().addClass('edit');
+					new newObj('#right_table2 .shadow .name');
+					new newObj('#right_table2 .shadow .idCard');
+					new newObj('#right_table2 .shadow .tel');
+					new newObj('#right_table2 .shadow .gend');
+					new newObj('#right_table2 .shadow .sit');
+					$('.modify').attr('disabled','disabled');
+					$('.confirm').parents().parents().eq(x).siblings().attr('disabled','disabled');
+				})
+				$('.confirm').on('click',function(){
+					var reg_idCard=/^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$|^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/;
+					var reg_name=/^(((\s?[\u4e00-\u9fa5]+\s?)+)|([a-zA-Z]+\s?)+)$/;
+					var reg_tel=/^1[3|4|5|8][0-9]\d{4,8}$/;
+					var reg_gend=/^(男|女)$/;
+					var reg_sit=/^(是|否)$/;
+					var x=$('.confirm').index(this);
+					if($('#right_table2 tr .idCard').eq(x).html()=="" && $('#right_table2 tr .name').eq(x).html()=="" && $('#right_table2 tr .tel').eq(x).html()=="" && $('#right_table2 tr .gend').eq(x).html()=="" && $('#right_table2 tr .sit').eq(x).html()==""){
+						$('#right_table2 tr').eq(x).remove();
+						$('#left_table2 tr').eq(x).remove();
+						return;
+					}else if(!reg_name.test($('#right_table2 tr').eq(x).find('td.name').html())){
+						alert('姓名信息填写错误');
+						$('#right_table2 tr').eq(x).find('td.name').addClass('red');
+						return;
+					}else if(!reg_idCard.test($('#right_table2 tr').eq(x).find('td.idCard').html())){
+						alert('身份证信息填写错误');
+						$('#right_table2 tr').eq(x).find('td.idCard').addClass('red');
+						return;
+					}else if(!reg_tel.test($('#right_table2 tr').eq(x).find('td.tel').html())){
+						alert('手机号信息填写错误');
+						$('#right_table2 tr').eq(x).find('td.tel').addClass('red');
+						return;
+					}else if(!reg_gend.test($('#right_table2 tr').eq(x).find('td.gend').html())){
+						alert('性别信息填写错误');
+						$('#right_table2 tr').eq(x).find('td.gend').addClass('red');
+						return;
+					}else if(!reg_sit.test($('#right_table2 tr').eq(x).find('td.sit').html())){
+						alert('请选择是否乘坐摆渡车');
+						$('#right_table2 tr').eq(x).find('td.sit').addClass('red');
+						return;
+					}else{
+						$('#right_table2 tr').eq(x).find('td').removeClass('red');
+					}
+					
+					if($('#right_table2 tr').children().hasClass('red')){
+						var x=$('#left_table2 tr').index(this);
+						$('#right_table2 tr').eq(x).addClass('shadow').siblings().removeClass('shadow');
+						$('#left_table2 tr').eq(x).addClass('shadow').siblings().removeClass('shadow');
+					}else{
+						$('#right_table2 tr td').css({'pointer-events': 'none'});
+						var x=$('.confirm').index(this);
+						$('#right_table2 tr').eq(x).removeClass('shadow');
+						$('#left_table2 tr').eq(x).removeClass('shadow');
+						$('.confirm').eq(x).removeClass('edit').siblings().addClass('edit');
+						$('.modify').attr('disabled',false);
+						
+						//  页面初始化点击确认的ajax
+					}
+				})
+			})
+		</script>
 	</body>
 </html>
