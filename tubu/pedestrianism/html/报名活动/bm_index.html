@@ -10,8 +10,379 @@
 		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/swiper.min.js"></script>
 		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
-		<link rel="stylesheet" href="../../single_css/global.css">
-		<link rel="stylesheet" href="../../single_css/bm_index.css">
+		<!--<link rel="stylesheet" href="../../single_css/global.css">-->
+		<style>	
+			body,html {
+				/*height: 100%;*/
+				background: #EFEFF4;
+				overflow-x: hidden;
+				font-family: PingFangSC-Medium;
+			}			
+			header {
+				width: 7.5rem;
+				margin-left: -3.75rem;
+				left: 50%;
+				position: fixed;
+				z-index: 100000;
+			}		
+			.center {
+				width: 7.5rem;
+				margin-left: -3.75rem;
+				left: 50%;
+				position: absolute;
+			}			
+			.outerScroller {
+				width: 7.5rem;	
+				margin: 0 auto;
+			}			
+			.scroll {
+				position: relative;
+				overflow: hidden;
+			}			
+			.zmtp_list {
+				width: 7.5rem;
+				padding: .24rem .69rem;
+				height: 6.24rem;
+				/*border:1px solid red;*/
+			}			
+			.zmtp_list ul li img {
+				width: 2rem;
+				height: 2rem;
+				float: left;
+				margin: 0 .06rem .06rem 0;
+			}			
+			.clearfloat {
+				content: '';
+				display: block;
+				clear: both;
+			}			
+			.z-tab {
+				width: 7.5rem;
+				height: 0.88rem;
+				margin: 0 0;
+				background-color: #f69200;
+			}			
+			.z-tab a {
+				padding: 0;
+				margin: 0;
+				height: auto;
+				background-color: #f69200;
+			}			
+			.z-tab .on1 a img,
+			.z-tab .on2 a img,
+			.z-tab .on3 a img {
+				width: 0.48rem;
+				height: 0.48rem;
+				margin-top: 0.2rem;
+				background-color: #f69200;
+			}			
+			.z-tab .on1 {
+				margin-left: 1.43rem;
+			}			
+			.z-tab .on2 {
+				margin-left: 1.6rem;
+				margin-right: 1.6rem;
+			}			
+			.z-tab .on3 {
+				margin-right: 1.43rem;
+			}			
+			.z-tab img {
+				display: block;
+				width: 0.48rem;
+				height: 0.48rem;
+				margin-top: 0.2rem;
+				background-color: #f69200;
+			}	
+			/*简介*/		
+			.intro_portal {
+				width: 7.5rem;
+				height: 1.09rem;
+				/*margin-bottom: 0.16rem;*/
+				background-color: #F6F6F6;
+				border-bottom: 1px solid #E9E9E9;
+			}			
+			.intro_portal .title {
+				padding-left: 0.24rem;
+				padding-right: 0.24rem;
+				height: 0.77rem;
+			}			
+			.intro_portal .title span {
+				color: #25233A;
+				margin-top: 0.32rem;
+				font-size: 0.32rem;
+				line-height: 0.45rem;
+				height: 0.45rem;
+				float: left;
+				font-weight: bold;
+				font-family: PingFangSC-Medium, sans-serif;
+			}			
+			.intro_portal .title img {
+				float: left;
+				margin-right: 0.24rem;
+				width: 0.14rem;
+				height: 0.28rem;
+				margin-top: .41rem;
+			}			
+			.intro_addr {
+				width: 7.5rem;
+				line-height: .32rem;
+				border-bottom: #fff;
+				padding-top: .32rem;
+				background-color: #F6F6F6;
+				padding-bottom: .32rem;
+				padding-left: .24rem;
+			}	
+			.intro_addr span {
+				font-weight: bold;
+			}	
+			.intro_addr p {
+				color: #595959;
+				line-height: .45rem;
+				font-size: .32rem;
+				font-family: PingFangSC-Light, sans-serif;
+			}			
+			.intro_addr .intro_title {
+				color: #25233A;
+				font-size: .37rem;
+				line-height: .52rem;
+				margin-bottom: .05rem;
+				font-weight: bold;
+				font-family: PingFangSC-Medium, sans-serif;
+			}					
+			.itro_txt {
+				border-top: 1px solid #D8D8D8;
+				background-color: #F6F6F6;
+				padding: .24rem;
+			}			
+			.itro_txt p {
+				color: #25233A;
+				font-size: .32rem;
+				font-family: PingFangSC-Regular;
+				line-height: .48rem;
+			}	
+			#dingwei{
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: #F6F6F6;
+				width: 100%;
+			}								
+			.talk_message{
+				margin-top: .32rem;
+				/*top: 5.22rem;*/
+				width: 7.5rem;
+				/*left: 7.5rem;*/
+				background-color: #F6F6F6;
+				position: relative;
+				padding-top:.98rem;
+			}			
+			.talk_message_title {
+				width: 7.5rem;
+				height: 0.88rem;
+				position: relative;
+				padding-top: 0.24rem;
+				padding-bottom: 0.24rem;
+				box-shadow: 0 0.02rem 0.03rem #f6f6f6;
+				border-bottom: solid 1px #D8D8D8;
+			}			
+			.talk_message_ul {
+				width: 7.5rem;
+				height: auto;
+			}			
+			.talk_message_ul li:nth-child(1) {
+				border-bottom: none;
+			}			
+			.talk_message_list {
+				width: 7.5rem;
+				border-bottom: solid 1px #D8D8D8;
+				clear: both;
+			}			
+			.talk_message_list_left {
+				margin-left: 0.24rem;
+				width: 0.64rem;
+				height: 0.64rem;
+				border-radius: 50%;
+				margin-right: 0.25rem;
+				float: left;
+			}			
+			.talk_message_list_left img {
+				width: 0.64rem;
+				height: 0.64rem;
+			}			
+			.talk_message_list_right{
+				float: left;
+				padding-right: 0.24rem;
+				width: 6.37rem;
+				margin-bottom:0.24rem;
+			}			
+			.talk_message_list_right_name {
+				margin-top: 0.32rem;
+				height: 0.45rem;
+				line-height: 0.45rem;
+				font-family: PingFangSC-Medium;
+				color: #25233A;
+				font-size: 0.32rem;
+				font-weight: bold;
+			}			
+			.talk_message_list_right_detail {
+				margin-top: 0.16rem;
+				/*margin-bottom: 0.24rem;*/
+				color: #25233A;
+				font-size: 0.32rem;
+				line-height: 0.45rem;
+				font-family: PingFangSC-Regular;
+			}							
+			.bg123 {
+				z-index: 1000000;
+			}			
+			.footer {
+				width: 7.5rem;
+				left: 50%;
+				margin-left: -3.75rem;
+			}			
+			.botton_center li {
+				width: 50%;
+			}			
+			.botton_center a {
+				font-weight: bold;
+			}			
+			.bottom_border {
+				border-bottom: 1px solid #D8D8D8;
+				text-align: center;
+				z-index:10;
+			}			
+			.bottom_border li {
+				text-align: -webkit-center;
+				border-right: 1.6px solid #c8c8c8;
+			}			
+			.bottom_border span {
+				display: block;
+				color: #595959;
+				float: left;
+				margin-top: 0.2rem;
+				margin-left: .1rem;
+				font-size: .32rem;
+				font-family: PingFangSC-Light;
+				font-weight: none;
+				line-height: .45rem;
+			}			
+			.bottom_border li img {
+				display: block;
+				width: 0.48rem;
+				height: 0.48rem;
+				margin-top: 0.2rem;
+			}			
+			.on2 img {
+				float: left;
+				margin-left: 40%;
+			}			
+			.tab-nmb-hover {
+				position: fixed;
+				left: 0;
+				top: 0.98rem;
+				width: 100%;
+			}
+			/* 输入部分 */
+           	.read_cont{
+           		width: 7.5rem;
+           		position: fixed;
+           		z-index: 1000;
+           		background-color: #f6f6f6;
+           	}
+           	.soll{
+            	width: 7.02rem;
+            }
+			.read_cont .read_cont_detail{
+				width:7.5rem;
+				border: none;
+				resize: none;
+				background: #f6f6f6;
+				padding:.24rem .24rem;
+				overflow-x: hidden;
+				font-size: 0.32rem;
+				color: #25233a;
+				line-height: 0.45rem;
+				font-family: PingFangSCa-Regular;
+				height: 100%;
+			}
+			.talk_message_cont{
+				width: 7.5rem;
+				height: 0.88rem;
+				position: relative;
+				padding-top: 0.2rem;
+				padding-bottom: 0.2rem;
+				box-shadow: 0 0.02rem 0.03rem #f6f6f6;
+				border-bottom: solid 1px #D8D8D8;
+			}			
+			.talk_message_cont_return{
+				margin: 0 auto;
+				position: absolute;
+				left: 0.24rem;
+				width: 0.25rem;
+				height: 0.48rem;
+				background-image: url(../../images/return2.png);
+				background-position: 0 0;
+				background-repeat: no-repeat;
+				background-size: 0.25rem 0.48rem;
+			}			
+			.talk_message_cont_notice{
+				margin: 0 auto;
+				width: 0.48rem;
+				height: 0.48rem;
+				background-image: url(../../images/qr-d-1.png);
+				background-position: 0 0;
+				background-repeat: no-repeat;
+				background-size: 0.48rem 0.48rem;
+			}			
+			.talk_message_cont_send{
+				position: absolute;
+				width: 0.48rem;
+				height: 0.44rem;
+				right: .24rem;
+				top: 0.2rem;
+				background-image: url(../../images/send.png);
+				background-position: 0 0;
+				background-repeat: no-repeat;
+				background-size: 0.48rem 0.44rem;
+			}
+			/*回复  点赞 模块*/
+			.talk_message_list_right_huifu{
+				margin-top: 0.08rem;
+				color: #25233A;
+				font-size: 0.32rem;
+				line-height: 0.45rem;
+				font-family: PingFangSC-Regular;
+			}
+			.talk_message_list_right_huifu span{
+				color: #25233A;
+				font-size: 0.32rem;
+				font-weight: bold;
+				font-family: PingFangSC-Medium;
+			}
+			.talk_message_list_right 
+			.user_good,
+			.user_good_qx{
+				float:right;
+				margin-top: -.85rem;
+				margin-right: .39rem;
+			}
+			
+			.talk_message_list_right .user_good img{
+				margin-top: -0.4rem;
+			}
+			.talk_message_list_right span img{
+				width:.48rem;
+				height:.48rem;
+			}
+			.talk_message_list_right i{
+				font-size:.37rem;
+				font-family: PingFangSC-Medium;
+				color:#f69200;
+				left:.16rem;
+				position: relative;
+				top: -.05rem;
+			}		
+		</style>
 	</head>
 
 	<body>
@@ -59,7 +430,9 @@
 								</div>
 								<div class="talk_message_list_right">
 									<p class="talk_message_list_right_name">拔剑乌托邦</p>
+									<span class="user_good"><img src="../../images/pr-e-1.png" alt="" data="../../images/pr-e-3.png"/><i class="dianz" style="display:none">8</i></span>	
 									<p class="talk_message_list_right_detail">写的很好，遗憾未能参见！</p>
+									<p class="talk_message_list_right_huifu"><span>再见明月</span>回复<span>披剑乌托邦：</span>可惜，我也没去。</p>
 								</div>
 							</li>
 							<li class="talk_message_list">
@@ -68,6 +441,7 @@
 								</div>
 								<div class="talk_message_list_right">
 									<p class="talk_message_list_right_name">再见流月</p>
+									<span class="user_good_qx"><img src="../../images/pr-e-3.png" alt="" data="../../images/pr-e-1.png"/><i class="dianz">8</i></span>	
 									<p class="talk_message_list_right_detail">写的很好，遗憾未能参见！</p>
 								</div>
 							</li>
@@ -217,23 +591,23 @@
 			$('.talk_message_cont_send').click(function(){
 				$('.read_cont').animate({'top':winHeight});
 				$('.read_cont_detail').val('');
-			})
+			});
 			$('.talk_message_cont_return').click(function(){
 				$('.read_cont').animate({'top':winHeight});
 				$('.read_cont_detail').val('');
-			})
+			});
 			$('.intro_detail_portal_click').click(function(){
 				$('.intro_detail').animate({'left':'7.5rem'});
-			})
+			});
 			$('.talk_message_title .talk_message_title_close').click(function(){
 				$('.talk_hidden').css('display','block');
 				$('.talk_message').animate({'left':'7.5rem'});
 				$('.face-content').animate({'left':'7.5rem'});
-				$('.on2 img').attr('src','images/qr-d-1.png');
-				$('.on1 img').attr('src','images/pr-e-1.png');
+				$('.on2 img').attr('src','../../images/qr-d-1.png');
+				$('.on1 img').attr('src','../../images/pr-e-1.png');
 				$('.z-sr').animate({'left':'200%'});
 				$('.talk_hidden').animate({'left':'0'});
-			})
+			});
 	
 			//分享
 			$('.on3 img').click(function() {
@@ -242,6 +616,21 @@
 			$('.bg123').click(function() {
 				$(this).hide();
 			});
+			
+			//添加点赞
+			$('.user_good').toggle(function() { 
+				$(this).find('img').attr('src',$(this).find('img').attr('data'));
+				//$('i').css('display','block');
+			},function(){
+				$('.user_good img').attr('src','../../images/pr-e-1.png');
+			})
+			//取消点赞
+			$('.user_good_qx').toggle(function() { 
+				$(this).find('img').attr('src',$(this).find('img').attr('data'));
+			},function(){
+				$('.user_good_qx img').attr('src','../../images/pr-e-3.png');
+			})
+
 		</script>
 	</body>
 </html>
