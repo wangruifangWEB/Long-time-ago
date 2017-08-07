@@ -369,6 +369,7 @@
 						new newObj('#right_table2 .shadow .sit');
 						$('#right_div2').scrollTop($('.add_row:last').offset().top);
 						$('.modify').on('click',function(){
+							$('#right_table2 tr td').css({'pointer-events': 'auto'});
 							var x=$('.modify').index(this);
 							$('#right_table2 tr').eq(x).addClass('shadow').siblings().removeClass('shadow');
 							$('#left_table2 tr').eq(x).addClass('shadow').siblings().removeClass('shadow');
@@ -423,7 +424,7 @@
 								$('#right_table2 tr').eq(x).addClass('shadow').siblings().removeClass('shadow');
 								$('#left_table2 tr').eq(x).addClass('shadow').siblings().removeClass('shadow');
 							}else{
-								
+								$('#right_table2 tr td').css({'pointer-events': 'none'});
 								var x=$('.confirm').index(this);
 								$('#right_table2 tr').eq(x).removeClass('shadow');
 								$('#left_table2 tr').eq(x).removeClass('shadow');
@@ -475,6 +476,7 @@
 				
 				
 				$('.modify').on('click',function(){
+					$('#right_table2 tr td').css({'pointer-events': 'auto'});
 					var x=$('.modify').index(this);
 					$('#right_table2 tr').eq(x).addClass('shadow').siblings().removeClass('shadow');
 					$('#left_table2 tr').eq(x).addClass('shadow').siblings().removeClass('shadow');
@@ -527,6 +529,7 @@
 						$('#right_table2 tr').eq(x).addClass('shadow').siblings().removeClass('shadow');
 						$('#left_table2 tr').eq(x).addClass('shadow').siblings().removeClass('shadow');
 					}else{
+						$('#right_table2 tr td').css({'pointer-events': 'none'});
 						var x=$('.confirm').index(this);
 						$('#right_table2 tr').eq(x).removeClass('shadow');
 						$('#left_table2 tr').eq(x).removeClass('shadow');

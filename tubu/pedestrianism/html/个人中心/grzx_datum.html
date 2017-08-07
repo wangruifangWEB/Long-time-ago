@@ -11,8 +11,116 @@
 		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" href="../../single_css/global.css">
-		<link rel="stylesheet" href="../../single_css/grzx_datum.css">
-		
+		<!--<link rel="stylesheet" href="../../single_css/grzx_datum.css">-->
+		<style>
+			.bg{
+				margin-bottom: 0.32rem;
+			}
+			table{
+				border-spacing: 0 !important;
+			}
+			
+			.zl{
+				padding-top: 1.21rem;
+			}
+			.d-title{
+				position: relative;
+			}
+			.outerScroller{
+				width: 7.5rem;
+				margin: 0 auto;
+			}	
+			.scroll{
+				position: relative;
+				overflow: hidden;
+			}
+			.z-alert{
+				position: absolute;
+			}
+			.z-boxr{
+				width: 3.84rem;	
+			}
+			.z-boxl{
+				background-color: #f6f6f6;
+			}
+			.clearfix{
+				clear: both;
+			}
+			.vitality{
+				width: 6.24rem;
+				height: 1.01rem;
+				padding-top: 0.24rem;
+				padding-bottom: 0.32rem;
+				line-height: 0.45rem;
+			}
+			.vitality_text{
+				
+				/*width: 100%;*/
+				height: 0.45rem;
+				line-height: 0.45rem;
+				color: #595959;
+				font-size: 0.32rem;
+				float: left;
+				font-family: PingFangSC-Regular;
+				padding-left: 0.73rem;
+			}
+			.vitality_list_warp{
+				width: 3.84rem;
+				float: right;
+				position: relative;
+			}
+			.vitality_list{
+				margin-top: 0.11rem;
+				width: 3.84rem;
+				
+				height: 0.24rem;
+				border-radius: 0.12rem;
+			}
+			.vitality_list li{
+				width: 33.3%;
+				height: 0.24rem;
+				float: left;
+				list-style: none;
+			}
+			.htj1{
+				color: #F69200;
+				border: solid 0.02rem #f69200;
+			}
+			.vitality_list li:nth-child(1){
+				background-color: #3CBBFD;
+				border-bottom-left-radius: 0.12rem;
+				border-top-left-radius: 0.12rem;
+			}
+			.vitality_list li:nth-child(2){
+				background-color: #FDD73C;
+			}
+			.vitality_list li:nth-child(3){
+				background-color: #FD663C;
+				border-bottom-right-radius: 0.12rem;
+				border-top-right-radius: 0.12rem;
+			}
+			.vitality_list_point{
+				width: 0.32rem;
+				height: 0.32rem;
+				border-radius: 50%;
+				background-color: #fd663c;
+				box-shadow: 0 0 0.04rem rgba(0,0,0,0.3);
+				position: absolute;
+				/*left: 3rem;*/
+				top: 0.06rem;
+			}
+			.z-boxl1{
+				background-image: url(../../images/notice.png);
+				background-position: 0.08rem 0.08rem;
+				background-repeat: no-repeat;
+				background-size: 0.4rem 0.4rem;
+				
+			}
+			.z-boxl{
+				color: #f69200;
+			}
+		</style>	
+	
 	</head>
 	<body>
 		<div class="outerScroller">
@@ -30,75 +138,76 @@
 						<h4 >再见明月</h4>
 						<h5><img  src="../../images/z-moon.png" alt="" /></h5>
 					</div>
-					<div class="zl widthbox">
-						<!--<button class="htj">保存</button>-->
-						<button class="htj1 htj">编辑</button>  <!--不需要删除即可 -->
-						<div class="z-box">
-							<div class="z-boxl">
-								<div class="z-boxl1">
-									<h4>
-										<p>北京市</p>
-										<p>奥林匹克森林公园</p>
-									</h4>
-									<h5>2017.05.06</h5>
+					<form action="" method="post">
+						<div class="zl widthbox">
+							<!--<button class="htj">保存</button>-->
+							<button class="htj1 htj" id="submit">编辑</button>  <!--不需要删除即可 -->
+							<div class="z-box">
+								<div class="z-boxl">
+									<div class="z-boxl1">
+										<h4>
+											<p>北京市</p>
+											<p>奥林匹克森林公园</p>
+										</h4>
+										<h5>2017.05.06</h5>
+									</div>
+									<div class="z-boxl2">
+										<h2 class="enter_num">27</h2>
+										<p>报名次数</p>
+									</div>
+									<div class="z-boxl2">
+										<h2 class="join_num">25</h2>
+										<p>参加次数</p>
+									</div>
 								</div>
-								<div class="z-boxl2">
-									<h2 class="enter_num">27</h2>
-									<p>报名次数</p>
-								</div>
-								<div class="z-boxl2">
-									<h2 class="join_num">25</h2>
-									<p>参加次数</p>
+								<div class="z-boxr">
+									<img class="z-boxr-bg" src="../../images/z-hu_03.jpg" alt="">
 								</div>
 							</div>
-							<div class="z-boxr">
-								<img class="z-boxr-bg" src="../../images/z-hu_03.jpg" alt="">
+							<div class="clearfix" style="clear: both;"></div>
+							<div class="vitality">
+								<p class="vitality_text">活跃度</p>
+								<div class="vitality_list_warp">
+									<ul class="vitality_list">
+										<li></li>
+										<li></li>
+										<li></li>
+									</ul>
+									<div class="vitality_list_point"></div>
+								</div>
+								
+							</div>
+							<ul class="c">
+							 	<li class="first">
+							 		<div><span>姓名</span><input type="text" name="" id="" value="" disabled="disabled"/></div> 
+							 		<div><span>电话</span><input type="number" name="" id="usertel" value="" disabled="disabled" onblur="checktel()"/></div>
+							 	</li>
+							 </ul>	
+							 <ul class="c">
+							 	<li>
+							 		<div><span>身份证</span><input type="text" name="" id="usercard" value="" disabled="disabled"  onblur="checknum()"/></div>
+							 	</li>
+							 </ul>
+						</div>
+						<div class="d-information widthbox">
+							<div class="nr">
+								<span>性别</span>
+								<span>年龄</span>
+								<span>身高cm</span>
+								<span>体重kg</span>
+							</div>
+							<div class="tx">
+								<div class="dx">
+									<label><input name="Fruit" type="radio" value="" checked disabled="disabled"/><img src="../../images/gg(1).png" alt="" /></label>
+									<span><i></i></span>
+									<label><input name="Fruit" type="radio" value="" disabled="disabled"/> <img src="../../images/ddd.png"/></label> 
+								</div>					
+								<input type="number" name="" id="" value="" disabled="disabled"/>
+								<input type="number" name="" id="" value="" disabled="disabled"/>
+								<input type="number" name="" id="" value="" disabled="disabled"/>
 							</div>
 						</div>
-						<div class="clearfix" style="clear: both;"></div>
-						<div class="vitality">
-							<p class="vitality_text">活跃度</p>
-							<div class="vitality_list_warp">
-								<ul class="vitality_list">
-									<li></li>
-									<li></li>
-									<li></li>
-								</ul>
-								<div class="vitality_list_point"></div>
-							</div>
-							
-						</div>
-						<ul class="c">
-						 	<li class="first">
-						 		<div><span>姓名</span><input type="text" name="" id="" value="" readonly="readonly"/></div> 
-						 		<div><span>电话</span><input type="number" name="" id="" value="" readonly="readonly"/></div>
-						 	</li>
-						 </ul>	
-						 <ul class="c">
-						 	<li>
-						 		<div><span>身份证</span><input type="text" name="" id="" value="" readonly="readonly"/></div>
-						 	</li>
-						 </ul>
-					</div>
-					<div class="d-information widthbox">
-						<div class="nr">
-							<span>性别</span>
-							<span>年龄</span>
-							<span>身高cm</span>
-							<span>体重kg</span>
-						</div>
-						<div class="tx">
-							<div class="dx">
-								<label><input name="Fruit" type="radio" value="" checked disabled="disabled"/><img src="../../images/gg(1).png" alt="" /></label>
-								<span><i></i></span>
-								<label><input name="Fruit" type="radio" value="" disabled="disabled"/> <img src="../../images/ddd.png"/></label> 
-							</div>					
-							<input type="number" name="" id="" value="" readonly="readonly"/>
-							<input type="number" name="" id="" value="" readonly="readonly"/>
-							<input type="number" name="" id="" value="" readonly="readonly"/>
-						</div>
-					</div>
-					
+					</form>
 				</section>
 				<div class="z-alert">
 					<ul>
@@ -110,6 +219,59 @@
 			</div>
 		</div>
 		<div class="box-transparent"></div>
-		<script src="../../single_js/grzx_datum.js"></script>
+		<div class="notice_layer_warp">
+			<button class="notice_layer">资料编辑成功！</button>
+		</div>
+		 
+		<!--<script src="../../single_js/grzx_datum.js"></script>-->
+		<script>
+			$('.dx').change(function(){
+				$(this).find('i').toggleClass("lef");
+			})
+			var join_num=$('.join_num').html();
+			var enter_num=$('.enter_num').html();
+				var scale = parseInt(join_num) / parseInt(enter_num)*100+'%' ;
+				$('.vitality_list_point').animate({'left':scale});
+			
+			$('.htj').toggle(function(){
+					// 编辑
+				$('body').find('input').attr('disabled',false);
+				$('.htj1').html('保存');
+				$('.htj1').css({'background-color':'#f69200','color':'#f6f6f6'});
+				$('input[type="radio"]').attr('disabled',false);
+		
+			},function(){
+		//		document.getElementById('submit').submit();	
+				$('.notice_layer').show();
+				$('.notice_layer').fadeOut(1500);
+				$('body').find('input').attr('disabled',true);
+				$('input[type="radio"]').attr('disabled',true);
+				$('.htj1').css({'background-color':'#f6f6f6','color':'#f69200'});
+				$('.htj').html('编辑');
+			})
+			
+			
+			var checktel=function(){
+				var reg=/^1[34578]\d{9}$/g;
+				var usertel=document.getElementById('usertel');
+				if(!reg.test(usertel.value)){
+					$('.notice_layer').html('手机号码格式不对');
+					$('.notice_layer').show();
+					$('.notice_layer').fadeOut(1500);
+					return;
+				}
+				
+			};
+			var checknum=function(){
+				var reg=/^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$|^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/;
+				var usercard=document.getElementById('usercard');
+				if(!reg.test(usercard.value)){
+					$('.notice_layer').html('身份证号格式不对');
+					$('.notice_layer').show();
+					$('.notice_layer').fadeOut(1500);
+					return;
+				}
+			};
+		</script>
 	</body>
 </html>
