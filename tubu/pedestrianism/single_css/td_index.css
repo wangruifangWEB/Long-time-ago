@@ -1,24 +1,3 @@
-.xd-tab-ul-box{
-	width: 7.5rem;
-	left: 50%;
-	margin-left: -3.75rem;
-}
-
-.xd-tab-div{
-	margin: 0 auto;
-}
-.xd-tab-ul{
-	border:0.02rem solid #F69200;
-}
-.xd-tab-ul li a{
-	color:#F69200;
-}
-.xd-tab-ul .active_bg a{
-	color:#fff;
-}
-.active_bg{
-	background: #F69200 !important;
-}
 .list_item{
 	width: 7.5rem;
 	height: auto;

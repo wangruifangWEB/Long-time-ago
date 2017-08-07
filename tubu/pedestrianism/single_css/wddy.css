@@ -7,3 +7,6 @@
 .xd-tab-div{
 	margin: 0 auto;
 }
+.xd-tab-ul .active{
+	background-color: #F69200;
+}
