@@ -160,19 +160,19 @@ header{
 .xd-tab-ul-box{
 	width: 7.5rem;
 	left: 50%;
-	margin-left: -3.75rem;
+	margin-left: -3.75rem;s
 }
 .xd-tab-div{
 	margin: 0 auto;
 }
 .xd-tab-ul{
-	border:0.02rem solid #F69200;
+	border:0.02rem solid #ff9800;
 }
 .xd-tab-ul li a{
 	color:#F69200;
 }
 .xd-tab-ul .active_bg a{
-	color:#fff;
+	color:#f6f6f6;
 }
 .active_bg{
 	background: #F69200 !important;
