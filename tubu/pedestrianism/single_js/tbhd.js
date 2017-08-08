@@ -26,7 +26,7 @@ $(".z-activity div").click(function(){
 											<p>地点：<span>通州大运河</span></p>
 										</div>
 									</li>
-								`);
+								`);金坷垃哈哈 
 							}
 							$('.init-loading').css('display','none');
 							mySwiper.update(); // 重新计算高度;

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html  class="bg1">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/css.css" />
+	<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="../../single_css/global.css">
+	<style>
+		.list_item{
+			width: 7.5rem;
+			height: auto;
+		}
+		.list_item li{
+			width: 85%;
+			height:0.96rem;	
+			position:relative;	
+			background-position: 6.73rem center;
+			background-size: 0.14rem 0.24rem;
+			background-repeat: no-repeat;
+			background-color: #f6f6f6;
+			box-shadow:0 .02rem .03rem rgba(0,0,0,.3);
+		}
+		.list_item li:nth-child(2){
+			margin:0.32rem 0;
+		}
+		.list_item li span{
+			display: block;
+			font-size: .37rem;
+			height: 0.96rem;
+			line-height: 0.96rem;
+			font-family: PingFangSC-Regular;
+		}
+		.list_item li img{
+			display: block;
+			width:.32rem;
+		}	
+		.list_item_header_img{
+			position: relative;
+		}
+		.list_item_header_img_top{
+		    position: absolute;
+		    left: 0.16rem;
+		    top: 0.5rem;
+		}
+		.list_item_header_img_phb{
+		 	position: absolute;
+		    left: .72rem;
+		    top: 0.32rem;
+		}
+		    
+		.list_item_header_img_down{		  
+		    position: absolute;
+		    left: 0.16rem;
+		    top:0.3rem;
+		}	
+		.list_item_left{
+			float: left;
+		}
+		.list_item_left span{
+			color: #595959;
+			display: block;
+		    font-size: .48rem;			  
+		    font-family: PingFangSC-Medium;
+			margin-left:2rem;
+		}
+		.list_item_right{
+			width: 1rem;
+			float: right;
+			margin-right: 0.16rem;
+		}
+		.list_item_right span{
+			color:#FD683F;
+			float: left;
+			font-size: 0.48rem !important;
+			padding-left: 0.16rem;
+			padding-right: 0.2rem;	
+			margin-right: 0 !important;
+		}
+		.list_item_right img{
+			float: left;
+			margin-top:.4rem;
+			vertical-align: middle;
+		}
+	</style>
+</head>
+	<body  class="bg1">
+		<div class="outerScroller">
+			<div class="scroll">
+				<header>
+					<div class="d-title">
+						<a href="#">
+							<img src="../../images/cd.png" alt="" />
+						</a>
+						<span>我的徒步</span>
+					</div>
+				</header>
+				<div class="xd-tab-ul-box">
+					<ul class="xd-tab-ul">  
+						<li><a href="wdtd.html">雷达图</a></li>
+						<li class="active_bg"><a href="wdtd_phb.html">排行榜</a></li>
+					</ul>
+				</div> 
+				<section class="su-tab">
+					<ul class="zl list_item">
+						<li>
+							<a href="javascript:;">
+								<div class="list_item_left">
+									<a href="td_phb.html">
+										<img src="../../images/up.png" alt="" class="list_item_header_img_down"/>
+										<img src="../../images/down.png" alt="" class="list_item_header_img_top"/>
+									</a>
+									<a href="td_phb_search.html">
+										<img src="../../images/phb.png" alt="" class="list_item_header_img_phb" />
+									</a>
+									<span>团队排行榜</span>
+								</div>
+							
+								<div class="list_item_right">
+									<span>2</span>
+									<img src="../../images/red.png" alt=""/>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div class="list_item_left">
+									<img src="../../images/up.png" alt="" class="list_item_header_img_down"/>
+									<img src="../../images/down.png" alt="" class="list_item_header_img_top"/>
+									<img src="../../images/phb.png" alt="" class="list_item_header_img_phb" />
+									<span>个人排行榜</span>
+								</div>
+								
+								<div class="list_item_right">
+									<span>2</span>
+									<img src="../../images/red.png" alt=""/>
+								</div>
+								
+							</a>
+						</li>
+					</ul>
+											
+					<div class="z-alert">
+						<ul>
+							<li>
+								<a href="#"><img src="../../images/list-a-1.png" alt="" class="nm" /><img src="../../images/list-a-2.png" class="zx" />徒步活动</a>
+							</li>
+							<li> 
+								<a href="#" class="active"><img src="../../images/list-b-1.png" alt="" class="nm" /><img src="../../images/list-b-2.png" class="zx" />徒步活动</a>
+							</li>
+							<li>
+								<a href="#"><img src="../../images/list-c-1.png" alt="" class="nm" /><img src="../../images/list-c-2.png" class="zx" />徒步活动</a>
+							</li>
+							<li>
+								<a href="#"><img src="../../images/list-d-1.png" alt="" style="width: .32rem;height: .48rem;margin-left: 0.05rem;" class="nm" /><img src="../../images/list-d-2.png" class="zx" />徒步活动</a>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</div>
+		</div>
+		
+	<div class="box-transparent"></div>
+	</body>
+</html>

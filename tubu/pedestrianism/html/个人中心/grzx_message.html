@@ -11,7 +11,7 @@
 		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" href="../../single_css/global.css">
 		<link rel="stylesheet" href="../../single_css/grzx_message.css">
-		<script src="../../single_js/grzx_message.js"></script>
+		<!--<script src="../../single_js/grzx_message.js"></script>-->
 	</head>
 	<body>
 		<div class="outerScroller">
@@ -26,8 +26,8 @@
 				</header>
 				<div class="xd-tab-ul-box">
 					<ul class="xd-tab-ul">  
-						<li class="active">全部消息</li>
-						<li>未读消息（<span>3</span>）</li>
+						<li class="active show111">全部消息</li>
+						<li class="show222">未读消息（<span>3</span>）</li>
 					</ul>
 				</div> 
 				<div class="xd-tab-div">
@@ -56,6 +56,70 @@
 			</div>
 		</div>
 		<div class="box-transparent"></div>
-		
+		<script type="text/javascript">
+			$(function(){
+				for (var i=0;i<$('.list_item li').length;i++) {
+					var isEven=i % 2;
+					if(isEven==0){
+						$('.list_item li').eq(i).attr('class','odd');
+					}else if(isEven==1){
+						$('.list_item li').eq(i).attr('class','even');
+					}
+				};
+				i=0;
+				$(window).on('ready',function anim(){
+					$(".list_item li:eq("+i+")").animate({
+			            'opacity':'1',
+			            'top':'0'
+			        },100,function(){
+			            i++;
+			            $(this).delay().next().animate(50,anim());
+			        });
+				})
+			 	$(".xd-tab-ul li").click(function() {
+					var x=$(".xd-tab-ul li").index(this);
+					$('.list_item li').css({'top':'-0.32rem','opacity': '0'});
+					$(".xd-tab-ul li").eq(x).addClass('active').siblings().removeClass('active');
+					$(".xd-tab-div .list_item").eq(x).show().siblings().hide();
+					
+					for (var i=0;i<$('.list_item li').length;i++) {
+						var isEven=i % 2;
+						if(isEven==0){
+							$('.list_item li').eq(i).attr('class','odd');
+						}else if(isEven==1){
+							$('.list_item li').eq(i).attr('class','even');
+						}
+					}
+				});
+				
+				i=0;
+				$(".show111").on('click',function anim(){
+					$(".xd-tab-div1 li:eq("+i+")").animate({
+			            'opacity':'1',
+			            'top':'0'
+			        },100,function(){
+			            i++;
+			            $(this).delay().next().animate(50,anim());
+			        });
+			    })
+				$(".show222").on('click',function anim(){
+					$(".xd-tab-div2 li:eq("+i+")").animate({
+			            'opacity':'1',
+			            'top':'0'
+			        },100,function(){
+			            i++;
+			            $(this).delay().next().animate(50,anim());
+			        });
+			    })
+				$('.unread').parent().click(function(){
+					location.href='grzx_message_detail.html';
+				})
+				
+				
+				
+				
+			})
+
+		</script>
 	</body>
 </html>

@@ -12,11 +12,11 @@
 		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" href="../../single_css/global.css">
 		<link rel="stylesheet" href="../../single_css/grzx_message_detail.css">
-		<script src="../../single_js/grzx_message_detail.js"></script>
-		
+		<!--<script src="../../single_js/grzx_message_detail.js"></script>-->
 	</head>
 	<body>
 		<div class="outerScroller">
+			
 			<div class="scroll">
 				<header>
 					<div class="d-title">
@@ -29,9 +29,39 @@
 				<div class="message_detail">
 					<span class="bold">再见流月</span>拒绝了你加入<span class="bold">不良人</span>的请求,并向你扔了一只<span class="bold">哈士奇</span>;
 				</div>
-				
+				<form action="" method="post">
+					<footer class="footer">
+						<ul class="bottom">
+							<li>
+								<button type="button" id="refuse">拒绝</button>
+							</li>
+							<li>
+								<button id="submit" name="submit" type="submit">加入</button>
+							</li>
+						</ul>
+					</footer> 
+				</form>
+			</div>
+			<div class="notice_layer_warp">
+				<button class="notice_layer">资料编辑成功！</button>
 			</div>
 		</div>
 		<div class="box-transparent"></div>
+		
+		<script type="text/javascript">
+			$(function(){
+				$('.scroll').height($(window).height());
+				$('#refuse').click(function(){
+					$('.notice_layer').html('您拒绝了加入团队不良人的请求');
+					$('.notice_layer').show();
+					$('.notice_layer').fadeOut(1500);
+				});
+				$('#submit').click(function(){
+					$('.notice_layer').html('您同意了加入团队不良人的请求');
+					$('.notice_layer').show();
+					$('.notice_layer').fadeOut(1500);
+				})
+			})
+		</script>
 	</body>
 </html>

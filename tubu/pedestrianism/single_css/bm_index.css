@@ -216,7 +216,7 @@
 }			
 .bottom_border li {
 	text-align: -webkit-center;
-	border-right: 2px solid #c8c8c8;
+	border-right:1.6px solid #c8c8c8;
 }			
 .bottom_border span {
 	display: block;

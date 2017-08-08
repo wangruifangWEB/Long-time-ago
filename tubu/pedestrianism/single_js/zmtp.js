@@ -114,7 +114,6 @@ $('.user_good_qx').toggle(function() {
 })
 
 
-
 var loadFlag = true;
 var mySwiper1 = new Swiper('.swiper1 .swiper-container',{
 	direction: 'vertical',
@@ -208,7 +207,7 @@ var mySwiper2 = new Swiper('.swiper2 .swiper-container',{
 						$('.z-sr').hide();
 					}
 					setTimeout(function() {
-						for(var i =0;i<6;i++) {
+						for(var i =0;i<6;i++){
 							$(".swiper2 .list-group .talk_message_ul").append(`
 								<li class="talk_message_list">
 									<div class="talk_message_list_left">
@@ -223,7 +222,6 @@ var mySwiper2 = new Swiper('.swiper2 .swiper-container',{
 						}
 						$(".loadtip p").hide();
 						$('.z-sr').show();
-//									
 						mySwiper2.update(); // 重新计算高度;
 					}, 800);
 				}
