@@ -35,36 +35,57 @@
 					</div>
 					<div class="xd-tab-div">
 						<ul class="xd-tab-div1 list_item">
-							<li>
+							<li class="list_item_info">
 								<div class="xd-tab-div1_left">
 									<a href="javascript:;">邀请</a>
 									<a href="javascript:;">管理</a>
 								</div>
 								<div class="xd-tab-div1_right">
 									<ul class="head_list">
-										<!--<li><img src="../../images/head_list.jpg" alt="" /></li>
 										<li><img src="../../images/head_list.jpg" alt="" /></li>
 										<li><img src="../../images/head_list.jpg" alt="" /></li>
 										<li><img src="../../images/head_list.jpg" alt="" /></li>
 										<li><img src="../../images/head_list.jpg" alt="" /></li>
 										<li><img src="../../images/head_list.jpg" alt="" /></li>
 										<li><img src="../../images/head_list.jpg" alt="" /></li>
-										<li><img src="../../images/head_list.jpg" alt="" /></li>-->
-										<li></li>
-										<li></li>
-										<li></li>
-										<li></li>
-										<li></li>
-										<li></li>
-										<li></li>
-										<li></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+									</ul>
+									<ul class="infor_list">
+										<li class="infor_list_icon"><img src="../../images/bqr.png" alt="" /></li>
+										<li class="infor_list_text">健康不求人</li>
+										<li class="infor_list_num"><span>1300</span></li>
+									</ul>
+								</div>
+							</li>
+							<li class="list_item_info">
+								<div class="xd-tab-div1_left">
+									<a href="javascript:;">邀请</a>
+									<a href="javascript:;">退出</a>
+								</div>
+								<div class="xd-tab-div1_right">
+									<ul class="head_list">
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+									</ul>
+									<ul class="infor_list">
+										<li class="infor_list_icon"><img src="../../images/bqr2.png" alt="" /></li>
+										<li class="infor_list_text">快乐徒步走</li>
+										<li class="infor_list_num"><span>1300</span></li>
 									</ul>
 								</div>
 							</li>
 						</ul>
-						<ul class="xd-tab-div2 list_item">
-							<li></li>
-						</ul>
+						<!--<ul class="xd-tab-div2 list_item">
+							<li><button>团队</button></li>
+							<li>个人</li>
+						</ul>-->
 					</div>
 				</section>
 				<div class="z-alert">
@@ -81,6 +102,21 @@
 					</ul>
 				</div>
 			</div>
-		<div class="box-transparent"></div>	
+			<footer class="footer">
+				<ul class="bottom">
+					<li>
+						<a href="javascript:;">创建团队</a>
+					</li>
+				</ul>
+			</footer> 
+			<div class="box-transparent"></div>	
+		</div>
+		<script type="text/javascript">
+			$('.xd-tab-ul li').click(function(){
+				var x=$('.xd-tab-ul li').index(this);
+				$('.xd-tab-ul li').eq(x).addClass('active_bg').siblings().removeClass('active_bg');
+				$('.xd-tab-div .list_item').eq(x).show().siblings().hide();
+			})
+		</script>
 	</body>	
 </html>
