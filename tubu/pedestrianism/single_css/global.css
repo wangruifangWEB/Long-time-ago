@@ -138,3 +138,48 @@ header{
 	left: -50%;
 	bottom: 5rem;
 }
+
+/*搜索框*/
+.z_search{
+	text-align: center;
+}
+.z_search input{
+	width:6.4rem;
+	height:.64rem;
+	border: none;
+	font-size: .32rem;
+	line-height: .37rem;
+	text-align: center;
+	border-radius: .15rem;
+	background-color: #f5f5f5;
+	font-family: PingFangSC-Light;
+	box-shadow:0 0rem .01rem rgba(0,0,0,.3);
+}
+
+/* tab切换 */
+.xd-tab-ul-box{
+	width: 7.5rem;
+	left: 50%;
+	margin-left: -3.75rem;s
+}
+.xd-tab-div{
+	margin: 0 auto;
+}
+.xd-tab-ul{
+	border:0.02rem solid #ff9800;
+}
+.xd-tab-ul li a{
+	color:#F69200;
+}
+.xd-tab-ul .active_bg a{
+	color:#f6f6f6;
+}
+.active_bg{
+	background: #F69200 !important;
+}
+.odd{
+	background-color: #F6F6F6 !important;
+}
+.even{
+	background-color: #F0F0F0 !important;
+}
