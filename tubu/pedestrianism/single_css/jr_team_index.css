@@ -33,7 +33,7 @@
 .xd-tab-div1_right .head_list{
 	padding: 0.18rem 0.28rem;
 }
-.xd-tab-div1_right .head_list img{
+/*.xd-tab-div1_right .head_list img{
 	display: inline-block;
 	float: left;
 	width: 0.64rem;
@@ -47,5 +47,21 @@
 }
 
 .xd-tab-div1_right .head_list img:nth-child(5),.xd-tab-div1_right .head_list img:nth-child(6),.xd-tab-div1_right .head_list img:nth-child(7),.xd-tab-div1_right .head_list img:nth-child(8){
+	margin-bottom: 0;
+}*/
+.head_list li{
+	display: inline-block;
+	float: left;
+	width: 0.64rem;
+	height: 0.64rem;
+	margin-right: 0.24rem;
+	margin-bottom: 0.2rem;
+	background-color: #f00;
+}
+.xd-tab-div1_right .head_list li:nth-child(4),.xd-tab-div1_right .head_list li:nth-child(8),{
+	margin-right: 0;
+}
+
+.xd-tab-div1_right .head_list li:nth-child(5),.xd-tab-div1_right .head_list li:nth-child(6),.xd-tab-div1_right .head_list li:nth-child(7),.xd-tab-div1_right .head_list li:nth-child(8){
 	margin-bottom: 0;
 }
