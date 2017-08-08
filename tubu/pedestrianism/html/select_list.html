@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>徒步活动</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../single_css/global.css" />
+		<link rel="stylesheet" href="../css/css.css" />
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/fontSize.js" type="text/javascript" charset="utf-8"></script> 
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.swiper-container, .w{height: calc(100vh - 90px);}
+			.z-healthy{
+				width: 7.5rem !important;
+				margin: 0 auto;
+			}
+			.z-healthy li{
+				margin-bottom: 0.32rem;
+				height: 3.85rem;
+			}
+			.z-boxr{
+				width: 3.84rem;
+			}
+			.z-boxl{
+				background-color: #f6f6f6;
+			}
+			.loadtip p{
+				display: none;
+				width: 7.5rem;
+				bottom: 0;
+				margin-bottom: 0;
+				color: #000;
+			}
+			.buttom-pos{
+				z-index: 100;
+				bottom: -0.05rem;
+			}
+			.z-healthy{
+				display: none;
+			}
+			.show111{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>  
+		<header>
+			<div class="d-title">
+				<a href="#">
+					<img src="../images/cd.png" alt="" />
+				</a>
+				<span>健康指导</span>
+			</div>
+		</header>
+		<section class="zsec-bg">
+				<div id="slider" class="mui-slider" >
+					<div class="mui-slider-group mui-slider-loop">
+						<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+						<div class="mui-slider-item mui-slider-item-duplicate">
+							<a href="#">
+								<img src="../images/z-tu_03.jpg">
+							</a>
+						</div>
+						<!-- 第一张 -->
+						<foreach name="brr" item="vo">
+						<div class="mui-slider-item">
+							<a href="#">
+								<img src="../images/z-tu_03.jpg">
+							</a>
+						</div>
+						</foreach>
+						<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+						<div class="mui-slider-item mui-slider-item-duplicate">
+							<a href="#">
+								<img src="../images/z-tu_03.jpg">
+							</a>
+						</div>
+					</div>
+					<div class="mui-slider-indicator">
+						<foreach name="brr" item="vo" key="k">
+						<if condition="$k eq 0">
+						<div class="mui-indicator mui-active"></div>
+						<else/>
+						<div class="mui-indicator"></div>
+						</if>
+						</foreach>
+					</div>
+				</div>			
+			<div class="z-activity">
+				<div class="active">全部课程</div>
+				<div>我的课程</div>
+			</div>
+			
+			<div class="z-activityul">
+				<div>
+					<div class="swiper-container">
+						<div class="swiper-wrapper w">
+							<div class="swiper-slide d">
+								<div class="init-loading list-group-item text-center" style="display: none;"><img src="../images/loading.gif"/></div>
+								<div class="swiper-container2">
+									<div class="swiper-slide list-group">	
+										<div class="z-healthy z-healthy1 show111">
+											<ul>
+												<!--<foreach name="healthy" item="vo">-->
+												<li>
+													<div class="z-boxl">
+														<div class="z-boxl1">
+															<h4>
+																<p>北京市</p>
+																<p>奥林匹克森林公园</p>
+															</h4>
+															<h5>2017.04.19</h5>
+														</div>
+														<div class="z-boxl2">
+															<h2>0</h2>
+															<p>售价（¥）</p>
+														</div>
+														<div class="z-boxl2">
+															<h2>354</h2>
+															<p>评论</p>
+														</div>
+													</div>
+													<div class="z-boxr">
+														<img class="z-boxr-bg" src="../images/z-hu_03.jpg" alt="">
+														<div class="z-boxr-bottom">
+															<img src="../images/z-moon.png" alt="">
+															<span>拔剑乌托邦</span>
+															<p class="z-boxr-border">9</p>
+														</div>
+													</div>
+												</li>
+											<!--</foreach>-->
+											</ul>
+										</div>
+										<div class="z-healthy z-healthy2">
+											<ul class="pa-b-12">
+												<!--<foreach name="myhealthy" item="vo">-->
+												<li>
+													<div class="z-boxl">
+														<div class="z-boxl1">
+															<h4>
+																<p>北京市</p>
+																<p>奥林匹克森林公园</p>
+															</h4>
+															<h5>2017.04.19</h5>
+														</div>
+														<div class="z-boxl2">
+															<h2>0</h2>
+															<p>售价（¥）</p>
+														</div>
+														<div class="z-boxl2">
+															<h2>354</h2>
+															<p>评论</p>
+														</div>
+													</div>
+													<div class="z-boxr">
+														<img class="z-boxr-bg" src="../images/z-hu_03.jpg" alt="">
+														<div class="z-boxr-bottom">
+															<img src="../images/z-moon.png" alt="">
+															<span>拔剑乌托邦</span>
+															<p class="z-boxr-border">9</p>
+														</div>
+													</div>
+												</li>
+											<!--</foreach>-->
+												
+												
+												<!--<input type="file" accept="video/*" capture="camera">  --->
+											</ul>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="loadtip"><p></p></div>
+					<div class="swiper-scrollbar"></div>
+				</div>
+				<div class="upload_kc">
+					<a style="color:#000000;" href="<{:U('Home/Healthy/myhealthyPost')}>"><buttom class='buttom-pos'>上传课程</buttom></a>
+				</div>
+				
+			</div>
+		</section>
+		<!--弹窗-->
+		<include file="Index:nav" />
+	</body> 
+</html>
+<script>
+	$('.upload_kc').css('display','none');
+	var slider = mui("#slider");
+			slider.slider({
+				interval: 2000
+		});
+		
+  $(".z-activity div").click(function(){
+	var i = $(this).index();
+	$(this).addClass("active").siblings().removeClass('active');
+	if(i==0){
+		$('.upload_kc').css('display','none');
+		$('.swiper-wrapper.w').css('transform','translate3d(0, 0, 0)');
+		$('.z-healthy1').addClass('show111').siblings().removeClass('show111');
+		$.ajax({
+			url:"",
+			type:"post",
+			success:function(data){
+				
+			},
+			error:function(){
+				$('.init-loading').css('display','block');
+				setTimeout(function() {
+					for(var i =0;i<20;i++) {
+						$(".list-group .z-healthy1 ul").eq(mySwiper2.activeIndex).append(`
+							<li>
+								<div class="z-boxl">
+									<div class="z-boxl1">
+										<h4>
+											<p>北京市</p>
+											<p>奥林匹克森林公园</p>
+										</h4>
+										<h5>2017.04.19</h5>
+									</div>
+									<div class="z-boxl2">
+										<h2>0</h2>
+										<p>售价（¥）</p>
+									</div>
+									<div class="z-boxl2">
+										<h2>354</h2>
+										<p>评论</p>
+									</div>
+								</div>
+								<div class="z-boxr">
+									<img class="z-boxr-bg" src="../images/z-hu_03.jpg" alt="">
+									<div class="z-boxr-bottom">
+										<img src="../images/z-moon.png" alt="">
+										<span>拔剑乌托邦</span>
+										<p class="z-boxr-border">9</p>
+									</div>
+								</div>
+							</li>
+						`); 
+					}
+					$('.init-loading').css('display','none');
+					mySwiper.update(); // 重新计算高度;
+				}, 800);
+			}
+		});
+	}
+	if(i==1){
+		$('.upload_kc').css('display','block');
+		$('.swiper-wrapper.w').css('transform','translate3d(0, 0, 0)');
+		$('.z-healthy2').addClass('show111').siblings().removeClass('show111');
+//		$('.z-healthy2').show().siblings().hide();
+		$.ajax({
+			type:"post",
+			url:"",
+			success:function(data){
+				
+			},
+			error:function(){
+				$('.init-loading').css('display','block');
+				setTimeout(function() {
+					for(var i =0;i<20;i++) {
+						$(".list-group .z-healthy2 ul").eq(mySwiper2.activeIndex).append(`
+							<li>
+								<div class="z-boxl">
+									<div class="z-boxl1">
+										<h4>
+											<p>北京市</p>
+											<p>奥林匹克森林公园</p>
+										</h4>
+										<h5>2017.04.19</h5>
+									</div>
+									<div class="z-boxl2">
+										<h2>0</h2>
+										<p>售价（¥）</p>
+									</div>
+									<div class="z-boxl2">
+										<h2>354</h2>
+										<p>评论</p>
+									</div>
+								</div>
+								<div class="z-boxr">
+									<img class="z-boxr-bg" src="../images/z-hu_03.jpg" alt="">
+									<div class="z-boxr-bottom">
+										<img src="../images/z-moon.png" alt="">
+										<span>拔剑乌托邦</span>
+										<p class="z-boxr-border">9</p>
+									</div>
+								</div>
+							</li>
+						`);
+					}
+					$('.init-loading').css('display','none');
+					mySwiper.update(); // 重新计算高度;
+				}, 800);
+			}
+		});
+	}
+})
+var loadFlag = true;
+var oi = 0;
+var mySwiper = new Swiper('.swiper-container',{
+	direction: 'vertical',
+	scrollbar: '.swiper-scrollbar',
+	slidesPerView: 'auto',
+	mousewheelControl: true,
+	freeMode: true,
+	onTouchMove: function(swiper){		//手动滑动中触发
+		var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+		var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+		var translateY=parseInt(mySwiper.getWrapperTranslate('y'));
+		if(translateY < 0){
+			$('#slider img').slideUp(400);
+//			$('.swiper-wrapper.w').height($(window).height()-$('.z-activity').height());
+		}else{
+		}
+	},
+	onTouchEnd: function(swiper) {
+		var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+		var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+		
+		 // 上拉加载
+		if(mySwiper.translate <= _viewHeight - _contentHeight - 50 && mySwiper.translate < 0) {
+			if($('.z-healthy1').hasClass('show111')){
+				$.ajax({
+					url:"",
+					type:"post",
+					success:function(data){
+						
+					},
+					error:function(){
+						$(".loadtip p").show();
+						if(loadFlag){
+							$(".loadtip p").html('正在加载...');
+						}else{
+							$(".loadtip p").html('没有更多啦！');
+						}
+						setTimeout(function() {
+							for(var i =0;i<20;i++) {
+								$(".list-group .z-healthy1 ul").eq(mySwiper2.activeIndex).append(`
+									<li>
+										<div class="z-boxl">
+											<div class="z-boxl1">
+												<h4>
+													<p>北京市</p>
+													<p>奥林匹克森林公园</p>
+												</h4>
+												<h5>2017.04.19</h5>
+											</div>
+											<div class="z-boxl2">
+												<h2>0</h2>
+												<p>售价（¥）</p>
+											</div>
+											<div class="z-boxl2">
+												<h2>354</h2>
+												<p>评论</p>
+											</div>
+										</div>
+										<div class="z-boxr">
+											<img class="z-boxr-bg" src="../images/z-hu_03.jpg" alt="">
+											<div class="z-boxr-bottom">
+												<img src="../images/z-moon.png" alt="">
+												<span>拔剑乌托邦</span>
+												<p class="z-boxr-border">9</p>
+											</div>
+										</div>
+									</li>
+								`);
+							}
+							$(".loadtip p").hide();
+							mySwiper.update(); // 重新计算高度;
+						}, 800);
+					}
+				});
+			}
+			if($('.z-healthy2').hasClass('show111')){
+				$.ajax({
+					type:"post",
+					url:"",
+					success:function(data){
+						
+					},
+					error:function(){
+						$(".loadtip p").show();
+						$('.upload_kc').css('display','none');
+						if(loadFlag){
+							$(".loadtip p").html('正在加载...');
+						}else{
+							$(".loadtip p").html('没有更多啦！');
+						}
+						setTimeout(function() {
+							for(var i =0;i<20;i++) {
+								$(".list-group .z-healthy2 ul").eq(mySwiper2.activeIndex).append(`
+									<li>
+										<div class="z-boxl">
+											<div class="z-boxl1">
+												<h4>
+													<p>北京市</p>
+													<p>奥林匹克森林公园</p>
+												</h4>
+												<h5>2017.04.19</h5>
+											</div>
+											<div class="z-boxl2">
+												<h2>0</h2>
+												<p>售价（¥）</p>
+											</div>
+											<div class="z-boxl2">
+												<h2>354</h2>
+												<p>评论</p>
+											</div>
+										</div>
+										<div class="z-boxr">
+											<img class="z-boxr-bg" src="../images/z-hu_03.jpg" alt="">
+											<div class="z-boxr-bottom">
+												<img src="../images/z-moon.png" alt="">
+												<span>拔剑乌托邦</span>
+												<p class="z-boxr-border">9</p>
+											</div>
+										</div>
+									</li>
+								`);
+							}
+							$(".loadtip p").hide();
+							$('.upload_kc').css('display','block');
+							mySwiper.update(); // 重新计算高度;
+						}, 800);
+					}
+				});
+			}	
+		}
+		//  刷新
+		if(mySwiper.translate >= 50) {
+			$('#slider img').slideDown(400);
+			if($('.z-healthy1').hasClass('show111')){
+				$.ajax({
+					url:"",
+					type:"post",
+					success:function(data){
+						
+					},
+					error:function(){
+						$('.init-loading').css('display','block');
+						setTimeout(function() {
+							for(var i =0;i<20;i++) {
+								$(".list-group .z-healthy1 ul").eq(mySwiper2.activeIndex).append(`
+									<li>
+										<div class="z-boxl">
+											<div class="z-boxl1">
+												<h4>
+													<p>北京市</p>
+													<p>奥林匹克森林公园</p>
+												</h4>
+												<h5>2017.04.19</h5>
+											</div>
+											<div class="z-boxl2">
+												<h2>0</h2>
+												<p>售价（¥）</p>
+											</div>
+											<div class="z-boxl2">
+												<h2>354</h2>
+												<p>评论</p>
+											</div>
+										</div>
+										<div class="z-boxr">
+											<img class="z-boxr-bg" src="../images/z-hu_03.jpg" alt="">
+											<div class="z-boxr-bottom">
+												<img src="../images/z-moon.png" alt="">
+												<span>拔剑乌托邦</span>
+												<p class="z-boxr-border">9</p>
+											</div>
+										</div>
+									</li>
+								`);
+							}
+							$('.init-loading').css('display','none');
+							mySwiper.update(); // 重新计算高度;
+						}, 800);
+					}
+				});
+			}
+			if($('.z-healthy2').hasClass('show111')){
+				$.ajax({
+					type:"post",
+					url:"",
+					success:function(data){
+						
+					},
+					error:function(){
+						$('.init-loading').css('display','block');
+						setTimeout(function() {
+							for(var i =0;i<20;i++) {
+								$(".list-group .z-healthy2 ul").eq(mySwiper2.activeIndex).append(`
+									<li>
+										<div class="z-hl">
+											<img src="images/nvf.png" alt="" />
+										</div>
+										<div class="z-hr">
+											<h2>走进通州,为北京三大球加油22</h2>
+											<p>时间：<span>2016.10.08</span></p>
+											<p>地点：<span>通州大运河</span></p>
+										</div>
+									</li>
+								`);
+							}
+							$('.init-loading').css('display','none');
+							mySwiper.update(); // 重新计算高度;
+						}, 800);
+					}
+				});
+			}	
+		}	
+		return false;
+	}
+});
+var mySwiper2 = new Swiper('.swiper-container2',{
+	onTransitionEnd: function(swiper){
+		$('.w').css('transform', 'translate3d(0px, 0px, 0px)')
+		$('.swiper-container2 .swiper-slide-active').css('height','auto').siblings('.swiper-slide').css('height','0px');
+		mySwiper.update();
+		$('.tab a').eq(mySwiper2.activeIndex).addClass('active').siblings('a').removeClass('active');
+	}
+	
+});
+    
+</script>

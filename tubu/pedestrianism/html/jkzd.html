@@ -7,17 +7,14 @@
 		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
 		<link rel="stylesheet" type="text/css" href="../css/style.css" />
 		<link rel="stylesheet" href="../css/css.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../single_css/global.css" />
+		<link rel="stylesheet" href="../single_css/jkzd.css">
 		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/jquery.event.drag-1.5.min.js"></script>
-		<script src="../js/jquery.touchSlider.js"></script>
 		<script src="../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
-		<link rel="stylesheet" href="../single_css/global.css">
-		<link rel="stylesheet" href="../single_css/jkzd.css">
-		
-		<script type="text/javascript">
-			
-		</script>
+	
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
 		<div class="outerScroller">
@@ -32,67 +29,65 @@
 				</header>
 				<section class="zsec-bg">
 					<!-- 大图滚动  -->
-					<div class="banners z-bg">
-						<div class="main_visual">
-				            <div class="flicking_con">
-				            	<div class="flicking_inner">
-					                <a href="javascript:"></a>
-					                <a href="javascript:"></a>
-					                <a href="javascript:"></a>
-					                <a href="javascript:"></a>
-					                <a href="javascript:"></a>
-					           	 </div>
-					        </div>
-							<div class="main_image">
-								<ul>					
-									<li><img src="../images/z-tu_03.jpg" alt="" /></li>
-									<li><img src="../images/z-tu_03.jpg" alt="" /></li>
-									<li><img src="../images/z-tu_03.jpg" alt="" /></li>
-									<li><img src="../images/z-tu_03.jpg"/></li>
-									<li><img src="../images/z-tu_03.jpg"/></li>
-								</ul>
-								<a href="javascript:;" id="btn_prev"></a>
-								<a href="javascript:;" id="btn_next"></a>
+					<div id="slider" class="mui-slider" >
+						<div class="mui-slider-group mui-slider-loop">
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<a href="javascript:;">
+									<img src="../images/z-tu_03.jpg">
+								</a>
+							</div>
+							<!-- 第一张 -->
+							<div class="mui-slider-item">
+								<a href="javascript:;">
+									<img src="../images/z-tu_03.jpg">
+								</a>
+							</div>
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<a href="javascript:;">
+									<img src="../images/z-tu_03.jpg">
+								</a>
 							</div>
 						</div>
-		    		</div>
+						<div class="mui-slider-indicator">
+							<div class="mui-indicator mui-active"></div>
+							<div class="mui-indicator"></div>
+						</div>
+					</div>
 					<div class="z-boxbg z-boxbg3">
 						<div class="swiper-container">
 							<div class="swiper-wrapper w">
 								<div class="swiper-slide d">
 									<div class="init-loading list-group-item text-center" style="display: none;"><img src="../images/loading.gif"/></div>
 									<div class="swiper-container2">
-										<div class="swiper-wrapper ">
-											<div class="swiper-slide list-group">	
-												<ul style="margin-top: .32rem;">
-													<li>
-														<div class="z-boxl">
-															<div class="z-boxl1">
-																<h4>
-																	<p>第一次徒步？</p>
-																	<p>你应该注意这些。</p>
-																</h4>
-																<h5>2017.05.06</h5>
-															</div>
-															<div class="z-boxl2">
-																<h2>1686</h2>
-																<p>售价（¥）</p>
-															</div>
-															<div class="z-boxl2">
-																<h2>354</h2>
-																<p>评论</p>
-															</div>
+										<div class="swiper-slide list-group">	
+											<ul style="margin-top: .32rem;">
+												<li>
+													<div class="z-boxl">
+														<div class="z-boxl1">
+															<h4>
+																<p>第一次徒步？</p>
+																<p>你应该注意这些。</p>
+															</h4>
+															<h5>2017.05.06</h5>
 														</div>
-														<div class="z-boxr">
-															<img class="z-boxr-bg" src="../images/z-hu_03.jpg" alt="">
-															<div class="z-boxr-bottom">
-																<img src="../images/z-moon.png" alt="">
-																<span>再见六月</span>
-															</div>
+														<div class="z-boxl2">
+															<h2>1686</h2>
+															<p>售价（¥）</p>
 														</div>
-													</li>
-												</ul>
-											</div>
+														<div class="z-boxl2">
+															<h2>354</h2>
+															<p>评论</p>
+														</div>
+													</div>
+													<div class="z-boxr">
+														<img class="z-boxr-bg" src="../images/z-hu_03.jpg" alt="">
+														<div class="z-boxr-bottom">
+															<img src="../images/z-moon.png" alt="">
+															<span>再见六月</span>
+														</div>
+													</div>
+												</li>
+											</ul>
 										</div>
 									</div>
 								</div>
