@@ -12,7 +12,7 @@ $('.talk_message').height($(window).height()-$('header').height()-$('.z-boxbg').
 	$('.read_cont').css('top',$(window).height());
 	$('.intro_detail').height($(window).height()-$('header').height()-$('.z-boxbg').height()-$('.z-tab').height());
 	$('.swiper1 .swiper-container,.swiper1 .w').height($(window).height()-$('header').height()-$('.z-boxbg').height()-$('.z-tab').height()+'px');
-	$('.swiper2 .swiper-container,.swiper2 .w').height($(window).height()-$('header').height()-$('.z-boxbg').heightz()-$('.talk_message_title').height()-$('.z-sr').height()+'px');
+	$('.swiper2 .swiper-container,.swiper2 .w').height($(window).height()-$('header').height()-$('.z-boxbg').height()-$('.talk_message_title').height()-$('.z-sr').height()+'px');
 	$('.on2').click(function() {
 		$(this).find('a').addClass("active");
 		$('.talk_message').animate({'left':'0'});
