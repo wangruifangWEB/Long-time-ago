@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/css.css"/>
+		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="../../single_css/global.css">
+		<link rel="stylesheet" href="../../single_css/jr_team_index.css" />
+		<style>
+		.list_item{
+			width: 7.5rem;
+			height: auto;
+		}
+		.list_item li{
+			width: 85%;
+			height:0.96rem;	
+			position:relative;	
+			background-position: 6.73rem center;
+			background-size: 0.14rem 0.24rem;
+			background-repeat: no-repeat;
+			background-color: #f6f6f6;
+			box-shadow:0 .02rem .03rem rgba(0,0,0,.3);
+		}
+		.list_item li:nth-child(2){
+			margin:0.32rem 0;
+		}
+		.list_item li span{
+			display: block;
+			font-size: .37rem;
+			height: 0.96rem;
+			line-height: 0.96rem;
+			font-family: PingFangSC-Regular;
+		}
+		.list_item li img{
+			display: block;
+			width:.32rem;
+		}	
+		.list_item_header_img{
+			position: relative;
+		}
+		.list_item_header_img_top{
+		    position: absolute;
+		    left: 0.16rem;
+		    top: 0.5rem;
+		}
+		.list_item_header_img_phb{
+		 	position: absolute;
+		    left: .72rem;
+		    top: 0.32rem;
+		}
+		.list_item_header_img_down{		  
+		    position: absolute;
+		    left: 0.16rem;
+		    top:0.3rem;
+		}	
+		.list_item_left{
+			float: left;
+		}
+		.list_item_left span{
+			color: #595959;
+			display: block;
+	    	font-size: .48rem;			  
+	    	font-family: PingFangSC-Medium;
+			margin-left:2.8rem;
+		}
+		</style>
+	</head>
+	<body class="bg1">
+		<div class="outerScroller">
+			<div class="scroll">
+				<header>
+					<div class="d-title">
+						<a href="#">
+							<img src="../../images/cd.png" alt="" />
+						</a>
+						<span>我的团队</span>
+					</div>
+				</header>
+				<section>	
+					<!-- 搜索框 -->
+					<div class="z_search"><img src="" alt="" /><input type="text" placeholder="搜索"/></div>
+					<!-- tab切换 -->	
+					<div class="xd-tab-ul-box">
+						<ul class="xd-tab-ul">  
+							<li><a href="jr_team_index.html">已加入</a></li>
+							<li class="active_bg"><a href="td_created_concern.html">已关注</a></li>
+						</ul>
+					</div>
+					<div class="xd-tab-div">
+						<ul class="list_item">
+						<li>
+							<div class="list_item_left">
+								<a href="td_created_team_concern.html">
+									<img src="../../images/up.png" alt="" class="list_item_header_img_down"/>
+									<img src="../../images/down.png" alt="" class="list_item_header_img_top"/>
+								</a>
+								<span>团队</span>
+							</div>
+						
+						</li>
+						<li>
+							<div class="list_item_left">
+								<a href="javascript:;">
+									<img src="../../images/up.png" alt="" class="list_item_header_img_down"/>
+									<img src="../../images/down.png" alt="" class="list_item_header_img_top"/>
+								</a>
+								<span>个人</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+				</section>
+				<div class="z-alert">
+					<ul>
+						<li>
+							<a href="javascript:;" class="active">徒步活动</a>
+						</li>
+						<li>
+							<a href="javascript:;">最美徒步</a>
+						</li>
+						<li>
+							<a href="javascript:;">健康指导</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="box-transparent"></div>	
+		</div>
+		<script type="text/javascript">
+			/*$('.xd-tab-ul li').click(function(){
+				var x=$('.xd-tab-ul li').index(this);
+				$('.xd-tab-ul li').eq(x).addClass('active_bg').siblings().removeClass('active_bg');
+				$('.xd-tab-div .list_item').eq(x).show().siblings().hide();
+			})*/
+		</script>
+	</body>	
+</html>

@@ -12,10 +12,6 @@
 		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" href="../../single_css/global.css">
 		<style>
-			
-			.clearfix{
-				clear: both;
-			}
 			.xd-tab-ul-box-top{
 				padding:0 .63rem;
 			}
@@ -23,7 +19,6 @@
 				margin-top:.5rem;
 				border:0.02rem solid #F69200;
 			}
-			
 			.zl{
 				padding-top:.64rem;
 			}
@@ -33,7 +28,7 @@
 			.htj1{
 				color:#ff9800;
 				line-height:.37rem;
-				border: 2px solid #ff9800;
+				border: 1px solid #ff9800;
 				font-family: PingFangSC-Regular;
 			}
 			
@@ -43,8 +38,8 @@
 				margin-top:.32rem;
 			}
 			.list_item li{	
-				padding: 0 .63rem;
 				height:0.96rem;	
+				line-height: .96rem;
 				position:relative;	
 				background-position: 6.73rem center;
 				background-size: 0.14rem 0.24rem;
@@ -56,6 +51,7 @@
 				font-size: .37rem;
 				height: 0.96rem;
 				line-height: 0.96rem;
+				margin-left:.68rem;
 				font-family: PingFangSC-Regular;
 			}		
 			.list_item li img{
@@ -73,7 +69,6 @@
 			.list_item_header_img_phb{
 				width: 0.6rem !important;
 			 	position: absolute;
-			    left: .72rem;
 			    top: 0.22rem;
 			}
 			.list_item_header_img_down{		  
@@ -83,13 +78,34 @@
 			}	
 			.list_item_left{
 				float: left;
+				margin-left: .82rem;
 			}
 			.list_item_left span{
 				color: #595959;
 				display: block;
 			    font-size: .48rem;			  
 			    font-family: PingFangSC-Medium;
-				margin-left:.8rem;
+			}
+			/*申请加入*/
+			.list_item  li .phb_remove{
+				height:100%;
+				padding:0 .38rem;
+				float:left;
+				display: flex;
+				box-shadow:.02rem 0 0rem rgba(0,0,0,.15);
+				z-index:100;
+			}
+			.list_item  li .phb_remove button{
+				line-height:.45rem;
+				font-size: .32rem;
+				font-family: PingFangSC-Regular;
+			}
+			.list_item  li .phb_remove button:nth-child(1){
+				color:#e64340;
+				margin-right:.32rem;
+			}
+			.list_item  li .phb_remove button:nth-child(2){
+				color:#45c01A;
 			}
 		</style>	
 	</head>
@@ -98,7 +114,7 @@
 			<div class="scroll">
 				<header>
 					<div class="d-title">
-						<a href="#">
+						<a href="javascript:;">
 							<img src="../../images/cd.png" alt="" />
 						</a>
 						<span>我的团队</span>
@@ -116,48 +132,72 @@
 			
 					<div class="xd-tab-ul-box-top">
 						<ul class="xd-tab-ul">  
-							<li class="active_bg"><a href="wdtd.html">已有成员</a></li>
-							<li><a href="wdtd_phb.html">申请加入</a></li>
+							<li><a href="td_visited_manage.html">已有成员</a></li>
+							<li class="active_bg"><a href="td_apply_join.html">申请加入</a></li>
 						</ul>
 					</div> 
 					
 					<ul class="list_item">
 						<li>
-							<div class="list_item_left">
-								<a href="td_phb_search.html">
-									<img src="../../images/bqr2.png" alt="" class="list_item_header_img_phb" />
-								</a>
-								<span>快乐徒步走</span>
+							<div class="phb_remove">
+								<button>拒绝</button>
+								<button>加入</button>
 							</div>
+							<div class="list_item_left">
+									<img src="../../images/bqr2.png" alt="" class="list_item_header_img_phb" />
+								<span>快乐徒步走</span>
+							</div>							
 						</li>
 						<li>
+							<div class="phb_remove">
+								<button>拒绝</button>
+								<button>加入</button>
+							</div>
 							<div class="list_item_left">
 								<img src="../../images/bqr.png" alt="" class="list_item_header_img_phb" />
 								<span>健康不求人</span>
 							</div>
 						</li>
 						<li>
+							<div class="phb_remove">
+								<button>拒绝</button>
+								<button>加入</button>
+							</div>
 							<div class="list_item_left">
 								<img src="../../images/bqr.png" alt="" class="list_item_header_img_phb" />
 								<span>快乐徒步走</span>
 							</div>
 						</li>
+						<li>
+							<div class="phb_remove">
+								<button>拒绝</button>
+								<button>加入</button>
+							</div>
+							<div class="list_item_left">
+								<img src="../../images/bqr.png" alt="" class="list_item_header_img_phb" />
+								<span>健康不求人</span>
+							</div>
+						</li>
+
+						<li>
+							<div class="phb_remove">
+								<button>拒绝</button>
+								<button>加入</button>
+							</div>
+							<div class="list_item_left">
+								<img src="../../images/bqr.png" alt="" class="list_item_header_img_phb" />
+								<span>健康不求人</span>
+							</div>
+						</li>
+						
 					</ul>
 				</section>
 				
-				<footer class="footer">
-					<ul class="bottom">
-						<li>
-							<a href="td_phb_visited_remove.html">管理</a>
-						</li>
-					</ul>
-				</footer> 	
-				
 				<div class="z-alert">
 					<ul>
-						<li><a href="#" class="active">徒步活动</a></li>
-						<li><a href="#">最美徒步</a></li>
-						<li><a href="#">健康指导</a></li>
+						<li><a href="javascript:;" class="active">徒步活动</a></li>
+						<li><a href="javascript:;">最美徒步</a></li>
+						<li><a href="javascript:;">健康指导</a></li>
 					</ul>
 				</div>
 			</div>
