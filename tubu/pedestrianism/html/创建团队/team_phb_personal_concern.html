@@ -10,9 +10,9 @@
 		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" href="../../single_css/global.css">
-		<link rel="stylesheet" href="../../single_css/jr_team_index.css" />
-		<style>
-		/*列表内容*/
+		<!--<script src="../../single_js/td_phb.js"></script>-->
+		<style>		
+			/*列表内容*/
 			.list_item{
 				width: 7.5rem;
 				height: auto;
@@ -86,7 +86,6 @@
 				background-color: #F5F5F5;
 				box-shadow:0 .02rem .03rem rgba(0,0,0,.3);
 				position:relative;
-				z-index:100;
 			}
 			.list_item_header img{
 				width:.32rem;
@@ -126,7 +125,7 @@
 			}
 		</style>
 	</head>
-	<body class="bg1">
+	<body>
 		<div class="outerScroller">
 			<div class="scroll">
 				<header>
@@ -137,27 +136,32 @@
 						<span>我的团队</span>
 					</div>
 				</header>
+				<div class="xd-tab-ul-box">
+					<ul class="xd-tab-ul">  
+						<li><a href="team_radar.html">雷达图</a></li>
+						<li class="active_bg"><a href="team_phb_index.html">排行榜</a></li>
+					</ul>
+				</div> 
 				<section>	
-					<!-- 搜索框 -->
-					<a href="jr_team_index.html">
-						<div class="z_search"><img src="" alt="" /><input type="text" placeholder="搜索"/></div>
-					</a>
-					<!-- tab切换 -->	
-					<div class="xd-tab-ul-box">
-						<ul class="xd-tab-ul">  
-							<li><a href="jr_team_index.html">已加入</a></li>
-							<li class="active_bg"><a href="td_created_concern.html">已关注</a></li>
-						</ul>
-					</div>
 					<!--列表内容-->	
 					<p class="list_item_header">
-						<a href="td_created_concern.html">
+						<a href="team_phb_index.html">
 							<img src="../../images/up.png" alt="" class="list_item_header_img_down"/>
 							<img src="../../images/down.png" alt="" class="list_item_header_img_top"/>
 						</a>
-						团队					
+						<a href="team_phb_personal.html">
+							<img src="../../images/phb.png" alt="" class="list_item_phb_img_down" />
+						</a>
+							个人排行榜					
+						<img src="../../images/red.png" alt="" style="position:absolute;left:6.3rem;top:.1rem"/>
+						<img src="../../images/silver.png" alt="" style="position:absolute;left:5.8rem"/>					
 					</p>
 
+					<ul class="bottom">
+						<li>
+							<a href="#" class="gz">关注的个人</a>
+						</li>
+					</ul>
 					<ul class="list_item">
 						<li>
 							<a href="javascript:;">
@@ -169,8 +173,8 @@
 								</div>
 							
 								<div class="list_item_right">
-									<span>5</span>
-									<img src="../../images/green.png" alt=""/>
+									<span>10</span>
+									<img src="../../images/red.png" alt=""/>
 								</div>
 							</a>
 						</li>
@@ -182,7 +186,7 @@
 								</div>
 								
 								<div class="list_item_right">
-									<span>10</span>
+									<span>12</span>
 									<img src="../../images/red.png" alt=""/>
 								</div>
 								
@@ -196,23 +200,15 @@
 								</div>
 								
 								<div class="list_item_right">
-									<span>120</span>
-									<img src="../../images/line.png" alt=""/>
+									<span>15</span>
+									<img src="../../images/red.png" alt=""/>
 								</div>
 								
 							</a>
 						</li>
 					</ul>
-				</section>
-				
-				<footer class="footer">
-					<ul class="bottom">
-						<li>
-							<a href="javascript:;">管理</a>
-						</li>
-					</ul>
-				</footer> 	
-				
+				</section>		
+					
 				<div class="z-alert">
 					<ul>
 						<li>
@@ -227,14 +223,21 @@
 					</ul>
 				</div>
 			</div>
-			<div class="box-transparent"></div>	
 		</div>
-		<script type="text/javascript">
-			/*$('.xd-tab-ul li').click(function(){
-				var x=$('.xd-tab-ul li').index(this);
-				$('.xd-tab-ul li').eq(x).addClass('active_bg').siblings().removeClass('active_bg');
-				$('.xd-tab-div .list_item').eq(x).show().siblings().hide();
-			})*/
+		<div class="box-transparent"></div>	
+		<script src="../../js/echarts.min.js"></script>	
+		<script>
+			$(function() {
+				$('.z-alert').height($(window).height()-$('header').height());
+				for (var i=0;i<$('.list_item li').length;i++) {
+					var isEven=i % 2;
+					if(isEven==0){
+						$('.list_item li').eq(i).addClass('odd');
+					}else if(isEven==1){
+						$('.list_item li').eq(i).addClass('even');
+					}
+				}
+			})	
 		</script>
 	</body>	
 </html>

@@ -104,6 +104,57 @@
 			.footer_top{
 				bottom:-.98rem;
 			}
+						/*弹框*/
+			.alert_show{
+			    width: 5.60rem;
+			    height: 3.14rem;
+			    background: #F6F6F6;
+			    border-radius: .2rem;
+			    box-shadow:0 0.15rem 0.8rem #ccc;
+			    z-index: 1000;
+			    position: fixed;
+			    top: 50%;
+			    left: 50%;
+			    margin-left:-2.8rem;
+			    margin-top:-1.6rem;
+			}
+			.alert_show div.first{
+				width:2.82rem;
+				height:.9rem;
+				text-align: center;
+				margin:0 auto;
+			}
+			.alert_show div.first span{
+				font-weight: bold;
+			}
+			.alert_show p{
+				font-size:.32rem;
+				font-family: PingFangSC-Medium, sans-serif;
+				line-height:.45rem;
+			}
+			.alert_show .second{
+				width:5.6rem;
+				height:.98rem;				
+				font-size:.32rem;
+				font-family: PingFangSC-Medium, sans-serif;
+				line-height:.95rem;
+				text-align: center;
+				font-weight: bold;
+			}
+			.alert_show .second li{
+				width:50%;
+				display: inline;
+				margin-left: 1rem;
+   				padding-right: 1rem;
+			}
+			.alert_show .second li:first-child{
+				border-right:1px solid #000;
+			}
+			.alert_show .first_b{
+				height:2.16rem;
+				padding-top:.64rem;
+				box-shadow:0 2px 6px -2px #999;					
+			}
 		</style>	
 	</head>
 	<body>
@@ -124,17 +175,18 @@
 					</div>
 					
 					<div class="zl widthbox">
-						<button class="htj1 htj" id="submit">解散</button> 
+						<button class="htj1 htj" id="dissolved">解散</button> 
 					</div>
 			
 					<div class="xd-tab-ul-box-top">
 						<ul class="xd-tab-ul">  
-							<li class="active_bg"><a href="td_visited_manage.html">已有成员</a></li>
-							<li><a href="td_apply_join.html">申请加入</a></li>
+							<li class="active_bg"><a href="team_manage.html">已有成员</a></li>
+							<li><a href="team_apply_join.html">申请加入</a></li>
 						</ul>
 					</div> 
 					
-					<ul class="list_item">
+					<!--<div class="xd-tab-div">-->
+						<ul class="list_item list_item_visited">
 						<li>
 							<div class="phb_remove"><img src="../../images/oval1.png" alt="" data="../../images/del_red.png"/></div>
 							<div class="list_item_left">
@@ -186,13 +238,23 @@
 				<div class="footer footer_top" style="display: none;">
 					<ul class="bottom">
 						<li>
-							<a href="javascript:;">取消</a>
+							<a class="cancel_manages">取消</a>
 						</li>
 						<li>
 							<a class="remove_btn">移除</a>
 						</li>
 					</ul>
-				</div> 
+				</div>
+				
+				<div class="alert_show" style="display:none">
+					<div class="first_b alert_txt">									
+						<p style="text-align: center;">确定解散团队吗？</p >			
+					</div>
+					<ul class="second">
+						<li class="yes">确认</li>
+						<li class="no">取消</li>
+					</ul>
+				</div>
 				
 				<div class="z-alert">
 					<ul>
@@ -206,7 +268,9 @@
 		<div class="box-transparent"></div>
 		<script>
 			$(function() {
+				//设置动态高度
 				$('.z-alert').height($(window).height()-$('header').height());
+				//奇，偶行变色
 				for (var i=0;i<$('.list_item li').length;i++) {
 					var isEven=i % 2;
 					if(isEven==0){
@@ -215,26 +279,47 @@
 						$('.list_item li').eq(i).addClass('even');
 					}
 				}
-				//移除
+				
+				//解散功能
+				$('#dissolved').click(function(){
+					$('.alert_show').css('display','block');
+					$('.no').click(function(){
+						$('.alert_show').css('display','none');
+					});
+					$('.yes').click(function(){
+						$('.alert_show').css('display','none');
+					});
+				})
+				//点击切换内容
+				/*$('.xd-tab-ul li').click(function(){
+					var x=$('.xd-tab-ul li').index(this);
+						$('.xd-tab-ul li').eq(x).addClass('active_bg').siblings().removeClass('active_bg');
+						$('.xd-tab-div .list_item').eq(x).show().siblings().hide();
+						/*if(x==0){
+							$('.bottom').show();
+						}
+						if(x==1){
+							$('.bottom').hide();
+						}
+				})*/
+				//递归动画显示列表内容
 				i=0;
 				$(".manage_btn").on('click',function anim(){
 					$(".list_item li").stop(true, true);
 					$(".list_item li:eq("+i+")").animate({
 			            'left':'1.2rem'
-			        },100,function(){
+			        },200,function(){
 			            i++;
 			            $(this).delay().next().animate(50,anim());
 			        });
-			        		
 				      $(".footer_top").fadeIn(10).animate({
 			            bottom:"0"  
 			        	},500);
-	
 					$(".footer_bottom").fadeIn(10).animate({
 			            bottom:"-.98rem"  
 			         },500);
 			  	})
-				
+			//点击切换图片
 			$('.phb_remove img').toggle(function(){
 				$(this).attr('src','../../images/del_red.png');// 选中
 				$(this).addClass('remove_img');
@@ -242,53 +327,114 @@
 				$(this).attr('src','../../images/oval1.png');// 未选中
 				$(this).removeClass('remove_img');
 			})		
-					
+			//实现点击删除内容及动画		
 			 $(".phb_remove img").on('click',function anim(){
 			 	var i=$(".phb_remove img").index(this);
-			   		  $(".remove_btn").click(function(){
-					  	var img_src= $('.phb_remove img').eq(i).attr('src');
-					  	$('.remove_img').css('opacity',0);
-					  	var q=[
-					  		function(){
-					  			 $(".list_item li").stop(true,false).fadeIn(100).animate({
-					           		 left:"-=1.2rem"  
-					         		},300,next); 
-					  		},
-					  		function(){
-					  			 $(".footer_top").stop(true,false).fadeIn(10).animate({
-			           				 bottom:"-.98rem"  
-			        				},50,next);
-					  		},
-					  		function(){
-					  			 $(".footer_bottom").stop(true,false).fadeIn(10).animate({
-				           			 bottom:"0"  
-				         		},500,next);
-					  		},
-					  		function(){
-					  			if(img_src=="../../images/del_red.png"){
-					         			$('.remove_img').parent().parent().stop(true,false).animate({'left':'8.5rem'},800);
-										$('.remove_img').parent().parent().slideUp("1000", function() {
-									      	$('.remove_img').parent().parent().remove();
-									   });
-										for (var i=0;i<$('.list_item li').length;i++) {
-											var isEven=i % 2;
-											if(isEven==0){
-												$('.list_item li').eq(i).addClass('odd');
-											}else if(isEven==1){
-												$('.list_item li').eq(i).addClass('even');
-											}
-										}
-						 			}
-					  			}
-					  		];
-						  	function next(){  
-			           			$('.list_item').dequeue('myQueue');  
-			       			}
-						  	 $('.list_item').queue('myQueue', q);  
-			        			next(); 	  	
-				  		});  
-					})
-				})
+		   		  $(".remove_btn").click(function(){
+				  	var img_src= $('.phb_remove img').eq(i).attr('src');
+				  	$('.remove_img').css('opacity',0);
+				  	var q=[
+				  		function(){
+			  			 	$(".list_item li").stop(true,false).fadeIn(1000).animate({
+			           			 left:"-=1.2rem"  
+			         		},300,next); 
+				  		},
+				  		function(){
+				  			$(".footer_top").stop(true,false).fadeIn(10).animate({
+		           				bottom:"-.98rem"  
+		        			},50,next);
+				  		},
+				  		function(){
+				  			$(".footer_bottom").stop(true,false).fadeIn(10).animate({
+			           			 bottom:"0"  
+			         		},500,next);
+				  		},
+				  		function(){
+				  			if(img_src=="../../images/del_red.png"){
+			         			$('.remove_img').parent().parent().stop(true,false).animate({'left':'8.5rem'},800);
+								$('.remove_img').parent().parent().slideUp("1000", function() {
+						      	$('.remove_img').parent().parent().remove();
+							      	//执行删除
+							      	$.ajax({
+							      		type:"post",
+							      		url:"",
+							      		async:true,
+							      		success:function(){},
+							      		error:function(){
+							      			//内容清空
+							      			$('.list_item_visited').empty();
+											//动态内容添加
+							      			for(var i=0;i<5;i++){
+							      				$('.list_item_visited').append(`
+							      					<li>
+														<div class="phb_remove">
+															<img src="../../images/oval1.png" alt="" data="../../images/del_red.png"/>
+														</div>
+														<div class="list_item_left">
+															<img src="../../images/bqr2.png" alt="" class="list_item_header_img_phb" />
+															<span>快乐徒步走</span>
+														</div>							
+													</li>
+							      				`);
+							      			}
+							      			
+								      		//奇,偶行变色
+							      			for (var i=0;i<$('.list_item_visited li').length;i++) {
+												var isEven=i % 2;
+												if(isEven==0){
+													$('.list_item_visited li').eq(i).addClass('odd');
+												}else if(isEven==1){
+													$('.list_item_visited li').eq(i).addClass('even');
+												}
+								      		}									      			
+
+								      		//移除
+											i=0;
+											$(".manage_btn").on('click',function anim(){
+												$(".list_item li").stop(true, true);
+												$(".list_item li:eq("+i+")").animate({
+										            'left':'1.2rem'
+										        },100,function(){
+										            i++;
+										            $(this).delay().next().animate(50,anim());
+										        });
+										        		
+											      $(".footer_top").fadeIn(10).animate({
+										            bottom:"0"  
+										        	},500);
+								
+												$(".footer_bottom").fadeIn(10).animate({
+										            bottom:"-.98rem"  
+										         },500);
+										  	})
+		
+									      	$('.phb_remove img').toggle(function(){
+												$(this).attr('src','../../images/del_red.png');// 选中
+												$(this).addClass('remove_img');
+											},function(){					
+												$(this).attr('src','../../images/oval1.png');// 未选中
+												$(this).removeClass('remove_img');
+											})			      		
+						      			}
+								    });
+								});
+					 		}
+				  		}
+				  	];
+				  	function next(){  
+	           			$('.list_item').dequeue('myQueue');  
+	       			}
+				  	 $('.list_item').queue('myQueue', q);  
+	        		next(); 	  	
+		  		});  
+			})
+		})
+		//点击取消
+		$('.cancel_manages').click(function(){
+			$(".list_item li").stop(true,false).fadeIn(1000).animate({
+			    left:"-=1.2rem"  
+			},400); 
+		});
 		</script>
 	</body>
 </html>

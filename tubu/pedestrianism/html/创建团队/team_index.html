@@ -10,16 +10,23 @@
 		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" href="../../single_css/global.css">
-		<!--<script src="../../single_js/td_phb.js"></script>-->
-		<style>		
-			
+		<link rel="stylesheet" href="../../single_css/team_index.css" />
+		<style>
+			.list_item li p{
+				font-size:.37rem;
+				line-height:.45rem;
+				margin: .32rem 0;
+				color:#8E8E93;
+				font-family: PingFangSC-Regular;
+				display:none;
+			}
 			/*列表内容*/
-			.list_item{
+			.xd-tab-div2{
 				width: 7.5rem;
 				height: auto;
-				margin-top: .06rem;
+				margin-top: 2rem;
 			}
-			.list_item li{	
+			.xd-tab-div2 li{	
 				padding: 0 .63rem;
 				height:0.96rem;	
 				position:relative;	
@@ -28,14 +35,14 @@
 				background-repeat: no-repeat;
 				background-color: #f6f6f6;
 			}
-			.list_item li span{
+			.xd-tab-div2 li span{
 				display: block;
 				font-size: .37rem;
 				height: 0.96rem;
 				line-height: 0.96rem;
 				font-family: PingFangSC-Regular;
 			}		
-			.list_item li img{
+			.xd-tab-div2 li img{
 				display: block;
 				width:.32rem;
 			}	
@@ -115,12 +122,16 @@
 		    	left: .72rem;
 		    	top: 0.32rem;
 			}
-			.gz{
-				color:#F69200 !important;
-}
+			.xd-tab-div{
+				width:7.5rem;
+			}
+			.xd-tab-div1{
+				width:6.24rem;
+				margin:0 auto;
+			}
 		</style>
 	</head>
-	<body class="">
+	<body class="bg1">
 		<div class="outerScroller">
 			<div class="scroll">
 				<header>
@@ -131,32 +142,72 @@
 						<span>我的团队</span>
 					</div>
 				</header>
-				<div class="xd-tab-ul-box">
-					<ul class="xd-tab-ul">  
-						<li><a href="wdtd.html">雷达图</a></li>
-						<li class="active_bg"><a href="wdtd_phb.html">排行榜</a></li>
-					</ul>
-				</div> 
 				<section>	
-					<!--列表内容-->	
-					<p class="list_item_header">
-						<a href="td_phb_index.html">
-							<img src="../../images/up.png" alt="" class="list_item_header_img_down"/>
-							<img src="../../images/down.png" alt="" class="list_item_header_img_top"/>
-						</a>
-						<a href="td_phb_personal_search.html">
-							<img src="../../images/phb.png" alt="" class="list_item_phb_img_down" />
-						</a>
-							个人排行榜					
-						<img src="../../images/red.png" alt="" style="position:absolute;left:6.3rem;top:.1rem"/>
-						<img src="../../images/silver.png" alt="" style="position:absolute;left:5.8rem"/>					
-					</p>
-
-					<ul class="list_item">
+					<!-- 搜索框 -->
+					<div class="z_search"><img src="" alt="" /><input type="text" placeholder="搜索"/></div>
+					<!-- tab切换 -->	
+					<div class="xd-tab-ul-box">
+						<ul class="xd-tab-ul">  
+							<li class="active_bg"><a href="javascript:;">已加入</a></li>
+							<li><a href="javascript:;">已关注</a></li>
+						</ul>
+					</div>
+					<div class="xd-tab-div">
+						<ul class="xd-tab-div1 list_item">
+							<li><p>你还没有在某一个团队中,快点创建一个团队，或者搜索加入一个团队吧!</p></li>
+							<li class="list_item_info">
+								<div class="xd-tab-div1_left">
+									<a href="javascript:;">邀请</a>
+									<a href="team_manage.html">管理</a>
+								</div>
+								<div class="xd-tab-div1_right">
+									<ul class="head_list">
+										<li><a href="team_radar.html"><img src="../../images/head_list.jpg" alt="" /></a></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+									</ul>
+									<ul class="infor_list">
+										<li class="infor_list_icon"><img src="../../images/bqr.png" alt="" /></li>
+										<li class="infor_list_text">健康不求人</li>
+										<li class="infor_list_num"><span>1300</span></li>
+									</ul>
+								</div>
+							</li>
+							<li class="list_item_info">
+								<div class="xd-tab-div1_left">
+									<a href="javascript:;">邀请</a>
+									<a href="javascript:;">退出</a>
+								</div>
+								<div class="xd-tab-div1_right">
+									<ul class="head_list">
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+										<li><img src="../../images/head_list.jpg" alt="" /></li>
+									</ul>
+									<ul class="infor_list">
+										<li class="infor_list_icon"><img src="../../images/bqr2.png" alt="" /></li>
+										<li class="infor_list_text">快乐徒步走</li>
+										<li class="infor_list_num"><span>1300</span></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+						
+						<ul class="xd-tab-div2 list_item" style="display: none;">
 						<li>
 							<a href="javascript:;">
 								<div class="list_item_left">
-									<a href="td_phb_search.html">
+									<a href="team_phb_search.html">
 										<img src="../../images/bqr2.png" alt="" class="list_item_header_img_phb" />
 									</a>
 									<span>快乐徒步走</span>
@@ -197,8 +248,9 @@
 							</a>
 						</li>
 					</ul>
-				</section>		
+					</div>
 					
+				</section>
 				<div class="z-alert">
 					<ul>
 						<li>
@@ -213,21 +265,38 @@
 					</ul>
 				</div>
 			</div>
+  			<footer class="footer">
+				<ul class="bottom">
+					<li>
+						<a href="td_form.html">创建团队</a>
+					</li>
+				</ul>
+			</footer> 
+			<div class="box-transparent"></div>	
 		</div>
-		<div class="box-transparent"></div>	
-		<script src="../../js/echarts.min.js"></script>	
-		<script>
-			$(function() {
-				$('.z-alert').height($(window).height()-$('header').height());
-				for (var i=0;i<$('.list_item li').length;i++) {
+		<script type="text/javascript">
+			//奇,偶行变色
+			for (var i=0;i<$('.xd-tab-div2 li').length;i++) {
 					var isEven=i % 2;
 					if(isEven==0){
-						$('.list_item li').eq(i).addClass('odd');
+						$('.xd-tab-div2 li').eq(i).addClass('odd');
 					}else if(isEven==1){
-						$('.list_item li').eq(i).addClass('even');
+						$('.xd-tab-div2 li').eq(i).addClass('even');
 					}
 				}
-			})	
+			//点击切换内容
+			$('.xd-tab-ul li').click(function(){
+				var x=$('.xd-tab-ul li').index(this);
+					$('.xd-tab-ul li').eq(x).addClass('active_bg').siblings().removeClass('active_bg');
+					$('.xd-tab-div .list_item').eq(x).show().siblings().hide();
+					if(x==0){
+						$('.bottom').show();
+					}
+					if(x==1){
+						$('.bottom').hide();
+					}
+			})
+			
 		</script>
 	</body>	
 </html>
