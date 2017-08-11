@@ -62,7 +62,7 @@ header{
 	overflow: hidden;
 }
 .z-alert{
-	position: absolute;
+	position: fixed !important;
 }
 .footer{
 	width: 7.5rem;
