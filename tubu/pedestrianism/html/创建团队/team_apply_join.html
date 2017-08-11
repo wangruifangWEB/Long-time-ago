@@ -327,12 +327,12 @@
 			            'left':'2.4rem'
 			        },200,function(){
 			            i++;
-			            $(this).delay().next().animate(50,anim());
+			            $(this).delay(100).next().animate(100,anim());
 			        });
-				      $(".footer_top").fadeIn(10).animate({
+				      $(".footer_top").fadeIn(100).animate({
 			            bottom:"0"  
 			        	},500);
-					$(".footer_bottom").fadeIn(10).animate({
+					$(".footer_bottom").fadeIn(100).animate({
 			            bottom:"-.98rem"  
 			         },500);
 			  	})
@@ -378,17 +378,17 @@
 				//管理之拒绝、同意操作
 				$('.refuse').click(function(){
 					var li=$(this).parent().parent();
-					li.stop(true,false).fadeIn(1000).animate({
+					li.stop(true,false).animate({
 					    left:"0"  
-					},300,function(){
+					},500,function(){
 						li.append('<p>已拒绝</p>');
 					});
 				});
 				$('.join').click(function(){
 					var li=$(this).parent().parent();
-					li.stop(true,false).fadeIn(1000).animate({
+					li.stop(true,false).animate({
 					    left:"0"  
-					},300,function(){
+					},500,function(){
 						li.append('<p>已同意</p>');
 					});
 				});
