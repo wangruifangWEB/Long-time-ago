@@ -12,7 +12,6 @@
 		<link rel="stylesheet" href="../../single_css/global.css">
 		<!--<script src="../../single_js/td_phb.js"></script>-->
 		<style>		
-			
 			/*列表内容*/
 			.list_item{
 				width: 7.5rem;
@@ -85,7 +84,8 @@
 				font-family: PingFangSC-Regular;
 				position:relative;
 				background-color: #F5F5F5;
-				box-shadow: 0px 1px 3px rgba(000,000,000,0.15);
+				box-shadow:0 .02rem .03rem rgba(0,0,0,.3);
+				position:relative;
 			}
 			.list_item_header img{
 				width:.32rem;
@@ -115,13 +115,17 @@
 		    	left: .72rem;
 		    	top: 0.32rem;
 			}
-			
+			.bottom{
+				box-shadow:0 .02rem .03rem rgba(0,0,0,.3);
+				position:relative;
+				z-index:100;
+			}
 			.gz{
 				color:#F69200 !important;
-}
+			}
 		</style>
 	</head>
-	<body class="">
+	<body>
 		<div class="outerScroller">
 			<div class="scroll">
 				<header>
@@ -145,7 +149,7 @@
 							<img src="../../images/up.png" alt="" class="list_item_header_img_down"/>
 							<img src="../../images/down.png" alt="" class="list_item_header_img_top"/>
 						</a>
-						<a href="td_phb_search.html">
+						<a href="td_phb_personal.html">
 							<img src="../../images/phb.png" alt="" class="list_item_phb_img_down" />
 						</a>
 							个人排行榜					
@@ -208,13 +212,13 @@
 				<div class="z-alert">
 					<ul>
 						<li>
-							<a href="#" class="active">徒步活动</a>
+							<a href="javascript:;" class="active">徒步活动</a>
 						</li>
 						<li>
-							<a href="#">最美徒步</a>
+							<a href="javascript:;">最美徒步</a>
 						</li>
 						<li>
-							<a href="#">健康指导</a>
+							<a href="javascript:;">健康指导</a>
 						</li>
 					</ul>
 				</div>
