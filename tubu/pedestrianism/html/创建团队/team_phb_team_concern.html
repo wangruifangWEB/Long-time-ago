@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="../../single_css/global.css">
 		<!--<script src="../../single_js/td_phb.js"></script>-->
 		<style>		
+			
 			/*列表内容*/
 			.list_item{
 				width: 7.5rem;
@@ -62,7 +63,7 @@
 				margin-right: 0.16rem;
 			}
 			.list_item_right span{
-				color:#8E8E93;
+				color:#E37B5F;
 				float: left;
 				font-size: 0.48rem !important;
 				margin-right: 0 !important;
@@ -120,12 +121,16 @@
 				position:relative;
 				z-index:100;
 			}
+			.bottom li{
+				width:50%;
+				border:none !important;
+			}
 			.gz{
 				color:#F69200 !important;
-			}
+}
 		</style>
 	</head>
-	<body>
+	<body class="">
 		<div class="outerScroller">
 			<div class="scroll">
 				<header>
@@ -139,72 +144,65 @@
 				<div class="xd-tab-ul-box">
 					<ul class="xd-tab-ul">  
 						<li><a href="wdtd.html">雷达图</a></li>
-						<li class="active_bg"><a href="wdtd_phb.html">排行榜</a></li>
+						<li class="active_bg"><a href="team_phb_index.html">排行榜</a></li>
 					</ul>
 				</div> 
 				<section>	
 					<!--列表内容-->	
 					<p class="list_item_header">
-						<a href="td_phb_index.html">
+						<a href="team_phb_index.html">
 							<img src="../../images/up.png" alt="" class="list_item_header_img_down"/>
 							<img src="../../images/down.png" alt="" class="list_item_header_img_top"/>
 						</a>
-						<a href="td_phb_personal.html">
+						<a href="team_phb_team_search.html">
 							<img src="../../images/phb.png" alt="" class="list_item_phb_img_down" />
 						</a>
-							个人排行榜					
+							团队排行榜					
 						<img src="../../images/red.png" alt="" style="position:absolute;left:6.3rem;top:.1rem"/>
 						<img src="../../images/silver.png" alt="" style="position:absolute;left:5.8rem"/>					
 					</p>
 
 					<ul class="bottom">
 						<li>
-							<a href="#" class="gz">关注的个人</a>
+							<a href="#" class="gz">关注的团队</a>
+						</li>
+						<li>
+							<a href="#" class="">加入的团队</a>
 						</li>
 					</ul>
 					<ul class="list_item">
 						<li>
-							<a href="javascript:;">
-								<div class="list_item_left">
-									<a href="td_phb_search.html">
-										<img src="../../images/bqr2.png" alt="" class="list_item_header_img_phb" />
-									</a>
-									<span>快乐徒步走</span>
-								</div>
+							<div class="list_item_left">
+									<img src="../../images/bqr2.png" alt="" class="list_item_header_img_phb" />
+								<span>快乐徒步走</span>
+							</div>
+						
+							<div class="list_item_right">
+								<span>2</span>
+								<img src="../../images/red.png" alt=""/>
+							</div>
+						</li>
+						<li>
+							<div class="list_item_left">
+								<img src="../../images/bqr.png" alt="" class="list_item_header_img_phb" />
+								<span>健康不求人</span>
+							</div>
 							
-								<div class="list_item_right">
-									<span>10</span>
-									<img src="../../images/red.png" alt=""/>
-								</div>
-							</a>
+							<div class="list_item_right">
+								<span>2</span>
+								<img src="../../images/red.png" alt=""/>
+							</div>
 						</li>
 						<li>
-							<a href="javascript:;">
-								<div class="list_item_left">
-									<img src="../../images/bqr.png" alt="" class="list_item_header_img_phb" />
-									<span>健康不求人</span>
-								</div>
-								
-								<div class="list_item_right">
-									<span>12</span>
-									<img src="../../images/red.png" alt=""/>
-								</div>
-								
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;">
-								<div class="list_item_left">
-									<img src="../../images/bqr.png" alt="" class="list_item_header_img_phb" />
-									<span>快乐徒步走</span>
-								</div>
-								
-								<div class="list_item_right">
-									<span>15</span>
-									<img src="../../images/red.png" alt=""/>
-								</div>
-								
-							</a>
+							<div class="list_item_left">
+								<img src="../../images/bqr.png" alt="" class="list_item_header_img_phb" />
+								<span>快乐徒步走</span>
+							</div>
+							
+							<div class="list_item_right">
+								<span>3</span>
+								<img src="../../images/red.png" alt=""/>
+							</div>
 						</li>
 					</ul>
 				</section>		
@@ -212,13 +210,13 @@
 				<div class="z-alert">
 					<ul>
 						<li>
-							<a href="javascript:;" class="active">徒步活动</a>
+							<a href="#" class="active">徒步活动</a>
 						</li>
 						<li>
-							<a href="javascript:;">最美徒步</a>
+							<a href="#">最美徒步</a>
 						</li>
 						<li>
-							<a href="javascript:;">健康指导</a>
+							<a href="#">健康指导</a>
 						</li>
 					</ul>
 				</div>

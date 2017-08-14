@@ -10,10 +10,9 @@
 		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" href="../../single_css/global.css">
-		<!--<script src="../../single_js/td_phb.js"></script>-->
-		<style>		
-			
-			/*列表内容*/
+		<link rel="stylesheet" href="../../single_css/team_index.css" />
+		<style>
+		/*列表内容*/
 			.list_item{
 				width: 7.5rem;
 				height: auto;
@@ -63,7 +62,7 @@
 				margin-right: 0.16rem;
 			}
 			.list_item_right span{
-				color:#E37B5F;
+				color:#8E8E93;
 				float: left;
 				font-size: 0.48rem !important;
 				margin-right: 0 !important;
@@ -87,6 +86,7 @@
 				background-color: #F5F5F5;
 				box-shadow:0 .02rem .03rem rgba(0,0,0,.3);
 				position:relative;
+				z-index:100;
 			}
 			.list_item_header img{
 				width:.32rem;
@@ -121,16 +121,12 @@
 				position:relative;
 				z-index:100;
 			}
-			.bottom li{
-				width:50%;
-				border:none !important;
-			}
 			.gz{
 				color:#F69200 !important;
-}
+			}
 		</style>
 	</head>
-	<body class="">
+	<body class="bg1">
 		<div class="outerScroller">
 			<div class="scroll">
 				<header>
@@ -141,101 +137,104 @@
 						<span>我的团队</span>
 					</div>
 				</header>
-				<div class="xd-tab-ul-box">
-					<ul class="xd-tab-ul">  
-						<li><a href="wdtd.html">雷达图</a></li>
-						<li class="active_bg"><a href="wdtd_phb.html">排行榜</a></li>
-					</ul>
-				</div> 
 				<section>	
+					<!-- 搜索框 -->
+					<a href="team_index.html">
+						<div class="z_search"><img src="" alt="" /><input type="text" placeholder="搜索"/></div>
+					</a>
+					<!-- tab切换 -->	
+					<div class="xd-tab-ul-box">
+						<ul class="xd-tab-ul">  
+							<li><a href="team_index.html">已加入</a></li>
+							<li class="active_bg"><a href="td_created_concern.html">已关注</a></li>
+						</ul>
+					</div>
 					<!--列表内容-->	
 					<p class="list_item_header">
-						<a href="td_phb_index.html">
+						<a href="team_created_concern.html">
 							<img src="../../images/up.png" alt="" class="list_item_header_img_down"/>
 							<img src="../../images/down.png" alt="" class="list_item_header_img_top"/>
 						</a>
-						<a href="td_phb_team_search.html">
-							<img src="../../images/phb.png" alt="" class="list_item_phb_img_down" />
-						</a>
-							团队排行榜					
-						<img src="../../images/red.png" alt="" style="position:absolute;left:6.3rem;top:.1rem"/>
-						<img src="../../images/silver.png" alt="" style="position:absolute;left:5.8rem"/>					
+						团队					
 					</p>
 
-					<ul class="bottom">
-						<li>
-							<a href="#" class="gz">关注的团队</a>
-						</li>
-						<li>
-							<a href="#" class="">加入的团队</a>
-						</li>
-					</ul>
 					<ul class="list_item">
 						<li>
-							<div class="list_item_left">
-									<img src="../../images/bqr2.png" alt="" class="list_item_header_img_phb" />
-								<span>快乐徒步走</span>
-							</div>
-						
-							<div class="list_item_right">
-								<span>2</span>
-								<img src="../../images/red.png" alt=""/>
-							</div>
+							<a href="javascript:;">
+								<div class="list_item_left">
+									<a href="td_phb_search.html">
+										<img src="../../images/bqr2.png" alt="" class="list_item_header_img_phb" />
+									</a>
+									<span>快乐徒步走</span>
+								</div>
+							
+								<div class="list_item_right">
+									<span>5</span>
+									<img src="../../images/green.png" alt=""/>
+								</div>
+							</a>
 						</li>
 						<li>
-							<div class="list_item_left">
-								<img src="../../images/bqr.png" alt="" class="list_item_header_img_phb" />
-								<span>健康不求人</span>
-							</div>
-							
-							<div class="list_item_right">
-								<span>2</span>
-								<img src="../../images/red.png" alt=""/>
-							</div>
+							<a href="javascript:;">
+								<div class="list_item_left">
+									<img src="../../images/bqr.png" alt="" class="list_item_header_img_phb" />
+									<span>健康不求人</span>
+								</div>
+								
+								<div class="list_item_right">
+									<span>10</span>
+									<img src="../../images/red.png" alt=""/>
+								</div>
+								
+							</a>
 						</li>
 						<li>
-							<div class="list_item_left">
-								<img src="../../images/bqr.png" alt="" class="list_item_header_img_phb" />
-								<span>快乐徒步走</span>
-							</div>
-							
-							<div class="list_item_right">
-								<span>3</span>
-								<img src="../../images/red.png" alt=""/>
-							</div>
+							<a href="javascript:;">
+								<div class="list_item_left">
+									<img src="../../images/bqr.png" alt="" class="list_item_header_img_phb" />
+									<span>快乐徒步走</span>
+								</div>
+								
+								<div class="list_item_right">
+									<span>120</span>
+									<img src="../../images/line.png" alt=""/>
+								</div>
+								
+							</a>
 						</li>
 					</ul>
-				</section>		
-					
+				</section>
+				
+				<footer class="footer">
+					<ul class="bottom">
+						<li>
+							<a href="javascript:;">管理</a>
+						</li>
+					</ul>
+				</footer> 	
+				
 				<div class="z-alert">
 					<ul>
 						<li>
-							<a href="#" class="active">徒步活动</a>
+							<a href="javascript:;" class="active">徒步活动</a>
 						</li>
 						<li>
-							<a href="#">最美徒步</a>
+							<a href="javascript:;">最美徒步</a>
 						</li>
 						<li>
-							<a href="#">健康指导</a>
+							<a href="javascript:;">健康指导</a>
 						</li>
 					</ul>
 				</div>
 			</div>
+			<div class="box-transparent"></div>	
 		</div>
-		<div class="box-transparent"></div>	
-		<script src="../../js/echarts.min.js"></script>	
-		<script>
-			$(function() {
-				$('.z-alert').height($(window).height()-$('header').height());
-				for (var i=0;i<$('.list_item li').length;i++) {
-					var isEven=i % 2;
-					if(isEven==0){
-						$('.list_item li').eq(i).addClass('odd');
-					}else if(isEven==1){
-						$('.list_item li').eq(i).addClass('even');
-					}
-				}
-			})	
+		<script type="text/javascript">
+			/*$('.xd-tab-ul li').click(function(){
+				var x=$('.xd-tab-ul li').index(this);
+				$('.xd-tab-ul li').eq(x).addClass('active_bg').siblings().removeClass('active_bg');
+				$('.xd-tab-div .list_item').eq(x).show().siblings().hide();
+			})*/
 		</script>
 	</body>	
 </html>
