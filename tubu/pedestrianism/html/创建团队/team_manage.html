@@ -79,7 +79,8 @@
 			    top:0.3rem;
 			}	
 			.list_item_left{
-				float: left;
+				/*float: left;*/
+				margin-left:.63rem;
 			}
 			.list_item_left span{
 				color: #595959;
@@ -306,136 +307,135 @@
 				//递归动画显示列表内容
 				i=0;
 				$(".manage_btn").on('click',function anim(){
-					$(".list_item li").stop(true, true);
-					$(".list_item li:eq("+i+")").animate({
-			            'left':'1.2rem'
-			        },200,'easeInOutCirc',function(){
-			            i++;
-			            $(this).delay().next().animate(50,anim());
-			        });
-				      $(".footer_top").fadeIn(10).animate({
-			            bottom:"0"  
-			        	},500);
+//					$(".list_item li").stop(true, true);
+					for(var i=0;i<$(".list_item li").length;i++){
+						$(".list_item li").eq(i).delay(i*100).animate({'left':'1.2rem'},300,'easeInOutCirc');
+					}
+		      	    $(".footer_top").fadeIn(10).delay(300).animate({
+		            	bottom:"0"  
+		        	},300);
+			        	
 					$(".footer_bottom").fadeIn(10).animate({
-			            bottom:"-.98rem"  
-			         },500);
+			            bottom:"-1rem"  
+			         },300);	
 			  	})
-			//点击切换图片
-			$('.phb_remove img').toggle(function(){
-				$(this).attr('src','../../images/del_red.png');// 选中
-				$(this).addClass('remove_img');
-			},function(){					
-				$(this).attr('src','../../images/oval1.png');// 未选中
-				$(this).removeClass('remove_img');
-			})		
-			//实现点击删除内容及动画		
-			 $(".phb_remove img").on('click',function anim(){
-			 	var i=$(".phb_remove img").index(this);
-		   		  $(".remove_btn").click(function(){
-				  	var img_src= $('.phb_remove img').eq(i).attr('src');
-				  	$('.remove_img').css('opacity',0);
-				  	var q=[
-				  		function(){
-			  			 	$(".list_item li").stop(true,false).fadeIn(1000).animate({
-			           			 left:"-=1.2rem"  
-			         		},300,next); 
-				  		},
-				  		function(){
-				  			$(".footer_top").stop(true,false).fadeIn(10).animate({
-		           				bottom:"-.98rem"  
-		        			},50,next);
-				  		},
-				  		function(){
-				  			$(".footer_bottom").stop(true,false).fadeIn(10).animate({
-			           			 bottom:"0"  
-			         		},500,next);
-				  		},
-				  		function(){
-				  			if(img_src=="../../images/del_red.png"){
-			         			$('.remove_img').parent().parent().stop(true,false).animate({'left':'8.5rem'},800);
-								$('.remove_img').parent().parent().slideUp("1000", function() {
-						      	$('.remove_img').parent().parent().remove();
-							      	//执行删除
-							      	$.ajax({
-							      		type:"post",
-							      		url:"",
-							      		async:true,
-							      		success:function(){},
-							      		error:function(){
-							      			//内容清空
-							      			$('.list_item_visited').empty();
-											//动态内容添加
-							      			for(var i=0;i<5;i++){
-							      				$('.list_item_visited').append(`
-							      					<li>
-														<div class="phb_remove">
-															<img src="../../images/oval1.png" alt="" data="../../images/del_red.png"/>
-														</div>
-														<div class="list_item_left">
-															<img src="../../images/bqr2.png" alt="" class="list_item_header_img_phb" />
-															<span>快乐徒步走</span>
-														</div>							
-													</li>
-							      				`);
+				//点击切换图片
+				$('.phb_remove img').toggle(function(){
+					$(this).attr('src','../../images/del_red.png');// 选中
+					$(this).addClass('remove_img');
+				},function(){					
+					$(this).attr('src','../../images/oval1.png');// 未选中
+					$(this).removeClass('remove_img');
+				})		
+				//实现点击删除内容及动画		
+				 $(".phb_remove img").on('click',function anim(){
+				 	var i=$(".phb_remove img").index(this);
+			   		  $(".remove_btn").click(function(){
+					  	var img_src= $('.phb_remove img').eq(i).attr('src');
+					  	$('.remove_img').css('opacity',0);
+					  	$('.list_item li').css('box-shadow','none');
+					  	var q=[
+					  		function(){
+				  			 	$(".list_item li").stop(true,false).fadeIn(100).animate({
+				           			 left:"-=1.2rem"  
+				         		},300,'easeInOutCirc',next); 
+					  		},
+					  		function(){
+					  			$(".footer_top").stop(true,false).fadeIn(10).animate({
+			           				bottom:"-.98rem"  
+			        			},50,next);
+					  		},
+					  		function(){
+					  			$(".footer_bottom").stop(true,false).fadeIn(10).animate({
+				           			 bottom:"0"  
+				         		},500,next);
+					  		},
+					  		function(){
+					  			if(img_src=="../../images/del_red.png"){
+				         			$('.remove_img').parent().parent().stop(true,false).animate({'left':'8.5rem'},800);
+									$('.remove_img').parent().parent().slideUp("1000", function() {
+							      	$('.remove_img').parent().parent().remove();
+								      	//执行删除
+								      	$.ajax({
+								      		type:"post",
+								      		url:"",
+								      		async:true,
+								      		success:function(){},
+								      		error:function(){
+								      			//内容清空
+								      			$('.list_item_visited').empty();
+												//动态内容添加
+								      			for(var i=0;i<5;i++){
+								      				$('.list_item_visited').append(`
+								      					<li>
+															<div class="phb_remove">
+																<img src="../../images/oval1.png" alt="" data="../../images/del_red.png"/>
+															</div>
+															<div class="list_item_left">
+																<img src="../../images/bqr2.png" alt="" class="list_item_header_img_phb" />
+																<span>快乐徒步走</span>
+															</div>							
+														</li>
+								      				`);
+								      			}
+								      			
+									      		//奇,偶行变色
+								      			for (var i=0;i<$('.list_item_visited li').length;i++) {
+													var isEven=i % 2;
+													if(isEven==0){
+														$('.list_item_visited li').eq(i).addClass('odd');
+													}else if(isEven==1){
+														$('.list_item_visited li').eq(i).addClass('even');
+													}
+									      		}									      			
+	
+									      		//移除
+												i=0;
+												$(".manage_btn").on('click',function anim(){
+													$(".list_item li").stop(true, true);
+													$(".list_item li:eq("+i+")").animate({
+											            'left':'1.2rem'
+											        },100,'easeInOutCirc',function(){
+											            i++;
+											            $(this).delay(100).next().animate(50,anim());
+											        });
+											        		
+												      $(".footer_top").fadeIn(10).animate({
+											            bottom:"0"  
+											        	},500);
+									
+													$(".footer_bottom").fadeIn(10).animate({
+											            bottom:"-.98rem"  
+											         },500);
+											  	})
+			
+										      	$('.phb_remove img').toggle(function(){
+													$(this).attr('src','../../images/del_red.png');// 选中
+													$(this).addClass('remove_img');
+												},function(){					
+													$(this).attr('src','../../images/oval1.png');// 未选中
+													$(this).removeClass('remove_img');
+												})			      		
 							      			}
-							      			
-								      		//奇,偶行变色
-							      			for (var i=0;i<$('.list_item_visited li').length;i++) {
-												var isEven=i % 2;
-												if(isEven==0){
-													$('.list_item_visited li').eq(i).addClass('odd');
-												}else if(isEven==1){
-													$('.list_item_visited li').eq(i).addClass('even');
-												}
-								      		}									      			
-
-								      		//移除
-											i=0;
-											$(".manage_btn").on('click',function anim(){
-												$(".list_item li").stop(true, true);
-												$(".list_item li:eq("+i+")").animate({
-										            'left':'1.2rem'
-										        },100,function(){
-										            i++;
-										            $(this).delay().next().animate(50,anim());
-										        });
-										        		
-											      $(".footer_top").fadeIn(10).animate({
-										            bottom:"0"  
-										        	},500);
-								
-												$(".footer_bottom").fadeIn(10).animate({
-										            bottom:"-.98rem"  
-										         },500);
-										  	})
-		
-									      	$('.phb_remove img').toggle(function(){
-												$(this).attr('src','../../images/del_red.png');// 选中
-												$(this).addClass('remove_img');
-											},function(){					
-												$(this).attr('src','../../images/oval1.png');// 未选中
-												$(this).removeClass('remove_img');
-											})			      		
-						      			}
-								    });
-								});
-					 		}
-				  		}
-				  	];
-				  	function next(){  
-	           			$('.list_item').dequeue('myQueue');  
-	       			}
-				  	 $('.list_item').queue('myQueue', q);  
-	        		next(); 	  	
-		  		});  
+									    });
+									});
+						 		}
+					  		}
+					  	];
+					  	function next(){  
+		           			$('.list_item').dequeue('myQueue');  
+		       			}
+					  	 $('.list_item').queue('myQueue', q);  
+		        		next(); 	  	
+			  		});  
+				})
 			})
-		})
-		//点击取消
-		$('.cancel_manages').click(function(){
-			$(".list_item li").stop(true,false).fadeIn(1000).animate({
-			    left:"-=1.2rem"  
-			},400); 
-		});
+			//点击取消
+			$('.cancel_manages').click(function(){
+				$(".list_item li").stop(true,false).fadeIn(1000).animate({
+				    left:"-=1.2rem"  
+				},'easeInOutCirc',400); 
+			});
 		</script>
 	</body>
 </html>

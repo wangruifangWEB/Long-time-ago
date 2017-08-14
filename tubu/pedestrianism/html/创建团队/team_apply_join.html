@@ -121,6 +121,14 @@
 			    margin-right: .68rem;
 			    font-family: PingFangSC-Regular;
 			}
+			.p_fs{
+				color: #8E8E93;
+			    font-size: .32rem;
+			    height: 0.96rem;
+			    line-height: 0.96rem;
+			    padding:0 .7rem !important;
+			    font-family: PingFangSC-Regular;
+			}
 			/*弹框*/
 			.alert_show{
 			    width: 5.60rem;
@@ -323,36 +331,38 @@
 			//递归动画显示列表内容
 				i=0;
 				$(".manage_btn").on('click',function anim(){
-					$(".list_item_apply li").stop(true, true);
-					$(".list_item_apply li:eq("+i+")").animate({
-			            'left':'2.4rem'
-			       },200,'easeInOutCirc',function(){
-			            i++;
-			            $(this).delay(100).next().animate(100,anim());
-			        });
-				      $(".footer_top").fadeIn(100).animate({
-			            bottom:"0"  
-			        	},500);
-					$(".footer_bottom").fadeIn(100).animate({
-			            bottom:"-.98rem"  
-			         },500);
-			  })
+					var i=$('.list_item_apply li').index(this);
+						$(".list_item_apply li").stop(true, true);
+					
+						for(var i=0;i<$(".list_item li").length;i++){
+							$(".list_item li").eq(i).delay(i*100).animate({'left':'2.4rem'},300,'easeInOutCirc');
+						}
+					      $(".footer_top").fadeIn(10).delay(300).animate({
+				            bottom:"0"  
+				        	},300);
+				        	
+						$(".footer_bottom").fadeIn(10).animate({
+				            bottom:"-1rem"  
+				         },300);		
+			  	})
 				
 				//实现点击删除内容及动画		
 				 $(".phb_remove img").on('click',function anim(){
 				 	var i=$(".phb_remove img").index(this);
 			   		  $(".remove_btn").click(function(){
 					  	var img_src= $('.phb_remove img').eq(i).attr('src');
+					  	$('.remove_img').css('opacity',0);
+				  		$('.list_item li').css('box-shadow','none');
 					  	var q=[
 					  		function(){
-				  			 	$(".list_item_apply li").stop(true,false).fadeIn(1000).animate({
+				  			 	$(".list_item_apply li").stop(true,false).fadeIn(100).animate({
 				           			 left:"-2.4rem"  
-				         		},300,next); 
+				         		},300,'easeInOutCirc',next); 
 					  		},
 					  		function(){
 					  			$(".footer_top").stop(true,false).fadeIn(10).animate({
 			           				bottom:"-.98rem"  
-			        			},50,next);
+			        			},500,next);
 					  		},
 					  		function(){
 					  			$(".footer_bottom").stop(true,false).fadeIn(10).animate({
@@ -381,16 +391,22 @@
 					var li=$(this).parent().parent();
 					li.stop(true,false).animate({
 					    left:"0"  
-					},500,function(){
-						li.append('<p>已拒绝</p>');
+					},300,'easeInOutCirc',function(){
+						if(!$('.list_item_apply li').children().hasClass('s1')){
+							li.append('<p>已拒绝</p>').addClass('s1');
+							li.children('.phb_remove').addClass('p_fs').html('已拒绝');
+						}
 					});
 				});
 				$('.join').click(function(){
 					var li=$(this).parent().parent();
 					li.stop(true,false).animate({
 					    left:"0"  
-					},500,function(){
-						li.append('<p>已同意</p>');
+					},300,function(){
+						if(!$('.list_item_apply li').children().hasClass('s2')){
+							li.append('<p>已同意</p>').addClass('s2');
+							li.children('.phb_remove').addClass('p_fs').html('已同意');
+						}
 					});
 				});
 				
