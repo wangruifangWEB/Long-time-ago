@@ -1,3 +1,4 @@
+
 function biglv() {
 	document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
 }
@@ -32,9 +33,14 @@ $.fn.toggle = function( fn ) {
  
     return this.click( toggler );
 }
+
+
 // tab切换
-$('.tab_switch_ul li').click(function(){
-	var i=$('.tab_switch_ul li').index(this);
-	$('.tab_switch_ul li').eq(i).addClass('active').siblings().removeClass('active');
-	$('.tab_switch_cont_first').eq(i).show().siblings().hide();
+$(function(){
+	$('.tab_switch_ul li').click(function(){
+		var i=$('.tab_switch_ul li').index(this);
+		$('.tab_switch_ul li').eq(i).addClass('active').siblings().removeClass('active');
+		$('.tab_switch_cont_first').eq(i).show().siblings().hide();
+	})
 })
+
