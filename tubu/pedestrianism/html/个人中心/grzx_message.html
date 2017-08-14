@@ -69,7 +69,7 @@
 				};
 				
 			 	$(".xd-tab-ul li").click(function() {
-					var x=$(".xd-tab-ul li").index(this);
+					var x=$(".xd-tab-ul li").index(this); 	
 					$('.list_item li').css({'top':'-0.32rem','opacity': '0'});
 					$(".xd-tab-ul li").eq(x).addClass('active').siblings().removeClass('active');
 					$(".xd-tab-div .list_item").eq(x).show().siblings().hide();

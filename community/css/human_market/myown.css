@@ -1,0 +1,155 @@
+.index{
+	width: 7.5rem;
+	height: 100%;
+	background-color: #f5f5f5;
+	font-family: PingFangSC-Medium;
+}
+/* 导航条样式 */
+.title{
+	width: 100%;
+	height: 1.5rem;
+	background-color: #ffffff;
+	margin-bottom: 0.4rem;
+}
+.title li{
+	float: left;
+}
+.title .logo{
+	width: 1rem;
+	height: 1rem;
+	padding-left: 0.45rem;
+	margin-top: 0.25rem;
+	border-radius: 50%;
+	margin-right: 0.25rem;
+	position: relative;
+}
+.title .logo .grade{
+	position: absolute;
+	top: 0.59rem;
+	left: 1.2rem;
+	width: 0.42rem;
+	height: 0.48rem;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: 0.42rem 0.48rem;
+}
+.title .logo img{
+	width: 100%;
+	height: 100%;
+}
+.title .user{
+	font-size: 0.34rem;
+	color: #2a2a2a;
+	line-height: 1.5rem;
+}
+.title .more_info{
+	float: right;
+	
+}
+.title .more_info p{
+	float: left;
+	line-height: 1.5rem;
+	font-size: 0.26rem;
+	color: #999;
+	margin-right: 0.15rem;
+}
+.title .more_info img{
+	float: left;
+	display: block;
+	width: 0.14rem;
+	height: 0.25rem;
+	margin-right: 0.13rem;
+	margin-top: 0.62rem;
+}
+.gold{	/* 黄金 */
+	background-image: url(../../images/human_market/gold.png);
+}
+.bronze{ /* 青铜 */
+	background-image: url(../../images/human_market/bronze.png);
+}
+.diamond{	/* 钻石 */
+	background-image: url(../../images/human_market/diamond.png);
+}
+.platinum{	/* 铂金 */
+	background-image: url(../../images/human_market/platinum.png);
+}
+.silver{	/* 白银 */
+	background-image: url(../../images/human_market/silver.png);
+}
+
+
+/* 我的问答 & 我的消息  */
+.my_second_part{
+	width: 100%;
+	height: 1.4rem;
+	background-color: #ffffff;
+}
+.my_second_part li{
+	
+	height: 1.4rem;
+	line-height: 1.4rem;
+	float: left;
+	font-size: 0.3rem;
+	color: #2a2a2a;
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: 0.45rem center;
+}
+.my_second_part .my_question{
+	width: 3.74rem;
+	background-image: url(../../images/human_market/my_question.png);
+	background-size: 0.41rem 0.37rem;
+}
+.my_second_part .my_line{
+	width: 0.02rem;
+	margin-top: 0.35rem;
+	height: 0.6rem;
+	background-color: #e1e0e0;
+}
+.my_second_part .my_message{
+	width: 3.74rem;
+	background-image: url(../../images/human_market/my_message.png);
+	background-size: 0.4rem 0.4rem;
+}
+.question_img{
+	width: 7.5rem;
+	height: 2.22rem;
+	margin-bottom: 0.4rem;
+}
+.question_img img{
+	width: 100%;
+	height: 100%;
+}
+/* 学习历史 */
+.my_history{
+	width: 100%;
+	height: 3.04rem;
+	background-color: #ffffff;
+	margin-bottom: 0.4rem;
+}
+.list_title{
+	width: 100%;
+	height: 1.05rem;
+	position: relative;
+}
+.list_title span{
+	color: #2a2a2a;
+	font-size: 0.3rem;
+	line-height: 1.05rem;
+}
+.list_title img:nth-child(1){
+	width: 0.4rem;
+	height: 0.4rem;
+	margin-left: 0.45rem;
+	margin-top: 0.3rem;
+	margin-right: 0.25rem;
+}
+.list_title img:nth-child(3){
+	display: block;
+	width: 0.14rem;
+	height: 0.25rem;
+	position: absolute;
+	top: 0.5rem;
+	/*left: 7.11rem;*/
+	right: 0.25rem;
+}
