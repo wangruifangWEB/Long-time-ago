@@ -3,8 +3,8 @@
 	height: 100%;
 	background-color: #f5f5f5;
 	font-family: PingFangSC-Medium;
-	padding-bottom: 1.7rem;
 }
+
 /* 导航条样式 */
 .title{
 	width: 100%;
@@ -186,4 +186,8 @@
 .list_padding_width{
 	width: 0.35rem;
 	display: none;
+}
+.nav_bottom_height{
+	height: 1.1rem;
+	
 }
