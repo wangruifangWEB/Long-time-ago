@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>人文市集</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/reset.css">
+		<link rel="stylesheet" href="../../css/human_market/index.css" />
+		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="container">
+			<!--搜索框-->
+			<input type="text" placeholder="心理咨询" class="search"/>
+			<!--轮播图-->
+			<div class="Activity_content">
+				<div>
+					<img src="../../images/human_market/index_banner.png" alt="" class="active" />
+					<!--<img src="../../images/human_market/index_banner.png" alt="" />
+					<img src="../../images/human_market/index_banner.png" alt="" />-->
+				</div>
+			<div>
+			<!--Part two 详情列表-->
+		    <div class="second">
+		        <ul class="second_list">
+		            <li>
+		                <a href="#">
+		                    <img src="../../images/human_market/new.png" alt=""/>
+		                    <span>最新</span>
+		                </a>
+		            </li>
+		            <li>
+		                <a href="#">
+		                    <img src="../../images/human_market/hot.png" alt=""/>
+		                    <span>热门</span>
+		                </a>
+		            </li>
+		            <li>
+		                <a href="#">
+		                    <img src="../../images/human_market/msg.png" alt=""/>
+		                    <span>消息</span>
+		                </a>
+		            </li>
+		            <li>
+		                <a href="#">
+		                    <img src="../../images/human_market/answer.png" alt=""/>
+		                    <span>问答</span>
+		                </a>
+		            </li>
+		        </ul>
+		    </div>
+		    <!--课程推荐-->
+		    <div class="class_good">
+		    	<div>
+		    		<img src="../../images/human_market/left.png" alt="" />
+		    		<p>课程推荐</p>
+		    		<img src="../../images/human_market/right.png" alt="" />
+		    	</div>
+		    </div>
+		    
+		    <!--竹杆小组—详情内容-->
+		    <ul class="details_list">
+		    	<li>
+		    		<img src="../../images/human_market/header_index.png" alt="" />
+		    		<div>
+		    			<p>竹杆小组</p>
+		    			<span>3小时前</span>
+		    		</div>
+		    		<img src="../../images/human_market/index_banner.png" alt="" class="details_banner_img"/>
+		    		<div class="details_list_user">
+		    			<p>20万人观看/20万人评论</p>
+		    			<p>视频</p>
+		    		</div>
+		    	</li>
+		    </ul>
+		</div>	
+		<div id="toTop">
+			<a href="#"><img src="../../images/human_market/totop.png" alt="" />顶部</a>
+		</div>
+		<script>
+		    var toTop=document.getElementById("toTop");
+		   	window.onscroll=function(){
+		     	if(document.body.scrollTop>=100){
+		     		toTop.style.display="block";
+		     	}else{
+		        	toTop.style.display="";
+		     	}
+		    }
+		</script>
+	</body>
+</html>
