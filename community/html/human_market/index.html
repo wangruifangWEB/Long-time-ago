@@ -6,22 +6,33 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link rel="stylesheet" href="../../css/reset.css">
 		<link rel="stylesheet" href="../../css/human_market/index.css" />
+		<link rel="stylesheet" href="../../css/global.css" />
+		<link rel="stylesheet" href="../../css/swiper.min.css" />
 		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/index/index.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
 		<div class="container">
 			<!--搜索框-->
-			<input type="text" placeholder="心理咨询" class="search"/>
+			<div class="search_warp">
+				<input type="text" placeholder="心理咨询" class="search"/>
+			</div>
 			<!--轮播图-->
-			<div class="Activity_content">
-				<div>
-					<img src="../../images/human_market/index_banner.png" alt="" class="active" />
-					<!--<img src="../../images/human_market/index_banner.png" alt="" />
-					<img src="../../images/human_market/index_banner.png" alt="" />-->
-				</div>
-			<div>
+			<!--<div class="addWrap">
+			  <div class="swiper" id="mySwipe">
+			    <div class="swipe-wrap">
+			      <div><a href="javascript:;"><img class="img-responsive" src="../../images/human_market/banner_index.png"/></a></div>
+			      <div><a href="javascript:;"><img class="img-responsive" src="../../images/human_market/banner_index.png"/></a></div>
+			      <div><a href="javascript:;"><img class="img-responsive" src="../../images/human_market/banner_index.png"/></a></div>
+			    </div>
+			  </div>
+			  <ul id="position">
+			    <li class="cur"></li>
+			    <li class=""></li>
+			    <li class=""></li>
+			  </ul>
+			</div>-->
 			<!--Part two 详情列表-->
 		    <div class="second">
 		        <ul class="second_list">
@@ -76,18 +87,53 @@
 		    	</li>
 		    </ul>
 		</div>	
+		
+		<!-- 底部导航 -->
+    		<ul class="nav_bottom">
+    			<li>
+    				<a href="javascript:;">
+    					<img src="../../images/human_market/course.png" alt="" />
+    					<span>课程</span>
+    				</a>
+    			</li>
+    			<li>
+    				<a href="javascript:;">
+    					<img src="../../images/human_market/type_not.png" alt="" />
+    					<span>分类</span>
+    				</a>
+    			</li>
+    			<li>
+    				<a href="javascript:;">
+    					<img src="../../images/human_market/dingyue_not.png" alt="" />
+    					<span>订阅</span>
+    				</a>
+    			</li>
+    			<li>
+    				<a href="javascript:;">
+    					<img src="../../images/human_market/myown_not.png" alt="" />
+    					<span>我的</span>
+    				</a>
+    			</li>
+    		</ul>
+		
 		<div id="toTop">
 			<a href="#"><img src="../../images/human_market/totop.png" alt="" />顶部</a>
 		</div>
+		<script src="../../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 		<script>
-		    var toTop=document.getElementById("toTop");
-		   	window.onscroll=function(){
-		     	if(document.body.scrollTop>=100){
-		     		toTop.style.display="block";
-		     	}else{
-		        	toTop.style.display="";
-		     	}
-		    }
+			var bullets = document.getElementById('position').getElementsByTagName('li');
+			var banner = Swiper(document.getElementById('mySwipe'), {
+				auto: 2000,
+				continuous: true,
+				disableScroll:false,
+				callback: function(pos) {
+					var i = bullets.length;
+					while (i--) {
+					  bullets[i].className = ' ';
+					}
+					bullets[pos].className = 'cur';
+				}
+			});
 		</script>
 	</body>
 </html>

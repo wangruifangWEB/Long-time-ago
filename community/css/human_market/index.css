@@ -5,7 +5,7 @@ body,html{
 	width: 7.5rem;
 	height: 100%;
 	text-align: center;
-	background-color: #fff;
+	background-color: #f0f0f0;
 	font-family: PingFangSC-Medium;
 }
 .container input.search{
@@ -22,32 +22,15 @@ body,html{
 	background-color: #f0f0f0;
 	font-family: PingFangSC-Medium;
 	background-size:.33rem .33rem;
-	background-image: url(../../images/human_market/my_no.png);
+	background-image: url(../../images/human_market/search.png);
 	background-repeat: no-repeat;
 	background-position: .42rem .16rem;
 }
+.container .search_warp{
+	background-color: #fff;
+}
 /*轮播图*/
-.Activity_content{
-	background-color: #F0F0F0;
-}
- /*.Activity_content{
-  height: 2.62rem;
-  overflow: scroll;s
-  overflow-y: hidden;
-  padding-top: .3rem;
-}
-.Activity_content div {
-	width:12.5rem;
-  height: 2.62rem;
-  overflow: hidden;
-} */
-.Activity_content img {
-  width: 6.9rem;
-  height: 2.16rem;
-  border-radius: .1rem;
-  display: block;
-  margin: 0 auto;
-}
+
 /*<!--Part two 详情列表-->*/
 .second{
     width: 100%;
@@ -126,6 +109,7 @@ body,html{
 .details_list{
 	width:100%;
 	background-color: #fff;
+	margin-bottom:1.6rem;
 }
 .details_list li{
 	padding-bottom: 1.10rem;
@@ -179,18 +163,21 @@ body,html{
 	height:.70rem;
 	border-radius: 50%;
  	position:fixed;
-  	bottom:100px;
+  	bottom:200px;
   	right:.1rem;
   	opacity:.8;
   	color:#999;
+  	text-align: center;
   	bobrder:1px solid #c5c5c3;
   	background-color: #fff;
   	font-size: .18rem;
   	font-family: PingFangSC-Medium;
-  	/*display:none;*/
+  	display:none;
 }
 #toTop img{
+	display: block;
 	width:.24rem;
 	height:.28rem;
-	margin-top:.1rem;
+	margin:.01rem auto;
+	margin-bottom:.07rem;
 }
