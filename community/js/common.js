@@ -40,7 +40,7 @@ $(function(){
 	$('.tab_switch_ul li').click(function(){
 		var i=$('.tab_switch_ul li').index(this);
 		$('.tab_switch_ul li').eq(i).addClass('active').siblings().removeClass('active');
-		$('.tab_switch_cont_first').eq(i).show().siblings().hide();
+		$('.tab_switch_cont_detail').eq(i).show().siblings().hide();
 	})
 })
 
