@@ -23,6 +23,7 @@
 			<!--轮播图-->	
 			<div id="slider" class="mui-slider" >
 				<div class="mui-slider-group mui-slider-loop">
+					<!-- 循环的最后一张 -->
 					<div class="mui-slider-item mui-slider-item-duplicate">
 						<a href="javascript:;">
 							<img src="../../images/human_market/banner_first.png">
@@ -34,6 +35,12 @@
 							<img src="../../images/human_market/banner_first.png">
 						</a>
 					</div>
+					<div class="mui-slider-item">
+						<a href="javascript:;">
+							<img src="../../images/human_market/banner_first.png">
+						</a>
+					</div>
+					<!-- 循环的第一张 -->
 					<div class="mui-slider-item mui-slider-item-duplicate">
 						<a href="javascript:;">
 							<img src="../../images/human_market/banner_first.png">
@@ -169,7 +176,7 @@
 		<script>
 			var slider = mui("#slider");
 			slider.slider({
-				interval: 8000
+				interval: 3000
 			});
 		</script>
 	</body>
