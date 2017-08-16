@@ -8,11 +8,13 @@
 		<link rel="stylesheet" href="../../css/reset.css">
 		<link rel="stylesheet" href="../../css/human_market/index.css" />
 		<link rel="stylesheet" href="../../css/global.css" />
-		<!--<link rel="stylesheet" href="../../css/swiper.min.css" />-->
+		<link rel="stylesheet" href="../../css/swiper.min.css" />
 		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../../js/index/index.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="../../js/index/index.js" type="text/javascript" charset="utf-8"></script>-->
 		<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		
 	</head>
 	<body>
 		<div class="container">
@@ -30,7 +32,7 @@
 						</a>
 					</div>
 					<!-- 第一张 -->
-					<div class="mui-slider-item">
+					<div class="mui-slider-item" id="item1">
 						<a href="javascript:;">
 							<img src="../../images/human_market/banner_first.png">
 						</a>
@@ -52,6 +54,7 @@
 					<div class="mui-indicator"></div>
 				</div>-->
 			</div>
+			
 			<!--Part two 详情列表-->
 		    <div class="second">
 		        <ul class="second_list">
@@ -90,57 +93,48 @@
 		    	</div>
 		    </div>
 		    
-		    <!--竹杆小组—详情内容-->
-				<div class="tab_switch_first_cont">
-				<div class="tab_switch_cont_detail_title">
-					<div class="tab_switch_cont_detail_title_img">
-						<img src="../../images/human_market/header_index.png" alt=""/>
+		    <!--竹杆小组—详情内容-->   
+		    <div class="swiper-container">
+				<div class="swiper-wrapper w">
+					<div class="swiper-slide d">
+						<div class="init-loading list-group-item text-center" style="display: none;"><p>下拉刷新</p></div>
+							<div class="swiper-container2">
+								<div class="swiper-wrapper ">
+									<div class="swiper-slide list-group">
+										<div class="tab_switch_first_cont">
+											<div class="tab_switch_cont_detail_title">
+												<div class="tab_switch_cont_detail_title_img">
+													<img src="../../images/human_market/header_index.png" alt=""/>
+												</div>
+												<div class="tab_switch_cont_detail_title_name_warp">
+													<p class="tab_switch_cont_detail_title_name">用户名</p>
+													<p class="tab_switch_cont_detail_title_time">3小时前</p>
+												</div>
+											</div>
+												<div class="tab_switch_cont_detail_img">
+													<img src="../../images/human_market/index_banner.png" alt="" />
+													<div class="tab_switch_cont_detail_img_info">
+														<p class="tab_switch_cont_detail_img_name">轻享美食生活</p>
+														<p class="tab_switch_cont_detail_img_huati">#话题</p>
+													</div>
+													<p class="course_type tuwen_bg">图文</p>
+												</div>
+												<div class="tab_switch_cont_detail_remark">
+													<p class="tab_switch_cont_detail_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
+													<p class="tab_switch_cont_detail_remark_right">视频</p>
+												</div>
+											</div>
+										</div>
+								</div>
+								</div>
+							</div>
+						</div>
 					</div>
-					
-					<div class="tab_switch_cont_detail_title_name_warp">
-						<p class="tab_switch_cont_detail_title_name">用户名</p>
-						<p class="tab_switch_cont_detail_title_time">3小时前</p>
-					</div>
-				</div>
-				<div class="tab_switch_cont_detail_img">
-					<img src="../../images/human_market/index_banner.png" alt="" />
-					<div class="tab_switch_cont_detail_img_info">
-						<p class="tab_switch_cont_detail_img_name">轻享美食生活</p>
-						<p class="tab_switch_cont_detail_img_huati">#话题</p>
-					</div>
-					<p class="course_type tuwen_bg">图文</p>
-				</div>
-				<div class="tab_switch_cont_detail_remark">
-					<p class="tab_switch_cont_detail_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
-					<p class="tab_switch_cont_detail_remark_right">视频</p>
-				</div>
-			</div>
-			<div class="tab_switch_first_cont">
-				<div class="tab_switch_cont_detail_title">
-					<div class="tab_switch_cont_detail_title_img">
-						<img src="../../images/human_market/header_index.png" alt=""/>
-					</div>
-					
-					<div class="tab_switch_cont_detail_title_name_warp">
-						<p class="tab_switch_cont_detail_title_name">用户名</p>
-						<p class="tab_switch_cont_detail_title_time">3小时前</p>
-					</div>
-				</div>
-				<div class="tab_switch_cont_detail_img">
-					<img src="../../images/human_market/index_banner.png" alt="" />
-					<div class="tab_switch_cont_detail_img_info">
-						<p class="tab_switch_cont_detail_img_name">轻享美食生活</p>
-						<p class="tab_switch_cont_detail_img_huati">#话题</p>
-					</div>
-					<p class="course_type tuwen_bg">图文</p>
-				</div>
-				<div class="tab_switch_cont_detail_remark">
-					<p class="tab_switch_cont_detail_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
-					<p class="tab_switch_cont_detail_remark_right">视频</p>
+					<div class="loadtip"><p>正在加载!</p></div>
+					<div class="swiper-scrollbar"></div>
 				</div>
 			</div>
-		</div>	
-		
+
 		<!-- 底部导航 -->
     	<ul class="nav_bottom">
 			<li>
@@ -172,12 +166,52 @@
 		<div id="toTop">
 			<a href="#"><img src="../../images/human_market/totop.png" alt="" />顶部</a>
 		</div>
-		
+		<script src="../../js/index/index.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			var slider = mui("#slider");
-			slider.slider({
-				interval: 3000
+				slider.slider({
+					interval: 3000,
 			});
+			
+			
+			document.querySelector('.mui-slider').addEventListener('slide', function(event) {
+			  //注意slideNumber是从0开始的；
+//			  document.getElementById("info").innerText = "你正在看第"+(event.detail.slideNumber+1)+"张图片";
+//				alert("你正在看第"+(event.detail.slideNumber+1)+"张图片");		
+				var mui_slider_item=document.getElementsByClassName(".mui-slider-item");
+//					mui_slider_item.style.transform="scale(.8)";
+			});	
+//			
+//			var mui_slider_item=document.getElementsByClassName(".mui-slider-item");
+//				mui_slider_item.style.transform="scale(.8)";
+			
+			
+//			var item2Show = false,item3Show = false;//子选项卡是否显示标志
+//			document.querySelector('.mui-slider').addEventListener('slide', function(event) {
+
+//			  if (event.detail.slideNumber === 1) {
+//			    //切换到第二个选项卡
+//			    //根据具体业务，动态获得第二个选项卡内容；
+////			    var content = ""
+//			    //显示内容
+////			    alert(1);
+//			    var item1=document.getElementById("item1");
+//			    item1.style.transform="scale(.9)";
+//			    //改变标志位，下次直接显示
+//			    item2Show = true;
+//			  } else if (event.detail.slideNumber === 2&&!item3Show) {
+//			  	alert(2)
+//			    //切换到第三个选项卡
+//			    //根据具体业务，动态获得第三个选项卡内容；
+//			    var content = '2'
+//			    //显示内容
+//			    document.getElementById("item3").innerHTML = content;
+//			    //改变标志位，下次直接显示
+//			    item3Show = true;
+//			  }
+//			});
+
+
 		</script>
 	</body>
 </html>

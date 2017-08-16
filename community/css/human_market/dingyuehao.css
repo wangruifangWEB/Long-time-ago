@@ -11,7 +11,8 @@
 	margin:0 auto;
 	text-align: center;
 	padding-top:.4rem;
-	background-color:#383d43;
+	/*background:-webkit-gradient(linear, 0 0, 0 right, from(#1e1c10), to(#383d43));*/
+	background:linear-gradient(to right,#383d43,#1e1c10,#383d43);
 }
 .user_grade_warp{
 	width: 1rem;
@@ -55,6 +56,7 @@
 	width:1.6rem;
 	height:.6rem;
 	color:#fff;
+	outline: none;
 	font-size: .3rem;
 	margin-top:.45rem;
 	border-radius: .3rem;
@@ -193,4 +195,61 @@
 .nav_bottom_height{
 	height: 1.5rem;
 	display: none;
+}
+/*合辑部分*/
+.tab_switch_cont_heji_list{
+	background-color: #fff;
+}
+.tab_switch_cont_heji_list li{
+	width: 100%;
+	height:2.1rem;
+}
+.tab_switch_cont_heji_list .hj_shipin_img {
+	position:relative;
+	float: left;
+}
+.tab_switch_cont_heji_list .hj_shipin_img img{
+	width:2.6rem;
+	height:1.5rem;
+	padding:.3rem .2rem .3rem .25rem;
+}
+.tab_switch_cont_heji_list .mask_layer{
+	width:1.3rem;
+	height:1.5rem;
+	background:rgba(0,0,0,.65);
+	position:absolute;
+	left:1.58rem;
+	top:.3rem;
+	border-top-right-radius: .08rem;
+	border-bottom-right-radius: .08rem;
+}
+.tab_switch_cont_heji_list .mask_layer img{
+	width:.49rem;
+	height:.49rem;
+	position: absolute;
+	top:.2rem;
+    left:.15rem;
+}
+.tab_switch_cont_heji_list p{
+	display: block;
+}
+.tab_switch_cont_heji_list .hj_shipin_txt p:last-child{
+	color:#666;
+	font-size: .24rem;
+}
+.tab_switch_cont_heji_list .hj_shipin_txt{
+	padding-top:.7rem;
+	display: inline-block;
+}
+.tab_switch_cont_heji_list .hj_shipin_title{
+	color:#2A2A2A;
+	font-size: .32rem;
+	margin-bottom:.2rem;
+}
+.tab_switch_cont_heji_list .hj_shipin_collect{
+	width:.49rem;
+	height:.49rem;
+	float:right;
+	margin-right:.45rem;
+	margin-top:.78rem;
 }

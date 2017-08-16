@@ -44,7 +44,7 @@ body,html{
   padding:0 .05rem;
 }
 .mui-slider-item .mui-active{
-	transform: scale(1);
+	transform: scale(.8);
 	height: 2.16rem;
 	width: 6.9rem;
 }
@@ -241,6 +241,7 @@ body,html{
   	background-color: #fff;
   	font-size: .18rem;
   	font-family: PingFangSC-Medium;
+  	z-index:100;
   	display:none;
 }
 #toTop img{
@@ -249,4 +250,20 @@ body,html{
 	height:.28rem;
 	margin:.01rem auto;
 	margin-bottom:.07rem;
+}
+
+.loadtip p{
+	font-size: 0.26rem;
+	text-align: center;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	position: fixed;
+	bottom: 0;
+	width: 7.5rem;
+	display: none;
+	text-align: center;
+	background-color: #EFEFF4;
+	z-index: 10;
+	font-size: 0.26rem;
+	text-align: center;
 }
