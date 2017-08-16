@@ -4,13 +4,15 @@
 		<meta charset="UTF-8">
 		<title>人文市集</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
 		<link rel="stylesheet" href="../../css/reset.css">
 		<link rel="stylesheet" href="../../css/human_market/index.css" />
 		<link rel="stylesheet" href="../../css/global.css" />
-		<link rel="stylesheet" href="../../css/swiper.min.css" />
+		<!--<link rel="stylesheet" href="../../css/swiper.min.css" />-->
 		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/index/index.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -18,21 +20,31 @@
 			<div class="search_warp">
 				<input type="text" placeholder="心理咨询" class="search"/>
 			</div>
-			<!--轮播图-->
-			<!--<div class="addWrap">
-			  <div class="swiper" id="mySwipe">
-			    <div class="swipe-wrap">
-			      <div><a href="javascript:;"><img class="img-responsive" src="../../images/human_market/banner_index.png"/></a></div>
-			      <div><a href="javascript:;"><img class="img-responsive" src="../../images/human_market/banner_index.png"/></a></div>
-			      <div><a href="javascript:;"><img class="img-responsive" src="../../images/human_market/banner_index.png"/></a></div>
-			    </div>
-			  </div>
-			  <ul id="position">
-			    <li class="cur"></li>
-			    <li class=""></li>
-			    <li class=""></li>
-			  </ul>
-			</div>-->
+			<!--轮播图-->	
+			<div id="slider" class="mui-slider" >
+				<div class="mui-slider-group mui-slider-loop">
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="javascript:;">
+							<img src="../../images/human_market/banner_first.png">
+						</a>
+					</div>
+					<!-- 第一张 -->
+					<div class="mui-slider-item">
+						<a href="javascript:;">
+							<img src="../../images/human_market/banner_first.png">
+						</a>
+					</div>
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="javascript:;">
+							<img src="../../images/human_market/banner_first.png">
+						</a>
+					</div>
+				</div>
+				<!--<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+				</div>-->
+			</div>
 			<!--Part two 详情列表-->
 		    <div class="second">
 		        <ul class="second_list">
@@ -72,67 +84,92 @@
 		    </div>
 		    
 		    <!--竹杆小组—详情内容-->
-		    <ul class="details_list">
-		    	<li>
-		    		<img src="../../images/human_market/header_index.png" alt="" />
-		    		<div>
-		    			<p>竹杆小组</p>
-		    			<span>3小时前</span>
-		    		</div>
-		    		<img src="../../images/human_market/index_banner.png" alt="" class="details_banner_img"/>
-		    		<div class="details_list_user">
-		    			<p>20万人观看/20万人评论</p>
-		    			<p>视频</p>
-		    		</div>
-		    	</li>
-		    </ul>
+				<div class="tab_switch_first_cont">
+				<div class="tab_switch_cont_detail_title">
+					<div class="tab_switch_cont_detail_title_img">
+						<img src="../../images/human_market/header_index.png" alt=""/>
+					</div>
+					
+					<div class="tab_switch_cont_detail_title_name_warp">
+						<p class="tab_switch_cont_detail_title_name">用户名</p>
+						<p class="tab_switch_cont_detail_title_time">3小时前</p>
+					</div>
+				</div>
+				<div class="tab_switch_cont_detail_img">
+					<img src="../../images/human_market/index_banner.png" alt="" />
+					<div class="tab_switch_cont_detail_img_info">
+						<p class="tab_switch_cont_detail_img_name">轻享美食生活</p>
+						<p class="tab_switch_cont_detail_img_huati">#话题</p>
+					</div>
+					<p class="course_type tuwen_bg">图文</p>
+				</div>
+				<div class="tab_switch_cont_detail_remark">
+					<p class="tab_switch_cont_detail_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
+					<p class="tab_switch_cont_detail_remark_right">视频</p>
+				</div>
+			</div>
+			<div class="tab_switch_first_cont">
+				<div class="tab_switch_cont_detail_title">
+					<div class="tab_switch_cont_detail_title_img">
+						<img src="../../images/human_market/header_index.png" alt=""/>
+					</div>
+					
+					<div class="tab_switch_cont_detail_title_name_warp">
+						<p class="tab_switch_cont_detail_title_name">用户名</p>
+						<p class="tab_switch_cont_detail_title_time">3小时前</p>
+					</div>
+				</div>
+				<div class="tab_switch_cont_detail_img">
+					<img src="../../images/human_market/index_banner.png" alt="" />
+					<div class="tab_switch_cont_detail_img_info">
+						<p class="tab_switch_cont_detail_img_name">轻享美食生活</p>
+						<p class="tab_switch_cont_detail_img_huati">#话题</p>
+					</div>
+					<p class="course_type tuwen_bg">图文</p>
+				</div>
+				<div class="tab_switch_cont_detail_remark">
+					<p class="tab_switch_cont_detail_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
+					<p class="tab_switch_cont_detail_remark_right">视频</p>
+				</div>
+			</div>
 		</div>	
 		
 		<!-- 底部导航 -->
-    		<ul class="nav_bottom">
-    			<li>
-    				<a href="javascript:;">
-    					<img src="../../images/human_market/course.png" alt="" />
-    					<span>课程</span>
-    				</a>
-    			</li>
-    			<li>
-    				<a href="javascript:;">
-    					<img src="../../images/human_market/type_not.png" alt="" />
-    					<span>分类</span>
-    				</a>
-    			</li>
-    			<li>
-    				<a href="javascript:;">
-    					<img src="../../images/human_market/dingyue_not.png" alt="" />
-    					<span>订阅</span>
-    				</a>
-    			</li>
-    			<li>
-    				<a href="javascript:;">
-    					<img src="../../images/human_market/myown_not.png" alt="" />
-    					<span>我的</span>
-    				</a>
-    			</li>
-    		</ul>
+    	<ul class="nav_bottom">
+			<li>
+				<a href="javascript:;">
+					<img src="../../images/human_market/course.png" alt="" />
+					<span>课程</span>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="../../images/human_market/type_not.png" alt="" />
+					<span>分类</span>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="../../images/human_market/dingyue_not.png" alt="" />
+					<span>订阅</span>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="../../images/human_market/myown_not.png" alt="" />
+					<span>我的</span>
+				</a>
+			</li>
+		</ul>
 		
 		<div id="toTop">
 			<a href="#"><img src="../../images/human_market/totop.png" alt="" />顶部</a>
 		</div>
-		<script src="../../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		
 		<script>
-			var bullets = document.getElementById('position').getElementsByTagName('li');
-			var banner = Swiper(document.getElementById('mySwipe'), {
-				auto: 2000,
-				continuous: true,
-				disableScroll:false,
-				callback: function(pos) {
-					var i = bullets.length;
-					while (i--) {
-					  bullets[i].className = ' ';
-					}
-					bullets[pos].className = 'cur';
-				}
+			var slider = mui("#slider");
+			slider.slider({
+				interval: 8000
 			});
 		</script>
 	</body>

@@ -1,7 +1,5 @@
- 	$(function(){
-		var gs = $('.clearfix2').find("img").length * 8.9;
-		$('.clearfix2').css("width",gs+'rem');
-		
+ 	$(function(){	
+		//回到顶部
 		var toTop=document.getElementById("toTop");
 	   	window.onscroll=function(){
 	     	if(document.body.scrollTop>=50){
@@ -11,5 +9,3 @@
 	     	}
 	    }
 	});
- 
-	

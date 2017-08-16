@@ -24,16 +24,7 @@
 	margin-right: 0.25rem;
 	position: relative;
 }
-.title .logo .grade{
-	position: absolute;
-	top: 0.59rem;
-	left: 1.2rem;
-	width: 0.42rem;
-	height: 0.48rem;
-	background-position: 0 0;
-	background-repeat: no-repeat;
-	background-size: 0.42rem 0.48rem;
-}
+
 .title .logo img{
 	width: 100%;
 	height: 100%;
@@ -62,21 +53,7 @@
 	margin-right: 0.13rem;
 	margin-top: 0.62rem;
 }
-.gold{	/* 黄金 */
-	background-image: url(../../images/human_market/gold.png);
-}
-.bronze{ /* 青铜 */
-	background-image: url(../../images/human_market/bronze.png);
-}
-.diamond{	/* 钻石 */
-	background-image: url(../../images/human_market/diamond.png);
-}
-.platinum{	/* 铂金 */
-	background-image: url(../../images/human_market/platinum.png);
-}
-.silver{	/* 白银 */
-	background-image: url(../../images/human_market/silver.png);
-}
+
 
 
 /* 我的问答 & 我的消息  */

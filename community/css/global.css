@@ -52,3 +52,58 @@
 	background-repeat: no-repeat;
 	background-position: .42rem .16rem;
 }
+
+/* 等级样式 */
+.user_grade{
+	position: absolute;
+	top: 0.59rem;
+	left: 1.2rem;
+	width: 0.42rem;
+	height: 0.48rem;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: 0.42rem 0.48rem;
+}
+.gold{	/* 黄金 */
+	background-image: url(../images/human_market/gold.png);
+}
+.bronze{ /* 青铜 */
+	background-image: url(../images/human_market/bronze.png);
+}
+.diamond{	/* 钻石 */
+	background-image: url(../images/human_market/diamond.png);
+}
+.platinum{	/* 铂金 */
+	background-image: url(../images/human_market/platinum.png);
+}
+.silver{	/* 白银 */
+	background-image: url(../images/human_market/silver.png);
+}
+
+
+/* 图文视频分类样式 */
+.course_type{
+	position: absolute;
+	right: 0.6rem;
+	top: 0;
+	width: 0.86rem;
+	height: 0.43rem;
+	text-align: center;
+	line-height: 0.43rem;
+	color: #fff;
+	font-size: 0.24rem;
+	background-position: 0 0;
+	background-size: 0.86rem 0.43rem;
+	background-repeat: no-repeat;
+	border-bottom-left-radius: 0.1rem;
+	border-bottom-right-radius: 0.1rem;
+}
+.tuwen_bg{
+	background-image: url(../images/human_market/tuwen_bg.png);
+}
+.shipin_bg{
+	background-image: url(../images/human_market/shipin_bg.png);
+}
+.yinpin_bg{
+	background-image: url(../images/human_market/yinpin_bg.png);
+}

@@ -28,9 +28,24 @@ body,html{
 }
 .container .search_warp{
 	background-color: #fff;
+	padding-bottom:.9rem;
 }
 /*轮播图*/
-
+#slider {
+	overflow: hidden;
+	height:2.16rem;
+	background-color: #fff;
+ }
+#slider img{
+  /*width:6.9rem;*/
+  height:2.16rem;
+  border-radius: .1rem;
+  padding:0 .05rem;
+}
+.mui-slider .mui-slider-group{
+	width:6.9rem;
+	margin:0 auto;
+}
 /*<!--Part two 详情列表-->*/
 .second{
     width: 100%;
@@ -106,57 +121,98 @@ body,html{
 	align-items:center;
 }
 /*竹杆小组—详情内容*/
-.details_list{
-	width:100%;
-	background-color: #fff;
-	margin-bottom:1.6rem;
+.tab_switch_first_cont{
+	background-color: #ffffff;
+	width: 100%;
+	height: 6.12rem;
+	margin-bottom: 0.2rem;
 }
-.details_list li{
-	padding-bottom: 1.10rem;
-    background: #fff;
+.tab_switch_cont_detail_title{
+	width: 100%;
+	height: 1.26rem;
 }
-.details_list li img:nth-child(1){
-	width:.75rem;
-	height:.7rem;
-	float:left;
-	margin:.42rem .15rem 0 .30rem;
-}
-.details_list li img.details_banner_img{
-	width:6.86rem;
-	height:3.8rem;
-	padding-top:.25rem;
-}
-.details_list div{
-	float:left;
-	margin-top:.46rem;
-}
-.details_list div p{
-	color:#2A2A2A;
-	font-size: .26rem;
-	font-family: PingFangSC-Medium;
-	margin-bottom:.15rem;
-}
-.details_list div span{
-	color:#999;
-	font-size: .24rem;
-	font-family: PingFangSC-Medium;
-}
-.details_list .details_list_user{
-	width: 6.86rem;
-	margin-top:.40rem;
-	text-align: center;
-}
-.details_list .details_list_user p{
-	display: inline-block;
+.tab_switch_cont_detail_title_img{
+	width: 0.7rem;
+	height: 0.7rem;
 	float: left;
-    margin-left: .3rem;
-    font-size: .2rem;
-    font-family: PingFangSC-Medium;
+	margin: 0.33rem 0.15rem 0.25rem 0.3rem;
 }
-.details_list .details_list_user p:last-child{
-	float:right;
-	color:#2A2A2A;
+.tab_switch_cont_detail_title_img img{
+	width: 100%;
+	height: 100%;
+	
 }
+.tab_switch_cont_detail_title_name_warp{
+	float: left;
+}
+.tab_switch_cont_detail_title_name{
+	font-size: 0.26rem;
+	padding-top: 0.38rem;
+	padding-bottom: 0.15rem;
+}
+.tab_switch_cont_detail_title_time{
+	font-size: 0.24rem;
+	color: #999;
+}
+.tab_switch_cont_detail_img{
+	overflow: hidden;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	width: 6.86rem;
+	height: 3.8rem;
+	border-radius: 0.1rem;
+}
+.tab_switch_cont_detail_img img{
+	width: 100%;
+	height: 100%;
+}
+.tab_switch_cont_detail_img_info{
+	position: absolute;
+	width: 6.86rem;
+	overflow: hidden;
+	height: 1.25rem;
+	bottom: 0;
+	left: 0;
+	background-color: #000;
+	opacity: 0.5;
+	border-bottom-left-radius: 0.1rem;
+	border-bottom-right-radius: 0.1rem;
+}
+.tab_switch_cont_detail_img_name{
+	margin-top: 0.3rem;
+	padding-left: 0.3rem;
+	color: #fff;
+	font-size: 0.32rem;
+	display: flex;
+}
+.tab_switch_cont_detail_img_huati{
+	margin-top: 0.2rem;
+	color: #fff;
+	padding-left: 0.3rem;
+	font-size: 0.2rem;
+	display: flex;
+}
+.tab_switch_cont_detail_remark{
+	width: 100%;
+	height: 1rem;
+	line-height: 1rem;
+	font-size: 0.2rem;
+}
+.tab_switch_cont_detail_remark_left{
+	padding-left: 0.42rem;
+	float: left;
+	color: #666;
+}
+.tab_switch_cont_detail_remark_right{
+	padding-right: 0.34rem;
+	float: right;
+}
+.nav_bottom_height{
+	height: 1.5rem;
+	display: none;
+}
+
 /*回到顶部*/
 #toTop{
 	width:.70rem;
