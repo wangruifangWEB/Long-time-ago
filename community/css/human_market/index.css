@@ -1,0 +1,269 @@
+body,html{
+	background-color: #F0F0F0;
+}
+.container{
+	width: 7.5rem;
+	height: 100%;
+	text-align: center;
+	background-color: #f0f0f0;
+	font-family: PingFangSC-Medium;
+}
+.container input.search{
+	width:7rem;
+	height:.66rem;
+	color:#999;
+	margin-top:.22rem;
+	margin-bottom:.20rem;
+	text-align: center;
+	font-size: .26rem;
+	border: none;
+	outline: none;
+	border-radius:.33rem;
+	background-color: #f0f0f0;
+	font-family: PingFangSC-Medium;
+	background-size:.33rem .33rem;
+	background-image: url(../../images/human_market/search.png);
+	background-repeat: no-repeat;
+	background-position: .42rem .16rem;
+}
+.container .search_warp{
+	background-color: #fff;
+	padding-bottom:.9rem;
+}
+/*轮播图*/
+#slider {
+	overflow: hidden;
+	height:2.16rem;
+	background-color: #fff;
+ }
+#slider img{
+  width:6.9rem !important;
+  margin-left: 0.3rem;
+  height:2.16rem;
+  border-radius: .1rem;
+  padding:0 .05rem;
+}
+.mui-slider-item .mui-active{
+	transform: scale(.8);
+	height: 2.16rem;
+	width: 6.9rem;
+}
+.mui-slider .mui-slider-group{
+	transform: scale(.9);
+	/*width:6.9rem;
+	margin:0 auto;
+	transition: all 0s linear;*/
+}
+.mui-slider-item{
+	height: 2.16rem;
+	width:6.9rem !important;
+}
+
+/*<!--Part two 详情列表-->*/
+.second{
+    width: 100%;
+}
+.second_list{
+   	width: 100%;
+    text-align: center;
+    background: #ffffff;
+    padding-bottom: .30rem;
+}
+.second_list li{
+    display:inline-block;
+    width:20%;
+    text-align:center;
+    box-sizing: border-box;
+}
+.second_list li a:hover{
+    text-decoration: none;
+}
+.second_list li:nth-child(1) img{
+    width:.91rem;
+    height:.91rem;
+    margin-top:.37rem;
+}
+.second_list li:nth-child(2) img{
+    width:.88rem;
+    height:.88rem;
+    margin-top:.40rem
+}
+.second_list li:nth-child(3) img{
+    width:.91rem;
+    height:.91rem;
+    margin-top:.40rem;
+}
+.second_list li:nth-child(4) img{
+    width:.86rem;
+    height:.77rem;
+    margin-top:.45rem;
+}
+.second_list span{
+    display: block;
+    text-align: center;
+    padding-top:.2rem;
+    font-size:.24rem;
+    color:#2A2A2A;
+   	font-family: PingFangSC-Medium;
+}
+/*课程推荐*/
+.class_good{
+	width:100%;
+	height: .96rem;
+	background: #fff;
+	margin:.20rem 0;
+	text-align: center;
+}
+.class_good img{
+	display: block;
+	width:.2rem;
+	height:.3rem;
+}
+.class_good p{
+	display: block;
+	color:#666;
+	padding:0 .1rem;
+	font-size: .3rem;
+	font-family: PingFangSC-Medium;
+}
+.class_good div{
+	display: flex;
+	width:1.82rem;
+	height:100%;
+	margin: 0 auto;
+	align-items:center;
+}
+/*竹杆小组—详情内容*/
+.tab_switch_first_cont{
+	background-color: #ffffff;
+	width: 100%;
+	height: 6.12rem;
+	margin-bottom: 0.2rem;
+}
+.tab_switch_cont_detail_title{
+	width: 100%;
+	height: 1.26rem;
+}
+.tab_switch_cont_detail_title_img{
+	width: 0.7rem;
+	height: 0.7rem;
+	float: left;
+	margin: 0.33rem 0.15rem 0.25rem 0.3rem;
+}
+.tab_switch_cont_detail_title_img img{
+	width: 100%;
+	height: 100%;
+	
+}
+.tab_switch_cont_detail_title_name_warp{
+	float: left;
+}
+.tab_switch_cont_detail_title_name{
+	font-size: 0.26rem;
+	padding-top: 0.38rem;
+	padding-bottom: 0.15rem;
+}
+.tab_switch_cont_detail_title_time{
+	font-size: 0.24rem;
+	color: #999;
+}
+.tab_switch_cont_detail_img{
+	overflow: hidden;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	width: 6.86rem;
+	height: 3.8rem;
+	border-radius: 0.1rem;
+}
+.tab_switch_cont_detail_img img{
+	width: 100%;
+	height: 100%;
+}
+.tab_switch_cont_detail_img_info{
+	position: absolute;
+	width: 6.86rem;
+	overflow: hidden;
+	height: 1.25rem;
+	bottom: 0;
+	left: 0;
+	background-color: #000;
+	opacity: 0.5;
+	border-bottom-left-radius: 0.1rem;
+	border-bottom-right-radius: 0.1rem;
+}
+.tab_switch_cont_detail_img_name{
+	margin-top: 0.3rem;
+	padding-left: 0.3rem;
+	color: #fff;
+	font-size: 0.32rem;
+	display: flex;
+}
+.tab_switch_cont_detail_img_huati{
+	margin-top: 0.2rem;
+	color: #fff;
+	padding-left: 0.3rem;
+	font-size: 0.2rem;
+	display: flex;
+}
+.tab_switch_cont_detail_remark{
+	width: 100%;
+	height: 1rem;
+	line-height: 1rem;
+	font-size: 0.2rem;
+}
+.tab_switch_cont_detail_remark_left{
+	padding-left: 0.42rem;
+	float: left;
+	color: #666;
+}
+.tab_switch_cont_detail_remark_right{
+	padding-right: 0.34rem;
+	float: right;
+}
+.nav_bottom_height{
+	height: 1.5rem;
+	display: none;
+}
+
+/*回到顶部*/
+#toTop{
+	width:.70rem;
+	height:.70rem;
+	border-radius: 50%;
+ 	position:fixed;
+  	bottom:200px;
+  	right:.1rem;
+  	opacity:.8;
+  	color:#999;
+  	text-align: center;
+  	bobrder:1px solid #c5c5c3;
+  	background-color: #fff;
+  	font-size: .18rem;
+  	font-family: PingFangSC-Medium;
+  	z-index:100;
+  	display:none;
+}
+#toTop img{
+	display: block;
+	width:.24rem;
+	height:.28rem;
+	margin:.01rem auto;
+	margin-bottom:.07rem;
+}
+
+.loadtip p{
+	font-size: 0.26rem;
+	text-align: center;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	position: fixed;
+	bottom: 0;
+	width: 7.5rem;
+	display: none;
+	text-align: center;
+	background-color: #EFEFF4;
+	z-index: 10;
+	font-size: 0.26rem;
+	text-align: center;
+}

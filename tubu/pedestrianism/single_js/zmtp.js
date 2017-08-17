@@ -3,7 +3,7 @@ var ul_len=li_len*$('.zutp_list li').height();
 $('.zutp_list').height(ul_len);
 
 
-var buchongH=parseInt(0.2*100);
+var buchongH=parseInt(0.23*100);
 $('.talk_message').css('top',$('header').height() + $('.zutp_list').height() +buchongH+'px' );
 
 if($('.zutp_list li').length==4){
@@ -26,13 +26,13 @@ $('.read_cont').css('top',$(window).height());
 var intro_detail_len=$(window).height()-$('header').height()-$('.zutp_list').height()-$('.z-tab').height();
 var intro_detail_len_all=$(window).height()-intro_detail_len;
 
-$('.intro_detail').height($(window).height()-$('header').height()-$('.zutp_list').height()-$('.z-tab').height()-28+'px');
-$('.intro_detail').css('top',intro_detail_len_all+30+'px');
+$('.intro_detail').height($(window).height()-$('header').height()-$('.zutp_list').height()-$('.z-tab').height()-26+'px');
+$('.intro_detail').css('top',intro_detail_len_all+28+'px');
 
-// $('.intro_detail').height($(window).height()-$('header').height()-$('.zutp_list').height()-$('.z-tab').height());
 $('.swiper1 .swiper-container,.swiper1 .w').height($(window).height()-$('header').height()-$('.zutp_list').height()-$('.z-tab').height()+'px');
 $('.swiper2 .swiper-container,.swiper2 .w').height($(window).height()-$('header').height()-$('.zutp_list').height()-$('.talk_message_title').height()-$('.z-sr').height()+'px');
 $('.on2').click(function() {
+	$('.z-sr').animate({'left':'50%'});
 	$(this).find('a').addClass("active");
 	$('.talk_message').animate({'left':'0'});
 	$('.z-sr').animate({'left':'50%'});
@@ -40,6 +40,7 @@ $('.on2').click(function() {
 	$('.face-content').animate({'left':'0'});
 	$('.talk_hidden').animate({'display':'none'});
 })
+
 $('.on1').toggle(function() { 
 	$(this).find('img').attr('src',$(this).find('img').attr('data'));
 },function(){
@@ -98,6 +99,19 @@ $('.z-tab-box').on('scroll',function(){
    }
 });
 
+//添加点赞
+$('.user_good').toggle(function() { 
+	$(this).find('img').attr('src',$(this).find('img').attr('data'));
+	//$('i').css('display','block');
+},function(){
+	$('.user_good img').attr('src','../images/pr-e-1.png');
+})
+//取消点赞
+$('.user_good_qx').toggle(function() { 
+	$(this).find('img').attr('src',$(this).find('img').attr('data'));
+},function(){
+	$('.user_good_qx img').attr('src','../images/pr-e-3.png');
+})
 
 
 var loadFlag = true;
@@ -193,7 +207,7 @@ var mySwiper2 = new Swiper('.swiper2 .swiper-container',{
 						$('.z-sr').hide();
 					}
 					setTimeout(function() {
-						for(var i =0;i<6;i++) {
+						for(var i =0;i<6;i++){
 							$(".swiper2 .list-group .talk_message_ul").append(`
 								<li class="talk_message_list">
 									<div class="talk_message_list_left">
@@ -208,7 +222,6 @@ var mySwiper2 = new Swiper('.swiper2 .swiper-container',{
 						}
 						$(".loadtip p").hide();
 						$('.z-sr').show();
-//									
 						mySwiper2.update(); // 重新计算高度;
 					}, 800);
 				}

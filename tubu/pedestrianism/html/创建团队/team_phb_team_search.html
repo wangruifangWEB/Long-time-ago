@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/css.css"/>
+		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="../../single_css/global.css">
+		<style>
+			/*列表内容*/
+			.list_item{
+				width: 7.5rem;
+				height: auto;
+			}
+			.list_item li{
+				width: 100%;
+				height: 0.96rem;
+				padding:0 .63rem;
+				background-position: 6.73rem center;
+				background-size: 0.14rem 0.24rem;
+				background-repeat: no-repeat;
+				background-color: #f6f6f6;
+			}
+			.list_item span{
+				display: block;	
+				color:#8e8e93;
+				line-height:.67rem;			
+				float:right;
+				font-size: .48rem;
+			    margin-right: .32rem;
+			    margin-top: .2rem;			    
+			    font-family: PingFangSC-Medium;
+			}
+			.list_item li a{
+				display: inline-block;
+				font-size: 0.34rem;
+				padding-right: 0.63rem;
+				color: #595959;
+				height: 0.96rem;
+				line-height: 0.96rem;
+				vertical-align: super;
+				font-family: PingFangSC-Regular;
+			}
+			
+			.list_item_header{
+				height: 0.96rem;
+				line-height: 0.96rem;
+				text-align: center;
+				color: #595959;				
+				margin-top:.32rem;	
+				padding:0 .63rem;
+				font-size: 0.34rem;			
+				font-family: PingFangSC-Regular;
+				position:relative;
+				background-color: #F5F5F5;
+				box-shadow: 0px 1px 3px rgba(000,000,000,0.15);
+			}
+			.list_item_img_right_top{
+				position:relative;
+				top:.1rem;
+			}
+			.list_item_header img{
+				width:.32rem;
+				float:right;
+				margin-top:.4rem;
+				display: inline-block;
+			}
+			.list_item li img{
+				width:.32rem;
+				float:right;
+				margin-top:.3rem;
+				margin-right:.32rem;
+				vertical-align: bottom;
+			}
+			.list_item li .list_item_header_img{
+				width:.56rem;
+				float:left;
+				margin-top:.2rem;
+			}
+			.list_item_header_img_top{
+			    position: absolute;
+			    left: 0.63rem;
+			    top: .2rem;
+			}	
+			.list_item_header_img_down{		  
+			    position: absolute;
+			    left: 0.63rem;
+			}
+		</style>
+	</head>
+	<body class="bg1">
+		<div class="outerScroller">
+			<div class="scroll">
+				<header>
+					<div class="d-title">
+						<a href="#">
+							<img src="../../images/cd.png" alt="" />
+						</a>
+						<span>我的团队</span>
+					</div>
+				</header>
+		
+				<section>	
+					<!--搜索框-->
+					<div class="z_search"><input type="text" placeholder="搜索"/></div>
+					<!--列表内容-->	
+					<p class="list_item_header">
+						<a href="team_phb_team_concern.html">
+							<img src="../../images/up.png" alt="" class="list_item_header_img_down"/>
+							<img src="../../images/down.png" alt="" class="list_item_header_img_top"/>
+						</a>
+							团队排行榜					
+						<img src="../../images/red.png" alt="" style="position:absolute;left:6.2rem;top:.1rem"/>
+						<img src="../../images/silver.png" alt="" style="position:absolute;left:5.6rem"/>					
+					</p>
+					<ul class="list_item">						
+						<li class="">
+							<img src="../../images/bqr.png" alt="" class='list_item_header_img'/>
+							<a href="datum.html" class="list_item_datum">健康不求人</a>
+							<img src="../../images/green.png" alt="" class='list_item_img_right list_item_img_right_top'/>
+							<img src="../../images/golden.png" alt="" class='list_item_img_right'/>
+						</li>
+						<li class="">
+							<img src="../../images/bqr2.png" alt="" class='list_item_header_img'/>
+							<a href="javascript:;" class="list_item_message">快乐徒步走</a>
+							<img src="../../images/line.png" alt="" class="list_item_img_right_top"/>
+							<img src="../../images/silver.png" alt="" />
+						</li>
+						<li class="">
+							<img src="../../images/bqr.png" alt="" class='list_item_header_img'/>
+							<a href="javascript:;" class="list_item_medal">健康不求人</a>
+							<img src="../../images/red.png" alt="" class="list_item_img_right_top"/>
+							<img src="../../images/golden.png" alt="" />
+						</li>
+						<li class="">
+							<img src="../../images/bqr2.png" alt="" class='list_item_header_img'/>
+							<a href="javascript:;" class="list_item_healthyScore">快乐徒步走</a>
+							<img src="../../images/red.png" alt="" class="list_item_img_right_top"/>
+							<img src="../../images/silver.png" alt="" />
+						</li>
+						<li class="">
+							<img src="../../images/bqr.png" alt="" class='list_item_header_img'/>
+							<a href="javascript:;" class="list_item_medal">健康不求人</a>
+							<img src="../../images/red.png" alt="" class="list_item_img_right_top"/>							
+							<span>4</span>
+						</li>
+						<li class="">
+							<img src="../../images/bqr2.png" alt="" class='list_item_header_img'/>
+							<a href="javascript:;" class="list_item_healthyScore">快乐徒步走</a>
+							<img src="../../images/red.png" alt="" class="list_item_img_right_top"/>
+							<span>5</span>
+						</li>
+						<li class="">
+							<img src="../../images/bqr.png" alt="" class='list_item_header_img'/>
+							<a href="javascript:;" class="list_item_medal">健康不求人</a>
+							<img src="../../images/red.png" alt="" class="list_item_img_right_top"/>
+							<span>6</span>
+						</li>
+						<li class="">
+							<img src="../../images/bqr2.png" alt="" class='list_item_header_img'/>
+							<a href="javascript:;" class="list_item_healthyScore">快乐徒步走</a>
+							<img src="../../images/red.png" alt="" class="list_item_img_right_top"/>
+							<span>7</span>
+						</li>
+						<li class="">
+							<img src="../../images/bqr.png" alt="" class='list_item_header_img'/>
+							<a href="javascript:;" class="list_item_medal">健康不求人</a>
+							<img src="../../images/red.png" alt="" class="list_item_img_right_top"/>
+							<span>8</span>
+						</li>
+						<li class="">
+							<img src="../../images/bqr2.png" alt="" class='list_item_header_img'/>
+							<a href="javascript:;" class="list_item_healthyScore">快乐徒步走</a>
+							<img src="../../images/red.png" alt="" class="list_item_img_right_top"/>
+							<span>9</span>
+						</li>
+					</ul>
+				</section>		
+					
+					<div class="z-alert">
+						<ul>
+							<li>
+								<a href="#" class="active">徒步活动</a>
+							</li>
+							<li>
+								<a href="#">最美徒步</a>
+							</li>
+							<li>
+								<a href="#">健康指导</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		<div class="box-transparent"></div>	
+	</div>
+	</div>
+
+	<script>
+		$(function() {
+			$('.z-alert').height($(window).height()-$('header').height());
+			for (var i=0;i<$('.list_item li').length;i++) {
+				var isEven=i % 2;
+				if(isEven==0){
+					$('.list_item li').eq(i).addClass('odd');
+				}else if(isEven==1){
+					$('.list_item li').eq(i).addClass('even');
+				}
+			}
+		})	
+	</script>
+	</body>	
+</html>

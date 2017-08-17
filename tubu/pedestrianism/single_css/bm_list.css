@@ -4,7 +4,12 @@
 	background-color: #FD663C;
 	position: fixed;
 	top: 0.98rem;
-	box-shadow: 0px 2px 3px rgba(0,0,0,0.15)
+}
+body{
+	position: relative;
+}
+.team_name{
+	z-index: 100;
 }
 .team_name p{
 	text-align: center;
@@ -163,6 +168,9 @@
 	display: block;
 	margin: 0 auto;
 }
+.name .change{
+	width: 1.35rem;	
+}
 .tel .change{
 	width: 2.14rem;	
 }
@@ -178,15 +186,65 @@
 .money .change{
 	width: 1.04rem;	
 }
-.modify{
+button{
 	width: 0.82rem !important;
 	height: 0.48rem !important;
 	line-height: 0.48rem !important;
 	border: solid 1px #fd663c;
 	border-radius: 0.1rem;
-	color: #fd663c;
 	background-color: transparent;
 	margin-top: 0.24rem !important;
 	margin-left: 0.24rem !important;
 	text-align: center !important;
 }
+.modify{
+	color: #fd663c;
+	background-color: #f6f6f6;
+}
+.confirm{
+	background-color: #fd663c;
+	color: #f6f6f6;
+}
+/*.mask1{
+	width: 7.5rem;
+	height: auto;
+	background-color: #000000;
+	opacity: 0.3;
+	z-index: 1;
+	top: 2.94rem;
+	display: none;
+	position: absolute;
+}
+.mask2{
+	width: 7.5rem;
+	background-color: #000000;
+	opacity: 0.3;
+	z-index: 1;
+	display: none;
+	position: absolute;
+}
+.mask{
+	width: 7.5rem;
+	height: 0.98rem;
+	background-color: #000000;
+	opacity: 0.3;
+	z-index: 1;
+	display: none;
+	position: fixed;
+}
+.modify_after{
+	background-color: #fff;
+	
+}
+.confirm_after{
+	background-color: #000;
+	opacity: 0.3;
+}*/
+
+
+.shadow{
+	background-color: #AEA9B8 !important;
+	color: #f6f6f6 !important;
+}
+
+

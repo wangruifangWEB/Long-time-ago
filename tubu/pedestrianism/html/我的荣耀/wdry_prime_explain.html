@@ -1,0 +1,253 @@
+<!DOCTYPE html> 
+<html style="background: #efeff4;">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/css.css"/>
+		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="../../single_css/global.css">	
+		<style type="text/css">
+			.honour_crown{
+				width: 1.28rem;
+				height: 1.28rem;
+				background-color: #EFEFF4;
+				border-radius: 0.64rem;
+				position: absolute;
+				top: 0.65rem;
+				right: 0.63rem;
+			}
+			.honour_crown img{
+				width: 0.92rem;
+				height: 0.75rem;
+				display: block;
+				vertical-align: middle;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -0.46rem;
+				margin-top: -0.375rem;
+				border-radius: 0;
+			}
+			.zl{
+				width: 6.24rem;
+				margin: 0 auto;
+				padding-top: 1.21rem;
+			}
+			.ry_instru_warp{
+				background-color: #f6f6f6;
+				border-radius: 0.1rem;
+			}
+			.zl .ry_instru {
+				font-size: 0.32rem;
+				color: #8E8E93;
+				font-family: PingFangSC-Medium;
+				line-height: 0.45rem;
+				padding: 0.23rem 0.07rem 0.21rem 0.08rem;
+				font-weight: 700;
+			}
+			.zl div{
+				border-radius: 0.1rem;
+				background-color: #f6f6f6;
+				width: 6.24rem;
+				border: none;
+			}
+			.zl div ul li{
+				border-right: solid 0.01rem #d8d8d8;
+				border-top: solid 0.01rem #D8D8D8;
+				position: relative;
+				float: left;
+					height: 0.89rem;
+				line-height: 0.89rem;
+			}
+			.zl div ul{
+				height: 0.89rem;
+				line-height: 0.89rem;
+				font-size: 0.26rem;
+				color: #030303;
+				line-height: 0.37rem;
+				font-family: PingFangSC-Light;
+				width: 6.24rem;
+			}
+			.zl div .ry_black{
+				font-weight: 700;
+				line-height: 0.37rem;
+				font-family: PingFangSC-Medium;
+			}
+			.zl div ul li span{
+				padding-top: 0.1rem;
+				font-weight: 700;
+				line-height: 0.37rem;
+				font-family: PingFangSC-Medium;
+			}
+			.zl div ul li p{
+				line-height: 0.37rem;
+			}
+			.zl div ul li:nth-child(1){
+				padding-left: 0.32rem;
+				width: 3.37rem;
+				line-height: 0.89rem;
+			}
+			.zl div ul li:nth-child(1) span{
+				display: block;
+				font-weight: 700;
+			}
+			.zl div ul li:nth-child(2){
+				width: 1.42rem;
+				color: #e64340;
+				text-align: center;
+			}
+			.zl div ul li:nth-child(3){
+				width: 1.45rem;
+				color: #45c01a;
+				border-right: none !important;
+				text-align: center;
+				
+			}
+			.zl div ul li img{
+				width: 0.48rem;
+				height: 0.48rem;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -0.24rem;
+				margin-top: -0.24rem;
+			}
+			.other_help{
+				width: 6.24rem;
+				height: 0.8rem;
+				margin-top: 0.32rem;
+				margin-bottom: 0.32rem;
+			}
+			.other_help_question{
+				width: 0.8rem;
+				height: 0.8rem;
+				background-color: #f6f6f6;
+				border-radius: 0.4rem;
+				position: relative;
+				left: 1.55rem;
+				float: left;
+				box-shadow: 0 0.02rem 0.03rem rgba(142,142,147,0.3);
+			}
+			.other_help_question img{
+				width: 0.48rem;
+				height: 0.48rem;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -0.24rem;
+				margin-top: -0.24rem;
+			}
+			.other_help_cup{
+				float: right;
+				width: 0.8rem;
+				height: 0.8rem;
+				background-color: #f6f6f6;
+				border-radius: 0.4rem;
+				position: relative;
+				right: 0.55rem;
+				box-shadow: 0 0.02rem 0.03rem rgba(142,142,147,0.3);
+			}
+			.other_help_cup img{
+				width: 0.58rem;
+				height: 0.56rem;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -0.29rem;	
+				margin-top: -0.28rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="outerScroller">
+			<div class="scroll">
+				<header>
+					<div class="d-title">
+						<a href="#">
+							<img src="../../images/cd.png" alt="" />
+						</a>
+						<span>我的资料</span>
+					</div>
+				</header>
+				<section class="width-box bg">		
+					<div class="z-moon">
+						<h4 >再见明月</h4>
+						<h5><img  src="../../images/z-moon.png" alt="" /></h5>
+						<div class="honour_crown">
+							<img  src="../../images/honour_crown.png" alt=""/>	
+						</div>
+					
+					</div>
+					<div class="zl">
+						<div class="ry_instru_warp">
+							<p class="ry_instru">
+								普通会员每周完成3次及以上5K徒步, 连续5周可以晋升为菁英会员; 菁英会员如有1周未完成3次及以上5K徒步, 降为普通会员。
+							</p>
+							<div>
+								<ul>
+									<li class="ry_black">会员以及权益区别</li>
+									<li><span>普通会员</span></li>
+									<li><span>菁英会员</span></li>
+								</ul>
+								<ul>
+									<li>参与各类活动</li>
+									<li><img src="../../images/ry_can.png" alt="" /></li>
+									<li><img src="../../images/ry_can.png" alt="" /></li>
+								</ul>
+								<ul>
+									<li><span>免费</span><p>享受普通健康资讯</p></li>
+									<li><img src="../../images/ry_can.png" alt="" /></li>
+									<li><img src="../../images/ry_can.png" alt="" /></li>
+								</ul>
+								<ul>
+									<li><span>免费</span><p>订阅普通专家课程</p></li>
+									<li><img src="../../images/ry_can.png" alt="" /></li>
+									<li><img src="../../images/ry_can.png" alt="" /></li>
+								</ul>
+								<ul>
+									<li><span>8折</span><p>订阅著名专家课程</p></li>
+									<li><img src="../../images/ry_notcan.png" alt="" /></li>
+									<li><img src="../../images/ry_can.png" alt="" /></li>
+								</ul>
+								<ul>
+									<li><span>8折</span><p>享受专业健康指导及服务</p></li>
+									<li><img src="../../images/ry_notcan.png" alt="" /></li>
+									<li><img src="../../images/ry_can.png" alt="" /></li>
+								</ul>
+							</div>
+							
+						</div>
+						
+					</div>
+					<div class="other_help">
+						<div class="other_help_question">
+							<a href="wdry_prime.html"><img src="../../images/other_help_close.png" alt="" /></a>
+						</div>
+						<div class="other_help_cup">
+							<a href="javascript:;"><img src="../../images/other_help_cup.png" alt=""/></a>
+						</div>
+					</div>
+				</section>
+				<div class="z-alert">
+					<ul>
+						<li><a href="#" class="active">徒步活动</a></li>
+						<li><a href="#">最美徒步</a></li>
+						<li><a href="#">健康指导</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="box-transparent"></div>
+		</div>
+		<script type="text/javascript">
+//			$('.scroll').height($(window).height());
+//			$('section').height($(window).height()-$('header').height());
+			/*alert($('.zl').width());
+			alert($('.ry_instru_warp').width())
+			alert($('.zl table tr').width());*/
+		</script>
+	</body>
+</html>

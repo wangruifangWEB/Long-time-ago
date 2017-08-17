@@ -1,0 +1,223 @@
+.team_name{
+	width: 7.5rem;
+	height: 0.98rem;
+	background-color: #FD663C;
+	position: fixed;
+	top: 0.98rem;
+}
+body{
+	position: relative;
+}
+.team_name{
+	z-index: 100;
+}
+.team_name p{
+	text-align: center;
+	color: #f6f6f6;
+	font-size: 0.37rem;
+	font-family: PingFangSC-Medium ;
+	height: 0.52rem;
+	line-height: 0.52rem;
+	margin-top: 0.23rem;
+}
+.container-fluid1{
+	margin-top: 1.96rem;
+}
+#left_div{
+    width:2.5rem;
+    float: left;
+}
+#left_div1{
+    width: 100%;
+    height: 0.98rem;
+    border-bottom: solid 0.02rem #d8d8d8;
+    
+}
+#left_div2{
+    height: 10rem;
+    overflow: hidden;
+}
+#left_table1 th{
+	padding-left: 0.24rem;
+	font-size: 0.32rem;
+	font-family: PingFangSC-Medium;
+	line-height: 0.98rem;
+	color: #595959;
+	height: 0.98rem;
+	width: 2.5rem;
+	text-align: left;
+	
+}
+#left_table1{
+	border-right: solid 0.02rem #d8d8d8;
+}
+#left_table2{
+	border-right: solid 0.02rem #d8d8d8;
+	height: 0.98rem;
+	width: 2.5rem;
+	margin-top: -0.98rem;
+}
+#left_table2 th{
+	font-size: 0.32rem;
+	font-family: PingFangSC-Medium;
+	font-weight: 500;
+	overflow: hidden;
+	white-space: nowrap;
+	
+}
+#right_table1,#right_table1 td{
+	height: 0.98rem;
+	overflow: hidden;
+}
+#right_div{
+    float: left;
+    width: 5rem !important;
+   
+}
+#right_div1{
+	z-index: 1000;
+    width: 100%;
+    overflow: hidden;
+    height: 0.98rem;
+    border-bottom: solid 0.02rem #d8d8d8;
+}
+#right_divx{
+   width: 100%;
+}
+#right_div2{
+    width:100%;
+    overflow: auto;
+}
+#right_table1{
+    height: 0.98rem;
+    line-height: 0.98rem;
+    font-size: 0.32rem;
+    width: 12.68rem;
+    border-bottom: solid 0.02rem #d8d8d8;
+}
+#right_table2{
+    white-space:nowrap;
+    font-size: 0.32rem;
+    width: 12.68rem;
+    margin-top: -0.98rem;
+}
+
+/*#right_table1 .idCard,#right_table2 .idCard{*/
+	/*width: 31.8%;*/
+	/*width: 3.63rem;*/
+	/*padding-right: 0.24rem;*/
+	/*padding-left: 0.24rem;*/
+}
+
+#right_table2 td{
+	padding-right: 0.24rem;
+	padding-left: 0.24rem;
+    text-align:left;
+    font-family: PingFangSC-Regular;
+}
+.odd{
+	background-color: #F6F6F6;
+	/*border-right: solid 0.02rem #d8d8d8;*/
+	height: 0.98rem;
+	line-height: 0.98rem;
+}
+.even{
+	background-color: #F0F0F0;
+	/*border-right: solid 0.02rem #d8d8d8;*/
+	height: 0.98rem;
+	line-height: 0.98rem;
+}
+.footer{
+	width: 7.5rem;
+	left: 50%;
+	margin-left: -3.75rem;
+	font-weight: bold;
+	background-color: #f6f6f6;
+}
+#left_div th{
+	text-align: left;
+}
+#right_div td{
+	overflow: hidden;
+	border-right: solid 0.02rem #d8d8d8;
+	text-align: center;
+}
+.red{
+	color: #f00 !important;
+}
+.add_people{
+	display: block;
+	width: 0.88rem;
+	height: 0.88rem;
+	background-color: #fd663c;
+	border-radius: 50%;
+	box-shadow: 0 0.03rem 0.07rem rgba(0,0,0,0.25);
+	position: absolute;
+	right: 0.32rem;
+	bottom: 0.32rem;
+	background-image: url(../images/add_people.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 0.56rem 0.56rem;
+	font-family: PingFangSC-Medium;
+}
+.change{
+	border: none;
+	outline: none;
+	height: 0.64rem;
+	line-height: 0.64rem;
+	font-size: 0.32rem;
+	display: block;
+	margin: 0 auto;
+}
+.name .change{
+	width: 1.35rem;	
+}
+.tel .change{
+	width: 2.14rem;	
+}
+.idCard .change{
+	width: 3.31rem;	
+}
+.gend .change{
+	width: 0.63rem;	
+}
+.sit .change{
+	width: 2.2rem;	
+}
+.money .change{
+	width: 1.04rem;	
+}
+button{
+	width: 0.82rem !important;
+	height: 0.48rem !important;
+	line-height: 0.48rem !important;
+	border: solid 1px #fd663c;
+	border-radius: 0.1rem;
+	background-color: transparent;
+	margin-top: 0.24rem !important;
+	margin-left: 0.24rem !important;
+	text-align: center !important;
+	color: #fd663c;
+	background-color: #f6f6f6;
+}
+/*.modify{
+	color: #fd663c;
+	background-color: #f6f6f6;
+}
+.confirm{
+	background-color: #fd663c;
+	color: #f6f6f6;
+}*/
+
+.edit{
+	background-color: #fd663c;
+	color: #f6f6f6;
+}
+
+.shadow{
+	background-color: #AEA9B8 !important;
+	color: #f6f6f6 !important;
+}
+
+

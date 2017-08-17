@@ -9,11 +9,54 @@
 		<link rel="stylesheet" href="../css/css.css" />
 		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/jquery.event.drag-1.5.min.js"></script>
-		<script src="../js/jquery.touchSlider.js"></script>
 		<script src="../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" href="../single_css/global.css">
 		<link rel="stylesheet" href="../single_css/zmtb.css">
+		<style>
+			/*删除*/
+		.user_say_del{
+			width:.4rem;
+			height:.4rem;
+		    margin-right: 1.7rem;
+			margin-top: -0.1rem;
+		}
+		/*弹出框*/
+		.alert_show{
+		    width: 5.60rem;
+		    height: 3.14rem;
+		    background: #F6F6F6;
+		    border-radius: .2rem;
+		    box-shadow: 0 0.01rem 0.07rem;
+		    z-index: 1000;
+		    position: fixed;
+		    top: 50%;
+		    left: 50%;
+		    margin-left:-2.8rem;
+		    margin-top:-1.6rem;
+		}
+		.alert_show p{
+			font-size:.32rem;
+			font-family: PingFangSC-Medium, sans-serif;
+			line-height:.45rem;
+			text-align: center;
+			 margin-bottom: 0.6rem;
+		}
+		.alert_show div.second{
+			width:5.6rem;
+			height:.98rem;				
+			font-size:.32rem;
+			font-family: PingFangSC-Medium, sans-serif;
+			line-height:.95rem;
+			text-align: center;
+			font-weight: bold;
+			border-top:1px solid #F5F5F5;
+		}
+		.alert_show .first_b{
+			height:2.16rem;
+			padding-top:.8rem;
+			box-shadow:0 2px 6px -2px #000;					
+		}
+		</style>
 	</head>
 	<body>
 		<div class="outerScroller">
@@ -46,6 +89,7 @@
 														<a href="#">
 															<div class="z-boxl">
 																<div class="z-boxl1">
+																	<img src="../images/del.png" alt="" class="user_say_del" id="itemid"  itemid="<{$v['id']}>">
 																	<h4>
 																		<p>北京市</p>
 																		<p>奥林匹克森林公园</p>
@@ -83,6 +127,14 @@
 						<div class="swiper-scrollbar"></div>
 					</div>
 				</section>
+				
+				<div class="alert_show" style="display:none">
+					<div class="first_b">
+						<p>确认删除吗？</p>
+					</div>
+					<div class="second">确认</div>
+				</div>
+				
 				<div class="z-alert">
 					<ul>
 						<li>
@@ -104,6 +156,51 @@
 		</div>
 		<div class="box-transparent"></div>	
 		<script src="../single_js/zmtb.js"></script>
-		
+		<script>
+			//原本内容的删除
+			$('.user_say_del').click(function(){
+				aa = document.getElementById("itemid");
+				id = aa.getAttribute("itemid");
+				var _this=$(this);
+				$('.alert_show').show();			
+				$('.second').click(function(){							
+					$('.alert_show').hide();	
+					$(_this).parent().parent().parent().remove();
+					$(_this).parent().parent().parent().find('.z-boxbg').removeClass('.z-boxbg');
+				});	
+			});
+		// //新加载的删除				
+		// 	$("body").on('click','.user_say_del',function(e) { 	
+		// 		var that=e.target;
+		// 		$('.alert_show').show();									
+		// 		$('.second').click(function(){							
+		// 			$('.alert_show').hide();
+		// 			$(that).parent().parent().parent().parent().remove();
+		// 			$(that).parent().parent().parent().find('.z-boxbg li').removeClass('.z-boxbg');
+		// 		});				
+		// 	}) 		
+				
+			//后台使用		
+			$("body").on('click','.user_say_del',function(e) { 
+				var that=e.target;
+				$('.second').click(function(){		
+					$.ajax({
+						url:"__CONTROLLER__/deleteUser",//这里指向的就不再是页面了，而是一个方法。
+						data:{id:id},
+						type:"POST",
+						dataType:"JSON",
+							success: function(data){
+								//alert(data['info']);
+								console.log(data);
+							   $(this).parent().parent().parent().remove();
+							},
+							error:function(){
+								alert("删除失败");
+							}
+					 });
+				});		
+				//$(that).parent().parent().parent().parent().remove();
+			}) 	
+		</script>
 	</body>
 </html>

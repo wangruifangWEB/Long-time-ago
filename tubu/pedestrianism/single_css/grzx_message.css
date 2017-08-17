@@ -1,7 +1,3 @@
-
-.xd-tab-ul{
-	border: 0.02rem solid #F69200;
-}
 .xd-tab-ul .active{
 	background-color: #F69200;
 }
@@ -17,6 +13,7 @@
 .list_item li{
 	opacity: 0;
 	top: -0.32rem;
+	/*display: none;*/
 	width: 100%;
 	height: 0.98rem;
 	line-height: 0.98rem;
@@ -34,12 +31,7 @@
 .xd-tab-div2{
 	display: none;
 }
-.odd{
-	background-color: #F6F6F6 !important;
-}
-.even{
-	background-color: #F0F0F0 !important;
-}
+
 .unread{
 	border: 1px solid #FF7043;
 	width: 6px;
@@ -56,3 +48,5 @@
 .bold{
 	font-weight: 700;
 }
+
+

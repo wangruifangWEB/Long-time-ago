@@ -4,6 +4,11 @@ body,html{
 	overflow-x: hidden;
 	font-family: PingFangSC-Medium;
 }
+button{
+	background-color: transparent;
+	border: none;
+	outline: none;
+}
 *{
 	padding: 0;
 	margin: 0;
@@ -57,13 +62,13 @@ header{
 	overflow: hidden;
 }
 .z-alert{
-	position: absolute;
+	position: fixed !important;
 }
 .footer{
 	width: 7.5rem;
 	left: 50%;
 	margin-left: -3.75rem;
-	background-color:#EFEFF4;
+	background-color:#f6f6f6;
 	font-weight: bold;
 }
 .footer_c{
@@ -98,4 +103,89 @@ header{
 	z-index: 10;
 	font-size: 0.26rem;
 	text-align: center;
+}
+
+.footer .bottom li button{
+	width: 100%;
+	height: 0.98rem;
+	text-align: center;
+	font-size: 0.37rem;
+	font-weight: bold;
+	line-height: 0.98rem;
+	vertical-align: top;
+}
+.notice_layer_warp{
+	position: relative;
+	left: 50%;
+	float: left;
+}
+.notice_layer{
+	height: 0.88rem;
+	line-height: 0.88rem;
+	padding-left: .64rem;
+	padding-right: 0.64rem;
+	color: #f6f6f6;
+	background-color: #000;
+	opacity: 0.9;
+	font-size: .32rem;
+	font-family: PingFangSC-Regular;
+	text-align: center;
+	border-radius: 0.1rem;
+	left: 50%;
+	z-index: 10000;
+	display: none;
+	position: relative;
+	left: -50%;
+	bottom: 5rem;
+}
+
+/*搜索框*/
+.z_search{
+	text-align: center;
+
+}
+.z_search input{
+	width:6.4rem;
+	height:.64rem;
+	border: none;
+	font-size: .32rem;
+	line-height: .37rem;
+	text-align: center;
+	border-radius: .15rem;
+	position: relative;
+	background-color: transparent;
+	background-image: url(../images/search.png);
+	background-repeat: no-repeat;
+	background-position: 2.4rem;
+	background-size:.33rem .33rem;
+	font-family: PingFangSC-Light;
+	box-shadow:0 0rem .08rem rgba(0,0,0,.3) inset;
+}
+
+/* tab切换 */
+.xd-tab-ul-box{
+	width: 7.5rem;
+	left: 50%;
+	margin-left: -3.75rem;
+}
+.xd-tab-div{
+	margin: 0 auto;
+}
+.xd-tab-ul{
+	border:0.02rem solid #ff9800;
+}
+.xd-tab-ul li a{
+	color:#F69200;
+}
+.xd-tab-ul .active_bg a{
+	color:#f6f6f6;
+}
+.active_bg{
+	background: #F69200 !important;
+}
+.odd{
+	background-color: #F6F6F6 !important;
+}
+.even{
+	background-color: #F0F0F0 !important;
 }
