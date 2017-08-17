@@ -5,7 +5,10 @@ function fingerTouch(innerEle,innerEleFather,fillEle,outerEle){
 	(function($){
 		$(window).load(function(){
 			outerEle.mCustomScrollbar({
-				horizontalScroll:true
+				horizontalScroll:true,
+				advanced:{ 
+				    updateOnContentResize:true
+				}
 			});
 			function myCallback(el,id){
 				if($(id).css("opacity")<1){return;}
@@ -24,8 +27,8 @@ $('.list_cont_warp').each(function(i){
 	new fingerTouch($('.list_cont'+(i+1)+' li'),$('.list_cont'+(i+1)),$('.list_padding_width'),$('.list_cont_warp'+(i+1)));
 });
 
-
-$(document).ready(function(e) {
+function zuohua(){
+//	$(document).ready(function(e) {
     // 设定每一行的宽度=屏幕宽度+按钮宽度
     // 设定常规信息区域宽度=屏幕宽度 
     $(".dingyue").width($(document).width());
@@ -79,12 +82,12 @@ $(document).ready(function(e) {
                 lastLeftObj = null; // 清空上一个左滑的对象
             }
             var diffX = e.changedTouches[0].pageX - lastXForMobile;
-            if (diffX < -5) {
+            if (diffX < -50) {
                 $(pressedObj).animate({marginLeft:"-1.26rem"}, 200); // 左滑
                 lastLeftObj && lastLeftObj != pressedObj && 
                     $(lastLeftObj).animate({marginLeft:"0"}, 200); // 已经左滑状态的按钮右滑
                 lastLeftObj = pressedObj; // 记录上一个左滑的对象
-            } else if (diffX > 5) {
+            } else if (diffX > 50) {
               if (pressedObj == lastLeftObj) {
                 $(pressedObj).animate({marginLeft:"0"}, 200); // 右滑
                 lastLeftObj = null; // 清空上一个左滑的对象
@@ -92,4 +95,6 @@ $(document).ready(function(e) {
             }
         });
     }
-});
+//});
+
+}
