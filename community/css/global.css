@@ -113,3 +113,62 @@
 	display: block;
 	clear: both;
 }
+/* 订阅按钮 */
+.isDingyue{
+	width: 1.6rem;
+	height: 0.6rem;
+	background:-webkit-gradient(linear, 0 0, 0 bottom, from(#a578e1), to(#8d56d8));
+	color: #fff;
+	font-size: 0.3rem;
+	box-shadow: 0 0.08rem 0.12rem rgba(153,103,220,0.4);
+	border-radius: 0.3rem;
+	margin-top: 0.6rem;
+	
+}
+/* 已订阅按钮 */
+.hasDingyue{
+	width: 1.58rem;
+	height: 0.58rem;
+	display: block;
+	margin-top: 0.6rem;
+	border: 0.02rem solid #a578e1;
+	border-radius: 0.29rem;
+	color: #772fd8;
+	font-size: 0.3rem;
+}
+/* 手指一动滑动图片样式 */
+.list_cont_warp{
+	width: 7.5rem;
+	height: 1.99rem;
+	overflow: hidden;
+}
+.list_cont{
+	height: 1.99rem;
+	width: 7.5rem;
+	margin-left: 0.45rem;
+	margin-right: 0.45rem;
+}
+.list_cont li{
+	float: left;
+	width: 2.2rem;
+	
+}
+.list_cont li img{
+	width: 2.1rem;
+	height: 1.17rem;
+	margin-right: 0.1rem;
+}
+.list_cont li p{
+	width: 2.1rem;
+	height: 0.82rem;
+	line-height: 0.82rem;
+	text-align: center;
+	color: #2a2a2a;
+	font-size: 0.24rem;
+	margin-right: 0.1rem;
+}
+.list_padding_width{
+	width: 0.35rem;
+	display: none;
+>>>>>>> d44358d1bcc639ebf4e3c113f2121719090c911c
+}

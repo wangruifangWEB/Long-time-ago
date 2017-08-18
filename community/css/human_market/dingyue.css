@@ -44,6 +44,7 @@
 	overflow-y: auto;
 	background-color: #f5f5f5;
 	clear: both;
+	overflow-x: hidden;
 }
 .tab_switch_first_cont_detail{
 	background-color: #ffffff;
@@ -134,17 +135,85 @@
 
 
 /* 第二部分 */
+.tab_switch_second_cont{
+	background-color: #fff;
+}
 .tab_switch_second_cont_detail{
 	width: 100%;
-	height: 1.88rem;
+	height: 1.89rem;
+	background-color: #fff;
+	position: relative;
 }
 .tab_switch_left{
-	width: ;
+	width: 1.65rem;
+	height: 1.89rem;
+	float: left;
 }
 .tab_switch_left img{
-	width: 100%;
-	height: 100%;
+	width: 1.22rem;
+	height: 1.22rem;
+	margin-top: 0.24rem;
+	margin-right: 0.25rem;
+	margin-left: 0.23rem;
 }
+.tab_switch_right{
+	width: 5.85rem;
+	height: 1.88rem;
+	border-bottom: solid 0.01rem #d8d8d8;
+	float: left;
+}
+.tab_switch_right ul{
+	float: left;
+	height: 1.88rem;
+	float: left;
+}
+.tab_switch_right ul li:nth-child(1){
+	font-size: 0.3rem;
+	font-weight: bold;
+	padding-top: 0.32rem;
+}
+.tab_switch_right ul li:nth-child(2){
+	font-size: 0.26rem;
+	color: #666;
+	padding-top: 0.22rem;
+}
+.tab_switch_right ul li:nth-child(3){
+	font-size: 0.2rem;
+	color: #666;
+	padding-top: 0.22rem;
+}
+.tab_switch_right button{
+	float: right;
+	margin-right: 0.23rem;
+}
+.cancel_dingyue{
+	width: 1.25rem;
+	height: 1.88rem;
+	background-color: #fe0701;
+	font-weight: bold;
+	color: #fff;
+	font-size: 0.22rem;
+	float: right;
+	line-height: 1.88rem;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	right: -0.01rem;
+}
+
+
+/* 第三部分 */
+.tab_switch_third_cont{
+	background-color: #ffffff;
+}
+.tab_switch_third_cont_detail .tab_switch_right{
+	border-bottom: none;
+}
+.tab_switch_third_cont_detail{
+	border-bottom: solid 0.01rem #d8d8d8;
+}
+
+
 .nav_bottom_height{
 	height: 1.5rem;
 	display: none;
