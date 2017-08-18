@@ -209,8 +209,6 @@ $(function(){
 		}
 		//  刷新
 		if(mySwiper.translate >= 50) {
-			$('#slider img').slideDown(400);
-//			$('.swiper-wrapper.w').height($(window).height()-$('.z-activity').height());
 			if($('.z-healthy1').hasClass('show111')){
 				$.ajax({
 					url:"",
@@ -224,14 +222,7 @@ $(function(){
 							for(var i =0;i<20;i++) {
 								$(".list-group .z-healthy1").eq(mySwiper2.activeIndex).append(`
 									<li>
-										<div class="z-hl">
-											<img src="images/nvf.png" alt="" />
-										</div>
-										<div class="z-hr">
-											<h2>走进通州,为北京三大球加油11</h2>
-											<p>时间：<span>2016.10.08</span></p>
-											<p>地点：<span>通州大运河</span></p>
-										</div>
+										
 									</li>
 								`);
 							}
@@ -254,14 +245,7 @@ $(function(){
 							for(var i =0;i<20;i++) {
 								$(".list-group .z-healthy2").eq(mySwiper2.activeIndex).append(`
 									<li>
-										<div class="z-hl">
-											<img src="images/nvf.png" alt="" />
-										</div>
-										<div class="z-hr">
-											<h2>走进通州,为北京三大球加油22</h2>
-											<p>时间：<span>2016.10.08</span></p>
-											<p>地点：<span>通州大运河</span></p>
-										</div>
+									
 									</li>
 								`);
 							}

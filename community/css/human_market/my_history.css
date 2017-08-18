@@ -1,0 +1,104 @@
+.swiper-container, .w{height: calc(100vh - 60px);}
+.index{
+	width: 7.5rem;
+	background-color: #ffffff;
+	font-family: PingFangSC-Medium;
+	color: #2a2a2a;
+}
+/*我的历史部分*/
+.hj_date{
+	margin-top:.45rem;
+}
+.hj_huati{
+	color:#666 !important;
+}
+.tab_switch_cont_heji_list{
+	background-color: #fff;
+}
+.tab_switch_cont_heji_list li{
+	width: 100%;
+	height:1.8rem;
+	position: relative;
+}
+.tab_switch_cont_heji_list .hj_shipin_img{
+	position:relative;
+	float: left;
+	padding: .3rem .2rem 0 .25rem;
+}
+.tab_switch_cont_heji_list .hj_shipin_img img{
+	width:2.6rem;
+	height:1.5rem;
+}
+.tab_switch_cont_heji_list .mask_layer{
+	width:1.3rem;
+	height:1.5rem;
+	background:rgba(0,0,0,.65);
+	position:absolute;
+	left:1.58rem;
+	top:.3rem;
+	border-top-right-radius: .08rem;
+	border-bottom-right-radius: .08rem;
+}
+.tab_switch_cont_heji_list .mask_layer img{
+	width:.49rem;
+	height:.49rem;
+	position: absolute;
+	top: 0.5rem;
+    left: .43rem;
+}
+.tab_switch_cont_heji_list p{
+	color:#fff;
+	display: block;
+	top: 0.3rem;
+}
+.tab_switch_cont_heji_list .hj_shipin_txt p:last-child{
+	color:#666;
+	font-size: .24rem;
+}
+.tab_switch_cont_heji_list .hj_shipin_txt{
+	padding-top:.3rem;
+	display: inline-block;
+}
+.tab_switch_cont_heji_list .hj_shipin_title{
+	color:#2A2A2A;
+	font-size: .32rem;
+	margin-bottom:.2rem;
+}
+.tab_switch_cont_heji_list .hj_history_del{
+	width:.42rem;
+	height:.42rem;
+	float:right;
+	margin-right:.28rem;
+	margin-top:.80rem;
+}
+/*更多操作*/
+.more_sc{
+	width:100%;
+	height:1.8rem;
+	z-index:1000;
+	position: absolute;
+    top:0;
+    right:-7.5rem;
+    text-align: center;
+    background:rgba(255,255,255,.8);
+}
+.more_sc img{
+	width:.58rem;
+	height:.58rem;
+}
+.more_sc div{
+	width:.58rem;
+	margin-top: .5rem;
+}
+.more_sc .more_src_del{
+	margin-right:1.45rem;
+}
+.more_sc .more_src_sc{
+	display:inline-block;
+}
+.more_sc span{
+	display: block;
+	color:#2A2A2A;
+	font-size:.2rem;
+	margin-top:.12rem;
+}
