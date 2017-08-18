@@ -1,5 +1,7 @@
 $(function(){
+	$('.swiper-container, .w').height($(window).height()-$('.user_msg').height());
 	$(".tab_switch_ul li").click(function(){
+//		$('.swiper-container, .w').height($(window).height()-$('.user_msg').height());	
 		var i = $(this).index();
 		$(this).addClass("show").siblings().removeClass('show');
 		if(i==0){
@@ -94,7 +96,6 @@ $(function(){
 			});
 		}
 	})
-	$('.swiper-container, .w').height($(window).height()-$('.user_msg').height());
 	var loadFlag = true;
 	var oi = 0;
 	var mySwiper = new Swiper('.swiper-container',{

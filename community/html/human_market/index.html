@@ -56,16 +56,16 @@
 													</a>
 												</div>
 												<!-- 循环的第一张 -->
-												<div class="mui-slider-item mui-slider-item-duplicate">
+												<div class="mui-slider-item">
 													<a href="javascript:;">
 														<img src="../../images/human_market/banner_first.png">
 													</a>
 												</div>
 											</div>
-											<!--<div class="mui-slider-indicator">
+											<div class="mui-slider-indicator">
 												<div class="mui-indicator mui-active"></div>
 												<div class="mui-indicator"></div>
-											</div>-->
+											</div>
 										</div>
 									
 										<!--Part two 详情列表-->
@@ -226,8 +226,7 @@
 			});
 			　　document.querySelector('.mui-slider').addEventListener('slide', function(event) {
 			　　　　var current_num = event.detail.slideNumber;
-				//console.log($('.mui-slider-item').eq(current_num).html())
-				
+				console.log($('.mui-slider-item').eq(current_num).html());
 				$('.mui-slider-item').eq(current_num).find('img').addClass('show111').siblings().find('img').removeClass('show111');
 			　　});
 		</script>
