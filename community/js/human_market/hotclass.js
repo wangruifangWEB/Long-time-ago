@@ -1,13 +1,4 @@
  	$(function(){	
-		//回到顶部
-		var toTop=document.getElementById("toTop");
-	   	window.onscroll=function(){
-	     	if(document.body.scrollTop>=10){
-	     		toTop.style.display="block";
-	     	}else{
-	        	toTop.style.display="";
-	     	}
-	    }
 //	   	$('.swiper-container, .w').height($(window).height()-$('.search_warp').height()-$('#slider').height()-$('.second_list').height()-$(".class_good").height());
 	   	$('.swiper-container, .w').height($(window).height()-$('.top_content').height());
 	
@@ -135,5 +126,5 @@
 				mySwiper.update();
 				$('.tab a').eq(mySwiper2.activeIndex).addClass('active').siblings('a').removeClass('active');
 			}
-	}); 	
+	}); 
 });

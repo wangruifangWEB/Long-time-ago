@@ -1,3 +1,4 @@
+.swiper-container, .w{height: calc(100vh - 60px);}
 body,html{
 	background-color: #F0F0F0;
 }
@@ -7,24 +8,6 @@ body,html{
 	text-align: center;
 	background-color: #f0f0f0;
 	font-family: PingFangSC-Medium;
-}
-.container input.search{
-	width:7rem;
-	height:.66rem;
-	color:#999;
-	margin-top:.22rem;
-	margin-bottom:.20rem;
-	text-align: center;
-	font-size: .26rem;
-	border: none;
-	outline: none;
-	border-radius:.33rem;
-	background-color: #f0f0f0;
-	font-family: PingFangSC-Medium;
-	background-size:.33rem .33rem;
-	background-image: url(../../images/human_market/search.png);
-	background-repeat: no-repeat;
-	background-position: .42rem .16rem;
 }
 .container .search_warp{
 	background-color: #fff;
@@ -39,9 +22,13 @@ body,html{
 #slider img{
   width:6.9rem !important;
   margin-left: 0.3rem;
-  height:2.16rem;
+  /*height:2.16rem;*/
+  height:2.02rem;
   border-radius: .1rem;
   padding:0 .05rem;
+}
+.mui-slider{
+	z-index:0;
 }
 .mui-slider-item .mui-active{
 	transform: scale(.8);
@@ -58,7 +45,6 @@ body,html{
 	height: 2.16rem;
 	width:6.9rem !important;
 }
-
 /*<!--Part two 详情列表-->*/
 .second{
     width: 100%;
@@ -251,7 +237,6 @@ body,html{
 	margin:.01rem auto;
 	margin-bottom:.07rem;
 }
-
 .loadtip p{
 	font-size: 0.26rem;
 	text-align: center;
@@ -267,3 +252,6 @@ body,html{
 	font-size: 0.26rem;
 	text-align: center;
 }
+/*.swiper-container{
+	margin-top:.3rem;
+}*/

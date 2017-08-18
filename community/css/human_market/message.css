@@ -1,0 +1,133 @@
+.swiper-container, .w{height: calc(100vh - 60px);}
+body,html{
+	background-color: #F0F0F0;
+}
+.container{
+	width: 7.5rem;
+	height: 100%;
+	text-align: center;
+	background-color: #f0f0f0;
+	font-family: PingFangSC-Medium;
+}
+/*<!--Part two 详情列表-->*/
+.second{
+    width: 100%;
+}
+.second_list{
+   	width: 100%;
+   	height: 2.05rem;
+    text-align: center;
+    background: #ffffff;
+    padding-bottom: .30rem;
+}
+.second_list li{
+    display:inline-block;
+    width:20%;
+    text-align:center;
+    box-sizing: border-box;
+    margin-top:.40rem;
+}
+.second_list li a:hover{
+    text-decoration: none;
+}
+.second_list li img{
+    width:.84rem;
+    height:.84rem;
+}
+.second_list span{
+    display: block;
+    text-align: center;
+    padding-top:.2rem;
+    font-size:.24rem;
+    color:#2A2A2A;
+   	font-family: PingFangSC-Medium;
+}
+/*精彩问答*/
+.class_good img{
+	display: block;
+	width:7.5rem;
+	height:2rem;
+	margin-bottom: 0.25rem;
+}
+
+/*消息评论*/
+.tab_switch_first_cont{
+	background-color: #ffffff;
+	width: 100%;
+	height: 1.86rem;
+	margin-bottom: 0.20rem;
+}
+.tab_switch_cont_detail_title{
+	width: 100%;
+	height: 1.46rem;
+}
+.tab_switch_cont_detail_title_img{
+	width: 0.7rem;
+	height: 0.7rem;
+	float: left;
+	margin: 0.20rem 0.25rem 0 0.25rem;
+}
+.tab_switch_cont_detail_title_img img{
+	width: 100%;
+	height: 100%;	
+}
+.tab_switch_cont_detail_title_name_warp{
+	float: left;
+}
+.tab_switch_cont_detail_title_time{
+	display: block;
+	float: right;
+	color:#666;
+	font-size: .2rem;
+	margin-top:.34rem;
+	margin-right:.25rem;	
+}
+.tab_switch_cont_detail_title_name{
+	color:#2A2A2A;
+	font-size: 0.24rem;
+	padding-top: 0.34rem;
+	padding-bottom: 0.15rem;
+	font-family: PingFangSC-Medium;
+	display: flex;
+}
+.tab_switch_msg{
+	width:100%;
+	height:.45rem;
+	border-bottom: 1px solid #EFEFEF;
+	padding-bottom: .13rem;
+}
+.tab_switch_msg img{
+	display:block;
+	width:.06rem;
+	height:.3rem;
+	margin-top:.08rem;
+	margin-left: .26rem;
+	float: left;
+}
+.tab_switch_msg p{
+	display: inline-block;
+	color:#2A2A2A;
+	font-size: 0.22rem;
+	margin-top: 0.13rem;
+	margin-left:.12rem;
+	font-family: PingFangSC-Medium;
+	float: left;
+}
+.tab_switch_huifu{
+	display: inline-block;
+}
+.loadtip p{
+	font-size: 0.26rem;
+	text-align: center;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	position: fixed;
+	bottom: 0;
+	width: 7.5rem;
+	display: none;
+	text-align: center;
+	background-color: #EFEFF4;
+	z-index: 10;
+	font-size: 0.26rem;
+	text-align: center;
+}

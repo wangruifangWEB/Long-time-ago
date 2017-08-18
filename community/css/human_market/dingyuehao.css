@@ -1,3 +1,4 @@
+.swiper-container, .w{height: calc(100vh - 60px);}
 .index{
 	width: 7.5rem;
 	background-color: #ffffff;
@@ -63,9 +64,9 @@
 	background:linear-gradient(#a578e1,#8d56d8);
 }
 /*tab切换*/
-.tab_switch{
+/*.tab_switch{
 	overflow: hidden;
-}
+}*/
 .tab_switch_cont_detail{
 	display: none;
 }
@@ -207,11 +208,11 @@
 .tab_switch_cont_heji_list .hj_shipin_img {
 	position:relative;
 	float: left;
+	padding: .3rem .2rem .3rem .25rem;
 }
 .tab_switch_cont_heji_list .hj_shipin_img img{
 	width:2.6rem;
 	height:1.5rem;
-	padding:.3rem .2rem .3rem .25rem;
 }
 .tab_switch_cont_heji_list .mask_layer{
 	width:1.3rem;
