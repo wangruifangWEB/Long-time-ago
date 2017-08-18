@@ -53,7 +53,6 @@
 	background-repeat: no-repeat;
 	background-position: .42rem .16rem;
 }
-
 /* 等级样式 */
 .user_grade{
 	position: absolute;
@@ -81,7 +80,7 @@
 	background-image: url(../images/human_market/silver.png);
 }
 
-
+	
 /* 图文视频分类样式 */
 .course_type{
 	position: absolute;
@@ -107,6 +106,12 @@
 }
 .yinpin_bg{
 	background-image: url(../images/human_market/yinpin_bg.png);
+}
+/*清除浮动*/
+.clearfix{
+	content: "";
+	display: block;
+	clear: both;
 }
 /* 订阅按钮 */
 .isDingyue{
