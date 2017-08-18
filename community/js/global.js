@@ -32,9 +32,9 @@ function zuohua(){
     // 设定每一行的宽度=屏幕宽度+按钮宽度
     // 设定常规信息区域宽度=屏幕宽度 
     $(".dingyue").width($(document).width());
-    $(".tab_switch_second_cont_detail").width( $(".dingyue").width()+$(".cancel_dingyue").width());
+    $(".mydingyue_cont").width( $(".dingyue").width()+$(".cancel_dingyue").width());
     // 获取所有行，对每一行设置监听
-    var lines = $(".tab_switch_second_cont_detail");
+    var lines = $(".mydingyue_cont");
     var len = lines.length; 
     var lastX, lastXForMobile;
     // 用于记录被按下的对象

@@ -1,0 +1,12 @@
+.index{
+	width: 7.5rem;
+	background-color: #f5f5f5;
+	font-family: PingFangSC-Medium;
+	color: #2a2a2a;
+}
+
+
+.nav_bottom_height{
+	height: 1.5rem;
+	display: none;
+}

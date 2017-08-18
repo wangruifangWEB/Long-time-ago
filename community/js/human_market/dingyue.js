@@ -19,28 +19,27 @@ $(function(){
 					setTimeout(function() {
 						for(var i =0;i<3;i++) {
 							$(".tab_switch_first_cont").eq(mySwiper2.activeIndex).append(`
-								<div class="tab_switch_first_cont_detail">
-		    						<div class="tab_switch_cont_detail_title">
-			    						<div class="tab_switch_cont_detail_title_img">
+								<div class="course_cont">
+		    						<div class="course_cont_title">
+			    						<div class="course_cont_title_img">
 			    							<img src="../../images/human_market/header_index.png" alt=""/>
 			    						</div>
-			    						
-			    						<div class="tab_switch_cont_detail_title_name_warp">
-			    							<p class="tab_switch_cont_detail_title_name">用户名</p>
-			    							<p class="tab_switch_cont_detail_title_time">3小时前</p>
+			    						<div class="course_cont_title_name_warp">
+			    							<p class="course_cont_title_name">用户名</p>
+			    							<p class="course_cont_title_time">3小时前</p>
 			    						</div>
 			    					</div>
-			    					<div class="tab_switch_cont_detail_img">
+			    					<div class="course_cont_img">
 			    						<img src="../../images/human_market/index_banner.png" alt="" />
-			    						<div class="tab_switch_cont_detail_img_info">
-			    							<p class="tab_switch_cont_detail_img_name">轻享美食生活</p>
-			    							<p class="tab_switch_cont_detail_img_huati">#话题</p>
+			    						<div class="course_cont_img_info">
+			    							<p class="course_cont_img_name">轻享美食生活</p>
+			    							<p class="course_cont_img_huati">#话题</p>
 			    						</div>
 			    						<p class="course_type tuwen_bg">图文</p>
 			    					</div>
-			    					<div class="tab_switch_cont_detail_remark">
-			    						<p class="tab_switch_cont_detail_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
-			    						<p class="tab_switch_cont_detail_remark_right">图文</p>
+			    					<div class="course_cont_remark">
+			    						<p class="course_cont_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
+			    						<p class="course_cont_remark_right">图文</p>
 			    					</div>
 		    					</div>
 							`); 
@@ -63,7 +62,7 @@ $(function(){
 					setTimeout(function() {
 						for(var i =0;i<6;i++) {
 							$(".tab_switch_second_cont").eq(mySwiper2.activeIndex).append(`
-		    					<div class="tab_switch_second_cont_detail">
+		    					<div class="mydingyue_cont">
 		    						<div class="dingyue">
 		    							<div class="tab_switch_left">
 			    							<img src="../../images/human_market/header.png" alt="" />
@@ -205,30 +204,29 @@ $(function(){
 								setTimeout(function() {
 									for(var i =0;i<3;i++) {
 										$(".tab_switch_first_cont").eq(mySwiper2.activeIndex).append(`
-											<div class="tab_switch_first_cont_detail">
-												<div class="tab_switch_cont_detail_title">
-													<div class="tab_switch_cont_detail_title_img">
-														<img src="../../images/human_market/header_index.png" alt=""/>
-													</div>
-													
-													<div class="tab_switch_cont_detail_title_name_warp">
-														<p class="tab_switch_cont_detail_title_name">用户名</p>
-														<p class="tab_switch_cont_detail_title_time">3小时前</p>
-													</div>
-												</div>
-												<div class="tab_switch_cont_detail_img">
-													<img src="../../images/human_market/index_banner.png" alt="" />
-													<div class="tab_switch_cont_detail_img_info">
-														<p class="tab_switch_cont_detail_img_name">轻享美食生活</p>
-														<p class="tab_switch_cont_detail_img_huati">#话题</p>
-													</div>
-													<p class="course_type tuwen_bg">图文</p>
-												</div>
-												<div class="tab_switch_cont_detail_remark">
-													<p class="tab_switch_cont_detail_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
-													<p class="tab_switch_cont_detail_remark_right">图文</p>
-												</div>
-											</div>
+											<div class="course_cont">
+					    						<div class="course_cont_title">
+						    						<div class="course_cont_title_img">
+						    							<img src="../../images/human_market/header_index.png" alt=""/>
+						    						</div>
+						    						<div class="course_cont_title_name_warp">
+						    							<p class="course_cont_title_name">用户名</p>
+						    							<p class="course_cont_title_time">3小时前</p>
+						    						</div>
+						    					</div>
+						    					<div class="course_cont_img">
+						    						<img src="../../images/human_market/index_banner.png" alt="" />
+						    						<div class="course_cont_img_info">
+						    							<p class="course_cont_img_name">轻享美食生活</p>
+						    							<p class="course_cont_img_huati">#话题</p>
+						    						</div>
+						    						<p class="course_type tuwen_bg">图文</p>
+						    					</div>
+						    					<div class="course_cont_remark">
+						    						<p class="course_cont_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
+						    						<p class="course_cont_remark_right">图文</p>
+						    					</div>
+					    					</div>
 										`);
 									}
 									$(".loadtip p").hide();
@@ -256,22 +254,22 @@ $(function(){
 								setTimeout(function() {
 									for(var i =0;i<6;i++) {
 										$(".tab_switch_second_cont").eq(mySwiper2.activeIndex).append(`
-											<div class="tab_switch_second_cont_detail">
-												<div class="dingyue">
-													<div class="tab_switch_left">
-														<img src="../../images/human_market/header.png" alt="" />
-													</div>
-													<div class="tab_switch_right">
-														<ul>
-															<li>订阅号</li>
-															<li>博物杂志官方账号</li>
-															<li><span>20万</span>人订阅</li>
-														</ul>
-														<button class="hasDingyue">已订阅</button>
-													</div>
-												</div>
-												<div class="cancel_dingyue">取消订阅</div>
-											</div>
+											<div class="mydingyue_cont">
+					    						<div class="dingyue">
+					    							<div class="tab_switch_left">
+						    							<img src="../../images/human_market/header.png" alt="" />
+						    						</div>
+						    						<div class="tab_switch_right">
+						    							<ul>
+						    								<li>订阅号</li>
+						    								<li>博物杂志官方账号</li>
+						    								<li><span>20万</span>人订阅</li>
+						    							</ul>
+						    							<button class="hasDingyue">已订阅</button>
+						    						</div>
+					    						</div>
+					    						<div class="cancel_dingyue">取消订阅</div>
+					    					</div>
 										`);
 									}
 									$(".loadtip p").hide();
@@ -383,30 +381,29 @@ $(function(){
 								setTimeout(function() {
 									for(var i =0;i<3;i++) {
 										$(".tab_switch_first_cont").eq(mySwiper2.activeIndex).append(`
-											<div class="tab_switch_first_cont_detail">
-												<div class="tab_switch_cont_detail_title">
-													<div class="tab_switch_cont_detail_title_img">
-														<img src="../../images/human_market/header_index.png" alt=""/>
-													</div>
-													
-													<div class="tab_switch_cont_detail_title_name_warp">
-														<p class="tab_switch_cont_detail_title_name">用户名</p>
-														<p class="tab_switch_cont_detail_title_time">3小时前</p>
-													</div>
-												</div>
-												<div class="tab_switch_cont_detail_img">
-													<img src="../../images/human_market/index_banner.png" alt="" />
-													<div class="tab_switch_cont_detail_img_info">
-														<p class="tab_switch_cont_detail_img_name">轻享美食生活</p>
-														<p class="tab_switch_cont_detail_img_huati">#话题</p>
-													</div>
-													<p class="course_type tuwen_bg">图文</p>
-												</div>
-												<div class="tab_switch_cont_detail_remark">
-													<p class="tab_switch_cont_detail_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
-													<p class="tab_switch_cont_detail_remark_right">图文</p>
-												</div>
-											</div>
+											<div class="course_cont">
+					    						<div class="course_cont_title">
+						    						<div class="course_cont_title_img">
+						    							<img src="../../images/human_market/header_index.png" alt=""/>
+						    						</div>
+						    						<div class="course_cont_title_name_warp">
+						    							<p class="course_cont_title_name">用户名</p>
+						    							<p class="course_cont_title_time">3小时前</p>
+						    						</div>
+						    					</div>
+						    					<div class="course_cont_img">
+						    						<img src="../../images/human_market/index_banner.png" alt="" />
+						    						<div class="course_cont_img_info">
+						    							<p class="course_cont_img_name">轻享美食生活</p>
+						    							<p class="course_cont_img_huati">#话题</p>
+						    						</div>
+						    						<p class="course_type tuwen_bg">图文</p>
+						    					</div>
+						    					<div class="course_cont_remark">
+						    						<p class="course_cont_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
+						    						<p class="course_cont_remark_right">图文</p>
+						    					</div>
+					    					</div>
 										`);
 									}
 									$('.init-loading').css('display','none');
@@ -427,22 +424,22 @@ $(function(){
 								setTimeout(function() {
 									for(var i =0;i<6;i++) {
 										$(".tab_switch_second_cont").eq(mySwiper2.activeIndex).append(`
-											<div class="tab_switch_second_cont_detail">
-												<div class="dingyue">
-													<div class="tab_switch_left">
-														<img src="../../images/human_market/header.png" alt="" />
-													</div>
-													<div class="tab_switch_right">
-														<ul>
-															<li>订阅号</li>
-															<li>博物杂志官方账号</li>
-															<li><span>20万</span>人订阅</li>
-														</ul>
-														<button class="hasDingyue">已订阅</button>
-													</div>
-												</div>
-												<div class="cancel_dingyue">取消订阅</div>
-											</div>
+											<div class="mydingyue_cont">
+					    						<div class="dingyue">
+					    							<div class="tab_switch_left">
+						    							<img src="../../images/human_market/header.png" alt="" />
+						    						</div>
+						    						<div class="tab_switch_right">
+						    							<ul>
+						    								<li>订阅号</li>
+						    								<li>博物杂志官方账号</li>
+						    								<li><span>20万</span>人订阅</li>
+						    							</ul>
+						    							<button class="hasDingyue">已订阅</button>
+						    						</div>
+					    						</div>
+					    						<div class="cancel_dingyue">取消订阅</div>
+					    					</div>
 										`);
 									}
 									$('.init-loading').css('display','none');
