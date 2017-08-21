@@ -37,10 +37,15 @@
 }
 .search_warp input.search{
 	width:7rem;
-	height:.68rem;
+	float: left;
+	padding-top: 0.21rem;
+	padding-bottom: 0.21rem;
+	height: 0.26rem;
+	line-height: normal;
+	overflow: hidden;
 	color:#999;
 	display: block;
-	margin: 0 auto;
+	margin-left: 0.25rem;
 	text-align: center;
 	font-size: .26rem;
 	border: none;
@@ -53,6 +58,16 @@
 	background-repeat: no-repeat;
 	background-position: .42rem .16rem;
 }
+
+.search_btn{
+	opacity: 0;
+	margin-left: 0.25rem;
+	font-size: 0.32rem;
+	height: 0.68rem;
+	line-height: 0.68rem;
+	color: #6e6e6e;
+}
+/*.search:focus{color:#915ed7}*/
 /* 等级样式 */
 .user_grade{
 	position: absolute;
@@ -80,7 +95,7 @@
 	background-image: url(../images/human_market/silver.png);
 }
 
-	
+
 /* 图文视频分类样式 */
 .course_type{
 	position: absolute;
@@ -106,12 +121,6 @@
 }
 .yinpin_bg{
 	background-image: url(../images/human_market/yinpin_bg.png);
-}
-/*清除浮动*/
-.clearfix{
-	content: "";
-	display: block;
-	clear: both;
 }
 /* 订阅按钮 */
 .isDingyue{
@@ -171,7 +180,11 @@
 	width: 0.35rem;
 	display: none;
 }
-
+.clearfix{
+	content: "";
+	display: block;
+	clear: both;
+}
 
 /* 课程订阅  */
 .course_cont{
@@ -256,7 +269,7 @@
 	float: left;
 	color: #666;
 }
-.tab_switch_cont_detail_remark_right{
+.course_cont_remark_right{
 	padding-right: 0.34rem;
 	float: right;
 }
@@ -323,4 +336,149 @@
 	position: absolute;
 	top: 0;
 	right: -0.01rem;
+}
+
+
+/* 搜索结果页的更多 */
+.result_more_warp{
+	width: 7.5rem;
+	height: 1.05rem;
+	background-color: #fff;
+}
+.result_more{
+	display: block;
+	padding-top: 0.35rem;
+	padding-bottom: 0.4rem;
+	width: 0.94rem;
+	padding-right: 0.36rem;
+	background-size: 0.26rem 0.26rem;
+	background-position: 0.85rem 0.35rem;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 0.3rem;
+	color: #772fd8;
+	background-repeat: no-repeat;
+	background-image: url(../images/human_market/result_more.png);
+	background-color: #ffffff;
+}
+/* 搜索页面及搜索结果页面标题样式 */
+.result_title{
+	padding-top: 0.35rem;
+	padding-bottom: 0.3rem;
+	font-size: 0.34rem;
+	color: #313131;
+	font-weight: bold;
+	padding-left: 0.3rem;
+	background-color: #ffffff;
+}
+
+/* 搜索面板页面 */
+/* 热门话题标题部分样式 */
+.search_panel{
+	display: none;
+	background-color: #fff;
+}
+.search_panel .operate_his{
+	width: 100%;
+	height: 1rem;
+	background-color: #fff;
+}
+/* 搜索历史 */
+.search_his ul{
+	background-color: #fff;
+	/*height: 0.8rem;*/
+	padding-left: 0.2rem;
+	padding-right: 0.2rem;
+}
+.search_his ul li{
+	margin-top: 0.3rem;
+	float: left;
+	padding-left: 0.24rem;
+	padding-right: 0.24rem;
+	color: #999;
+	font-size: 0.26rem;
+	height: 0.5rem;
+	line-height: 0.5rem;
+	background-color: #f5f5f5;
+	margin-right: 0.1rem;
+	border-radius: 0.3rem;
+}
+.search_his ul li:nth-last-child(1){
+	margin-bottom: 0.4rem;
+}
+.operate_his .result_title{
+	float: left;
+	border-bottom: none;
+}
+.search_his .operate_his .close_his{
+	margin-top: 0.35rem;
+	padding-right: 0.3rem;
+	float: right;
+	width: 0.38rem;
+	height: 0.38rem;
+}
+.search_his .close_his img{
+	width: 100%;
+	height: 100%;
+}
+/* 热门话题 */
+.remen_huati{
+	border-top: solid 0.01rem #E1E0E0;
+	clear: both;
+	margin-top: 0.4rem;
+	padding-top: 0.1rem;
+}
+.remen_huati .operate_his .more_huati{
+	margin-top: 0.40rem;
+	padding-right: 0.3rem;
+	float: right;
+	font-size: 0.28rem;
+	color: #999;
+}
+.remen_huati .operate_his .more_huati img{
+	width: 0.14rem;
+	height: 0.25rem;
+	margin-left: 0.18rem;
+}
+.remen_huati ul{
+	margin-top: 0.1rem;
+}
+.remen_huati ul li{
+	float: left;
+	width: 3.75rem;
+	height: 0.8rem;
+	line-height: 0.8rem;
+	color: #999;
+	font-size: 0.28rem;
+}
+.remen_huati ul l i{
+	float: left;
+}
+.remen_huati ul li span{
+	margin: 0 auto;
+	display: block;
+	float: left;
+	padding-left: 0.1rem;
+	width: 0.76rem;
+	height: 0.8rem;
+	color: #915ed7;
+	font-size: 0.22rem;
+	text-align: center;
+	line-height: 0.8rem;
+	background-position: 0.3rem center;
+	background-repeat: no-repeat;
+	background-size: 0.36rem;
+	background-image: url(../images/human_market/huati_purple.png);
+}
+.remen_huati ul li:nth-child(1) span{
+	color: #ff001e;
+	background-image: url(../images/human_market/huati_red.png);
+}
+.remen_huati ul li:nth-child(2) span,.remen_huati ul li:nth-child(3) span{
+	color: #ffca00;
+	background-image: url(../images/human_market/huati_yellow.png);
+}
+
+.remen_huati ul li:nth-last-child(1) span{
+	background-image: url(../images/human_market/huati_last.png);
 }

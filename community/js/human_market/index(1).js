@@ -8,8 +8,9 @@
 	        	toTop.style.display="";
 	     	}
 	    }
-//	   	$('.swiper-container, .w').height($(window).height()-$('.search_warp').height()-$('#slider').height()-$('.second_list').height()-$(".class_good").height()+'px');
-//		alert($('.swiper-container, .w').height());
+//	   	$('.swiper-container, .w').height($(window).height()-$('.search_warp').height()-$('#slider').height()-$('.second_list').height()-$(".class_good").height());
+	   	$('.swiper-container, .w').height($(window).height()-$('.top_content').height());
+	
 		var loadFlag = true;
 		var oi = 0;
 		var mySwiper = new Swiper('.swiper-container',{
@@ -18,6 +19,9 @@
 			slidesPerView: 'auto',
 			mousewheelControl: true,
 			freeMode: true,
+			initialSlide :0,
+		    observer:true,//修改swiper自己或子元素时，自动初始化swiper
+		    observeParents:true,//修改swiper的父元素时，自动初始化swiper
 			onTouchMove: function(swiper){		//手动滑动中触发
 				var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
 				var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
@@ -126,11 +130,10 @@
 		});
 	var mySwiper2 = new Swiper('.swiper-container2',{
 		onTransitionEnd: function(swiper){
-	//	$('.w').css('transform', 'translate3d(0px, 0px, 0px)')
-			$('.swiper-container2 .swiper-slide-active').css('height','auto').siblings('.swiper-slide').css('height','0px');
-			mySwiper.update();
-			$('.tab a').eq(mySwiper2.activeIndex).addClass('active').siblings('a').removeClass('active');
-		}
-		
+			$('.w').css('transform', 'translate3d(0px, 0px, 0px)')
+				$('.swiper-container2 .swiper-slide-active').css('height','auto').siblings('.swiper-slide').css('height','0px');
+				mySwiper.update();
+				$('.tab a').eq(mySwiper2.activeIndex).addClass('active').siblings('a').removeClass('active');
+			}
 	}); 	
 });
