@@ -10,6 +10,7 @@
 		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.bootcss.com/jquery-easing/1.3.2/jquery.easing.min.js"></script>
 	</head>
 	<body>
 		<div class="swiper-container">
@@ -23,7 +24,8 @@
 									<div class="tab_switch_cont">	
 										<div class="tab_switch_cont_detail show">
 					    					<ul class="tab_switch_cont_heji_list">
-					    						<li>			
+					    						<li>	
+					    							<div class="history_remove_circle"><img src="../../images/human_market/choice_no.png" alt="" data="../../images/human_market/choice_yes.png"/></div>
 					    							<div class="hj_shipin_img">
 					    								<img src="../../images/human_market/history_img1.png" alt="" />
 					    								<p class="course_type tuwen_bg">图文</p>
@@ -33,16 +35,67 @@
 					    								<p class="hj_huati">#话题</p>
 					    								<p class="hj_date">7月30日</p>
 					    							</div>
-					    							<img src="../../images/human_market/history_more.png" alt="" data="../../images/human_market/history_sc.png" class="hj_history_del"/>
+					    							<img src="../../images/human_market/history_more.png" alt="" data="../../images/human_market/ls_collect_no.png" class="hj_history_del"/>
 					    							<div class="more_sc">
 					    								<div  class="more_src_del" style="display: inline-block;">
 					    									<img src="../../images/human_market/history_del.png" alt=""/>
 					    									<span>删除</span>
 					    								</div>
 					    								<div class="more_src_sc">
-					    									<img src="../../images/human_market/history_sc.png" alt=""/>
+					    									<img src="../../images/human_market/ls_collect_yes.png" alt=""/>
 					    									<span>收藏</span>
 					    								</div>
+					    								<img src="../../images/human_market/history_close.png" alt="" data="../../images/human_market/ls_collect_no.png" class="hj_history_del"/>
+					    							</div>
+					    						</li>
+					    						
+					    						<li>	
+					    							<div class="history_remove_circle"><img src="../../images/human_market/choice_no.png" alt="" data="../../images/human_market/choice_no.png"/></div>
+					    							<div class="hj_shipin_img">
+					    								<img src="../../images/human_market/history_img1.png" alt="" />
+					    								<p class="course_type tuwen_bg">图文</p>
+					    							</div> 
+					    							<div class="hj_shipin_txt">
+					    								<p class="hj_shipin_title">轻享生活美食</p>
+					    								<p class="hj_huati">#话题</p>
+					    								<p class="hj_date">7月30日</p>
+					    							</div>
+					    							<img src="../../images/human_market/history_more.png" alt="" data="../../images/human_market/ls_collect_no.png" class="hj_history_del"/>
+					    							<div class="more_sc">
+					    								<div  class="more_src_del" style="display: inline-block;">
+					    									<img src="../../images/human_market/history_del.png" alt=""/>
+					    									<span>删除</span>
+					    								</div>
+					    								<div class="more_src_sc">
+					    									<img src="../../images/human_market/ls_collect_no.png" alt=""/>
+					    									<span>收藏</span>
+					    								</div>
+					    								<img src="../../images/human_market/history_close.png" alt="" data="../../images/human_market/ls_collect_no.png" class="hj_history_del"/>
+					    							</div>
+					    						</li>
+					    						
+					    						<li>	
+					    							<div class="history_remove_circle"><img src="../../images/human_market/choice_no.png" alt="" data="../../images/human_market/choice_no.png"/></div>
+					    							<div class="hj_shipin_img">
+					    								<img src="../../images/human_market/history_img1.png" alt="" />
+					    								<p class="course_type tuwen_bg">图文</p>
+					    							</div> 
+					    							<div class="hj_shipin_txt">
+					    								<p class="hj_shipin_title">轻享生活美食</p>
+					    								<p class="hj_huati">#话题</p>
+					    								<p class="hj_date">7月30日</p>
+					    							</div>
+					    							<img src="../../images/human_market/history_more.png" alt="" data="../../images/human_market/ls_collect_no.png" class="hj_history_del"/>
+					    							<div class="more_sc">
+					    								<div  class="more_src_del" style="display: inline-block;">
+					    									<img src="../../images/human_market/history_del.png" alt=""/>
+					    									<span>删除</span>
+					    								</div>
+					    								<div class="more_src_sc">
+					    									<img src="../../images/human_market/ls_collect_no.png" alt=""/>
+					    									<span>收藏</span>
+					    								</div>
+					    								<img src="../../images/human_market/history_close.png" alt="" data="../../images/human_market/ls_collect_no.png" class="hj_history_del"/>
 					    							</div>
 					    						</li>
 					    					</ul>
@@ -54,10 +107,33 @@
 					</div>
 				</div>
 			</div>
-		<div class="loadtip"><p>正在加载!</p></div>
+		<!--<div class="loadtip"><p>正在加载!</p></div>-->
 		<div class="swiper-scrollbar"></div>
 	  </div>		
 	</div>
+	
+	<footer class="history_write footer_bottom">
+		<ul class="history_bottom">
+			<li>
+				<a class="write_btn">编辑</a>
+			</li>
+		</ul>
+	</footer> 
+
+	<div class="history_write footer_top" style="display: none;">
+		<ul class="history_bottom">
+			<li>
+				<a class="all_choiced">全选</a>
+			</li>
+			<li>
+				<a class="cancel_manages">取消</a>
+			</li>
+			<li>
+				<a class="remove_btn" style="background:linear-gradient(to bottom, #eb0403,#ff0000) !important;width:1.3rem;color: #fff;">删除</a>
+			</li>
+		</ul>
+	</div>
+	
 	<script src="../../js/human_market/my_history.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>
