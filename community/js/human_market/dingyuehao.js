@@ -1,7 +1,7 @@
 $(function(){
-	$('.swiper-container, .w').height($(window).height()-$('.user_msg').height());
+//	$('.swiper-container, .w').height($(window).height()-$('.user_msg').height());
+	$('.swiper-container, .w').height($(window).height());
 	$(".tab_switch_ul li").click(function(){
-//		$('.swiper-container, .w').height($(window).height()-$('.user_msg').height());	
 		var i = $(this).index();
 		$(this).addClass("show").siblings().removeClass('show');
 		if(i==0){
@@ -18,7 +18,7 @@ $(function(){
 					setTimeout(function() {
 						for(var i =0;i<3;i++) {
 							$(".list-group .tab_switch_cont_detail1").append(`
-								<div class="tab_switch_first_cont">
+								<div class="tab_switch_first_cont clearfix">
 		    						<div class="tab_switch_cont_detail_title">
 			    						<div class="tab_switch_cont_detail_title_img">
 			    							<img src="../../images/human_market/header_index.png" alt=""/>
@@ -132,7 +132,7 @@ $(function(){
 						setTimeout(function() {
 							for(var i =0;i<3;i++) {
 								$(".list-group .tab_switch_cont_detail1").eq(mySwiper2.activeIndex).append(`
-									<div class="tab_switch_first_cont">
+									<div class="tab_switch_first_cont clearfix">
 			    						<div class="tab_switch_cont_detail_title">
 				    						<div class="tab_switch_cont_detail_title_img">
 				    							<img src="../../images/human_market/header_index.png" alt=""/>

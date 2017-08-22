@@ -6,6 +6,12 @@
 	margin:0;
 	display: inline-block;
 }
+.search_warp{
+	height:0;
+}
+.search_warp input.search{
+	height:0;
+}
 .shaixuan{
 	display: block;
 	float: right;
