@@ -1,0 +1,36 @@
+.index{
+	width: 7.5rem;
+	background-color: #f5f5f5;
+	font-family: PingFangSC-Medium;
+	color: #2a2a2a;
+}
+a{
+	color: #999;
+}
+/* 搜索结果页面样式 */
+.search_warp,.dingyuehao_result{
+	background-color: #ffffff;
+}
+.dingyuehao_result{
+	margin-bottom: 0.2rem;
+}
+.course_result .result_more_warp{
+	border-top: solid 0.01rem #e1e0e0;
+	position: relative;
+	top: -0.2rem;
+}
+
+
+
+
+
+.nav_bottom_height{
+	height: 0.8rem;
+	display: none;
+}
+.nav_bottom_height2{
+	height: 1.1rem;
+}
+
+
+

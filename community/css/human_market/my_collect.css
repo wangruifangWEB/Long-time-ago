@@ -1,0 +1,38 @@
+/*收藏*/
+.is_collect_no{
+	width:1.08rem;
+	height:0.42rem;
+	line-height:0.42rem;
+	color:#fff;
+	float:right;
+	font-family: PingFangSC-Medium;
+	margin:.7rem .4rem 0 0;
+	/*iphone5 margin: .7rem .25rem 0 0;*/
+	text-align: center;
+	border-radius: .21rem;
+	background:linear-gradient(#fcca4c,#ffbe06);
+	box-shadow: 0 0.08rem 0.12rem rgba(254,193,26,0.6);
+}
+/*已收藏*/
+.is_collect_yes{
+	width:1.08rem;
+	height:0.42rem;
+	line-height:0.42rem;
+	color:#ffbe06;
+	float:right;
+	font-family: PingFangSC-Medium;
+	margin:.7rem .4rem 0 0;
+	/*iphone5 margin: .7rem .25rem 0 0;*/
+	text-align: center;
+	border-radius: .21rem;
+	border:.02rem solid #ffbe06;
+}
+.tab_switch_cont_heji_list li{
+	left:0;
+}
+.tab_switch_cont_heji_list .hj_shipin_img{
+	padding: .3rem .2rem 0 .25rem;
+}
+.tab_switch_cont_heji_list .hj_shipin_txt p:last-child{
+	font-size: .20rem;
+}

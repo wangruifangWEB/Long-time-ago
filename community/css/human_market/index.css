@@ -9,9 +9,15 @@ body,html{
 	background-color: #f0f0f0;
 	font-family: PingFangSC-Medium;
 }
-.container .search_warp{
-	background-color: #fff;
-	padding-bottom:.9rem;
+.search_warp{
+	background-color: #ffffff;
+	height: 1.08rem;
+}
+.search_warp input.search{
+	height: 0.68rem;
+	/*padding: 0 !important;*/
+	/*margin: 0 !important;*/
+	margin-left: 0.25rem !important;
 }
 /*轮播图*/
 #slider {

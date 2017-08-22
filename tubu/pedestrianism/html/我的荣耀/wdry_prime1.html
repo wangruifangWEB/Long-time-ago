@@ -1,0 +1,422 @@
+<!DOCTYPE html> 
+<html style="background: #efeff4;">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/css.css"/>
+		<link rel="stylesheet" href="../../css/jquery.mCustomScrollbar.css">
+		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="../../single_css/global.css">	
+		<script src="../../js/jquery.mCustomScrollbar.min.js"></script>
+		<script src="../../single_js/date.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.honour_crown{
+				width: 1.28rem;
+				height: 1.28rem;
+				background-color: #EFEFF4;
+				border-radius: 0.64rem;
+				position: absolute;
+				top: 0.65rem;
+				right: 0.63rem;
+			}
+			.honour_crown img{
+				width: 0.92rem;
+				height: 0.75rem;
+				display: block;
+				vertical-align: middle;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -0.46rem;
+				margin-top: -0.375rem;
+				border-radius: 0;
+			}
+			
+			.zl{
+				width: 6.24rem;
+				margin: 0 auto;
+				padding-top: 1.13rem;
+			}
+			.zl .weekdays{
+				height: 0.37rem;
+				margin-bottom: 0.13rem;
+			}
+			.zl .weekdays li{
+				float: left;
+				width: 0.89rem;
+				border-right: solid 0.01rem transparent;
+				text-align: center;
+				height: 0.37rem;
+				line-height: 0.37rem;
+				font-size: 0.26rem;
+				color: #8e8e93;
+				font-weight: bold;
+			}
+			.zl .days_warp{
+				overflow: hidden;
+				width: 6.24rem;
+				height: 4.44rem;
+				box-shadow: 0 0 0.1rem rgba(0,0,0,0.3) inset;
+				background-color: #f6f6f6;
+				border-radius: 0.1rem;
+				-webkit-transform:rotate(0deg);
+			}
+			.zl .days_warp ul{
+				height: 0.9rem;
+				width: 6.24rem;
+				border-bottom: solid 0.01rem #d8d8d8;
+			}
+			.zl .days_warp ul li{
+				height: 0.89rem;
+				line-height: 0.9rem;
+				text-align: center;
+				width: 0.89rem;
+				float: left;
+				font-size: 0.26rem;
+				color: #f6f6f6;
+				font-family: PingFangSC-Medium;
+				background-position: center center;
+				background-size: 0.48rem 0.48rem;
+				background-repeat: no-repeat;
+				border-right: solid 0.01rem #d8d8d8;
+				
+			}
+			.zl .days_warp ul li:nth-child(7),.zl .weekdays li:nth-child(7){
+				border-right: none;
+			}
+			.days_red{
+				background-image: url(../../images/days_red_bg.png);
+			}
+			.days_green{
+				background-image: url(../../images/days_green_bg.png);
+			}
+			.days_gray{
+				background-image: url(../../images/days_gray_bg.png);
+			}
+			.month{
+				height: 0.88rem;
+			}
+			.month li{
+				width: 6.24rem;
+				float: right !important;
+				color: #8E8E93 !important;
+				font-family: PingFangSC-Medium !important;
+				font-size: 0.32rem !important;
+				border-right: none;
+			}
+			.month li span{
+				color: #8E8E93;
+				font-size: 0.64rem;
+				font-family: PingFangSC-Medium;
+				height: 0.88rem;
+				line-height: 0.88rem;
+			}
+			
+			.prime_jibie{
+				width: 6.24rem;
+				height: 1.96rem;
+				margin: 0.32rem auto;
+				background-color: #f6f6f6;
+				border-radius: 0.1rem;
+			}
+			.prime_jibie_left{
+				width: 1.22rem;
+				border-right: solid 0.01rem #d8d8d8;
+				float: left;
+			}
+			.prime_jibie_left_num{
+				height:1.21rem;
+				width: 1.21rem;
+				border-bottom: solid 0.01rem #d8d8d8;
+			}
+			.prime_jibie_left_num img{
+				width: 1.2rem;
+				height: 1.2rem;
+				vertical-align: middle;
+				margin: 0 auto;
+				display: block;
+			}
+			.prime_jibie_left_text{
+				width: 1.2rem;
+				text-align: center;
+				height: 0.74rem;
+				line-height: 0.74rem;
+				font-family: PingFangSC-Medium;
+				font-size: 0.26rem;
+				color: #e64340;
+			}
+			.prime_jibie_right{
+				float: left;
+				width: 5.02rem;
+			}
+			.prime_jibie_right p{
+				margin-left: 0.1rem;
+				font-size: 0.26rem;
+				color: #8E8E93;
+				line-height: 0.45rem;
+				font-family: PingFangSC-Light;
+			}
+			.prime_jibie_right .bold{
+				font-family: PingFangSC-Medium;
+				margin-left: -0.1rem;
+				font-size: 0.32rem;
+				color: #595959;
+				font-weight: 700;
+			}
+			.other_help{
+				width: 6.24rem;
+				height: 0.8rem;
+				margin-top: 0.32rem;
+				margin-bottom: 0.32rem;
+			}
+			.other_help_question{
+				width: 0.8rem;
+				height: 0.8rem;
+				background-color: #f6f6f6;
+				box-shadow: 0 0.02rem 0.03rem rgba(142,142,147,0.3);
+				border-radius: 0.4rem;
+				position: relative;
+				left: 1.55rem;
+				float: left;
+			}
+			.other_help_question img{
+				width: 0.36rem;
+				height: 0.6rem;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -0.18rem;
+				margin-top: -0.3rem;
+			}
+			.other_help_cup{
+				float: right;
+				width: 0.8rem;
+				height: 0.8rem;
+				background-color: #f6f6f6;
+				border-radius: 0.4rem;
+				position: relative;
+				right: 0.55rem;
+				box-shadow: 0 0.02rem 0.03rem rgba(142,142,147,0.3);
+			}
+			.other_help_cup img{
+				width: 0.58rem;
+				height: 0.56rem;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -0.29rem;
+				margin-top: -0.28rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="outerScroller">
+			<div class="scroll">
+				<header>
+					<div class="d-title">
+						<a href="#">
+							<img src="../../images/cd.png" alt="" />
+						</a>
+						<span>我的资料</span>
+					</div>
+				</header>
+				<section class="width-box bg">	
+					
+					<div class="z-moon">
+						<h4 >再见明月</h4>
+						<h5><img  src="../../images/z-moon.png" alt="" /></h5>
+						<div class="honour_crown">
+							<img  src="../../images/honour_crown.png" alt=""/>	
+						</div>
+					
+					</div>
+					<div class="zl">
+						<ul class="weekdays">
+							<li>周一</li>
+							<li>周二</li>
+							<li>周三</li>
+							<li>周四</li>
+							<li>周五</li>
+							<li>周六</li>
+							<li>周日</li>
+						</ul>
+						<div class="days_warp">
+							<ul class="month">
+								<li><span>7</span>月</li>
+							</ul>
+							<ul>
+								<li></li>
+								<li></li>
+								<li></li>
+								<li></li>
+								<li></li>
+								<li class="days_red">1</li>
+								<li class="days_red">2</li>
+							</ul>
+							<ul>
+								<li class="days_green">3</li>
+								<li class="days_green">4</li>
+								<li class="days_red">5</li>
+								<li class="days_red">6</li>
+								<li class="days_green">7</li>
+								<li class="days_red">8</li>
+								<li class="days_red">9</li>
+							</ul>
+							<ul>
+								<li class="days_green">10</li>
+								<li class="days_green">11</li>
+								<li class="days_red">12</li>
+								<li class="days_red">13</li>
+								<li class="days_green">14</li>
+								<li class="days_red">15</li>
+								<li class="days_red">16</li>
+							</ul>
+							<ul>
+								<li class="days_green">17</li>
+								<li class="days_green">18</li>
+								<li class="days_red">19</li>
+								<li class="days_red">20</li>
+								<li class="days_green">21</li>
+								<li class="days_red">22</li>
+								<li class="days_red">23</li>
+							</ul>
+							<ul>
+								<li class="days_green">24</li>
+								<li class="days_green">25</li>
+								<li class="days_red">26</li>
+								<li class="days_red">27</li>
+								<li class="days_green">28</li>
+								<li class="days_red">29</li>
+								<li class="days_red">30</li>
+							</ul>
+							<ul>
+								<li class="days_green">31</li>
+								<li></li>
+								<li></li>
+								<li></li>
+								<li></li>
+								<li></li>
+								<li></li>
+							</ul>
+							<ul class="month">
+								<li><span>8</span>月</li>
+							</ul>
+							<ul>
+								<li></li>
+								<li class="days_red">1</li>
+								<li class="days_red">2</li>
+								<li class="days_green">3</li>
+								<li class="days_red">4</li>
+								<li class="days_green">5</li>
+								<li class="days_red">6</li>
+							</ul>
+							<ul>
+								<li class="days_green">7</li>
+								<li class="days_green">8</li>
+								<li class="days_gray">9</li>
+								<li class="days_gray">10</li>
+								<li class="days_gray">11</li>
+								<li class="days_gray">12</li>
+								<li class="days_gray">13</li>
+							</ul>
+							<ul>
+								<li class="days_gray">14</li>
+								<li class="days_gray">15</li>
+								<li class="days_gray">16</li>
+								<li class="days_gray">17</li>
+								<li class="days_gray">18</li>
+								<li class="days_gray">19</li>
+								<li class="days_gray">20</li>
+							</ul>
+							<ul>
+								<li class="days_gray">21</li>
+								<li class="days_gray">22</li>
+								<li class="days_gray">23</li>
+								<li class="days_gray">24</li>
+								<li class="days_gray">25</li>
+								<li class="days_gray">26</li>
+								<li class="days_gray">27</li>
+							</ul>
+							<ul>
+								<li class="days_gray">28</li>
+								<li class="days_gray">29</li>
+								<li class="days_gray">30</li>
+								<li class="days_gray">31</li>
+								<li></li>
+								<li></li>
+								<li></li>
+							</ul>
+							<ul class="month">
+								<li><span>9</span>月</li>
+							</ul>
+							
+						</div>
+					</div>
+					<div class="prime_jibie">
+						<div class="prime_jibie_left">
+							<div class="prime_jibie_left_num"><img src="../../images/red_zero.png" alt="" /></div>
+							<div class="prime_jibie_left_text">普通会员</div>
+						</div>
+						<div class="prime_jibie_right">
+							<p>您需要连续5周达成</p>
+							<p class="bold">「每周完成3次以上5K徒步」的成就</p>
+							<p>可升级为菁英会员</p>
+							<p>请继续努力哦！</p>
+						</div>
+					</div>
+					<div class="other_help">
+						<div class="other_help_question">
+							<a href="wdry_prime_explain.html"><img src="../../images/other_help_question.png" alt="" /></a>
+						</div>
+						<div class="other_help_cup">
+							<a href="javascript:;"><img src="../../images/other_help_cup.png" alt=""/></a>
+						</div>
+					</div>
+				</section>
+				<div class="z-alert">
+					<ul>
+						<li><a href="#" class="active">徒步活动</a></li>
+						<li><a href="#">最美徒步</a></li>
+						<li><a href="#">健康指导</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="box-transparent"></div>
+		</div>
+		<script type="text/javascript">
+			var scrollH=$('.days_warp ul').outerHeight();
+			(function($){
+				$(window).load(function(){
+//					$('section').height($(window).height()-$('header').height());
+//					$(selector).mCustomScrollbar("scrollTo",position,options);   调用scrollTo方法来将内容滚动到设定好的位置参数
+					$(".days_warp").mCustomScrollbar({
+						mouseWheelPixels: scrollH,
+						scrollEasing:"easeInOutCirc",
+						scrollInertia:550,
+						callbacks:{
+							onScroll:function(){ 
+								var scrollsingleH = Math.ceil(this.mcs.top / scrollH);
+								/*$('#mCSB_1_container').animate({
+									'top':scrollsingleH*scrollH
+								},200)*/
+								
+							},
+							whileScrollingInterval:0
+						}
+					});
+					function myCallback(el,id){
+						if($(id).css("opacity")<1){return;}
+						var span=$(id).find("span");
+						clearTimeout(timeout);
+						span.addClass("on");
+						var timeout=setTimeout(function(){span.removeClass("on")},350);
+					}
+				});
+			})(jQuery);
+		</script>
+	</body>
+</html>

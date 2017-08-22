@@ -12,23 +12,28 @@ $(function(){
 	        }else{
 				$(this).attr("src","../../images/human_market/history_more.png");
 	            $(".hj_history_del").attr("src","../../images/human_market/history_more.png");
-	            $(this).parent(".more_sc").animate({"right":'-.54rem'},500);
+	            $(this).parent(".more_sc").animate({"right":'-8.5rem'},500);
 	            toggle = true;
 	        }
 	    });
 	    
 		//右边更多删除操作
 		$(document).on("click",".more_src_del",function(){
-			$(this).parent().parent().stop(false,true).delay(100).animate({"right":'-8.5rem'},500);
-			$(this).parent().parent().delay(100).slideUp("1000",function(){
-				$(this).remove();
+			$(this).parent().parent().stop(true,false).animate({"right":'-8.5rem'},500);
+			$(this).parent().parent().remove();
+			$(this).parent().parent().slideUp("1000",function(){
+//				$(this).parent().parent().remove();
 			});
 		});
-		//收藏功能 
-		$(document).on("click",".more_src_sc",function(){
-			$(this).children("img").attr("src","../../images/human_market/ls_collect_yes.png");
-		});
 		
+		//收藏切换
+		$('.more_src_sc').toggle(function(){
+			$(this).children("img").attr("src","../../images/human_market/ls_collect_yes.png");// 收藏
+			$(this).addClass('collect_img');
+		},function(){					
+			$(this).children("img").attr("src","../../images/human_market/ls_collect_no.png");// 未收藏
+			$(this).removeClass('collect_img');
+		})	
 		//递归动画显示列表内容
 			i=0;
 			$(".write_btn").on('click',function anim(){
@@ -151,28 +156,28 @@ $(function(){
 							setTimeout(function() {
 								for(var i =0;i<3;i++) {
 									$(".tab_switch_cont_heji_list").append(`
-										<li>
-											<div class="history_remove_circle"><img src="../../images/human_market/choice_no.png" alt="" data="../../images/human_market/choice_yes.png"/></div>
+										<li>	
+			    							<div class="history_remove_circle"><img src="../../images/human_market/choice_no.png" alt="" data="../../images/human_market/choice_no.png"/></div>
 			    							<div class="hj_shipin_img">
 			    								<img src="../../images/human_market/history_img1.png" alt="" />
-			    								<p class="course_type tuwen_bg">图文</p>
+			    								<p class="course_type shipin_bg">视频</p>
 			    							</div> 
 			    							<div class="hj_shipin_txt">
 			    								<p class="hj_shipin_title">轻享生活美食</p>
 			    								<p class="hj_huati">#话题</p>
 			    								<p class="hj_date">7月30日</p>
 			    							</div>
-			    							<img src="../../images/human_market/history_more.png" alt="" data="../../images/human_market/history_sc.png" class="hj_history_del"/>
+			    							<img src="../../images/human_market/history_more.png" alt="" data="../../images/human_market/ls_collect_no.png" class="hj_history_del"/>
 			    							<div class="more_sc">
 			    								<div  class="more_src_del" style="display: inline-block;">
 			    									<img src="../../images/human_market/history_del.png" alt=""/>
 			    									<span>删除</span>
 			    								</div>
 			    								<div class="more_src_sc">
-			    									<img src="../../images/human_market/history_sc.png" alt=""/>
+			    									<img src="../../images/human_market/ls_collect_no.png" alt=""/>
 			    									<span>收藏</span>
 			    								</div>
-			    								<img src="../../images/human_market/history_close.png" alt="" data="../../images/human_market/history_sc.png" class="hj_history_del"/>
+			    								<img src="../../images/human_market/history_close.png" alt="" data="../../images/human_market/ls_collect_no.png" class="hj_history_del"/>
 			    							</div>
 			    						</li>
 									`);
