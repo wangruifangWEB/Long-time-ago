@@ -1,4 +1,4 @@
-.swiper-container, .w{height: calc(100vh - 60px);}
+.search_warp input.search.swiper-container, .w{height: calc(100vh - 60px);}
 body,html{
 	background-color: #F0F0F0;
 }
@@ -11,12 +11,8 @@ body,html{
 }
 .search_warp{
 	background-color: #ffffff;
-	height: 1.08rem;
 }
 .search_warp input.search{
-	height: 0.68rem;
-	/*padding: 0 !important;*/
-	/*margin: 0 !important;*/
 	margin-left: 0.25rem !important;
 }
 /*轮播图*/
