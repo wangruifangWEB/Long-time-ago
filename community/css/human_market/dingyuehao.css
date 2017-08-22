@@ -1,4 +1,4 @@
-loadtip.swiper-container, .w{height: calc(100vh - 60px);}
+.swiper-container, .w{height: calc(100vh - 60px);}
 .index{
 	width: 7.5rem;
 	background-color: #ffffff;
