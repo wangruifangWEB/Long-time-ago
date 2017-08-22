@@ -1,0 +1,374 @@
+.index{
+	width: 7.5rem;
+	background-color: #f5f5f5;
+	font-family: PingFangSC-Medium;
+	color: #2a2a2a;
+	overflow: auto;
+}
+.video{
+	width: 100%;
+	height: 3.9rem;
+	position: relative;
+}
+.video img{
+	width: 100%;
+	height: 100%;
+}
+.video_play{
+	position: absolute;
+	width: 1.44rem;
+	height: 1.44rem;
+	top: 50%;
+	left: 50%;
+	margin-left: -0.72rem;
+	margin-top: -0.72rem;
+}
+.dingyue{
+	background-color: #ffffff;
+	width: 100%;
+	height: 1.38rem;
+	border-bottom: solid 0.01rem #e1e0e0;
+}
+.tab_switch_left{
+	width: 0.74rem;
+	height: 0.74rem;
+	margin: 0.3rem 0.25rem 0.35rem 0.3rem;
+	
+}
+.tab_switch_left img{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+.tab_switch_right{
+	width: 6.2rem;
+	border-bottom: none;
+	height: 1.38rem;
+}
+.tab_switch_right ul{
+	height: 1.38rem;
+}
+.tab_switch_right button{
+	margin-top: 0.4rem;
+}
+
+/* 导航 */
+.tab_switch_ul{
+	width: 100%;
+	height: 0.75rem;
+	border-bottom: solid 0.01rem #e1e0e0;
+	background-color: #fff;
+	display: none;
+	z-index: 10;
+}
+.tab_switch_ul li{
+	text-align: center;
+	padding-top: 0.15rem;
+	float: left;
+	font-size: 0.34rem;
+	padding-bottom: 0.2rem;
+	width: 2.5rem;
+	
+}
+
+.tab_switch_ul li.active{
+	color: #772fd8;
+	background-image: url(../../images/human_market/switch_li_icon.png);
+	background-size: 0.3rem 0.06rem;
+	background-repeat: no-repeat;
+	background-position: center 0.62rem;
+}
+.tab_switch_ul li.active a{
+	color: #772fd8;
+}
+.tab_switch_ul_height{
+	height: 0.75rem;
+	display: none;
+}
+
+/* 课程详情 */
+.course_detail{
+	
+	width: 100%;
+	margin: 0 auto;
+	background-color: #fff;
+	padding-bottom: 0.22rem;
+	margin-bottom: 0.2rem;
+}
+.course_detail li:nth-child(1){
+	padding-left: 0.3rem;
+	padding-right: 0.3rem;
+	font-size: 0.4rem;
+	font-weight: bold;
+	padding-top: 0.3rem;
+	padding-bottom: 0.3rem;
+}
+.course_detail li:nth-child(1) img{
+	width: 0.58rem;
+	height: 0.56rem;
+	margin-left: 0.45rem;
+	margin-top: -0.05rem;
+}
+.course_detail li:nth-child(2){
+	padding-left: 0.3rem;
+	padding-right: 0.3rem;
+	font-size: 0.24rem;
+	color: #666;
+	margin-bottom: 0.52rem;
+}
+.course_detail li:nth-child(2) span:nth-child(2){
+	font-size: 0.24rem;
+	color: #666;
+	margin-left: 0.5rem;
+}
+.course_detail li:nth-child(3){
+	padding-left: 0.3rem;
+	padding-right: 0.3rem;
+	font-size: 0.3rem;
+	line-height: 0.52rem;
+}
+
+/* 合辑 */
+.heji_detail{
+	background-color: #fff;
+	width: 100%;
+	margin-bottom: 0.2rem;
+}
+.heji_detail .heji_detail_title p:nth-child(1){
+	padding-left: 0.3rem;
+	padding-top: 0.35rem;
+	padding-bottom: 0.3rem;
+	font-weight: bold;
+	font-size: 0.34rem;
+	float: left;
+}
+.heji_detail .heji_detail_title .heji_click_warp{
+	float: left;
+	
+}
+.heji_detail .heji_detail_title img{
+	margin-left: 0.3rem;
+	margin-top: 0.35rem;
+	width: 0.39rem;
+	height: 0.32rem;
+	display: block;
+	float: left;
+}
+.heji_detail .heji_detail_title p:nth-child(2){
+	float: left;
+	padding-left: 0.15rem;
+	padding-top: 0.4rem;
+	padding-bottom: 0.3rem;
+	font-size: 0.26rem;
+	color: #f9bc0f;
+}
+.heji_detail .heji_detail_title p:nth-child(3){
+	margin-right: 0.3rem;
+	float: right;
+	color: #666;
+	padding-right: 0.34rem;
+	padding-top: 0.38rem;
+	padding-bottom: 0.3rem;
+	font-size: 0.26rem;
+	background-image: url(../../images/human_market/more_info.png);
+	background-position: 1rem 0.41rem;
+	background-repeat: no-repeat;
+	background-size: 0.14rem 0.25rem;
+}
+.list_cont{
+	margin-left: 0.3rem;
+	margin-right: 0;
+}
+.loadtip p{
+	font-size: 0.26rem;
+	text-align: center;
+	position: fixed;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	bottom: 1.15rem;
+	width: 7.5rem;
+	text-align: center;
+	background-color: #fff;
+	z-index: 1000;
+	display: none;
+	text-align: center;
+}
+
+/* 相关推荐 */
+.relate_recommen{
+	background-color: #fff;
+	margin-bottom: 0.2rem;
+	
+}
+.relate_recommen_title{
+	padding-top: 0.35rem;
+	padding-bottom: 0.3rem;
+	font-size: 0.34rem;
+	font-weight: bold;
+	padding-left: 0.3rem;
+}
+.relate_recommen_detail{
+	padding-left: 0.3rem;
+}
+.relate_recommen_detail li{
+	height: 1.8rem;
+	clear: both;
+}
+.relate_recommen_detail_img{
+	float: left;
+	width: 2.6rem;
+	height: 1.50rem;
+	position: relative;
+}
+.relate_recommen_detail_img img{
+	width: 100%;
+	height: 100%;
+}
+.relate_recommen_detail_img .course_type{
+	right: 0.4rem;
+}
+.relate_recommen_detail_text{
+	float: left;
+	margin-left: 0.2rem;
+	margin-bottom: 0.3rem;
+}
+.relate_recommen_detail_text p:nth-child(1){
+	font-size: .32rem;
+    margin-bottom: .2rem;
+    color: #2a2a2a;
+}
+.relate_recommen_detail_text p:nth-child(2){
+	font-size: .24rem;
+}
+.relate_recommen_detail_text p:nth-child(2){
+	font-size: .24rem;
+	margin-bottom: 0.5rem;
+}
+.relate_recommen_detail_text p:nth-child(3){
+	font-size: .24rem;
+}
+.result_more_warp{
+	border-top: solid 0.01rem #e1e0e0;
+}
+
+/* 评论  */
+.pinglun{
+	background-color: #fff;
+	width: 100%;
+	position: relative;
+}
+.pinglun_title{
+	padding-top: 0.35rem;
+	padding-left: 0.3rem;
+	padding-bottom: 0.45rem;
+	font-size: 0.34rem;
+	font-weight: bold;
+	width: 7.2rem;
+	background-color: #fff;
+}
+.pinglun_title span{
+	padding-left: 0.25rem;
+	font-weight: normal;
+	font-size: 0.24rem;
+	color: #999;
+	position: relative;
+	top: -0.05rem;
+}
+
+.pinglun_detail{
+	background-color: #fff;
+}
+
+.pinglun_detail_img{
+	float: left;
+	margin-left: 0.3rem;
+	width: 0.72rem;
+	height: 0.72rem;
+	margin-right: 0.2rem;
+	margin-top: 0.25rem;
+}
+.pinglun_detail_img img{
+	width: 100%;
+	height: 100%;
+}
+.pinglun_detail_ul{
+	width: 6.2rem;
+	float: left;
+	border-bottom: solid 0.01rem #e1e0e0;
+}
+.pinglun_detail_ul li:nth-child(1){
+	font-size: 0.26rem;
+	margin-bottom: 0.2rem;
+	margin-top: 0.2rem;
+}
+.pinglun_detail_ul li:nth-child(2){
+	font-size: 0.22rem;
+	line-height: 0.4rem;
+	color: #666;
+	margin-bottom: 0.35rem;
+}
+.pinglun_detail_ul li:nth-child(3){
+	font-size: 0.2rem;
+	color: #666;
+	margin-bottom: 0.20rem;
+	position: relative;
+}
+.pinglun_dianzan{
+	width: 0.3rem;
+	padding-left: 0.5rem;
+	line-height: 0.36rem;
+	height: 0.34rem;
+	position: absolute;
+	right: 0.3rem;
+	bottom: 0;
+	color: #666;
+	font-size: 0.2rem;
+	background-image: url(../../images/human_market/pinglun_dianzan.png);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: 0.34rem 0.34rem;
+}
+/* 底部发布 */
+.fabu_warp{
+	background-color: #fff;
+	width: 100%;
+	height: 1.15rem;
+	z-index: 100;
+	position: absolute;
+	bottom: 0;
+}
+.fabu_warp input{
+	display: block;
+	float: left;
+	width: 5.25rem;
+	margin-left: 0.35rem;
+	margin-top: 0.25rem;
+	margin-bottom: 0.24rem;
+	font-size: 0.26rem;
+	line-height: normal;
+	padding: 0.2rem 0.35rem;
+	color: #999;
+	outline: none;
+	border: none;
+	border-radius: 0.33rem;
+	background-color: #f5f5f5;
+}
+.fabu_warp .fabu_btn{
+	float: right;
+	margin-right: 0.35rem;
+}
+.fabu_warp .fabu_btn img{
+	margin-top: 0.2rem;
+	display: block;
+	width: 0.36rem;
+	height: 0.38rem;
+	margin-bottom: 0.1rem;
+}
+.fabu_warp .fabu_btn button{
+	display: block;
+	font-size: 0.2rem;
+	color: #666;
+}
+.fabu_warp_height{
+	height: 1.15rem;
+}

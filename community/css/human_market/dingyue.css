@@ -20,7 +20,7 @@
 .tab_switch_ul_warp{
 	width: 100%;
 	height: 0.75rem;
-	border-bottom: solid 0.01rem #d8d8d8;
+	border-bottom: solid 0.01rem #e1e0e0;
 }
 .tab_switch .tab_switch_ul li{
 	padding-top: 0.15rem;
@@ -159,7 +159,7 @@
 .tab_switch_right{
 	width: 5.85rem;
 	height: 1.88rem;
-	border-bottom: solid 0.01rem #d8d8d8;
+	border-bottom: solid 0.01rem #e1e0e0;
 	float: left;
 }
 .tab_switch_right ul{
@@ -210,7 +210,7 @@
 	border-bottom: none;
 }
 .tab_switch_third_cont_detail{
-	border-bottom: solid 0.01rem #d8d8d8;
+	border-bottom: solid 0.01rem #e1e0e0;
 }
 
 
