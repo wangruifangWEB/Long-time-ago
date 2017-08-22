@@ -40,77 +40,34 @@
 							setTimeout(function() {
 								for(var i =0;i<6;i++) {
 									$(".list-group").append(`
-										<div class="tab_switch_first_cont">
-											<div class="tab_switch_cont_detail_title">
-												<div class="tab_switch_cont_detail_title_img">
-													<img src="../../images/human_market/header_index.png" alt=""/>
-												</div>
-												<div class="tab_switch_cont_detail_title_name_warp">
-													<p class="tab_switch_cont_detail_title_name">用户名</p>
-													<p class="tab_switch_cont_detail_title_time">3小时前</p>
-												</div>
-											</div>
-											<div class="tab_switch_cont_detail_img">
-												<img src="../../images/human_market/index_banner.png" alt="" />
-												<div class="tab_switch_cont_detail_img_info">
-													<p class="tab_switch_cont_detail_img_name">轻享美食生活</p>
-													<p class="tab_switch_cont_detail_img_huati">#话题</p>
-												</div>
-												<p class="course_type tuwen_bg">图文</p>
-											</div>
-											<div class="tab_switch_cont_detail_remark">
-												<p class="tab_switch_cont_detail_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
-												<p class="tab_switch_cont_detail_remark_right">视频</p>
-											</div>
-										</div>
+										<div class="course_cont">
+				    						<div class="course_cont_title">
+					    						<div class="course_cont_title_img">
+					    							<img src="../../images/human_market/header_index.png" alt=""/>
+					    						</div>
+					    						<div class="course_cont_title_name_warp">
+					    							<p class="course_cont_title_name">用户名</p>
+					    							<p class="course_cont_title_time">3小时前</p>
+					    						</div>
+					    						<img src="../../images/human_market/hotdoor.png" alt="" class="hotdoor" />
+					    					</div>
+					    					<div class="course_cont_img">
+					    						<img src="../../images/human_market/index_banner.png" alt="" />
+					    						<div class="course_cont_img_info">
+					    							<p class="course_cont_img_name">轻享美食生活</p>
+					    							<p class="course_cont_img_huati">#话题</p>
+					    						</div>
+					    						<p class="course_type tuwen_bg">图文</p>
+					    					</div>
+					    					<div class="course_cont_remark">
+					    						<p class="course_cont_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
+					    						<p class="course_cont_remark_right">图文</p>
+					    					</div>
+			    						</div>
 									`);
 								}
 								 $(".loadtip p").hide();
 								 $('.nav_bottom').css('display','block');
-								mySwiper.update(); // 重新计算高度;
-							}, 800);
-						}
-					});
-				}
-				//  刷新
-				if(mySwiper.translate >= 50) {
-					$.ajax({
-						url:"",
-						type:"post",
-						success:function(data){
-							
-						},
-						error:function(){
-							$('.init-loading').css('display','block');
-							setTimeout(function() {
-								for(var i =0;i<20;i++) {
-									$(".list-group").append(`
-										<div class="tab_switch_first_cont">
-											<div class="tab_switch_cont_detail_title">
-												<div class="tab_switch_cont_detail_title_img">
-													<img src="../../images/human_market/header_index.png" alt=""/>
-												</div>
-												<div class="tab_switch_cont_detail_title_name_warp">
-													<p class="tab_switch_cont_detail_title_name">用户名</p>
-													<p class="tab_switch_cont_detail_title_time">3小时前</p>
-												</div>
-											</div>
-											<div class="tab_switch_cont_detail_img">
-												<img src="../../images/human_market/index_banner.png" alt="" />
-												<div class="tab_switch_cont_detail_img_info">
-													<p class="tab_switch_cont_detail_img_name">轻享美食生活</p>
-													<p class="tab_switch_cont_detail_img_huati">#话题</p>
-												</div>
-												<p class="course_type tuwen_bg">图文</p>
-											</div>
-											<div class="tab_switch_cont_detail_remark">
-												<p class="tab_switch_cont_detail_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
-												<p class="tab_switch_cont_detail_remark_right">视频</p>
-											</div>
-										</div>
-									`);
-								}
-								$('.init-loading').css('display','none');
 								mySwiper.update(); // 重新计算高度;
 							}, 800);
 						}
