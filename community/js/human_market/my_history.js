@@ -134,6 +134,12 @@ $(function(){
 				var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
 				var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
 			},
+			onSlideChangeEnd: function(swiper){
+		            var activeHight=$(".swiper-slide").eq(swiper.activeIndex).height()
+		            console.log(activeHight)
+		            // $(".swiper-wrapper").height(activeHight)
+		            // console.log($(".swiper-wrapper").height())
+		        },
 			onTouchEnd: function(swiper) {
 				var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
 				var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;

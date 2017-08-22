@@ -1,5 +1,5 @@
 $(function(){	
-   	$('.swiper-container, .w').height($(window).height()-$('.top_content').height());
+   	$('.swiper-container, .w').height($(window).height());
 	var loadFlag = true;
 	var oi = 0;
 	var mySwiper = new Swiper('.swiper-container',{
@@ -63,39 +63,6 @@ $(function(){
 					}
 				});
 			}
-			//  刷新
-			if(mySwiper.translate >= 50) {
-				$.ajax({
-					url:"",
-					type:"post",
-					success:function(data){
-						
-					},
-					error:function(){
-						$('.init-loading').css('display','block');
-						setTimeout(function() {
-							for(var i =0;i<20;i++) {
-								$(".list-group").append(`
-									<div class="tab_switch_first_cont">
-										<div class="tab_switch_cont_detail_title">
-											<div class="tab_switch_cont_detail_title_img">
-												<img src="../../images/human_market/header_index.png" alt=""/>
-											</div>
-											<div class="tab_switch_cont_detail_title_name_warp">
-												<p class="tab_switch_cont_detail_title_name">用户名</p>
-												<p class="tab_switch_cont_detail_title_time">3小时前</p>
-											</div>
-										</div>
-									</div>
-								`);
-							}
-							$('.init-loading').css('display','none');
-							mySwiper.update(); // 重新计算高度;
-						}, 800);
-					}
-				});
-			}
-			return false;
 		}
 	});
 	var mySwiper2 = new Swiper('.swiper-container2',{

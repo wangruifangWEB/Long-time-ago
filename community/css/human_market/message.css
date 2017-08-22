@@ -114,18 +114,3 @@ body,html{
 .tab_switch_huifu{
 	display: inline-block;
 }
-.loadtip p{
-	font-size: 0.26rem;
-	text-align: center;
-	height: 0.4rem;
-	line-height: 0.4rem;
-	position: fixed;
-	bottom: 0;
-	width: 7.5rem;
-	display: none;
-	text-align: center;
-	background-color: #EFEFF4;
-	z-index: 10;
-	font-size: 0.26rem;
-	text-align: center;
-}

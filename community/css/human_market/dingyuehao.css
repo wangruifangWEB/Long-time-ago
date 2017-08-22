@@ -1,4 +1,4 @@
-.swiper-container, .w{height: calc(100vh - 60px);}
+loadtip.swiper-container, .w{height: calc(100vh - 60px);}
 .index{
 	width: 7.5rem;
 	background-color: #ffffff;
@@ -246,4 +246,19 @@
 	float:right;
 	margin-right:.45rem;
 	margin-top:.78rem;
+}
+/*底部加载*/
+.loadtip p{
+	font-size: 0.26rem;
+	text-align: center;
+	padding-top: 0.1rem;
+	padding-bottom: 0.1rem;
+	position: fixed;
+	bottom: 0;
+	width: 7.5rem;
+	text-align: center;
+	background-color: #EFEFF4;
+	z-index: 10;
+	font-size: 0.26rem;
+	text-align: center;
 }
