@@ -73,6 +73,14 @@ window.onscroll=function(){
 		$('.tab_switch_ul').hide();
 		$('.fabu_warp').css('position','absolute');
 	}
+	
+	// 回到底部
+	if($(document).scrollTop() >= $(window).height()){
+		$('#toTop').fadeIn(500);
+		$('#toTop').click(function(){
+			$('html,body').animate({scrollTop:'0px'},1000);return false;
+		});
+	}
 }
 
 // 锚点定位问题
