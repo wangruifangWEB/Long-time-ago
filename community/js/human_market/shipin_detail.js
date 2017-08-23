@@ -94,6 +94,7 @@ function locateAt(e){
     console.log(y);
 }
 
+// 发送按钮
 $('.fabu_warp button').click(function(){
 	
 })
@@ -103,16 +104,16 @@ $(function(){
 	var loadFlag=true;
 	var pinglun=document.getElementById('pinglun');
 	var n = 1, startX = 0, startY = 0, endX = 0, endY = 0;
-	document.addEventListener('touchstart',function (ev){
+	pinglun.addEventListener('touchstart',function (ev){
 		startX=ev.touches[0].pageX;
 		startY=ev.touches[0].pageY;
 	}, false);
-	document.addEventListener('touchmove',function (ev){
+	pinglun.addEventListener('touchmove',function (ev){
 //		ev.preventDefault();
 		endX=ev.touches[0].pageX;
 		endY=ev.touches[0].pageY;
 	}, false);
-	document.addEventListener('touchend',function (ev){
+	pinglun.addEventListener('touchend',function (ev){
         if (startY-endY>100) {//向上滑动
             $.ajax({
             	url:"http://www.baidu.com",

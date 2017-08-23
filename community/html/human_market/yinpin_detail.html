@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>音频详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/reset.css">
+		<link rel="stylesheet" href="../../css/global.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.mCustomScrollbar.css"/>
+		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/jquery.mCustomScrollbar.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="../../css/human_market/shipin_detail.css"/>
+		
+		<style type="text/css">
+			/*进度条样式*/
+        .progressBar{ width: 100%; height:0.08rem ; position:absolute; left: 0; top: 6.2rem;z-index: 1000;}
+        .progressBar div{ position: absolute;}
+        .progressBar .progressBac{ width: 100%; height: 0.08rem;  left: 0; top:0; background: #d0d2d1;}
+        .progressBar .speed{width: 100%; height: 0.08rem; left: -100%; background: #a97be6; }
+        .progressBar .drag{ width: 0.39rem; height: 0.39rem; left: 0; top: -0.12rem;}
+		.progressBar .drag img{width: 100%;height: 100%;}
+		</style>
+		<script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>	
+	</head>
+	<body>
+		<script type="text/javascript">
+			$(function() {
+    			getSong();
+			})
+
+//获取歌曲链接并插入dom中
+function getSong() { 
+    var audio = document.getElementById("audio");
+    audio.src = "../../images/I'll Be There.ogg";
+    audio.loop = true; //歌曲循环
+    playCotrol(); //播放控制函数
+}
+//播放事件监听
+function playCotrol() {
+    audio.addEventListener("loadeddata", function() {
+        addListenTouch(); //歌曲加载之后才可以拖动进度条
+    }, false);
+    audio.addEventListener("canplaythrough", function() {
+        // 全部时长
+		var duration=audio.duration.toString().split('.')[0];
+		var durationFirst=parseInt(duration/60);
+		var durationSecond=parseInt(duration%60);
+		$('.radio_info_duration').html(durationFirst+':'+durationSecond);
+    }, false);
+    audio.addEventListener('timeupdate',function(){
+    	var current1=audio.currentTime;
+    	var duration1=audio.duration;
+    	var scale=current1/duration1*100+'%';
+    	$('.progressBar .drag').css({'left':scale});
+    },false)
+}
+//进度条
+//这里我用的是事件实现进度拖动 如果不太熟悉touch的可以看下我之前写的一个小demo http://www.cnblogs.com/leinov/p/3701951.html
+ var startX, x, aboveX = 0; //触摸时的坐标 //滑动的距离  //设一个全局变量记录上一次内部块滑动的位置 
+//1拖动监听touch事件
+function addListenTouch() {
+    document.getElementById("drag").addEventListener("touchstart", touchStart, false);
+    document.getElementById("drag").addEventListener("touchmove", touchMove, false);
+    document.getElementById("drag").addEventListener("touchend", touchEnd, false);
+    var drag = document.getElementById("drag");
+    var speed = document.getElementById("speed");
+}
+
+//touchstart,touchmove,touchend事件函数
+ function touchStart(e) {  
+     e.preventDefault();
+     var touch = e.touches[0];
+     startX = touch.pageX; 
+ }
+ function touchMove(e) { //滑动          
+     e.preventDefault();
+     var touch = e.touches[0];
+     x = touch.pageX - startX; //滑动的距离
+     //drag.style.webkitTransform = 'translate(' + 0+ 'px, ' + y + 'px)';  //也可以用css3的方式     
+     drag.style.left = aboveX + x  +"px"; //  
+     speed.style.left = -((window.innerWidth) - (aboveX + x)) + "px";
+ }
+ function touchEnd(e) { //手指离开屏幕
+     e.preventDefault();
+     aboveX = parseInt(drag.style.left);
+     var touch = e.touches[0];
+     var dragPaddingLeft = drag.style.left;
+     var change = dragPaddingLeft.replace("px", "");
+     numDragpaddingLeft = parseInt(change);
+     var currentTime = (numDragpaddingLeft / (window.innerWidth - 30)) * audio.duration;//30是拖动圆圈的长度，减掉是为了让歌曲结束的时候不会跑到window以外
+     audio.currentTime = currentTime;
+ }
+//3拖动的滑动条前进
+function dragMove() {
+    setInterval(function() {
+        drag.style.left = (audio.currentTime / audio.duration) * (window.innerWidth - 30) + "px";
+        speed.style.left = -((window.innerWidth) - (audio.currentTime / audio.duration) * (window.innerWidth - 30)) + "px";
+    }, 500);
+}
+		</script>
+		<div class="index">
+			<!-- 视频 -->
+			<div class="radio aplayer" id="radio" >
+				<!-- 音频图片 -->
+				<img class="radio_bg" src="../../images/human_market/radio_bg.png" alt="" />	
+				<audio id="audio" src=""  loop="loop" autoplay="autoplay" ></audio>
+				<!-- 音频显示进度 -->
+				<!--<ul class="radio_show">
+					<li></li>
+					<li></li>
+					<li id="speed"></li>
+				</ul>-->
+				<section class="progressBar">
+				    <div class="progressBac"></div>
+				    <div class="speed" id="speed"></div>
+				    <div class="drag" id="drag"><img src="../../images/human_market/radio_jindu.png"/></div>
+				</section>
+				<!-- 音频时长信息 -->
+				<ul class="radio_info">
+					<li class="radio_info_currentTime">0:56</li>
+					<li class="radio_info_duration">3:56</li>
+				</ul>
+				<!-- 音频三个点击按钮 -->
+				<ul class="radio_btn">
+					<li><img src="../../images/human_market/prev_radio.png" /></li>
+					<li class="isPlay"><img src="../../images/human_market/radio_parse.png" alt="" /></li>
+					<li><img src="../../images/human_market/next_radio.png" /></li>
+				</ul>
+				<!--<div class="radio_play" id="radio_play"><img src="../../images/human_market/radio_jindu.png" alt="" /></div>-->
+			</div>
+
+			<!-- 订阅  -->
+			<div class="dingyue">
+				<div class="tab_switch_left">
+					<img src="../../images/human_market/header.png" alt="" />
+				</div>
+				<div class="tab_switch_right">
+					<ul>
+						<li>订阅号</li>
+						<li><span>20万</span>人订阅</li>
+					</ul>
+					<button class="isDingyue">订阅</button>
+				</div>
+			</div>
+			<!-- 导航 -->
+			<ul class="tab_switch_ul">
+				<li class="active"><a href="javascript:;" onclick="locateAt('course_detail')">详情</a></li>
+				<li><a href="javascript:;" onclick="locateAt('tuijian')">相关推荐</a></li>
+				<li><a href="javascript:;" onclick="locateAt('pinglun')">评论</a></li>
+			</ul>
+			<div class="tab_switch_ul_height"></div>
+			<!-- 课程详情 -->
+			<ul class="course_detail" name="course_detail" id="course_detail">
+				<li class="course_detail_title">课程详情<img  src="../../images/human_market/ls_collect_no.png" alt="" /></li>
+				<li><span>20万</span>人播放<span>3小时</span>前</li>
+				<li>详情课程详情课程详情课程详情课程详情课程详情课程详情课程详情课程详情课程详情课程详情课程详情课程详情课程详情课程详情课程详情课程详情课程详情</li>
+			</ul>
+			<!-- 合辑 -->
+			<div class="heji_detail">
+				<div class="heji_detail_title">
+					<p>合辑</p>
+					<div class="heji_click_warp heji_collect">
+						<img src="../../images/human_market/collect.png" alt="" />
+						<p>已收藏</p>
+					</div>
+					<p>共<span>22</span>课</p>
+				</div>
+				<div class="list_cont_warp">
+    				<ul class="list_cont">
+	    				<li>
+	    					<a href="javascript:void(0);">
+	    						<img src="../../images/human_market/history_img1.png"/>
+	    						<p>轻享美食生活</p>
+	    					</a>
+	    				</li>
+	    				<li>
+	    					<a href="javascript:void(0);">
+	    						<img src="../../images/human_market/history_img1.png"/>
+	    						<p>轻享美食生活</p>
+	    					</a>
+	    				</li>
+	    				<li>
+	    					<a href="javascript:void(0);">
+	    						<img src="../../images/human_market/history_img1.png"/>
+	    						<p>轻享美食生活</p>
+	    					</a>
+	    				</li>
+	    				<li>
+	    					<a href="javascript:void(0);">
+	    						<img src="../../images/human_market/history_img1.png"/>
+	    						<p>轻享美食生活</p>
+	    					</a>
+	    				</li>
+	    				<li>
+	    					<a href="javascript:void(0);">
+	    						<img src="../../images/human_market/history_img1.png"/>
+	    						<p>轻享美食生活</p>
+	    					</a>
+	    				</li>
+	    			</ul>
+    			</div>
+			</div>
+    		<!-- 相关推荐 -->
+    		
+    		<div class="relate_recommen clearfix" name="tuijian" id="tuijian">
+    			<p class="relate_recommen_title">相关推荐</p>
+    			<ul class="relate_recommen_detail">
+					<li>
+						<a href="javascript:;">
+							<div class="relate_recommen_detail_img">
+								<img src="../../images/human_market/history_img1.png" alt="" />
+								<p class="course_type tuwen_bg">图文</p>
+							</div> 
+							<div class="relate_recommen_detail_text">
+								<p>轻享生活美食</p>
+								<p>#话题</p>
+								<p>7月30日</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<div class="relate_recommen_detail_img">
+								<img src="../../images/human_market/history_img1.png" alt="" />
+								<p class="course_type tuwen_bg">图文</p>
+							</div> 
+							<div class="relate_recommen_detail_text">
+								<p>轻享生活美食</p>
+								<p>#话题</p>
+								<p>7月30日</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<div class="relate_recommen_detail_img">
+								<img src="../../images/human_market/history_img1.png" alt="" />
+								<p class="course_type tuwen_bg">图文</p>
+							</div> 
+							<div class="relate_recommen_detail_text">
+								<p>轻享生活美食</p>
+								<p>#话题</p>
+								<p>7月30日</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<div class="relate_recommen_detail_img">
+								<img src="../../images/human_market/history_img1.png" alt="" />
+								<p class="course_type tuwen_bg">图文</p>
+							</div> 
+							<div class="relate_recommen_detail_text">
+								<p>轻享生活美食</p>
+								<p>#话题</p>
+								<p>7月30日</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<div class="result_more_warp"><a href="javascript:;" class="result_more">更多</a></div>
+    		</div>
+    		<!-- 评论 -->
+    		<div class="pinglun clearfix" name="pinglun"  id="pinglun">
+				<p class="pinglun_title">评论<span>(232)</span></p>
+				<div class="swiper-slide list-group">
+	    			<div class="pinglun_detail">
+	    				<div class="pinglun_detail_img">
+	    					<img src="../../images/human_market/header_index.png"/>
+	    				</div>
+	    				<ul class="pinglun_detail_ul">
+	    					<li>用户名A</li>
+	    					<li>用户评论用户评论用户评论用户评论用户评论用户评论用户评论</li>
+	    					<li><span>3小时</span>前<div class="pinglun_dianzan">22</div></li>
+	    				</ul>
+	    			</div>
+	    		</div>
+				<div class="loadtip"><p></p></div>
+				<div class="fabu_warp">
+					<input type="text" class="fabu" placeholder="评论"/>
+					<div class="fabu_btn">
+						<img src="../../images/human_market/fabu.png" alt="" />
+						<button type="button">发布</button>
+					</div>
+				</div>
+				<div class="fabu_warp_height"></div>
+			</div>
+    		<!--回到顶部-->
+			<div id="toTop">
+				<a href="javascript:;"><img src="../../images/human_market/totop.png" alt="" />顶部</ a>
+			</div>
+		</div>
+		<script src="../../js/global.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/human_market/yinpin_detail.js" type="text/javascript" charset="utf-8"></script>
+		
+	</body>
+</html>
