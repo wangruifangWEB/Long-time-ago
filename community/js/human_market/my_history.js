@@ -37,7 +37,8 @@ $(function(){
 		//递归动画显示列表内容
 			i=0;
 			$(".write_btn").on('click',function anim(){
-				$(".tab_switch_cont_heji_list li").animate({'left':'0'},300,'easeInOutCirc');
+				$(".tab_switch_cont_heji_list li .history_remove_circle").css('padding-left','0');
+				$(".tab_switch_cont_heji_list li").animate({'left':'.29rem'},300,'easeInOutCirc');
 				//底部调换
 				$(".footer_top").fadeIn(10).animate({
 		            bottom:"0"  
@@ -61,7 +62,7 @@ $(function(){
 				$('.history_remove_circle img').attr('src','../../images/human_market/choice_yes.png');
 				var all_length=$(".tab_switch_cont_heji_list .remove_img").length;
 				$(".remove_btn").click(function(){
-					$('.remove_img').css('opacity',0);
+					$('.history_remove_circle').css('opacity',0);
 						$(".tab_switch_cont_heji_list li").animate({"left":'8.5rem'},600,function(){
 					 	$('.tab_switch_cont_heji_list').remove();
 					});
@@ -79,6 +80,7 @@ $(function(){
 			
 			//点击取消
 			$('.cancel_manages').click(function(){
+				$(".tab_switch_cont_heji_list li .history_remove_circle").css('padding-left','.2rem');
 				$(".tab_switch_cont_heji_list li").stop(true,false).fadeIn(1000).animate({
 				    left:"-.54rem"  
 				},400,'easeInOutCirc'); 

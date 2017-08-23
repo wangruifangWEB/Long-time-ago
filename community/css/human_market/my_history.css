@@ -1,3 +1,6 @@
+body{
+	overflow-x: hidden;
+}
 .swiper-container, .w{height: calc(100vh - 60px);}
 .index{
 	width: 7.5rem;
@@ -70,7 +73,8 @@
 	width:.42rem;
 	height:.42rem;
 	float:right;
-	margin-right:-.42rem;
+	/*margin-right:-.42rem;*/
+	margin-right:-.2rem;
 	margin-top:.80rem;
 }
 /*更多操作*/

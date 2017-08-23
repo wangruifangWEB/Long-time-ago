@@ -1,16 +1,18 @@
+.container {
+	 background-color: #f0f0f0;
+}
 .container .search_warp{
 	padding-bottom: 0;
+	background-color: #fff;
 }
 .container .search_warp input{
 	width:5.86rem;
 	margin:0;
 	display: inline-block;
-}
-.search_warp{
-	height:0;
+	background-color: #f0f0f0;
 }
 .search_warp input.search{
-	height:0;
+	margin-left: 0.35rem;
 }
 .shaixuan{
 	display: block;
