@@ -1,4 +1,11 @@
  	$(function(){	
+		// 回到顶部
+		if($(document).scrollTop() >= $(window).height()){
+			$('#toTop').fadeIn(500);
+			$('#toTop').click(function(){
+				$('html,body').animate({scrollTop:'0px'},500);return false;
+			});
+		}
 	   	$('.swiper-container, .w').height($(window).height()-$(".nav_bottom").height());
 		var loadFlag = true;
 		var oi = 0;
@@ -8,7 +15,7 @@
 			slidesPerView: 'auto',
 			mousewheelControl: true,
 			freeMode: true,
-			onTouchMove: function(swiper){		//手动滑动中触发
+			onTouchMove: function(swiper){//手动滑动中触发
 				var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
 				var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
 				var translateY=parseInt(mySwiper.getWrapperTranslate('y'));
@@ -22,7 +29,7 @@
 				var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
 				//回到顶部
 				var translateY=parseInt(mySwiper.getWrapperTranslate('y'));
-				console.log(translateY);
+				console.log("拉动距离是"+translateY);
 				if(translateY > 0){
 					$('.swiper-wrapper,.w').css('transform','translate3d(0px, 0px, 0px)');
 				}

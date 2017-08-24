@@ -125,7 +125,7 @@ window.onscroll=function(){
 	if($(document).scrollTop() >= $(window).height()){
 		$('#toTop').fadeIn(500);
 		$('#toTop').click(function(){
-			$('html,body').animate({scrollTop:'0px'},1000);return false;
+			$('html,body').animate({scrollTop:'0px'},500);return false;
 		});
 	}
 }
