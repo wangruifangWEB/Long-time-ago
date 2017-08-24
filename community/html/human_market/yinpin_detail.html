@@ -17,7 +17,7 @@
         .progressBar{ width: 100%; height:0.08rem ; position:absolute; left: 0; top: 6.2rem;z-index: 1000;}
         .progressBar div{ position: absolute;}
         .progressBar .progressBac{ width: 100%; height: 0.08rem;  left: 0; top:0; background: #d0d2d1;}
-        .progressBar .speed{width: 100%; height: 0.08rem; left: -100%; background: #a97be6; }
+        .progressBar .speed{width: 0; height: 0.08rem;  background: #a97be6; }
         .progressBar .drag{ width: 0.39rem; height: 0.39rem; left: 0; top: -0.12rem;}
 		.progressBar .drag img{width: 100%;height: 100%;}
 		</style>
@@ -28,76 +28,76 @@
 			$(function() {
     			getSong();
 			})
-
-//获取歌曲链接并插入dom中
-function getSong() { 
-    var audio = document.getElementById("audio");
-    audio.src = "../../images/I'll Be There.ogg";
-    audio.loop = true; //歌曲循环
-    playCotrol(); //播放控制函数
-}
-//播放事件监听
-function playCotrol() {
-    audio.addEventListener("loadeddata", function() {
-        addListenTouch(); //歌曲加载之后才可以拖动进度条
-    }, false);
-    audio.addEventListener("canplaythrough", function() {
-        // 全部时长
-		var duration=audio.duration.toString().split('.')[0];
-		var durationFirst=parseInt(duration/60);
-		var durationSecond=parseInt(duration%60);
-		$('.radio_info_duration').html(durationFirst+':'+durationSecond);
-    }, false);
-    audio.addEventListener('timeupdate',function(){
-    	var current1=audio.currentTime;
-    	var duration1=audio.duration;
-    	var scale=current1/duration1*100+'%';
-    	$('.progressBar .drag').css({'left':scale});
-    },false)
-}
-//进度条
-//这里我用的是事件实现进度拖动 如果不太熟悉touch的可以看下我之前写的一个小demo http://www.cnblogs.com/leinov/p/3701951.html
- var startX, x, aboveX = 0; //触摸时的坐标 //滑动的距离  //设一个全局变量记录上一次内部块滑动的位置 
-//1拖动监听touch事件
-function addListenTouch() {
-    document.getElementById("drag").addEventListener("touchstart", touchStart, false);
-    document.getElementById("drag").addEventListener("touchmove", touchMove, false);
-    document.getElementById("drag").addEventListener("touchend", touchEnd, false);
-    var drag = document.getElementById("drag");
-    var speed = document.getElementById("speed");
-}
-
-//touchstart,touchmove,touchend事件函数
- function touchStart(e) {  
-     e.preventDefault();
-     var touch = e.touches[0];
-     startX = touch.pageX; 
- }
- function touchMove(e) { //滑动          
-     e.preventDefault();
-     var touch = e.touches[0];
-     x = touch.pageX - startX; //滑动的距离
-     //drag.style.webkitTransform = 'translate(' + 0+ 'px, ' + y + 'px)';  //也可以用css3的方式     
-     drag.style.left = aboveX + x  +"px"; //  
-     speed.style.left = -((window.innerWidth) - (aboveX + x)) + "px";
- }
- function touchEnd(e) { //手指离开屏幕
-     e.preventDefault();
-     aboveX = parseInt(drag.style.left);
-     var touch = e.touches[0];
-     var dragPaddingLeft = drag.style.left;
-     var change = dragPaddingLeft.replace("px", "");
-     numDragpaddingLeft = parseInt(change);
-     var currentTime = (numDragpaddingLeft / (window.innerWidth - 30)) * audio.duration;//30是拖动圆圈的长度，减掉是为了让歌曲结束的时候不会跑到window以外
-     audio.currentTime = currentTime;
- }
-//3拖动的滑动条前进
-function dragMove() {
-    setInterval(function() {
-        drag.style.left = (audio.currentTime / audio.duration) * (window.innerWidth - 30) + "px";
-        speed.style.left = -((window.innerWidth) - (audio.currentTime / audio.duration) * (window.innerWidth - 30)) + "px";
-    }, 500);
-}
+			//获取歌曲链接并插入dom中
+			function getSong() { 
+			    var audio = document.getElementById("audio");
+			    audio.src = "../../images/I'll Be There.ogg";
+			    audio.loop = true; //歌曲循环
+			    playCotrol(); //播放控制函数
+			}
+			//播放事件监听
+			function playCotrol() {
+			    audio.addEventListener("loadeddata", function() {
+			        addListenTouch(); //歌曲加载之后才可以拖动进度条
+			    }, false);
+			    audio.addEventListener("canplaythrough", function() {
+			        // 全部时长
+					var duration=audio.duration.toString().split('.')[0];
+					var durationFirst=parseInt(duration/60);
+					var durationSecond=parseInt(duration%60);
+					$('.radio_info_duration').html(durationFirst+':'+durationSecond);
+			    }, false);
+			    audio.addEventListener('timeupdate',function(){
+			    	var current1=audio.currentTime;
+			    	var duration1=audio.duration;
+			    	var scale=current1/duration1*100+'%';
+			    	$('.progressBar .drag').css({'left':scale});
+			    	$('.progressBar .speed').css({'width':scale})
+			    },false)
+			}
+			//进度条
+			//这里我用的是事件实现进度拖动 如果不太熟悉touch的可以看下我之前写的一个小demo http://www.cnblogs.com/leinov/p/3701951.html
+			 var startX, x, aboveX = 0; //触摸时的坐标 //滑动的距离  //设一个全局变量记录上一次内部块滑动的位置 
+			//1拖动监听touch事件
+			function addListenTouch() {
+			    document.getElementById("drag").addEventListener("touchstart", touchStart, false);
+			    document.getElementById("drag").addEventListener("touchmove", touchMove, false);
+			    document.getElementById("drag").addEventListener("touchend", touchEnd, false);
+			    var drag = document.getElementById("drag");
+			    var speed = document.getElementById("speed");
+			}
+			
+			//touchstart,touchmove,touchend事件函数
+			 function touchStart(e) {  
+			     e.preventDefault();
+			     var touch = e.touches[0];
+			     startX = touch.pageX; 
+			 }
+			 function touchMove(e) { //滑动          
+			     e.preventDefault();
+			     var touch = e.touches[0];
+			     x = touch.pageX - startX; //滑动的距离
+			     //drag.style.webkitTransform = 'translate(' + 0+ 'px, ' + y + 'px)';  //也可以用css3的方式     
+			     drag.style.left = aboveX + x  +"px"; //  
+			     speed.style.left = -((window.innerWidth) - (aboveX + x)) + "px";
+			 }
+			 function touchEnd(e) { //手指离开屏幕
+			     e.preventDefault();
+			     aboveX = parseInt(drag.style.left);
+			     var touch = e.touches[0];
+			     var dragPaddingLeft = drag.style.left;
+			     var change = dragPaddingLeft.replace("px", "");
+			     numDragpaddingLeft = parseInt(change);
+			     var currentTime = (numDragpaddingLeft / (window.innerWidth - 30)) * audio.duration;//30是拖动圆圈的长度，减掉是为了让歌曲结束的时候不会跑到window以外
+			     audio.currentTime = currentTime;
+			 }
+			//3拖动的滑动条前进
+			function dragMove() {
+			    setInterval(function() {
+			        drag.style.left = (audio.currentTime / audio.duration) * (window.innerWidth - 30) + "px";
+			        speed.style.left = -((window.innerWidth) - (audio.currentTime / audio.duration) * (window.innerWidth - 30)) + "px";
+			    }, 500);
+			}
 		</script>
 		<div class="index">
 			<!-- 视频 -->
