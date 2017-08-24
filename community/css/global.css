@@ -498,6 +498,32 @@
 	font-size: 0.26rem;
 	text-align: center;
 }
+
+.loadtip{
+	display: none;
+}
+.loadtip img{
+	width: 5.28rem;
+	height: 3.23rem;
+	display: block;
+	z-index: 100;
+	margin: 0 auto;
+}
+
+
+.init-loading{
+	display: block;
+}
+.init-loading img{
+	width: 1.61rem;
+	height: 3rem;
+	display: block;
+	z-index: 100;
+	position: relative;
+	top: -3rem;
+	left: 50%;
+	margin-left: -0.81rem;
+}
 /*回到顶部*/
 #toTop{
 	width:.70rem;
@@ -525,4 +551,30 @@
 }
 #toTop a:hover{
 	color:#666;
+}
+
+
+/* 缺省等样式 */
+.default{
+	display: none;
+	width: 7.5rem;
+	height: 5.3rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -3.75rem;
+	margin-top: -2.65rem;
+}
+.default img:nth-child(1){
+	width: 4rem;
+	height: 3.76rem;
+	margin: 0 auto;
+	margin-bottom: 0.7rem;
+	display: block;
+}
+.default img:nth-child(2){
+	width: 2.47rem;
+	height: .59rem;
+	margin: 0 auto;
+	display: block;
 }
