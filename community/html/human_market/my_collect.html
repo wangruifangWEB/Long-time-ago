@@ -12,6 +12,11 @@
 		<script src="../../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
 		<script src="https://cdn.bootcss.com/jquery-easing/1.3.2/jquery.easing.min.js"></script>
+		<style type="text/css">
+			.init-loading{
+				height: 0.5rem;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="swiper-container">
@@ -21,7 +26,7 @@
 						<!--<div class="swiper-wrapper ">-->
 							<div class="swiper-slide list-group">
 								<div class="index">
-								<!--<div class="init-loading list-group-item text-center" style="display: none;"><p>下拉刷新</p></div>-->
+								<div class="init-loading list-group-item"><img src="../../images/human_market/refresh.png" alt="" /></div>
 									<div class="tab_switch_cont">	
 										<div class="tab_switch_cont_detail show">
 					    					<ul class="tab_switch_cont_heji_list">
@@ -87,6 +92,10 @@
 					    						</li>
 					    					</ul>
 					    				</div>
+					    				<div class="default" id="no_shoucang">
+				    						<img src="../../images/human_market/bone.png" alt="" />
+				    						<img src="../../images/human_market/not_shoucang.png" alt="" />
+				    					</div>
 									</div>
 								</div>
 							</div>
@@ -94,7 +103,7 @@
 					</div>
 				</div>
 			</div>
-		<!--<div class="loadtip"><p>正在加载!</p></div>-->
+		<div class="loadtip"><p>正在加载!</p></div>
 		<div class="swiper-scrollbar"></div>
 	  </div>		
 	</div>

@@ -194,6 +194,11 @@ $(function(){
 							`);
 						}
 						$(".loadtip p").hide();
+						if($('.list-group').is(':empty')){
+							$('#no_pinglun').css('display','block');
+						}else{
+							$('#no_pinglun').css('display','none');
+						}
 					}, 800);
 				}
             })

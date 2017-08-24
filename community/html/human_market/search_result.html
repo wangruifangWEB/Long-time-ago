@@ -2,13 +2,21 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>搜索</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link rel="stylesheet" href="../../css/reset.css">
 		<link rel="stylesheet" href="../../css/global.css" />
 		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/css" href="../../css/human_market/search_result.css"/>
+		<style>
+			.mydingyue_cont{
+				display: none;
+			}
+			.course_cont{
+				display: none;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="index">
@@ -59,11 +67,11 @@
 				<p class="result_title">订阅号</p>
 					<div class="mydingyue_cont">
 						<div class="dingyue">
-							<div class="tab_switch_left">
+							<div class="tab_switch_left" onclick="location.href='dingyuehao.html'">
 								<img src="../../images/human_market/header.png" alt="" />
 							</div>
 							<div class="tab_switch_right">
-								<ul>
+								<ul onclick="location.href='dingyuehao.html'">
 									<li>订阅号</li>
 									<li>博物杂志官方账号</li>
 									<li><span>20万</span>人订阅</li>
@@ -74,11 +82,41 @@
 					</div>
 					<div class="mydingyue_cont">
 						<div class="dingyue">
-							<div class="tab_switch_left">
+							<div class="tab_switch_left" onclick="location.href='dingyuehao.html'">
 								<img src="../../images/human_market/header.png" alt="" />
 							</div>
 							<div class="tab_switch_right">
-								<ul>
+								<ul onclick="location.href='dingyuehao.html'">
+									<li>订阅号</li>
+									<li>博物杂志官方账号</li>
+									<li><span>20万</span>人订阅</li>
+								</ul>
+								<button class="hasDingyue">已订阅</button>
+							</div>
+						</div>
+					</div>
+					<div class="mydingyue_cont">
+						<div class="dingyue">
+							<div class="tab_switch_left" onclick="location.href='dingyuehao.html'">
+								<img src="../../images/human_market/header.png" alt="" />
+							</div>
+							<div class="tab_switch_right">
+								<ul onclick="location.href='dingyuehao.html'">
+									<li>订阅号</li>
+									<li>博物杂志官方账号</li>
+									<li><span>20万</span>人订阅</li>
+								</ul>
+								<button class="hasDingyue">已订阅</button>
+							</div>
+						</div>
+					</div>
+					<div class="mydingyue_cont">
+						<div class="dingyue">
+							<div class="tab_switch_left" onclick="location.href='dingyuehao.html'">
+								<img src="../../images/human_market/header.png" alt="" />
+							</div>
+							<div class="tab_switch_right">
+								<ul onclick="location.href='dingyuehao.html'">
 									<li>订阅号</li>
 									<li>博物杂志官方账号</li>
 									<li><span>20万</span>人订阅</li>
@@ -93,7 +131,7 @@
 	    			<p class="result_title">课程</p>
 	    			<div class="course_cont">
 						<div class="course_cont_title">
-							<div class="course_cont_title_img">
+							<div class="course_cont_title_img" onclick="location.href='dingyuehao.html'">
 								<img src="../../images/human_market/header_index.png" alt=""/>
 							</div>
 							<div class="course_cont_title_name_warp">
@@ -101,7 +139,7 @@
 								<p class="course_cont_title_time">3小时前</p>
 							</div>
 						</div>
-						<div class="course_cont_img">
+						<div class="course_cont_img" onclick="location.href='yinpin_detail.html'">
 							<img src="../../images/human_market/index_banner.png" alt="" />
 							<div class="course_cont_img_info">
 								<p class="course_cont_img_name">轻享美食生活</p>
@@ -116,7 +154,7 @@
 					</div>
 					<div class="course_cont">
 						<div class="course_cont_title">
-							<div class="course_cont_title_img">
+							<div class="course_cont_title_img" onclick="location.href='dingyuehao.html'">
 								<img src="../../images/human_market/header_index.png" alt=""/>
 							</div>
 							<div class="course_cont_title_name_warp">
@@ -124,7 +162,99 @@
 								<p class="course_cont_title_time">3小时前</p>
 							</div>
 						</div>
-						<div class="course_cont_img">
+						<div class="course_cont_img" onclick="location.href='yinpin_detail.html'">
+							<img src="../../images/human_market/index_banner.png" alt="" />
+							<div class="course_cont_img_info">
+								<p class="course_cont_img_name">轻享美食生活</p>
+								<p class="course_cont_img_huati">#话题</p>
+							</div>
+							<p class="course_type tuwen_bg">图文</p>
+						</div>
+						<div class="course_cont_remark">
+							<p class="course_cont_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
+							<p class="course_cont_remark_right">图文</p>
+						</div>
+					</div>
+					<div class="course_cont">
+						<div class="course_cont_title">
+							<div class="course_cont_title_img" onclick="location.href='dingyuehao.html'">
+								<img src="../../images/human_market/header_index.png" alt=""/>
+							</div>
+							<div class="course_cont_title_name_warp">
+								<p class="course_cont_title_name">用户名</p>
+								<p class="course_cont_title_time">3小时前</p>
+							</div>
+						</div>
+						<div class="course_cont_img" onclick="location.href='yinpin_detail.html'">
+							<img src="../../images/human_market/index_banner.png" alt="" />
+							<div class="course_cont_img_info">
+								<p class="course_cont_img_name">轻享美食生活</p>
+								<p class="course_cont_img_huati">#话题</p>
+							</div>
+							<p class="course_type tuwen_bg">图文</p>
+						</div>
+						<div class="course_cont_remark">
+							<p class="course_cont_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
+							<p class="course_cont_remark_right">图文</p>
+						</div>
+					</div>
+					<div class="course_cont">
+						<div class="course_cont_title">
+							<div class="course_cont_title_img" onclick="location.href='dingyuehao.html'">
+								<img src="../../images/human_market/header_index.png" alt=""/>
+							</div>
+							<div class="course_cont_title_name_warp">
+								<p class="course_cont_title_name">用户名</p>
+								<p class="course_cont_title_time">3小时前</p>
+							</div>
+						</div>
+						<div class="course_cont_img" onclick="location.href='yinpin_detail.html'">
+							<img src="../../images/human_market/index_banner.png" alt="" />
+							<div class="course_cont_img_info">
+								<p class="course_cont_img_name">轻享美食生活</p>
+								<p class="course_cont_img_huati">#话题</p>
+							</div>
+							<p class="course_type tuwen_bg">图文</p>
+						</div>
+						<div class="course_cont_remark">
+							<p class="course_cont_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
+							<p class="course_cont_remark_right">图文</p>
+						</div>
+					</div>
+					<div class="course_cont">
+						<div class="course_cont_title">
+							<div class="course_cont_title_img" onclick="location.href='dingyuehao.html'">
+								<img src="../../images/human_market/header_index.png" alt=""/>
+							</div>
+							<div class="course_cont_title_name_warp">
+								<p class="course_cont_title_name">用户名</p>
+								<p class="course_cont_title_time">3小时前</p>
+							</div>
+						</div>
+						<div class="course_cont_img" onclick="location.href='yinpin_detail.html'">
+							<img src="../../images/human_market/index_banner.png" alt="" />
+							<div class="course_cont_img_info">
+								<p class="course_cont_img_name">轻享美食生活</p>
+								<p class="course_cont_img_huati">#话题</p>
+							</div>
+							<p class="course_type tuwen_bg">图文</p>
+						</div>
+						<div class="course_cont_remark">
+							<p class="course_cont_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
+							<p class="course_cont_remark_right">图文</p>
+						</div>
+					</div>
+					<div class="course_cont">
+						<div class="course_cont_title">
+							<div class="course_cont_title_img" onclick="location.href='dingyuehao.html'">
+								<img src="../../images/human_market/header_index.png" alt=""/>
+							</div>
+							<div class="course_cont_title_name_warp">
+								<p class="course_cont_title_name">用户名</p>
+								<p class="course_cont_title_time">3小时前</p>
+							</div>
+						</div>
+						<div class="course_cont_img" onclick="location.href='yinpin_detail.html'">
 							<img src="../../images/human_market/index_banner.png" alt="" />
 							<div class="course_cont_img_info">
 								<p class="course_cont_img_name">轻享美食生活</p>
@@ -145,39 +275,18 @@
     			
     		<!-- 底部导航 -->
     		<div class="list_padding_width"></div>
-    		<ul class="nav_bottom">
-    			<li>
-    				<a href="javascript:;">
-    					<img src="../../images/human_market/course_not.png" alt="" />
-    					<span>课程</span>
-    				</a>
-    			</li>
-    			<li>
-    				<a href="javascript:;">
-    					<img src="../../images/human_market/type_not.png" alt="" />
-    					<span>分类</span>
-    				</a>
-    			</li>
-    			<li>
-    				<a href="javascript:;">
-    					<img src="../../images/human_market/dingyue.png" alt="" />
-    					<span>订阅</span>
-    				</a>
-    			</li>
-    			<li>
-    				<a href="javascript:;">
-    					<img src="../../images/human_market/myown_not.png" alt="" />
-    					<span>我的</span>
-    				</a>
-    			</li>
-    		</ul>
     		<div class="nav_bottom_height"></div>
     		<div class="nav_bottom_height2"></div>
+    		<!--回到顶部-->
+			<div id="toTop">
+				<a href="javascript:;"><img src="../../images/human_market/totop.png" alt="" />顶部</ a>
+			</div>
 		</div>
 		
 		<script type="text/javascript">
 			$('.search_panel').height($(window).height()-$('.search_warp').height()-$('.nav_bottom_height').outerHeight());
 			$('.search_result').height($(document).height()-$('.search_warp').height()-$('.nav_bottom_height2').outerHeight());
+			
 			// 点击删除按钮，删除搜索历史
 			$('.close_his').click(function(){
 				confirm('确定清除全部浏览记录？');
@@ -188,6 +297,40 @@
 				}
 				$('.remen_huati').css({'margin-top':'0','padding-top':'0','border-top':'none'})
 			})
+			
+			if($('.mydingyue_cont').length>2){
+				for (var i=0;i<2;i++) {
+					$('.mydingyue_cont').eq(i).show();
+				}
+			}
+			$('.dingyuehao_result .result_more').click(function(){
+				for (var i=2;i<$('.mydingyue_cont').length;i++) {
+					$('.mydingyue_cont').eq(i).slideDown();
+				}
+			})
+			
+			if($('.course_cont').length>2){
+				for (var i=0;i<2;i++) {
+					$('.course_cont').eq(i-1).show();
+				}
+			}
+			$('.course_result .result_more').click(function(){
+				for (var i=2;i<$('.course_cont').length;i++) {
+					$('.course_cont').eq(i-1).slideDown();
+				}
+			})
+			// 回到底部
+			window.onscroll=function(){
+				if($(document).scrollTop() >= $(window).height()){
+				$('#toTop').fadeIn(500);
+				$('#toTop').click(function(){
+					$('html,body').animate({scrollTop:'0px'},1000);return false;
+				});
+			}
+			}
+			
+			
+			
 			
 			// 搜索栏动画
 			$('.search').animate({'width':'5.86rem'},500);
