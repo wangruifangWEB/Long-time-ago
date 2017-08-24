@@ -22,33 +22,6 @@
 				overflow: hidden;
 			}
 			.swiper-container, .w{height: calc(100vh - 60px);}
-			/*.init-loading img{
-				width: 1.2rem;
-				height: 1.2rem;
-				display: block;
-				margin: 0.05rem auto;
-			}*/
-			.init-loading{
-				font-size: 0.06rem;
-				text-align: center;
-				line-height: 0.5rem;
-				height: 0.5rem;
-			}
-			.loadtip p{
-				font-size: 0.26rem;
-				text-align: center;
-				padding-top: 0.1rem;
-				padding-bottom: 0.1rem;
-				position: fixed;
-				bottom: 0;
-				width: 7.5rem;
-				text-align: center;
-				background-color: #EFEFF4;
-				z-index: 10;
-				font-size: 0.26rem;
-				text-align: center;
-			}
-
 		</style>
 	</head>
 	<body>
@@ -70,111 +43,32 @@
     				<div class="swiper-container tab_switch_cont_swiper">
 						<div class="swiper-wrapper w">
 							<div class="swiper-slide d">
-								<div class="init-loading list-group-item text-center" style="display: none;"><img src="../images/loading.gif"/></div>
+								<div class="init-loading list-group-item"><img src="../../images/human_market/refresh.png"/></div>
 								<div class="swiper-container2">
-									<!--<div class="swiper-wrapper ">-->
 										<div class="swiper-slide list-group">
-						    				<div class="tab_switch_cont_detail tab_switch_first_cont show">
-						    					<div class="course_cont">
-						    						<div class="course_cont_title">
-							    						<div class="course_cont_title_img">
-							    							<img src="../../images/human_market/header_index.png" alt=""/>
-							    						</div>
-							    						<div class="course_cont_title_name_warp">
-							    							<p class="course_cont_title_name">用户名</p>
-							    							<p class="course_cont_title_time">3小时前</p>
-							    						</div>
-							    					</div>
-							    					<div class="course_cont_img">
-							    						<img src="../../images/human_market/index_banner.png" alt="" />
-							    						<div class="course_cont_img_info">
-							    							<p class="course_cont_img_name">轻享美食生活</p>
-							    							<p class="course_cont_img_huati">#话题</p>
-							    						</div>
-							    						<p class="course_type tuwen_bg">图文</p>
-							    					</div>
-							    					<div class="course_cont_remark">
-							    						<p class="course_cont_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
-							    						<p class="course_cont_remark_right">图文</p>
-							    					</div>
+						    				<div class="tab_switch_cont_detail tab_switch_first_cont_warp show">
+						    					<div class="tab_switch_first_cont"></div>
+						    					<div class="default" id="no_course">
+						    						<img src="../../images/human_market/bone.png" class="bone" alt="" />
+						    						<img src="../../images/human_market/not_course.png" class="not_course" class="bone" alt="" />
 						    					</div>
 						    				</div>
-						    				<div class="tab_switch_cont_detail tab_switch_second_cont">
-						    					<div class="mydingyue_cont">
-						    						<div class="dingyue">
-						    							<div class="tab_switch_left">
-							    							<img src="../../images/human_market/header.png" alt="" />
-							    						</div>
-							    						<div class="tab_switch_right">
-							    							<ul>
-							    								<li>订阅号</li>
-							    								<li>博物杂志官方账号</li>
-							    								<li><span>20万</span>人订阅</li>
-							    							</ul>
-							    							<button class="hasDingyue">已订阅</button>
-							    						</div>
-						    						</div>
-						    						<div class="cancel_dingyue">取消订阅</div>
+						    				<div class="tab_switch_cont_detail tab_switch_second_cont_warp">
+						    					<div class="tab_switch_second_cont"></div>
+						    					<div class="default" id="no_dingyue">
+						    						<img src="../../images/human_market/bone.png" class="bone" alt="" />
+						    						<img src="../../images/human_market/not_dingyue.png" class="not_course" class="bone" alt="" />
 						    					</div>
 						    				</div>
 						    				<div class="tab_switch_cont_detail tab_switch_third_cont">
-												<div class="tuijian_cont">
-													<div class="dingyue">
-														<div class="tab_switch_left">
-															<img src="../../images/human_market/header.png" alt="" />
-														</div>
-														<div class="tab_switch_right">
-															<ul>
-																<li>订阅号</li>
-																<li>博物杂志官方账号</li>
-																<li><span>20万</span>人订阅</li>
-															</ul>
-															<button class="isDingyue">订阅</button>
-														</div>
-													</div>
-													<div class="list_cont_warp">
-									    				<ul class="list_cont">
-										    				<li>
-										    					<a href="javascript:void(0);">
-										    						<img src="../../images/human_market/history_img1.png"/>
-										    						<p>轻享美食生活</p>
-										    					</a>
-										    				</li>
-										    				<li>
-										    					<a href="javascript:void(0);">
-										    						<img src="../../images/human_market/history_img1.png"/>
-										    						<p>轻享美食生活</p>
-										    					</a>
-										    				</li>
-										    				<li>
-										    					<a href="javascript:void(0);">
-										    						<img src="../../images/human_market/history_img1.png"/>
-										    						<p>轻享美食生活</p>
-										    					</a>
-										    				</li>
-										    				<li>
-										    					<a href="javascript:void(0);">
-										    						<img src="../../images/human_market/history_img1.png"/>
-										    						<p>轻享美食生活</p>
-										    					</a>
-										    				</li>
-										    				<li>
-										    					<a href="javascript:void(0);">
-										    						<img src="../../images/human_market/history_img1.png"/>
-										    						<p>轻享美食生活</p>
-										    					</a>
-										    				</li>
-										    			</ul>
-									    			</div>
-												</div>
+												
 											</div>
 										</div>
-									<!--</div>-->
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="loadtip"><p></p></div>
+					<div class="loadtip"><img src="../../images/human_market/loading.gif" alt="" /></div>
 					<div class="swiper-scrollbar"></div>
 				</div>
     		</div>
@@ -213,7 +107,6 @@
 		<script type="text/javascript">
 			$('.tab_switch').height($(window).height()-$('.search_warp').outerHeight()-$('.nav_bottom').height());
 			$('.tab_switch_cont').height($(window).height()-$('.search_warp').outerHeight()-$('.nav_bottom').height()-$('.tab_switch_ul_warp').height());
-//			$('.tab_switch_cont_detail').height($('.tab_switch_cont').height());
 			// 加载刷新
 		</script>
 		<script src="../../js/global.js" type="text/javascript" charset="utf-8"></script>
