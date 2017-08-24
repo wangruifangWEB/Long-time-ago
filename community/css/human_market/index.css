@@ -168,7 +168,7 @@ body,html{
 	position: fixed;
 	bottom: 0;
 	width: 7.5rem;
-	display: none;
+	/*display: none;*/
 	text-align: center;
 	background-color: #EFEFF4;
 	z-index: 10;

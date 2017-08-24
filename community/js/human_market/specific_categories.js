@@ -15,7 +15,8 @@ $(function(){
 					
 				},
 				error:function(){
-//					$('.init-loading').css('display','block');
+					$('.init-loading').css({'display':'block'});
+					$('.init-loading img').css({'top':'-0.5rem'});
 					setTimeout(function() {
 						for(var i =0;i<3;i++) {
 							$(".tab_switch_first_cont").eq(mySwiper2.activeIndex).append(`
@@ -44,8 +45,14 @@ $(function(){
 		    					</div>
 							`); 
 						}
-						$('.init-loading').css('display','none');
+						$('.init-loading').css({'display':'none'});
+						$('.init-loading img').css({'top':'-3rem'});
 						mySwiper.update(); // 重新计算高度;
+						if($('.tab_switch_first_cont').is(":empty")){
+							$('#no_course').show();
+						}else{
+							$('#no_course').hide();
+						}
 					}, 800);
 				}
 			});
@@ -58,7 +65,7 @@ $(function(){
 					
 				},
 				error:function(){
-//					$('.init-loading').css('display','block');
+					$('.init-loading img').css({'top':'-0.5rem'});
 					setTimeout(function() {
 						for(var i =0;i<6;i++) {
 							$(".tab_switch_second_cont").eq(mySwiper2.activeIndex).append(`
@@ -91,41 +98,15 @@ $(function(){
 						$('.init-loading').css('display','none');
 						mySwiper.update(); // 重新计算高度;
 						zuohua();
+						if($('.tab_switch_second_cont').is(":empty")){
+							$('#no_dingyue').show();
+						}else{
+							$('#no_dingyue').hide();
+						}
 					}, 800);
 				}
 			});
 		}else if(i==2){
-			$('.swiper-wrapper.w').css('transform','translate3d(0, 0, 0)');
-			$.ajax({
-				type:"post",
-				url:"",
-				success:function(data){
-					
-				},
-				error:function(){
-//					$('.init-loading').css('display','block');
-					setTimeout(function() {
-						for(var i =0;i<4;i++) {
-							$(".tab_switch_third_cont").eq(mySwiper2.activeIndex).append(`
-
-							`);
-						}
-						$('.init-loading').css('display','none');
-						mySwiper.update(); // 重新计算高度;
-						$('.list_cont_warp').each(function(i){
-							$('.list_cont_warp').eq(i).addClass('list_cont_warp'+(i+1));
-							$('.list_cont').eq(i).addClass('list_cont'+(i+1));
-							new fingerTouch($('.list_cont'+(i+1)+' li'),$('.list_cont'+(i+1)),$('.list_padding_width'),$('.list_cont_warp'+(i+1)));
-							$('.list_cont_warp'+(i+1)).mCustomScrollbar({
-								horizontalScroll:true,
-		                        advanced:{ 
-								    updateOnContentResize:true
-								}
-							})
-						});
-					}, 800);
-				}
-			});
 		}
 		
 		var loadFlag = true;
@@ -191,7 +172,11 @@ $(function(){
 									}
 									$(".loadtip p").hide();
 									mySwiper.update(); // 重新计算高度;
-									
+									if($('.tab_switch_first_cont').is(":empty")){
+										$('#no_course').show();
+										}else{
+											$('#no_course').hide();
+										}
 								}, 800);
 							}
 						});
@@ -243,6 +228,11 @@ $(function(){
 									$(".loadtip p").hide();
 									mySwiper.update(); // 重新计算高度;
 									zuohua();
+									if($('.tab_switch_second_cont').is(":empty")){
+										$('#no_course').show();
+									}else{
+										$('#no_course').hide();
+									}
 								}, 800);
 							}
 						});
@@ -257,7 +247,8 @@ $(function(){
 								
 							},
 							error:function(){
-								$('.init-loading').css('display','block');
+								$('.init-loading').css({'display':'block'});
+								$('.init-loading img').css({'top':'-0.5rem'});
 								setTimeout(function() {
 									for(var i =0;i<3;i++) {
 										$(".tab_switch_first_cont").eq(mySwiper2.activeIndex).append(`
@@ -286,8 +277,14 @@ $(function(){
 					    					</div>
 										`);
 									}
-									$('.init-loading').css('display','none');
+									$('.init-loading').css({'display':'none'});
+									$('.init-loading img').css({'top':'-3rem'});
 									mySwiper.update(); // 重新计算高度;
+									if($('.tab_switch_first_cont').is(":empty")){
+										$('#no_course').show();
+									}else{
+										$('#no_course').hide();
+									}
 								}, 800);
 							}
 						});

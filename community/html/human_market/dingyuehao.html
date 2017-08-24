@@ -12,131 +12,58 @@
 		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
+		<div class="user_msg">				
+			<div class="user_grade_warp"><div class="user_grade gold"></div><img src="../../images/human_market/header.png" alt="" /></div>
+			<p class="user_title">博物君</p>
+			<ul>
+				<li><span>9</span>课程</li>
+				<li><span>9</span>粉丝</li>
+				<li><span>9</span>订阅</li>
+			</ul>
+			<p class="main_title">博物馆杂志官方账号</p>
+			<button class="isDingyue">订阅</button>
+		</div>
+		<!-- tab切换 -->
+		<div class="tab_switch">
+			<div class="tab_switch_ul_warp">
+				<ul class="tab_switch_ul">
+    				<li class="active first">课程</li>
+    				<li>合辑</li>
+    			</ul>
+			</div>
 		<div class="swiper-container">
 			<div class="swiper-wrapper w">
 				<div class="swiper-slide d">
+					<div class="init-loading list-group-item dyh_hand"><img src="../../images/human_market/refresh.png"/></div>
 					<div class="swiper-container2">
-						<!--<div class="swiper-wrapper ">-->
-							<div class="swiper-slide list-group">
-								<div class="index">
-									<!--用户信息-->
-									<div class="user_msg">				
-										<div class="user_grade_warp"><div class="user_grade gold"></div><img src="../../images/human_market/header.png" alt="" /></div>
-										<p class="user_title">博物君</p>
-										<ul>
-											<li><span>9</span>课程</li>
-											<li><span>9</span>粉丝</li>
-											<li><span>9</span>订阅</li>
-										</ul>
-										<p class="main_title">博物馆杂志官方账号</p>
-										<button class="isDingyue">订阅</button>
-									</div>
-									<!-- tab切换 -->
-									<div class="tab_switch">
-										<div class="tab_switch_ul_warp">
-											<ul class="tab_switch_ul">
-							    				<li class="active first">课程</li>
-							    				<li>合辑</li>
-							    			</ul>
-										</div>
-										<!--<div class="init-loading list-group-item text-center" style="display: none;"><p>下拉刷新</p></div>-->
-									<div class="tab_switch_cont">	
-										<div class="tab_switch_cont_detail tab_switch_cont_detail1 show">
-					    					<div class="tab_switch_first_cont">
-					    						<div class="tab_switch_cont_detail_title">
-						    						<div class="tab_switch_cont_detail_title_img">
-						    							<img src="../../images/human_market/header_index.png" alt=""/>
-						    						</div>
-						    						
-						    						<div class="tab_switch_cont_detail_title_name_warp">
-						    							<p class="tab_switch_cont_detail_title_name">用户名</p>
-						    							<p class="tab_switch_cont_detail_title_time">3小时前</p>
-						    						</div>
-						    					</div>
-						    					<div class="tab_switch_cont_detail_img">
-						    						<img src="../../images/human_market/index_banner.png" alt="" />
-						    						<div class="tab_switch_cont_detail_img_info">
-						    							<p class="tab_switch_cont_detail_img_name">轻享美食生活</p>
-						    							<p class="tab_switch_cont_detail_img_huati">#话题</p>
-						    						</div>
-						    						<p class="course_type tuwen_bg">图文</p>
-						    					</div>
-						    					<div class="tab_switch_cont_detail_remark">
-						    						<p class="tab_switch_cont_detail_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
-						    						<p class="tab_switch_cont_detail_remark_right">视频</p>
-						    					</div>
-					    					</div>
-					    					<div class="tab_switch_first_cont">
-					    						<div class="tab_switch_cont_detail_title">
-						    						<div class="tab_switch_cont_detail_title_img">
-						    							<img src="../../images/human_market/header_index.png" alt=""/>
-						    						</div>
-						    						
-						    						<div class="tab_switch_cont_detail_title_name_warp">
-						    							<p class="tab_switch_cont_detail_title_name">用户名</p>
-						    							<p class="tab_switch_cont_detail_title_time">3小时前</p>
-						    						</div>
-						    					</div>
-						    					<div class="tab_switch_cont_detail_img">
-						    						<img src="../../images/human_market/index_banner.png" alt="" />
-						    						<div class="tab_switch_cont_detail_img_info">
-						    							<p class="tab_switch_cont_detail_img_name">轻享美食生活</p>
-						    							<p class="tab_switch_cont_detail_img_huati">#话题</p>
-						    						</div>
-						    						<p class="course_type shipin_bg">视频</p>
-						    					</div>
-						    					<div class="tab_switch_cont_detail_remark">
-						    						<p class="tab_switch_cont_detail_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
-						    						<p class="tab_switch_cont_detail_remark_right">视频</p>
-						    					</div>
-					    					</div>
+						<div class="swiper-slide list-group">
+							<div class="index">
+								<div class="tab_switch_cont">	
+									<div class="tab_switch_cont_detail tab_switch_cont_detail1 show">
+				    					<!--缺省页-->
+				    					<div class="default class_default" id="no_course1">
+				    						<img src="../../images/human_market/bone.png" alt="" />
+				    						<img src="../../images/human_market/not_course.png" alt="" />
 					    				</div>
-			    				
+				    				</div>
 										<div class="tab_switch_cont_detail tab_switch_cont_detail2">
-					    					<ul class="tab_switch_cont_heji_list">
-					    						<li>
-					    							<!--合辑图片-->
-					    							<div class="hj_shipin_img">
-					    								<img src="../../images/human_market/history_img1.png" alt="" />
-					    								<!--遮罩层-->
-					    								<div class="mask_layer">
-					    									<img src="../../images/human_market/shipin.png" alt="" />
-					    								</div>
-					    							</div>
-					    							<!--合辑文字-->
-					    							<div class="hj_shipin_txt">
-					    								<p class="hj_shipin_title">轻享生活美食</p>
-					    								<p>共6部</p>
-					    							</div>
-					    							<!--合辑添加-->
-					    							<img src="../../images/human_market/collect.png" alt="" class="hj_shipin_collect"/>
-					    						</li>
-					    						<li>			
-					    							<div class="hj_shipin_img">
-					    								<img src="../../images/human_market/history_img1.png" alt="" />
-					    								<div class="mask_layer">
-					    									<img src="../../images/human_market/shipin.png" alt="" />
-					    								</div>
-					    							</div>    							
-					    							<div class="hj_shipin_txt">
-					    								<p class="hj_shipin_title">轻享生活美食</p>
-					    								<p>共6部</p>
-					    							</div>
-					    							<img src="../../images/human_market/collect_not.png" alt="" data="../../images/human_market/collect_not.png" class="hj_shipin_collect"/>
-					    						</li>
-					    					</ul>
+											<!--缺省页-->
+					    					<div class="default class_default" id="no_course2">
+					    						<img src="../../images/human_market/bone.png" alt="" />
+					    						<img src="../../images/human_market/not_course.png" alt="" />
+						    				</div>
+					    					<ul class="tab_switch_cont_heji_list"></ul>
 					    				</div>
 									</div>
 								</div>
-							<!--</div>-->
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		<div class="loadtip"><p>正在加载!</p></div>
-		<div class="swiper-scrollbar"></div>
-	  </div>		
-	</div>
+			<div class="loadtip"><p>正在加载!</p></div>
+			<div class="swiper-scrollbar"></div>
+		  </div>		
+		</div>
 	<script src="../../js/human_market/dingyuehao.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

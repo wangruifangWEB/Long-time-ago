@@ -3,8 +3,6 @@ $(function(){
 //	zuohua();
 //	$('.tab_switch_cont_swiper').height($(window).height()-$('.search_warp').outerHeight()-$('.nav_bottom').height()-$('.tab_switch_ul_warp').height())
 	$('.swiper-container, .w').height($(window).height()-$('.search_warp').outerHeight()-$('.nav_bottom').height()-$('.tab_switch_ul_warp').height());
-	
-	
 	$('.tab_switch_ul li').click(function(){
 		var i=$('.tab_switch_ul li').index(this);
 		$('.tab_switch_cont_detail').eq(i).addClass('show').siblings().removeClass('show');
@@ -201,7 +199,7 @@ $(function(){
 							},
 							error:function(){
 								if(loadFlag){
-									$(".loadtip").css('display','block');
+									$(".loadtip p").css('display','block');
 									setTimeout(function() {
 										for(var i =0;i<1;i++) {
 											$(".tab_switch_first_cont").eq(mySwiper2.activeIndex).append(`
@@ -230,7 +228,7 @@ $(function(){
 						    					</div>
 											`);
 										}
-										$(".loadtip").css('display','none');
+										$(".loadtip p").css('display','none');
 										mySwiper.update(); // 重新计算高度;
 										if($('.tab_switch_first_cont').is(":empty")){
 											$('#no_course').show();
@@ -277,7 +275,7 @@ $(function(){
 						    					</div>
 											`);
 										}
-										$(".loadtip").hide();
+										$(".loadtip p").hide();
 										mySwiper.update(); // 重新计算高度;
 										if($('.tab_switch_second_cont').is(":empty")){
 											$('#no_dingyue').show();
@@ -305,7 +303,7 @@ $(function(){
 							},
 							error:function(){
 								if(loadFlag){
-									$('.loadtip').css('display','block');
+									$('.loadtip p').css('display','block');
 									setTimeout(function() {
 										for(var i =0;i<4;i++) {
 											$(".tab_switch_third_cont").eq(mySwiper2.activeIndex).append(`
@@ -361,7 +359,7 @@ $(function(){
 											</div>
 											`);
 										}
-										$(".loadtip").hide();
+										$(".loadtip p").hide();
 										mySwiper.update(); // 重新计算高度;
 										$('.list_cont_warp').each(function(i){
 											$('.list_cont_warp').eq(i).addClass('list_cont_warp'+(i+1));
