@@ -70,6 +70,57 @@ $(function(){
 								}
 								 $(".loadtip p").hide();
 								mySwiper.update(); // 重新计算高度;	
+								if($('.tab_switch_cont_heji_list').is(':empty')){
+									$('#no_shoucang').css('display','block');
+								}else{
+									$('#no_shoucang').css('display','none');
+								}
+							}, 800);
+						}
+					});
+					
+				}
+				//  刷新
+				if(mySwiper.translate >= 50) {
+					$.ajax({
+						url:"",
+						type:"post",
+						success:function(data){
+							
+						},
+						error:function(){
+							$('.nav_bottom').css('display','none');
+							$(".init-loading").show();
+							if(loadFlag){
+//								$(".loadtip p").html('正在加载...');
+							}else{
+//								$(".loadtip p").html('没有更多啦！');
+							}
+							setTimeout(function() {
+								for(var i =0;i<6;i++) {
+									$(".tab_switch_cont_heji_list").append(`
+										<li>
+			    							<div class="hj_shipin_img">
+			    								<img src="../../images/human_market/history_img1.png" alt="" />
+			    								<p class="course_type shipin_bg">视频</p>
+			    							</div> 
+			    							<div class="hj_shipin_txt">
+			    								<p class="hj_shipin_title">轻享生活美食</p>
+			    								<p class="hj_huati">#话题</p>
+			    								<p class="hj_date">20万人阅读 / 20万人评论</p>
+			    							</div>
+			    							<div class="collect_btn is_collect_no">收藏</div>
+			    						</li>
+									`);
+								}
+								 $(".init-loading").hide();
+								 $('.nav_bottom').css('display','block');
+								mySwiper.update(); // 重新计算高度;
+								if($('.tab_switch_cont_heji_list').is(':empty')){
+									$('#no_shoucang').css('display','block');
+								}else{
+									$('#no_shoucang').css('display','none');
+								}
 							}, 800);
 						}
 					});

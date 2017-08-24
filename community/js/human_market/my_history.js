@@ -58,7 +58,8 @@ $(function(){
 			})	
 			
 			//点击全选
-			$(document).on("click",".all_choiced",function(){
+			$('.all_choiced').toggle(function(){
+				$(this).html("取消全选");
 				$('.history_remove_circle img').attr('src','../../images/human_market/choice_yes.png');
 				var all_length=$(".tab_switch_cont_heji_list .remove_img").length;
 				$(".remove_btn").click(function(){
@@ -66,7 +67,6 @@ $(function(){
 						$(".tab_switch_cont_heji_list li").animate({"left":'8.5rem'},600,function(){
 					 	$('.tab_switch_cont_heji_list').remove();
 					});
-					
 				//底部回归
 				$(".footer_top").fadeIn(10).animate({
 		            bottom:"-1rem"  
@@ -76,7 +76,10 @@ $(function(){
 		            bottom:"0"  
 		         },500);
 				})
-			});
+			},function(){					
+				$(this).html("全选");
+				$('.history_remove_circle img').attr('src','../../images/human_market/choice_no.png');
+			})	
 			
 			//点击取消
 			$('.cancel_manages').click(function(){
@@ -120,7 +123,7 @@ $(function(){
 		animate_all();
 		
 		//swiper之上拉加载
-	   	$('.swiper-container, .w').height($(window).height());
+	   	$('.swiper-container, .w').height($(window).height()-$('footer').height());
 		var loadFlag = true;
 		var oi = 0;
 		var mySwiper = new Swiper('.swiper-container',{
@@ -154,7 +157,6 @@ $(function(){
 							
 						},
 						error:function(){
-							$('.nav_bottom').css('display','none');
 							$(".loadtip p").show();
 							if(loadFlag){
 								$(".loadtip p").html('正在加载...');
@@ -190,14 +192,81 @@ $(function(){
 			    						</li>
 									`);
 								}
-								 $(".loadtip p").hide();
+								$(".loadtip p").hide();
 								mySwiper.update(); // 重新计算高度;	
+								if($('.tab_switch_cont_heji_list').is(':empty')){
+									$('#no_history').css('display','block');
+									$('.footer_bottom').css('display','none');
+								}else{
+									$('#no_history').css('display','none');
+									$('.footer_bottom').css('display','block');
+								}
 								//操作函数调用
 								animate_all();
 							}, 800);
 						}
 					});
 				}
+				//  刷新
+				if(mySwiper.translate >= 50) {
+					$.ajax({
+						url:"",
+						type:"post",
+						success:function(data){
+							
+						},
+						error:function(){
+							$(".init-loading").show();
+							if(loadFlag){
+//								$(".loadtip p").html('正在加载...');
+							}else{
+//								$(".loadtip p").html('没有更多啦！');
+							}
+							setTimeout(function() {
+								for(var i =0;i<6;i++) {
+									$(".tab_switch_cont_heji_list").append(`
+										<li>	
+			    							<div class="history_remove_circle"><img src="../../images/human_market/choice_no.png" alt="" data="../../images/human_market/choice_no.png"/></div>
+			    							<div class="hj_shipin_img">
+			    								<img src="../../images/human_market/history_img1.png" alt="" />
+			    								<p class="course_type shipin_bg">视频</p>
+			    							</div> 
+			    							<div class="hj_shipin_txt">
+			    								<p class="hj_shipin_title">轻享生活美食</p>
+			    								<p class="hj_huati">#话题</p>
+			    								<p class="hj_date">7月30日</p>
+			    							</div>
+			    							<img src="../../images/human_market/history_more.png" alt="" data="../../images/human_market/ls_collect_no.png" class="hj_history_del"/>
+			    							<div class="more_sc">
+			    								<div  class="more_src_del" style="display: inline-block;">
+			    									<img src="../../images/human_market/history_del.png" alt=""/>
+			    									<span>删除</span>
+			    								</div>
+			    								<div class="more_src_sc">
+			    									<img src="../../images/human_market/ls_collect_no.png" alt=""/>
+			    									<span>收藏</span>
+			    								</div>
+			    								<img src="../../images/human_market/history_close.png" alt="" data="../../images/human_market/ls_collect_no.png" class="hj_history_del"/>
+			    							</div>
+			    						</li>
+									`);
+								}
+								$(".init-loading").css('display','none');
+								$('.nav_bottom').css('display','block');
+								mySwiper.update(); // 重新计算高度;
+								if($('.tab_switch_cont_heji_list').is(':empty')){
+									$('#no_history').css('display','block');
+									$('.footer_bottom').css('display','none');
+								}else{
+									$('#no_history').css('display','none');
+									$('.footer_bottom').css('display','block');
+								}
+							}, 800);
+						}
+					});
+				}
+				
+				
 				return false;
 			}
 		});

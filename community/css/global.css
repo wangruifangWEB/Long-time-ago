@@ -499,20 +499,28 @@
 	text-align: center;
 }
 
-.loadtip{
-	display: none;
-}
+/*.loadtip{
+	position: fixed;
+	bottom: 1.1rem;
+	width: 100%;
+	height: 3.23rem;
+	background-color: #ffffff;
+}*/
 .loadtip img{
+	
+	position: fixed;
+	bottom: 1.3rem;
+	left: 50%;
 	width: 5.28rem;
 	height: 3.23rem;
-	display: block;
-	z-index: 100;
-	margin: 0 auto;
+	display: none;
+	z-index: 20;
+	margin-left: -2.64rem;
 }
 
 
 .init-loading{
-	display: block;
+	display: none;
 }
 .init-loading img{
 	width: 1.61rem;

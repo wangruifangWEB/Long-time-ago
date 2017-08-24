@@ -11,9 +11,15 @@
 		<script src="../../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
 		<style type="text/css">
+			.init-loading{
+				height: 1rem;
+			}
 			.search_warp input.search{
+				width: 5.86rem;
+				z-index: 1000;
 				height: 0.21rem;
 				margin-left: 0.32rem !important;
+				z-index: 100;
 			}
 			.search_warp{
 				height: 0.68rem;
@@ -21,20 +27,22 @@
 		</style>
 	</head>
 	<body scroll="no">
+		<!--搜索框-->
+		<div class="search_warp">
+			<a href="search_result.html"><input type="text" placeholder="心理咨询" class="search"/></a>
+			<div class="shaixuan"><img src="../../images/human_market/shaixuan.png" alt="" /></div>
+		</div>
     <!--竹杆小组—详情内容-->   
+    
     <div class="swiper-container">
 		<div class="swiper-wrapper w">
 			<div class="swiper-slide d">
-				<div class="init-loading list-group-item text-center" style="display: none;"><p>下拉刷新</p></div>
+				<div class="init-loading list-group-item"><img src="../../images/human_market/refresh.png" alt="" /></div>
 					<div class="swiper-container2">
 						<!--<div class="swiper-wrapper">-->
 							<div class="swiper-slide list-group">
 								<div class="container">
-									<!--搜索框-->
-									<div class="search_warp">
-										<a href="search_result.html"><input type="text" placeholder="心理咨询" class="search"/></a>
-										<div class="shaixuan"><img src="../../images/human_market/shaixuan.png" alt="" /></div>
-									</div>
+									
 									
 									<div class="course_cont">
 			    						<div class="course_cont_title">
@@ -90,10 +98,12 @@
 					</div>
 				<!--</div>-->
 			</div>
-			<div class="loadtip"><p>正在加载!</p></div>
-			<div class="swiper-scrollbar"></div>
+			
 		</div>
+		
 	</div>
+	<div class="loadtip"><p>正在加载!</p></div>
+			<div class="swiper-scrollbar"></div>
 		<script src="../../js/human_market/hotclass.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>

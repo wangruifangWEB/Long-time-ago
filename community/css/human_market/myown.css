@@ -36,7 +36,7 @@
 }
 .title .more_info{
 	float: right;
-	
+	margin-right: 0.1rem;
 }
 .title .more_info p{
 	float: left;
