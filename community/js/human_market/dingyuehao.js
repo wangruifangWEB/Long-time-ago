@@ -1,5 +1,4 @@
 $(function(){
-//	$('.swiper-container, .w').height($(window).height()-$('.user_msg').height());
 	$('.swiper-container, .w').height($(window).height());
 	$(".tab_switch_ul li").click(function(){
 		var i = $(this).index();

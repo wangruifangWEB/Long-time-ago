@@ -24,7 +24,8 @@
     <div class="swiper-container">
 		<div class="swiper-wrapper w">
 			<div class="swiper-slide d">
-				<!--<div class="init-loading list-group-item text-center" style="display: none;"><p>下拉刷新</p></div>-->
+				<!--下拉刷新动画-->
+				<!--<div class="init-loading list-group-item text-center" style="display: none;"><img src="" alt="" /></div>-->
 					<div class="swiper-container2">
 						<!--<div class="swiper-wrapper">-->
 							<div class="swiper-slide list-group">
@@ -66,7 +67,6 @@
 												<div class="mui-indicator"></div>
 											</div>
 										</div>
-										<!--Part two 详情列表-->
 									    <div class="second">
 									        <ul class="second_list">
 									            <li>
@@ -106,6 +106,30 @@
 									</div>
 									<!--<div class="init-loading list-group-item text-center" style="display: none;"><p>下拉刷新</p></div>	-->
 									<div class="tab_switch_cont_detail tab_switch_first_cont show">
+				    					<div class="course_cont">
+				    						<div class="course_cont_title">
+					    						<div class="course_cont_title_img">
+					    							<img src="../../images/human_market/header_index.png" alt=""/>
+					    						</div>
+					    						<div class="course_cont_title_name_warp">
+					    							<p class="course_cont_title_name">用户名</p>
+					    							<p class="course_cont_title_time">3小时前</p>
+					    						</div>
+					    					</div>
+					    					<div class="course_cont_img">
+					    						<img src="../../images/human_market/index_banner.png" alt="" />
+					    						<div class="course_cont_img_info">
+					    							<p class="course_cont_img_name">轻享美食生活</p>
+					    							<p class="course_cont_img_huati">#话题</p>
+					    						</div>
+					    						<p class="course_type tuwen_bg">图文</p>
+					    					</div>
+					    					<div class="course_cont_remark">
+					    						<p class="course_cont_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
+					    						<p class="course_cont_remark_right">图文</p>
+					    					</div>
+				    					</div>
+				    					
 				    					<div class="course_cont">
 				    						<div class="course_cont_title">
 					    						<div class="course_cont_title_img">
@@ -171,6 +195,8 @@
 	
 		<script src="../../js/human_market/up_to_date.js" type="text/javascript" charset="utf-8"></script>
 		<script>
+//			//设置容器高度
+//			$("container").height($(window).height()-$(".nav_bottom").height());
 			var slider = mui("#slider");
 				slider.slider({
 					interval: 3000,

@@ -1,15 +1,5 @@
  	$(function(){	
-		//回到顶部
-//		var toTop=document.getElementById("toTop");
-//	   	window.onscroll=function(){
-//	     	if(document.body.scrollTop<=10){
-//	     		toTop.style.display="block";
-//	     	}else{
-//	        	toTop.style.display="";
-//	     	}
-//	    }
-
-	   	$('.swiper-container, .w').height($(window).height());
+	   	$('.swiper-container, .w').height($(window).height()-$(".nav_bottom").height());
 		var loadFlag = true;
 		var oi = 0;
 		var mySwiper = new Swiper('.swiper-container',{
