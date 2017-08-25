@@ -64,7 +64,7 @@
 									$(".list-group").append(`
 										<div class="course_cont">
 				    						<div class="course_cont_title">
-					    						<div class="course_cont_title_img">
+					    						<div class="course_cont_title_img" onclick="location.href='dingyuehao.html'">
 					    							<img src="../../images/human_market/header_index.png" alt=""/>
 					    						</div>
 					    						<div class="course_cont_title_name_warp">
@@ -72,7 +72,7 @@
 					    							<p class="course_cont_title_time">3小时前</p>
 					    						</div>
 					    					</div>
-					    					<div class="course_cont_img">
+					    					<div class="course_cont_img" onclick="location.href='yinpin_detail.html'">
 					    						<img src="../../images/human_market/index_banner.png" alt="" />
 					    						<div class="course_cont_img_info">
 					    							<p class="course_cont_img_name">轻享美食生活</p>
@@ -110,7 +110,7 @@
 										$(".tab_switch_first_cont").eq(mySwiper2.activeIndex).append(`
 											<div class="course_cont">
 					    						<div class="course_cont_title">
-						    						<div class="course_cont_title_img">
+						    						<div class="course_cont_title_img" onclick="location.href='dingyuehao.html'">
 						    							<img src="../../images/human_market/header_index.png" alt=""/>
 						    						</div>
 						    						<div class="course_cont_title_name_warp">
@@ -118,7 +118,7 @@
 						    							<p class="course_cont_title_time">3小时前</p>
 						    						</div>
 						    					</div>
-						    					<div class="course_cont_img">
+						    					<div class="course_cont_img" onclick="location.href='yinpin_detail.html'">
 						    						<img src="../../images/human_market/index_banner.png" alt="" />
 						    						<div class="course_cont_img_info">
 						    							<p class="course_cont_img_name">轻享美食生活</p>

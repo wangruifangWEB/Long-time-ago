@@ -22,7 +22,7 @@ $(function(){
 							$(".tab_switch_first_cont").eq(mySwiper2.activeIndex).append(`
 								<div class="course_cont">
 		    						<div class="course_cont_title">
-			    						<div class="course_cont_title_img">
+			    						<div class="course_cont_title_img" onclick="location.href='dingyuehao.html'">
 			    							<img src="../../images/human_market/header_index.png" alt=""/>
 			    						</div>
 			    						<div class="course_cont_title_name_warp">
@@ -30,7 +30,7 @@ $(function(){
 			    							<p class="course_cont_title_time">3小时前</p>
 			    						</div>
 			    					</div>
-			    					<div class="course_cont_img">
+			    					<div class="course_cont_img" onclick="location.href='yinpin_detail.html'">
 			    						<img src="../../images/human_market/index_banner.png" alt="" />
 			    						<div class="course_cont_img_info">
 			    							<p class="course_cont_img_name">轻享美食生活</p>
@@ -72,7 +72,24 @@ $(function(){
 //					$('.init-loading img').css({'top':'-0.5rem'});
 					setTimeout(function() {
 						for(var i =0;i<6;i++) {
-							
+							$(".tab_switch_second_cont").eq(mySwiper2.activeIndex).append(`
+								<div class="mydingyue_cont">
+		    						<div class="dingyue">
+		    							<div class="tab_switch_left" onclick="location.href='dingyuehao.html'">
+			    							<img src="../../images/human_market/header.png" alt="" />
+			    						</div>
+			    						<div class="tab_switch_right">
+			    							<ul onclick="location.href='dingyuehao.html'">
+			    								<li>订阅号</li>
+			    								<li>博物杂志官方账号</li>
+			    								<li><span>20万</span>人订阅</li>
+			    							</ul>
+			    							<button class="hasDingyue">已订阅</button>
+			    						</div>
+		    						</div>
+		    						<div class="cancel_dingyue">取消订阅</div>
+		    					</div>
+							`);
 						}
 						$('.init-loading').css({'display':'none'});
 						$('.init-loading img').css({'top':'-3rem'});
@@ -103,11 +120,11 @@ $(function(){
 							$(".tab_switch_third_cont").eq(mySwiper2.activeIndex).append(`
 								<div class="tab_switch_third_cont_detail">
 									<div class="dingyue">
-										<div class="tab_switch_left">
+										<div class="tab_switch_left" onclick="location.href='dingyuehao.html'">
 											<img src="../../images/human_market/header.png" alt="" />
 										</div>
 										<div class="tab_switch_right">
-											<ul>
+											<ul onclick="location.href='dingyuehao.html'">
 												<li>订阅号</li>
 												<li>博物杂志官方账号</li>
 												<li><span>20万</span>人订阅</li>
@@ -118,31 +135,31 @@ $(function(){
 									<div class="list_cont_warp">
 					    				<ul class="list_cont">
 						    				<li>
-						    					<a href="javascript:void(0);">
+						    					<a href="yinpin_detail.html">
 						    						<img src="../../images/human_market/history_img1.png"/>
 						    						<p>轻享美食生活</p>
 						    					</a>
 						    				</li>
 						    				<li>
-						    					<a href="javascript:void(0);">
+						    					<a href="yinpin_detail.html">
 						    						<img src="../../images/human_market/history_img1.png"/>
 						    						<p>轻享美食生活</p>
 						    					</a>
 						    				</li>
 						    				<li>
-						    					<a href="javascript:void(0);">
+						    					<a href="yinpin_detail.html">
 						    						<img src="../../images/human_market/history_img1.png"/>
 						    						<p>轻享美食生活</p>
 						    					</a>
 						    				</li>
 						    				<li>
-						    					<a href="javascript:void(0);">
+						    					<a href="yinpin_detail.html">
 						    						<img src="../../images/human_market/history_img1.png"/>
 						    						<p>轻享美食生活</p>
 						    					</a>
 						    				</li>
 						    				<li>
-						    					<a href="javascript:void(0);">
+						    					<a href="yinpin_detail.html">
 						    						<img src="../../images/human_market/history_img1.png"/>
 						    						<p>轻享美食生活</p>
 						    					</a>
@@ -205,7 +222,7 @@ $(function(){
 											$(".tab_switch_first_cont").eq(mySwiper2.activeIndex).append(`
 												<div class="course_cont">
 						    						<div class="course_cont_title">
-							    						<div class="course_cont_title_img">
+							    						<div class="course_cont_title_img" onclick="location.href='dingyuehao.html'">
 							    							<img src="../../images/human_market/header_index.png" alt=""/>
 							    						</div>
 							    						<div class="course_cont_title_name_warp">
@@ -213,7 +230,7 @@ $(function(){
 							    							<p class="course_cont_title_time">3小时前</p>
 							    						</div>
 							    					</div>
-							    					<div class="course_cont_img">
+							    					<div class="course_cont_img" onclick="location.href='yinpin_detail.html'">
 							    						<img src="../../images/human_market/index_banner.png" alt="" />
 							    						<div class="course_cont_img_info">
 							    							<p class="course_cont_img_name">轻享美食生活</p>
@@ -253,17 +270,17 @@ $(function(){
 							},
 							error:function(){
 								if(loadFlag){
-									$(".loadtip").show();
+									$(".loadtip p").show();
 									setTimeout(function() {
 										for(var i =0;i<6;i++) {
 											$(".tab_switch_second_cont").eq(mySwiper2.activeIndex).append(`
 												<div class="mydingyue_cont">
 						    						<div class="dingyue">
-						    							<div class="tab_switch_left">
+						    							<div class="tab_switch_left" onclick="location.href='dingyuehao.html'">
 							    							<img src="../../images/human_market/header.png" alt="" />
 							    						</div>
 							    						<div class="tab_switch_right">
-							    							<ul>
+							    							<ul onclick="location.href='dingyuehao.html'">
 							    								<li>订阅号</li>
 							    								<li>博物杂志官方账号</li>
 							    								<li><span>20万</span>人订阅</li>
@@ -307,11 +324,11 @@ $(function(){
 											$(".tab_switch_third_cont").eq(mySwiper2.activeIndex).append(`
 												<div class="tab_switch_third_cont_detail">
 													<div class="dingyue">
-														<div class="tab_switch_left">
+														<div class="tab_switch_left" onclick="location.href='dingyuehao.html'">
 															<img src="../../images/human_market/header.png" alt="" />
 														</div>
 														<div class="tab_switch_right">
-															<ul>
+															<ul onclick="location.href='dingyuehao.html'">
 																<li>订阅号</li>
 																<li>博物杂志官方账号</li>
 																<li><span>20万</span>人订阅</li>
@@ -322,31 +339,31 @@ $(function(){
 													<div class="list_cont_warp">
 														<ul class="list_cont">
 															<li>
-																<a href="javascript:void(0);">
+																<a href="yinpin_detail.html">
 																	<img src="../../images/human_market/history_img1.png"/>
 																	<p>轻享美食生活</p>
 																</a>
 															</li>
 															<li>
-																<a href="javascript:void(0);">
+																<a href="yinpin_detail.html">
 																	<img src="../../images/human_market/history_img1.png"/>
 																	<p>轻享美食生活</p>
 																</a>
 															</li>
 															<li>
-																<a href="javascript:void(0);">
+																<a href="yinpin_detail.html">
 																	<img src="../../images/human_market/history_img1.png"/>
 																	<p>轻享美食生活</p>
 																</a>
 															</li>
 															<li>
-																<a href="javascript:void(0);">
+																<a href="yinpin_detail.html">
 																	<img src="../../images/human_market/history_img1.png"/>
 																	<p>轻享美食生活</p>
 																</a>
 															</li>
 															<li>
-																<a href="javascript:void(0);">
+																<a href="yinpin_detail.html">
 																	<img src="../../images/human_market/history_img1.png"/>
 																	<p>轻享美食生活</p>
 																</a>
@@ -397,7 +414,7 @@ $(function(){
 										$(".tab_switch_first_cont").eq(mySwiper2.activeIndex).append(`
 											<div class="course_cont">
 					    						<div class="course_cont_title">
-						    						<div class="course_cont_title_img">
+						    						<div class="course_cont_title_img" onclick="location.href='dingyuehao.html'">
 						    							<img src="../../images/human_market/header_index.png" alt=""/>
 						    						</div>
 						    						<div class="course_cont_title_name_warp">
@@ -405,7 +422,7 @@ $(function(){
 						    							<p class="course_cont_title_time">3小时前</p>
 						    						</div>
 						    					</div>
-						    					<div class="course_cont_img">
+						    					<div class="course_cont_img" onclick="location.href='yinpin_detail.html'">
 						    						<img src="../../images/human_market/index_banner.png" alt="" />
 						    						<div class="course_cont_img_info">
 						    							<p class="course_cont_img_name">轻享美食生活</p>
@@ -449,11 +466,11 @@ $(function(){
 											$(".tab_switch_second_cont").eq(mySwiper2.activeIndex).append(`
 												<div class="mydingyue_cont">
 						    						<div class="dingyue">
-						    							<div class="tab_switch_left">
+						    							<div class="tab_switch_left" onclick="location.href='dingyuehao.html'">
 							    							<img src="../../images/human_market/header.png" alt="" />
 							    						</div>
 							    						<div class="tab_switch_right">
-							    							<ul>
+							    							<ul onclick="location.href='dingyuehao.html'">
 							    								<li>订阅号</li>
 							    								<li>博物杂志官方账号</li>
 							    								<li><span>20万</span>人订阅</li>
@@ -497,11 +514,11 @@ $(function(){
 										$(".tab_switch_third_cont").eq(mySwiper2.activeIndex).append(`
 											<div class="tab_switch_third_cont_detail">
 												<div class="dingyue">
-													<div class="tab_switch_left">
+													<div class="tab_switch_left" onclick="location.href='dingyuehao.html'">
 														<img src="../../images/human_market/header.png" alt="" />
 													</div>
 													<div class="tab_switch_right">
-														<ul>
+														<ul onclick="location.href='dingyuehao.html'">
 															<li>订阅号</li>
 															<li>博物杂志官方账号</li>
 															<li><span>20万</span>人订阅</li>
@@ -512,31 +529,31 @@ $(function(){
 												<div class="list_cont_warp">
 													<ul class="list_cont">
 														<li>
-															<a href="javascript:void(0);">
+															<a href="yinpin_detail.html">
 																<img src="../../images/human_market/history_img1.png"/>
 																<p>轻享美食生活</p>
 															</a>
 														</li>
 														<li>
-															<a href="javascript:void(0);">
+															<a href="yinpin_detail.html">
 																<img src="../../images/human_market/history_img1.png"/>
 																<p>轻享美食生活</p>
 															</a>
 														</li>
 														<li>
-															<a href="javascript:void(0);">
+															<a href="yinpin_detail.html">
 																<img src="../../images/human_market/history_img1.png"/>
 																<p>轻享美食生活</p>
 															</a>
 														</li>
 														<li>
-															<a href="javascript:void(0);">
+															<a href="yinpin_detail.html">
 																<img src="../../images/human_market/history_img1.png"/>
 																<p>轻享美食生活</p>
 															</a>
 														</li>
 														<li>
-															<a href="javascript:void(0);">
+															<a href="yinpin_detail.html">
 																<img src="../../images/human_market/history_img1.png"/>
 																<p>轻享美食生活</p>
 															</a>
