@@ -18,7 +18,7 @@ $(function(){
 					$('.init-loading').css({'display':'block'});
 					$('.init-loading img').css({'top':'-0.5rem'});
 					setTimeout(function() {
-						for(var i =0;i<3;i++) {
+						for(var i =0;i<6;i++) {
 							$(".tab_switch_first_cont").eq(mySwiper2.activeIndex).append(`
 								<div class="course_cont">
 		    						<div class="course_cont_title">
@@ -49,9 +49,9 @@ $(function(){
 						$('.init-loading img').css({'top':'-3rem'});
 						mySwiper.update(); // 重新计算高度;
 						if($('.tab_switch_first_cont').is(":empty")){
-							$('#no_course').show();
+							$('#no_course1').show();
 						}else{
-							$('#no_course').hide();
+							$('#no_course1').hide();
 						}
 					}, 800);
 				}
@@ -65,6 +65,7 @@ $(function(){
 					
 				},
 				error:function(){
+					$('.init-loading').css({'display':'block'});
 					$('.init-loading img').css({'top':'-0.5rem'});
 					setTimeout(function() {
 						for(var i =0;i<6;i++) {
@@ -95,20 +96,22 @@ $(function(){
 		    					</div>
 							`); 
 						}
-						$('.init-loading').css('display','none');
+						$('.init-loading').css({'display':'none'});
+						$('.init-loading img').css({'top':'-3rem'});
 						mySwiper.update(); // 重新计算高度;
 						zuohua();
 						if($('.tab_switch_second_cont').is(":empty")){
-							$('#no_dingyue').show();
+							$('#no_course2').show();
 						}else{
-							$('#no_dingyue').hide();
+							$('#no_course2').hide();
 						}
 					}, 800);
 				}
 			});
 		}else if(i==2){
+			$('#no_course3').show();
 		}
-		
+	});
 		var loadFlag = true;
 		var oi = 0;
 		var mySwiper = new Swiper('.swiper-container',{
@@ -127,8 +130,7 @@ $(function(){
 				
 				 // 上拉加载
 				if(mySwiper.translate <= _viewHeight - _contentHeight - 50 && mySwiper.translate < 0) {
-					if($('.tab_switch_first_cont').hasClass('show')){
-//						alert(1);
+					if($('.tab_switch_first_cont_warp').hasClass('show')){
 						$.ajax({
 							url:"",
 							type:"post",
@@ -172,17 +174,11 @@ $(function(){
 									}
 									$(".loadtip p").hide();
 									mySwiper.update(); // 重新计算高度;
-									if($('.tab_switch_first_cont').is(":empty")){
-										$('#no_course').show();
-										}else{
-											$('#no_course').hide();
-										}
 								}, 800);
 							}
 						});
 					}
-					if($('.tab_switch_second_cont').hasClass('show')){
-//						alert(2);
+					if($('.tab_switch_second_cont_warp').hasClass('show')){
 						$.ajax({
 							type:"post",
 							url:"",
@@ -228,18 +224,13 @@ $(function(){
 									$(".loadtip p").hide();
 									mySwiper.update(); // 重新计算高度;
 									zuohua();
-									if($('.tab_switch_second_cont').is(":empty")){
-										$('#no_course').show();
-									}else{
-										$('#no_course').hide();
-									}
 								}, 800);
 							}
 						});
 					}
 			//  刷新
 				if(mySwiper.translate >= 50) {
-					if($('.tab_switch_first_cont').hasClass('show')){
+					if($('.tab_switch_first_cont_warp').hasClass('show')){
 						$.ajax({
 							url:"",
 							type:"post",
@@ -281,15 +272,15 @@ $(function(){
 									$('.init-loading img').css({'top':'-3rem'});
 									mySwiper.update(); // 重新计算高度;
 									if($('.tab_switch_first_cont').is(":empty")){
-										$('#no_course').show();
+										$('#no_course1').show();
 									}else{
-										$('#no_course').hide();
+										$('#no_course1').hide();
 									}
 								}, 800);
 							}
 						});
 					}
-					if($('.tab_switch_second_cont').hasClass('show')){
+					if($('.tab_switch_second_cont_warp').hasClass('show')){
 						$.ajax({
 							type:"post",
 							url:"",
@@ -330,6 +321,11 @@ $(function(){
 									$('.init-loading').css('display','none');
 									mySwiper.update(); // 重新计算高度;
 									zuohua();
+									if($('.tab_switch_second_cont').is(":empty")){
+										$('#no_course2').show();
+									}else{
+										$('#no_course2').hide();
+									}
 									}, 800);
 								}
 							});
@@ -340,7 +336,7 @@ $(function(){
 			}
 		});
 		
-	})
+	
 	
 	
 	var mySwiper2 = new Swiper('.swiper-container2',{

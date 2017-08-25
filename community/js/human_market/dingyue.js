@@ -288,8 +288,6 @@ $(function(){
 									alert('没有更多啦');
 //									$(".loadtip p").html('没有更多啦！');
 								}
-								
-								
 							}
 						});
 						
@@ -569,9 +567,7 @@ $(function(){
 				return false;
 			}
 		});
-		
 	})
-	
 	
 	var mySwiper2 = new Swiper('.swiper-container2',{
 		onTransitionEnd: function(swiper){
@@ -583,7 +579,6 @@ $(function(){
 		
 	});
 })
-
 
 $('body').on('click','.cancel_dingyue',function(e){
 	var that=e.target;
@@ -598,14 +593,3 @@ $('body').on('click','.cancel_dingyue',function(e){
 		}
 	});
 });
-
-
-/*$(function(){
-	if ($('.tab_switch_first_cont').html('')) {
-		$('.course_cont').hide();
-		$('#no_course').show();
-	}else{
-		$('.course_cont').show();
-		$('#no_course').hide();
-	}
-})*/
