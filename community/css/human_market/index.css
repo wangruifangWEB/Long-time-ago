@@ -12,11 +12,11 @@ body,html{
 .search_warp{
 	background-color: #ffffff;
 	height: 1.1888rem;
+	 z-index: 1000;
+    position: relative;
 }
 .search_warp input.search{
 	height: 0.68rem;
-	/*padding: 0 !important;*/
-	/*margin: 0 !important;*/
 	margin-left: 0.25rem !important;
 }
 /*轮播图*/
@@ -43,9 +43,6 @@ body,html{
 }
 .mui-slider .mui-slider-group{
 	transform: scale(.9);
-	/*width:6.9rem;
-	margin:0 auto;
-	transition: all 0s linear;*/
 }
 .mui-slider-item{
 	height: 2.16rem;
