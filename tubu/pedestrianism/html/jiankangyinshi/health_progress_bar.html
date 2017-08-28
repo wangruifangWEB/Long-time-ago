@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的徒步</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/css.css" />
+		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="../../single_css/global.css">
+		<link rel="stylesheet" href="../../single_css/zmpx.css">
+		<style>
+			body{
+				background-color: #2A2A2A;
+			}
+			.d-title,.z-boxl,.zsec-bg{
+				background-color: #2A2A2A;
+			}
+			.list-group ul li{
+				background-color: #000;
+			}
+			.z-boxr-bg {
+			    border-radius: 0 0.1rem 0.1rem 0;
+			    width: 6.24rem;
+			    height: 3.84rem;
+			}
+			.z_boxbg {
+   				padding-left: .63rem;
+			}
+			.user_msg{
+				padding-top:0 !important;
+			}
+			.zsec-bg{
+				margin-bottom:1.32rem;
+			}
+			/*用户信息模块*/
+			.user_msg{
+				margin-top:.32rem !important;
+				padding-right:.64rem;
+			}
+			.user_msg ul li{
+				width:6.24rem;
+				height:1.33rem;
+				border-bottom: .02rem solid #0d0d0d;
+				display: -webkit-inline-box;
+			}
+			.user_msg span{
+				color:#595959;
+				font-size: .26rem;
+				line-height: .37rem;
+				display: inline;
+				font-family: PingFangSC-Medium;
+				display: none;
+			}
+			.user_msg input{
+				border:none;
+				color:#CEAD69;
+				font-size:.37rem;
+				line-height:.52rem;
+				background-color: #2A2A2A;
+				font-family: PingFangSC-Medium;
+			}
+			/*placeholder的样式*/
+			::-webkit-input-placeholder {
+			　　	color:#595959;
+				font-size: .37rem;
+				line-height: .52rem;
+				font-family: PingFangSC-Medium;
+			　}
+			　:-moz-placeholder {
+			　　	color:#595959;
+				font-size: .37rem;
+				line-height: .52rem;
+				font-family: PingFangSC-Medium;
+			　}
+			　::-moz-placeholder { 
+			　　	color:#595959;
+				font-size: .37rem;
+				line-height: .52rem;
+				font-family: PingFangSC-Medium;
+			　}
+			　:-ms-input-placeholder { 
+			　　	color:#595959;
+				font-size: .37rem;
+				line-height: .52rem;
+				font-family: PingFangSC-Medium;
+			　}
+			/*底部颜色*/
+			.bottom{
+				background-color: #2A2A2A;
+			}
+			/*进度条样式*/
+			.user_msg_list {
+				background-color: #252423;
+				border-radius: .2rem;
+			}
+			.user_msg_list li{
+				width:100%;
+				height:1.33rem;
+				border-bottom:.01rem solid #0D0D0D;
+				position: relative;
+			}
+			.user_msg_list .user_msg_list_left{
+				width:1.44rem;
+				height: 100%;
+			}
+			.user_msg_list .user_msg_list_left p{
+				color:#595959;
+				font-size: .32rem;
+				padding:.24rem .12rem 0 .32rem;
+				font-family: PingFangSC-Regular;
+				line-height: .45rem;
+				display: block;
+			}
+			.user_msg_list li:last-child{
+				border-bottom:none;
+			}
+			/*总计样式*/
+			.user_msg_list_total{
+				color:#595959;
+				font-size: .32rem;
+				padding:.24rem .16rem 0 .32rem;
+				font-family: PingFangSC-Regular;
+				line-height: .45rem;
+				text-align: right;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+			}
+			/*进度条样式*/
+			.user_msg_list_right{
+				width:3.24rem;
+			}
+			.user_msg_list_right .loading1{
+				background-color: #CEAD69;
+			    width:3.24rem;
+			    height: .12rem;
+			    border-radius: .06rem;
+			    position: relative;
+			    top: 0.32rem;
+			}
+			.user_msg_list_right .loading2{
+				background-color: #CEAD69;
+			    width:0%;
+			    height: .12rem;
+			    border-radius: .06rem;
+			    position: relative;
+			    top: 0.32rem;
+			    margin-top:.16rem;
+			    background-color:#557CC5;
+			}
+			.user_msg_list_right p{
+				color:#9D9D9D;
+				font-size: .26rem;
+				line-height: .37rem;
+				margin-top: .35rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="outerScroller">
+			<div class="scroll">
+				<header>
+					<div class="d-title">
+						<a href="#">
+							<img src="../images/cd.png" alt="" />
+						</a>
+						<span>健康饮食</span>
+					</div>
+				</header>
+				
+				<section class="zsec-bg">
+					<div class="z-boxbg p-top">
+						<img class="z-boxr-bg" src="../../images/helath_food/total_img.png" alt="">	
+					</div>
+					
+					<div class="z_boxbg user_msg"> 
+						<ul class="user_msg_list swiper-slide list-group">
+							<li>
+								<div class="user_msg_list_left"><p> 能量： </p></div>
+								<div class="user_msg_list_right">
+									<div class="loading1"></div>
+									<div class="loading2"></div>
+									<p>3cal / 30%</p>
+								</div>
+								<div class="user_msg_list_total">500cal</div>
+							</li>
+							<li>
+								<div class="user_msg_list_left"><p>蛋白质： </p></div>
+								<div class="user_msg_list_right">
+									<div class="loading1"></div>
+									<div class="loading2"></div>
+									<p>3cal / 30%</p>
+								</div>
+								<div class="user_msg_list_total">500cal</div>
+							</li>
+							<li>
+								<div class="user_msg_list_left"><p>脂肪： </p></div>
+								<div class="user_msg_list_right">
+									<div class="loading1"></div>
+									<div class="loading2"></div>
+									<p>3cal / 30%</p>
+								</div>
+								<div class="user_msg_list_total">500cal</div>
+							</li>
+							<li>
+								<div class="user_msg_list_left"><p>盐： </p></div>
+								<div class="user_msg_list_right">
+									<div class="loading1"></div>
+									<div class="loading2"></div>
+									<p>3cal / 30%</p>
+								</div>
+								<div class="user_msg_list_total">500cal</div>
+							</li>
+							<li>
+								<div class="user_msg_list_left"><p>碳水化合物： </p></div>
+								<div class="user_msg_list_right">
+									<div class="loading1"></div>
+									<div class="loading2"></div>
+									<p>3cal / 30%</p>
+								</div>
+								<div class="user_msg_list_total">50cal</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				
+				<footer class="footer footer_c">
+					<ul class="bottom">
+						<li id="control_btn">
+							<a href="javascript:;">返回</a>
+						</li>
+					</ul>
+				</footer>
+				
+			</div>
+		</div>
+		<script>
+			$(".zsec-bg").height($(window).height()-$(".bottom li").height());
+			$(document).ready(function(){
+			  $(".loading2").animate({"width":"30%"},500);
+			});
+		</script>
+	</body>
+</html>
