@@ -3,6 +3,10 @@
 .z-healthy{
 	width: 7.5rem !important;
 	margin: 0 auto;
+	display: none;
+}
+.show111{
+	display: block;
 }
 .loadtip p{
 	display: none;
@@ -11,4 +15,60 @@
 	margin-bottom: 0;
 	color: #000;
 }
-			
+.z-healthy2 li{
+	padding-top: 0.24rem;
+	padding-bottom: 0.24rem;
+	background-color: #ffffff;
+	border-radius: 0.2rem;
+	padding-left: 0.24rem;
+	height: 1.96rem;
+	width: 6.24rem;
+}
+.z-healthy li h2{
+	margin-left: 0;
+	width: 3.8rem;
+}
+.z-healthy li p:nth-child(1){
+	padding-top: 0.04rem !important;
+}
+.z-healthy li p{
+	padding: 0;
+	margin: 0 !important;
+	line-height: 0.28rem;
+	font-size: 0.2rem;
+	height: 0.28rem;
+}
+
+.z-healthy2 li .z-hr{
+	margin-left: 0;
+	width: 3.92rem;
+	float: left;
+}
+.z-healthy2 li .z-hr h2{
+	margin: 0;
+}
+.z-healthy2 li .z-hr p{
+	padding-top: 0.16rem;
+}
+.z-healthy2 li .z-hl{
+	float: right;
+	width: 2.08rem;
+}
+.z-healthy2 li .z-hl a{
+	display: block;
+	margin: 0rem auto 0.24rem;
+	width: 1.6rem;
+	height: 0.62rem;
+}
+.z-healthy2 li .z-hl button{
+	padding: 0;
+	margin: 0;
+	background-color: #f69200;
+	border-radius: 0.2rem;
+	color: #f6f6f6;
+	font-size: 0.26rem;
+	width: 1.6rem;
+	height: 0.62rem;
+	text-align: center;
+	line-height: 0.62rem;
+}

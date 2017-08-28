@@ -49,13 +49,14 @@ $(".z-activity div").click(function(){
 					for(var i =0;i<20;i++) {
 						$(".list-group .z-healthy2").eq(mySwiper2.activeIndex).append(`
 							<li>
-								<div class="z-hl">
-									<img src="images/nvf.png" alt="" />
-								</div>
 								<div class="z-hr">
 									<h2>走进通州,为北京三大球加油22</h2>
 									<p>时间：<span>2016.10.08</span></p>
 									<p>地点：<span>通州大运河</span></p>
+								</div>
+								<div class="z-hl">
+									<a href="javascript:void(0);"><button>地点打卡</button></a>
+									<a href="javascript:void(0);"><button>名单查询</button></a>
 								</div>
 							</li>
 						`);
@@ -75,6 +76,7 @@ var mySwiper = new Swiper('.swiper-container',{
 	slidesPerView: 'auto',
 	mousewheelControl: true,
 	freeMode: true,
+	speed: 0,
 	onTouchMove: function(swiper){		//手动滑动中触发
 		var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
 		var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
@@ -143,13 +145,14 @@ var mySwiper = new Swiper('.swiper-container',{
 							for(var i =0;i<20;i++) {
 								$(".list-group .z-healthy2").eq(mySwiper2.activeIndex).append(`
 									<li>
-										<div class="z-hl">
-											<img src="images/nvf.png" alt="" />
-										</div>
 										<div class="z-hr">
 											<h2>走进通州,为北京三大球加油22</h2>
 											<p>时间：<span>2016.10.08</span></p>
 											<p>地点：<span>通州大运河</span></p>
+										</div>
+										<div class="z-hl">
+											<a href="javascript:void(0);"><button>地点打卡</button></a>
+											<a href="javascript:void(0);"><button>名单查询</button></a>
 										</div>
 									</li>
 								`);
@@ -208,13 +211,14 @@ var mySwiper = new Swiper('.swiper-container',{
 							for(var i =0;i<20;i++) {
 								$(".list-group .z-healthy2").eq(mySwiper2.activeIndex).append(`
 									<li>
-										<div class="z-hl">
-											<img src="images/nvf.png" alt="" />
-										</div>
 										<div class="z-hr">
 											<h2>走进通州,为北京三大球加油22</h2>
 											<p>时间：<span>2016.10.08</span></p>
 											<p>地点：<span>通州大运河</span></p>
+										</div>
+										<div class="z-hl">
+											<a href="javascript:void(0);"><button>地点打卡</button></a>
+											<a href="javascript:void(0);"><button>名单查询</button></a>
 										</div>
 									</li>
 								`);
