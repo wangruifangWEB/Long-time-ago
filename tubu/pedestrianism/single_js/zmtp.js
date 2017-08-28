@@ -10,7 +10,8 @@ if($('.zutp_list li').length==4){
 	$('.zutp_list li:nth-child(2)').css('margin-right','30px');
 	$('.zutp_list li:nth-child(3)').css('margin-right','0.06rem');
 }
-
+$('.swiper-wrapper .w').height($(window).height()-$('header').height()-$('.zutp_list').outerHeight()-$('.z-tab').height());
+$('.swiper1').height($(window).height()-$('header').height()-$('.zutp_list').outerHeight()-$('.z-tab').height());
 $('.talk_message').height($(window).height()-$('header').height()-$('.zutp_list').height());
 $('.swiper2').height($('.talk_message').height()-$('.talk_message_title').height())
 var winHeight=$(window).height();
@@ -26,11 +27,13 @@ $('.read_cont').css('top',$(window).height());
 var intro_detail_len=$(window).height()-$('header').height()-$('.zutp_list').height()-$('.z-tab').height();
 var intro_detail_len_all=$(window).height()-intro_detail_len;
 
-$('.intro_detail').height($(window).height()-$('header').height()-$('.zutp_list').height()-$('.z-tab').height()-26+'px');
-$('.intro_detail').css('top',intro_detail_len_all+28+'px');
+$('.intro_detail').height($(window).height()-$('header').height()-$('.zutp_list').height()-$('.z-tab').height()-20+'px');
+$('.intro_detail').css('top',intro_detail_len_all+20+'px');
 
-$('.swiper1 .swiper-container,.swiper1 .w').height($(window).height()-$('header').height()-$('.zutp_list').height()-$('.z-tab').height()+'px');
-$('.swiper2 .swiper-container,.swiper2 .w').height($(window).height()-$('header').height()-$('.zutp_list').height()-$('.talk_message_title').height()-$('.z-sr').height()+'px');
+$('.swiper1 .swiper-container,.swiper1 .w').height($(window).height()-$('header').height()-$('.zutp_list').height()-$('.z-tab').height()-25+'px');
+$('.swiper2 .swiper-container,.swiper2 .w').height($(window).height()-$('header').height()-$('.zutp_list').outerHeight()-$('.talk_message_title').outerHeight()-$('.z-sr').outerHeight()-20+'px');
+
+
 $('.on2').click(function() {
 	$('.z-sr').animate({'left':'50%'});
 	$(this).find('a').addClass("active");
@@ -41,11 +44,14 @@ $('.on2').click(function() {
 	$('.talk_hidden').animate({'display':'none'});
 })
 
-$('.on1').toggle(function() { 
+$('.on1').one('click',function(){ 
 	$(this).find('img').attr('src',$(this).find('img').attr('data'));
-},function(){
-	$('.on1 img').attr('src','../images/pr-e-1.png');
+	
+	$('.notice_layer').html('您已成功点赞');
+	$('.notice_layer').show();
+	$('.notice_layer').fadeOut(1000);
 })
+
 $('.on3').click(function() { 
 	$(".bg123").show();
 })
@@ -83,7 +89,6 @@ $('.talk_message_title .talk_message_title_close').click(function(){
 	$('.talk_message').animate({'left':'7.5rem'});
 	$('.face-content').animate({'left':'7.5rem'});
 	$('.on2 img').attr('src','../images/qr-d-1.png');
-	$('.on1 img').attr('src','../images/pr-e-1.png');
 	$('.z-sr').animate({'left':'200%'});
 	$('.talk_hidden').animate({'left':'0'});
 })
@@ -114,6 +119,7 @@ $('.user_good_qx').toggle(function() {
 })
 
 
+
 var loadFlag = true;
 var mySwiper1 = new Swiper('.swiper1 .swiper-container',{
 	direction: 'vertical',
@@ -125,14 +131,42 @@ var mySwiper1 = new Swiper('.swiper1 .swiper-container',{
 		var swiper1=document.getElementById('swiper1');
 		var _viewHeight = swiper1.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
 		var _contentHeight = swiper1.getElementsByClassName('swiper-slide')[0].offsetHeight;
+		var translateY=parseInt(mySwiper1.getWrapperTranslate('y'));
+//		console.log(translateY);
+		if($('.zutp_list li').length>6){
+			if(translateY < 0){
+				$('.zutp_list li:nth-child(6)').nextAll().slideUp();
+				$('.zutp_list').height(2*$('.zutp_list li').height());
+				$('.swiper1 .swiper-container,.swiper1 .w').height($(window).height()-$('header').height()-$('.zutp_list').height()-$('.z-tab').height()-25+'px');
+				$('.swiper2 .swiper-container,.swiper2 .w').height($(window).height()-$('header').height()-$('.zutp_list').outerHeight()-$('.talk_message_title').outerHeight()-$('.z-sr').outerHeight()-20+'px');
+				var intro_detail_len=$(window).height()-$('header').height()-$('.zutp_list').height()-$('.z-tab').height();
+				var intro_detail_len_all=$(window).height()-intro_detail_len;
+				$('.intro_detail').height($(window).height()-$('header').height()-$('.zutp_list').height()-$('.z-tab').height()-20+'px');
+				$('.intro_detail').css('top',intro_detail_len_all+20+'px');
+				$('.talk_message').height($(window).height()-$('header').height()-$('.zutp_list').height());
+				var buchongH=parseInt(0.23*100);
+				$('.talk_message').css({'top':$('header').height() + $('.zutp_list').height() +buchongH+'px','background-color':'#fff'});
+				
+				$('.swiper1').height($(window).height()-$('header').height()-$('.zutp_list').outerHeight()-$('.z-tab').height());
+				$('.swiper-wrapper .w').height($(window).height()-$('header').height()-$('.zutp_list').outerHeight()-$('.z-tab').height());
+
+			}
+			
+		}
+		
 	},
 	onTouchEnd: function(swiper) {
 		var swiper1=document.getElementById('swiper1');
 		var _viewHeight = swiper1.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
 		var _contentHeight = swiper1.getElementsByClassName('swiper-slide')[0].offsetHeight;
-		
 		 // 上拉加载
+		
 		if(mySwiper1.translate <= _viewHeight - _contentHeight - 50 && mySwiper1.translate < 0) {
+			/*$('.zutp_list li:nth-child(6)').nextAll().slideUp();
+			$('.zutp_list').height(2*$('.zutp_list li').height());
+			$('.swiper1 .swiper-container,.swiper1 .w').height($(window).height()-$('header').height()-$('.zutp_list').height()-$('.z-tab').height()+'px');
+			$('.swiper2 .swiper-container,.swiper2 .w').height($(window).height()-$('header').height()-$('.zutp_list').height()-$('.talk_message_title').height()-$('.z-sr').height()+'px');
+*/
 			$.ajax({
 				url:"",
 				type:"post",
@@ -182,12 +216,34 @@ var mySwiper2 = new Swiper('.swiper2 .swiper-container',{
 		var _viewHeight = swiper2.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
 		var _contentHeight = swiper2.getElementsByClassName('swiper-slide')[0].offsetHeight;
 		$('.talk_hidden').css({'display':'none'});
+		var translateY=parseInt(mySwiper2.getWrapperTranslate('y'));
+						
+
+		if($('.zutp_list li').length>6){
+			
+			if(translateY < 0){
+				$('.zutp_list li:nth-child(6)').nextAll().slideUp();
+				$('.zutp_list').height(2*$('.zutp_list li').height());
+				$('.swiper1 .swiper-container,.swiper1 .w').height($(window).height()-$('header').height()-$('.zutp_list').height()-$('.z-tab').height()-25+'px');
+				$('.swiper2 .swiper-container,.swiper2 .w').height($(window).height()-$('header').height()-$('.zutp_list').outerHeight()-$('.talk_message_title').outerHeight()-$('.z-sr').outerHeight()-20+'px');
+				var intro_detail_len=$(window).height()-$('header').height()-$('.zutp_list').height()-$('.z-tab').height();
+				var intro_detail_len_all=$(window).height()-intro_detail_len;
+				$('.intro_detail').height($(window).height()-$('header').height()-$('.zutp_list').height()-$('.z-tab').height()-20+'px');
+				$('.intro_detail').css('top',intro_detail_len_all+20+'px');
+				$('.talk_message').height($(window).height()-$('header').height()-$('.zutp_list').height());
+				var buchongH=parseInt(0.23*100);
+				$('.talk_message').css({'top':$('header').height() + $('.zutp_list').height() +buchongH+'px','background-color':'#fff'});
+
+			}
+			
+		}
 	},
 	onTouchEnd: function(swiper) {
 		var swiper2=document.getElementById('swiper2');
 		var _viewHeight = swiper2.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
 		var _contentHeight = swiper2.getElementsByClassName('swiper-slide')[0].offsetHeight;
 		$('.talk_hidden').css({'display':'none'});
+		
 		 // 上拉加载
 		if(mySwiper2.translate <= _viewHeight - _contentHeight - 50 && mySwiper2.translate < 0) {
 			$.ajax({

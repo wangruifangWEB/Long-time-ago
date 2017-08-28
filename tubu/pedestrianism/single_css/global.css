@@ -27,6 +27,7 @@ header{
 	top: 0;
 	box-shadow: 0 0.02rem 0.03rem rgba(0,0,0,.3);
 	background-color: #f6f6f6;
+	z-index: 20000;
 }
 .z-moon{
 	height: 1.29rem;
