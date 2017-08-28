@@ -11,45 +11,65 @@ body,html{
 }
 .search_warp{
 	background-color: #ffffff;
-	height: 1.1888rem;
+	 z-index: 1000;
+    position: relative;
 }
 .search_warp input.search{
-	height: 0.68rem;
-	/*padding: 0 !important;*/
-	/*margin: 0 !important;*/
 	margin-left: 0.25rem !important;
 }
 /*轮播图*/
-#slider {
-	overflow: hidden;
-	height:2.16rem;
-	background-color: #fff;
- }
-#slider img{
-  width:6.9rem !important;
-  margin-left: 0.3rem;
-  /*height:2.16rem;*/
-  height:2.02rem;
-  border-radius: .1rem;
-  padding:0 .05rem;
+.container_lunbo{
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
 }
-.mui-slider{
-	z-index:0;
+.slide{
+    width: 100%;
+    height: 2.16rem !important;
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
 }
-.mui-slider-item .mui-active{
-	transform: scale(.8);
-	height: 2.16rem;
-	width: 6.9rem;
+.slide .img{
+    overflow: hidden;
+    position: absolute;
+    transition: width 0.4s,
+    height 0.4s,
+    top 0.4s,
+    left 0.4s,
+    z-index 0.4s;
 }
-.mui-slider .mui-slider-group{
-	transform: scale(.9);
-	/*width:6.9rem;
-	margin:0 auto;
-	transition: all 0s linear;*/
+.slide .img img{
+    width: 100%;
+    height: calc(100% - 0.14rem);
+    border-radius: .2rem;
 }
-.mui-slider-item{
-	height: 2.16rem;
-	width:6.9rem !important;
+.slide .img1{
+    width: 40%;
+    height:2.02rem;
+    top: 30%;
+    left: -50%;
+    z-index: 1;
+}
+.slide .img2{
+    width: 60%;
+    height: 2.02rem;
+    padding-top: 1.2%;
+    left: -58%;
+    z-index: 2;
+}
+.slide .img3{
+    width: 6.9rem;
+    height:2.16rem;
+    left: 4%;
+    z-index: 3;
+}
+.slide .img4{
+    width: 60%;
+    height: 2.02rem;
+    padding-top: 1.2%;
+    left: 97.5%;
+    z-index: 2;
 }
 /*<!--Part two 详情列表-->*/
 .second{

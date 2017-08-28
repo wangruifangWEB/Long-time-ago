@@ -19,7 +19,6 @@
 				var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
 				var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
 				var translateY=parseInt(mySwiper.getWrapperTranslate('y'));
-				console.log(translateY);
 				if(translateY > 0){
 					$('.swiper-wrapper,.w').css('transform','translate3d(0px, 0px, 0px)');
 				}
@@ -52,7 +51,6 @@
 							
 						},
 						error:function(){
-//							$(".loadtip p").show();
 							$('.loadtip p').css('display','block');
 							if(loadFlag){
 								$(".loadtip p").html('正在加载...');
@@ -95,7 +93,9 @@
 				}
 				//刷新
 				if(mySwiper.translate >= 50) {
-					$('.init-loading').css({'display':'block'});
+					$(".search_warp").hide();
+					$("#slide").css("padding-top",".2rem");
+					$(".init-loading").fadeIn();
 					$('.init-loading img').css({'top':'-0.5rem'});
 					if($('.tab_switch_first_cont').hasClass('show')){
 						$.ajax({
@@ -133,8 +133,11 @@
 					    					</div>
 										`);
 									}
-									$('.init-loading').css({'display':'none'});
+									$('.init-loading').hide();
 									$('.init-loading img').css({'top':'-3rem'});
+									$("#slide").css("padding-top","0");
+									$(".search_warp").show();
+//									$('.init-loading').css({'display':'none'});
 									mySwiper.update(); // 重新计算高度;
 									if($('.tab_switch_first_cont').is(":empty")){
 										$('#no_course').show();

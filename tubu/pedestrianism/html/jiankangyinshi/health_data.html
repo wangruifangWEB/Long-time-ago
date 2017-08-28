@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的徒步</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/css.css" />
+		<link rel="stylesheet" href="../../css/mui.picker.all.css" />
+		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="../../single_css/global.css">
+		<link rel="stylesheet" href="../../single_css/zmpx.css">
+		<style>
+			body{
+				background-color: #2A2A2A;
+			}
+			.d-title,.z-boxl,.zsec-bg{
+				background-color: #292929;
+			}
+			.list-group ul li{
+				background-color: #000;
+			}
+			.z-boxr-bg {
+			    border-radius: 0 0.1rem 0.1rem 0;
+			    width: 6.24rem;
+			    height: 4.78rem;
+			}
+			.z_boxbg {
+				padding: .32rem .63rem 0;
+			}
+			.zsec-bg{
+				padding-bottom:.32rem;
+			}
+			/*用户信息模块*/
+			.user_msg{
+				padding-top:.32rem;
+			}
+			.user_msg ul li{
+				width:6.24rem;
+				height:1.07rem;
+				border-bottom: .02rem solid #0d0d0d;
+				margin-top:.32rem;
+				display: table;
+			}
+			.user_msg p{
+				color:#595959;
+				font-size: .26rem;
+				line-height: .37rem;
+				font-family: PingFangSC-Regular;
+				display: none;
+				margin-right: .45rem;
+				margin-bottom: -.5rem;
+			}
+			.user_msg input{
+				border:none;
+				color:#CEAD69;
+				font-size:.37rem;
+				line-height:.52rem;
+				background-color: #2A2A2A;
+				font-family: PingFangSC-Medium;
+				margin-bottom: .15rem;
+			}
+			/*placeholder的样式*/
+			::-webkit-input-placeholder { 
+			　　	color:#595959;
+				font-size: .37rem;
+				line-height: .52rem;
+				font-family: PingFangSC-Medium;
+			　}
+			　:-moz-placeholder {
+			　　	color:#595959;
+				font-size: .37rem;
+				line-height: .52rem;
+				font-family: PingFangSC-Medium;
+			　}
+			　::-moz-placeholder { 
+			　　	color:#595959;
+				font-size: .37rem;
+				line-height: .52rem;
+				font-family: PingFangSC-Medium;
+			　}
+			　:-ms-input-placeholder {
+			　　	color:#595959;
+				font-size: .37rem;
+				line-height: .52rem;
+				font-family: PingFangSC-Medium;
+			　}
+			/*底部颜色*/
+			.bottom{
+				background-color: #2A2A2A;
+			}
+			/*插件重置*/
+			.mui-poppicker{
+				border: none;
+			}
+			.mui-pciker-list li{
+			    padding-top: .3rem !important;
+			}
+			.mui-poppicker-body .mui-picker{
+				background-color: #2A2A2A;
+			}
+			.mui-poppicker-header{
+				background-color: #2A2A2A;
+			}
+			.mui-poppicker-body {
+			    border-top: solid 1px #2a2a2a;
+			}
+			.mui-pciker-list li.highlight{
+				color: #CEAD69;
+			}
+			.mui-poppicker-header .mui-btn {
+			   color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="outerScroller">
+			<div class="scroll">
+				<header>
+					<div class="d-title">
+						<a href="#">
+							<img src="../images/cd.png" alt="" />
+						</a>
+						<span>健康饮食</span>
+					</div>
+				</header>
+				
+				<section class="zsec-bg">
+					<div class="z-boxbg p-top">
+						<div class="swiper-slide list-group">
+							<ul>
+								<img class="z-boxr-bg" src="../../images/helath_food/header_img.png" alt="">	
+							</ul>
+						</div>
+					</div>
+					
+					<div class="z_boxbg user_msg"> 
+						<ul class="user_msg_list">
+							<li style="margin-top:0">
+								<!--<span>姓名</span>-->
+								<p>姓名</p>
+								<input type="text" placeholder="姓名" disabled/>
+							</li>
+							<li>
+								<!--<span>电话</span>-->
+								<p>电话</p>
+								<input type="text" placeholder="电话" disabled/>
+							</li>
+							<li id='showUserPicker' class="mui-btn mui-btn-block">
+								<!--<span>工作行业</span>-->
+								<p>工作行业</p>
+								<input type="text" placeholder="工作行业" id="userCounty" readonly="readonly" disabled/>
+							</li>
+							<li  id='showUserPicker2' class="mui-btn mui-btn-block">
+								<!--<span>工作岗位</span>-->
+								<p>工作岗位</p>
+								<input type="text" placeholder="工作岗位" id="userSystem" readonly="readonly" disabled/>
+							</li>
+							<li>
+								<!--<span>身份证</span>-->
+								<p>身份证</p>
+								<input type="text" placeholder="身份证" disabled/>
+							</li>
+							<li>
+								<!--<span>性别</span>-->
+								<p>性别</p>
+								<input type="text" placeholder="性别" disabled/>
+							</li>
+							<li>
+								<!--<span>年龄</span>-->
+								<p>年龄</p>
+								<input type="text" placeholder="年龄" disabled/>
+							</li>
+							<li>
+								<!--<span>身高 (cm)</span>-->
+								<p>身高 (cm)</p>
+								<input type="text" placeholder="身高 (cm)" disabled/>
+							</li>
+							<li>
+								<!--<span>当前体重 (kg)</span>-->
+								<p>当前体重 (kg)</p>
+								<input type="text" placeholder="当前体重 (kg)" disabled/>
+							</li>
+							<li>
+								<!--<span>目标体重 (kg)</span>-->
+								<p>目标体重 (kg)</p>
+								<input type="text" placeholder="目标体重 (kg)" disabled/>
+							</li>
+						</ul>
+					</div>
+				</section>
+				
+				<footer class="footer footer_c">
+					<ul class="bottom">
+						<li id="control_btn">
+							<a href="javascript:;">编辑</a>
+						</li>
+					</ul>
+				</footer>
+				
+			</div>
+		</div>
+		
+		<script>
+			//防止键盘把当前输入框挡住
+			$('input').on('click', function () {
+			  var target = this;
+			  setTimeout(function(){
+			        target.scrollIntoViewIfNeeded();
+			        console.log('scrollIntoViewIfNeeded');
+			      },500);
+			});
+			//设置高度
+			$(".zsec-bg").height($(window).height()-$(".bottom li").height());
+			//底部按钮操作
+			$("#control_btn").toggle(function(){
+				$("#control_btn a").html("保存");
+				//在这里实现对文本框恢复设置
+            	$(".user_msg_list li input").removeAttr("disabled");
+            	//点击显示动画
+				$(".user_msg_list li input").click(function(){
+//					$(this).siblings("span").fadeIn();
+					$(this).siblings("p").fadeIn();
+					$(this).attr('placeholder','')
+				});
+			},function(){
+				$("#control_btn a").html("编辑");
+				//在这里实现对文本框恢复设置
+            	$(".user_msg_list li input").attr("disabled",true); 
+			});
+		</script>
+		<script src="../js/mui.picker.min.js"></script>
+		<script src="../js/mui.poppicker.js"></script>
+		<script>
+			(function($, doc) {	
+				$.init();
+				$.ready(function() {
+					var _getParam = function(obj, param) {
+						return obj[param] || '';
+					};
+					//工作行业选择
+					var userPicker1 = new $.PopPicker();
+					userPicker1.setData([{
+						value: '1',
+						text: '一般工厂企业'
+					}, {
+						value: '2',
+						text: 'IT行业'
+					}, {
+						value: '3',
+						text: '医药、医疗卫生'
+					}]);	
+					
+					var showUserPickerButton = document.getElementById('showUserPicker');
+					var uc=document.getElementById('userCounty');
+					showUserPickerButton.addEventListener('tap', function(event) {
+						userPicker1.show(function(items) {
+							var cont=items[0].text;
+							uc.value = cont;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);				
+				
+				//工作岗位选择
+					var userPicker2 = new $.PopPicker();
+					userPicker2.setData([{
+						value: '1',
+						text: '技术人员、商业人员'
+					}, {
+						value: '2',
+						text: '开发工程师'
+					}, {
+						value: '3',
+						text: '医药工程师'
+					}]);	
+					
+				var showUserPickerButton = document.getElementById('showUserPicker2');
+					var us=document.getElementById('userSystem');
+					showUserPickerButton.addEventListener('tap', function(event) {
+						userPicker2.show(function(items) {
+							 console.log(items[0].text);
+			//							userResult.innerText = JSON.stringify(items[0]);
+							var cont=items[0].text;
+							us.value=cont;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);						
+				});
+			})(mui, document);
+		</script>
+	</body>
+</html>

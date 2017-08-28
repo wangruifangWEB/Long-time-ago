@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的徒步</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+		<link rel="stylesheet" href="../css/css.css" />
+		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="../../single_css/global.css">
+		<link rel="stylesheet" href="../../single_css/zmpx.css">
+		<style>
+			body{
+				background-color: #2A2A2A;
+			}
+			.d-title,.z-boxl,.zsec-bg{
+				background-color: #292929;
+			}
+			.list-group ul li{
+				background-color: #000;
+			}
+			.z-boxr-bg {
+			    border-radius: 0 0.1rem 0.1rem 0;
+			    width: 6.24rem;
+			    height: 4.78rem;
+			}
+			.z_boxbg {
+				padding: .32rem .63rem 0;
+			}
+			/*用户信息模块*/
+			.user_msg{
+				padding-top:.32rem;
+			}
+			.user_msg ul li{
+				width:6.24rem;
+				height:1.07rem;
+				border-bottom: .02rem solid #0d0d0d;
+				display: grid;
+				margin-top:.32rem;
+			}
+			.user_msg span{
+				color:#595959;
+				font-size: .26rem;
+				line-height: .37rem;
+				display: inline;
+				font-family: PingFangSC-Medium;
+				display: none;
+			}
+			.user_msg input{
+				border:none;
+				color:#CEAD69;
+				font-size:.37rem;
+				line-height:.52rem;
+				background-color: #2A2A2A;
+				font-family: PingFangSC-Medium;
+			}
+			/*placeholder的样式*/
+			::-webkit-input-placeholder { 
+			　　	color:#595959;
+				font-size: .37rem;
+				line-height: .52rem;
+				font-family: PingFangSC-Medium;
+			　}
+			　:-moz-placeholder { 
+			　　	color:#595959;
+				font-size: .37rem;
+				line-height: .52rem;
+				font-family: PingFangSC-Medium;
+			　}
+			　::-moz-placeholder {
+			　　	color:#595959;
+				font-size: .37rem;
+				line-height: .52rem;
+				font-family: PingFangSC-Medium;
+			　}
+			　:-ms-input-placeholder { 
+			　　	color:#595959;
+				font-size: .37rem;
+				line-height: .52rem;
+				font-family: PingFangSC-Medium;
+			　}
+			/*底部颜色*/
+			.bottom{
+				background-color: #2A2A2A;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="outerScroller">
+			<div class="scroll">
+				<header>
+					<div class="d-title">
+						<a href="#">
+							<img src="../images/cd.png" alt="" />
+						</a>
+						<span>健康饮食</span>
+					</div>
+				</header>
+				
+				<section class="zsec-bg">
+					<div class="z_boxbg user_msg"> 
+						<ul class="user_msg_list">
+							<li>
+								<span>城市</span>
+								<input type="text" placeholder="城市"/>
+							</li>
+							<li>
+								<span>餐馆</span>
+								<input type="text" placeholder="餐馆"/>
+							</li>
+							<li>
+								<span>餐品</span>
+								<input type="text" placeholder="餐品"/>
+							</li>
+						</ul>
+					</div>
+				</section>
+				
+				<footer class="footer footer_c">
+					<ul class="bottom">
+						<li id="control_btn">
+							<a href="javascript:;">搜索</a>
+						</li>
+					</ul>
+				</footer>
+			</div>
+		</div>
+		<script>
+		  	//点击显示动画
+			$(".user_msg_list li input").click(function(){
+				$(this).siblings("span").fadeIn();
+				$(this).attr('placeholder','')
+			});
+		</script>
+	</body>
+</html>
