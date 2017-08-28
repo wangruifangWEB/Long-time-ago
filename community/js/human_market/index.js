@@ -51,7 +51,6 @@
 							
 						},
 						error:function(){
-//							$(".loadtip p").show();
 							$('.loadtip p').css('display','block');
 							if(loadFlag){
 								$(".loadtip p").html('正在加载...');
@@ -95,9 +94,8 @@
 				//刷新
 				if(mySwiper.translate >= 50) {
 					$(".search_warp").hide();
-					$("#slider").css("padding-top",".2rem");
+					$("#slide").css("padding-top",".2rem");
 					$(".init-loading").fadeIn();
-//					$('.init-loading').css({'display':'block'});
 					$('.init-loading img').css({'top':'-0.5rem'});
 					if($('.tab_switch_first_cont').hasClass('show')){
 						$.ajax({
@@ -135,9 +133,9 @@
 					    					</div>
 										`);
 									}
-									$('.init-loading').fadeOut();
+									$('.init-loading').hide();
 									$('.init-loading img').css({'top':'-3rem'});
-									$("#slider").css("padding-top","0");
+									$("#slide").css("padding-top","0");
 									$(".search_warp").show();
 //									$('.init-loading').css({'display':'none'});
 									mySwiper.update(); // 重新计算高度;
