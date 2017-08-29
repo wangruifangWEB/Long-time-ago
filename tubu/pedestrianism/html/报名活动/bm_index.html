@@ -38,7 +38,39 @@
 			.scroll {
 				position: relative;
 				overflow: hidden;
-			}			
+			}
+			/* 报名信息 */
+			.bm_txt{
+				color:#595959;
+				height:1.06rem;
+				
+				/*line-height:.38rem;*/
+				font-family: PingFangSC-Light;
+				line-height:.37rem;
+				/*border:1px solid #fff;*/
+				background: none;
+				padding:0 .16rem;
+				padding-right: 0;
+				background: #f6f6f6;
+				box-shadow: none;
+				padding-top: 0.12rem;
+				padding-bottom: 0.12rem;
+				border-top: solid 0.01rem #d8d8d8;
+			}
+			.bm_txt li{
+				float:left;
+				height: 0.37rem;
+				line-height: 0.37rem;
+				font-size: .26rem;	    	
+			}
+			.bmfy{
+				width: 3.2rem;
+				padding-bottom: 0.16rem;
+			}
+			.bm_txt li span{
+				color: #f69200;
+			}
+				
 			.zmtp_list {
 				width: 7.5rem;
 				padding: .24rem .69rem;
@@ -56,43 +88,7 @@
 				display: block;
 				clear: both;
 			}			
-			.z-tab {
-				width: 7.5rem;
-				height: 0.88rem;
-				margin: 0 0;
-				background-color: #f69200;
-			}			
-			.z-tab a {
-				padding: 0;
-				margin: 0;
-				height: auto;
-				background-color: #f69200;
-			}			
-			.z-tab .on1 a img,
-			.z-tab .on2 a img,
-			.z-tab .on3 a img {
-				width: 0.48rem;
-				height: 0.48rem;
-				margin-top: 0.2rem;
-				background-color: #f69200;
-			}			
-			.z-tab .on1 {
-				margin-left: 1.43rem;
-			}			
-			.z-tab .on2 {
-				margin-left: 1.6rem;
-				margin-right: 1.6rem;
-			}			
-			.z-tab .on3 {
-				margin-right: 1.43rem;
-			}			
-			.z-tab img {
-				display: block;
-				width: 0.48rem;
-				height: 0.48rem;
-				margin-top: 0.2rem;
-				background-color: #f69200;
-			}	
+				
 			/*简介*/		
 			.intro_portal {
 				width: 7.5rem;
@@ -239,6 +235,7 @@
 				width: 7.5rem;
 				left: 50%;
 				margin-left: -3.75rem;
+				z-index: 100;
 			}			
 			.botton_center li {
 				width: 50%;
@@ -253,8 +250,17 @@
 			}			
 			.bottom_border li {
 				text-align: -webkit-center;
-				border-right: 1.6px solid #c8c8c8;
-			}			
+				width: 3.74rem;
+				border: none;
+			}
+			.bottom_border li.on3{
+				width: 3.76rem;
+				text-align: -webkit-center;
+				background-image: url(../../images/alert_bg.png);
+				background-position: center left;
+				background-size: 0.02rem 0.98rem;
+				background-repeat: no-repeat;
+			}
 			.bottom_border span {
 				display: block;
 				color: #595959;
@@ -406,7 +412,14 @@
 						<p class="intro_title">走进通州，为北京三大球加油！</p>
 						<p>已报名人数：<span>68860</span></p>
 					</div>
-
+					<div class="bm_txt">
+						<ul>
+							<li class="bmfy">报名费用：<span>50¥/人</span></li>
+							<li>(包含保险费用)</li>
+							<li class="bmfy">乘坐摆渡车费用:<span>10¥/人</span></li>
+							<li>额定报名人数:<span>1000人</span></li>				
+						</ul>
+					</div>
 					<div class="itro_txt">
 						<p>
 							因为追求，所以选择；因为选择，所以坚持；因为坚持，所以奋进。 选择了，就要去坚持。拉练对一个人来说，是及其拥挤的，拥挤的交通， 荒芜的道路，恶劣的环境等诸多因素，都会成为我们作出选择的心理障碍。 很多时候，并不是因为事情难，我们不敢做，而是因为我们不敢做，事情才难的， 能够作出选择，已经是跨越心理障碍了。。。 因为追求，所以选择；因为选择，所以坚持；因为坚持，所以奋进。 选择了，就要去坚持。拉练对一个人来说，是及其拥挤的，拥挤的交通， 荒芜的道路，恶劣的环境等诸多因素，都会成为我们作出选择的心理障碍。

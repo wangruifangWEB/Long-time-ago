@@ -1,4 +1,4 @@
-$('.swiper-container, .w').height($(window).height()-$('.z-moon').height()-$('.z-moon').height()-$('.z-as-fixed').height()-40+'px');
+$('.swiper-container, .w').height($(window).height()-$('header').height()-$('.z-as-fixed').height());
 var loadFlag = true;
 var oi = 0;
 var mySwiper = new Swiper('.swiper-container',{
@@ -32,36 +32,35 @@ var mySwiper = new Swiper('.swiper-container',{
 						$(".loadtip p").html('没有更多啦！');
 					}
 					setTimeout(function() {
-						for(var i =0;i<6;i++) {
+						for(var i =0;i<10;i++) {
 							$(".list-group ul").eq(mySwiper2.activeIndex).append(`
 								<li>
-									<a href="#">
-										<div class="z-boxl">
-											<div class="z-boxl1">
-												<h4>
-													<p>北京市</p>
-													<p>奥林匹克森林公园</p>
-												</h4>
-												<h5>2017.04.19</h5>
-											</div>
-											<div class="z-boxl2">
-												<h2>1686</h2>
-												<p>点赞</p>
-											</div>
-											<div class="z-boxl2">
-												<h2>354</h2>
-												<p>评论</p>
-											</div>
+									<div class="z-boxl">
+										<div class="z-boxl1">
+											<img src="../images/del.png" alt="" class="user_say_del" id="itemid">
+											<h4>
+												<p>北京市</p>
+												<p>奥林匹克森林公园</p>
+											</h4>
+											<h5>2017.04.19</h5>
 										</div>
-										<div class="z-boxr">
-											<img class="z-boxr-bg" src="../images/z-hu_03.jpg" alt="">
-											<div class="z-boxr-bottom">
-												<img src="../images/z-moon.png" alt="">
-												<span>拔剑乌托邦</span>
-												<p class="z-boxr-border">9</p>
-											</div>
+										<div class="z-boxl2 dianzan">
+											<h2>1686</h2>
+											<p>点赞</p>
 										</div>
-									</a>
+										<div class="z-boxl2">
+											<h2>354</h2>
+											<p>评论</p>
+										</div>
+									</div>
+									<div class="z-boxr">
+										<img class="z-boxr-bg" src="../images/z-hu_03.jpg	" alt="">
+										<div class="z-boxr-bottom">
+											<img src="../images/z-moon.png" alt="">
+											<span>拔剑乌托邦</span>
+											<p class="z-boxr-border">9</p>
+										</div>
+									</div>
 								</li>
 							`);
 						}
@@ -83,36 +82,35 @@ var mySwiper = new Swiper('.swiper-container',{
 				error:function(){
 					$('.init-loading').css('display','block');
 					setTimeout(function() {
-						for(var i =0;i<20;i++) {
+						for(var i =0;i<10;i++) {
 							$(".list-group ul").eq(mySwiper2.activeIndex).append(`
 								<li>
-									<a href="#">
-										<div class="z-boxl">
-											<div class="z-boxl1">
-												<h4>
-													<p>北京市</p>
-													<p>奥林匹克森林公园</p>
-												</h4>
-												<h5>2017.04.19</h5>
-											</div>
-											<div class="z-boxl2">
-												<h2>1686</h2>
-												<p>点赞</p>
-											</div>
-											<div class="z-boxl2">
-												<h2>354</h2>
-												<p>评论</p>
-											</div>
+									<div class="z-boxl">
+										<div class="z-boxl1">
+											<img src="../images/del.png" alt="" class="user_say_del" id="itemid">
+											<h4>
+												<p>北京市</p>
+												<p>奥林匹克森林公园</p>
+											</h4>
+											<h5>2017.04.19</h5>
 										</div>
-										<div class="z-boxr">
-											<img class="z-boxr-bg" src="../images/z-hu_03.jpg" alt="">
-											<div class="z-boxr-bottom">
-												<img src="../images/z-moon.png" alt="">
-												<span>拔剑乌托邦</span>
-												<p class="z-boxr-border">9</p>
-											</div>
+										<div class="z-boxl2 dianzan">
+											<h2>1686</h2>
+											<p>点赞</p>
 										</div>
-									</a>
+										<div class="z-boxl2">
+											<h2>354</h2>
+											<p>评论</p>
+										</div>
+									</div>
+									<div class="z-boxr">
+										<img class="z-boxr-bg" src="../images/z-hu_03.jpg	" alt="">
+										<div class="z-boxr-bottom">
+											<img src="../images/z-moon.png" alt="">
+											<span>拔剑乌托邦</span>
+											<p class="z-boxr-border">9</p>
+										</div>
+									</div>
 								</li>
 							`);
 						}
