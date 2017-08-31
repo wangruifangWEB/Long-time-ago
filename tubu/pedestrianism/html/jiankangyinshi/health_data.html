@@ -7,11 +7,11 @@
 		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
 		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
 		<link rel="stylesheet" href="../../css/css.css" />
-		<link rel="stylesheet" href="../../css/mui.picker.all.css" />
+		<!--<link rel="stylesheet" href="../../css/mui.picker.all.css" />-->
 		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>-->
 		<link rel="stylesheet" href="../../single_css/global.css">
 		<link rel="stylesheet" href="../../single_css/zmpx.css">
 		<style>
@@ -25,12 +25,22 @@
 				background-color: #000;
 			}
 			.z-boxr-bg {
-			    border-radius: 0 0.1rem 0.1rem 0;
-			    width: 6.24rem;
-			    height: 4.78rem;
+				width: 3.84rem;
+				height: 3.84rem;
+				border-radius: 0 0 0 0;
+				vertical-align: top;
 			}
 			.z_boxbg {
 				padding: .32rem .63rem 0;
+			}
+			.z-box{
+				width: 6.24rem;
+				height: 4.78rem;
+				margin: 0.32rem auto 0;
+				background-color: #252423;
+				border-top-left-radius: 0.1rem;
+				border-bottom-left-radius: 0.1rem;
+				border-bottom-right-radius: 0.1rem;
 			}
 			.zsec-bg{
 				padding-bottom:.32rem;
@@ -47,6 +57,17 @@
 				display: table;
 			}
 			.user_msg p{
+				height: 0.37rem;
+				color:#595959;
+				font-size: .26rem;
+				line-height: .37rem;
+				font-family: PingFangSC-Regular;
+				display: none;
+				margin-right: .45rem;
+				margin-bottom: -.5rem;
+			}
+			.user_msg p span:nth-child(1){
+				height: 0.37rem;
 				color:#595959;
 				font-size: .26rem;
 				line-height: .37rem;
@@ -60,35 +81,86 @@
 				color:#CEAD69;
 				font-size:.37rem;
 				line-height:.52rem;
-				background-color: #2A2A2A;
+				background-color: transparent;
 				font-family: PingFangSC-Medium;
 				margin-bottom: .15rem;
 			}
-			/*placeholder的样式*/
-			::-webkit-input-placeholder { 
-			　　	color:#595959;
+			.z-boxr{
+				width: 3.84rem;
+				height: 4.78rem;
+				border-radius: 0 0.1rem 0 0;
+			}
+			.z-boxl{
+				background-color: #252423;
+				border-radius:0.1rem 0 0 0.1rem;
+			}
+			.z-boxl1,.z-boxl2{
+				border-bottom: #191918 solid 0.01rem;
+			}
+			.z-boxl1 p{
+				font-size: 0.37rem;
+				color: #CEAD69;
+				height: 1.04rem;
+				line-height: 1.04rem;
+			}
+			.z-boxl2 p{
+				font-size: 0.26rem;
+				color: #595959;
+			}
+			.z-boxl2 h2{
+				font-size: 0.48rem;
+				color: #CEAD69;
+			}
+			.huoyue{
+				height: 0.93rem;
+				padding-top: 0;
+				border-bottom: none;
+			}
+			.huoyue p{
+				height: 0.93rem;
+				line-height: 0.93rem;
+			}
+			.huoyuedu{
+				width: 3.6rem;
+				height: 0.93rem;
+				padding-left: 0.12rem;
+				padding-right: 0.12rem;
+				position: relative;
+			}
+			.huoyuedu img{
+				width: 3.6rem;
+				height: 0.24rem;
+				margin-top: 0.34rem;
+				vertical-align: top;
+			}
+			.huoyuedu_jindu{
+				position: absolute;
+				left: 0%;
+				top: -0.1rem;
+				width: 0.32rem;
+				height: 0.44rem;
+			}
+			.huoyuedu_jindu img{
+				width: 0.32rem;
+				height: 0.44rem;
+			}
+			
+			
+		　　input:-ms-input-placeholder{
+				color: #595959;
 				font-size: .37rem;
 				line-height: .52rem;
 				font-family: PingFangSC-Medium;
-			　}
-			　:-moz-placeholder {
-			　　	color:#595959;
+				/*opacity:1;*/
+			}
+			input::-webkit-input-placeholder{
+				color: #595959;
 				font-size: .37rem;
 				line-height: .52rem;
 				font-family: PingFangSC-Medium;
-			　}
-			　::-moz-placeholder { 
-			　　	color:#595959;
-				font-size: .37rem;
-				line-height: .52rem;
-				font-family: PingFangSC-Medium;
-			　}
-			　:-ms-input-placeholder {
-			　　	color:#595959;
-				font-size: .37rem;
-				line-height: .52rem;
-				font-family: PingFangSC-Medium;
-			　}
+				opacity:1;
+			}/* WebKit browsers */
+			
 			/*底部颜色*/
 			.bottom{
 				background-color: #2A2A2A;
@@ -115,6 +187,100 @@
 			.mui-poppicker-header .mui-btn {
 			   color: #fff;
 			}
+			
+			/* 提示 */
+			.user_msg_list li{
+				position: relative;
+				/*pointer-events: none;*/
+			}
+			.user_msg_list li p{
+				
+			}
+			.user_msg_list li input{
+				width: 6.24rem;
+			}
+			
+			.red_notice{
+				width: 0.24rem !important;
+				height: 0.24rem !important;
+				border-radius: 0;
+				
+				background-image: url(../../images/notice_error.png);
+			}
+			.green_notice{
+				background-image: url(../../images/notice_green.png);
+			}
+			.gray_notice{
+				display: none;
+				position: absolute;
+				right: 0;
+				top: -0.15rem;
+				width: 0.4rem;
+				height: 1.1rem;	
+				z-index: 100;
+			}
+			.gray_notice img{
+				width: 0.24rem;
+				height: 0.24rem;
+				vertical-align: bottom;
+			}
+			.disabled{
+				pointer-events: none;
+			}
+			.mui-btn p{
+				background-position: 1.2rem center !important;
+			}
+			.user_msg_list li:nth-child(8) p{
+				background-position: 1.25rem 0.1rem !important;
+			}
+			.user_msg_list li:nth-child(9) p,.user_msg_list li:nth-child(10) p{
+				background-position: 1.7rem 0.1rem !important;
+			}
+			#showUserPicker{
+				pointer-events:none;
+			}
+			#showUserPicker2{
+				pointer-events:none;
+			}
+			
+			
+			.shurutishi{
+				margin-left: 0.08rem;
+				margin-top: -0.1rem;
+				width: 0.24rem;
+				height: 0.24rem;
+				background-color: red;
+				background-size: 0.12rem 0.12rem;
+				background-position: center center;
+				background-repeat: no-repeat;
+				display: inline-block;
+				border-radius: 0.12rem;
+				position: relative;
+				top: 0.02rem;
+			}
+			.add_transform{ 
+				width: 0.24rem !important;
+				height: 0.24rem !important;
+			    animation: add_transform .3s .5s 2; 
+			    /*transform-origin: center center;*/
+			}
+			/*@keyframes add_transform{
+				0%{transform: rotate(0deg);transform-origin:50% 50%;}
+				25%{transform:rotate(-65deg);transform-origin:50% 50%;}
+				50%{transform:rotate(65deg);transform-origin:50% 50%;}
+				75%{transform:rotate(-65deg);transform-origin:50% 50%;}
+				100%{transform:rotate(0deg);transform-origin:50% 50%;}
+				
+			}*/
+			@keyframes add_transform{
+				
+				0%{transform: rotate(0deg);transform-origin:center;width: 0.24rem;height: 0.24rem;}
+				/*25%{transform:rotate(-65deg);transform-origin:50% 50%;}*/
+				50%{transform:rotate(65deg);transform-origin:center;width: 0.24rem; height: 0.24rem;}
+				/*75%{transform:rotate(-65deg);transform-origin:50% 50%;}*/
+				100%{transform:rotate(0deg);transform-origin:center;width: 0.24rem;height: 0.24rem;}
+				
+			}
 		</style>
 	</head>
 	<body>
@@ -123,76 +289,98 @@
 				<header>
 					<div class="d-title">
 						<a href="#">
-							<img src="../images/cd.png" alt="" />
+							<img src="../../images/cd.png" alt="" />
 						</a>
 						<span>健康饮食</span>
 					</div>
 				</header>
 				
 				<section class="zsec-bg">
-					<div class="z-boxbg p-top">
-						<div class="swiper-slide list-group">
-							<ul>
-								<img class="z-boxr-bg" src="../../images/helath_food/header_img.png" alt="">	
-							</ul>
+					<div class="z-box">
+						<div class="z-boxl">
+							<div class="z-boxl1">
+								<p>电子护照</p>
+							</div>
+							<div class="z-boxl2">
+								<h2 class="enter_num">24</h2>
+								<p>报名次数</p>
+							</div>
+							<div class="z-boxl2">
+								<h2 class="join_num">24</h2>
+								<p>参加次数</p>
+							</div>
+							<div class="z-boxl1 huoyue">
+								<p>活跃度</p>
+							</div>
+						</div>
+						<div class="z-boxr">
+							<img class="z-boxr-bg" src="../../images/head_list.jpg" alt="">
+							<div class="huoyuedu">
+								<img src="../../images/huoyue_bg.png" alt="" />
+								<div class="huoyuedu_jindu">
+									<img src="../../images/huoyue_jindu.png"/>
+								</div>
+							</div>
+							
 						</div>
 					</div>
 					
 					<div class="z_boxbg user_msg"> 
 						<ul class="user_msg_list">
 							<li style="margin-top:0">
-								<!--<span>姓名</span>-->
-								<p>姓名</p>
-								<input type="text" placeholder="姓名" disabled/>
+								<p><span>姓名</span><span class="shurutishi"></span></p>
+								<input type="text" placeholder="姓名" class="user" value="" disabled onblur="checkuser()" oninput="myFunction()" />
+								<span class="gray_notice"><img src="../../images/notice_gray.png" alt="" /></span>
 							</li>
 							<li>
-								<!--<span>电话</span>-->
-								<p>电话</p>
-								<input type="text" placeholder="电话" disabled/>
+								<p>电话<span class="shurutishi"></span></p>
+								<input type="text" placeholder="电话" class="tel" value="" disabled onblur="checktel()" oninput="myFunction()" />
+								<span class="gray_notice"><img src="../../images/notice_gray.png" alt="" /></span>
 							</li>
 							<li id='showUserPicker' class="mui-btn mui-btn-block">
-								<!--<span>工作行业</span>-->
-								<p>工作行业</p>
-								<input type="text" placeholder="工作行业" id="userCounty" readonly="readonly" disabled/>
+								<p id="userPickerP1">工作行业</p>
+								<input type="text" placeholder="工作行业" id="userCounty" readonly="readonly" disabled oninput="myFunction()" />
+								<span class="gray_notice"><img src="../../images/notice_gray.png" alt="" /></span>
 							</li>
-							<li  id='showUserPicker2' class="mui-btn mui-btn-block">
-								<!--<span>工作岗位</span>-->
+							<li id='showUserPicker2' class="mui-btn mui-btn-block">
 								<p>工作岗位</p>
-								<input type="text" placeholder="工作岗位" id="userSystem" readonly="readonly" disabled/>
+								<input type="text" placeholder="工作岗位" id="userSystem" readonly="readonly" disabled oninput="myFunction()" />
+								<span class="gray_notice"><img src="../../images/notice_gray.png" alt="" /></span>
 							</li>
 							<li>
-								<!--<span>身份证</span>-->
 								<p>身份证</p>
-								<input type="text" placeholder="身份证" disabled/>
+								<input type="text" placeholder="身份证" class="card" onblur="checkcard()" disabled oninput="myFunction()" />
+								<span class="gray_notice"><img src="../../images/notice_gray.png" alt="" /></span>
 							</li>
 							<li>
-								<!--<span>性别</span>-->
 								<p>性别</p>
-								<input type="text" placeholder="性别" disabled/>
+								<input type="text" placeholder="性别" class="gend" onblur="checkgend()" disabled oninput="myFunction()" />
+								<span class="gray_notice"><img src="../../images/notice_gray.png" alt="" /></span>
 							</li>
 							<li>
-								<!--<span>年龄</span>-->
 								<p>年龄</p>
-								<input type="text" placeholder="年龄" disabled/>
+								<input type="text" placeholder="年龄" class="number" onblur="checknum()" disabled oninput="myFunction()" />
+								<span class="gray_notice"><img src="../../images/notice_gray.png" alt="" /></span>
 							</li>
 							<li>
-								<!--<span>身高 (cm)</span>-->
 								<p>身高 (cm)</p>
-								<input type="text" placeholder="身高 (cm)" disabled/>
+								<input type="text" placeholder="身高 (cm)" class="number" onblur="checknum()" disabled oninput="myFunction()" />
+								<span class="gray_notice"><img src="../../images/notice_gray.png" alt="" /></span>
 							</li>
 							<li>
-								<!--<span>当前体重 (kg)</span>-->
 								<p>当前体重 (kg)</p>
-								<input type="text" placeholder="当前体重 (kg)" disabled/>
+								<input type="text" placeholder="当前体重 (kg)" class="number" onblur="checknum()" disabled/>
+								<span class="gray_notice"><img src="../../images/notice_gray.png" alt="" /></span>
 							</li>
 							<li>
-								<!--<span>目标体重 (kg)</span>-->
 								<p>目标体重 (kg)</p>
-								<input type="text" placeholder="目标体重 (kg)" disabled/>
+								<input type="text" placeholder="目标体重 (kg)" class="number" onblur="checknum()"  disabled/>
+								<span class="gray_notice"><img src="../../images/notice_gray.png" alt="" /></span>
 							</li>
 						</ul>
 					</div>
 				</section>
+				<div style="height: 0.98rem;"></div>
 				
 				<footer class="footer footer_c">
 					<ul class="bottom">
@@ -206,6 +394,179 @@
 		</div>
 		
 		<script>
+			/*
+			 
+			 * 监测身份证信息 /^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$|^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/
+			 * 监测姓名 /^(((\s?[\u4e00-\u9fa5]+\s?)+)|([a-zA-Z]+\s?)+)$/
+			 * 监测手机号 /^1[3|4|5|8][0-9]\d{4,8}$/
+			 * 监测性别 /^(男|女)$/
+			 * 检测数字  /^[0-9]*$/
+			 * 
+			 * */
+			// 检测姓名
+			
+			var myFunction=function(){
+				$(".user_msg_list li p .shurutishi").removeClass('red_notice');
+			}
+			
+			
+			
+			var checkuser=function(){
+				var reg_user=/^(((\s?[\u4e00-\u9fa5]+\s?)+)|([a-zA-Z]+\s?)+)$/;
+				if(!reg_user.test($('.user').val())){
+					$('.user').siblings('p').find('.shurutishi').addClass('red_notice').removeClass('green_notice');
+				
+					setTimeout(function(){
+						$('.red_notice').addClass('add_transform');
+					},0)
+					$('.red_notice').removeClass('add_transform');
+					$('.user').focus();
+//					$('.user').parent().siblings().find('input').attr('disabled',true);
+					$('.user').parent().siblings().css('pointer-events','none');
+					$('.user').parent().find('.gray_notice').show();
+					$('.gray_notice').click(function(ev){
+						ev.preventDefault();
+						$(this).siblings('input').val('');
+						$(this).siblings('input').focus();
+					})
+					return false;
+				}else{
+					$('.user').siblings('p .shurutishi').addClass('green_notice').removeClass('red_notice');
+//					$('.user').parent().siblings().find('input').removeAttr('disabled');
+					$('.user').parent().siblings().css('pointer-events','auto');
+					$('.gray_notice').click(function(ev){
+						ev.preventDefault();
+						$(this).siblings('input').val('');
+						$(this).siblings('input').focus();
+					})
+//					$('.user').parent().find('.gray_notice').hide();
+				}
+			}
+			// 检测手机号
+			var checktel=function(){
+				var reg_tel=/^1[3|4|5|8][0-9]\d{4,8}$/;
+				if(!reg_tel.test($('.tel').val())){
+					$('.tel').siblings('p').addClass('red_notice').removeClass('green_notice');
+					$('.tel').focus();
+//					$('.tel').parent().siblings().find('input').attr('disabled',true);
+					$('.tel').parent().siblings().css('pointer-events','none');
+					$('.tel').parent().find('.gray_notice').show();
+					$('.gray_notice').click(function(ev){
+						ev.preventDefault();
+						$(this).siblings('input').val('');
+						$(this).siblings('input').focus();
+					})
+					return false;
+				}else{
+					$('.tel').siblings('p').addClass('green_notice').removeClass('red_notice');
+//					$('.tel').parent().siblings().find('input').removeAttr('disabled');
+					$('.tel').parent().siblings().css('pointer-events','auto');
+					$('.tel').parent().find('.gray_notice').hide();
+					$('.gray_notice').click(function(ev){
+						ev.preventDefault();
+						$(this).siblings('input').val('');
+						$(this).siblings('input').focus();
+					})
+				}
+			}
+			// 检测身份证
+			var checkcard=function(){
+				var reg_tel=/^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$|^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/;
+				$('.card').siblings().css({'background-position':'0.9rem center'});
+				if(!reg_tel.test($('.card').val())){
+					$('.card').siblings('p').addClass('red_notice').removeClass('green_notice');
+					$('.card').focus();
+//					$('.card').parent().siblings().find('input').attr('disabled',true);
+					$('.card').parent().siblings().css('pointer-events','none');
+					$('.card').parent().find('.gray_notice').show();
+					$('.gray_notice').click(function(ev){
+						ev.preventDefault();
+						$(this).siblings('input').val('');
+						$(this).siblings('input').focus();
+					})
+					return false;
+				}else{
+					$('.card').siblings('p').addClass('green_notice').removeClass('red_notice');
+//					$('.card').parent().siblings().find('input').removeAttr('disabled');
+					$('.card').parent().siblings().css('pointer-events','auto');
+					$('.card').parent().find('.gray_notice').hide();
+					$('.gray_notice').click(function(ev){
+						ev.preventDefault();
+						$(this).siblings('input').val('');
+						$(this).siblings('input').focus();
+					})
+				}
+			}
+			// 检测性别
+			var checkgend=function(){
+				var reg_tel=/^(男|女)$/;
+				if(!reg_tel.test($('.gend').val())){
+					$('.gend').siblings('p').addClass('red_notice').removeClass('green_notice');
+					$('.gend').focus();
+//					$('.gend').parent().siblings().find('input').attr('disabled',true);
+					$('.gend').parent().siblings().css('pointer-events','none');
+					$('.gend').parent().find('.gray_notice').show();
+					$('.gray_notice').click(function(ev){
+						ev.preventDefault();
+						$(this).siblings('input').val('');
+						$(this).siblings('input').focus();
+					})
+					return false;
+				}else{
+					$('.gend').siblings('p').addClass('green_notice').removeClass('red_notice');
+//					$('.gend').parent().siblings().find('input').removeAttr('disabled');
+					$('.gend').parent().siblings().css('pointer-events','auto');
+					$('.gend').parent().find('.gray_notice').hide();
+					$('.gray_notice').click(function(ev){
+						ev.preventDefault();
+						$(this).siblings('input').val('');
+						$(this).siblings('input').focus();
+					})
+				}
+			}
+			// 检测年龄，身高，当前体重，标准体重
+			
+			$('.number').click(function(){
+				var i = $('input.number').index(this);
+				checknum=function(){
+					console.log($('.number').eq(i).siblings().html());
+					var reg_tel=/^\+?[1-9][0-9]*$/;
+					if(!reg_tel.test($('.number').eq(i).val())){
+						$('.number').eq(i).siblings('p').addClass('red_notice').removeClass('green_notice');
+						$('.number').eq(i).focus();
+//						$('.number').eq(i).parent().siblings().find('input').attr('disabled',true);
+						$('.number').eq(i).parent().siblings().css('pointer-events','none');
+						$('.number').eq(i).parent().find('.gray_notice').show();
+						$('.gray_notice').click(function(ev){
+							ev.preventDefault();
+							$(this).siblings('input').val('');
+							$(this).siblings('input').focus();
+						})
+						return false;
+					}else{
+						$('.number').eq(i).siblings('p').addClass('green_notice').removeClass('red_notice');
+						$('.number').eq(i).parent().find('.gray_notice').hide();
+//						$('.number').eq(i).parent().siblings().find('input').removeAttr('disabled');
+						$('.number').eq(i).parent().siblings().css('pointer-events','auto');
+						$('.gray_notice').click(function(ev){
+							ev.preventDefault();
+							$(this).siblings('input').val('');
+							$(this).siblings('input').focus();
+						})
+					}
+				}
+			})
+			
+			
+			
+			
+			// 计算顶部比例
+			var join_num=$('.join_num').html();
+			var enter_num=$('.enter_num').html();
+			var scale = parseInt(join_num) / parseInt(enter_num)*100	;
+			$('.huoyuedu_jindu').animate({'left':(scale-1)+'%'},1000);
+			
+			
 			//防止键盘把当前输入框挡住
 			$('input').on('click', function () {
 			  var target = this;
@@ -214,34 +575,65 @@
 			        console.log('scrollIntoViewIfNeeded');
 			      },500);
 			});
+			
 			//设置高度
 			$(".zsec-bg").height($(window).height()-$(".bottom li").height());
+			
+			$(".user_msg_list li input").removeAttr("disabled");
+			
+			$(".user_msg_list li input").click(function(){
+				$(this).siblings("p").fadeIn();
+				$(this).attr('placeholder','')
+				$(this).parent().find('.gray_notice').show().parent().siblings().find('.gray_notice').hide();
+			});
+			
+			
+			
+			
+			
+			/*$('.gray_notice').click(function(ev){
+				alert(1);
+				ev.preventDefault();
+				alert($(this).attr('class'));
+				$(this).siblings('input').val('');
+			})*/
+				
+				
 			//底部按钮操作
-			$("#control_btn").toggle(function(){
+			/*$("#control_btn").toggle(function(){
 				$("#control_btn a").html("保存");
 				//在这里实现对文本框恢复设置
             	$(".user_msg_list li input").removeAttr("disabled");
+            	$('#showUserPicker').css('pointer-events','auto');
+            	$('#showUserPicker2').css('pointer-events','auto');
             	//点击显示动画
 				$(".user_msg_list li input").click(function(){
-//					$(this).siblings("span").fadeIn();
 					$(this).siblings("p").fadeIn();
 					$(this).attr('placeholder','')
+					$('#showUserPicker').css('pointer-events','none');
+            		$('#showUserPicker2').css('pointer-events','none');
+					$(this).parent().find('.gray_notice').show().parent().siblings().find('.gray_notice').hide();
 				});
 			},function(){
 				$("#control_btn a").html("编辑");
 				//在这里实现对文本框恢复设置
             	$(".user_msg_list li input").attr("disabled",true); 
-			});
+			});*/
 		</script>
-		<script src="../js/mui.picker.min.js"></script>
-		<script src="../js/mui.poppicker.js"></script>
-		<script>
+		
+		
+		<!--<script src="../../js/mui.picker.min.js"></script>
+		<script src="../../js/mui.poppicker.js"></script>-->
+		<!--<script>
+			
+			
 			(function($, doc) {	
 				$.init();
 				$.ready(function() {
 					var _getParam = function(obj, param) {
 						return obj[param] || '';
 					};
+					
 					//工作行业选择
 					var userPicker1 = new $.PopPicker();
 					userPicker1.setData([{
@@ -257,10 +649,14 @@
 					
 					var showUserPickerButton = document.getElementById('showUserPicker');
 					var uc=document.getElementById('userCounty');
-					showUserPickerButton.addEventListener('tap', function(event) {
+					showUserPickerButton.addEventListener('click', function(event) {
+						event.stopPropagation();
 						userPicker1.show(function(items) {
 							var cont=items[0].text;
 							uc.value = cont;
+							
+							document.getElementById('showUserPicker').getElementsByTagName('p')[0].setAttribute('class','green_notice');
+							document.getElementById('showUserPicker').getElementsByTagName('span')[0].style.display='none';
 							//返回 false 可以阻止选择框的关闭
 							//return false;
 						});
@@ -281,18 +677,20 @@
 					
 				var showUserPickerButton = document.getElementById('showUserPicker2');
 					var us=document.getElementById('userSystem');
-					showUserPickerButton.addEventListener('tap', function(event) {
+					showUserPickerButton.addEventListener('click', function(event) {
+						event.stopPropagation();
 						userPicker2.show(function(items) {
 							 console.log(items[0].text);
-			//							userResult.innerText = JSON.stringify(items[0]);
 							var cont=items[0].text;
 							us.value=cont;
+							document.getElementById('showUserPicker2').getElementsByTagName('p')[0].setAttribute('class','green_notice');
+							document.getElementById('showUserPicker2').getElementsByTagName('span')[0].style.display='none';
 							//返回 false 可以阻止选择框的关闭
 							//return false;
 						});
 					}, false);						
 				});
 			})(mui, document);
-		</script>
+		</script>-->
 	</body>
 </html>
