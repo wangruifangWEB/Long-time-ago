@@ -87,6 +87,7 @@
 								}
 								 $(".loadtip p").hide();
 								mySwiper.update(); // 重新计算高度;
+								console.log("总条数为："+$(".course_cont").length);
 							}, 800);
 						}
 					});
