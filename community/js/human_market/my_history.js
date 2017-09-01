@@ -1,7 +1,7 @@
 $(function(){
 	//定义操作函数
 	function animate_all(){
-			//更多操作
+		//更多操作
 	    var toggle = true;
 	    $(document).on("click",".hj_history_del",function(){
 	    	if(toggle){
