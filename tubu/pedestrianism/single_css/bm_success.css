@@ -4,7 +4,7 @@
 	font-family:PingFangSC-Regular; 
 	padding-left: 0.63rem;
 	padding-right: 0.29rem;
-	margin-top: 0.98rem;
+	/*margin-top: 0.98rem;*/
 	overflow: scroll;
 	position: absolute;
 	top: 50%;
@@ -12,11 +12,16 @@
 	overflow: auto;
 	padding-bottom: 0.24rem;
 }
+.bmcg_warp{
+	margin-top: 0.98rem;
+	position: relative;
+	overflow: scroll;
+}
 .bmcg span{
 	font-weight: bold;
 }
 .bmcg li{
-	line-height: 0.85rem;
+	line-height: 0.75rem;
 	font-size:.44rem;
 	color:#595959;
 }

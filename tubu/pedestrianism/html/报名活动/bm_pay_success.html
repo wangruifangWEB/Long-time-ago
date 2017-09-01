@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
@@ -12,6 +13,7 @@
 		<link rel="stylesheet" href="../../single_css/global.css">
 		<link rel="stylesheet" href="../../single_css/bm_success.css">
 	</head>
+	
 	<body class="">
 		<div class="outerScroller">
 			<div class="scroll">
@@ -25,8 +27,10 @@
 				</header>
 				<div class="bmcg_warp">
 					<ul class="bmcg">
-						<li>恭喜您成功提交报名表！</li>
-						<li>请点击<span>前往支付</span>，支付活动所需报名费，以完成报名！</li>
+
+						<li>恭喜您支付成功</li>
+						<li>请你凭<span>订单编号</span>或<span>领队身份证号</span>按时领取装备。</li>
+						<li>预祝您和您的团员，活动顺利。</li>
 					</ul>
 				</div>
 				
@@ -44,14 +48,6 @@
 						</li>
 					</ul>
 				</div>
-				
-				<footer class="footer">
-					<ul class="bottom">
-						<li>
-							<a href="bm_pay.html" class="btn">前往支付</a>
-						</li>
-					</ul>
-				</footer>
 			</div>
 		</div>
 			
@@ -60,16 +56,8 @@
 		<script type="text/javascript">
 			$('.scroll').height($(window).height());
 			var maxLength=$(window).height()-$('header').height()-$('footer').height();
-//			alert()
 			$('.bmcg_warp').height(maxLength);
-//			$('.bmcg').height($(window).height()-$('header').height()-$('footer').height());
 			$('.bmcg').css('margin-top',(-($('.bmcg').height()/2)));
-			
-			
-			
-			if($('.bmcg').height()>maxLength){
-				alert(1);
-			}
 		</script>
 		
 	</body>
