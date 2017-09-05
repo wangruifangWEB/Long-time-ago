@@ -1,4 +1,49 @@
- 	$(function(){	
+ 	$(function(){
+ 		//初始化
+ 		$.ajax({
+			url:"",
+			type:"post",
+			success:function(data){
+				
+			},
+			error:function(){
+				setTimeout(function() {
+					for(var i =0;i<3;i++) {
+						$(".list-group").append(`
+							<div class="course_cont">
+	    						<div class="course_cont_title">
+		    						<div class="course_cont_title_img" onclick="location.href='dingyuehao.html'">
+		    							<img src="../../images/human_market/header_index.png" alt=""/>
+		    						</div>
+		    						<div class="course_cont_title_name_warp">
+		    							<p class="course_cont_title_name">用户名</p>
+		    							<p class="course_cont_title_time">3小时前</p>
+		    						</div>
+		    					</div>
+		    					<div class="course_cont_img" onclick="location.href='yinpin_detail.html'">
+		    						<img src="../../images/human_market/index_banner.png" alt="" />
+		    						<div class="course_cont_img_info">
+		    							<p class="course_cont_img_name">轻享美食生活</p>
+		    							<p class="course_cont_img_huati">#话题</p>
+		    						</div>
+		    						<p class="course_type tuwen_bg">图文</p>
+		    					</div>
+		    					<div class="course_cont_remark">
+		    						<p class="course_cont_remark_left"><span>20万</span>人观看 / <span>20万</span>人评论</p>
+		    						<p class="course_cont_remark_right">图文</p>
+		    					</div>
+	    					</div>
+						`);
+					}
+					 $(".loadtip p").hide();
+					mySwiper.update(); // 重新计算高度;
+				}, 800);
+			}
+		});
+ 		//获取页面初始化信息个数
+ 		var msg_count=$(".course_cont").length;
+		console.log("页面初始化条数为："+msg_count);
+ 		
 		// 回到顶部
 		if($(document).scrollTop() >= $(window).height()){
 			$('#toTop').fadeIn(500);
@@ -58,7 +103,7 @@
 								$(".loadtip p").html('没有更多啦！');
 							}
 							setTimeout(function() {
-								for(var i =0;i<6;i++) {
+								for(var i =0;i<3;i++) {
 									$(".list-group").append(`
 										<div class="course_cont">
 				    						<div class="course_cont_title">
@@ -87,7 +132,11 @@
 								}
 								 $(".loadtip p").hide();
 								mySwiper.update(); // 重新计算高度;
-								console.log("总条数为："+$(".course_cont").length);
+								//获取页面上拉加载信息个数
+								var loading_count=$(".course_cont").length;
+								var loaded_count=loading_count-msg_count;
+								console.log("已上拉加载条数:"+loaded_count);
+								console.log("页面总共已有的条数"+loading_count);
 							}, 800);
 						}
 					});
@@ -138,7 +187,6 @@
 									$('.init-loading img').css({'top':'-3rem'});
 									$("#slide").css("padding-top","0");
 									$(".search_warp").show();
-//									$('.init-loading').css({'display':'none'});
 									mySwiper.update(); // 重新计算高度;
 									if($('.tab_switch_first_cont').is(":empty")){
 										$('#no_course').show();
@@ -156,7 +204,7 @@
 		});
 	var mySwiper2 = new Swiper('.swiper-container2',{
 		onTransitionEnd: function(swiper){
-	//	$('.w').css('transform', 'translate3d(0px, 0px, 0px)')
+	//	$('.w').css('transform', 'translate3d(0px, 0px, 0px)');
 			$('.swiper-container2 .swiper-slide-active').css('height','auto').siblings('.swiper-slide').css('height','0px');
 			mySwiper.update();
 			$('.tab a').eq(mySwiper2.activeIndex).addClass('active').siblings('a').removeClass('active');
