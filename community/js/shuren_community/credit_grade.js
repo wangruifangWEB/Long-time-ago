@@ -1,13 +1,14 @@
-
 var autoLb = false;          //autoLb=true为开启自动轮播
 var autoLbtime = 1;         //autoLbtime为轮播间隔时间（单位秒）
 var touch = true;           //touch=true为开启触摸滑动
 var slideBt = true;         //slideBt=true为开启滚动按钮
 var slideNub;               //轮播图片数量
+
 //窗口大小改变时改变轮播图宽高
 $(window).resize(function(){
    $(".slide").height($(".slide").width()*0.56);
 });
+
 
 $(function(){
     $(".slide").height($(".slide").width()*0.56);
@@ -15,6 +16,7 @@ $(function(){
     for(i=0;i<slideNub;i++){
         $(".slide .img:eq("+i+")").attr("data-slide-imgId",i);
     }
+
 
     //根据轮播图片数量设定图片位置对应的class
     if(slideNub==1){
@@ -46,17 +48,32 @@ $(function(){
             }
         }
     }
+
+
+    //根据轮播图片数量设定轮播图按钮数量
+
+    if(slideBt){
+        for(i=1;i<=slideNub;i++){
+            $(".slide-bt").append("<span data-slide-bt='"+i+"' onclick='tz("+i+")'></span>");
+        }
+        $(".slide-bt").width(slideNub*$(".slide_btn_width").width());
+
+        $(".slide-bt").css("margin-left","-"+(slideNub*$(".slide_btn_width").width())/2+"px");
+    }
+
+
     //自动轮播
     if(autoLb){
         setInterval(function(){
         right();
-      }, autoLbtime*1000);
+    }, autoLbtime*1000);
     }
+
 
     if(touch){
         k_touch();
     }
-//			    slideLi();
+    slideLi();
     imgClickFy();
 })
 
@@ -77,6 +94,7 @@ function right(){
     slideLi();
 }
 
+
 //左滑动
 function left(){
     var fy = new Array();
@@ -94,12 +112,22 @@ function left(){
     slideLi();
 }
 
+
 //轮播图片左右图片点击翻页
 function imgClickFy(){
     $(".slide .img").removeAttr("onclick");
     $(".slide .img2").attr("onclick","left()");
     $(".slide .img4").attr("onclick","right()");
 }
+
+
+//修改当前最中间图片对应按钮选中状态
+function slideLi(){
+    var slideList = parseInt($(".slide .img3").attr("data-slide-imgId")) + 1;
+    $(".slide-bt span").removeClass("on");
+    $(".slide-bt span[data-slide-bt="+slideList+"]").addClass("on");
+}
+
 
 //轮播按钮点击翻页
 function tz(id){
@@ -121,6 +149,7 @@ function tz(id){
     }
     slideLi();
 }
+
 
 //触摸滑动模块
 function k_touch() {
@@ -147,7 +176,3 @@ function k_touch() {
         }
     }
 }
-
-
-//
-$('.index').height($(window).height());

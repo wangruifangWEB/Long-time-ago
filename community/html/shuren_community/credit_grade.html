@@ -11,9 +11,8 @@
     <script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="../../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../../js/shuren_community/credit_grade.js" charset="utf-8"></script>
-</head>
 
+</head>
 <body>
     <div class="index">
         <div class="credit_icon">
@@ -21,36 +20,43 @@
             <p class="credit_explain"><span>钻石</span>会员</p>
         </div>
         <div class="credit_button">
-            <button type="button" name="button"><a href="javascript:;">我的积分</a></button>
-            <button type="button" name="button"><a href="javascript:;">我的信用</a></button>
+            <button type="button" name="button"><a href="my_integral.html">我的积分</a></button>
+            <button type="button" name="button"><a href="my_credit.html">我的信用</a></button>
         </div>
         <div class="container_lunbo">
             <div id="slide" class="slide" class="index-slide" alt="star">
                 <!-- 轮播图片数量可自行增减 -->
                 <div class="img">
                     <a href="javascript:;">
-                        <img src="../../images/human_market/banner_first.png">
+                        <img src="../../images/shuren_community/banner.jpg">
                     </a>
                 </div>
                 <div class="img">
                     <a href="javascript:;">
-                        <img src="../../images/human_market/banner_first.png">
+                        <img src="../../images/shuren_community/banner.jpg">
                     </a>
                 </div>
                 <div class="img">
                     <a href="javascript:;">
-                        <img src="../../images/human_market/banner_first.png">
+                        <img src="../../images/shuren_community/banner.jpg">
                     </a>
                 </div>
                 <div class="img">
                     <a href="javascript:;">
-                        <img src="../../images/human_market/banner_first.png">
+                        <img src="../../images/shuren_community/banner.jpg">
                     </a>
                 </div>
+
                 <div class="slide-bt"></div>
             </div>
         </div>
-    </div>
-</body>
+        <div class="slide_btn_width">
 
+        </div>
+    </div>
+    <script src="../../js/shuren_community/credit_grade.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    $('.index').height($(window).height());
+    </script>
+</body>
 </html>
