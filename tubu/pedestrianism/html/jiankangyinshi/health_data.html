@@ -147,8 +147,8 @@
 				width: 0.32rem;
 				height: 0.44rem;
 			}
-			
-			
+
+
 		　　input:-ms-input-placeholder{
 				color: #595959;
 				font-size: .37rem;
@@ -163,7 +163,7 @@
 				font-family: PingFangSC-Medium;
 				opacity:1;
 			}/* WebKit browsers */
-			
+
 			/*底部颜色*/
 			.bottom{
 				background-color: #2A2A2A;
@@ -190,19 +190,19 @@
 			.mui-poppicker-header .mui-btn {
 			   color: #fff;
 			}
-			
+
 			/* 提示 */
 			.user_msg_list li{
 				position: relative;
 				/*pointer-events: none;*/
 			}
 			.user_msg_list li p{
-			
+
 			}
 			.user_msg_list li input{
 				width: 6.24rem;
 			}
-			
+
 			.red_notice{
 				border-radius: 0;
 				background-image: url(../../images/notice_red.png);
@@ -218,7 +218,7 @@
 				right: 0;
 				top: -0.15rem;
 				width: 0.4rem;
-				height: 1.1rem;	
+				height: 1.1rem;
 				z-index: 100;
 			}
 			.gray_notice img{
@@ -250,7 +250,7 @@
 			.mui-active{
 				transform: translateY(0px) !important;
 			}
-			
+
 			.shurutishi{
 				margin-left: 0.1rem;
 				margin-top: -0.1rem;
@@ -266,8 +266,8 @@
 				top: 0.03rem;
 				/*left: 0.55rem;*/
 			}
-			.add_transform{ 
-			    animation: add_transform 0.4s 0.1s 2; 
+			.add_transform{
+			    animation: add_transform 0.4s 0.1s 2;
 			}
 			@media screen and (min-width: 320px) {
 				.shurutishi{
@@ -304,7 +304,7 @@
 				40%{transform:rotate(-30deg) scale(1.2);}
 				60%{transform:rotate(30deg) scale(1.2);}
 				100%{transform:rotate(0deg) scale(1);}
-				
+
 			}
 		</style>
 	</head>
@@ -319,7 +319,7 @@
 						<span>健康饮食</span>
 					</div>
 				</header>
-				
+
 				<section class="zsec-bg">
 					<div class="z-box">
 						<div class="z-boxl">
@@ -346,11 +346,11 @@
 									<img src="../../images/huoyue_jindu.png"/>
 								</div>
 							</div>
-							
+
 						</div>
 					</div>
-					
-					<div class="z_boxbg user_msg"> 
+
+					<div class="z_boxbg user_msg">
 						<ul class="user_msg_list">
 							<li style="margin-top:0">
 								<p>姓名<span class="shurutishi"></span></p>
@@ -406,7 +406,7 @@
 					</div>
 				</section>
 				<div style="height: 0.98rem;"></div>
-				
+
 				<footer class="footer footer_c">
 					<ul class="bottom">
 						<li id="control_btn">
@@ -414,27 +414,27 @@
 						</li>
 					</ul>
 				</footer>
-				
+
 			</div>
 		</div>
-		
+
 		<script>
 			/*
-			 
+
 			 * 监测身份证信息 /^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$|^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/
 			 * 监测姓名 /^(((\s?[\u4e00-\u9fa5]+\s?)+)|([a-zA-Z]+\s?)+)$/
 			 * 监测手机号 /^1[3|4|5|8][0-9]\d{4,8}$/
 			 * 监测性别 /^(男|女)$/
 			 * 检测数字  /^[0-9]*$/
-			 * 
+			 *
 			 * */
 			// 检测姓名
-			
+
 			var myFunction=function(){
 				$(".user_msg_list li p .shurutishi").removeClass('red_notice');
-//				
+//
 			}
-			
+
 			var checkuser=function(){
 				var reg_user=/^(((\s?[\u4e00-\u9fa5]+\s?)+)|([a-zA-Z]+\s?)+)$/;
 				if(!reg_user.test($('.user').val())){
@@ -500,7 +500,7 @@
 			// 检测身份证
 			var checkcard=function(){
 				var reg_tel=/^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$|^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/;
-				
+
 				if(!reg_tel.test($('.card').val())){
 					$('.card').siblings('p').find('.shurutishi').addClass('red_notice').removeClass('green_notice');
 					setTimeout(function(){
@@ -562,14 +562,14 @@
 				}
 			}
 			// 检测年龄，身高，当前体重，标准体重
-			
+
 			$('.number').click(function(){
 				var i = $('input.number').index(this);
 				checknum=function(){
-					
+
 					var reg_tel=/^\+?[1-9][0-9]*$/;
 					if(!reg_tel.test($('.number').eq(i).val())){
-						
+
 						$('.number').eq(i).siblings('p').find('.shurutishi').addClass('red_notice').removeClass('green_notice');
 						setTimeout(function(){
 							$('.red_notice').addClass('add_transform');
@@ -598,17 +598,17 @@
 					}
 				}
 			})
-			
-			
-			
-			
+
+
+
+
 			// 计算顶部比例
 			var join_num=$('.join_num').html();
 			var enter_num=$('.enter_num').html();
 			var scale = parseInt(join_num) / parseInt(enter_num)*100;
 			$('.huoyuedu_jindu').animate({'left':(scale-1)+'%'},1000);
-			
-			
+
+
 			//防止键盘把当前输入框挡住
 			$('input').on('click', function () {
 			  var target = this;
@@ -617,12 +617,12 @@
 			        console.log('scrollIntoViewIfNeeded');
 			      },500);
 			});
-			
+
 			//设置高度
 			$(".zsec-bg").height($(window).height()-$(".bottom li").height());
-			
+
 //			$(".user_msg_list li input").removeAttr("disabled");
-			
+
 			$(".user_msg_list li input").click(function(){
 				$(this).siblings("p").fadeIn();
 				$(this).attr('placeholder','');
@@ -632,18 +632,18 @@
 				$('#showUserPicker .gray_notice').hide();
 				$('#showUserPicker2 .gray_notice').hide();
 			});
-			
-			
-			
-			
-			
+
+
+
+
+
 			$('.gray_notice').click(function(ev){
 				ev.preventDefault();
 				$(this).siblings('input').val('');
 				$(this).siblings('p').find('span').removeClass('green_notice');
 			})
-				
-				
+
+
 			//底部按钮操作
 			$("#control_btn").click(function(){
 				if($("#control_btn a").hasClass("bianji")){
@@ -671,7 +671,7 @@
 					var card=$('.card').val();
 					var gend=$('.gend').val();
 					var numberInfo=$('.number').val();
-					
+
 					if((user=='')||(tel=='')||(userCounty='')||(userSystem=='')||(userSystem=='')||(card=='')||(gend=='')||(numberInfo=='')){
 						alert('信息填写未完成,请完善相关信息');
 						return;
@@ -681,17 +681,17 @@
 					//在这里实现对文本框恢复设置
 					$('.user_msg_list li p span').removeClass('green_notice');
 					$('.user_msg_list li .gray_notice').hide();
-	            	$(".user_msg_list li input").attr("disabled",true); 
+	            	$(".user_msg_list li input").attr("disabled",true);
 	            	$('#showUserPicker').css('pointer-events','none');
 	            	$('#showUserPicker2').css('pointer-events','none');
 					$("#control_btn a").addClass("bianji").removeClass('baocun');
 					return false;
 				}
 			})
-			
-			
-			
-			
+
+
+
+
 			/*$("#control_btn").toggle(function(){
 				$("#control_btn a").html("保存");
 				//在这里实现对文本框恢复设置
@@ -714,7 +714,7 @@
 				var card=$('.card').val();
 				var gend=$('.gend').val();
 				var numberInfo=$('.number').val();
-				
+
 				if((user=='')||(tel=='')||(userCounty='')||(userSystem=='')||(userSystem=='')||(card=='')||(gend=='')||(numberInfo=='')){
 					alert('信息填写未完成,请完善相关信息');
 					return;
@@ -724,27 +724,27 @@
 				//在这里实现对文本框恢复设置
 				$('.user_msg_list li p span').removeClass('green_notice');
 				$('.user_msg_list li .gray_notice').hide();
-            	$(".user_msg_list li input").attr("disabled",true); 
-            	
+            	$(".user_msg_list li input").attr("disabled",true);
+
             	$('#showUserPicker').css('pointer-events','none');
             	$('#showUserPicker2').css('pointer-events','none');
-            	
+
 			});*/
 		</script>
-		
-		
+
+
 		<script src="../../js/mui.picker.min.js"></script>
 		<script src="../../js/mui.poppicker.js"></script>
 		<script>
-			
-			
-			(function($, doc) {	
+
+
+			(function($, doc) {
 				$.init();
 				$.ready(function() {
 					var _getParam = function(obj, param) {
 						return obj[param] || '';
 					};
-					
+
 					//工作行业选择
 					var userPicker1 = new $.PopPicker();
 					userPicker1.setData([{
@@ -757,7 +757,7 @@
 						value: '3',
 						text: '医药、医疗卫生'
 					}]);
-					
+
 					var showUserPickerButton = document.getElementById('showUserPicker');
 					var uc=document.getElementById('userCounty');
 					showUserPickerButton.addEventListener('tap', function(event) {
@@ -765,7 +765,7 @@
 						userPicker1.show(function(items) {
 							var cont=items[0].text;
 							uc.value = cont;
-							
+
 							document.getElementById('showUserPicker').setAttribute('class','mui-btn mui-btn-block disable');
             				document.getElementById('showUserPicker2').setAttribute('class','mui-btn mui-btn-block disable');
 //          				document.getElementById('showUserPicker').getElementsByClassName('gray_notice')[0].style.display='none';
@@ -774,7 +774,7 @@
 							//返回 false 可以阻止选择框的关闭
 							//return false;
 						});
-					}, false);				
+					}, false);
 				//工作岗位选择
 					var userPicker2 = new $.PopPicker();
 					userPicker2.setData([{
@@ -786,8 +786,8 @@
 					}, {
 						value: '3',
 						text: '医药工程师'
-					}]);	
-					
+					}]);
+
 				var showUserPickerButton = document.getElementById('showUserPicker2');
 					var us=document.getElementById('userSystem');
 					showUserPickerButton.addEventListener('click', function(event) {
@@ -796,19 +796,19 @@
 							 console.log(items[0].text);
 							var cont=items[0].text;
 							us.value=cont;
-							
+
             				document.getElementById('showUserPicker').setAttribute('class','mui-btn mui-btn-block disable');
             				document.getElementById('showUserPicker2').setAttribute('class','mui-btn mui-btn-block disable');
-            			
+
 							document.getElementById('showUserPicker2').getElementsByTagName('p')[0].getElementsByTagName('span')[0].setAttribute('class','green_notice shurutishi');
 							//返回 false 可以阻止选择框的关闭
 							//return false;
 						});
-					}, false);						
+					}, false);
 				});
 			})(mui, document);
-		
+
 		</script>
-		
+
 	</body>
 </html>
