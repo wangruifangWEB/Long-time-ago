@@ -60,12 +60,17 @@ div.integral_info_line{
 
 /* 积分兑换 */
 .integral_exchange{
+    height: .95rem;
+    background-color: #ffffff;
+}
+.integral_exchange_detail{
     background-color: #ffffff;
 }
 .integral_exchange_title{
     height: .95rem;
     width: 3.15rem;
     margin: 0 auto;
+
 }
 .integral_exchange_title p{
     width: .5rem;
@@ -96,12 +101,12 @@ div.integral_info_line{
     height: auto;
     padding-top: .2rem;
 }
-.integral_exchange_detail_li{
+.integral_exchange_detail li{
     width: 3.42rem;
     height: 2.32rem;
     border-radius: .1rem;
     background-color: #d3d1d1;
     margin-left: .24rem;
     margin-bottom: .24rem;
-    float: left;
+    display: inline-block;
 }

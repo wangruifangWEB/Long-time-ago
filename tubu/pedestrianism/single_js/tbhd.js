@@ -84,6 +84,7 @@ var mySwiper = new Swiper('.swiper-container',{
 		if(translateY < 0){
 			$('#slider img').slideUp(400);
 		}else{
+			
 		}
 	},
 	onTouchEnd: function(swiper) {

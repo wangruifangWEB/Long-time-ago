@@ -11,40 +11,62 @@
     <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/common.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/friend/my_integral.js" charset="utf-8"></script>
+    <style>
+        /*.swiper-container{overflow: hidden;}*/
+        .swiper-container, .w{height: calc(100vh - 60px);}
+    </style>
 </head>
 <body>
-    <div class="index">
-        <div class="integral_module_first">
-            <div class="integral_num">9585</div>
-                <div class="integral_info">
-                    <div class="integral_info_left">
-                        <img src="../../images/friend/make_integral.png" alt="">
-                        <p>赚积分</p>
-                    </div>
-                    <div class="integral_info_line"></div>
-                    <div class="integral_info_right">
-                        <img src="../../images/friend/integral_record.png" alt="">
-                        <p>积分记录</p>
-                    </div>
-                </div>
-        </div>
+    <div class="swiper-container">
+			<div class="swiper-wrapper w">
+				<div class="swiper-slide d">
+					<div class="init-loading list-group-item"><img src="../../images/human_market/refresh.png"/></div>
+						<div class="swiper-container2">
+							<div class="swiper-slide list-group">
+                                <div class="index">
+                                    <div class="integral_module_first">
+                                        <div class="integral_num">9585</div>
+                                        <div class="integral_info">
+                                            <div class="integral_info_left">
+                                                <img src="../../images/friend/make_integral.png" alt="">
+                                                <p>赚积分</p>
+                                            </div>
+                                            <div class="integral_info_line"></div>
+                                            <div class="integral_info_right">
+                                                <img src="../../images/friend/integral_record.png" alt="">
+                                                <p>积分记录</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="integral_exchange">
+                                        <div class="integral_exchange_title">
+                                            <p class="integral_exchange_title_line"></p>
+                                            <img src="images/friend/integral_exchange.png" alt="">
+                                            <span>积分兑换</span>
+                                            <p class="integral_exchange_title_line"></p>
+                                        </div>
+                                    </div>
+                                    <ul class="integral_exchange_detail">
+                                        <li>
+                                            <p>qwqwq</p>
+                                            <p>qwqwqwewq</p>
+                                        </li>
+                                        <li>
+                                            <p>qwqwq</p>
+                                            <p>qwqwqwewq</p>
+                                        </li>
 
-        <div class="integral_exchange">
-            <div class="integral_exchange_title">
-                <p class="integral_exchange_title_line"></p>
-                <img src="../../images/friend/integral_exchange.png" alt="">
-                <span>积分兑换</span>
-                <p class="integral_exchange_title_line"></p>
-            </div>
-            <ul class="integral_exchange_detail">
-                <li class="integral_exchange_detail_li"></li>
-                <li class="integral_exchange_detail_li"></li>
-                <li class="integral_exchange_detail_li"></li>
-                <li class="integral_exchange_detail_li"></li>
-            </ul>
-        </div>
-    </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+			<div class="loadtip"><p>正在加载!</p></div>
+			<div class="swiper-scrollbar"></div>
+		</div>
+	</div>
+    <script src="js/friend/my_integral.js" charset="utf-8"></script>
 </body>
-
 </html>

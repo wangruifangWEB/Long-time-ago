@@ -132,7 +132,7 @@
 	box-shadow: 0 0.08rem 0.12rem rgba(153,103,220,0.4);
 	border-radius: 0.3rem;
 	margin-top: 0.6rem;
-	
+
 }
 /* 已订阅按钮 */
 .hasDingyue{
@@ -160,7 +160,7 @@
 .list_cont li{
 	float: left;
 	width: 2.2rem;
-	
+
 }
 .list_cont li img{
 	width: 2.1rem;
@@ -206,7 +206,7 @@
 .course_cont_title_img img{
 	width: 100%;
 	height: 100%;
-	
+
 }
 .course_cont_title_name_warp{
 	float: left;
@@ -241,7 +241,7 @@
 	bottom: 0;
 	left: 0;
 	background-color: #000;
-	opacity: 0.5;
+	opacity: 0.7;
 	border-bottom-left-radius: 0.1rem;
 	border-bottom-right-radius: 0.1rem;
 }
@@ -507,7 +507,7 @@
 	background-color: #ffffff;
 }*/
 .loadtip img{
-	
+
 	position: fixed;
 	bottom: 1.3rem;
 	left: 50%;

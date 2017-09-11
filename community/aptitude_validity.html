@@ -12,6 +12,7 @@
     <script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/common.js" type="text/javascript" charset="utf-8"></script>
 </head>
+
 <body>
     <div class="index">
         <form class="" action="index.html" method="post" name="myform">
@@ -55,22 +56,26 @@
     </div>
     <script src="js/friend/aptitude_validity.js" charset="utf-8"></script>
     <script type="text/javascript">
-        // document.onclick=function(){
         setInterval(function() {
-            var upload1=document.myform.upload1.value;
-            var upload2=document.myform.upload2.value;
-		    if(upload1==""||upload2==""){
-                $('.upload').css({'background-color':'#cccccc'});
-                $('#upload').attr('disabled',true);
-		        return;
-		    }else{
-                $('#upload').attr('disabled',false);
-                $('.upload').css({'background-color':'#48a8f5'});
+            var upload1 = document.myform.upload1.value;
+            var upload2 = document.myform.upload2.value;
+            if (upload1 == "" || upload2 == "") {
+                $('.upload').css({
+                    'background-color': '#cccccc'
+                });
+                $('#upload').attr('disabled', true);
+                return;
+            } else {
+                $('#upload').attr('disabled', false);
+                $('.upload').css({
+                    'background-color': '#48a8f5'
+                });
             }
-        },200)
+        }, 200)
         $('#upload').click(function() {
             alert(1);
         })
     </script>
 </body>
+
 </html>

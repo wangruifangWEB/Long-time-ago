@@ -58,7 +58,7 @@ window.onscroll=function(){
 		$('.tab_switch_ul').css({'position':'fixed','top':'0'});
 		$('.tab_switch_ul li').eq(2).addClass('active').siblings().removeClass('active');
 		$('.fabu_warp').css('position','fixed');
-		
+
 	}else if($(document).scrollTop() >= scrollH_second){  //第二个锚点
 		$('.tab_switch_ul').fadeIn(500);
 		$('.tab_switch_ul').css({'position':'fixed','top':'0'});
@@ -73,7 +73,7 @@ window.onscroll=function(){
 		$('.tab_switch_ul').hide();
 		$('.fabu_warp').css('position','absolute');
 	}
-	
+
 	// 回到底部
 	if($(document).scrollTop() >= $(window).height()){
 		$('#toTop').fadeIn(500);
@@ -82,21 +82,25 @@ window.onscroll=function(){
 		});
 	}
 }
-
+$('.video_play').toggle(function() {
+	document.getElementsByTagName('video')[0].play();
+},function() {
+	document.getElementsByTagName('video')[0].pause();
+})
 // 锚点定位问题
 var navHeight=$('.tab_switch_ul').height();
-function locateAt(e){  
-    e =  document.getElementById(e);/*以id命名的锚点*/  
-    y = e.offsetTop;    
-    while(e=e.offsetParent){ y += e.offsetTop;}  
-    y-=navHeight;/*悬浮菜单的高度*/  
-    window.scrollTo(0,y); 
+function locateAt(e){
+    e =  document.getElementById(e);/*以id命名的锚点*/
+    y = e.offsetTop;
+    while(e=e.offsetParent){ y += e.offsetTop;}
+    y-=navHeight;/*悬浮菜单的高度*/
+    window.scrollTo(0,y);
     console.log(y);
 }
 
 // 发送按钮
 $('.fabu_warp button').click(function(){
-	
+
 })
 
 // 上拉加载
@@ -119,7 +123,7 @@ $(function(){
             	url:"http://www.baidu.com",
 				type:"post",
 				success: function(data){
-					
+
 				},
 				error:function(){
 					$(".loadtip p").show();
@@ -150,7 +154,7 @@ $(function(){
 							$('#no_pinglun').css('display','none');
 						}
 					}, 800);
-					
+
 				}
             })
             $(".loadtip").css('display','block');

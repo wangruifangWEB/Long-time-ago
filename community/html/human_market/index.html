@@ -15,10 +15,10 @@
 				height:.25rem;
 				bottom: 1.2rem;
 			}
-		</style>	
+		</style>
 	</head>
 	<body>
-	    <!--竹杆小组—详情内容-->   
+	    <!--竹杆小组—详情内容-->
 	    <div class="swiper-container">
 			<div class="swiper-wrapper w">
 				<div class="swiper-slide d">
@@ -31,7 +31,7 @@
 										<div class="search_warp">
 											<a href="search_result.html"><input type="text" class="search" placeholder="心理咨询"/></a>
 										</div>
-										<!--轮播图-->	
+										<!--轮播图-->
 										<div class="container_lunbo">
 										    <div id="slide" class="slide" class="index-slide" alt="star">
 										        <!-- 轮播图片数量可自行增减 -->
@@ -58,7 +58,7 @@
 										        <div class="slide-bt"></div>
 										    </div>
 										</div>
-										
+
 									    <div class="second">
 									        <ul class="second_list">
 									            <li>
@@ -120,7 +120,7 @@
 					    						<p class="course_cont_remark_right">图文</p>
 					    					</div>
 				    					</div>
-				    					
+
 				    					<div class="course_cont">
 				    						<div class="course_cont_title">
 					    						<div class="course_cont_title_img" onclick="location.href='dingyuehao.html'">
@@ -144,7 +144,7 @@
 					    						<p class="course_cont_remark_right">图文</p>
 					    					</div>
 				    					</div>
-				    				
+
 				    					<div class="course_cont">
 				    						<div class="course_cont_title">
 					    						<div class="course_cont_title_img" onclick="location.href='dingyuehao.html'">
@@ -178,7 +178,7 @@
 				<div class="swiper-scrollbar"></div>
 			</div>
 		</div>
-	
+
 		<!-- 底部导航 -->
 		<ul class="nav_bottom">
 			<li>
@@ -206,7 +206,7 @@
 				</a>
 			</li>
 		</ul>
-	
+
 		<!--回到顶部-->
 		<div id="toTop">
 			<a href="javascript:;"><img src="../../images/human_market/totop.png" alt="" />顶部</ a>
@@ -222,14 +222,14 @@
 			$(window).resize(function(){
 			   $(".slide").height($(".slide").width()*0.56);
 			});
-			
+
 			$(function(){
 			    $(".slide").height($(".slide").width()*0.56);
 			    slideNub = $(".slide .img").size();             //获取轮播图片数量
 			    for(i=0;i<slideNub;i++){
 			        $(".slide .img:eq("+i+")").attr("data-slide-imgId",i);
 			    }
-			
+
 			    //根据轮播图片数量设定图片位置对应的class
 			    if(slideNub==1){
 			        for(i=0;i<slideNub;i++){
@@ -254,9 +254,9 @@
 			    if(slideNub>=6){
 			        for(i=0;i<slideNub;i++){
 			            if(i<5){
-			               $(".slide .img:eq("+i+")").addClass("img"+(i+1)); 
+			               $(".slide .img:eq("+i+")").addClass("img"+(i+1));
 			            }else{
-			                $(".slide .img:eq("+i+")").addClass("img5"); 
+			                $(".slide .img:eq("+i+")").addClass("img5");
 			            }
 			        }
 			    }
@@ -266,14 +266,14 @@
 			        right();
 			  	  }, autoLbtime*1000);
 			    }
-			
+
 			    if(touch){
 			        k_touch();
 			    }
 //			    slideLi();
 			    imgClickFy();
 			})
-			
+
 			//右滑动
 			function right(){
 			    var fy = new Array();
@@ -284,13 +284,13 @@
 			        if(i==0){
 			            $(".slide .img[data-slide-imgId="+i+"]").attr("class",fy[slideNub-1]);
 			        }else{
-			           $(".slide .img[data-slide-imgId="+i+"]").attr("class",fy[i-1]); 
+			           $(".slide .img[data-slide-imgId="+i+"]").attr("class",fy[i-1]);
 			        }
 			    }
 			    imgClickFy();
 			    slideLi();
 			}
-			
+
 			//左滑动
 			function left(){
 			    var fy = new Array();
@@ -301,13 +301,13 @@
 			        if(i==(slideNub-1)){
 			            $(".slide .img[data-slide-imgId="+i+"]").attr("class",fy[0]);
 			        }else{
-			           $(".slide .img[data-slide-imgId="+i+"]").attr("class",fy[i+1]); 
+			           $(".slide .img[data-slide-imgId="+i+"]").attr("class",fy[i+1]);
 			        }
 			    }
 			    imgClickFy();
 			    slideLi();
 			}
-			
+
 			//轮播图片左右图片点击翻页
 			function imgClickFy(){
 			    $(".slide .img").removeAttr("onclick");
@@ -321,7 +321,7 @@
 			    if(tzcs>0){
 			        for(i=0;i<tzcs;i++){
 			            setTimeout(function(){
-			              right();  
+			              right();
 			            },1);
 			        }
 			    }
@@ -329,13 +329,13 @@
 			        tzcs=(-tzcs);
 			        for(i=0;i<tzcs;i++){
 			            setTimeout(function(){
-			              left();  
+			              left();
 			            },1);
 			        }
 			    }
 			    slideLi();
 			}
-			
+
 			//触摸滑动模块
 			function k_touch() {
 			    var _start = 0, _end = 0, _content = document.getElementById("slide");
@@ -350,7 +350,7 @@
 			        var touch = event.targetTouches[0];
 			        _end = (_start - touch.pageX);
 			    }
-			
+
 			    function touchEnd(event) {
 			        if (_end < -100) {
 			            left();
