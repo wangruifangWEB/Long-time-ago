@@ -4,22 +4,22 @@
 		<meta charset="UTF-8">
 		<title>我的徒步</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
-		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
-		<link rel="stylesheet" href="../../css/css.css" />
-		<link rel="stylesheet" href="../../css/mui.picker.all.css" />
-		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
-		<link rel="stylesheet" href="../../single_css/global.css">
-		<link rel="stylesheet" href="../../single_css/zmpx.css">
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/css.css" />
+		<link rel="stylesheet" href="../css/mui.picker.all.css" />
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="../single_css/global.css">
+		<link rel="stylesheet" href="../single_css/zmpx.css">
 		<style>
 			body{
 				background-color: #2A2A2A;
 			}
 			.d-title,.z-boxl,.zsec-bg{
-				background-color: #292929;
+				background-color: #efeff4;
 			}
 			.list-group ul li{
 				background-color: #000;
@@ -37,11 +37,14 @@
 				width: 6.24rem;
 				height: 4.78rem;
 				margin: 0.32rem auto 0;
-				background-color: #252423;
+				background-color: #f6f6f6;
 				border-top-left-radius: 0.1rem;
 				border-bottom-left-radius: 0.1rem;
 				border-bottom-right-radius: 0.1rem;
 			}
+			
+			
+			
 			.zsec-bg{
 				padding-bottom:.32rem;
 			}
@@ -49,10 +52,11 @@
 			.user_msg{
 				padding-top:.32rem;
 			}
+			
 			.user_msg ul li{
 				width:6.24rem;
 				height:1.07rem;
-				border-bottom: .02rem solid #0d0d0d;
+				border-bottom: #d0d0d0 solid 0.01rem;
 				margin-top:.32rem;
 				display: table;
 			}
@@ -79,45 +83,54 @@
 			span{
 				border: 0 !important;
 			}
+			
 			.user_msg input{
 				border:none;
-				color:#CEAD69;
+				color:#f69200;
 				font-size:.37rem;
 				line-height:.52rem;
 				background-color: transparent;
 				font-family: PingFangSC-Medium;
 				margin-bottom: .15rem;
 			}
+			
 			.z-boxr{
 				width: 3.84rem;
 				height: 4.78rem;
 				border-radius: 0 0.1rem 0 0;
 			}
 			.z-boxl{
-				background-color: #252423;
+				background-color: #f6f6f6;
 				border-radius:0.1rem 0 0 0.1rem;
+				border-top-left-radius: 0.1rem;
 			}
+			
+			
 			.z-boxl1,.z-boxl2{
-				border-bottom: #191918 solid 0.01rem;
+				background-color: #f6f6f6;
+				border-bottom: #d8d8d8 solid 0.01rem;
 			}
 			.z-boxl1 p{
 				font-size: 0.37rem;
-				color: #CEAD69;
+				color: #f69200;
 				height: 1.04rem;
 				line-height: 1.04rem;
 			}
+			
 			.z-boxl2 p{
 				font-size: 0.26rem;
 				color: #595959;
 			}
 			.z-boxl2 h2{
 				font-size: 0.48rem;
-				color: #CEAD69;
+				color: #f69200;
 			}
+			
 			.huoyue{
 				height: 0.93rem;
 				padding-top: 0;
 				border-bottom: none;
+				border-bottom-left-radius: 0.1rem;
 			}
 			.huoyue p{
 				height: 0.93rem;
@@ -166,7 +179,7 @@
 
 			/*底部颜色*/
 			.bottom{
-				background-color: #2A2A2A;
+				background-color: #f6f6f6;
 			}
 			/*插件重置*/
 			.mui-poppicker{
@@ -194,7 +207,6 @@
 			/* 提示 */
 			.user_msg_list li{
 				position: relative;
-				/*pointer-events: none;*/
 			}
 			.user_msg_list li p{
 
@@ -205,12 +217,11 @@
 
 			.red_notice{
 				border-radius: 0;
-				background-image: url(../../images/notice_red.png);
+				background-image: url(../images/notice_red.png);
 				color: red;
 			}
 			.green_notice{
-				background-image: url(../../images/notice_green.png);
-				/*color: green;*/
+				background-image: url(../images/notice_green.png);
 			}
 			.gray_notice{
 				display: none;
@@ -256,15 +267,12 @@
 				margin-top: -0.1rem;
 				width: 0.24rem;
 				height: 0.24rem;
-				/*background-color: red;*/
 				background-size: 0.24rem 0.24rem;
 				background-position: center center;
 				background-repeat: no-repeat;
-				/*background-image: url(../../images/notice_error.png);*/
 				display: inline-block;
 				position: relative;
 				top: 0.03rem;
-				/*left: 0.55rem;*/
 			}
 			.add_transform{
 			    animation: add_transform 0.4s 0.1s 2;
@@ -306,6 +314,53 @@
 				100%{transform:rotate(0deg) scale(1);}
 
 			}
+
+			/* 弹框 */
+			.alert_show{
+			    width: 5.60rem;
+			    height: 3.14rem;
+			    background: #F6F6F6;
+			    border-radius: .2rem;
+			    box-shadow:0 0.15rem 0.8rem #ccc;
+			    z-index: 1000;
+			    position: fixed;
+			    top: 50%;
+			    left: 50%;
+			    margin-left:-2.8rem;
+			    margin-top:-1.6rem;
+			}
+			.alert_show div.first{
+				width:2.82rem;
+				height:.9rem;
+				text-align: center;
+				margin:0 auto;
+			}
+			.alert_show div.first span{
+				font-weight: bold;
+			}
+			.alert_show p{
+				font-size:.32rem;
+				font-family: PingFangSC-Medium, sans-serif;
+				line-height:.45rem;
+			}
+			.alert_show div.second{
+				width:5.6rem;
+				height:.98rem;				
+				font-size:.32rem;
+				font-family: PingFangSC-Medium, sans-serif;
+				line-height:.95rem;
+				text-align: center;
+				font-weight: bold;
+			}
+			.alert_show .first_b{
+				height:2.16rem;
+				padding-top:.64rem;
+				box-shadow:0 2px 6px -2px #999;					
+			}
+			/* 灰色弹框 */
+			.notice_layer{
+				bottom: 1.42rem;
+			}
 		</style>
 	</head>
 	<body>
@@ -339,11 +394,11 @@
 							</div>
 						</div>
 						<div class="z-boxr">
-							<img class="z-boxr-bg" src="../../images/head_list.jpg" alt="">
+							<img class="z-boxr-bg" src="../images/head_list.jpg" alt="">
 							<div class="huoyuedu">
-								<img src="../../images/huoyue_bg.png" alt="" />
+								<img src="../images/huoyue_bg_bai.png" alt="" />
 								<div class="huoyuedu_jindu">
-									<img src="../../images/huoyue_jindu.png"/>
+									<img src="../images/huoyue_jindu_bai.png"/>
 								</div>
 							</div>
 
@@ -355,12 +410,12 @@
 							<li style="margin-top:0">
 								<p>姓名<span class="shurutishi"></span></p>
 								<input type="text" placeholder="姓名" class="user" disabled onblur="checkuser()" oninput="myFunction()" />
-								<span class="gray_notice"><img src="../../images/notice_gray.png" alt="" /></span>
+								<span class="gray_notice"><img src="../images/notice_gray.png" alt="" /></span>
 							</li>
 							<li>
 								<p>电话<span class="shurutishi"></span></p>
 								<input type="text" placeholder="电话" class="tel" disabled onblur="checktel()" oninput="myFunction()" />
-								<span class="gray_notice"><img src="../../images/notice_gray.png" alt="" /></span>
+								<span class="gray_notice"><img src="../images/notice_gray.png" alt="" /></span>
 							</li>
 							<li id='showUserPicker' class="mui-btn mui-btn-block">
 								<p id="userPickerP1">工作行业<span class="shurutishi"></span></p>
@@ -375,38 +430,48 @@
 							<li>
 								<p>身份证<span class="shurutishi"></span></p>
 								<input type="text" placeholder="身份证" class="card" onblur="checkcard()" disabled oninput="myFunction()" />
-								<span class="gray_notice"><img src="../../images/notice_gray.png" alt="" /></span>
+								<span class="gray_notice"><img src="../images/notice_gray.png" alt="" /></span>
 							</li>
 							<li>
 								<p>性别<span class="shurutishi"></span></p>
 								<input type="text" placeholder="性别" class="gend" onblur="checkgend()" disabled oninput="myFunction()" />
-								<span class="gray_notice"><img src="../../images/notice_gray.png" alt="" /></span>
+								<span class="gray_notice"><img src="../images/notice_gray.png" alt="" /></span>
 							</li>
 							<li>
 								<p>年龄<span class="shurutishi"></span></p>
 								<input type="text" placeholder="年龄" class="number" onblur="checknum()" disabled oninput="myFunction()" />
-								<span class="gray_notice"><img src="../../images/notice_gray.png" alt="" /></span>
+								<span class="gray_notice"><img src="../images/notice_gray.png" alt="" /></span>
 							</li>
 							<li>
 								<p>身高 (cm)<span class="shurutishi"></span></p>
 								<input type="text" placeholder="身高 (cm)" class="number" onblur="checknum()" disabled oninput="myFunction()" />
-								<span class="gray_notice"><img src="../../images/notice_gray.png" alt="" /></span>
+								<span class="gray_notice"><img src="../images/notice_gray.png" alt="" /></span>
 							</li>
 							<li>
 								<p>当前体重 (kg)<span class="shurutishi"></span></p>
 								<input type="text" placeholder="当前体重 (kg)" class="number" onblur="checknum()" disabled/>
-								<span class="gray_notice"><img src="../../images/notice_gray.png" alt="" /></span>
+								<span class="gray_notice"><img src="../images/notice_gray.png" alt="" /></span>
 							</li>
 							<li>
 								<p>目标体重 (kg)<span class="shurutishi"></span>	</p>
 								<input type="text" placeholder="目标体重 (kg)" class="number" onblur="checknum()"  disabled/>
-								<span class="gray_notice"><img src="../../images/notice_gray.png" alt="" /></span>
+								<span class="gray_notice"><img src="../images/notice_gray.png" alt="" /></span>
 							</li>
 						</ul>
 					</div>
 				</section>
-				<div style="height: 0.98rem;"></div>
+				<div class="alert_show alert_show2" style="display:none">
+					<div class="first_b alert_txt">									
+						<p style="text-align: center;">信息填写未完成,请完善相关信息！</p >			
+					</div>
+					<div class="second">确认</div>
+				</div>
 
+				
+				<div class="notice_layer_warp">
+					<button class="notice_layer">资料编辑成功！</button>
+				</div>
+			
 				<footer class="footer footer_c">
 					<ul class="bottom">
 						<li id="control_btn">
@@ -673,8 +738,11 @@
 					var numberInfo=$('.number').val();
 
 					if((user=='')||(tel=='')||(userCounty='')||(userSystem=='')||(userSystem=='')||(card=='')||(gend=='')||(numberInfo=='')){
-						alert('信息填写未完成,请完善相关信息');
+						$('.alert_show').css('display','block');
 						return;
+					}else{
+						$('.notice_layer').show();
+						$('.notice_layer').fadeOut(1500);
 					}
 					$('.user_msg_list li .gray_notice').hide();
 					$("#control_btn a").html("编辑");
@@ -689,53 +757,17 @@
 				}
 			})
 
+			// 关闭弹框
+			$('.alert_show .second').click(function(){
+				$('.alert_show').css('display','none');
+			})
 
-
-
-			/*$("#control_btn").toggle(function(){
-				$("#control_btn a").html("保存");
-				//在这里实现对文本框恢复设置
-            	$(".user_msg_list li input").removeAttr("disabled");
-            	$('#showUserPicker').css('pointer-events','auto');
-            	$('#showUserPicker2').css('pointer-events','auto');
-            	//点击显示动画
-				$(".user_msg_list li input").click(function(){
-					$(this).siblings("p").fadeIn();
-					$(this).attr('placeholder','')
-					$('#showUserPicker').css('pointer-events','none');
-            		$('#showUserPicker2').css('pointer-events','none');
-					$(this).parent().find('.gray_notice').show().parent().siblings().find('.gray_notice').hide();
-				});
-			},function(){
-				var user=$('.user').val();
-				var tel=$('tel').val();
-				var userCounty=$('#userCounty').val();
-				var userSystem=$('#userSystem').val();
-				var card=$('.card').val();
-				var gend=$('.gend').val();
-				var numberInfo=$('.number').val();
-
-				if((user=='')||(tel=='')||(userCounty='')||(userSystem=='')||(userSystem=='')||(card=='')||(gend=='')||(numberInfo=='')){
-					alert('信息填写未完成,请完善相关信息');
-					return;
-				}
-				$('.user_msg_list li .gray_notice').hide();
-				$("#control_btn a").html("编辑");
-				//在这里实现对文本框恢复设置
-				$('.user_msg_list li p span').removeClass('green_notice');
-				$('.user_msg_list li .gray_notice').hide();
-            	$(".user_msg_list li input").attr("disabled",true);
-
-            	$('#showUserPicker').css('pointer-events','none');
-            	$('#showUserPicker2').css('pointer-events','none');
-
-			});*/
 		</script>
 
 
-		<script src="../../js/mui.picker.min.js"></script>
-		<script src="../../js/mui.poppicker.js"></script>
-		<script src="../../js/city.data.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.picker.min.js"></script>
+		<script src="../js/mui.poppicker.js"></script>
+		<script src="../js/city.data.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 
 
