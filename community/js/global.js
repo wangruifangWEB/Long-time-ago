@@ -6,7 +6,7 @@ function fingerTouch(innerEle,innerEleFather,fillEle,outerEle){
 		$(window).load(function(){
 			outerEle.mCustomScrollbar({
 				horizontalScroll:true,
-				advanced:{ 
+				advanced:{
 				    updateOnContentResize:true
 				}
 			});
@@ -27,15 +27,16 @@ $('.list_cont_warp').each(function(i){
 	new fingerTouch($('.list_cont'+(i+1)+' li'),$('.list_cont'+(i+1)),$('.list_padding_width'),$('.list_cont_warp'+(i+1)));
 });
 
+
 function zuohua(){
 //	$(document).ready(function(e) {
     // 设定每一行的宽度=屏幕宽度+按钮宽度
-    // 设定常规信息区域宽度=屏幕宽度 
+    // 设定常规信息区域宽度=屏幕宽度
     $(".dingyue").width($(document).width());
     $(".mydingyue_cont").width( $(".dingyue").width()+$(".cancel_dingyue").width());
     // 获取所有行，对每一行设置监听
     var lines = $(".mydingyue_cont");
-    var len = lines.length; 
+    var len = lines.length;
     var lastX, lastXForMobile;
     // 用于记录被按下的对象
     var pressedObj;  // 当前左滑的对象
@@ -46,26 +47,25 @@ function zuohua(){
     for (var i = 0; i < len; ++i) {
     	   lines[i].addEventListener('touchstart', function(e){
             lastXForMobile = e.changedTouches[0].pageX;
-            pressedObj = this; // 记录被按下的对象 
-
+            pressedObj = this; // 记录被按下的对象
             // 记录开始按下时的点
             var touches = event.touches[0];
-            start = { 
+            start = {
                 x: touches.pageX, // 横坐标
                 y: touches.pageY  // 纵坐标
             };
         });
         lines[i].addEventListener('touchstart', function(e){
             lastXForMobile = e.changedTouches[0].pageX;
-            pressedObj = this; // 记录被按下的对象 
+            pressedObj = this; // 记录被按下的对象
 
             // 记录开始按下时的点
             var touches = event.touches[0];
-            start = { 
+            start = {
                 x: touches.pageX, // 横坐标
                 y: touches.pageY  // 纵坐标
             };
-        });		
+        });
         lines[i].addEventListener('touchmove',function(e){
             var touches = event.touches[0];
             delta = {
@@ -84,7 +84,7 @@ function zuohua(){
             var diffX = e.changedTouches[0].pageX - lastXForMobile;
             if (diffX < -50) {
                 $(pressedObj).animate({marginLeft:"-1.26rem"}, 200); // 左滑
-                lastLeftObj && lastLeftObj != pressedObj && 
+                lastLeftObj && lastLeftObj != pressedObj &&
                     $(lastLeftObj).animate({marginLeft:"0"}, 200); // 已经左滑状态的按钮右滑
                 lastLeftObj = pressedObj; // 记录上一个左滑的对象
             } else if (diffX > 50) {

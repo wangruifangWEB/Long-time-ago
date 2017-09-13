@@ -735,6 +735,7 @@
 
 		<script src="../../js/mui.picker.min.js"></script>
 		<script src="../../js/mui.poppicker.js"></script>
+		<script src="../../js/city.data.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 
 
@@ -745,61 +746,39 @@
 						return obj[param] || '';
 					};
 
-					//工作行业选择
-					var userPicker1 = new $.PopPicker();
-					userPicker1.setData([{
-						value: '1',
-						text: '一般工厂企业'
-					}, {
-						value: '2',
-						text: 'IT行业'
-					}, {
-						value: '3',
-						text: '医药、医疗卫生'
-					}]);
-
+					var cityPicker = new $.PopPicker({layer:2});
+					cityPicker.setData(cityData);
+					
 					var showUserPickerButton = document.getElementById('showUserPicker');
 					var uc=document.getElementById('userCounty');
 					showUserPickerButton.addEventListener('tap', function(event) {
+						document.getElementsByClassName('mui-poppicker-body')[0].getElementsByClassName('mui-picker')[1].style.display="none";
+						document.getElementsByClassName('mui-poppicker-body')[0].getElementsByClassName('mui-picker')[0].style.display="block";
+						document.getElementsByClassName('mui-poppicker-body')[0].getElementsByClassName('mui-picker')[0].style.width="100%";
 						event.stopPropagation();
-						userPicker1.show(function(items) {
+						cityPicker.show(function(items) {
 							var cont=items[0].text;
 							uc.value = cont;
-
 							document.getElementById('showUserPicker').setAttribute('class','mui-btn mui-btn-block disable');
             				document.getElementById('showUserPicker2').setAttribute('class','mui-btn mui-btn-block disable');
-//          				document.getElementById('showUserPicker').getElementsByClassName('gray_notice')[0].style.display='none';
-//          				document.getElementById('showUserPicker2').getElementsByClassName('gray_notice')[0].style.display='none';
 							document.getElementById('showUserPicker').getElementsByTagName('p')[0].getElementsByTagName('span')[0].setAttribute('class','green_notice shurutishi');
 							//返回 false 可以阻止选择框的关闭
 							//return false;
 						});
 					}, false);
 				//工作岗位选择
-					var userPicker2 = new $.PopPicker();
-					userPicker2.setData([{
-						value: '1',
-						text: '技术人员、商业人员'
-					}, {
-						value: '2',
-						text: '开发工程师'
-					}, {
-						value: '3',
-						text: '医药工程师'
-					}]);
-
 				var showUserPickerButton = document.getElementById('showUserPicker2');
 					var us=document.getElementById('userSystem');
 					showUserPickerButton.addEventListener('click', function(event) {
+						document.getElementsByClassName('mui-poppicker-body')[0].getElementsByClassName('mui-picker')[0].style.display="none";
+						document.getElementsByClassName('mui-poppicker-body')[0].getElementsByClassName('mui-picker')[1].style.display="block";
+						document.getElementsByClassName('mui-poppicker-body')[0].getElementsByClassName('mui-picker')[1].style.width="100%";
 						event.stopPropagation();
-						userPicker2.show(function(items) {
-							 console.log(items[0].text);
-							var cont=items[0].text;
+						cityPicker.show(function(items) {
+							var cont=items[1].text;
 							us.value=cont;
-
             				document.getElementById('showUserPicker').setAttribute('class','mui-btn mui-btn-block disable');
             				document.getElementById('showUserPicker2').setAttribute('class','mui-btn mui-btn-block disable');
-
 							document.getElementById('showUserPicker2').getElementsByTagName('p')[0].getElementsByTagName('span')[0].setAttribute('class','green_notice shurutishi');
 							//返回 false 可以阻止选择框的关闭
 							//return false;
