@@ -306,6 +306,53 @@
 				100%{transform:rotate(0deg) scale(1);}
 
 			}
+
+			/* 弹框 */
+			.alert_show{
+			    width: 5.60rem;
+			    height: 3.14rem;
+			    background: #F6F6F6;
+			    border-radius: .2rem;
+			    box-shadow:0 0.15rem 0.8rem #ccc;
+			    z-index: 1000;
+			    position: fixed;
+			    top: 50%;
+			    left: 50%;
+			    margin-left:-2.8rem;
+			    margin-top:-1.6rem;
+			}
+			.alert_show div.first{
+				width:2.82rem;
+				height:.9rem;
+				text-align: center;
+				margin:0 auto;
+			}
+			.alert_show div.first span{
+				font-weight: bold;
+			}
+			.alert_show p{
+				font-size:.32rem;
+				font-family: PingFangSC-Medium, sans-serif;
+				line-height:.45rem;
+			}
+			.alert_show div.second{
+				width:5.6rem;
+				height:.98rem;				
+				font-size:.32rem;
+				font-family: PingFangSC-Medium, sans-serif;
+				line-height:.95rem;
+				text-align: center;
+				font-weight: bold;
+			}
+			.alert_show .first_b{
+				height:2.16rem;
+				padding-top:.64rem;
+				box-shadow:0 2px 6px -2px #999;					
+			}
+			/* 灰色弹框 */
+			.notice_layer{
+				bottom: 1.42rem;
+			}
 		</style>
 	</head>
 	<body>
@@ -405,8 +452,18 @@
 						</ul>
 					</div>
 				</section>
-				<div style="height: 0.98rem;"></div>
+				<div class="alert_show alert_show2" style="display:none">
+					<div class="first_b alert_txt">									
+						<p style="text-align: center;">信息填写未完成,请完善相关信息！</p >			
+					</div>
+					<div class="second">确认</div>
+				</div>
 
+				
+				<div class="notice_layer_warp">
+					<button class="notice_layer">资料编辑成功！</button>
+				</div>
+			
 				<footer class="footer footer_c">
 					<ul class="bottom">
 						<li id="control_btn">
@@ -414,7 +471,6 @@
 						</li>
 					</ul>
 				</footer>
-
 			</div>
 		</div>
 
@@ -689,66 +745,19 @@
 				}
 			})
 
-
-
-
-			/*$("#control_btn").toggle(function(){
-				$("#control_btn a").html("保存");
-				//在这里实现对文本框恢复设置
-            	$(".user_msg_list li input").removeAttr("disabled");
-            	$('#showUserPicker').css('pointer-events','auto');
-            	$('#showUserPicker2').css('pointer-events','auto');
-            	//点击显示动画
-				$(".user_msg_list li input").click(function(){
-					$(this).siblings("p").fadeIn();
-					$(this).attr('placeholder','')
-					$('#showUserPicker').css('pointer-events','none');
-            		$('#showUserPicker2').css('pointer-events','none');
-					$(this).parent().find('.gray_notice').show().parent().siblings().find('.gray_notice').hide();
-				});
-			},function(){
-				var user=$('.user').val();
-				var tel=$('tel').val();
-				var userCounty=$('#userCounty').val();
-				var userSystem=$('#userSystem').val();
-				var card=$('.card').val();
-				var gend=$('.gend').val();
-				var numberInfo=$('.number').val();
-
-				if((user=='')||(tel=='')||(userCounty='')||(userSystem=='')||(userSystem=='')||(card=='')||(gend=='')||(numberInfo=='')){
-					alert('信息填写未完成,请完善相关信息');
-					return;
-				}
-				$('.user_msg_list li .gray_notice').hide();
-				$("#control_btn a").html("编辑");
-				//在这里实现对文本框恢复设置
-				$('.user_msg_list li p span').removeClass('green_notice');
-				$('.user_msg_list li .gray_notice').hide();
-            	$(".user_msg_list li input").attr("disabled",true);
-
-            	$('#showUserPicker').css('pointer-events','none');
-            	$('#showUserPicker2').css('pointer-events','none');
-
-			});*/
 		</script>
-
-
 		<script src="../../js/mui.picker.min.js"></script>
 		<script src="../../js/mui.poppicker.js"></script>
 		<script src="../../js/city.data.js" type="text/javascript" charset="utf-8"></script>
 		<script>
-
-
 			(function($, doc) {
 				$.init();
 				$.ready(function() {
 					var _getParam = function(obj, param) {
 						return obj[param] || '';
 					};
-
 					var cityPicker = new $.PopPicker({layer:2});
 					cityPicker.setData(cityData);
-					
 					var showUserPickerButton = document.getElementById('showUserPicker');
 					var uc=document.getElementById('userCounty');
 					showUserPickerButton.addEventListener('tap', function(event) {
@@ -766,27 +775,35 @@
 							//return false;
 						});
 					}, false);
-				//工作岗位选择
-				var showUserPickerButton = document.getElementById('showUserPicker2');
-					var us=document.getElementById('userSystem');
-					showUserPickerButton.addEventListener('click', function(event) {
-						document.getElementsByClassName('mui-poppicker-body')[0].getElementsByClassName('mui-picker')[0].style.display="none";
-						document.getElementsByClassName('mui-poppicker-body')[0].getElementsByClassName('mui-picker')[1].style.display="block";
-						document.getElementsByClassName('mui-poppicker-body')[0].getElementsByClassName('mui-picker')[1].style.width="100%";
-						event.stopPropagation();
-						cityPicker.show(function(items) {
-							var cont=items[1].text;
-							us.value=cont;
-            				document.getElementById('showUserPicker').setAttribute('class','mui-btn mui-btn-block disable');
-            				document.getElementById('showUserPicker2').setAttribute('class','mui-btn mui-btn-block disable');
-							document.getElementById('showUserPicker2').getElementsByTagName('p')[0].getElementsByTagName('span')[0].setAttribute('class','green_notice shurutishi');
-							//返回 false 可以阻止选择框的关闭
-							//return false;
-						});
-					}, false);
+					//工作岗位选择
+					setInterval(function(){
+						var showUserPickerButton = document.getElementById('showUserPicker2');
+						if(userCounty.value==""){
+							document.getElementById('showUserPicker2').style.pointerEvents="none";
+							return;
+						}else{
+							document.getElementById('showUserPicker2').style.pointerEvents="auto";
+							var us=document.getElementById('userSystem');
+							showUserPickerButton.addEventListener('click', function(event) {
+								document.getElementsByClassName('mui-poppicker-body')[0].getElementsByClassName('mui-picker')[0].style.display="none";
+								document.getElementsByClassName('mui-poppicker-body')[0].getElementsByClassName('mui-picker')[1].style.display="block";
+								document.getElementsByClassName('mui-poppicker-body')[0].getElementsByClassName('mui-picker')[1].style.width="100%";
+								var userCounty=document.getElementById('userCounty')
+								event.stopPropagation();
+								cityPicker.show(function(items) {
+									var cont=items[1].text;
+									us.value=cont;
+		            				document.getElementById('showUserPicker').setAttribute('class','mui-btn mui-btn-block disable');
+		            				document.getElementById('showUserPicker2').setAttribute('class','mui-btn mui-btn-block disable');
+									document.getElementById('showUserPicker2').getElementsByTagName('p')[0].getElementsByTagName('span')[0].setAttribute('class','green_notice shurutishi');
+									//返回 false 可以阻止选择框的关闭
+									//return false;
+								});
+							}, false);
+						}
+					},10)
 				});
 			})(mui, document);
-
 		</script>
 
 	</body>

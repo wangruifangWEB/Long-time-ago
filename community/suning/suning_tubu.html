@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>九月会员活动</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+    <style media="screen">
+        .index{
+            width: 100%;
+            height: auto;
+            background-color: #ffbb33;
+            font-family: PingFangSC-Medium;
+        }
+        .logo{
+            width: 100%;
+            height: 7.28rem;
+            background:  linear-gradient(to bottom, #fee278, #ffbb33);
+            overflow: hidden;
+        }
+        .logo img{
+            margin-top: .4rem;
+            width: 7.5rem;
+            height: 5.87rem;
+        }
+        .logo .louti{
+            width: 1.48rem;
+            height: 1.93rem;
+            position: relative;
+            left: 4.85rem;
+            top: -.75rem;
+        }
+
+        .title{
+            width: 7.07rem;
+            height: 3.72rem;
+            margin: 0 auto .4rem;
+            background-image: url(../images/suning/title_border.png);
+            background-repeat: no-repeat;
+            background-size: 7.07rem 3.72rem;
+            background-position: 0 0;
+            position: relative;
+            top: -.1rem;
+        }
+        .title p{
+            padding-left: .55rem;
+            padding-top: .75rem;
+            width: 6rem;
+            font-size: .4rem;
+            line-height: .55rem;
+            text-shadow: .05rem .05rem .05rem #ffb123;
+            color: #fff;
+        }
+        .type{
+            margin-top: .3rem;
+            width: 7.5rem;
+            height: 4.78rem;
+            background-image: url(../images/suning/type_bg.png);
+            background-repeat: no-repeat;
+            background-size: 7.5rem 4.78rem;
+            background-position: 0 0;
+        }
+        .type p{
+            padding-left: 1.2rem;
+            line-height: .52rem;
+            padding-top: 1.25rem;
+            font-size: .38rem;
+            color: #ffffff;
+            width: 5.3rem;
+        }
+
+        .prime{
+            width: 7.5rem;
+            position: relative;
+            top: -.55rem;
+        }
+        .prime_first_detail{
+            height: 3.1rem;
+        }
+        .prime_bg{
+            margin-top: .5rem;
+            width: 4.86rem;
+            height: 0.53rem;
+            display: block;
+            position: relative;
+            left: 1.32rem;
+            top: 0;
+            z-index: 10;
+            background-image: url(../images/suning/prime_bg.png);
+            background-size: 4.86rem 1.1rem;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            font-size: .48rem;
+            text-shadow: 2px 2px 2px #004bcd;
+            text-align: center;
+            color: #fff;
+            padding-top: .57rem;
+        }
+        .prime_text{
+            position: relative;
+            top: -.36rem;
+            margin: 0 auto;
+            padding-top: .91rem;
+            padding-right: .4rem;
+            background-color: #fff;
+            border-radius: .2rem;
+            font-size: .36rem;
+            color: #624006;
+            line-height: .55rem;
+        }
+        .prime_first{
+            width: 6.6rem;
+            height: 1.09rem;
+            text-align: center;
+        }
+        .prime_second_detail{
+            height: 3.36rem;
+            position: relative;
+            top: -.36rem;
+        }
+        .prime_second{
+            width: 5.4rem;
+            padding-top: .91rem;
+            height: 1.8rem;
+            padding-left: .8rem;
+        }
+        .prime_third_detail{
+            height: 5.65rem;
+            position: relative;
+            top: -.36rem;
+        }
+        .prime_third{
+            width: 5.4rem;
+            padding-top: .91rem;
+            height: 3.9rem;
+            padding-left: .8rem;
+        }
+        .prime_forth_detail{
+            height: 11.54rem;
+            position: relative;
+            top: -.36rem;
+        }
+        .prime_forth{
+            width: 6.4rem;
+            padding-top: .71rem;
+            height: 9.99rem;
+            font-size: .32rem;
+            line-height: .4rem;
+            color: #624006;
+        }
+        .prime_forth li{
+            padding-left: .4rem;
+            width: 6.17rem;
+        }
+        .prime_forth li:nth-child(1){
+            padding-left: 0;
+        }
+        .prime_forth li img{
+            display: block;
+            width: 6.4rem;
+            height: 2.6rem;
+            margin: 0 auto .05rem;
+        }
+        .prime_forth li.prime_forth_title{
+            font-size: .32rem;
+            line-height: .42rem;
+            color: #ff6c00;
+            font-weight: bold;
+        }
+        .prime_forth li.prime_forth_title span{
+            font-size: .22rem;
+            line-height: .42rem;
+            color: #624006;
+        }
+        .prime_fifth_detail{
+            height: 4.5rem;
+            position: relative;
+            top: -.36rem;
+        }
+        .prime_fifth{
+            width: 5.3rem;
+            padding-top: .91rem;
+            height: 2.75rem;
+            padding-left: .8rem;
+        }
+        .notice{
+            position: relative;
+            top: -0.36rem;
+            height: .70rem;
+            line-height: .70rem;
+            margin-bottom: .2rem;
+            font-size: .3rem;
+            color: #fff;
+            padding-left: .5rem;
+        }
+        .info_warp{
+            position: relative;
+        }
+        .info_mask{
+            width: 6.2rem;
+            height: 6.05rem;
+            opacity: 0.4;
+            padding-top: 0;
+        }
+        .info{
+            width: 6.6rem;
+            margin: 0 auto;
+            height: 6.05rem;
+            position: absolute;
+            top: -.36rem;
+            left: 50%;
+            margin-left: -3.3rem;
+        }
+        .info li:nth-child(1),.info li:nth-child(3){
+            margin-left: .1rem;
+            margin-top: .35rem;
+            width: 2.55rem;
+            height: .53rem;
+            background-image: url(../images/suning/info_bg.png);
+            background-repeat: no-repeat;
+            background-size: 2.55rem .53rem;
+            background-position: 0 0;
+            text-align: center;
+            color: #fff;
+            font-size: .36rem;
+            line-height: .53rem;
+        }
+        .info li:nth-child(2),.info li:nth-child(4){
+            margin-left: .44rem;
+            margin-top: .3rem;
+            margin-bottom: .2rem;
+            margin-right: .2rem;
+            width: 5.68rem;
+            color: #5967d3;
+            font-size: .36rem;
+            line-height: .54rem;
+        }
+        .info li:nth-child(5){
+            margin-left: .44rem;
+            margin-top: .3rem;
+            margin-bottom: .2rem;
+            margin-right: .2rem;
+            width: 5.68rem;
+            color: #e63d02;
+            font-size: .36rem;
+            line-height: .54rem;
+        }
+        .prime_youhui{
+            width: 6.6rem;
+            height: 19.24rem;
+            margin: 0 auto;
+            background-image: url(../images/suning/youhui_bg.png);
+            background-repeat: no-repeat;
+            background-size: 6.6rem 19.24rem;
+            background-position: 0 0;
+        }
+        .prime_youhui_first{
+            padding-top: 1.35rem;
+        }
+        .prime_youhui_first p,.prime_youhui_second span{
+            line-height: .55rem;
+            font-size: .48rem;
+            color: #fff;
+            padding-left: .3rem;
+        }
+        .prime_youhui_second{
+            padding-top: .5rem;
+        }
+        .prime_youhui_second img{
+            width: 4.02rem;
+            height: 7.05rem;
+            margin-left: .3rem;
+            box-shadow: 0 0 .21rem rgba(118,81,0,0.58);
+        }
+        .prime_youhui_third{
+            position: relative;
+            padding-top: .25rem;
+        }
+        .prime_youhui_third p{
+            line-height: .7rem;
+            font-size: .32rem;
+            color: #fff;
+            text-shadow: .03rem .03rem .03rem #765100;
+            padding-left: .3rem;
+        }
+        .prime_youhui_third ul{
+            height: .09rem;
+            margin-left: .42rem;
+        }
+        .prime_youhui_third li{
+            width: .09rem;
+            height: .09rem;
+            border-radius: 100%;
+            display: inline-block;
+            margin-right: .157rem;
+            background-color: #ff7700;
+            box-shadow: .03rem .03rem .03rem #765100;
+            position: relative;
+            top: -.12rem;
+        }
+        .prime_youhui_third img{
+            display: block;
+            width: .96rem;
+            height: .72rem;
+            position: absolute;
+            top: 0.1rem;
+            right: 1.1rem;
+        }
+        .code_warp{
+            position: relative;
+            width: 100%;
+        }
+        .code_warp img{
+            height: 1.58rem;
+            width: 1.79rem;
+            position: absolute;
+            left: .24rem;
+            top: .38rem;
+        }
+        .code{
+            width: 6.6rem;
+            height: 6.4rem;
+            background-color: #fff;
+            border-radius: .2rem;
+            margin: .6rem auto 0;
+        }
+        .code p{
+            padding-top: .3rem;
+            padding-bottom: .55rem;
+            text-align: center;
+            color: #ffb123;
+            font-size: .48rem;
+        }
+        .code img{
+            width: 2.82rem;
+            height: 2.82rem;
+            display: block;
+            margin: 0 auto .3rem;
+        }
+        .code span{
+            display: block;
+            text-align: center;
+            line-height: .54rem;
+            color: #624006;
+            font-size: .36rem;
+        }
+        .under_line{
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="index">
+        <div class="logo">
+            <img src="../images/suning/tubu_logo.png" alt="">
+            <img src="../images/suning/louti.png" alt="" class="louti">
+        </div>
+        <div class="title">
+            <p>金秋九月，苏宁电器安贞店迎来十五周年店庆，徒步协会会员特享优惠，各种电器商品优惠不断，狂欢不断！</p>
+        </div>
+        <div class="type">
+            <p>扫描下方二维码，关注并注册 “<span class="under_line">健康不求人</span>” 微信公众号，9月15日6:30至24:00，进店即可享受会员独家福利！</p>
+        </div>
+        <div class="prime">
+            <div class="prime_first_detail">
+                <p class="prime_bg">会员专享一</p>
+                <p class="prime_first prime_text">会员当日进店有礼，先到先得；</p>
+            </div>
+            <div class="prime_second_detail">
+                <p class="prime_bg">会员专享二</p>
+                <p class="prime_second prime_text">会员当日店内购物赠送价值500元锅一套，500套锅先到先得；</p>
+            </div>
+            <div class="prime_third_detail">
+                <p class="prime_bg">会员专享三</p>
+                <div class="prime_third prime_text">
+                    <p>路途遥远的会员可以报销打车费，路费报销高达50元（购物结算时出示当日正规出租车公司打车发票50元以内的直接按照票面金额抵扣货款，50元以上的直接抵扣50元货款。）；</p>
+                </div>
+            </div>
+            <div class="prime_forth_detail ">
+                <p class="prime_bg">会员专享四</p>
+                <ul class="prime_forth prime_text">
+                    <li><img src="../images/suning/youhuiquan.png"></li>
+                    <li class="prime_forth_title">空调品类、冰箱品类：</li>
+                    <li>满3000元抵扣200元</li>
+                    <li>满5000元抵扣300元</li>
+                    <li class="prime_forth_title">彩电品类：<span>（会员商品除外）</span></li>
+                    <li>满5000元抵扣300元</li>
+                    <li>满8000元抵扣500元</li>
+                    <li class="prime_forth_title">洗衣机品类、厨卫品类：</li>
+                    <li>满1500元抵扣100元</li>
+                    <li>满3000元抵扣200元</li>
+                    <li class="prime_forth_title">手机品类：<span>（会员商品除外）</span></li>
+                    <li>满1500元抵扣100元</li>
+                    <li class="prime_forth_title">空气净化器：<span>（会员商品除外）</span></li>
+                    <li>满3000元抵扣200元</li>
+                    <li class="prime_forth_title">电脑品类：</li>
+                    <li>满3000元抵扣100元</li>
+                    <li class="prime_forth_title">数码品类：</li>
+                    <li>满2500元抵扣100元</li>
+                </ul>
+            </div>
+            <div class="prime_fifth_detail">
+                <p class="prime_bg">会员专享五</p>
+                <p class="prime_fifth prime_text">全场手机、电视、电脑三类产品中设置会员商品，在店面最低售价的基础上再享有2-3%的优惠(不可与三千元套券同时使用)。</p>
+            </div>
+            <p class="notice">更多优惠详见店内海报。</p>
+            <div class="info_warp">
+                <div class="prime_text info_mask"></div>
+                <ul class="info">
+                    <li>活动时间</li>
+                    <li>2017年9月15日6:30-24:00</li>
+                    <li>活动地址</li>
+                    <li>北三环安贞桥往北350米路东（地铁十号线安贞门C口）</li>
+                    <li>福利多多，机会难得，欢迎广大会员前往！</li>
+                </ul>
+            </div>
+            <div class="prime_youhui">
+                <div class="prime_youhui_first">
+                    <p>第一步:</p>
+                    <p>关注公众号，成为会员</p>
+                </div>
+                <div class="prime_youhui_second">
+                    <img src="../images/suning/tubu_yindao1.png" alt="">
+                    <span>第二步:</span>
+                </div>
+                <div class="prime_youhui_second">
+                    <span>第三步:</span>
+                    <img src="../images/suning/tubu_yindao2.png" alt="">
+                </div>
+                <div class="prime_youhui_third">
+                    <p>进店出示该页面可领取礼品；</p>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <p>结账时向收银员出示即可享受会员专享优惠</p>
+                    <img src="../images/suning/gift.png" alt="">
+                </div>
+            </div>
+            <div class="code_warp">
+                <img src="../images/suning/car.png" alt="">
+            </div>
+            <div class="code">
+                <p>会员直通车</p>
+                <img src="../images/suning/tubu_code.png" alt="">
+                <span>长按识别二维码关注</span>
+                <span>"健康不求人"公众号</span>
+                <span>成为会员优惠立享</span>
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>

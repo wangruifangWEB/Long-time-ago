@@ -44,50 +44,57 @@
 		.user_msg ul li{
 			width:6.24rem;
 			height:1.33rem;
-			border-bottom: .02rem solid #0d0d0d;
+			border-bottom: solid 1px rgba(0,0,0,0.3);
 			display: -webkit-inline-box;
 		}
-		.user_msg span{
-			color:#595959;
-			font-size: .26rem;
-			line-height: .37rem;
-			display: inline;
-			font-family: PingFangSC-Medium;
-			display: none;
+		/* 图文内容 */
+		.left_info{
+			background-color: #252423;
+			width: 2.4rem;
+			float: left;
+			padding-top: .16rem;
+			height: 3.84rem;
+			border-top-left-radius: 0.1rem;
+			border-bottom-left-radius: 0.1rem;
 		}
-		.user_msg input{
-			border:none;
-			color:#CEAD69;
-			font-size:.37rem;
-			line-height:.52rem;
-			background-color: #2A2A2A;
-			font-family: PingFangSC-Medium;
+		.left_info p{
+			line-height: .45rem;
+			height: .45rem;
+			padding-left: .16rem;
+			font-size: .23rem;
+			color: #9D9D9D;
 		}
-		/*placeholder的样式*/
-		::-webkit-input-placeholder {
-		　　	color:#595959;
+		.left_info p:nth-last-child(1){
+			color: red;
+		}
+		.left_info button{
+			border-top: solid 1px rgba(0,0,0,0.3);
+			display: block;
+			line-height: 1.19rem;
+			height: 1.19rem;
+			text-align: center;
 			font-size: .37rem;
-			line-height: .52rem;
-			font-family: PingFangSC-Medium;
-		　}
-		　:-moz-placeholder {
-		　　	color:#595959;
-			font-size: .37rem;
-			line-height: .52rem;
-			font-family: PingFangSC-Medium;
-		　}
-		　::-moz-placeholder { 
-		　　	color:#595959;
-			font-size: .37rem;
-			line-height: .52rem;
-			font-family: PingFangSC-Medium;
-		　}
-		　:-ms-input-placeholder { 
-		　　	color:#595959;
-			font-size: .37rem;
-			line-height: .52rem;
-			font-family: PingFangSC-Medium;
-		　}
+			color: #cead69;
+			width: 2.4rem;
+			margin-top: 0.2rem;
+		}
+		.left_info button a{
+			color: #cead69;
+		}
+		.right_info{
+			width: 3.84rem;
+			height: 3.84rem;
+			float: left;
+			
+		}
+		.right_info img{
+			width: 100%;
+			height: 100%;
+			border-top-right-radius: 0.1rem;
+			border-bottom-right-radius: 0.1rem;
+		}
+		
+
 		/*底部颜色*/
 		.bottom{
 			background-color: #2A2A2A;
@@ -100,8 +107,11 @@
 		.user_msg_list li{
 			width:100%;
 			height:1.33rem;
-			border-bottom:.01rem solid #0D0D0D;
+			border-bottom: solid 1px rgba(0,0,0,0.3);
 			position: relative;
+		}
+		.user_msg_list li:nth-last-child(1){
+			border-bottom: none;
 		}
 		.user_msg_list .user_msg_list_left{
 			width:1.44rem;
@@ -114,9 +124,6 @@
 			font-family: PingFangSC-Regular;
 			line-height: .45rem;
 			display: block;
-		}
-		.user_msg_list li:last-child{
-			border-bottom:none;
 		}
 		/*总计样式*/
 		.user_msg_list_total{
@@ -137,68 +144,31 @@
 		.user_msg_list_right .loading1{
 		    width:3.24rem;
 		    height: .12rem;
-		    position: relative;
-		    top: 0.32rem;
+		    margin-top: 0.32rem;
 		}
 		.user_msg_list_right .loading1 img{
 		    width:100%;
 		    height: 100%;
 		    display: -webkit-box;
 		}
-		.user_msg_list_right .loading2{
-		    width:100%;
-		   	display: flex;
-		}
 		.user_msg_list_right p{
 			color:#9D9D9D;
 			font-size: .26rem;
 			line-height: .37rem;
-			margin-top: .35rem;
+			margin-top: .06rem;
+		} 
+		/* 新的动画 */
+		.loading2{
+			width: 0;
+			height: .12rem;
+			margin-top: 0.16rem;
+			background-image: url(../../images/health_bar_bg1.png);
+			background-size: 1px 0.12rem;
+			background-repeat: repeat-x;
+			background-position: 0 0;
+			border-radius: 0.06rem;
 		}
-		/*进度条更改样式*/
-		.user_msg_list_right .loading2 li{
-			width:0;
-		    height: .12rem !important;
-		    position: relative;
-		    top: 0.32rem;
-		    margin-top:.16rem;
-		    border-top:1px solid #557CC5;
-		    border-bottom:1px solid #557CC5 ;
-		}
-		.loading2 li:nth-child(1){
-			width:3;
-		   	border-right:none;
-		   	border-top-left-radius: .06rem;
-		    border-bottom-left-radius: .06rem;
-		}
-		.loading2 li:nth-child(2){
-		}
-		.loading2 li:nth-child(3){
-		    border-bottom-right-radius: .06rem;
-		    border-top-right-radius: .06rem;
-		}
-		.loading2 li span{
-			width:100%;
-		    height: .06rem;
-		   	background-color:#557CC5;
-		   	display: list-item;
-		}
-		.loading2 li:nth-child(1) span{
-		    border-top-left-radius: .03rem;
-		}
-		.loading2 li:nth-child(2) span{
-		   	position: relative;
-		    bottom: -.04rem;
-		}
-		.loading2 li:nth-child(3) span{
-			border-top-right-radius: .03rem;
-		}
-		.right_border{
-			border-radius: .06rem;
-		}
-		.right_border_top{
-			border-top-right-radius: .06rem;
-		}
+
 	</style>
 	</head>
 	<body>
@@ -207,7 +177,7 @@
 				<header>
 					<div class="d-title">
 						<a href="#">
-							<img src="../images/cd.png" alt="" />
+							<img src="../../images/cd.png" alt="" />
 						</a>
 						<span>健康饮食</span>
 					</div>
@@ -215,7 +185,19 @@
 				
 				<section class="zsec-bg">
 					<div class="z-boxbg p-top">
-						<img class="z-boxr-bg" src="../../images/helath_food/total_img.png" alt="">	
+						<div class="z-boxr-bg">
+							<div class="left_info">
+								<p>能量：<span>186</span>cal</p>
+								<p>脂肪：<span>7.35</span>g</p>
+								<p>蛋白质：<span>8.1</span>g</p>
+								<p>盐：<span>2</span>g</p>
+								<p>碳水化合物<span>22</span>g</p>
+								<button><a href="javascript:;">点餐</a></button>
+							</div>
+							<div class="right_info">
+								<img src="../../images/head_list.jpg" alt="">
+							</div>
+						</div>	
 					</div>
 					
 					<div class="z_boxbg user_msg"> 
@@ -226,14 +208,10 @@
 									<div class="loading1">
 										<img src="../../images/helath_food/progress_bar.png" alt="" />
 									</div>
-									<ul class="loading2 loading_one">
-										<li class="a"><span></span></li>
-										<li><span></span></li>
-										<li><span></span></li>
-									</ul>
-									<p>3cal / 30%</p>
+									<div class="loading2 loading_one"></div>
+									<p><span class="shiji_sheru_energy">818</span>cal / <span class="sheru_energy_scale"></span>%</p>
 								</div>
-								<div class="user_msg_list_total">500cal</div>
+								<div class="user_msg_list_total"><span class="yinggai_sheru_energy">2994</span>cal</div>
 							</li>
 							<li>
 								<div class="user_msg_list_left"><p>蛋白质： </p></div>
@@ -241,14 +219,10 @@
 									<div class="loading1">
 										<img src="../../images/helath_food/progress_bar.png" alt="" />
 									</div>
-									<ul class="loading2 loading_two">
-										<li><span></span></li>
-										<li><span></span></li>
-										<li><span></span></li>
-									</ul>
-									<p>3cal / 30%</p>
+									<div class="loading2 loading_two"></div>
+									<p><span class="shiji_sheru_protein">45.5</span>g / <span class="sheru_protein_scale"></span>%</p>
 								</div>
-								<div class="user_msg_list_total">500cal</div>
+								<div class="user_msg_list_total"><span class="yinggai_sheru_protein">112</span>g</div>
 							</li>
 							<li>
 								<div class="user_msg_list_left"><p>脂肪： </p></div>
@@ -256,14 +230,10 @@
 									<div class="loading1">
 										<img src="../../images/helath_food/progress_bar.png" alt="" />
 									</div>
-									<ul class="loading2 loading_three">
-										<li><span></span></li>
-										<li><span></span></li>
-										<li><span></span></li>
-									</ul>
-									<p>3cal / 30%</p>
+									<div class="loading2 loading_three"></div>
+									<p><span class="shiji_sheru_fat">22</span>g / <span class="sheru_fat_scale"></span>%</p>
 								</div>
-								<div class="user_msg_list_total">500cal</div>
+								<div class="user_msg_list_total"><span class="yinggai_sheru_fat">83</span>g</div>
 							</li>
 							<li>
 								<div class="user_msg_list_left"><p>盐： </p></div>
@@ -271,14 +241,10 @@
 									<div class="loading1">
 										<img src="../../images/helath_food/progress_bar.png" alt="" />
 									</div>
-									<ul class="loading2 loading_four">
-										<li><span></span></li>
-										<li><span></span></li>
-										<li><span></span></li>
-									</ul>
-									<p>3cal / 30%</p>
+									<div class="loading2 loading_four"></div>
+									<p><span class="shiji_sheru_salt">2</span>g / <span class="sheru_salt_scale"></span>%</p>
 								</div>
-								<div class="user_msg_list_total">500cal</div>
+								<div class="user_msg_list_total"><span class="yinggai_sheru_salt">6</span>g</div>
 							</li>
 							<li>
 								<div class="user_msg_list_left"><p>碳水化合物： </p></div>
@@ -286,14 +252,10 @@
 									<div class="loading1">
 										<img src="../../images/helath_food/progress_bar.png" alt="" />
 									</div>
-									<ul class="loading2 loading_five">
-										<li><span></span></li>
-										<li><span></span></li>
-										<li><span></span></li>
-									</ul>
-									<p>3cal / 30%</p>
+									<div class="loading2 loading_five"></div>
+									<p><span class="shiji_sheru_carbohydrate">145</span>g / <span class="sheru_carbohydrate_scale"></span>%</p>
 								</div>
-								<div class="user_msg_list_total">50cal</div>
+								<div class="user_msg_list_total"><span class="yinggai_sheru_carbohydrate">276</span>g</div>
 							</li>
 						</ul>
 					</div>
@@ -311,46 +273,35 @@
 		</div>
 		<script>
 			$(".zsec-bg").height($(window).height()-$(".bottom li").height());
-			$(document).ready(function(){
-				//不同成分动画
-				if($(".loading2 li:nth-child(2)").width()==0){
-					$(".loading2 li:nth-child(1)").addClass("right_border").children("span").addClass("right_border_top");
-				}else{
-					$(".loading2 li:nth-child(1)").removeClass("right_border").children("span").removeClass("right_border_top");
-				}
-				if($(".loading2 li:nth-child(3)").width()==0){
-					$(".loading2 li:nth-child(2)").addClass("right_border").children("span").addClass("right_border_top");
-				}else{
-					$(".loading2 li:nth-child(2)").removeClass("right_border").children("span").removeClass("right_border_top");
-				}
+			// 能量
+			var scale_energy=($('.shiji_sheru_energy').html()/$('.yinggai_sheru_energy').html()*100).toFixed(1);
+			$('.sheru_energy_scale').html(scale_energy);
+			var load_oneW=scale_energy*$('.loading1').width()/100;
+			$('.loading_one').animate({'width':load_oneW});
+
+			// 蛋白质
+			var scale_protein=($('.shiji_sheru_protein').html()/$('.yinggai_sheru_protein').html()*100).toFixed(1);
+			$('.sheru_protein_scale').html(scale_protein);
+			var load_twoW=scale_protein*$('.loading1').width()/100;
+			$('.loading_two').animate({'width':load_twoW});
 				
-		  		$(".loading_one li:nth-child(1)").animate({"width":"40%"},800);
-		  		$(".loading_one li:nth-child(2)").animate({"width":"0%"},800);
-		  	 	$(".loading_one li:nth-child(3)").animate({"width":"0%"},800);
-		  	 	
-		  	 	$(".loading_two li:nth-child(1)").animate({"width":"40%"},800);
-		  		$(".loading_two li:nth-child(2)").animate({"width":"40%"},800);
-		  	 	$(".loading_two li:nth-child(3)").animate({"width":"0%"},800);
-		  	 	
-		  	 	$(".loading_three li:nth-child(1)").animate({"width":"30%"},800);
-		  		$(".loading_three li:nth-child(2)").animate({"width":"40%"},800);
-		  	 	$(".loading_three li:nth-child(3)").animate({"width":"30%"},800);
-		  	 	
-		  	 	$(".loading_four li:nth-child(1)").animate({"width":"30%"},800);
-		  		$(".loading_four li:nth-child(2)").animate({"width":"40%"},800);
-		  	 	$(".loading_four li:nth-child(3)").animate({"width":"0%"},800);
-		  	 	
-		  	 	$(".loading_five li:nth-child(1)").animate({"width":"30%"},800);
-		  		$(".loading_five li:nth-child(2)").animate({"width":"40%"},800);
-		  	 	$(".loading_five li:nth-child(3)").animate({"width":"0%"},800);
-		  	 	
-		  	 	console.log("第一个宽度："+$(".loading_one li:nth-child(1)").width());
-		  	 	
-		  	 	$(".loading_one li:nth-child(1)").css("background","red");
-		  	 	console.log($(".loading_one li:nth-child(1)").attr("width"););
-			});
-		
-				
+			// 脂肪
+			var scale_fat=($('.shiji_sheru_fat').html()/$('.yinggai_sheru_fat').html()*100).toFixed(1);
+			$('.sheru_fat_scale').html(scale_fat);
+			var load_threeW=scale_fat*$('.loading1').width()/100;
+			$('.loading_three').animate({'width':load_threeW});
+			
+			// 盐
+			var scale_salt=($('.shiji_sheru_salt').html()/$('.yinggai_sheru_salt').html()*100).toFixed(1);
+			$('.sheru_salt_scale').html(scale_salt);
+			var load_fourW=scale_salt*$('.loading1').width()/100;
+			$('.loading_four').animate({'width':load_fourW});
+
+			// 碳水化合物
+			var scale_carbohydrate=($('.shiji_sheru_carbohydrate').html()/$('.yinggai_sheru_carbohydrate').html()*100).toFixed(1);
+			$('.sheru_carbohydrate_scale').html(scale_carbohydrate);
+			var load_fiveW=scale_carbohydrate*$('.loading1').width()/100;
+			$('.loading_five').animate({'width':load_fiveW});
 		</script>
 	</body>
 </html>

@@ -98,6 +98,25 @@
 			.order_detail_ul li:nth-child(6){
 				border-bottom: solid 1px #5a5a5a;
 			}
+			.order_detail_ul li:nth-child(7) p:nth-child(2){
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
+			.order_detail_ul li:nth-child(11) p:nth-child(2){
+				padding-top: 0.2rem;
+				padding-bottom: .2rem;
+				line-height: 0.42rem;
+				height: auto;
+				white-space: pre-wrap;
+			}
+			.order_detail_ul li:nth-child(11) p:nth-child(1){
+				
+				height: auto;
+			}
+			.order_detail_ul li:nth-child(11){
+				height: auto;
+			}
 			.order_detail_ul li p{
 				float: left;
 				color: #030303;
@@ -121,6 +140,7 @@
 			.btn{
 				font-weight: 700;
 			}
+
 		</style>
 	</head>
 
@@ -145,11 +165,11 @@
 						<li><p>领队名称</p><p>hello hello</p></li>
 						<li><p>手机号码</p><p>13718391145</p></li>
 						<li><p>身份证号</p><p>130926199503119856</p></li>
-						<li><p>活动名称</p><p>野鸭湖徒步大会</p></li>
+						<li><p>活动名称</p><p>野鸭湖徒步大会野鸭湖徒步大会</p></li>
 						<li><p>活动时间</p><p>2017年7月8日</p></li>
 						<li><p>报名人数</p><p><span>81</span>人</p></li>
 						<li><p>领取装备时间</p><p>2017年9月28日</p></li>
-						<li><p>领取装备地点</p><p>北京市徒步协会</p></li>
+						<li><p>领取装备地点</p><p>北京市徒步协会北京市徒步协会北京市徒步协会北京市徒步协会北京市徒步协会北京市徒步协会</p></li>
 					</ul>
 				</div>
 				
@@ -181,6 +201,7 @@
 			</div>
 		<script>
 			console.log($('.order_status').html());
+			$('.order_detail_ul li:nth-child(11) p:nth-child(1)').height($('.order_detail_ul li:nth-child(11) p:nth-child(2)').outerHeight());
 			// 支付
 			$('.btn').click(function(){
 //				alert('您已成功支付');
