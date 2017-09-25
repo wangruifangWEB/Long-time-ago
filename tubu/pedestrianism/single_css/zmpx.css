@@ -1,4 +1,101 @@
-
+body,html{
+	background-color: #EFEFF4;
+	height: 100%;
+	overflow-x: hidden;
+}
+.swiper-container{
+	overflow: hidden;
+}
+header{
+	width: 7.5rem;
+	margin-left: -3.75rem;
+	left: 50%;
+	position: absolute;
+}
+.swiper-container, .w{height: calc(100vh - 60px);}
+.z-healthy{
+	width: 7.5rem !important;
+	margin: 0 auto;
+}
+.init-loading img{
+	width: 1.2rem;
+	height: 1.2rem;
+	display: block;
+	margin: 0.05rem auto;
+}
+.loadtip p{
+	font-size: 0.26rem;
+	text-align: center;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	position: fixed;
+	bottom: 0;
+	width: 7.5rem;
+	text-align: center;
+	background-color: #EFEFF4;
+	z-index: 10;
+	font-size: 0.26rem;
+	text-align: center;
+}
+.outerScroller{
+	width: 7.5rem;
+	margin: 0 auto;
+}	
+.scroll{
+	position: relative;
+	overflow: hidden;
+}
+.z-alert{
+	position: absolute;
+}
+.z-as-fixed{
+	width: 7.5rem;
+	left: 50%;
+	margin-left: -3.75rem;
+}			
+/* xinjiade  */
 .list-group ul li{
 	background-color: #f6f6f6;
+}
+.z-boxl{
+	position: relative;
+}
+.z-boxl h4{
+	margin-top: 0rem;
+}
+/*删除*/
+.user_say_del{
+	width:.4rem;
+	height:.4rem;
+    margin-right: 1.7rem;
+	margin-top: -0.1rem;
+}
+.z-boxbg{
+	padding-top: 0rem;
+	padding-left: 0;
+	padding-right: 0;
+	width: 100%;
+}
+#listul{
+	margin-left: 0.63rem;
+	padding-bottom: 0.32rem;
+	margin-right: 0.63rem;
+}
+#listul li{
+	margin-top: 0.32rem;
+	margin-bottom: 0;
+}
+.z-boxl2 p{
+	text-indent: 0;
+}
+
+.bottom_height{
+	height: 0.98rem;
+	width: 100%;
+}
+
+
+/* 灰色弹框 */
+.notice_layer{
+	bottom: 3.42rem;
 }

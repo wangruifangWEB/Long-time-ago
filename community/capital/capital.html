@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>爱在古都，寻梦北京</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/capital/capital.css" charset="utf-8" >
+    <script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <div class="index">
+        <div class="logo"></div>
+        <div class="part_one">
+            <img src="../images/capital/tiananmen.png" alt="" class="tiananmen">
+            <img src="../images/capital/tiananmen_text.png" alt="" class="tiananmen_text">
+            <img src="../images/capital/clound.png" alt="" class="clound">
+            <div class="" id="laozihao">
+                <img src="../images/capital/zoufang_people.png" alt="" class="zoufang_people">
+                <img src="../images/capital/zoufang_text.png" alt="" class="zoufang_text">
+                <img src="../images/capital/laozihao.png" alt="" class="laozihao">
+                <img src="../images/capital/laozihao_people.png" alt="" class="laozihao_people">
+                <button class="laozihao_more">更多</button>
+            </div>
+        </div>
+        <div class="part_two">
+            <div class="" id="story">
+                <img src="../images/capital/hutong_fangzi.png" alt="" class="hutong_fangzi">
+                <img src="../images/capital/find_story.png" alt="" class="find_story">
+                <button class="story_more">更多</button>
+            </div>
+            <img src="../images/capital/feiyi_people.png" alt="" class="feiyi_people">
+            <div id="feiyi">
+                <img src="../images/capital/find_feiyi.png" alt="" class="find_feiyi">
+                <img src="../images/capital/feiyi_qipan.png" alt="" class="feiyi_qipan">
+                <button class="feiyi_more">更多</button>
+            </div>
+        </div>
+        <img src="../images/capital/budao1.png" alt="" class="budao1">
+        <img src="../images/capital/budao2.png" alt="" class="budao2">
+        <img src="../images/capital/budao3.png" alt="" class="budao3">
+        <div class="part_three">
+            <div id="sanshan">
+                <img src="../images/capital/sanshanwuyuan.png" alt="" class="sanshanwuyuan">
+                <img src="../images/capital/sanshan_text.png" alt="" class="sanshan_text">
+                <button class="sanshan_more">更多</button>
+            </div>
+            <img src="../images/capital/sanshan_people.png" alt="" class="sanshan_people">
+            <img src="../images/capital/budao4.png" alt="" class="budao4">
+            <img src="../images/capital/baoming.png" alt="" class="baoming">
+            <img src="../images/capital/baoming_people.png" alt="" class="baoming_people">
+        </div>
+    </div>
+    <div class="mask"></div>
+    <div class="layer">
+        <img src="../images/capital/close_layer.png" alt="" class="close_layer">
+        <img src="../images/capital/layer_title1.png" alt="" class="layer_title layer_title0">
+        <img src="../images/capital/layer_title2.png" alt="" class="layer_title layer_title1">
+        <img src="../images/capital/layer_title3.png" alt="" class="layer_title layer_title2">
+        <img src="../images/capital/layer_title4.png" alt="" class="layer_title layer_title3">
+        <p class="layer_text1 layer_text">
+            采集20家老北京老字号相关的信息，寻找百年不衰的老字号，记录历史找寻代表人物，撰写中华品牌精神，从建筑、字号、人文理念、服务传承等多角度阐述其不衰的奥秘。
+        </p>
+        <p class="layer_text2 layer_text">
+            采集40位老北京人的故事，用“口述历史”的形式讲述北京文化，筛选20个经典故事，由志愿者约访，进行图片、视频、笔录等形式记录下来，近距离聆听老北京的历史、建筑、生活、饮食、文玩等小故事。
+        </p>
+        <p class="layer_text3 layer_text">
+            以非遗传承精神为中心，采访10位非遗传承人，由志愿者约访，进行图片、视频、笔录等形式记录下来，寻找体验非遗文化，感受传承精神，设定宣传非遗展示计划。
+        </p>
+        <p class="layer_text4 layer_text">
+            锁定三山五园中的3个有代表的园林，设计6个定向越野的游戏环节，去采访了解园林的设计，园林的典故、与园林相关的人物，感受园林设计的美妙之处，找寻园林中的历史故事。
+        </p>
+    </div>
+    <script type="text/javascript">
+        $('.mask').height($(window).height());
+        $('.close_layer').click(function() {
+            $('.layer').hide();
+            $('.mask').hide();
+            $('body').css({'height':'100%','overflow':'auto'});
+        })
+
+        var arr=['.zoufang_people,.zoufang_text,.laozihao,.laozihao_people','.hutong_fangzi,.find_story','.find_feiyi,.feiyi_qipan','.sanshanwuyuan,.sanshan_text'];
+        $(window).scroll(function(){
+            $('.layer').css({'margin-top': $(window).scrollTop()-$('.layer').height()/2+'px'});
+        });
+        for(var i=0;i<4;i++){
+            (function(i){
+                $(arr[i]).click(function() {
+                    $('.layer').show();
+                    $('.mask').show();
+                    $('body').css({'height':'100%','overflow':'hidden'});
+                    $('.layer_title').eq(i).show().siblings('.layer_title').hide();
+                    $('.layer_text').eq(i).show().siblings('.layer_text').hide();
+                })
+            })(i)
+        }
+
+
+
+
+
+
+    </script>
+</body>
+</html>

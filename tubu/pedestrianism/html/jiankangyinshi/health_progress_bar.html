@@ -34,7 +34,8 @@
 			padding-top:0 !important;
 		}
 		.zsec-bg{
-			margin-bottom:1.32rem;
+			margin-top: 0.98rem;
+			padding-top: 0;
 		}
 		/*用户信息模块*/
 		.user_msg{
@@ -103,6 +104,7 @@
 		.user_msg_list {
 			background-color: #252423;
 			border-radius: .2rem;
+			margin-bottom: 0.32rem;
 		}
 		.user_msg_list li{
 			width:100%;
@@ -167,6 +169,8 @@
 			background-repeat: repeat-x;
 			background-position: 0 0;
 			border-radius: 0.06rem;
+			border-left: solid .01rem #557CC5;
+			border-right: solid .01rem #557CC5;
 		}
 
 	</style>
@@ -201,7 +205,7 @@
 					</div>
 					
 					<div class="z_boxbg user_msg"> 
-						<ul class="user_msg_list swiper-slide list-group">
+						<ul class="user_msg_list">
 							<li>
 								<div class="user_msg_list_left"><p> 能量： </p></div>
 								<div class="user_msg_list_right">
@@ -272,7 +276,7 @@
 			</div>
 		</div>
 		<script>
-			$(".zsec-bg").height($(window).height()-$(".bottom li").height());
+			$("section").height($(window).height()-$('header').height()-$(".bottom").height());
 			// 能量
 			var scale_energy=($('.shiji_sheru_energy').html()/$('.yinggai_sheru_energy').html()*100).toFixed(1);
 			$('.sheru_energy_scale').html(scale_energy);

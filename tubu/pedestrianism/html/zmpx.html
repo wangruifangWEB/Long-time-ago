@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html> 
+<html> 
 	<head>
 		<meta charset="UTF-8">
 		<title>我的徒步</title>
@@ -24,45 +24,43 @@
 						<span>最美评选</span>
 					</div>
 				</header>
-				<section class="zsec-bg">
-					<div class="z-boxbg p-top">
+				<section class="zsec-bg zsec-bottom">
+					<div class="pa-top z-boxbg">
 						<div class="swiper-container">
 							<div class="swiper-wrapper w">
 								<div class="swiper-slide d">
 									<div class="init-loading list-group-item text-center" style="display: none;"><img src="../images/loading.gif"/></div>
 									<div class="swiper-container2">
-										<div class="swiper-wrapper ">
-											<div class="swiper-slide list-group">
-												<ul>
-													<li>
-														<div class="z-boxl">
-															<div class="z-boxl1">
-																<h4>
-																	<p>北京市</p>
-																	<p>奥林匹克森林公园</p>
-																</h4>
-																<h5>2017.04.19</h5>
-															</div>
-															<div class="z-boxl2">
-																<h2>0</h2>
-																<p>售价（¥）</p>
-															</div>
-															<div class="z-boxl2">
-																<h2>354</h2>
-																<p>评论</p>
-															</div>
+										<div class="swiper-slide list-group">
+											<ul id="listul">
+												<li>
+													<div class="z-boxl">
+														<div class="z-boxl1">
+															<h4>
+																<p>北京市</p>
+																<p>奥林匹克森林公园</p>
+															</h4>
+															<h5>2017.04.19</h5>
 														</div>
-														<div class="z-boxr">
-															<img class="z-boxr-bg" src="../images/z-hu_03.jpg" alt="">
-															<div class="z-boxr-bottom">
-																<img src="../images/z-moon.png" alt="">
-																<span>拔剑乌托邦</span>
-																<p class="z-boxr-border">9</p>
-															</div>
+														<div class="z-boxl2 dianzan">
+															<h2>1686</h2>
+															<p>点赞</p>
 														</div>
-													</li>
-												</ul>
-											</div>
+														<div class="z-boxl2">
+															<h2>354</h2>
+															<p>评论</p>
+														</div>
+													</div>
+													<div class="z-boxr">
+														<img class="z-boxr-bg" src="../images/z-hu_03.jpg	" alt="">
+														<div class="z-boxr-bottom">
+															<img src="../images/z-moon.png" alt="">
+															<span>拔剑乌托邦</span>
+															<p class="z-boxr-border">9</p>
+														</div>
+													</div>
+												</li>
+											</ul>
 										</div>
 									</div>
 								</div>
@@ -72,21 +70,69 @@
 						<div class="swiper-scrollbar"></div>
 					</div>
 				</section>
-				<div class="z-alert">
+				 <div class="z-alert">
 					<ul>
 						<li>
-							<a href="#" class="active">徒步活动</a>
+							<a href="#" class="active"><img src="../images/list-e-1.png" alt="" class="nm"/><img src="../images/list-e-2.png" class="zx"/>徒步活动</a>
+						</li>
+						<li>    
+							<a href="#"><img src="../images/list-d-1.png" alt=""  class="nm"  style="margin-top: .21rem;"/><img src="../images/list-d-2.png" class="zx" style="margin-top: .21rem;"/>最美徒步</a>
 						</li>
 						<li>
-							<a href="#">最美徒步</a>
-						</li>
-						<li>
-							<a href="#">健康指导</a>
+							<a href="#"><img src="../images/list-f-1.png" alt=""  class="nm"/><img src="../images/list-f-2.png" class="zx"/>健康指导</a>
 						</li>
 					</ul>
-				</div>
+				</div> 
+				<div class="bottom_height"></div>
+				
 			</div>
 		</div>
+		<div class="notice_layer_warp">
+			<button class="notice_layer">您已成功点赞！</button>
+		</div>
+		<div class="box-transparent"></div>		
 		<script src="../single_js/zmpx.js"></script>
+		<script>
+				// 删除
+				$("body").on('click','.user_say_del',function(e) { 	
+			 		var that=e.target;
+					$('.alert_show').show();									
+			 		$('.second').click(function(){							
+			 			$('.alert_show').hide();
+			 			$('.notice_layer').show();
+			 			$('.notice_layer').html('您已成功删除');
+		 				$('.notice_layer').fadeOut(1500);
+			 			$(that).parent().parent().parent().remove();
+			 			
+			 			$(that).parent().parent().find('.z-boxbg li').removeClass('.z-boxbg');
+			 		});		
+			 		$('.cancle').click(function(){							
+			 			$('.alert_show').hide();
+			 		});	
+			 	}) 
+			 	// 点赞
+			 	
+			 	$("button").click(function(){
+					$("li").each(function(){
+				    	alert($(this).text());
+					});
+				});
+				$("body").on('click','.dianzan h2,.dianzan p',function(e) { 	
+					var that=e.target;
+		 			e.stopPropagation;
+		 			var num=$(that).parent().find('h2');
+		 			if(!$(that).parent().find('h2').hasClass('hasDian')){
+		 				$(that).parent().find('h2').html(parseInt($(that).parent().find('h2').html())+1);
+		 				$('.notice_layer').show();
+		 				$('.notice_layer').fadeOut(1500);
+		 				$(that).parent().find('h2').addClass('hasDian');
+		 			}else{
+		 				$('.notice_layer').html('您已经点过赞了！');
+						$('.notice_layer').show();
+						$('.notice_layer').fadeOut(1500);
+		 			}
+			 	})
+				
+		</script>
 	</body>
 </html>

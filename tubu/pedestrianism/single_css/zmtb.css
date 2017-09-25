@@ -30,7 +30,7 @@ header{
 	line-height: 0.4rem;
 	position: fixed;
 	bottom: 0;
-	width: 6.87rem;
+	width: 7.5rem;
 	text-align: center;
 	background-color: #EFEFF4;
 	z-index: 10;
@@ -95,7 +95,7 @@ header{
     height: 3.14rem;
     background: #F6F6F6;
     border-radius: .2rem;
-    box-shadow: 0 0.10rem 0.7rem rgba(69,73,78,0.5);
+    box-shadow:0 0.15rem 0.8rem #ccc;
     z-index: 1000;
     position: fixed;
     top: 50%;
@@ -110,15 +110,10 @@ header{
 	text-align: center;
 	color: #595959;
 }
-
-.alert_show ul{
-	
-}
 .alert_show ul li{
 	width: 2.79rem;
 	float: left;
 	color: #595959;
-	/*width:5.6rem;*/
 	height:.98rem;				
 	font-size:.32rem;
 	font-family: PingFangSC-Medium, sans-serif;
@@ -137,9 +132,15 @@ header{
 }
 .alert_show .first_b{
 	height:2.16rem;
-	box-shadow:0 0.02rem 0.06rem rgba(116,123,143,0.6);					
+	box-shadow:0 2px 6px -2px #999;					
 }
 .bottom_height{
 	height: 0.98rem;
 	width: 100%;
+}
+
+
+/* 灰色弹框 */
+.notice_layer{
+	bottom: 2.42rem;
 }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>报名</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+
+    <style>
+        body{
+            background-color: #fbf4e2;
+        }
+        .index{
+            padding-top: .5rem;
+            width: 7.5rem;
+            height: 100%;
+        }
+        .index img{
+            width: 5.93rem;
+            height: 7.08rem;
+            margin: 0 auto;
+            display: block;
+
+        }
+        .back{
+            width: 2.66rem;
+            height: .84rem;
+            text-align: center;
+            line-height: .84rem;
+            border-radius: .2rem;
+            border: solid 1px #a4080b;
+            font-size: .36rem;
+            font-weight: bold;
+            color: #b01213;
+            display: block;
+            margin: 1rem auto 0;
+        }
+        .back a{
+            color: #b01213;
+        }
+    </style>
+</head>
+<body>
+    <div class="index">
+        <img src="../images/capital/baoming_success.png" alt="" class="baoming_success">
+        <img src="../images/capital/baoming_fail.png" alt="" class="baoming_fail">
+        <button type="button" name="button" class="back_index back"><a href="javascript:;">返回首页</a></button>
+        <button type="button" name="button" class="back_baoming back"><a href="baoming.html">返回报名</a></button>
+    </div>
+    <script type="text/javascript">
+        // 成功
+        $('.baoming_success').show().siblings('img').hide();
+        $('.back_index').show().siblings('button').hide();
+
+        // 失败
+        $('.baoming_fail').show().siblings('img').hide();
+        $('.back_baoming').show().siblings('button').hide();
+
+    </script>
+
+</body>
+</html>

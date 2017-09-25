@@ -1,4 +1,4 @@
-$('.swiper-container, .w').height($(window).height()-$('header').height()-20+'px');
+$('.swiper-container, .w').height($(window).height()-$('header').height()-$('.z-as-fixed').height());
 var loadFlag = true;
 var oi = 0;
 var mySwiper = new Swiper('.swiper-container',{
@@ -24,7 +24,6 @@ var mySwiper = new Swiper('.swiper-container',{
 					
 				},
 				error:function(){
-					$('.z-as-fixed').css('display','none');
 					$(".loadtip p").show();
 					if(loadFlag){
 						$(".loadtip p").html('正在加载...');
@@ -32,7 +31,7 @@ var mySwiper = new Swiper('.swiper-container',{
 						$(".loadtip p").html('没有更多啦！');
 					}
 					setTimeout(function() {
-						for(var i =0;i<6;i++) {
+						for(var i =0;i<10;i++) {
 							$(".list-group ul").eq(mySwiper2.activeIndex).append(`
 								<li>
 									<div class="z-boxl">
@@ -43,9 +42,9 @@ var mySwiper = new Swiper('.swiper-container',{
 											</h4>
 											<h5>2017.04.19</h5>
 										</div>
-										<div class="z-boxl2">
-											<h2>0</h2>
-											<p>售价（¥）</p>
+										<div class="z-boxl2 dianzan">
+											<h2>1686</h2>
+											<p>点赞</p>
 										</div>
 										<div class="z-boxl2">
 											<h2>354</h2>
@@ -53,7 +52,7 @@ var mySwiper = new Swiper('.swiper-container',{
 										</div>
 									</div>
 									<div class="z-boxr">
-										<img class="z-boxr-bg" src="../images/z-hu_03.jpg" alt="">
+										<img class="z-boxr-bg" src="../images/z-hu_03.jpg	" alt="">
 										<div class="z-boxr-bottom">
 											<img src="../images/z-moon.png" alt="">
 											<span>拔剑乌托邦</span>
@@ -63,9 +62,10 @@ var mySwiper = new Swiper('.swiper-container',{
 								</li>
 							`);
 						}
-						 $(".loadtip p").hide();
-						 $('.z-as-fixed').css('display','block');
+						$(".loadtip p").hide();
+						 $('#listul li:nth-last-child(1)').css({'margin-bottom':'0.4rem'});
 						mySwiper.update(); // 重新计算高度;
+						
 					}, 800);
 				}
 			});
@@ -81,7 +81,7 @@ var mySwiper = new Swiper('.swiper-container',{
 				error:function(){
 					$('.init-loading').css('display','block');
 					setTimeout(function() {
-						for(var i =0;i<20;i++) {
+						for(var i =0;i<10;i++) {
 							$(".list-group ul").eq(mySwiper2.activeIndex).append(`
 								<li>
 									<div class="z-boxl">
@@ -92,9 +92,9 @@ var mySwiper = new Swiper('.swiper-container',{
 											</h4>
 											<h5>2017.04.19</h5>
 										</div>
-										<div class="z-boxl2">
-											<h2>0</h2>
-											<p>售价（¥）</p>
+										<div class="z-boxl2 dianzan">
+											<h2>1686</h2>
+											<p>点赞</p>
 										</div>
 										<div class="z-boxl2">
 											<h2>354</h2>
@@ -102,7 +102,7 @@ var mySwiper = new Swiper('.swiper-container',{
 										</div>
 									</div>
 									<div class="z-boxr">
-										<img class="z-boxr-bg" src="../images/z-hu_03.jpg" alt="">
+										<img class="z-boxr-bg" src="../images/z-hu_03.jpg	" alt="">
 										<div class="z-boxr-bottom">
 											<img src="../images/z-moon.png" alt="">
 											<span>拔剑乌托邦</span>
@@ -118,6 +118,10 @@ var mySwiper = new Swiper('.swiper-container',{
 				}
 			});
 		}
+			
+//				}else if(mySwiper.translate >= 0 && mySwiper.translate < 50){
+//					$(".init-loading").html('').hide();
+//				}
 		return false;
 	}
 });

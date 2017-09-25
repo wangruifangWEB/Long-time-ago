@@ -32,40 +32,24 @@
 				/*height: 8rem !important;*/
 				/*padding-top: 1.2rem !important;*/
 			}
-			/*.bmi img{
-				display: none;
-				width: 6.24rem;
-				height: 1.96rem;
-				display: block;
-				position: absolute;
-				bottom: 1.2rem;
-				left:50%;
-				margin-left: -3.14rem;
-			}
-			img{
-				display: none;
-			}*/
-		</style>	
+
+		</style>
 	</head>
 	<body>
 		<div class="outerScroller">
 			<div class="scroll">
-				<!--<header>
+				<!-- <header>
 					<div class="d-title">
 						<a href="javascript:;">
 							<img src="../../images/cd.png" alt="" />
 						</a>
 						<span>我的团队</span>
 					</div>
-				</header>-->
-				<section class="width-box bg">					
+				</header> -->
+				<section class="width-box bg">
 					<!--雷达图-->
    					<div id="main"></div>
 				</section>
-				<!--<div class="bmi">
-					<img src="../../images/bmi.png"/>
-				</div>
-				-->
 				<div class="z-alert">
 					<ul>
 						<li><a href="javascript:;" class="active">徒步活动</a></li>
@@ -76,61 +60,105 @@
 			</div>
 		</div>
 		<div class="box-transparent"></div>
-		
+
 		<script>
 			$(function(){
 				chart1();
 			});
 			function chart1(){
 				option = {
-		        title: {
-		            text: '1212'
-		        },
-		        color:['#FFCA7B','#C47400'],
-		        tooltip: {},
-		        legend: {
-			        data: ['预算分配（Allocated Budget）']
-			    },
-		        radar: {
-			        name:{
-//			           	show: true,
-//			           	formatter: null,
-			           	textStyle: {
-			             	//设置颜色
-			            	color:'#595959',
-			           	}
+			        title: {
+			            text: null
 			        },
-//				    splitNumber: 1,
-		            indicator:[
-		                { name: '80%  碳水化合物\r\n(70g/72g)', max: 6500},
-		                { name: '88%  脂肪\r\n(21g/22g)', max: 16000},
-		                { name: '103% 能量\r\n(1800cal/2700cal)', max: 30000},
-		                { name: '70% 蛋白质\r\n(24g/26g)', max: 38000},
-		                { name: '76% 盐\r\n(6g/6g)', max: 52000}
-		            ]
-		        },
-		        series: [{
-		            name: '1212',
-		            type: 'radar',
-		            areaStyle: {normal: {}},
-		            data : [
-		                {
-		                    value : [4300, 10000, 18000, 20000, 34000],
-		                    name : '实际开销'
-		                }
-		            ]
-		        }]
-		    };
+			      	// color:['#FFCA7B','#C47400'],
+			      	color:['#FFCA7B'],
+			        width: 2,
+			        opacity: 1,
+			        legend: {
+			            // data: ['','']
+			            enabled: false
+			        },
+			        polar: {
+			            name:{
+			    			show: true,
+			    			formatter: null,
+			               	textStyle: {
+			                	color:'#d4b05f',
+			                    fontSize: '0.24rem'
+			               	}
+			            },
+			    		splitNumber: 1,
+			            indicator:[
+			                { name: '80%  碳水化合物\r\n(70g/72g)', max: 6500},
+			                { name: '88%  脂肪\r\n(21g/22g)', max: 16000},
+			                { name: '103% 能量\r\n(1800cal/2700cal)', max: 30000},
+			                { name: '70% 蛋白质\r\n(24g/26g)', max: 38000},
+			                { name: '76% 盐\r\n(6g/6g)', max: 52000}
+			            ],
+			            nameGap :5,
+			            center : ['50%','50%'],
+			            scale: true,
+			            type: 'rader',
+			            axisLine: {            // 坐标轴线
+			                show: true,        // 默认显示，属性show控制显示与否
+			                lineStyle: {       // 属性lineStyle控制线条样式
+			                    color: '#d4b05f',
+			                    width: 1,
+			                    type: 'dashed',
+			                }
+			            },
+			            axisLabel: {           // 坐标轴文本标签，详见axis.axisLabel
+			                show: false,
+			                formatter: null,
+			                textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+			                    color: '#d4b05f',
+			                    type: 'dashed'
+			                }
+			            },
+			            splitArea : {
+			                show : true,
+			                areaStyle : {
+			                    // color: ['transparent','transparent'],
+			                    // type: 'default',
+			                    areaStyle: {
+                                color: (function(){ 
+                                	var zrColor = require('zrender/tool/color'); 
+                               		return zrColor.getLinearGradient( 
+	                                    0, 0, 500, 500, 
+	                                    [[0, '#32cd32'],[0.5, '#afdd00'],[1, '#ffff77']] 
+	                                )
+	                            })
+			                },
+			            },
+			            splitLine : {
+			                show : true,
+			                lineStyle : {
+			                    width : 1,
+			                    color : '#d4b05f',
+			                }
+			            }
+			        },
+			        series: [{
+			            name: '',
+			            type: 'radar',
+			            symbolSize: '0',
+
+			            areaStyle: {
+			                normal: {},
+			            },
+			            data : [
+			                {
+			                    value : [4300, 8000, 15000, 20000, 34000],
+			                    name : '实际开销'
+			                }
+			            ]
+			        }]
+			    };
 			var myChart = echarts.init(document.getElementById('main'));
 		        myChart.setOption(option);
 			}
-		    //指定图表的配置项和数据
-//		    var myChart=echarts.init(document.getElementById("main"));
-		   /* var myChart = echarts.init(document.getElementById('main'), "macarons");
-		    //使用刚指定的配置项和数据显示图表
-		    myChart.setOption(option);*/
 		    $('.scroll').height($(window).height());
-		    
+
 		</script>
 	</body>
 </html>

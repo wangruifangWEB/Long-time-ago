@@ -9,7 +9,7 @@
 }*/
 
 .notice_layer{
-	bottom: 2.4rem;
+	bottom: 2.42rem;
 }
 .loadtip p{
 	font-size: 0.26rem;
@@ -275,7 +275,7 @@
 .talk_message_list{
 	width: 7.5rem;
 	border-bottom: solid 1px #D8D8D8;
-	clear: both;
+	display: flex;
 }
 .talk_message_list_left{
 	margin-left: 0.24rem;
@@ -283,14 +283,12 @@
 	height: 0.64rem;
 	border-radius: 50%;
 	margin-right: 0.25rem;
-	float: left;
 }
 .talk_message_list_left img{
 	width: 0.64rem;
 	height: 0.64rem;
 }
 .talk_message_list_right{
-	float: left;
 	padding-right: 0.24rem;
 	width: 6.37rem;
 }
@@ -314,7 +312,7 @@
 
 /* 简介  */
 .intro_detail{
-	/*position: fixed;*/
+	background-color: #F6F6F6;
 	top: 6.1rem;
 	left: 7.5rem;
 	width: 7.5rem;
@@ -326,9 +324,8 @@
 .intro_detail_portal{
 	width: 7.5rem;
 	height: 1.09rem;
-	/*margin-bottom: 0.16rem;*/
 	background-color: #F6F6F6;
-	border-bottom: 1px solid #E9E9E9;
+	border-bottom: 0.01rem solid #E9E9E9;
 	position: relative;
 }
 .intro_detail_portal_click{
@@ -364,10 +361,9 @@
  	width:7.5rem;			 	
  	height:1.36rem;
  	line-height:.32rem;
- 	border-bottom:#fff;
+ 	border-bottom: 0.01rem solid #E9E9E9;
  	padding-top:.24rem;
 	background-color: #F6F6F6;	
-	padding-bottom:.24rem;
 	padding-left:.24rem;								 	
  }
 .intro_detail_addr p{
@@ -380,7 +376,7 @@
  	border-top: 1px solid #D8D8D8;
  	background-color: #F6F6F6;	
  	padding:.24rem;
- 	overflow: scroll;
+ 	overflow: scroll !important;
 }
 .intro_detail_txt p{
  	color:#25233A;

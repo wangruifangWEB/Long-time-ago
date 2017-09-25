@@ -13,6 +13,8 @@ $('.talk_message').height($(window).height()-$('header').height()-$('.z-boxbg').
 	$('.intro_detail').height($(window).height()-$('header').height()-$('.z-boxbg').height()-$('.z-tab').height());
 	$('.swiper1 .swiper-container,.swiper1 .w').height($(window).height()-$('header').height()-$('.z-boxbg').height()-$('.z-tab').height()+'px');
 	$('.swiper2 .swiper-container,.swiper2 .w').height($(window).height()-$('header').height()-$('.z-boxbg').height()-$('.talk_message_title').height()-$('.z-sr').height()+'px');
+	
+	
 	$('.on2').click(function() {
 		$(this).find('a').addClass("active");
 		$('.talk_message').animate({'left':'0'});
@@ -22,11 +24,25 @@ $('.talk_message').height($(window).height()-$('header').height()-$('.z-boxbg').
 		$('.face-content').animate({'left':'0'});
 		$('.talk_hidden').animate({'display':'none'});
 	})
-	$('.on1').toggle(function() { 
-		$(this).find('img').attr('src',$(this).find('img').attr('data'));
-	},function(){
-		$('.on1 img').attr('src','../images/pr-e-1.png');
-	})
+	
+	// dianzan
+	$("body").on('click','.on1',function(e) {
+		e.stopPropagation;
+		if(!$(this).find('.on1').hasClass('hasDian')){
+			$(this).find('img').attr('src',$(this).find('img').attr('data'));
+			$('.notice_layer').show();
+			$('.notice_layer').fadeOut(1500);
+			$(this).addClass('hasDian');
+		}else{
+			alert()
+			$('.notice_layer').html('您已经点过赞了！');
+			$('.notice_layer').show();
+			$('.notice_layer').fadeOut(1500);
+		}
+ 	})
+	
+	
+	
 	$('.on3').click(function() { 
 		$(".bg123").show();
 	})
@@ -68,7 +84,6 @@ $('.talk_message').height($(window).height()-$('header').height()-$('.z-boxbg').
 		$('.talk_message').animate({'left':'7.5rem'});
 		$('.face-content').animate({'left':'7.5rem'});
 		$('.on2 img').attr('src','../images/qr-d-1.png');
-		$('.on1 img').attr('src','../images/pr-e-1.png');
 		$('.z-sr').animate({'left':'200%'});
 		$('.talk_hidden').animate({'left':'0'});
 	})

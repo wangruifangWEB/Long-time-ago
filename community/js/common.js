@@ -3,10 +3,10 @@ function biglv() {
 	document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
 }
 biglv();
-window.onresize = function() {
-	biglv();
-	location.reload();
-}
+//window.onresize = function() {
+//	biglv();
+//	location.reload();
+//}
 //toggle 兼容处理
 $.fn.toggle = function( fn ) {
     // Save reference to arguments for access in closure
