@@ -242,7 +242,7 @@ var mySwiper2 = new Swiper('.swiper2 .swiper-container',{
 			if(translateY > 0){
 				$('.zutp_list li:nth-child(6)').nextAll().slideDown(500);
 				// setInterval(function(){
-					$('.zutp_list').height(3*$('.zutp_list li').height());
+					$('.zutp_list').height(3*$('.zutp_list li').height()); 
 				// },500)
 				$('.swiper1 .swiper-container,.swiper1 .w').height($(window).height()-$('header').height()-$('.zutp_list').height()-$('.z-tab').height()-25+'px');
 				$('.swiper2 .swiper-container,.swiper2 .w').height($(window).height()-$('header').height()-$('.zutp_list').outerHeight()-$('.talk_message_title').outerHeight()-$('.z-sr').outerHeight()-20+'px');

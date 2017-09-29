@@ -64,11 +64,7 @@
 .slide .img{
     overflow: hidden;
     position: absolute;
-    transition: width 0.4s,
-    height 0.4s,
-    top 0.4s,
-    left 0.4s,
-    z-index 0.4s;
+    transition: width 0.4s,height 0.4s,top 0.4s,left 0.4s, z-index 0.4s;
     margin-top: .35rem;
     margin-bottom: .35rem;
 }

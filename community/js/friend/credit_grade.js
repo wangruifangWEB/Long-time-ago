@@ -1,5 +1,5 @@
-var autoLb = false;          //autoLb=true为开启自动轮播
-var autoLbtime = 1;         //autoLbtime为轮播间隔时间（单位秒）
+var autoLb = true;          //autoLb=true为开启自动轮播
+var autoLbtime = 3;         //autoLbtime为轮播间隔时间（单位秒）
 var touch = true;           //touch=true为开启触摸滑动
 var slideBt = true;         //slideBt=true为开启滚动按钮
 var slideNub;               //轮播图片数量
@@ -65,8 +65,8 @@ $(function(){
     //自动轮播
     if(autoLb){
         setInterval(function(){
-        right();
-    }, autoLbtime*1000);
+            right();
+        }, autoLbtime*1000);
     }
 
 
@@ -128,27 +128,6 @@ function slideLi(){
     $(".slide-bt span[data-slide-bt="+slideList+"]").addClass("on");
 }
 
-
-//轮播按钮点击翻页
-function tz(id){
-    var tzcs = id - (parseInt($(".slide .img3").attr("data-slide-imgId")) + 1);
-    if(tzcs>0){
-        for(i=0;i<tzcs;i++){
-            setTimeout(function(){
-              right();
-            },1);
-        }
-    }
-    if(tzcs<0){
-        tzcs=(-tzcs);
-        for(i=0;i<tzcs;i++){
-            setTimeout(function(){
-              left();
-            },1);
-        }
-    }
-    slideLi();
-}
 
 
 //触摸滑动模块
