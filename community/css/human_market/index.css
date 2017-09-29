@@ -20,7 +20,7 @@ body,html{
 /*轮播图*/
 .swipe {
 	width:6.9rem;
-	height:2.16rem !important;
+	height:2.16rem;
  	overflow:hidden;
  	position:relative;
   	width:100%;
