@@ -8,11 +8,15 @@
     <script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
     <style media="screen">
-    body {
+        body {
         width: 100%;
-        background-color: #431a27;
-        font-family: PingFangSC-Medium;
+        background: linear-gradiute: #431a27;
+        font-family: PingFangSC-Medium,Source Han Sans;
+		background: linear-gradient( #431a27 0%, #0d2142 100%);
     }
+	.index{
+		font-family: PingFangSC-Medium,Source Han Sans;
+	}
     .header{
         width: 7.5rem;
         height: 15.52rem;
@@ -38,7 +42,7 @@
     .be_prime_cont{
         padding-left: 0.62rem;
         line-height: 0.48rem;
-        padding-top: 0.4rem;
+        padding-top: 0.2rem;
         width: 5.12rem;
         font-size: 0.24rem;
         color: #fff;
@@ -59,9 +63,10 @@
         font-weight: bold;
     }
     .prime_taocan p span{
-        font-size: 0.42rem;
+        font-size: 0.52rem;
         color: #f00;
-        vertical-align: bottom;
+        position: relative;
+		top: 0.07rem;
     }
     .main_project{
         margin-bottom: 0.7rem;
@@ -83,6 +88,7 @@
     }
     .main_project li p{
         font-size: 0.26rem;
+		line-height: 0.3rem;
         color: #fff;
     }
     .main_content_warp{
@@ -101,14 +107,14 @@
         text-align: center;
         font-size: 0.36rem;
         color: #163681;
-        padding-top: 0.44rem;
-        padding-bottom: 0.3rem;
+        padding-top: 0.24rem;
+        padding-bottom: 0.1rem;
     }
     .male_main_content{
-        width: 3.25rem;
+        width: 3.2rem;
     }
     .famale_main_content{
-        margin-left: 0.2rem;
+        //margin-left: 0.3rem;
     }
     .main_content_cont{
         padding-left: 0.4rem;
@@ -119,16 +125,22 @@
     }
     .type_main_content{
         display: flex;
+		display: -webkit-box;
+		
         width: 2.64rem;
     }
     .type_main_content .main_content_title{
         padding-top: 0.24rem;
-        padding-bottom: 0.24rem;
+        padding-bottom: 0.1rem;
     }
     .type_content_cont{
-        width: 2.64rem;
-        padding-left: 0.27rem;
+        width: 2.84rem;
+        padding-left: 0.25rem;
     }
+	.famale_main_content .type_content_cont{
+		padding-left: 0.16rem;
+		width: 2.7rem;
+	}
     /* 主要项目结束 */
     .total{
         font-size: 0.24rem;
@@ -174,15 +186,46 @@
     .lucky li span{
         color: #f7812b;
     }
+    .btn_warp{
+    	display: flex;
+    	display: -webkit-flex;
+    	justify-content: space-around;
+    }
     .btn{
         width: 2.45rem;
         height: 0.82rem;
-        margin: 0.28rem auto 0.52rem;
+        margin: 0.28rem auto 0rem;
         display: block;
-        background-image: url(../images/tijian/button.png);
         background-position: 0 0;
         background-repeat: no-repeat;
         background-size: 2.45rem 0.82rem;
+    }
+    .btn1{
+    	background-image: url(../images/tijian/button1.png);
+    }
+    .btn2{
+    	background-image: url(../images/tijian/button2.png);
+    }
+    .btn_notice{
+    	display: flex;
+    	display: -webkit-flex;
+    	justify-content: space-around;
+    }
+    .btn_notice p{
+    	width: 2.45rem;
+    	text-align: center;
+    	font-size: 0.3rem;
+    	color: #fff;
+    	font-style: italic;
+    	height: 0.8rem;
+    	line-height: 0.8rem;
+    	font-family: pingfangSC;
+    }
+    .btn_notice p:nth-child(1){
+    	text-shadow: 0 0 3px #6288f5;
+    }
+    .btn_notice p:nth-child(2){
+    	text-shadow: 0 0 3px #fa9d0a;
     }
     .clound{
         width: 6.32rem;
@@ -216,7 +259,8 @@
         <div class="be_prime">
             <p class="be_prime_title">成为会员</p>
             <p class="be_prime_cont">
-                识别下方二维码每天随机抽取六名新关注的用户免费赠送（至尊无忧、健康久久各三份）！
+                识别下方二维码每天随机抽取六名新关注的用户免费赠送（至尊无忧、健康久久各三份）！<br>
+                参与方式：关注公众号并回复“中秋体检”!
             </p>
         </div>
         <img class="taocan_title" src="../images/tijian/zhizun_taocan_title.png" alt="">
@@ -266,12 +310,19 @@
         <!-- 幸运观众 -->
         <ul class="lucky">
             <li>每天随机抽取1名成功报名的会员返还<span>全部费用</span>！</li>
-            <li>每天第1～50位成功报名会员返还<span>500元</span>现金；</li>
-            <li>每天第51～100位成功报名会员返还<span>300元</span>现金；</li>
-            <li>每天第101～200位成功报名会员返还<span>100元</span>现金。</li>
+            <li>每天第1～10位成功报名会员返还<span>500元</span>京东卡；</li>
+            <li>每天第11～40位成功报名会员返还<span>300元</span>京东卡；</li>
+            <li>每天第41～100位成功报名会员返还<span>100元</span>京东卡。</li>
         </ul>
         <!-- 立即抢购 -->
-        <button class="btn"></button>
+        <div class="btn_warp">
+        	<button class="btn btn1" id="zhizun_nan"></button>
+        	<button class="btn btn2" id="zhizun_nv"></button>
+        </div>
+        <div class="btn_notice">
+        	<p>男士体检卡</p>
+        	<p>女士体检卡</p>
+        </div>
         <!-- 云 -->
         <img src="../images/tijian/cloud.png" class="clound" alt="">
         
@@ -305,12 +356,20 @@
         <!-- 幸运观众 -->
         <ul class="lucky">
             <li>每天随机抽取1名成功报名的会员返还<span>全部费用</span>！</li>
-            <li>每天第1～50位成功报名会员返还<span>200元</span>现金；</li>
-            <li>每天第51～100位成功报名会员返还<span>100元</span>现金；</li>
-            <li>每天第101～200位成功报名会员返还<span>50元</span>现金。</li>
+            <li>每天第1～10位成功报名会员返还<span>200元</span>京东卡；</li>
+            <li>每天第11～40位成功报名会员返还<span>100元</span>京东卡；</li>
+            <li>每天第41～100位成功报名会员返还<span>50元</span>京东卡。</li>
         </ul>
         <!-- 立即抢购 -->
-        <button class="btn"></button>
+        <div class="btn_warp">
+        	<button class="btn btn1" id="health_nan"></button>
+        	<button class="btn btn2" id="health_nv"></button>
+        </div>
+        <div class="btn_notice">
+        	<p>男士体检卡</p>
+        	<p>女士体检卡</p>
+        </div>
+        
         <!-- 云 -->
         <img src="../images/tijian/cloud.png" class="clound" alt="">
         <!-- 二维码提示 -->
@@ -320,7 +379,31 @@
         <img src="../images/tijian/qrcode.png" class="qrcode" alt="">
     </div>
     
-    
+    <script type="text/javascript">
+		/*$("#zhizun").click(function(){
+			location.href="http://mp.weixin.qq.com/bizmall/malldetail?id=&pid=pG4kcxDVNIR_M7eCD7H8PaJRqtHM&biz=MzI5MDIwNDQ0Mw==&scene=&action=show_detail&showwxpaytitle=1#wechat_redirect";
+		})
+		$("#health").click(function(){
+			location.href="http://mp.weixin.qq.com/bizmall/malldetail?id=&pid=pG4kcxA5Oy2buXRZ5m4-UiAapEFI&biz=MzI5MDIwNDQ0Mw==&scene=&action=show_detail&showwxpaytitle=1#wechat_redirect";
+		}) */
+    	// 至尊无忧男
+    	$("#zhizun_nan").click(function(){
+    		location.href=""	
+    	})
+    	//至尊无忧女
+    	$("#zhizun_nv").click(function(){
+    		location.href="";
+    	})
+    	
+    	// 健康久久男
+    	$("#health_nan").click(function(){
+    		location.href="";
+    	})
+    	// 健康久久女
+    	$("#health_nv").click(function(){
+    		location.href="";
+    	})
+    </script>
     
     
 </body>
