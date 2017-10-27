@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>中秋会员福利</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+    <style media="screen">
+        body {
+        width: 100%;
+        background: linear-gradiute: #431a27;
+        font-family: PingFangSC-Medium,Source Han Sans;
+		background: linear-gradient( #431a27 0%, #0d2142 100%);
+    }
+	.index{
+		font-family: PingFangSC-Medium,Source Han Sans;
+	}
+    .header{
+        width: 7.5rem;
+        height: 15.52rem;
+        margin-top: -1.2rem;
+    }
+    .be_prime{
+        width: 6.11rem;
+        height: 2.37rem;
+        margin: 0.52rem auto 0.54rem;
+        background-image: url(../images/tijian/be_prime_bg.png);
+        background-size: 6.11rem 2.37rem;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+    }
+    .be_prime_title{
+        height: 0.5rem;
+        line-height: 0.5rem;
+        font-size: 0.36rem;
+        font-weight: bold;
+        color: #fda400;
+        text-align: center;
+    }
+    .be_prime_cont{
+        padding-left: 0.62rem;
+        line-height: 0.48rem;
+        padding-top: 0.2rem;
+        width: 5.12rem;
+        font-size: 0.24rem;
+        color: #fff;
+    }
+    .taocan_title{
+        width: 6.32rem;
+        height: 1.87rem;
+        display: block;
+        margin: 0 auto; 
+    }
+    .prime_taocan{
+        margin: 0.35rem 0 0.2rem 0.7rem; 
+    }
+    .prime_taocan p{
+        line-height: 0.54rem;
+        font-size: 0.32rem;
+        color: #fff;
+        font-weight: bold;
+    }
+    .prime_taocan p span{
+        font-size: 0.52rem;
+        color: #f00;
+        position: relative;
+		top: 0.07rem;
+    }
+    .main_project{
+        margin-bottom: 0.7rem;
+        display: flex;
+        padding-left: 0.2rem;
+        width: 7.1rem;
+        margin: 0 auto;
+    }
+    .main_project li{
+        text-align: center;
+        width: 1.68rem;
+        height: 1.57rem;
+        background-image: url(../images/tijian/main_project_bg.png);
+        background-position: 0 0;
+        background-size: 1.68rem 1.57rem;
+        background-repeat: no-repeat;
+        margin-right: 0.12rem;
+        padding-top: 0.5rem
+    }
+    .main_project li p{
+        font-size: 0.26rem;
+		line-height: 0.3rem;
+        color: #fff;
+    }
+    .main_content_warp{
+        margin: 0 auto;
+        width: 6.38rem;
+        height: 6.65rem;
+        background-image: url(../images/tijian/check_content.png);
+        background-size: 6.38rem 6.65rem;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+    }
+    .main_content{
+        height: 3.1rem;
+    }
+    .main_content_title{
+        text-align: center;
+        font-size: 0.36rem;
+        color: #163681;
+        padding-top: 0.24rem;
+        padding-bottom: 0.1rem;
+    }
+    .male_main_content{
+        width: 3.2rem;
+    }
+    .famale_main_content{
+        //margin-left: 0.3rem;
+    }
+    .main_content_cont{
+        padding-left: 0.4rem;
+        line-height: 0.32rem;
+        font-size: 0.26rem;
+        width: 5.63rem;
+        color: #2a2a2a;
+    }
+    .type_main_content{
+        display: flex;
+		display: -webkit-box;
+		
+        width: 2.64rem;
+    }
+    .type_main_content .main_content_title{
+        padding-top: 0.24rem;
+        padding-bottom: 0.1rem;
+    }
+    .type_content_cont{
+        width: 2.84rem;
+        padding-left: 0.25rem;
+    }
+	.famale_main_content .type_content_cont{
+		padding-left: 0.16rem;
+		width: 2.7rem;
+	}
+    /* 主要项目结束 */
+    .total{
+        font-size: 0.24rem;
+        color: #e3dfdf;
+        padding-top: 0.3rem;
+        padding-bottom: 0.32rem;
+        padding-left: 0.56rem;
+    }
+    .total span{
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background-color: #e3dfdf;
+        margin-right: 0.15rem;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    /* 提示 */
+    .notice{
+        width: 6.32rem;
+        height: 0.99rem;
+        background-image: url(../images/tijian/notice_bg.png);
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: 6.32rem 0.99rem;
+        font-size: 0.36rem;
+        font-weight: bold;
+        color: #e8d27b;
+        text-align: center;
+        line-height: 0.99rem;
+        margin: 0 auto;
+    }
+    /* 幸运观众 */
+    .lucky{
+        padding-left: 0.64rem;
+        margin-top: 0.3rem;
+    }
+    .lucky li{
+        line-height: 0.5rem;
+        color: #e8d27b;
+        font-size: 0.26rem;
+    }
+    .lucky li span{
+        color: #f7812b;
+    }
+    .btn_warp{
+    	display: flex;
+    	display: -webkit-flex;
+    	justify-content: space-around;
+    }
+    .btn{
+        width: 2.45rem;
+        height: 0.82rem;
+        margin: 0.28rem auto 0rem;
+        display: block;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: 2.45rem 0.82rem;
+    }
+    .btn1{
+    	background-image: url(../images/tijian/button1.png);
+    }
+    .btn2{
+    	background-image: url(../images/tijian/button2.png);
+    }
+    .btn_notice{
+    	display: flex;
+    	display: -webkit-flex;
+    	justify-content: space-around;
+    }
+    .btn_notice p{
+    	width: 2.45rem;
+    	text-align: center;
+    	font-size: 0.3rem;
+    	color: #fff;
+    	font-style: italic;
+    	height: 0.8rem;
+    	line-height: 0.8rem;
+    	font-family: pingfangSC;
+    }
+    .btn_notice p:nth-child(1){
+    	text-shadow: 0 0 3px #6288f5;
+    }
+    .btn_notice p:nth-child(2){
+    	text-shadow: 0 0 3px #fa9d0a;
+    }
+    .clound{
+        width: 6.32rem;
+        height: 1.06rem;
+        margin: 0 auto 0.38rem;
+        display: block;
+    }
+
+    /* 二维码提示文字 */
+    .qrcode_notice{
+        width: 6.5rem;
+        margin-top: 0.48rem;
+        line-height: 0.4rem;
+        padding-left: 0.64rem;
+        font-weight: bold;
+        font-size: 0.3rem;
+        color: #f60;
+    }
+    .qrcode{
+        width: 7.5rem;
+        height: 8.11rem;
+        display: block;
+        margin: 0.58rem auto 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="index">
+        <img class="header" src="../images/tijian/header.png" alt="">
+        <div class="be_prime">
+            <p class="be_prime_title">成为会员</p>
+            <p class="be_prime_cont">
+                识别下方二维码每天随机抽取六名新关注的用户免费赠送（至尊无忧、健康久久各三份）！<br>
+                参与方式：关注公众号并回复“中秋体检”!
+            </p>
+        </div>
+        <img class="taocan_title" src="../images/tijian/zhizun_taocan_title.png" alt="">
+        <div class="prime_taocan">
+            <p>门市价：&nbsp;<span>10431</span>&nbsp;元</p>
+            <p>会员专享：仅需&nbsp;<span>3999</span>&nbsp;元</p>
+        </div>
+        <ul class="main_project">
+            <li>
+                <p>胶囊胃镜</p>
+                <p>￥3850</p>
+            </li>
+            <li>
+                <p>胸部螺旋CT</p>
+                <p>￥1500</p>
+            </li>
+            <li>
+                <p>12项癌症</p>
+                <p>筛查</p>
+            </li>
+            <li>
+                <p>72项全身检查</p>
+                <p>￥5081</p>
+            </li>
+        </ul>
+        <!-- 主要项目 -->
+        <div class="main_content_warp">
+            <div class="main_content">
+                <p class="main_content_title">主要项目</p>
+                <p class="main_content_cont">筛查70种病兆风险，包括常规检查；全身重要器官彩色超声；超敏C反应蛋白（hsCRP）；幽门螺杆菌（定量检查胃部致癌主因）；心脑血管风险筛查；代谢异常；体内微量元素检测；整体亚健康检查等。</p>
+            </div>
+            <div class="type_main_content">
+                <div class="male_main_content">
+                    <p class="main_content_title">男性专享</p>
+                    <p class="main_content_cont type_content_cont">C-肽定量、胰岛素定量、泌尿彩超、前列腺彩超、C男性肿瘤12项、男性性激素4项。</p>
+                </div>
+                <div class="famale_main_content">
+                    <p class="main_content_title">女性专享</p>
+                    <p class="main_content_cont type_content_cont">妇科一般检查、白带常规、宫颈液基细胞学检测（TCT）、高危乳头瘤病毒（HPV）、C女性肿瘤12项、女性性激素4项、乳腺彩超、女性盆腔彩超。</p>
+                </div>
+            </div>
+        </div>
+        <!-- 总计 -->
+        <p class="total"><span></span>总计86项检查，平均每项仅45元，适合全人群深度精准筛查</p>
+        <!-- 提示 -->
+        <div class="notice">会员专享，数量有限，报名从速</div>
+        <!-- 幸运观众 -->
+        <ul class="lucky">
+            <li>每天随机抽取1名成功报名的会员返还<span>全部费用</span>！</li>
+            <li>每天第1～10位成功报名会员返还<span>500元</span>京东卡；</li>
+            <li>每天第11～40位成功报名会员返还<span>300元</span>京东卡；</li>
+            <li>每天第41～100位成功报名会员返还<span>100元</span>京东卡。</li>
+        </ul>
+        <!-- 立即抢购 -->
+        <div class="btn_warp">
+        	<button class="btn btn1" id="zhizun_nan"></button>
+        	<button class="btn btn2" id="zhizun_nv"></button>
+        </div>
+        <div class="btn_notice">
+        	<p>男士体检卡</p>
+        	<p>女士体检卡</p>
+        </div>
+        <!-- 云 -->
+        <img src="../images/tijian/cloud.png" class="clound" alt="">
+        
+        <!-- 健康久久 -->
+        <img class="taocan_title" src="../images/tijian/jiankang_taotan_title.png" alt="">
+        <div class="prime_taocan">
+            <p>门市价：&nbsp;<span>2467</span>&nbsp;元</p>
+            <p>会员专享：仅需&nbsp;<span>999</span>&nbsp;元</p>
+        </div>
+        <!-- 主要项目 -->
+        <div class="main_content_warp">
+            <div class="main_content">
+                <p class="main_content_title">主要项目</p>
+                <p class="main_content_cont">结合近10年北京市民健康数据，涵盖北京地区前10项常见易发疾病阳性检查，筛查50种病兆风险<br />，包括全身重要器官彩色超声、4项肿瘤标志物、7项心脑血管、肾功能3项、微量元素、骨密度、甲状腺等。</p>
+            </div>
+            <div class="type_main_content">
+                <div class="male_main_content">
+                    <p class="main_content_title">男性专享</p>
+                    <p class="main_content_cont type_content_cont">C-肝功能11项、总胆汁酸、胱抑素-C、同型半胱氨酸、超敏C反应蛋白（hsCRP）、男性肿瘤4项、微量元素5项、前列腺彩超。</p>
+                </div>
+                <div class="famale_main_content">
+                    <p class="main_content_title">女性专享</p>
+                    <p class="main_content_cont type_content_cont">妇科一般检查、白带常规、宫颈液基细胞学检测（TCT）、高危乳头瘤病毒（HPV）、女性肿瘤4项、肝功能7项<br />、女性盆腔彩超、乳腺触诊检查。</p>
+                </div>
+            </div>
+        </div>
+        <!-- 总计 -->
+        <p class="total"><span></span>总计59项检查，平均每项仅16元，适合全人群普遍筛查</p>
+        <!-- 提示 -->
+        <div class="notice">会员专享，数量有限，报名从速</div>
+        <!-- 幸运观众 -->
+        <ul class="lucky">
+            <li>每天随机抽取1名成功报名的会员返还<span>全部费用</span>！</li>
+            <li>每天第1～10位成功报名会员返还<span>200元</span>京东卡；</li>
+            <li>每天第11～40位成功报名会员返还<span>100元</span>京东卡；</li>
+            <li>每天第41～100位成功报名会员返还<span>50元</span>京东卡。</li>
+        </ul>
+        <!-- 立即抢购 -->
+        <div class="btn_warp">
+        	<button class="btn btn1" id="health_nan"></button>
+        	<button class="btn btn2" id="health_nv"></button>
+        </div>
+        <div class="btn_notice">
+        	<p>男士体检卡</p>
+        	<p>女士体检卡</p>
+        </div>
+        
+        <!-- 云 -->
+        <img src="../images/tijian/cloud.png" class="clound" alt="">
+        <!-- 二维码提示 -->
+        <div class="qrcode_notice">
+            识别下方二维码每天免费随机抽取六名新关注的用户免费赠送（至尊无忧、健康久久各三份）！
+        </div>
+        <img src="../images/tijian/qrcode.png" class="qrcode" alt="">
+    </div>
+    
+    <script type="text/javascript">
+		/*$("#zhizun").click(function(){
+			location.href="http://mp.weixin.qq.com/bizmall/malldetail?id=&pid=pG4kcxDVNIR_M7eCD7H8PaJRqtHM&biz=MzI5MDIwNDQ0Mw==&scene=&action=show_detail&showwxpaytitle=1#wechat_redirect";
+		})
+		$("#health").click(function(){
+			location.href="http://mp.weixin.qq.com/bizmall/malldetail?id=&pid=pG4kcxA5Oy2buXRZ5m4-UiAapEFI&biz=MzI5MDIwNDQ0Mw==&scene=&action=show_detail&showwxpaytitle=1#wechat_redirect";
+		}) */
+    	// 至尊无忧男
+    	$("#zhizun_nan").click(function(){
+    		location.href=""	
+    	})
+    	//至尊无忧女
+    	$("#zhizun_nv").click(function(){
+    		location.href="";
+    	})
+    	
+    	// 健康久久男
+    	$("#health_nan").click(function(){
+    		location.href="";
+    	})
+    	// 健康久久女
+    	$("#health_nv").click(function(){
+    		location.href="";
+    	})
+    </script>
+    
+    
+</body>
+
+</html>
