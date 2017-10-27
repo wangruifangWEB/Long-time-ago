@@ -96,7 +96,6 @@ $('.pinglun_detail .pinglun_detail_ul .pinglun_dianzan').click(function(){
 })
 // 滚动事件
 window.onscroll=function(){
-	console.log(1);
 	var scrollH_first= $('.course_detail').offset().top - $('.tab_switch_ul').height(); // 课程详情对顶部的距离
 	var scrollH_second= $('.relate_recommen').offset().top - $('.tab_switch_ul').height(); //相关推荐对顶部的距离
 	var scrollH_third= $('.pinglun').offset().top - $('.tab_switch_ul').height(); //评论对顶部的距离
