@@ -408,7 +408,7 @@
 						<ul class="user_msg_list">
 							<li style="margin-top:0">
 								<p>姓名<span class="shurutishi"></span></p>
-								<input type="text" placeholder="姓名" class="user" disabled onblur="checkuser()" oninput="myFunction()" />
+								<input type="text" placeholder="姓名" value="21321" class="user" disabled onblur="checkuser()" oninput="myFunction()" />
 								<span class="gray_notice"><img src="../images/notice_gray.png" alt="" /></span>
 							</li>
 							<li>
@@ -498,7 +498,9 @@
 				$(".user_msg_list li p .shurutishi").removeClass('red_notice');
 //
 			}
-
+			if($('.user').val()!=""){
+				$('.user').siblings('p').show();
+			}
 			var checkuser=function(){
 				var reg_user=/^(((\s?[\u4e00-\u9fa5]+\s?)+)|([a-zA-Z]+\s?)+)$/;
 				if(!reg_user.test($('.user').val())){

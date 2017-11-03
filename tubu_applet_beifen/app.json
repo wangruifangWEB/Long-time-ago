@@ -1,0 +1,53 @@
+{
+    "pages": [
+        "pages/personal/personal",
+        "pages/mywalk/mywalk",
+        "pages/beauty/beauty",
+        "pages/activity/activity",
+        "pages/health/health"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#f6f6f6",
+        "navigationBarTitleText": "我的徒步",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/beauty/beauty",
+                "text": "最美评选",
+                "iconPath": "images/beauty.png",
+                "selectedIconPath": "images/beauty2.png"
+            },
+            {
+                "pagePath": "pages/activity/activity",
+                "text": "徒步活动",
+                "iconPath": "images/activity.png",
+                "selectedIconPath": "images/activity2.png"
+            },
+            {
+                "pagePath": "pages/mywalk/mywalk",
+                "text": "我的徒步",
+                "iconPath": "images/mywalk.png",
+                "selectedIconPath": "images/mywalk2.png"
+            },
+            {
+                "pagePath": "pages/health/health",
+                "text": "营养饮食",
+                "iconPath": "images/health.png",
+                "selectedIconPath": "images/health2.png"
+            },
+            {
+                "pagePath": "pages/personal/personal",
+                "text": "个人中心",
+                "iconPath": "images/personal.png",
+                "selectedIconPath": "images/personal2.png"
+            }
+        ],
+        "color": "#595959",
+        "selectedColor": "#f69200",
+        "backgroundColor":"#f6f6f6",
+        "borderStyle": "#d8d8d8"
+    }
+}

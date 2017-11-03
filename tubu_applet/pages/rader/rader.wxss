@@ -1,0 +1,13 @@
+page{
+    /* background-color: #292929; */
+}
+.canvas_warp{
+    width: 750rpx; 
+    height: 400rpx;
+    display: block;
+    margin: 0 auto 40rpx; 
+}
+canvas{
+    height: 400rpx;
+    width: 750rpx;
+}

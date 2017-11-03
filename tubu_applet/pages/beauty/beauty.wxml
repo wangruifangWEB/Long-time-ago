@@ -1,0 +1,8 @@
+<import src="beauty_template/beauty_template.wxml" />
+<view class='container'>
+    <block wx:for="{{beautysInfo}}" wx:for-index="idx" wx:for-item="beautys" data-id="{{id}}">
+        <view data-idx='id' bindtap='beauytDetailfn'>
+            <template is="beauty" data="{{...beautys}}"  />
+        </view>
+    </block>
+</view>

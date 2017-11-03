@@ -6,7 +6,6 @@ function chart1(){
         title: {
             text: null
         },
-        // color:['#FFCA7B','#C47400'],
         color:['rgba(212,176,95,0.5)','rgba(212,176,95,1)'],
         width: 2,
         opacity: 0.1,

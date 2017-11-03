@@ -72,21 +72,21 @@ $(function() {
 //  });
 	
    })
-	var scroll = document.querySelector('.scroll');
-   	var outerScroller = document.querySelector('.outerScroller');
+	// var scroll = document.querySelector('.scroll');
+   	// var outerScroller = document.querySelector('.outerScroller');
 //	   	var touchStart = 0;
 //	   	var touchDis = 0;
-   	var startY=0,endY=0;
-   	outerScroller.addEventListener('touchstart', function(event) { 
-		startY=event.touches[0].pageY;
-    }, false);
-   	outerScroller.addEventListener('touchmove', function(event) { 
-		endY=event.touches[0].pageY;
-   		if(startY-endY<-65){
-        	location.reload();
-   		}
-    }, false);
-   	outerScroller.addEventListener('touchend', function(event) { 
+   	// var startY=0,endY=0;
+  //  	outerScroller.addEventListener('touchstart', function(event) { 
+		// startY=event.touches[0].pageY;
+  //   }, false);
+  //  	outerScroller.addEventListener('touchmove', function(event) { 
+		// endY=event.touches[0].pageY;
+  //  		if(startY-endY<-65){
+  //       	location.reload();
+  //  		}
+  //   }, false);
+  //  	outerScroller.addEventListener('touchend', function(event) { 
    		
-    }, false);
+  //   }, false);
 })

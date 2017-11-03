@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>徒步活动</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/css.css" />
+		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/swiper.min.js"></script>
+		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
+		<!--<link rel="stylesheet" href="../../single_css/global.css">-->
+		<style>	
+			body,html {
+				background: #ffffff;
+				overflow-x: hidden;
+				font-family: PingFangSC;
+			}			
+			header {
+				width: 7.5rem;
+				margin-left: -3.75rem;
+				left: 50%;
+				position: fixed;
+				z-index: 100000;
+			}		
+			.outerScroller {
+				width: 7.5rem;	
+				margin: 0 auto;
+			}			
+			.scroll {
+				position: relative;
+				overflow: hidden;
+			}
+			.order_status{
+				font-family: PingFangSC-Medium;
+				width: 7.5rem;
+				height: 0.84rem;
+				line-height: 0.84rem;
+				font-size: 0.34rem;
+				background-color: #ffffff;
+				text-align: center;
+				color: #ffa126;
+				margin-top: 0.98rem;
+				outline: none;
+				border: none;
+			}
+			.order_warp{
+				width: 7.5rem;
+				height: 4.44rem;
+				background-color: #ffffff;
+				margin-top: 0.98rem;
+			}
+			.order_titel{
+				width: 3.2rem;
+				margin: 0 auto;
+				height: 0.84rem;
+				line-height: 0.84rem;
+				font-size: 0.34rem;
+				color: #ffa126;
+				display: flex;
+				display: -webkit-flex;
+				position: relative;
+			}
+			.order_titel li {
+				line-height: 0.84rem;
+			}
+			.order_titel li:nth-child(1) {
+				position: absolute;
+				left: 0.2rem;
+			}
+			.order_titel li:nth-child(2) {
+				position: absolute;
+				right: 0.2rem;
+			}
+			.status_green{
+				color: #02bb00;
+			}
+			.order_qrcode{
+				width: 3.2rem;
+				height: 3.2rem;
+				display: block;
+				margin: 0 auto 0.4rem;
+			}
+
+			.order_detail{
+				font-family: PingFangSC-Medium;
+				width: 7.5rem;
+				background-color: #f4f4f4;
+			}
+			.order_detail li,.count_title{
+				font-family: PingFangSC-Medium;
+				display: flex;
+				display: -webkit-flex;
+				height: 0.83rem;
+			}
+			.order_detail li p,.count_title p{
+				font-family: PingFangSC-Medium;
+				font-size: 0.32rem;
+				color: #666;
+				height: 0.83rem;
+				line-height: 0.83rem;
+			}
+			.order_detail li p:nth-child(1),.count_title p:nth-child(1){
+				width: 2.76rem;
+				padding-left: 0.7rem;
+			}
+			.order_detail li p:nth-child(2),.count_title p:nth-child(2){
+				width: 4.74rem;
+			}
+			.count{
+				width: 7.5rem;
+				height: auto;
+				background-color: #f4f4f4;
+			}
+			.count_title{
+				width: 7.5rem;
+				height: 0.83rem;
+				line-height: 0.83rem;
+			}
+			.count_title p:nth-child(2) img{
+				display: inline-block;
+				margin-left: 0.3rem;
+				width: 0.3rem;
+				height: 0.3rem;
+				/*vertical-align: middle;*/
+				position: relative;
+				top: 0.02rem;
+			}
+			.count_detail{
+				font-family: PingFangSC-Medium;
+				width: 7.5rem;
+				border-top: solid 1px #d7d7d7;
+				display: none;
+			}
+			.count_detail li{
+				height: 0.96rem;
+				display: flex;
+				line-height: 0.96rem;
+				border-bottom: solid 1px #d7d7d7;
+				font-size: 0.28rem;
+				color: #828282;
+			}
+			.count_detail li div{
+				line-height: 0.96rem;
+			}
+			.count_detail li div:nth-child(1){
+				padding-left: 0.7rem;
+				width: 2.86rem;
+			}
+			.count_detail li div:nth-child(2){
+				width: 1.66rem;
+			}
+			.active_info{
+				font-family: PingFangSC-Medium;
+				width: 7.5rem;
+				background-color: #ffffff;
+				height: auto;
+				padding-top: 0.26rem;
+				padding-bottom: 0.5rem;
+			}
+			.active_info li{
+				font-family: PingFangSC-Medium;
+				margin-top: 0.4rem;
+				height: 0.36rem;
+				display: flex;
+			}
+			.active_info li img{
+				width: 0.35rem;
+				height: 0.36rem;
+				margin-left: 0.7rem;
+				margin-right: 0.4rem;
+			}
+			.active_info li p{
+				color: #575757;
+				font-size: 0.34rem;
+				height: 0.36rem;
+				line-height: 0.36rem;
+			}
+			.equip_add{
+				font-family: PingFangSC-Medium;
+				width: 100%;
+				padding-left: 0.7rem;
+				padding-right: 0.64rem;
+				font-size: 0.34rem;
+				color: #575757;
+				margin-bottom: 1.3rem;
+				line-height: 0.45rem;
+				word-break: break-all;
+			}
+			.btn{
+				width: 7.5rem;
+				height: 1.02rem;
+				line-height: 1.02rem;
+				text-align: center;
+				background-color: #02bb00;
+				font-size: 0.34rem;
+				color: #ffffff;
+				position: fixed;
+				bottom: 0;
+				outline: none;
+				border: none;
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<div class="outerScroller">
+			<div class="scroll">
+				<header>
+					<div class="d-title">
+						<a href="#">
+							<img src="../../images/cd.png" alt="" />
+						</a>
+						<span>团队报名-订单详情</span>
+					</div>
+				</header>
+				<div class="order_status">待支付</div>
+				<!-- <div class="order_warp">
+						<ul class="order_titel"><li class="status_green">已支付</li><li class="">待领取</li></ul>
+					<img class="order_qrcode" src="../../images/qrcode.jpg" alt="">
+				</div> -->
+				<ul class="order_detail">
+					<li><p>订单编号：</p><p>12132484125458465135</p></li>
+					<li><p>订单金额：</p><p><span>108</span>*<span class="font_normal">60</span>+<span>60</span>*<span class="font_normal">10</span>=<span>1080</span></p></li>
+					<li><p>团队名称：</p><p>健康不求人</p></li>
+					<li><p>领队名称：</p><p>hello hello</p></li>
+					<li><p>手机号码：</p><p>13718391145</p></li>
+					<li><p>身份证号：</p><p>130926199503119856</p></li>
+					
+				</ul>
+				<div class="count">
+					<div class="count_title"><p>报名人数：</p><p><span>81</span>人<img id="showCount" class="showCount" src="../../images/hide_count.png" alt=""></p></div>
+					<ul class="count_detail">
+						<li>
+							<div>姓名：<span>天啦噜</span></div>
+							<div>性别：<span>哼</span></div>
+							<div>是否乘坐摆渡车：<span>呀</span></div>
+						</li>
+						<li>
+							<div>姓名：<span>天啦噜</span></div>
+							<div>性别：<span>哼</span></div>
+							<div>是否乘坐摆渡车：<span>呀</span></div>
+						</li>
+					</ul>
+				</div>
+				
+				<ul class="active_info">
+					<li class="active_add"><img src="../../images/active_add.png" alt=""><p>中间美术馆</p></li>
+					<li class="active_time"><img src="../../images/active_time.png" alt=""><p>2017年10月30日</p></li>
+				</ul>	
+				<p class="equip_add">
+					领取装备地点：<span>1111111111111111111111111111111111111111111111111111111111111111</span>
+				</p>
+				
+
+				
+				<button class="btn">确认支付（￥<span>1080</span>）</button>	
+				<div class="box-transparent"></div>
+			</div>
+			
+			<div class="z-alert">
+				<ul>
+					<li>
+						<a href="#" class="active"><img src="../../images/list-a-1.png" alt="" class="nm" /><img src="../../images/list-a-2.png" class="zx" />徒步活动</a>
+					</li>
+					<li>
+						<a href="#"><img src="../../images/list-b-1.png" alt="" class="nm" /><img src="../../images/list-b-2.png" class="zx" />徒步活动</a>
+					</li>
+					<li>
+						<a href="#"><img src="../../images/list-c-1.png" alt="" class="nm" /><img src="../../images/list-c-2.png" class="zx" />徒步活动</a>
+					</li>
+					<li>
+						<a href="#"><img src="../../images/list-d-1.png" alt="" style="width: .32rem;height: .48rem;margin-left: 0.05rem;" class="nm" /><img src="../../images/list-d-2.png" class="zx" />徒步活动</a>
+					</li>
+				</ul>
+			</div>
+		<script>
+			console.log($('.order_status').html());
+			$('.order_detail_ul li:nth-child(11) p:nth-child(1)').height($('.order_detail_ul li:nth-child(11) p:nth-child(2)').outerHeight());
+			// 支付
+			$('.btn').click(function(){
+//				alert('您已成功支付');
+			})
+
+			$('#showCount').click(function(){
+				if ($('#showCount').hasClass('showCount')) {
+					$('#showCount').attr('src','../../images/show_count.png');
+					$('.count_detail').slideDown();
+					$('#showCount').removeClass('showCount');
+				}else{
+					$('#showCount').attr('src','../../images/hide_count.png');
+					$('.count_detail').slideUp();
+					$('#showCount').addClass('showCount');
+				}
+			})
+		</script>
+	</body>
+</html>

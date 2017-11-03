@@ -1,0 +1,72 @@
+page{
+    background-color: #EFEFF4;
+}
+form {
+    width: 624rpx;
+    margin: 0 auto;
+    display: block;
+}
+
+.section {
+    height: 107rpx;
+    border-bottom: #d0d0d0 solid 1rpx;
+    position: relative;
+}
+
+.section_title {
+    font-size: 26rpx;
+    color: #595959;
+}
+
+.section_cont {
+    color: #f69200;
+    line-height: 52rpx;
+}
+
+.placeholder {
+    color: #595959;
+}
+
+.delete_input {
+    width: 24rpx;
+    height: 24rpx;
+    position: absolute;
+    right: 10rpx;
+    bottom: 10rpx;
+    z-index: 10;
+}
+
+.showText {
+    visibility: visible;
+}
+
+.hideText {
+    visibility: hidden;
+}
+
+.notice_text_warp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.notice_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32rpx;
+    height: 50rpx;
+    background-color: #000;
+    opacity: 0.8;
+    padding: 10rpx 30rpx;
+    color: #fff;
+    border-radius: 10rpx;
+}
+.search{
+    margin-top: 60rpx;
+}

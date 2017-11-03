@@ -1,0 +1,11 @@
+@import "beauty_template/beauty_template.wxss";
+
+page {
+    background-color: #efeff4;
+}
+.container {
+    background-color: #efeff4;
+    height: 100vh;
+    width: 750rpx;
+    padding-top: 32rpx;
+}

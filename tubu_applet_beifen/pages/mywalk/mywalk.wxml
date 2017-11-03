@@ -1,0 +1,27 @@
+<!--pages/mywalk/mywalk.wxml-->
+<view class='container'>
+    <text class='bushu'>步數</text>
+    <view class='canvas_warp'>
+        
+        <view class='{{selected_day ? "show" : "hide"}}'>
+            <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507625850218&di=03cddbab0d7717b67a7ab0fccbb1bb53&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201604%2F10%2F20160410185407_QX3CS.jpeg'></image>
+        </view>
+        <view class='{{selected_week ? "show" : "hide"}}'>
+              <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>  
+        </view>
+        <view class='{{selected_month ? "show" : "hide"}}'>
+            <canvas canvas-id="lineCanvas2" disable-scroll="true" class="canvas" bindtouchstart="touchHandler" bindtouchmove="moveHandler" bindtouchend="touchEndHandler"></canvas>
+        </view>
+        
+    </view>
+
+    <view class='type_warp'>
+        <text class='{{selected_day ? "red" : "default"}}' bindtap='selected_day'>日</text>
+        <text class='{{selected_week ? "red" : "default"}}' bindtap='selected_week'>周</text>
+        <text class='{{selected_month ? "red" : "default"}}' bindtap='selected_month'>月</text>
+    </view>
+    <view class='tab_switch'>
+        <button>每日签到</button>
+        <button>最美徒步</button>
+    </view>
+</view>

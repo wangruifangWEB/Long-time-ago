@@ -1,0 +1,301 @@
+page{
+    background-color: #fff;
+}
+.commont_scroll{
+    height: 100vh;
+    width: 100%;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    width: 750rpx;
+    height: 324rpx;
+    overflow: hidden;
+}
+.header_img,.header_img image{
+    width: 534rpx;
+    height: 324rpx;
+}
+.header_info_top,
+.header_info_bottom{
+    width: 216rpx;
+    height: 160rpx;
+    border-bottom: 2rpx #f2f2f2 solid;
+    overflow: hidden;
+    font-family: PingFangSC-Medium;
+}
+.header_info_top text{
+    text-align: center;
+    display: block;
+    color: #666565;
+    font-size: 26rpx;   
+}
+.header_info_top text.peopleCount{
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 36rpx;
+    color: #ffa735;
+    padding-top: 29rpx;
+    display: block;
+    text-align: center;
+}
+.header_info_bottom text.commentCount {
+    height: 56rpx;
+    line-height: 56rpx;
+    font-size: 36rpx;
+    color: #ffa735;
+    padding-top: 32rpx;
+    display: block;
+    text-align: center;
+}
+.comment_btn{
+    width: 160rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    margin: 10rpx auto 20rpx;
+    padding-left: 50rpx;
+    padding-right: 0;
+    font-size: 26rpx;
+    background-color: #ffa735;
+    background-image: url("http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/active_comment.png");
+    background-position: 30rpx center;
+    background-size: 32rpx 26rpx;
+    background-repeat: no-repeat;
+    color: #fff;
+    border-radius: 18rpx;
+}
+/*  */
+
+.active_info{
+    width: 750rpx;
+    height: 168rpx;
+    border-bottom: 2rpx #f2f2f2 solid;
+}
+.active_time{
+    width: 610rpx;
+    background-image: url("http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/active_time.png");
+    background-repeat: no-repeat;
+    background-size: 34rpx 34rpx;
+    background-position: 55rpx center;
+    padding-left: 128rpx;
+    color: #666565;
+    font-family: PingFangSC-Regular;
+    font-size: 32rpx;
+    margin-top: 40rpx;
+    margin-bottom: 26rpx;
+}
+.active_address{
+    width: 610rpx;
+    background-image: url("http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/active_address.png");
+    background-repeat: no-repeat;
+    background-size: 30rpx 40rpx;
+    background-position: 55rpx center;
+    padding-left: 128rpx;
+    margin-bottom: 40rpx;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/*  */
+.cost_info{
+    width: 698rpx;
+    margin: 30rpx auto;
+    display: flex;
+    background-color: #f2f2f2;
+    border-radius: 8rpx;
+    padding-top: 34rpx;
+    padding-bottom: 34rpx;
+    font-size: 26rpx;
+    font-family: PingFangSC-Regular; 
+    color: #808080;
+    flex-direction: row;
+    justify-content:space-around;
+}
+.cost_info text{
+    display: block;
+}
+
+.cost_info view:nth-child(2),.cost_info view:nth-child(4){
+    color: #ff954e;
+}
+
+
+.text_hidden{
+    visibility: hidden;
+}
+
+/*  */
+.active_title{
+    display: block;
+    height: 30rpx;
+    line-height: 30rpx;
+    margin-left: 34rpx;
+    padding-left: 16rpx;
+    margin-top: 35rpx;
+    margin-bottom: 35rpx;
+    border-left: 10rpx solid #ff954e;
+    color: #736e67;
+    font-size: 34rpx;
+    font-family: PingFangSC-Bold;
+    font-weight: bold;
+}
+.active_cont{
+    width: 638rpx;
+    background-color: #f2f2f2;
+    margin: 0 auto 20rpx;
+    border-radius: 8rpx;
+    padding: 26rpx 30rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    color: #807a73; 
+    word-break: break-all;
+}
+
+/* 蒙版假象 */
+.comment_mask_warp{
+    position: relative;
+}
+.mask_height{
+    height: 100vh;
+    width: 750rpx;
+    background-color: #ffffff;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+}
+.commentTitleScroll{
+    position: fixed;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 10;
+}
+.commentContScroll{
+    position: fixed;
+    top: 68rpx;
+    background-color: #ffffff;
+    z-index: 10;
+}
+/*  */
+
+.commont_title{
+    width: 750rpx;
+    padding-top: 19rpx;
+    padding-bottom: 19rpx;
+    height: 49rpx;
+    font-weight: bold;
+}
+.commont_title text{
+    font-size: 34rpx;
+    font-family: PingFangSC-Bold;
+    font-weight: bold;
+    margin-right: 32rpx;
+    color: #736e67;
+}
+.commont_title text:nth-child(1){
+    padding-left: 16rpx;
+    margin-left: 34rpx;
+    border-left: 10rpx solid #ff954e;
+    color: #736e67;
+}
+/*  */
+.comment_list{
+    width: 750rpx;
+    display: flex;
+    flex-direction: row;
+}
+.comment_left{
+    width: 150rpx;
+    height: 106rpx;
+}
+.comment_left image{
+    width: 68rpx;
+    height: 68rpx;
+    margin-left: 38rpx;
+    margin-top: 38rpx;
+}
+.comment_right{
+    width: 600rpx;
+    border-bottom: solid 2rpx #f2f2f2;
+}
+.comment_right .comment_user{
+    display: block;
+    margin-top: 38rpx;
+    color: #597ec9;
+    font-size: 28rpx;
+    font-family: PingFangSC-Medium;
+}
+.comment_right .comment_cont{
+    margin-top: 16rpx;
+    display: block;
+    color: #736e67;
+    font-size: 28rpx;
+    font-family: PingFangSC-Medium;
+    line-height: 34rpx;
+    margin-right: 44rpx;
+}
+.comment_right .comment_time{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: 26rpx;
+    color: #999;
+    padding-right: 56rpx;
+    margin-bottom: 20rpx;
+    margin-top: 20rpx;
+}
+.comment_right .comment_time text{
+    margin-left: 24rpx;
+}
+
+/*  */
+.loading{
+    height: 100rpx;
+    width: 750rpx;
+    text-align: center;
+}   
+.loading image{
+    width: 40rpx;
+    height: 40rpx;
+    vertical-align: middle;
+    margin-right: 16rpx;
+}
+.loading text{
+    color: #a6a6a6;
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular;
+    height: 100rpx;
+    line-height: 100rpx;
+    vertical-align: middle;
+}
+
+.otherH{
+    height: 98rpx;
+}
+/*  */
+.shuru_warp{
+    position: fixed;
+    bottom: 0;
+    width: 750rpx;
+    height: 98rpx;
+    background-color: #fff;
+    z-index: 10;
+    display: -webkit-box;
+    border-top: 2rpx solid #d8d8d8;  
+    box-shadow: 0 6rpx rgba(48, 48, 48, 0.9); 
+}
+.shuru{
+    width: 602rpx;
+    height: 66rpx;
+    display: block;
+    margin: 16rpx auto;
+    border-radius: 6rpx;
+    background-color: #ebe8e8;
+    padding-left: 40rpx;
+    border: solid 2rpx #cccccc;
+    font-size: 34rpx;
+    font-family: PingFangSC-Medium;
+    color: #676767;
+}
