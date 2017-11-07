@@ -1,10 +1,10 @@
 {
     "pages": [
+        "pages/personal/personal",
         "pages/index/index",
         "pages/mywalk/mywalk",
         "pages/activity/activity_detail/activity_detail",
         "pages/activity/activity",
-        "pages/personal/personal",
         "pages/beauty/beauty",
         "pages/beauty/beauty_detail/beauty_detail",
         "pages/health/health",
