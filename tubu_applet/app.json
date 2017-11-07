@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/index/index",
         "pages/mywalk/mywalk",
         "pages/activity/activity_detail/activity_detail",
         "pages/activity/activity",
