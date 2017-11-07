@@ -1,11 +1,6 @@
 page {
-    background-color: #efeff4;
+    background-color: #ffffff;
 }
-
-.container {
-    background-color: #efeff4;
-}
-
 .info {
     display: flex;
     flex-flow: column;
@@ -15,7 +10,6 @@ page {
     margin-top: 32rpx;
     border-radius: 10rpx;
 }
-
 .info_top {
     display: flex;
     flex-direction: row;
