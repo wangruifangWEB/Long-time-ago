@@ -19,7 +19,10 @@ Page({
         date_today: [],
         data_today: [],
         data_day: '0',
-        totalData: '0'
+        totalData: '0',
+        disToday: false,
+        disWeek: false,
+        disMonth: false
     },
     // 点击日期
     selected_day: function (e) {
@@ -32,7 +35,8 @@ Page({
             date_week: [],
             data_week: [],
             date_today: [],
-            data_today: []
+            data_today: [],
+            disToday: true
         });
 
         wx.showLoading({
@@ -51,11 +55,14 @@ Page({
             date_week: [],
             data_week: [],
             date_today: [],
-            data_today: []
+            data_today: [],
+            disWeek: true
         });
-
         wx.showLoading({
             title: '加载中...',
+        })
+        this.setData({
+            
         })
         this.getRunInfo();
     },
@@ -70,7 +77,8 @@ Page({
             date_week: [],
             data_week: [],
             date_today: [],
-            data_today: []
+            data_today: [],
+            disMonth: true
         });
         wx.showLoading({
             title: '加载中...',
@@ -175,7 +183,6 @@ Page({
                                 success: function (data) {
                                     wx.setStorageSync('3rdSession', data.data);
                                     var session3rd = wx.getStorageSync('3rdSession');
-
                                     //  取运动数据
                                     that.getRunInfo();
 
@@ -225,13 +232,12 @@ Page({
                         that.setData({
                             yundata: data.data.stepInfoList
                         })
-
                         that.walkShow();
                     }
                 })
             },
             fail: function () {
-                that.runModal();
+                return;
             }
         })
     },
@@ -349,14 +355,23 @@ Page({
         if (this.data.selected_month) {
             this.data_month_process();
             wx.hideLoading();
+            this.setData({
+                disMonth: false
+            })
         }
         if (this.data.selected_week) {
             this.data_week_process();
             wx.hideLoading();
+            this.setData({
+                disWeek: false
+            })
         }
         if (this.data.selected_day) {
             this.data_today_process();
             wx.hideLoading();
+            this.setData({
+                disToday: false
+            })
         }
     },
     createSimulationData1: function () {

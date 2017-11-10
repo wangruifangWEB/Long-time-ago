@@ -1,85 +1,143 @@
 <view class="container">
-    <view class='info'>
-        <view class='info_top'>
-            <view class='info_left'>
-                <text class='passport'>徒步护照</text>
-                <view class="enroll">
-                    <text class="enroll_num">{{enroll_num}}</text>
-                    <text>报名次数</text>
-                </view>
-                <view class="join">
-                    <text class="join_num">{{join_num}}</text>
-                    <text>参加次数</text>
-                </view>
-            </view>
-            <view class='info_right'>
-                <image src='{{userInfoGlobal.avatarUrl}}'></image>
-            </view>
-            
+    <view class='personal_info'>
+        <image src='{{personInfo.avatarUrl}}'></image>
+        <text>{{personInfo.nickName}}</text>
+    </view>
+    <view class="tubu_info">
+        <view class="tubu_img">
+            <image src='{{personInfo.avatarUrl}}'></image>
         </view>
-        <view class='info_bottom'>
-            <text>活跃度</text>
-            <view class="liveness_warp">
-                <image animation="{{scaleCount}}" class='liveness' src='https://www.sqbqr.cn/Public/Home/images/huoyue_jindu_bai.png'></image>
+        <view class="tubu_detail">
+            <text class='text_style'>徒步护照</text>
+            <text class='text_style'>报名次数<text class="enter_num">{{enrollNum}}</text></text>
+            <text class='text_style'>参加次数<text class="join_num">{{joinNum}}</text></text>
+            <view class='text_style liveness_info_warp'><text>活跃度</text>
+                <view class="liveness_warp">
+                    <text animation="{{scaleCount}}" class="liveness" ></text>
+                </view>
+                <text>中</text>
             </view>
         </view>
     </view>
+
 
     <!-- form -->
-    <form class='form'>
-        <view class="section">
-            <text class="section_title">姓名</text>
-            <input name="input" disabled="{{userDis}}" type='text' value='{{userInfo}}' class='section_cont' focus='{{userfocus}}' cursor-spacing="50" placeholder="姓名" placeholder-class="placeholder" bindblur="userBlurfn" bindinput="inputChangefn" />
+    <form class='form {{checked_save ? "enable":"disable"}}'>
+        <view class='sex_info'>
+            <text class='sex_title'>性别</text>
+			<view class="sex_detail">
+                <radio-group class="radio_group" bindchange="sexChange">
+                    <label class="sex_label male_label {{male_checked ? 'sex_label_checked' : '' }}" bindtap='check_male'>
+                        <radio value="1" checked="true"></radio> 
+                        <text>男</text>
+                    </label>
+                    <label class="sex_label famale_label {{famale_checked ? 'sex_label_checked' : '' }}" bindtap='check_famale'>
+                        <radio value="2" ></radio> 
+                        <text>女</text>
+                    </label>
+                    <label class="sex_label {{unknown_label ? 'sex_label_checked' : '' }}" bindtap='check_unkoown'>
+                        <radio value="0" ></radio> 
+                        <text>保密</text>
+                    </label>
+                </radio-group>
+			</view>
         </view>
         <view class="section">
-            <text class="section_title">电话</text>
-            <input name="input" disabled='{{telDis}}' type='text' value='{{telInfo}}' class='section_cont' focus='{{telfocus}}' cursor-spacing="50" placeholder="电话"  placeholder-class="placeholder" bindblur="telBlurfn" bindinput="inputChangefn" />
+            <text class="notice_text {{userText ? 'showText' : 'hideText'}}">姓名</text>
+            <input name="input" type='text' value='{{userInfo}}' class='section_cont {{userInfoHolder ? (checked_save?"placeholder_light":"placeholder_dark"):(checked_save?"picker_light":"picker_dark")}}' bindblur="userBlurfn" bindfocus='userFocusfn' />
+            <view class='notice_icon'>
+                <image wx:if="{{grayUserNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_gray.png'></image>
+                <image wx:if="{{redUserNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_red.png'></image>
+                <image wx:if="{{greenUserNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_green.png'></image>
+            </view>
+        </view>
+        <view class="section">
+            <text class="notice_text {{telText ? 'showText' : 'hideText' }}">电话</text>
+            <input name="input" type='text' value='{{telInfo}}' class='section_cont {{telInfoHolder ? (checked_save?"placeholder_light":"placeholder_dark"):(checked_save?"picker_light":"picker_dark")}}'  bindblur="telBlurfn" bindfocus="telFocusfn" />
+            <view class='notice_icon'>
+                <image wx:if="{{grayTelNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_gray.png'></image>
+                <image wx:if="{{redTelNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_red.png'></image>
+                <image wx:if="{{greenTelNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_green.png'></image>
+            </view>
         </view>
         <view class='section'>
-            <text class='section_title'>工作行业</text>
-            <picker bindchange="industryfn" disabled='{{industryDis}}' range="{{array1}}" value="{{index1}}">
-                <view class="picker">{{array1[index1]}}</view>
+            <text class='notice_text {{industryText ? "showText" : "hideText" }}'>工作行业</text>
+            <picker bindchange="industryfn" range="{{arrayIndustry}}" value="{{industryIndex}}">
+                <view class="picker {{industryInfo ? (checked_save ? 'picker_light':'picker_dark'):(checked_save ? 'placeholder_light':'placeholder_dark')}}">{{arrayIndustry[industryIndex]}}</view>
             </picker>
+            <view class='notice_icon'>
+                <image wx:if="{{grayIndustryNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_gray.png'></image>
+                <image wx:if="{{redIndustryNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_red.png'></image>
+                <image wx:if="{{greenIndustryNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_green.png'></image>
+            </view>
         </view>
         <view class='section'>
-            <text class='section_title'>工作岗位</text>
-            <picker bindchange="quarterfn" disabled='{{quartersDis}}' range="{{array2}}" value="{{array2[0]}}">
-                <view class="picker">{{array2[index2]}}</view>
+            <text class='notice_text {{quarterText ? "showText" : "hideText" }}'>工作岗位</text>
+            <picker bindchange="quarterfn" range="{{arrayQuarter}}" value="{{quarterIndex}}">
+                <view class="picker {{quarterInfo ? (checked_save ? 'picker_light':'picker_dark'):(checked_save ? 'placeholder_light':'placeholder_dark')}} ">{{arrayQuarter[quarterIndex]}}</view>
             </picker>
+            <view class='notice_icon'>
+                <image wx:if="{{grayQuarterNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_gray.png'></image>
+                <image wx:if="{{redQuarterNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_red.png'></image>
+                <image wx:if="{{greenQuarterNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_green.png'></image>
+            </view>
         </view>
         <view class="section">
-            <text class="section_title">身份证号</text>
-            <input name="input" disabled='{{cardDis}}' type='idcard' value='{{cardInfo}}' class='section_cont' focus='{{cardfocus}}' cursor-spacing="50" placeholder="身份证号" placeholder-class="placeholder" bindblur="cardBlurfn" />
-        </view>
-        <view class='section'>
-            <text class='section_title'>性别</text>
-            <picker bindchange="sexfn" disabled='{{sexDis}}' range="{{array3}}" value="{{index3}}">
-                <view class="picker">{{array3[index3]}}</view>
-            </picker>
-        </view>
-        <view class="section">
-            <text class="section_title">年龄</text>
-            <input name="input" disabled='{{ageDis}}' type='number' value='{{ageInfo}}' class='section_cont' focus='{{agefocus}}' cursor-spacing="50" placeholder="年龄" placeholder-class="placeholder" />
+            <text class="notice_text {{cardText ? 'showText' : 'hideText'}}">身份证号</text>
+            <input name="input" type='idcard' value='{{cardInfo}}' class='section_cont {{cardInfoHolder ? (checked_save?"placeholder_light":"placeholder_dark"):(checked_save?"picker_light":"picker_dark")}}' bindblur="cardBlurfn" bindfocus="cardFocusfn" />
+            <view class='notice_icon'>
+                <image wx:if="{{grayCardNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_gray.png'></image>
+                <image wx:if="{{redCardNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_red.png'></image>
+                <image wx:if="{{greenCardNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_green.png'></image>
+            </view>
         </view>
         <view class="section">
-            <text class="section_title">身高（cm）</text>
-            <input name="input" disabled='{{statureDis}}' type='number' value='{{statureInfo}}' class='section_cont' focus='{{staturefocus}}' cursor-spacing="50" placeholder="身高（cm）" placeholder-class="placeholder" bindblur="statureBlurfn" />
+            <text class="notice_text {{ageText ? 'showText' : 'hideText' }}">年龄</text>
+            <input name="input" type='number' value='{{ageInfo}}' class='section_cont {{ageInfoHolder ? (checked_save?"placeholder_light":"placeholder_dark"):(checked_save?"picker_light":"picker_dark")}}' bindblur="ageBlurfn" bindfocus="ageFocusfn" />
+            <view class='notice_icon'>
+                <image wx:if="{{grayAgeNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_gray.png'></image>
+                <image wx:if="{{redAgeNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_red.png'></image>
+                <image wx:if="{{greenAgeNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_green.png'></image>
+            </view>
         </view>
         <view class="section">
-            <text class="section_title">当前体重（kg）</text>
-            <input name="input" disabled='{{nowWeightDis}}' type='number' value="{{nowWeightInfo}}" class='section_cont' cursor-spacing="50" placeholder="当前体重（kg）" placeholder-class="placeholder" bindblur="nowWeightBlurfn" />
+            <text class="notice_text {{statureText ? 'showText' : 'hideText'}}">身高（cm）</text>
+            <input name="input" type='number' value='{{statureInfo}}' class='section_cont {{statureInfoHolder ? (checked_save?"placeholder_light":"placeholder_dark"):(checked_save?"picker_light":"picker_dark")}}' bindblur="statureBlurfn" bindfocus="statureFocusfn" />
+            <view class='notice_icon'>
+                <image wx:if="{{grayStatureNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_gray.png'></image>
+                <image wx:if="{{redStatureNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_red.png'></image>
+                <image wx:if="{{greenStatureNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_green.png'></image>
+            </view>
         </view>
         <view class="section">
-            <text class="section_title">目标体重（kg）</text>
-            <input name="input" disabled='{{aimWeightDis}}' type='number' value="{{aimWeightInfo}}" class='section_cont' cursor-spacing="50" placeholder="目标体重（kg）" placeholder-class="placeholder" bindblur="nowWeightBlurfn" />
+            <text class="notice_text {{nowWeightText ? 'showText' : 'hideText' }}">当前体重（kg）</text>
+            <input name="input"  type='number' value="{{nowWeightInfo}}" class='section_cont {{nowWeightInfoHolder ? (checked_save?"placeholder_light":"placeholder_dark"):(checked_save?"picker_light":"picker_dark")}}' bindblur="nowWeightBlurfn" bindfocus="nowWeightFocusfn" />
+            <view class='notice_icon'>
+                <image wx:if="{{grayNowWeightNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_gray.png'></image>
+                <image wx:if="{{redNowWeightNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_red.png'></image>
+                <image wx:if="{{greenNowWeightNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_green.png'></image>
+            </view>
         </view>
-        <view class="btn-area">
-            <button class='save' bindtap="saveFormfn">保存</button>
+        <view class="section">
+            <text class="notice_text {{aimWeightText ? 'showText' : 'hideText' }}">目标体重（kg）</text>
+            <input name="input" type='number' value="{{aimWeightInfo}}" class='section_cont {{aimWeightInfoHolder ? (checked_save?"placeholder_light":"placeholder_dark"):(checked_save?"picker_light":"picker_dark")}}' bindblur="aimWeightBlurfn" bindfocus="aimWeightFocusfn" />
+            <view class='notice_icon'>
+                <image wx:if="{{grayAimWeightNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_gray.png'></image>
+                <image wx:if="{{redAimWeightNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_red.png'></image>
+                <image wx:if="{{greenAimWeightNotice}}" src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/notice_green.png'></image>
+            </view>
+        </view>
+        <view class="btn_area">
+            <button class='edit_btn {{checked_edit ? "checked_btn enable" : "disable"}}' bindtap="editfn">编辑</button>
+            <button class='save_btn {{checked_save ? "checked_btn enable" : "disable"}}' bindtap="savefn">保存</button>
         </view>
     </form>
-
-    <view wx:if="{{noticeError}}" animation="{{noticeAnimation}}" class='notice_text_warp'>
-        <text class='notice_text'>{{noticeText}}</text>
+    <view wx:if="{{alertModel}}" class='mask'></view>
+    <view wx:if="{{alertModel}}" class='alert_show'>
+        <view class="alert_text">
+            <view class="wait_perfect" wx:if="{{waitPerfect}}"><text>信息未完善</text><text>请完善相关信息</text></view>
+            <view class="wait_edit" wx:if="{{waitEdit}}"><text>请检查信息内容是否错误</text></view>
+        </view>
+        <button class="alert_btn" bindtap='closeAlert'>确认</button>
     </view>
-
 </view>

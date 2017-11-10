@@ -8,16 +8,16 @@
 		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
 		<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
 		<META HTTP-EQUIV="Expires" CONTENT="0">
-		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
-		<link rel="stylesheet" type="text/css" href="../css/style.css" />
-		<link rel="stylesheet" href="../css/css.css" />
-		<link rel="stylesheet" href="../css/mui.picker.all.css" />
-		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/css.css" />
+		<link rel="stylesheet" href="../../css/mui.picker.all.css" />
+		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
-		<link rel="stylesheet" href="../single_css/global.css">
+		<link rel="stylesheet" href="../../single_css/global.css">
 		<style>
 			body{
 				background-color: #ffffff;
@@ -37,6 +37,7 @@
 				border-radius: 50%;
 				display: block;
 				margin: 0 auto;
+				box-shadow:2px 3px 5px rgba(134,129,129,0.2);
 			}
 			.user_info p{
 				color: #ffffff;
@@ -161,19 +162,19 @@
 				left: 0.7rem;
 			}
 			.male_label{
-				background-image: url(../images/male.png);
+				background-image: url(../../images/male.png);
 			}
 			.famale_label{
-				background-image: url(../images/famale.png);
+				background-image: url(../../images/famale.png);
 			}
 			.sex_label_checked{
 				background-color: #ff9642;
 			}
 			.male_label.sex_label_checked{
-				background-image: url(../images/male_checked.png);
+				background-image: url(../../images/male_checked.png);
 			}
 			.famale_label.sex_label_checked{
-				background-image: url(../images/famale_checked.png);
+				background-image: url(../../images/famale_checked.png);
 			}
 			.sex_label_checked span{
 				color: #ffffff !important;
@@ -356,22 +357,46 @@
 			.mui-pciker-list li{
 				padding-top: 0.2rem;
 			}
+			.notice_success{
+				position: fixed;
+				left: 50%;
+				float: left;
+				z-index: 10;
+				bottom: 1.4rem;
+			}
+			.notice_success button{
+				position: relative;
+				left: -50%;
+				display: block;
+				height: 0.88rem;
+				border: none;
+				outline: none;
+				line-height: 0.88rem;
+				color: #ffffff;
+				font-size: 0.32rem;
+				height: 0.88rem;
+				padding-left: 0.64rem;
+				padding-right: 0.64rem;
+				background-color: #000000;
+				opacity: 0.8;
+				font-family: PingFangSC-Regular;
+				border-radius: 0.1rem;
+			}
 		</style>
 	</head>
 	<body>
 		<div style="display: none;">
-			
-			<img src="../images/male.png" alt="">
-			<img src="../images/famale.png" alt="">
-			<img src="../images/male_checked.png" alt="">
-			<img src="../images/famale_checked.png" alt="">
+			<img src="../../images/male.png" alt="">
+			<img src="../../images/famale.png" alt="">
+			<img src="../../images/male_checked.png" alt="">
+			<img src="../../images/famale_checked.png" alt="">
 		</div>
 		<div class="outerScroller">
 			<div class="scroll">
 				<header>
 					<div class="d-title">
 						<a href="#">
-							<img src="../images/cd.png" alt="" />
+							<img src="../../images/cd.png" alt="" />
 						</a>
 						<span>我的资料-个人中心</span>
 					</div>
@@ -382,7 +407,7 @@
 				</div>
 				<div class="tubu_info">
 					<div class="tubu_img">
-						<img src="../images/qrcode.jpg" alt="">
+						<img src="../../images/qrcode.jpg" alt="">
 					</div>
 					<div class="tubu_detail">
 						<p>徒步护照</p>
@@ -402,7 +427,6 @@
 						<div class="sex_detail">
 							<label class="sex_label male_label sex_label_checked"><input type="radio" value="0" checked name="sex"><span>男</span></label>
 							<label class="sex_label famale_label"><input type="radio" value="1" name="sex"><span>女</span></label>
-							
 						</div>
 					</div>
 					<div class="user_msg">
@@ -411,77 +435,77 @@
 								<div class="notice_warp"><p>姓名</p></div>
 								<input type="text" placeholder="姓名" value="12232234" class="user place_light" onblur="checkuser()"  />
 								<div class="notice_icon">
-									<span class="notice_gray notice_icon_style"><img src="../images/notice_gray.png" alt="" /></span>
-									<span class="notice_red notice_icon_style"><img src="../images/notice_red.png" alt="" /></span>
-									<span class="notice_green notice_icon_style"><img src="../images/notice_green.png" alt="" /></span>
+									<span class="notice_gray notice_icon_style"><img src="../../images/notice_gray.png" alt="" /></span>
+									<span class="notice_red notice_icon_style"><img src="../../images/notice_red.png" alt="" /></span>
+									<span class="notice_green notice_icon_style"><img src="../../images/notice_green.png" alt="" /></span>
 								</div>	
 							</li>
 							<li>
 								<div class="notice_warp"><p>电话</p></div>
 								<input type="tel" placeholder="电话" class="tel place_light" onblur="checktel()" />
 								<div class="notice_icon">
-									<span class="notice_gray notice_icon_style"><img src="../images/notice_gray.png" alt="" /></span>
-									<span class="notice_red notice_icon_style"><img src="../images/notice_red.png" alt="" /></span>
-									<span class="notice_green notice_icon_style"><img src="../images/notice_green.png" alt="" /></span>
+									<span class="notice_gray notice_icon_style"><img src="../../images/notice_gray.png" alt="" /></span>
+									<span class="notice_red notice_icon_style"><img src="../../images/notice_red.png" alt="" /></span>
+									<span class="notice_green notice_icon_style"><img src="../../images/notice_green.png" alt="" /></span>
 								</div>
 							</li>
 							<li id='showUserPicker' class="mui-btn mui-btn-block">
 								<div class="notice_warp"><p id="userPickerP1">工作行业</p></div>
 								<input type="text" placeholder="工作行业" class="place_light" id="userCounty" readonly />
 								<div class="notice_icon">
-									<span class="notice_green notice_icon_style"><img src="../images/notice_green.png" alt="" /></span>
+									<span class="notice_green notice_icon_style"><img src="../../images/notice_green.png" alt="" /></span>
 								</div>
 							</li>
 							<li id='showUserPicker2' class="mui-btn mui-btn-block">
 								<div class="notice_warp"><p>工作岗位</p></div>
 								<input type="text" placeholder="工作岗位" class="place_light" id="userSystem" readonly />
 								<div class="notice_icon">
-									<span class="notice_green notice_icon_style"><img src="../images/notice_green.png" alt="" /></span>
+									<span class="notice_green notice_icon_style"><img src="../../images/notice_green.png" alt="" /></span>
 								</div>
 							</li>
 							<li>
 								<div class="notice_warp"><p>身份证</p></div>
 								<input type="text" placeholder="身份证" class="card place_light" onblur="checkcard()" />
 								<div class="notice_icon">
-									<span class="notice_gray notice_icon_style"><img src="../images/notice_gray.png" alt="" /></span>
-									<span class="notice_red notice_icon_style"><img src="../images/notice_red.png" alt="" /></span>
-									<span class="notice_green notice_icon_style"><img src="../images/notice_green.png" alt="" /></span>
+									<span class="notice_gray notice_icon_style"><img src="../../images/notice_gray.png" alt="" /></span>
+									<span class="notice_red notice_icon_style"><img src="../../images/notice_red.png" alt="" /></span>
+									<span class="notice_green notice_icon_style"><img src="../../images/notice_green.png" alt="" /></span>
 								</div>
 							</li>
 							<li>
 								<div class="notice_warp"><p>年龄</p></div>
 								<input type="number" placeholder="年龄" value="" class="number age place_light" onblur="this.value=this.value.replace(/\.\d{2,}$/,value.substr(value.indexOf('.'),4));checkNumber();"  />
 								<div class="notice_icon">
-									<span class="notice_gray notice_icon_style"><img src="../images/notice_gray.png" alt="" /></span>
-									<span class="notice_red notice_icon_style"><img src="../images/notice_red.png" alt="" /></span>
-									<span class="notice_green notice_icon_style"><img src="../images/notice_green.png" alt="" /></span>
+									<span class="notice_gray notice_icon_style"><img src="../../images/notice_gray.png" alt="" /></span>
+									<span class="notice_red notice_icon_style"><img src="../../images/notice_red.png" alt="" /></span>
+									<span class="notice_green notice_icon_style"><img src="../../images/notice_green.png" alt="" /></span>
 								</div>
 							</li>
 							<li>
 								<div class="notice_warp"><p>身高 (cm)</p></div>
 								<input type="number" placeholder="身高 (cm)" class="number shenHeight place_light" onblur="this.value=this.value.replace(/\.\d{2,}$/,value.substr(value.indexOf('.'),4));checkNumber();" />
 								<div class="notice_icon">
-									<span class="notice_gray notice_icon_style"><img src="../images/notice_gray.png" alt="" /></span>
-									<span class="notice_red notice_icon_style"><img src="../images/notice_red.png" alt="" /></span>
-									<span class="notice_green notice_icon_style"><img src="../images/notice_green.png" alt="" /></span>
+									<span class="notice_gray notice_icon_style"><img src="../../images/notice_gray.png" alt="" /></span>
+									<span class="notice_red notice_icon_style"><img src="../../images/notice_red.png" alt="" /></span>
+									<span class="notice_green notice_icon_style"><img src="../../images/notice_green.png" alt="" /></span>
 								</div>
 							</li>
 							<li>
 								<div class="notice_warp"><p>当前体重 (kg)</p></div>
 								<input type="number" placeholder="当前体重 (kg)" value="" class="number nowWeight place_light" onblur="this.value=this.value.replace(/\.\d{2,}$/,value.substr(value.indexOf('.'),4));checkNumber();" />
 								<div class="notice_icon">
-									<span class="notice_gray notice_icon_style"><img src="../images/notice_gray.png" alt="" /></span>
-									<span class="notice_red notice_icon_style"><img src="../images/notice_red.png" alt="" /></span>
-									<span class="notice_green notice_icon_style"><img src="../images/notice_green.png" alt="" /></span>
+									<span class="notice_gray notice_icon_style"><img src="../../images/notice_gray.png" alt="" /></span>
+									<span class="notice_red notice_icon_style"><img src="../../images/notice_red.png" alt="" /></span>
+									<span class="notice_green notice_icon_style"><img src="../../images/notice_green.png" alt="" /></span>
 								</div>
 							</li>
 							<li>
 								<div class="notice_warp"><p>目标体重 (kg)</p></div>
 								<input type="number" placeholder="目标体重 (kg)" class="number aimWeight place_light" onblur="this.value=this.value.replace(/\.\d{2,}$/,value.substr(value.indexOf('.'),4));checkNumber();"  />
 								<div class="notice_icon">
-									<span class="notice_gray notice_icon_style"><img src="../images/notice_gray.png" alt="" /></span>
-									<span class="notice_red notice_icon_style"><img src="../images/notice_red.png" alt="" /></span>
-									<span class="notice_green notice_icon_style"><img src="../images/notice_green.png" alt="" /></span>
+									<span class="notice_gray notice_icon_style"><img src="../../images/notice_gray.png" alt="" /></span>
+									<span class="notice_red notice_icon_style"><img src="../../images/notice_red.png" alt="" /></span>
+									<span class="notice_green notice_icon_style"><img src="../../images/notice_green.png" alt="" /></span>
 								</div>
 							</li>
 						</ul>
@@ -492,12 +516,17 @@
 				<div class="alert_show">
 					<div class="alert_text">
 						<div class="wait_perfect"><p>信息未完善</p><p>请完善相关信息</p></div>
-						<div class="edit_success"><p>资料编辑成功！</p></div>
+						<div class="edit_success"><p>请检查信息内容是否错误</p></div>
 					</div>
 					<button class="alert_btn">确认</button>
 				</div>
 
 				
+				<div class="notice_success">
+					<button>资料编辑成功！</button>
+				</div>	
+				
+
 				<footer class="footer footer_c">
 					<ul class="bottom">
 						<li id="control_btn">
@@ -519,6 +548,7 @@
 			　　　　return false;
 			　　}
 			}
+
 			var joinNumWidth=$('.join_num').width();
 			var enterNumWidth=$('.enter_num').width();
 			console.log(joinNumWidth+','+enterNumWidth);
@@ -709,9 +739,9 @@
 		</script>
 
 
-		<script src="../js/mui.picker.min.js"></script>
-		<script src="../js/mui.poppicker.js"></script>
-		<script src="../js/city.data.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.picker.min.js"></script>
+		<script src="../../js/mui.poppicker.js"></script>
+		<script src="../../js/city.data.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 
 

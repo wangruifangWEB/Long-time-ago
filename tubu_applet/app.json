@@ -1,8 +1,8 @@
 {
     "pages": [
+        "pages/mywalk/mywalk",
         "pages/personal/personal",
         "pages/index/index",
-        "pages/mywalk/mywalk",
         "pages/activity/activity_detail/activity_detail",
         "pages/activity/activity",
         "pages/beauty/beauty",
