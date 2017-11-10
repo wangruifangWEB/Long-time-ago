@@ -1951,12 +1951,7 @@ var Charts = function Charts(opts) {
         distance: 0
     }
     drawCharts.call(this, opts.type, opts, config$$1, this.context);
-    this.scrollOption = {
-        currentOffset: -1200,
-        startTouchX: 0,
-        distance: 0
-    }
-    console.log(this.scrollOption.currentOffset);
+    
 };
 
 Charts.prototype.updateData = function () {
