@@ -24,7 +24,7 @@
 		.xd-tab-div2{
 			width: 7.5rem;
 			height: auto;
-			margin-top: 2rem;
+			padding:0 .63rem .2rem .63rem;
 		}
 		.xd-tab-div2 li{	
 			padding: 0 .63rem;
@@ -46,6 +46,9 @@
 			display: block;
 			width:.32rem;
 		}	
+		.list-item-none{
+			display: none;
+		}
 		.list_item_header_img{
 			position: relative;
 		}
@@ -86,18 +89,18 @@
 			line-height: 0.96rem;
 			text-align: center;
 			color: #595959;				
-			margin-top:1.8rem;	
+			margin-top:0.2rem;	
 			padding:0 .63rem;
 			font-size: 0.34rem;			
 			font-family: PingFangSC-Regular;
 			position:relative;
 			background-color: #F5F5F5;
+			z-index:100;
 			box-shadow: 0 0.02rem 0.03rem rgba(0,0,0,.3);
 		}
 		.list_item_header img{
 			width:.32rem;
-			float:right;
-			margin-top:.3rem;
+			padding-top:.3rem;
 			display: inline-block;
 		}
 		.list_item_header_img_down{		  
@@ -113,30 +116,25 @@
 		    position: absolute;
 		    left: 0.63rem;
 		}
-		.list_item_phb_img_down{
-			 position: absolute;
-		    left:1.2rem;
-		}
-		.list_item_header_img_phb{
-	 		position: absolute;
-	    	left: .72rem;
-	    	top: 0.32rem;
-		}
 		.xd-tab-div{
 			width:7.5rem;
+			margin-top:.32rem !important;
 		}
 		.xd-tab-div1{
 			width:6.24rem;
 			margin:0 auto;
 		}
-		/*添加搜索样式*/
-		/*.z_search_team{
-			text-align: left;
+		/*全局样式重置*/
+		.xd-tab-ul-box1 {
+			width: 7.5rem;
+		    background: #efeff4;
+		    padding: 0 .63rem;
+		    box-sizing: border-box;
 		}
-		.z_search_team input{
-			width:4.4rem;
-			background-position: 1.4rem;
-		}*/
+		.left_right_pd{
+			padding-right:0;
+			padding-left:0;
+		}
 		</style>
 	</head>
 	<body class="bg1">
@@ -149,16 +147,12 @@
 						</a>
 						<span>我的团队</span>
 					</div>
-					<!--<div class="d-title">
-						<div class="z_search z_search_team"><input type="text" placeholder="搜索"/></div>
-						<span>取消</span>
-					</div>-->
 				</header>
 				<section>	
 					<!-- 搜索框 -->
 					<div class="z_search"><input type="text" placeholder="搜索"/></div>
 					<!-- tab切换 -->	
-					<div class="xd-tab-ul-box">
+					<div class="xd-tab-ul-box1">
 						<ul class="xd-tab-ul">  
 							<li class="active_bg"><a href="javascript:;">已加入</a></li>
 							<li><a href="javascript:;">已关注</a></li>
@@ -215,49 +209,112 @@
 							</li>
 						</ul>
 						
-						<ul class="xd-tab-div2 list_item" style="display: none;">
-							<li>
-								<a href="javascript:;">
-									<div class="list_item_left">
-										<a href="team_phb_search.html">
-											<img src="../../images/bqr2.png" alt="" class="list_item_header_img_phb" />
+						<div class="xd-tab-div2 list_item" style="display: none;">
+							<div class="list_content list_item_first">
+								<p class="list_item_header">
+									<img src="../../images/up.png" alt="" class="list_item_header_img_down"/>
+									<img src="../../images/down.png" alt="" class="list_item_header_img_top"/>
+									团队
+								</p>
+								<!--列表内容-->
+								<ul class="list_item list-item-none">
+									<li>
+										<a href="javascript:;">
+											<div class="list_item_left">
+												<a href="td_phb_search.html">
+													<img src="../../images/bqr2.png" alt="" class="list_item_header_img_phb" />
+												</a>
+												<span>快乐徒步走</span>
+											</div>
+										
+											<div class="list_item_right">
+												<span>5</span>
+												<img src="../../images/green.png" alt=""/>
+											</div>
 										</a>
-										<span>快乐徒步走</span>
-									</div>
-								
-									<div class="list_item_right">
-										<span>10</span>
-										<img src="../../images/red.png" alt=""/>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a href="javascript:;">
-									<div class="list_item_left">
-										<img src="../../images/bqr.png" alt="" class="list_item_header_img_phb" />
-										<span>健康不求人</span>
-									</div>
-									
-									<div class="list_item_right">
-										<span>12</span>
-										<img src="../../images/red.png" alt=""/>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a href="javascript:;">
-									<div class="list_item_left">
-										<img src="../../images/bqr.png" alt="" class="list_item_header_img_phb" />
-										<span>快乐徒步走</span>
-									</div>
-									
-									<div class="list_item_right">
-										<span>15</span>
-										<img src="../../images/red.png" alt=""/>
-									</div>
-								</a>
-							</li>
-						</ul>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<div class="list_item_left">
+												<img src="../../images/bqr.png" alt="" class="list_item_header_img_phb" />
+												<span>健康不求人</span>
+											</div>
+											
+											<div class="list_item_right">
+												<span>10</span>
+												<img src="../../images/red.png" alt=""/>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<div class="list_item_left">
+												<img src="../../images/bqr.png" alt="" class="list_item_header_img_phb" />
+												<span>快乐徒步走</span>
+											</div>
+											 
+											<div class="list_item_right">
+												<span>120</span>
+												<img src="../../images/line.png" alt=""/>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							
+							<div class="list_content list_item_second">
+								<div class="list_item_header">
+									<img src="../../images/up.png" alt="" class="list_item_header_img_down"/>
+									<img src="../../images/down.png" alt="" class="list_item_header_img_top"/>
+									个人			
+								</div>
+							
+								<ul class="list_item list-item-none">
+									<li>
+										<a href="javascript:;">
+											<div class="list_item_left">
+												<a href="td_phb_search.html">
+													<img src="../../images/bqr2.png" alt="" class="list_item_header_img_phb" />
+												</a>
+												<span>快乐徒步走</span>
+											</div>
+										
+											<div class="list_item_right">
+												<span>5</span>
+												<img src="../../images/green.png" alt=""/>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<div class="list_item_left">
+												<img src="../../images/bqr.png" alt="" class="list_item_header_img_phb" />
+												<span>健康不求人</span>
+											</div>
+											
+											<div class="list_item_right">
+												<span>10</span>
+												<img src="../../images/red.png" alt=""/>
+											</div>
+											
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<div class="list_item_left">
+												<img src="../../images/bqr.png" alt="" class="list_item_header_img_phb" />
+												<span>快乐徒步走</span>
+											</div>
+											
+											<div class="list_item_right">
+												<span>120</span>
+												<img src="../../images/line.png" alt=""/>
+											</div>
+										</a>
+									</li>
+								</div>
+							</ul>
+						</div>
 					</div>
 				</section>
 				
@@ -282,6 +339,13 @@
 					</li>
 				</ul>
 			</footer> 
+			<!--<footer class="footer">
+				<ul class="bottom bottom_manage">
+					<li>
+						<a href="javascript:;">管理</a>
+					</li>
+				</ul>
+			</footer>-->
 			<div class="box-transparent"></div>	
 		</div>
 		<script type="text/javascript">
@@ -306,7 +370,21 @@
 						$('.bottom').hide();
 					}
 			})
-			
-		</script>
+			//点击内容展示动画
+			$(".xd-tab-div2 .list_content").click(function(){
+				var i=$('.xd-tab-div2 .list_content').index(this);
+				$('.xd-tab-div2 .list_content ul').removeClass("show");
+				$('.xd-tab-div2 .list_content').eq(i).children("ul").addClass("show").siblings().children("ul").removeClass("show");
+				$('.xd-tab-div2 .list_content').eq(i).children("ul").slideToggle();
+				 if($('.xd-tab-div2 .list_content ul').hasClass("show")){
+					$(".xd-tab-div2").addClass("left_right_pd");
+				}else{
+					$(".xd-tab-div2").removeClass("left_right_pd");
+				}
+			  /*	 $(".bottom_manage").fadeIn(100).delay(300).animate({
+		            bottom:"0"  
+		        },300);*/
+			});
+		</script>	
 	</body>	
 </html>
