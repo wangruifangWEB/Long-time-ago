@@ -54,7 +54,7 @@ var mySwiper = new Swiper('.swiper-container',{
 		//  刷新
 		if(mySwiper.translate >= 50) {
 			$.ajax({
-				url:"",
+				url:"www.baidu.com",
 				type:"post",
 				success:function(data){
 					
