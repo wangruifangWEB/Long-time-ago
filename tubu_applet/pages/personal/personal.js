@@ -5,7 +5,7 @@ Page({
     enrollNum: '0',
     joinNum: '0',
     scaleCount: {},
-    checkSex: '1',
+    checkSex: '',
     male_checked: true,
     famale_checked: false,
     unknown_label: false,
@@ -15,22 +15,24 @@ Page({
     waitPerfect: false,
     waitEdit: false,
 
-        userInfo: '姓名',
-        telInfo: '电话',
-        cardInfo: '身份证号',
-        ageInfo: '年龄',
-        statureInfo: '身高（cm）',
-        nowWeightInfo: '当前体重（kg）',
-        aimWeightInfo: '目标体重（kg）',
-        quarterInfo: false,
-        industryInfo: false,
-        male: true,
-        famale:false,
-        unknown: false,
-        arrayIndustry: ['工作行业', '中国', '美国', '巴西', '日本'],
-        industryIndex: 0,
-        arrayQuarter: ["工作岗位", '东城', '西城', '朝阳', '石景山'],
-        quarterIndex: 0,
+    userInfo: '姓名',
+    telInfo: '电话',
+    cardInfo: '身份证号',
+    ageInfo: '年龄',
+    statureInfo: '身高（cm）',
+    nowWeightInfo: '当前体重（kg）',
+    aimWeightInfo: '目标体重（kg）',
+    quarterInfo: false,
+    industryInfo: false,
+    male: true,
+    famale: false,
+    unknown: false,
+    port_image:'',
+    arrayIndustry: ['工作行业'],
+    industryIndex: 0,
+    arrayQuarter: ["工作岗位"],
+    quarterIndex: 0,
+    jobInfo: ["工作岗位"],
 
 
     checked_edit: true,
@@ -84,8 +86,9 @@ Page({
     nowWeightInfoHolder: true,
     aimWeightInfoHolder: true,
   },
-  
+
   onShow: function () {
+    
     var session3rd = wx.getStorageSync('3rdSession');
     var that = this;
     wx.request({
@@ -95,9 +98,18 @@ Page({
       },
       method: 'get',
       success: function (data) {
+        
         console.log(data.data);
         var data = data.data;
-        var url = app.globalData.globalUrl + '/Public';
+        var url = app.globalData.globalUrl + 'Public';
+        console.log(url + data.port_image);
+        that.setData({
+          port_image: url + data.port_image,
+          checkSex: data.sex,
+          enrollNum: data.signup_num,
+          joinNum: data.join_num,
+        })
+        
         that.checkSex(data);
         var arrJob = data.arr_job;
         var industry = [];
@@ -110,17 +122,12 @@ Page({
         that.setData({
           arrayIndustry: industry
         })
-        var quarterarr=["工作岗位"];
-        for (var i = 0; i < jobInfo[data.industry_id].length;i++){
+        var quarterarr = ["工作岗位"];
+        for (var i = 0; i < jobInfo[data.industry_id].length; i++) {
           quarterarr.push(jobInfo[data.industry_id][i].text);
         }
-        console.log(quarterarr);
         that.setData({
           arrayQuarter: quarterarr,
-        })
-        console.log(that.data.arrayQuarter);
-        console.log(data.post_tid);
-        that.setData({
           userInfo: data.uname,
           telInfo: data.telephone,
           cardInfo: data.idcards,
@@ -128,31 +135,25 @@ Page({
           statureInfo: data.height,
           nowWeightInfo: data.weight,
           aimWeightInfo: data.target_weight,
-          enrollNum: data.signup_num,
-          joinNum: data.join_num,
           industryIndex: data.industry_id,
-          quarterIndex: (data.post_tid),
-          port_image: url + data.port_image,
-          checkSex: data.sex
+          quarterIndex: (data.post_tid)
         })
+        that.checkFormStatus();
       }
     })
+    
     this.scaleCountFn();
     var personInfo = wx.getStorageSync('userInfo');
-
-
     for (var i in personInfo) {
       this.setData({
         personInfo: personInfo
       })
     }
-    that.checkFormStatus();
-    
   },
   onHide: function () {
     var that = this;
     that.setData({
-      arrayIndustry:["工作行业"]
+      arrayIndustry: ["工作行业"]
     })
     var animation = wx.createAnimation({
       duration: 1000,
@@ -231,18 +232,18 @@ Page({
           "aimWeightInfo": aimWeightInfo,
           "checkSex": checkSex
         },
-        success: function(){
+        success: function () {
           wx.showToast({
             title: '已保存',
           })
         },
-        fail: function(){
+        fail: function () {
           wx.showToast({
             title: '保存失败',
           })
         }
       })
-      
+
     }
   },
   check_male: function () {
@@ -549,8 +550,8 @@ Page({
       quarterText: true,
       quarterIndex: event.detail.value
     })
-   
-    
+
+
     if (this.data.quarterIndex == 0) {
       this.setData({
         quarterInfo: false,
@@ -586,14 +587,15 @@ Page({
     })
   },
   // 检测页面文字显示颜色
-  checkFormStatus: function(){
+  checkFormStatus: function () {
     if (this.data.industryIndex == 0) {
       this.setData({
         industryInfo: false
       })
     } else {
       this.setData({
-        industryInfo: true
+        industryInfo: true,
+        industryText: true
       })
     }
 
@@ -603,7 +605,8 @@ Page({
       })
     } else {
       this.setData({
-        quarterInfo: true
+        quarterInfo: true,
+        quarterText:true
       })
     }
 
@@ -678,8 +681,8 @@ Page({
       })
     }
   },
-  checkSex: function(data){
-    var that=this;
+  checkSex: function (data) {
+    var that = this;
     if (data.sex == 1) {
       that.setData({
         male: true,

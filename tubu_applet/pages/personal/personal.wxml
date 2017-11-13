@@ -19,8 +19,6 @@
             </view>
         </view>
     </view>
-
-
     <!-- form -->
     <form class='form {{checked_save ? "enable":"disable"}}'>
         <view class='sex_info'>
@@ -28,7 +26,7 @@
 			<view class="sex_detail">
                 <radio-group class="radio_group" bindchange="sexChange">
                     <label class="sex_label male_label {{male_checked ? 'sex_label_checked' : '' }}" bindtap='check_male'>
-                        <radio value="1" checked="{{male}}"  ></radio> 
+                        <radio value="1" checked="{{male}}"></radio> 
                         <text>男</text>
                     </label>
                     <label class="sex_label famale_label {{famale_checked ? 'sex_label_checked' : '' }}" bindtap='check_famale'>

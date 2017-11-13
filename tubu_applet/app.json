@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/personal/personal",
     "pages/mywalk/mywalk",
+    "pages/personal/personal",
     "pages/index/index",
     "pages/activity/activity_detail/activity_detail",
     "pages/activity/activity",
