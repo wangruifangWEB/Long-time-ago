@@ -5,7 +5,7 @@
     </view>
     <view class="tubu_info">
         <view class="tubu_img">
-            <image src='{{personInfo.avatarUrl}}'></image>
+            <image src='{{port_image}}'></image>
         </view>
         <view class="tubu_detail">
             <text class='text_style'>徒步护照</text>
@@ -28,15 +28,15 @@
 			<view class="sex_detail">
                 <radio-group class="radio_group" bindchange="sexChange">
                     <label class="sex_label male_label {{male_checked ? 'sex_label_checked' : '' }}" bindtap='check_male'>
-                        <radio value="1" checked="true"></radio> 
+                        <radio value="1" checked="{{male}}"  ></radio> 
                         <text>男</text>
                     </label>
                     <label class="sex_label famale_label {{famale_checked ? 'sex_label_checked' : '' }}" bindtap='check_famale'>
-                        <radio value="2" ></radio> 
+                        <radio value="2" checked='{{famale}}'></radio> 
                         <text>女</text>
                     </label>
                     <label class="sex_label {{unknown_label ? 'sex_label_checked' : '' }}" bindtap='check_unkoown'>
-                        <radio value="0" ></radio> 
+                        <radio value="0" checked='{{unknown}}'></radio> 
                         <text>保密</text>
                     </label>
                 </radio-group>

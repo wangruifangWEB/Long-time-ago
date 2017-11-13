@@ -1,4 +1,5 @@
 var wxCharts = require('../../utils/wxcharts.js');
+var app=getApp();
 var lineChart = null;
 var startPos = null;
 var columnChart = null;
@@ -172,7 +173,7 @@ Page({
                             var encryptedData = data.encryptedData;
                             var iv = data.iv;
                             wx.request({
-                                url: "https://www.sqbqr.cn/index.php/Home/Wxprogram/onLogin",
+                                url: app.globalData.globalUrl+"index.php/Home/Wxprogram/onLogin",
                                 data: {
                                     "code": code,
                                     "signature": signature,
@@ -214,7 +215,7 @@ Page({
                 var yunencryptedData = res.encryptedData;
                 var yuniv = res.iv;
                 wx.request({
-                    url: 'https://www.sqbqr.cn/index.php/Home/Wxprogram/yundong',
+                    url: app.globalData.globalUrl+'index.php/Home/Wxprogram/yundong',
                     data: {
                         'yunencryptedData': yunencryptedData,
                         'yuniv': yuniv,
