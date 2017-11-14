@@ -11,12 +11,12 @@
 
 var config = {
     yAxisWidth: 15,
-    yAxisSplit: 5,
+    yAxisSplit: 3,
     xAxisHeight: 15,
     xAxisLineHeight: 15,
     legendHeight: 15,
     yAxisTitleWidth: 15,
-    padding: 0,
+    padding: 6,
     columePadding: 0,
     fontSize: 12,
     dataPointShape: ['circle','diamond','triangle', 'rect'],
@@ -690,7 +690,6 @@ function getYAxisTextList(series, opts, config) {
     var dataRange = getDataRange(minData, maxData);
     var minRange = dataRange.minRange;
     var maxRange = dataRange.maxRange;
-
     var range = [];
     var eachRange = (maxRange - minRange) / config.yAxisSplit;
 
@@ -1066,7 +1065,7 @@ function drawColumnDataPoints(series, opts, config, context) {
         context.translate(opts._scrollDistance_, 0);
     }
     if (opts.tooltip && opts.tooltip.textList && opts.tooltip.textList.length && process === 1) {
-        drawToolTipSplitLine(opts.tooltip.offset.x, opts, config, context);
+        // drawToolTipSplitLine(opts.tooltip.offset.x, opts, config, context);
     }
     series.forEach(function (eachSeries, seriesIndex) {
         var data = eachSeries.data;
@@ -1128,7 +1127,7 @@ function drawAreaDataPoints(series, opts, config, context) {
     }
 
     if (opts.tooltip && opts.tooltip.textList && opts.tooltip.textList.length && process === 1) {
-        drawToolTipSplitLine(opts.tooltip.offset.x, opts, config, context);
+        // drawToolTipSplitLine(opts.tooltip.offset.x, opts, config, context);
     }
 
     series.forEach(function (eachSeries, seriesIndex) {
@@ -1222,7 +1221,7 @@ function drawLineDataPoints(series, opts, config, context) {
     }
 
     if (opts.tooltip && opts.tooltip.textList && opts.tooltip.textList.length && process === 1) {
-        drawToolTipSplitLine(opts.tooltip.offset.x, opts, config, context);
+        // drawToolTipSplitLine(opts.tooltip.offset.x, opts, config, context);
     }
 
     series.forEach(function (eachSeries, seriesIndex) {
@@ -1387,7 +1386,6 @@ function drawYAxisGrid(opts, config, context) {
         points.push(config.padding + eachSpacing * i);
     }
     points.push(config.padding + eachSpacing * config.yAxisSplit + 2);
-
     context.beginPath();
     context.setStrokeStyle(opts.yAxis.gridColor || "#cccccc");
     context.setLineWidth(1);
@@ -1940,7 +1938,6 @@ var Charts = function Charts(opts) {
     this.opts = opts;
     this.config = config$$1;
     this.context = wx.createCanvasContext(opts.canvasId);
-    console.log(wx.createCanvasContext(opts.canvasId));
     // store calcuated chart data
     // such as chart point coordinate
     this.chartData = {};
@@ -2082,7 +2079,6 @@ Charts.prototype.scrollEnd = function (e) {
 
         this.scrollOption.currentOffset = currentOffset + distance;
         this.scrollOption.distance = 0;
-        console.log(this.scrollOption);
     }
     
 };

@@ -136,7 +136,7 @@
 			}
 			.sex_info .sex_detail{
 				margin-top: 0.4rem;
-				width: 2.52rem;
+				width: 3.78rem;
 				height: 0.6rem;
 				display: flex;
 				position: relative;
@@ -352,6 +352,7 @@
 				padding-top: 0.2rem;
 			}
 			.notice_success{
+				display: none;
 				position: fixed;
 				left: 50%;
 				float: left;
@@ -419,8 +420,8 @@
 					<div class="sex_info">
 						<p>性别</p>
 						<div class="sex_detail">
-							<label class="sex_label male_label sex_label_checked"><input type="radio" value="0" checked name="sex"><span>男</span></label>
-							<label class="sex_label famale_label"><input type="radio" value="1" name="sex"><span>女</span></label>
+							<label class="sex_label male_label sex_label_checked"><input type="radio" value="1" checked name="sex"><span>男</span></label>
+							<label class="sex_label famale_label"><input type="radio" value="2" name="sex"><span>女</span></label>
 						</div>
 					</div>
 					<div class="user_msg">
@@ -555,7 +556,9 @@
 			$('.sex_label').click(function(){
 				var i=$('.sex_label').index(this);
 				console.log($('input[name=sex]:checked').val());
+				$('.sex_label').eq(i).children('input').prop('checked',true).parent().siblings().prop('checked',false);
 				$('.sex_label').eq(i).addClass('sex_label_checked').siblings().removeClass('sex_label_checked');
+				alert($('input[name=sex]:checked').val());
 				
 			})
 			$("input").on("focus input", function(){

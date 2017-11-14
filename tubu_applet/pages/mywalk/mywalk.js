@@ -22,7 +22,9 @@ Page({
         totalData: '0',
         disToday: false,
         disWeek: false,
-        disMonth: false
+        disMonth: false,
+        standardWidth: 375,
+        widthScale: 1
     },
     // 点击日期
     selected_day: function (e) {
@@ -399,8 +401,19 @@ Page({
         }
     },
     data_today_process: function () {
-        var windowWidth = 375;
+        var windowWidth;
+        try {
+            var res = wx.getSystemInfoSync();
+            windowWidth = res.windowWidth;
+        } catch (e) {
+            console.error('getSystemInfoSync failed!');
+            windowWidth = 375;
+        }
+        this.setData({
+            widthScale: parseInt(windowWidth) / parseInt(this.data.standardWidth)
+        })
         var simulationData = this.createSimulationDataToday();
+        
         columnChart = new wxCharts({
             canvasId: 'columnCanvas',
             type: 'column',
@@ -420,8 +433,8 @@ Page({
                 max: 30000
             },
             width: windowWidth * 0.933,
-            height: 170,
-            dataLabel: true,
+            height: (170 * this.data.widthScale).toFixed(0),
+            dataLabel: false,
             dataPointShape: true,
             extra: {
                 column: {
@@ -430,8 +443,19 @@ Page({
             }
         });
     },
-    data_week_process: function () {
-        var windowWidth = 375;
+    data_week_process: function ()  {
+        var windowWidth;
+        try {
+            var res = wx.getSystemInfoSync();
+            windowWidth = res.windowWidth;
+        } catch (e) {
+            console.error('getSystemInfoSync failed!');
+            windowWidth = 375;
+        }
+        this.setData({
+            widthScale: parseInt(windowWidth)/parseInt(this.data.standardWidth)
+        })
+        
         var simulationData = this.createSimulationData1();
         lineChart = new wxCharts({
             canvasId: 'lineCanvas',
@@ -452,8 +476,8 @@ Page({
                 max: 30000
             },
             width: windowWidth * 0.933,
-            height: 170,
-            dataLabel: true,
+            height: (170 * this.data.widthScale).toFixed(0),
+            dataLabel: false,
             dataPointShape: true,
             extra: {
                 lineStyle: 'curve'
@@ -461,14 +485,17 @@ Page({
         });
     },
     data_month_process: function () {
-        var windowWidth = 375;
+        var windowWidth;
         try {
             var res = wx.getSystemInfoSync();
             windowWidth = res.windowWidth;
         } catch (e) {
             console.error('getSystemInfoSync failed!');
+            windowWidth = 375;
         }
-
+        this.setData({
+            widthScale: parseInt(windowWidth) / parseInt(this.data.standardWidth)
+        })
         var simulationData = this.createSimulationData();
         lineChart = new wxCharts({
             canvasId: 'lineCanvas2',
@@ -489,8 +516,8 @@ Page({
                 max: 30000
             },
             width: windowWidth * 0.933,
-            height: 170,
-            dataLabel: true,
+            height: (170 * this.data.widthScale).toFixed(0),
+            dataLabel: false,
             dataPointShape: true,
             enableScroll: true,
             extra: {
