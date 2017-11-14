@@ -90,10 +90,16 @@ canvas{
     width: 750rpx;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     color: #f5f5f5;
     font-family: PingFangSC-Medium;
     font-size: 28rpx;
+}
+.rank_info view{
+    width: 250rpx;
+}
+.rank_info text{
+  text-align: center;
+  display: block;
 }
 .rank_info text:nth-child(1){
     display: block;

@@ -14,6 +14,10 @@
             <input name="input" disabled="{{userDis}}" type='text' value='{{userInfo}}' class='section_cont' focus='{{userfocus}}' placeholder="城市" placeholder-class="placeholder" bindblur="userBlurfn" bindinput="inputChangefn" />
         </view>
 
-        <button class='search'>搜索</button>
+        <button class='search' bindtap='search'>搜索</button>
     </form>
+    <view class='alertSave' wx:if="{{alertSave}}">
+      <icon type="info" color='#ffffff' ></icon>
+      <text>系统升级中</text>
+    </view>
 </view>

@@ -309,6 +309,30 @@ form {
     height: 234rpx;
     border-radius: 16rpx;
 }
+.alertSave{
+    transform: translateX(-50%) translateY(-50%);
+    position: fixed;
+    z-index: 300;
+    top: 50%;
+    left: 50%;
+    background-color: #000000;
+    opacity: 0.8;
+    width: 200rpx;
+    height: 250rpx;
+    border-radius: 16rpx;
+}
+.alertSave icon{
+    display: block;
+    margin: 50rpx auto 35rpx;
+    text-align: center;
+}
+.alertSave text{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    color: #ffffff;
+    font-size: 32rpx;
+}
 .alert_text{
     width: 100%;
     height: 141rpx;

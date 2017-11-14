@@ -138,4 +138,8 @@
         </view>
         <button class="alert_btn" bindtap='closeAlert'>确认</button>
     </view>
+    <view class='alertSave' wx:if="{{alertSave}}">
+      <icon type="{{statusIcon}}" color='#ffffff' ></icon>
+      <text>{{statusMsg}}</text>
+    </view>
 </view>

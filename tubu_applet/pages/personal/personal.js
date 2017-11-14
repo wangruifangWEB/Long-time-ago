@@ -86,6 +86,8 @@ Page({
     statureInfoHolder: true,
     nowWeightInfoHolder: true,
     aimWeightInfoHolder: true,
+    statusMsg:'',
+    statusIcon:'',
   },
 
   onShow: function () {
@@ -99,7 +101,6 @@ Page({
       },
       method: 'get',
       success: function (data) {
-        
         console.log(data.data);
         var data = data.data;
         var url = app.globalData.globalUrl + 'Public';
@@ -109,6 +110,7 @@ Page({
           checkSex: data.sex,
           enrollNum: data.signup_num,
           joinNum: data.join_num,
+          id: data.id
         })
         
         that.checkSex(data);
@@ -137,7 +139,8 @@ Page({
           nowWeightInfo: data.weight,
           aimWeightInfo: data.target_weight,
           industryIndex: data.industry_id,
-          quarterIndex: (data.post_tid)
+          quarterIndex: (data.post_tid),
+          quarterIndexValue: jobInfo[data.industry_id][data.post_tid].value
         })
         that.checkFormStatus();
       }
@@ -218,6 +221,7 @@ Page({
         checked_edit: true,
         checked_save: false
       })
+      var that=this;
       wx.request({
         url: app.globalData.globalUrl + "/index.php/Home/Wxprogram/updataModify",
         data: {
@@ -231,12 +235,39 @@ Page({
           "statureInfo": statureInfo,
           "nowWeightInfo": nowWeightInfo,
           "aimWeightInfo": aimWeightInfo,
-          "checkSex": checkSex
+          "checkSex": checkSex,
+          "id":that.data.id
         },
-        success: function () {
-          wx.showToast({
-            title: '已保存',
-          })
+        // method:'post',
+        success: function (data) {
+          console.log(data.data);
+          var statusCode = data.data.status;
+          
+            that.setData({
+              alertSave: true,
+              statusMsg: data.data.conment
+            })
+            var statusMsg = data.data.conment;
+            if (statusCode == "0") {
+              that.setData({
+                statusIcon: "cancel"
+              })
+            }
+            if (statusCode == "1") {
+              that.setData({
+                statusIcon: "warn"
+              })
+            }
+            if (statusCode == "2") {
+              that.setData({
+                statusIcon: "success"
+              })
+            }
+            setInterval(function(){
+              that.setData({
+                alertSave: false
+              })
+            },1500)
         },
         fail: function () {
           wx.showToast({
