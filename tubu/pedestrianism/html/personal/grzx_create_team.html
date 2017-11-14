@@ -19,7 +19,7 @@
 		<link rel="stylesheet" href="../../single_css/global.css">
 		<style>
 			body {
-				background-color: #dfdfdf;
+				background-color: #ececec;
 				overflow: scroll;
 				font-family: PingFangSC-Regular;
 			}
@@ -39,11 +39,26 @@
 				overflow: hidden;
 			}
 			
-			header,
-			.d-title {
-				/*box-shadow: none;*/
+			header{
+				position: fixed;
 			}
-			
+			header img{
+				width: 0.2rem;
+				height: 0.35rem;
+				position: absolute;
+				top: 0.32rem;
+				left: 0.6rem;
+				z-index: 100;
+			}
+			header span{
+				width: 100%;
+				height: 0.98rem;
+				font-size: 0.37rem;
+				color: #3c3c40;
+				line-height: 0.98rem;
+				display: block;
+				text-align: center;
+			}
 			.init-loading img {
 				width: 1.2rem;
 				height: 1.2rem;
@@ -59,7 +74,7 @@
 				bottom: 0;
 				width: 7.5rem;
 				text-align: center;
-				background-color: #dfdfdf;
+				background-color: #ececec;
 				z-index: 10;
 				font-size: 0.26rem;
 			}
@@ -74,7 +89,10 @@
 				background-color: #ffffff;
 				margin-bottom: 0.16rem;
 			}
-			
+			/*.juxing{
+				height: 0.16rem;
+				background-color: #ececec;
+			}*/
 			.team_top {
 				height: 2rem;
 				width: 7.5rem;
@@ -117,8 +135,7 @@
 			
 			.team_right p:nth-child(2) span,
 			.team_right p:nth-child(3) span {
-				display: inline-block;
-				margin-left: .24rem;
+				margin-left: .1rem;
 			}
 			
 			.team_middle {
@@ -179,12 +196,8 @@
 		<div class="outerScroller">
 			<div class="scroll">
 				<header>
-					<div class="d-title">
-						<a href="#">
-							<img src="../../images/cd.png" alt="" />
-						</a>
-						<span>我创建的团队</span>
-					</div>
+					<img class="back" src="../../images/back.png" alt="" />
+					<span>我创建的团队</span>
 				</header>
 				<div class="team_list">
 					<div class="swiper-container">
@@ -206,8 +219,8 @@
 															<p>活动时间：<span>2018-5-12</span></p>
 														</div>
 													</div>
-													<div class="team_middle">
-														<p>名单查询<img src="../../images/tobottom.png" alt=""></p>
+													<div class="team_middle slide">
+														<p><span>名单查询</span><img src="../../images/tobottom.png" alt=""></p>
 													</div>
 													<div class="team_bottom">
 														<div class="team_detail">
@@ -237,7 +250,7 @@
 														</div>
 													</div>
 													<div class="team_middle">
-														<p>名单查询<img src="../../images/tobottom.png" alt=""></p>
+														<p><span>名单查询</span><img src="../../images/tobottom.png" alt=""></p>
 													</div>
 													<div class="team_bottom">
 														<div class="team_detail">
@@ -267,15 +280,11 @@
 			</div>
 		</div>
 		<script>
-			$('.team_middle').toggle(function() {
-				$(this).siblings('.team_bottom').slideDown();
-				console.log($(this));
-				$(this).children('p').children('img').attr('src', '../../images/totop.png');
-			}, function() {
-				$(this).siblings('.team_bottom').slideUp();
-				$(this).children('p').children('img').attr('src', '../../images/tobottom.png');
-			});
-
+			
+			$('.back').click(function(){
+				history.go(-1);
+			})
+			
 			$('.active_list').height($(window).height() - $('header').height());
 			$('.swiper-container,.w').height($(window).height() - $('header').height());
 			var loadFlag = true;
@@ -312,7 +321,7 @@
 
 								setTimeout(function() {
 									for(var i = 0; i < 3; i++) {
-										$(".active_list .active_list_ul").eq(mySwiper2.activeIndex).append(
+										$(".team_list .team_list_ul").eq(mySwiper2.activeIndex).append(
 											`
 											<li>
 												<a href="javascript:;">
@@ -327,17 +336,17 @@
 														</div>
 													</div>
 													<div class="team_middle">
-														<p>名单查询<img src="../../images/tobottom.png" alt=""></p>
+														<p><span>名单查询</span><img src="../../images/tobottom.png" alt=""></p>
 													</div>
 													<div class="team_bottom">
 														<div class="team_detail">
 															<p>性名：<span>小安</span></p>
-															<p>电话：<span>13718391141</span></p>
+															<p>身份证号：<span>130926199501125596</span></p>
 															<p>是否乘坐摆渡车：<span>是</span></p>
 														</div>
 														<div class="team_detail">
 															<p>性名：<span>小安</span></p>
-															<p>电话：<span>13718391141</span></p>
+															<p>身份证号：<span>130926199501125596</span></p>
 															<p>是否乘坐摆渡车：<span>是</span></p>
 														</div>
 													</div>
@@ -369,7 +378,7 @@
 								$('.init-loading').css('display', 'block');
 								setTimeout(function() {
 									for(var i = 0; i < 3; i++) {
-										$(".active_list .active_list_ul").eq(mySwiper2.activeIndex).append(
+										$(".team_list .team_list_ul").eq(mySwiper2.activeIndex).append(
 											`
 											<li>
 												<a href="javascript:;">
@@ -384,17 +393,17 @@
 														</div>
 													</div>
 													<div class="team_middle">
-														<p>名单查询<img src="../../images/tobottom.png" alt=""></p>
+														<p><span>名单查询</span><img src="../../images/tobottom.png" alt=""></p>
 													</div>
 													<div class="team_bottom">
 														<div class="team_detail">
 															<p>性名：<span>小安</span></p>
-															<p>电话：<span>13718391141</span></p>
+															<p>身份证号：<span>130926199501125596</span></p>
 															<p>是否乘坐摆渡车：<span>是</span></p>
 														</div>
 														<div class="team_detail">
 															<p>性名：<span>小安</span></p>
-															<p>电话：<span>13718391141</span></p>
+															<p>身份证号：<span>130926199501125596</span></p>
 															<p>是否乘坐摆渡车：<span>是</span></p>
 														</div>
 													</div>
@@ -425,6 +434,31 @@
 				}
 
 			});
+//			$('.team_middle').toggle(function() {
+//				$(this).children('p').find('span').html('收起');
+//				$(this).siblings('.team_bottom').slideDown();
+//				$(this).children('p').children('img').attr('src', '../../images/totop.png');
+//			}, function() {
+//				$(this).children('p').find('span').html('名单查询');
+//				$(this).siblings('.team_bottom').slideUp();
+//				$(this).children('p').children('img').attr('src', '../../images/tobottom.png');
+//			});
+			
+			$('body').on('click','.team_middle',function(){
+				if($('.team_middle').hasClass('slide')){
+					$(this).children('p').find('span').html('收起');
+					$(this).siblings('.team_bottom').slideDown();	
+					$(this).children('p').children('img').attr('src', '../../images/totop.png');
+					$(this).removeClass('slide');
+				}else{
+					$(this).children('p').find('span').html('名单查询');
+					$(this).siblings('.team_bottom').slideUp();
+					$(this).children('p').children('img').attr('src', '../../images/tobottom.png');
+					$(this).addClass('slide');
+				}
+				
+			})
+			
 		</script>
 	</body>
 
