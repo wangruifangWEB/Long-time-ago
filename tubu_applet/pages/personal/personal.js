@@ -32,7 +32,8 @@ Page({
     industryIndex: 0,
     arrayQuarter: ["工作岗位"],
     quarterIndex: 0,
-    jobInfo: ["工作岗位"],
+    quarterIndexValue:'',
+    jobInfo: ['工作岗位'],
 
 
     checked_edit: true,
@@ -177,7 +178,7 @@ Page({
     var userInfo = this.data.userInfo;
     var telInfo = this.data.telInfo;
     var industryIndex = this.data.industryIndex;
-    var quarterIndex = this.data.quarterIndex;
+    var quarterIndex = this.data.quarterIndexValue;
     var cardInfo = this.data.cardInfo;
     var ageInfo = this.data.ageInfo;
     var statureInfo = this.data.statureInfo;
@@ -520,29 +521,45 @@ Page({
     var industryIndex = this.data.industryIndex;
     var quarterarr = this.data.jobInfo[industryIndex];
     var quarter = ['工作岗位'];
-    for (var i = 0; i < quarterarr.length; i++) {
-      console.log(quarterarr[i].text);
-      quarter.push(quarterarr[i].text);
+    if (this.data.jobInfo[industryIndex]=="工作岗位"){
+      quarter = quarter;
+      this.setData({
+        grayQuarterNotice: false,
+        redQuarterNotice: false,
+        greenQuarterNotice: false
+      })
+    }else{
+      for (var i = 0; i < quarterarr.length; i++) {
+        console.log(quarterarr[i].text);
+        quarter.push(quarterarr[i].text);
+      }
     }
     this.setData({
       arrayQuarter: quarter
     })
     if (this.data.industryIndex == 0) {
       this.setData({
+        quarterIndex: 0,
+        quarterText: false,
+        industryText: false,
+        quarterInfo: false,
         industryInfo: false,
         grayIndustryNotice: false,
         redIndustryNotice: true,
         greenIndustryNotice: false,
       })
+      
     } else {
       this.setData({
+        industryText: true,
         industryInfo: true,
         grayIndustryNotice: false,
         redIndustryNotice: false,
         greenIndustryNotice: true,
       })
     }
-
+    console.log(this.data.arrayQuarter);
+    
   },
   // 工作岗位
   quarterfn: function (event) {
@@ -550,17 +567,36 @@ Page({
       quarterText: true,
       quarterIndex: event.detail.value
     })
-
-
+   
+    var quarterI=this.data.jobInfo[this.data.industryIndex];
+    var quarterIndex = this.data.quarterIndex-1;
+    var quarterIndexI;
+    for (var i = 1; i <= quarterI.length;i++){
+      if(i==1){
+        this.setData({
+          grayQuarterNotice: false,
+          redQuarterNotice: true,
+          greenQuarterNotice: false
+        })
+      }else{
+        quarterIndexI = quarterI[quarterIndex].value;
+        this.setData({
+          quarterIndexValue: quarterIndexI
+        })
+      }
+    }
     if (this.data.quarterIndex == 0) {
       this.setData({
         quarterInfo: false,
         grayQuarterNotice: false,
         redQuarterNotice: true,
         greenQuarterNotice: false,
+        quarterText: false,
+        industryText: false,
       })
     } else {
       this.setData({
+        quarterText: true,
         quarterInfo: true,
         grayQuarterNotice: false,
         redQuarterNotice: false,
