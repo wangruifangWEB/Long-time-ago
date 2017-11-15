@@ -25,27 +25,27 @@
 	font-family: PingFangSC-Regular;
 	padding-left: 1.2rem;
 }
-.list_item li:nth-child(1) a{
+.list_item li a.grzx_data{
 	background-image: url(../images/message.png);
 	background-repeat: no-repeat;
 	background-size: 0.36rem 0.42rem;
-	background-position: 0.63rem center;
+	background-position: 0.50rem 0.27rem;
 }
-.list_item li:nth-child(2){
+.list_item li a.grzx_order{
 	background-image: url(../images/order.png);
 	background-repeat: no-repeat;
 	background-size: 0.34rem 0.42rem;
-	background-position: 0.63rem center;
+	background-position: 0.5rem 0.27rem;
 }
-.list_item li:nth-child(3){
+.list_item li a.grzx_join_active{
 	background-image: url(../images/join_active.png);
 	background-repeat: no-repeat;
 	background-size: 0.45rem 0.34rem;
-	background-position: 0.63rem center;
+	background-position: 0.45rem 0.32rem;
 }
-.list_item li:nth-child(4){
+.list_item li a.grzx_create_team{
 	background-image: url(../images/create_team.png);
 	background-repeat: no-repeat;
 	background-size: 0.54rem 0.4rem;
-	background-position: 0.63rem center;
+	background-position: 0.4rem 0.27rem;
 }

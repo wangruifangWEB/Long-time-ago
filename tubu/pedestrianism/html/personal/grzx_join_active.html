@@ -39,14 +39,33 @@
         overflow: hidden;
     }
 
-    header,
-    .d-title {
+    header{
+        position: fixed;
         box-shadow: none;
     }
-	.d-title a img{
-		width: 0.2rem;
-		height: 0.35rem;
-	}
+    header img{
+        width: 0.2rem;
+        height: 0.35rem;
+        position: absolute;
+        top: 0.32rem;
+        left: 0.6rem;
+        z-index: 100;
+    }
+    header span{
+        width: 100%;
+        height: 0.98rem;
+        font-size: 0.37rem;
+        color: #3c3c40;
+        line-height: 0.98rem;
+        display: block;
+        text-align: center;
+    }
+    .init-loading img {
+        width: 1.2rem;
+        height: 1.2rem;
+        display: block;
+        margin: 0.05rem auto;
+    }
     .init-loading img {
         width: 1.2rem;
         height: 1.2rem;
@@ -143,12 +162,8 @@
     <div class="outerScroller">
         <div class="scroll">
             <header>
-                <div class="d-title">
-                    <a href="#">
-							<img src="../../images/cd.png" alt="" />
-						</a>
-                    <span>我参与的活动</span>
-                </div>
+                <img class="back" src="../../images/back.png" alt="" />
+                <span>我参加的活动</span>
             </header>
             <div class="active_list">
                 <div class="swiper-container">
@@ -208,6 +223,9 @@
         </div>
     </div>
     <script>
+    $('.back').click(function(){
+        history.go(-1);
+    })
     $('.active_list').height($(window).height()-$('header').height());
     $('.swiper-container,.w').height($(window).height()-$('header').height());
     var loadFlag = true;
