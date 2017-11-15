@@ -180,7 +180,7 @@ Page({
         if (data.target_weight == null) {
             data.target_weight = "目标体重（kg）";
         }
-        if (data.industry_id == null) {
+        if (data.industry_id ==  null) {
             data.industry_id = 0;
         }
     },
