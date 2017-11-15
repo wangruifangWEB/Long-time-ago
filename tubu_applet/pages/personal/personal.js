@@ -92,16 +92,7 @@ Page({
 
     onShow: function () {
         var session3rd = wx.getStorageSync('3rdSession');
-        var quarterIndexStorage = wx.getStorageSync('quarterIndex');
-        if (quarterIndexStorage == "") {
-            this.setData({
-                quarterIndex: 0
-            })
-        } else {
-            this.setData({
-                quarterIndex: wx.getStorageSync('quarterIndex')
-            })
-        }
+        
 
         var that = this;
         wx.request({
@@ -131,8 +122,10 @@ Page({
                     quarterIndexValue: data.work_id,
                     id: data.id
                 })
+                
                 that.checkSex(data);
                 that.job(data);
+                
                 that.checkFormStatus();
             }
         })
@@ -197,6 +190,26 @@ Page({
         that.setData({
             arrayIndustry: industry
         })
+        
+        var workId=that.data.jobInfo[data.industry_id];
+        console.log(workId);
+        var j;
+        console.log(workId.length);
+        for (var i = 0; i < workId.length;i++){
+            if (workId[i].value == that.data.quarterIndexValue){
+                j=i;
+            }
+        }
+        if (workId == "工作岗位") {
+            that.setData({
+                quarterIndex: 0
+            })
+        } else {
+            that.setData({
+                quarterIndex: j+1
+            })
+        }
+        
         var quarterarr = ["工作岗位"];
         for (var i = 0; i < jobInfo[data.industry_id].length; i++) {
             quarterarr.push(jobInfo[data.industry_id][i].text);
@@ -279,7 +292,7 @@ Page({
                 },
                 method: 'GET',
                 success: function (data) {
-                    wx.setStorageSync('quarterIndex', that.data.quarterIndex);
+                    // wx.setStorageSync('quarterIndex', that.data.quarterIndex);
                     console.log(data.data);
                     var statusCode = data.data.status;
 
