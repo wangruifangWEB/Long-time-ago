@@ -1,23 +1,40 @@
 <view class="container">
-    <form >
-        <view class="section">
-            <text class="section_title">城市</text>
-            <input name="input" disabled="{{userDis}}" type='text' value='{{userInfo}}' class='section_cont' focus='{{userfocus}}' placeholder="城市" placeholder-class="placeholder" bindblur="userBlurfn" bindinput="inputChangefn" />
+    <image style='display:none' src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/BMI_bar.png'></image>
+    <view class='canvas_warp'>
+        <canvas canvas-id="radarCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+    </view>
+    <view class='BMI'>
+        <view class='BMI_number'>
+            <view class='BMI_number_left'>
+                <text>{{20.2}}</text>
+                <text>BMI</text>
+            </view>
+            <view class='BMI_number_right'>
+                <image src='/images/my.png' wx:if="{{BMImy}}"></image>
+                <image src='/images/jy.png' wx:if="{{BMIjy}}"></image>
+                <image src='/images/ng.png' wx:if="{{BMIng}}"></image>
+            </view>
         </view>
-         <view class="section">
-            <text class="section_title">餐馆</text>
-            <input name="input" disabled='{{telDis}}' type='text' value='{{telInfo}}' class='section_cont' focus='{{telfocus}}' placeholder="餐馆" placeholder-class="placeholder" bindblur="telBlurfn" bindinput="inputChangefn" />
-        </view> 
-
-        <view class="section">
-            <text class="section_title">城市</text>
-            <input name="input" disabled="{{userDis}}" type='text' value='{{userInfo}}' class='section_cont' focus='{{userfocus}}' placeholder="城市" placeholder-class="placeholder" bindblur="userBlurfn" bindinput="inputChangefn" />
+        <view class='BMI_detail'>
+            <view class='BMI_detail_number'>
+                <text>18.5</text>
+                <text>24</text>
+                <text>28</text>
+            </view>
+            <view class='BMI_detail_img'>
+                 <view>
+                    <text animation="{{scaleCount}}"></text>
+                 </view>
+            </view>
+            <view class='BMI_detail_text'>
+                <text>偏瘦</text>
+                <text>正常</text>
+                <text>偏胖</text>
+                <text>肥胖</text>
+            </view>
+            <view class='BMI_detail_describe'>
+                很棒！您目前的BMI指数正常，但也不要忘了锻炼保持哦！
+            </view>
         </view>
-
-        <button class='search' bindtap='search'>搜索</button>
-    </form>
-    <view class='alertSave' wx:if="{{alertSave}}">
-      <icon type="info" color='#ffffff' ></icon>
-      <text>系统升级中</text>
     </view>
 </view>

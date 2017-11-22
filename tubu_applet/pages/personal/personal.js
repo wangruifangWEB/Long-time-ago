@@ -125,7 +125,6 @@ Page({
                 
                 that.checkSex(data);
                 that.job(data);
-                
                 that.checkFormStatus();
             }
         })
@@ -292,18 +291,26 @@ Page({
                 },
                 method: 'GET',
                 success: function (data) {
-                    // wx.setStorageSync('quarterIndex', that.data.quarterIndex);
                     console.log(data.data);
                     var statusCode = data.data.status;
 
                     that.setData({
                         alertSave: true,
-                        statusMsg: data.data.conment
+                        statusMsg: data.data.conment,
+                        greenUserNotice: false,
+                        greenTelNotice: false,
+                        greenIndustryNotice: false,
+                        greenQuarterNotice: false,
+                        greenCardNotice: false,
+                        greenAgeNotice: false,
+                        greenStatureNotice: false,
+                        greenNowWeightNotice: false,
+                        greenAimWeightNotice: false,
                     })
                     var statusMsg = data.data.conment;
                     if (statusCode == "0") {
                         that.setData({
-                            statusIcon: "cancel"
+                            statusIcon: "cancel",
                         })
                     }
                     if (statusCode == "1") {
@@ -313,7 +320,8 @@ Page({
                     }
                     if (statusCode == "2") {
                         that.setData({
-                            statusIcon: "success"
+                            statusIcon: "success",
+                            
                         })
                     }
                     setInterval(function () {

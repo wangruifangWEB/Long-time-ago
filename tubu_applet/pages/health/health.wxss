@@ -1,95 +1,145 @@
 page{
-    background-color: #EFEFF4;
+     background-color: #292929; 
 }
-form {
+.canvas_warp{
+    width: 750rpx; 
+    height: 600rpx;
+    display: block;
+    margin: 0 auto 40rpx; 
+}
+canvas{
+    height: 600rpx;
+    width: 750rpx;
+}
+.BMI{
+    margin: 32rpx auto 0;
     width: 624rpx;
-    margin: 0 auto;
-    display: block;
-}
-.alertSave{
-    transform: translateX(-50%) translateY(-50%);
-    position: fixed;
-    z-index: 300;
-    top: 50%;
-    left: 50%;
-    background-color: #000000;
-    opacity: 0.8;
-    width: 200rpx;
-    height: 250rpx;
+    height: 196rpx;
+    display: flex;
+    flex-direction: row;
     border-radius: 16rpx;
+    background-color: #252422;
 }
-.alertSave icon{
-    display: block;
-    margin: 50rpx auto 35rpx;
+.BMI_number{
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    height: 196rpx;
+    padding: 45rpx 15rpx;
+    overflow: hidden;
+    width: 238rpx;
+}
+.BMI_number_left{
+    width: 120rpx;
+    height: 196rpx;
+}
+.BMI_number_left text{
+    width: 120rpx;
     text-align: center;
-}
-.alertSave text{
+    color: #d0ad65;
     display: block;
-    margin: 0 auto;
-    text-align: center;
-    color: #ffffff;
-    font-size: 32rpx;
 }
-.section {
-    height: 107rpx;
-    border-bottom: #d0d0d0 solid 1rpx;
-    position: relative;
+.BMI_number_left text:nth-child(1){
+    font-size: 48rpx;
+    border-bottom: 0;
+    font-weight: 600;
+    padding-top: 10rpx;
 }
-
-.section_title {
+.BMI_number_left text:nth-child(2){
+    height: 30rpx;
+    margin-top: 10rpx;
     font-size: 26rpx;
+}
+.BMI_number_right{
+    width: 80rpx;
+    height: 196rpx;
+}
+.BMI_number_right image{
+    width: 80rpx;
+    height: 80rpx;
+    margin-top: 8rpx;
+}
+.BMI_detail{
+    width: 386rpx;
+    border: none;
+    box-shadow: 2rpx 0 0 rgba(26,25,23,1) inset;
+}
+.BMI_detail_number,.BMI_detail_number text{
+    color: #595959;
+    font-size: 26rpx;
+    padding-top: 2rpx;
+    height: 38rpx;
+    line-height: 38rpx;
+}
+.BMI_detail_number text:nth-child(1){
+    width: 150rpx;
+    text-align: right;
+    display: inline-block;
+}
+.BMI_detail_number text:nth-child(2){
+    width: 70rpx;
+    text-align: center;
+    display: inline-block;
+}
+.BMI_detail_number text:nth-child(3){
+    width: 100rpx;
+    text-align: left;
+    display: inline-block;
+}
+.BMI_detail_img{
+    width: 386rpx;
+    height: 16rpx;
+}
+.BMI_detail_img view{
+    position: relative;
+    width: 350rpx;
+    height: 6rpx;
+    top: 5rpx;
+    left: 18rpx;
+    background-image: url(http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/BMI_bar.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 350rpx 6rpx;
+}
+.BMI_detail_img text{
+    width: 10rpx;
+    height: 10rpx;
+    position: absolute;
+    top: -2rpx;
+    left: 0%;
+    z-index: 100;
+    background-color: #d0ad65;
+    border-radius: 50%;
+}
+.BMI_detail_text{
+    height: 65rpx;
+}
+.BMI_detail_text text{
+    writing-mode: vertical-rl;
+    font-size: 26rpx;
+    display: inline-block; 
+    text-align: center;
     color: #595959;
 }
-
-.section_cont {
-    color: #f69200;
-    line-height: 52rpx;
+.BMI_detail_text text:nth-child(1){
+    width: 100rpx;
+}
+.BMI_detail_text text:nth-child(2){
+    width: 80rpx;   
+}
+.BMI_detail_text text:nth-child(3){
+    width: 35rpx;
+}
+.BMI_detail_text text:nth-child(4){
+    width: 90rpx;
+}
+.BMI_detail_describe{
+    padding-top: 10rpx;
+    box-shadow:  0 3rpx 0 rgba(26,25,23,1) inset;
+    padding-left: 18rpx;
+    font-size: 26rpx;
+    color: #a19fa0;
+    line-height: 32rpx;
 }
 
-.placeholder {
-    color: #595959;
-}
 
-.delete_input {
-    width: 24rpx;
-    height: 24rpx;
-    position: absolute;
-    right: 10rpx;
-    bottom: 10rpx;
-    z-index: 10;
-}
-
-.showText {
-    visibility: visible;
-}
-
-.hideText {
-    visibility: hidden;
-}
-
-.notice_text_warp {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: auto;
-    white-space: nowrap;
-    z-index: 10;
-}
-
-.notice_text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 32rpx;
-    height: 50rpx;
-    background-color: #000;
-    opacity: 0.8;
-    padding: 10rpx 30rpx;
-    color: #fff;
-    border-radius: 10rpx;
-}
-.search{
-    margin-top: 60rpx;
-}
