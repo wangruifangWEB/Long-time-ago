@@ -1,0 +1,7 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  width: 750rpx;
+  font-family: "PingFangSC-Regular";
+  overflow-x: hidden;
+} 
