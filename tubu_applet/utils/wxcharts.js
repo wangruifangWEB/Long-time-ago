@@ -11,12 +11,12 @@
 
 var config = {
     yAxisWidth: 15,
-    yAxisSplit: 5,
+    yAxisSplit: 3,
     xAxisHeight: 15,
     xAxisLineHeight: 15,
     legendHeight: 15,
     yAxisTitleWidth: 15,
-    padding: 0,
+    padding: 6,
     columePadding: 0,
     fontSize: 12,
     dataPointShape: ['circle','diamond','triangle', 'rect'],
@@ -1066,7 +1066,7 @@ function drawColumnDataPoints(series, opts, config, context) {
         context.translate(opts._scrollDistance_, 0);
     }
     if (opts.tooltip && opts.tooltip.textList && opts.tooltip.textList.length && process === 1) {
-        drawToolTipSplitLine(opts.tooltip.offset.x, opts, config, context);
+        // drawToolTipSplitLine(opts.tooltip.offset.x, opts, config, context);
     }
     series.forEach(function (eachSeries, seriesIndex) {
         var data = eachSeries.data;
@@ -1128,7 +1128,7 @@ function drawAreaDataPoints(series, opts, config, context) {
     }
 
     if (opts.tooltip && opts.tooltip.textList && opts.tooltip.textList.length && process === 1) {
-        drawToolTipSplitLine(opts.tooltip.offset.x, opts, config, context);
+        // drawToolTipSplitLine(opts.tooltip.offset.x, opts, config, context);
     }
 
     series.forEach(function (eachSeries, seriesIndex) {
@@ -1222,7 +1222,7 @@ function drawLineDataPoints(series, opts, config, context) {
     }
 
     if (opts.tooltip && opts.tooltip.textList && opts.tooltip.textList.length && process === 1) {
-        drawToolTipSplitLine(opts.tooltip.offset.x, opts, config, context);
+        // drawToolTipSplitLine(opts.tooltip.offset.x, opts, config, context);
     }
 
     series.forEach(function (eachSeries, seriesIndex) {
@@ -1940,7 +1940,6 @@ var Charts = function Charts(opts) {
     this.opts = opts;
     this.config = config$$1;
     this.context = wx.createCanvasContext(opts.canvasId);
-    console.log(wx.createCanvasContext(opts.canvasId));
     // store calcuated chart data
     // such as chart point coordinate
     this.chartData = {};
@@ -1951,12 +1950,7 @@ var Charts = function Charts(opts) {
         distance: 0
     }
     drawCharts.call(this, opts.type, opts, config$$1, this.context);
-    this.scrollOption = {
-        currentOffset: -1200,
-        startTouchX: 0,
-        distance: 0
-    }
-    console.log(this.scrollOption.currentOffset);
+    
 };
 
 Charts.prototype.updateData = function () {

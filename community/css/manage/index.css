@@ -1,0 +1,214 @@
+body,html{
+	background-color: #fff;
+	overflow-x: hidden;
+}
+.clearfix{
+	content: "";
+	display: block;
+	clear: both;
+}
+em,i{font-style:normal}
+
+.index_container{
+	width: 7.5rem;
+	height: 100%;
+	text-align: center;
+	background-color: #fff;
+	font-family: PingFangSC-Medium;
+    padding-bottom: 1.45rem;
+    padding-top:.2rem;
+}
+/*轮播图*/
+#slider {
+	width:7.5rem;
+	height:3.2rem;
+	overflow-x: hidden;
+	position:relative;
+ }
+#slider img{
+	width:6.72rem;
+	height:3.2rem;
+}
+/*<!--Part two 详情列表-->*/
+.second{
+    width: 100%;
+}
+.second_list{
+   	width: 100%;
+    text-align: center;
+    background: #ffffff;
+    padding-bottom: .30rem;
+}
+.second_list li{
+    display:inline-block;
+    width:32%;
+    text-align:center;
+    box-sizing: border-box;
+}
+.second_list li a:hover{
+    text-decoration: none;
+}
+.second_list li img{
+    width:.68rem;
+    height:.70rem;
+    margin-top:.32rem;
+}
+.second_list span{
+    display: block;
+    text-align: center;
+    padding-top:.16rem;
+    font-size:.28rem;
+    color:#abafbe;
+   	font-family: PingFangSC-Regular;
+}
+/*自组织管理*/
+.three{
+	padding:.32rem .4rem .32rem .4rem;
+}
+.three .three_left{
+	float:left;
+	margin-right:.14rem;
+}
+.three .three_left img{
+	width:2.48rem;
+	height:2.48rem;
+}
+.three .three_right{
+	float:left;
+}
+.three .three_right li:nth-child(1){
+	margin-bottom:.16rem;
+}
+.three .three_right img{
+	width:4.08rem;
+	height:1.16rem;
+}
+/*自组织推荐*/
+.four{
+	background-color: #eeeeff;
+}
+.four .four_container{
+	margin-top:.32rem;
+	background-color: #fff;
+	text-align: -webkit-center;
+}
+.four .four_container 
+.four_container_header_left{
+	float: left;
+	display: flex;
+	padding: .24rem 0 .24rem .4rem;
+}
+.four .four_container 
+.four_container_header_left img{
+	width:.04rem;
+	height:.28rem;
+	margin-right:.16rem;
+	margin-top:.06rem;
+}
+.four .four_container 
+.four_container_header_left span{
+	color:#3a3a3a;
+	font-size: .32rem;
+	font-family: PingFangSC-Medium;
+}
+.four .four_container 
+.four_container_header_right{
+	float: right;
+	display: flex;
+    padding: .16rem .4rem .24rem 0;
+}
+.four .four_container 
+.four_container_header_right span{
+	color:#b1b4c2;
+	font-size: .22rem;
+	font-family: PingFangSC-Medium;
+	display: block;
+	margin-top:.06rem;
+}
+.four .four_container 
+.four_container_header_right img{
+	width:.13rem;
+	height:.22rem;
+	margin:.16rem 0 0 .16rem;
+}
+.four .four_container
+.four_container_item{
+ 	width:6.72rem;
+ 	height:2.8rem;
+ 	background-image: url(../../images/manage/list-pic.png);
+ 	background-repeat: no-repeat;
+ 	background-size: 6.72rem 2.8rem;
+ 	margin-bottom:.32rem;
+ 	position: relative;
+ }
+.four .four_container
+.four_container_item:last-child{
+	margin-bottom:0;
+}
+ .four_container_item_address{
+ 	margin:.16rem 0 0 .12rem;
+ 	display: flex;
+ }
+.four_container_item_address .addr{
+	width:2.9rem;
+	height:.43rem;
+	color:#50526b;
+	border-radius:.24rem;
+	font-family: PingFangSC-Regular;
+	font-size: .24rem;
+	border:none;
+	outline: none;
+	background-color:rgba(255,255,255,0.3);
+	background-image: url(../../images/manage/list-location.png);
+	background-size: .2rem .27rem;
+	background-repeat: no-repeat;
+	background-position: .2rem .1rem;
+	text-align: -webkit-center;
+}
+.four_container_item_address .addr div{
+	margin-left:.3rem;
+}
+.four_container_item_address 
+input::-webkit-input-placeholder { /* WebKit browsers*/ 
+　　color:#50526b;font-size:.28rem;
+	font-family: PingFangSC-Regular;
+　　}
+.four_container_item_address
+input:-moz-placeholder {  /* Mozilla Firefox 4 to 18*/ 
+　　color:#000;font-size:.28rem;
+	font-family: PingFangSC-Regular;
+　　}
+.four_container_item_address
+input::-moz-placeholder {  /* Mozilla Firefox 19+*/ 
+　　color:#50526b;font-size:.28rem;
+	font-family: PingFangSC-Regular;
+　　}
+.four_container_item_address
+input:-ms-input-placeholder { /* Internet Explorer 10+*/ 
+　　color:#50526b;font-size:.24rem;
+	font-family: PingFangSC-Regular;
+}
+.four .four_container 
+.four_container_item_bottom{
+	width:100%;
+	position: absolute;
+    top: 2.32rem;
+    text-align: -webkit-left;
+}
+.four .four_container 
+.four_container_item_bottom span{
+	color:#fff;
+	font-size: .28rem;
+	font-family: PingFangSC-Medium;
+	margin-left:.24rem;
+	display: inline-block;
+}
+.four_container_item_more img{
+	width:.26rem;
+	height:.26rem;
+	margin:.12rem .24rem 0 .1rem;
+}
+.four .four_container 
+.four_container_item_more span{
+	font-size: .22rem;
+}

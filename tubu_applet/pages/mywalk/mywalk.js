@@ -1,4 +1,5 @@
 var wxCharts = require('../../utils/wxcharts.js');
+var app=getApp();
 var lineChart = null;
 var startPos = null;
 var columnChart = null;
@@ -19,7 +20,12 @@ Page({
         date_today: [],
         data_today: [],
         data_day: '0',
-        totalData: '0'
+        totalData: '0',
+        disToday: false,
+        disWeek: false,
+        disMonth: false,
+        standardWidth: 375,
+        widthScale: 1
     },
     // 点击日期
     selected_day: function (e) {
@@ -32,7 +38,8 @@ Page({
             date_week: [],
             data_week: [],
             date_today: [],
-            data_today: []
+            data_today: [],
+            disToday: true
         });
 
         wx.showLoading({
@@ -51,11 +58,14 @@ Page({
             date_week: [],
             data_week: [],
             date_today: [],
-            data_today: []
+            data_today: [],
+            disWeek: true
         });
-
         wx.showLoading({
             title: '加载中...',
+        })
+        this.setData({
+            
         })
         this.getRunInfo();
     },
@@ -70,7 +80,8 @@ Page({
             date_week: [],
             data_week: [],
             date_today: [],
-            data_today: []
+            data_today: [],
+            disMonth: true
         });
         wx.showLoading({
             title: '加载中...',
@@ -90,7 +101,6 @@ Page({
 
         }
         if (this.data.selected_day) {
-            // console.log(columnChart.getCurrentDataIndex(e));
             columnChart.showToolTip(e, {
                 format: function (item, category) {
                     return item.data
@@ -121,16 +131,12 @@ Page({
         })
         wx.checkSession({
             success: function () {
-                // console.log('success');
                 // 查询是否授权
                 wx.getSetting({
                     success(res) {
                         if (!res.authSetting['scope.werun']) {
-                            // console.log('success1');
                             that.getUserInfo();
-
                         } else {
-                            // console.log('success2');
                             wx.showLoading({
                                 title: '加载中...',
                             })
@@ -140,7 +146,6 @@ Page({
                 })
             },
             fail: function () {
-                console.log('fail');
                 that.getUserInfo();
             }
         })
@@ -164,7 +169,7 @@ Page({
                             var encryptedData = data.encryptedData;
                             var iv = data.iv;
                             wx.request({
-                                url: "https://www.sqbqr.cn/index.php/Home/Wxprogram/onLogin",
+                                url: app.globalData.globalUrl+"index.php/Home/Wxprogram/onLogin",
                                 data: {
                                     "code": code,
                                     "signature": signature,
@@ -175,10 +180,17 @@ Page({
                                 success: function (data) {
                                     wx.setStorageSync('3rdSession', data.data);
                                     var session3rd = wx.getStorageSync('3rdSession');
-
                                     //  取运动数据
-                                    that.getRunInfo();
-
+                                    if (wx.getWeRunData) {
+                                        that.getRunInfo();
+                                    } else {
+                                        // 如果希望用户在最新版本的客户端上体验您的小程序，可以这样子提示
+                                        wx.showModal({
+                                            title: '提示',
+                                            content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
+                                        })
+                                        return;
+                                    }
                                 },
                                 fail: function () {
                                     wx.showModal({
@@ -201,13 +213,12 @@ Page({
     getRunInfo: function () {
         var that = this;
         var session = wx.getStorageSync('3rdSession');
-        // console.log(session);
         wx.getWeRunData({
             success(res) {
                 var yunencryptedData = res.encryptedData;
                 var yuniv = res.iv;
                 wx.request({
-                    url: 'https://www.sqbqr.cn/index.php/Home/Wxprogram/yundong',
+                    url: app.globalData.globalUrl+'index.php/Home/Wxprogram/yundong',
                     data: {
                         'yunencryptedData': yunencryptedData,
                         'yuniv': yuniv,
@@ -225,13 +236,12 @@ Page({
                         that.setData({
                             yundata: data.data.stepInfoList
                         })
-
                         that.walkShow();
                     }
                 })
             },
             fail: function () {
-                that.runModal();
+                return;
             }
         })
     },
@@ -316,12 +326,6 @@ Page({
             this.data.date_week.push(this.data.weRunDateWeek);
             
         }
-
-        // console.log(this.data.date_month.length);
-        // console.log(this.data.date_week);
-        // console.log(this.data.data_month.slice(-7));
-        // console.log(this.data.data_day);
-        // console.log(this.data.data_month);
         var dataMonth = this.data.data_month;
         
         var total = dataMonth.reduce(function (a, b) {
@@ -349,14 +353,23 @@ Page({
         if (this.data.selected_month) {
             this.data_month_process();
             wx.hideLoading();
+            this.setData({
+                disMonth: false
+            })
         }
         if (this.data.selected_week) {
             this.data_week_process();
             wx.hideLoading();
+            this.setData({
+                disWeek: false
+            })
         }
         if (this.data.selected_day) {
             this.data_today_process();
             wx.hideLoading();
+            this.setData({
+                disToday: false
+            })
         }
     },
     createSimulationData1: function () {
@@ -384,7 +397,17 @@ Page({
         }
     },
     data_today_process: function () {
-        var windowWidth = 375;
+      var windowWidth = 375;
+      try {
+        var res = wx.getSystemInfoSync();
+        windowWidth = res.windowWidth;
+      } catch (e) {
+        console.error('getSystemInfoSync failed!');
+        windowWidth = 375;
+      }
+      this.setData({
+        widthScale: parseInt(windowWidth) / parseInt(this.data.standardWidth)
+      })
         var simulationData = this.createSimulationDataToday();
         columnChart = new wxCharts({
             canvasId: 'columnCanvas',
@@ -405,8 +428,8 @@ Page({
                 max: 30000
             },
             width: windowWidth * 0.933,
-            height: 170,
-            dataLabel: true,
+            height: (170 * this.data.widthScale).toFixed(0),
+            dataLabel: false,
             dataPointShape: true,
             extra: {
                 column: {
@@ -416,7 +439,17 @@ Page({
         });
     },
     data_week_process: function () {
-        var windowWidth = 375;
+      var windowWidth = 375;
+      try {
+        var res = wx.getSystemInfoSync();
+        windowWidth = res.windowWidth;
+      } catch (e) {
+        console.error('getSystemInfoSync failed!');
+        windowWidth = 375;
+      }
+      this.setData({
+        widthScale: parseInt(windowWidth) / parseInt(this.data.standardWidth)
+      })
         var simulationData = this.createSimulationData1();
         lineChart = new wxCharts({
             canvasId: 'lineCanvas',
@@ -437,8 +470,8 @@ Page({
                 max: 30000
             },
             width: windowWidth * 0.933,
-            height: 170,
-            dataLabel: true,
+            height: (170 * this.data.widthScale).toFixed(0),
+            dataLabel: false,
             dataPointShape: true,
             extra: {
                 lineStyle: 'curve'
@@ -446,13 +479,17 @@ Page({
         });
     },
     data_month_process: function () {
-        var windowWidth = 375;
-        try {
-            var res = wx.getSystemInfoSync();
-            windowWidth = res.windowWidth;
-        } catch (e) {
-            console.error('getSystemInfoSync failed!');
-        }
+      var windowWidth = 375;
+      try {
+        var res = wx.getSystemInfoSync();
+        windowWidth = res.windowWidth;
+      } catch (e) {
+        console.error('getSystemInfoSync failed!');
+        windowWidth = 375;
+      }
+      this.setData({
+        widthScale: parseInt(windowWidth) / parseInt(this.data.standardWidth)
+      })
 
         var simulationData = this.createSimulationData();
         lineChart = new wxCharts({
@@ -474,8 +511,8 @@ Page({
                 max: 30000
             },
             width: windowWidth * 0.933,
-            height: 170,
-            dataLabel: true,
+            height: (170 * this.data.widthScale).toFixed(0),
+            dataLabel: false,
             dataPointShape: true,
             enableScroll: true,
             extra: {

@@ -6,7 +6,30 @@ form {
     margin: 0 auto;
     display: block;
 }
-
+.alertSave{
+    transform: translateX(-50%) translateY(-50%);
+    position: fixed;
+    z-index: 300;
+    top: 50%;
+    left: 50%;
+    background-color: #000000;
+    opacity: 0.8;
+    width: 200rpx;
+    height: 250rpx;
+    border-radius: 16rpx;
+}
+.alertSave icon{
+    display: block;
+    margin: 50rpx auto 35rpx;
+    text-align: center;
+}
+.alertSave text{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    color: #ffffff;
+    font-size: 32rpx;
+}
 .section {
     height: 107rpx;
     border-bottom: #d0d0d0 solid 1rpx;
