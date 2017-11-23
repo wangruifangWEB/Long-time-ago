@@ -547,8 +547,9 @@ function getRadarDataPoints(angleList, center, radius, series, opts) {
     var process = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 1;
 
     var radarOption = opts.extra.radar || {};
-    radarOption.max = radarOption.max || 0;
-    var maxData = Math.max(radarOption.max, Math.max.apply(null, dataCombine(series)));
+    radarOption.max = [];
+    // var maxData = Math.max(radarOption.max, Math.max.apply(null, dataCombine(series)));
+    
 
     var data = [];
     series.forEach(function (each) {
@@ -556,17 +557,17 @@ function getRadarDataPoints(angleList, center, radius, series, opts) {
         listItem.color = each.color;
         listItem.data = [];
         each.data.forEach(function (item, index) {
+            // categories: ['碳水化合物', '脂肪', '能量', '蛋白质', '盐'],
+            var maxData = opts.bigData;
             var tmp = {};
             tmp.angle = angleList[index];
-
-            tmp.proportion = item / maxData;
+            tmp.proportion = item / maxData[index];
             tmp.position = convertCoordinateOrigin(radius * tmp.proportion * process * Math.cos(tmp.angle), radius * tmp.proportion * process * Math.sin(tmp.angle), center);
             listItem.data.push(tmp);
         });
 
         data.push(listItem);
     });
-
     return data;
 }
 
@@ -823,7 +824,8 @@ function drawRadarLabel(angleList, radius, centerPosition, opts, config, context
     radius += config.radarLabelTextMargin;
     context.beginPath();
     context.setFontSize(config.fontSize);
-    context.setFillStyle(radarOption.labelColor || '#595959');
+    // 文字颜色
+    context.setFillStyle(radarOption.labelColor || '#292929');
     angleList.forEach(function (angle, index) {
         var pos = {
             x: radius * Math.cos(angle),
@@ -1794,7 +1796,7 @@ function drawCharts(type, opts, config, context) {
                 duration: duration,
                 onProcess: function onProcess(process) {
                     drawYAxisGrid(opts, config, context);
-
+                    
                     var _drawLineDataPoints = drawLineDataPoints(series, opts, config, context, process),
                         xAxisPoints = _drawLineDataPoints.xAxisPoints,
                         calPoints = _drawLineDataPoints.calPoints,
@@ -1802,7 +1804,7 @@ function drawCharts(type, opts, config, context) {
                     _this.chartData.xAxisPoints = xAxisPoints;
                     _this.chartData.calPoints = calPoints;
                     _this.chartData.eachSpacing = eachSpacing;
-
+                    
                     drawXAxis(categories, opts, config, context);
                     drawLegend(opts.series, opts, config, context);
                     drawYAxis(series, opts, config, context);
@@ -1870,68 +1872,18 @@ function drawCharts(type, opts, config, context) {
             break;
         case 'ring':
         case 'pie':
-            // var centerPosition = {
-            //     x: opts.width / 2,
-            //     y: (opts.height - config.legendHeight) / 2
-            // };
-            // var radius = Math.min(centerPosition.x - config.pieChartLinePadding - config.pieChartTextPadding - config._pieTextMaxLength_, centerPosition.y - config.pieChartLinePadding - config.pieChartTextPadding);
-            // if (opts.dataLabel) {
-            //     radius -= 10;
-            // } else {
-            //     radius -= 2 * config.padding;
-            // }
-            // console.log(radius);
-            // context.beginPath();
-            // context.setLineWidth(2);
-            // context.setStrokeStyle('#dfdfdf');
-            // context.setFillStyle('#dfdfdf');
-            // context.moveTo(centerPosition.x, centerPosition.y);
-            // context.arc(centerPosition.x, centerPosition.y, radius, 0, Math.PI * 2);
-            // context.closePath();
-            // context.fill();
-            // context.restore();
-            // context.setFontSize(20);
-            // context.fillText('hello', 20, 20);
-            // context.draw();
-            // if (opts.type === 'ring') {
-            //     var innerPieWidth = radius * 0.6;
-            //     if (typeof opts.extra.ringWidth === 'number' && opts.extra.ringWidth > 0) {
-            //         innerPieWidth = Math.max(0, radius - opts.extra.ringWidth);
-            //     }
-            //     context.beginPath();
-            //     context.setStrokeStyle('#ffffff');
-            //     context.setFillStyle('#ffffff');
-            //     context.moveTo(centerPosition.x, centerPosition.y);
-            //     console.log(centerPosition.x);
-            //     console.log(centerPosition.y);
-            //     console.log(innerPieWidth);
-            //     context.arc(centerPosition.x, centerPosition.y, innerPieWidth, 0, 2 * Math.PI);
-            //     context.closePath();
-            //     context.fill();
-            //     context.restore();
-                
-            //     wx.drawCanvas({
-            //         canvasId: 'ringCanvas',//画布标识，对应<canvas>的cavas-id  
-            //         actions: context.getActions()//导出context绘制的直线并显示到页面  
-            //     })
-
-                
-            // }
-            // drawLegend(opts.series, opts, config, context);
-            // drawCanvas(opts, context);
-
-            // this.animationInstance = new Animation({
-            //     timing: 'easeInOut',
-            //     duration: duration,
-            //     onProcess: function onProcess(process) {
-            //         _this.chartData.pieData = drawPieDataPoints(series, opts, config, context, process);
-            //         drawLegend(opts.series, opts, config, context);
-            //         drawCanvas(opts, context);
-            //     },
-            //     onAnimationFinish: function onAnimationFinish() {
-            //         _this.event.trigger('renderComplete');
-            //     }
-            // });
+            this.animationInstance = new Animation({
+                timing: 'easeInOut',
+                duration: duration,
+                onProcess: function onProcess(process) {
+                    _this.chartData.pieData = drawPieDataPoints(series, opts, config, context, process);
+                    drawLegend(opts.series, opts, config, context);
+                    drawCanvas(opts, context);
+                },
+                onAnimationFinish: function onAnimationFinish() {
+                    _this.event.trigger('renderComplete');
+                }
+            });
             break;
         case 'radar':
             this.animationInstance = new Animation({
@@ -1940,6 +1892,7 @@ function drawCharts(type, opts, config, context) {
                 onProcess: function onProcess(process) {
                     _this.chartData.radarData = drawRadarDataPoints(series, opts, config, context, process);
                     drawLegend(opts.series, opts, config, context);
+                    drawToolTipBridge(opts, config, context, process);
                     drawCanvas(opts, context);
                 },
                 onAnimationFinish: function onAnimationFinish() {
@@ -2076,6 +2029,35 @@ Charts.prototype.showToolTip = function (e) {
     }
     if (this.opts.type === 'line' || this.opts.type === 'area') {
         var index = this.getCurrentDataIndex(e);
+        var currentOffset = this.scrollOption.currentOffset;
+        var opts = assign({}, this.opts, {
+            _scrollDistance_: currentOffset,
+            animation: false
+        });
+        if (index > -1) {
+            var seriesData = getSeriesDataItem(this.opts.series, index);
+            if (seriesData.length === 0) {
+                drawCharts.call(this, opts.type, opts, this.config, this.context);
+            } else {
+                var _getToolTipData = getToolTipData(seriesData, this.chartData.calPoints, index, this.opts.categories, option),
+                    textList = _getToolTipData.textList,
+                    offset = _getToolTipData.offset;
+
+                opts.tooltip = {
+                    textList: textList,
+                    offset: offset,
+                    option: option
+                };
+                drawCharts.call(this, opts.type, opts, this.config, this.context);
+            }
+        } else {
+            drawCharts.call(this, opts.type, opts, this.config, this.context);
+        }
+    }
+
+    if (this.opts.type === 'radar') {
+        var index = this.getCurrentDataIndex(e);
+        console.log(index);
         var currentOffset = this.scrollOption.currentOffset;
         var opts = assign({}, this.opts, {
             _scrollDistance_: currentOffset,

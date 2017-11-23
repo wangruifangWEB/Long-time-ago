@@ -2,11 +2,16 @@
     <image style='display:none' src='http://bqrphoto.oss-cn-beijing.aliyuncs.com/xiaochengxu_file/BMI_bar.png'></image>
     <view class='canvas_warp'>
         <canvas canvas-id="radarCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+        <text class='energy'>{{energyScale}}能量\n{{818}}cal/{{energy}}cal</text>
+        <text class='salt'>{{saltScale}}盐\n{{2}}g/{{salt}}g</text>
+        <text class='carbohydrate'>{{carbohydrateScale}}碳水化合物\n{{145}}g/{{carbohydrate}}g</text>
+        <text class='protein'>{{proteinScale}}蛋白质\n{{45}}g/{{protein}}g</text>
+        <text class='fat'>{{fatScale}}脂肪\n{{22}}g/{{fat}}g</text>
     </view>
     <view class='BMI'>
         <view class='BMI_number'>
             <view class='BMI_number_left'>
-                <text>{{20.2}}</text>
+                <text>{{health}}</text>
                 <text>BMI</text>
             </view>
             <view class='BMI_number_right'>
@@ -27,10 +32,10 @@
                  </view>
             </view>
             <view class='BMI_detail_text'>
-                <text>偏瘦</text>
-                <text>正常</text>
-                <text>偏胖</text>
-                <text>肥胖</text>
+                <text class='{{PS ? "BMI_color" : "" }}'>偏瘦</text>
+                <text class='{{ZC ? "BMI_color" : "" }}'>正常</text>
+                <text class='{{PP ? "BMI_color" : "" }}'>偏胖</text>
+                <text class='{{FP ? "BMI_color" : "" }}'>肥胖</text>
             </view>
             <view class='BMI_detail_describe'>
                 很棒！您目前的BMI指数正常，但也不要忘了锻炼保持哦！

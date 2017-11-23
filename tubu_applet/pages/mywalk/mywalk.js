@@ -93,6 +93,7 @@ Page({
         if (this.data.selected_week) {
             lineChart.showToolTip(e, {
                 format: function (item, category) {
+                    console.log(111);
                     return item.data
                 }
             });
@@ -154,7 +155,6 @@ Page({
                 })
             }
         }, 1000);
-
     },
     getRunInfo: function () {
         var that = this;
@@ -396,7 +396,6 @@ Page({
         })
         var circleX = 175 * (this.data.widthScale);
         var circleY = 80 * (this.data.widthScale);
-        console.log(this.data.data_day);
         var scaleCircle = Math.min(this.data.data_day / 4000, 1);
         var context1 = wx.createCanvasContext('outerCanvas');
         var context4 = wx.createCanvasContext('drawImage');
@@ -420,7 +419,25 @@ Page({
         var startAngle = 1.5 * Math.PI, endAngle1 = 1.5 * Math.PI, endAngle2 = Math.PI * 2 * scaleCircle + Math.PI * 1.5;
         var that = this;
         var timer = null, timer2 = null;
-        that.timeNumber();
+        // that.timeNumber();
+
+        // for (var i = 0; i < that.data.data_day; i++) {
+        //     console.log(i);
+        //     var time2 = setInterval(function () {
+        //         if (i < that.data.data_day) {
+        //             i++;
+        //             that.setData({
+        //                 data_day: i
+        //             })
+        //             return;
+        //         } else {
+        //             clearInterval(time2);
+        //             that.setData({
+        //                 data_day: i
+        //             })
+        //         }
+        //     }, 10)
+        // }
 
         timer = setInterval(function () {
             if (endAngle1 <= endAngle2) {
@@ -436,7 +453,7 @@ Page({
                 drawAngle(startAngle, endAngle1);
             }
         }, 20)
-          
+
         function drawImage(X, Y) {
             context4.drawImage('/images/circle.png', X, Y, 15, 15);
             wx.drawCanvas({
@@ -448,20 +465,29 @@ Page({
     timeNumber: function () {
         var dataDay = this.data.data_day.toString();
         var that = this;
-        var numbArr=[];
-        // for (var i = 0; i < that.data.data_day;i++){
-        //     if (i < that.data.data_day) {
-        //         var time2 = setInterval(function () {
+        var numbArr = [];
+        var time2 = null;
+        
+        // for (var i = 0; i < that.data.data_day; i++) {
+        //     console.log(i);
+        //     var time2 = setInterval(function () {
+        //         if (i < that.data.data_day) {
         //             i++;
         //             that.setData({
         //                 data_day: i
         //             })
-        //         }, 1000)
-        //     }else{
-        //         clearInterval(time2);
-        //         return;
-        //     }
+        //             return;
+        //         } else {
+        //             clearInterval(time2);
+        //             that.setData({
+        //                 data_day: i
+        //             })
+        //         }
+        //     }, 10)
         // }
+        
+        
+
         // for (var i = 0; i < dataDay.length; i++) {
         //     var numb = parseInt(dataDay[i]);
         //     function increase(numb) {

@@ -102,7 +102,6 @@ Page({
             },
             method: 'get',
             success: function (data) {
-                console.log(data.data);
                 var data = data.data;
                 var url = app.globalData.globalUrl + 'Public';
                 that.dataVerify(data);
@@ -191,9 +190,7 @@ Page({
         })
         
         var workId=that.data.jobInfo[data.industry_id];
-        console.log(workId);
         var j;
-        console.log(workId.length);
         for (var i = 0; i < workId.length;i++){
             if (workId[i].value == that.data.quarterIndexValue){
                 j=i;
