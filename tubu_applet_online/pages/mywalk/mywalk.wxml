@@ -3,11 +3,8 @@
     <view class='charts_warp'>
         <text class='bushu'>步数</text>
         <view class='canvas_warp'>
-            <view class='{{selected_day ? "show" : "hide"}} today_canvas'>
-                 <canvas canvas-id="outerCanvas" class="outerCanvas"></canvas>
-                 <canvas canvas-id='imageCanvas' class='imageCanvas'></canvas>
-                 <text class='today_title'>今日步数</text>
-                 <text class='today_subtitle'>{{data_day}}</text>
+            <view class='{{selected_day ? "show" : "hide"}}'>
+                 <canvas canvas-id="columnCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
             </view>
             <view class='{{selected_week ? "show" : "hide"}}'>
                 <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>健康饮食</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/css.css" />
+		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="https://cdn.bootcss.com/echarts/2.2.7/echarts-all.js" type="text/javascript" charset="utf-8"></script>-->
+		<link rel="stylesheet" href="../..//single_css/global.css">
+		
+		<style>
+			html,body,header,.d-title{
+				background-color: #292929;
+			}
+			
+			.xd-tab-ul-box-top{
+				padding:0 .63rem;
+			}
+			.xd-tab-ul{
+				margin-top:1.3rem;
+				border:0.02rem solid #F69200;
+			}
+			#main{
+		    	width:15rem;
+		    	height:6rem;
+		    	margin:0 auto;
+			}
+			#main div{
+				height: 350px !important;
+			}
+			canvas{
+			    left: -188px !important;
+			}
+			.scroll{
+				/*background-image:linear-gradient(to bottom,#FFCA7B,#C47400);
+				opacity: 0.8;*/
+				
+			}
+			canvas{
+				/*height: 8rem !important;*/
+				padding-top: 1.2rem !important;
+			}
+			.bmi img{
+				width: 6.24rem;
+				height: 1.96rem;
+				display: block;
+				position: absolute;
+				bottom: 1.2rem;
+				left:50%;
+				margin-left: -3.14rem;
+			}
+		</style>	
+	</head>
+	<!--<script type="text/javascript">
+		window.onload=function(){
+			//alert("测试");
+			var status=$(".subscribe").val();
+			if(status==0){
+				//未关注跳转到关注页
+				window.location ="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIyMDYyNjM3Mg==&scene=124#wechat_redirect";
+			}else{
+			//关注完跳转回页面
+			}
+			//alert(status);
+		}
+	</script>-->
+	<body>
+	<input type="hidden" class="subscribe" value="<{$subscribe}>" />
+		<div class="outerScroller">
+			<div class="scroll">
+				<header>
+					<div class="d-title">
+						<a href="javascript:;">
+							<img src="__PUBLIC__/Home/images/cd.png" alt="" />
+						</a>
+						<span>我的营养</span>
+					</div>
+				</header>
+				<!-- <section class="width-box bg">	
+				<{$energy}>		能量消耗		
+				<{$fat}>		脂肪				
+				<{$protein}>	蛋白质					
+				<{$carbohydrate}>	碳水化合物：	 -->
+				
+					<input type="hidden" name="" value="900" class="energy">			<!--能量消耗-->
+					<input type="hidden" name="" value="30" class="fat">					<!--脂肪-->
+					<input type="hidden" name="" value="60" class="protein">			<!--蛋白质-->
+					<input type="hidden" name="" value="160" class="carbohydrate"><!--碳水化合物：-->
+					<input type="hidden" name="" value="3" class="yan">							<!--盐-->
+					<!-- 实际 -->
+					<input type="hidden" name="" value="818" class="energyS">					<!--能量消耗-->
+					<input type="hidden" name="" value="22" class="fatS">						<!--脂肪-->
+					<input type="hidden" name="" value="45.4" class="proteinS">					<!--蛋白质-->
+					<input type="hidden" name="" value="145.6" class="carbohydrateS">				<!--碳水化合物：-->
+					<input type="hidden" name="" value="2" class="yanS">						<!--盐-->
+					<!--雷达图-->
+   					<div id="main"></div>
+				</section>
+				<div class="bmi">
+					<img src="__PUBLIC__/Home/images/bmi.png"/>
+				</div>
+				
+				<div class="z-alert">
+					<ul>
+						<li><a href="javascript:;" class="active">徒步活动</a></li>
+						<li><a href="javascript:;">最美徒步</a></li>
+						<li><a href="javascript:;">健康指导</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="box-transparent"></div>
+		
+		<script>
+			// 能量
+			var	energyS=$('.energyS').val();
+			var energy=$('.energy').val();
+			var energyScale=parseInt(energyS) / parseInt(energy) * 100;
+			energyScale=energyScale.toFixed(1)+'%';
+			energy=parseInt(energy).toFixed(0);
+			energyS=parseInt(energyS).toFixed(0);
+
+			// 脂肪
+			var fatS=$('.fatS').val();
+			var fat=$('.fat').val();
+			var fatScale=parseInt(fatS) / parseInt(fat) * 100;
+			fatScale=fatScale.toFixed(1)+'%';
+			fat=parseInt(fat).toFixed(0);
+			fatS=parseInt(fatS).toFixed(0);
+
+			// 蛋白质
+			var proteinS=$('.proteinS').val();
+			var protein=$('.protein').val();
+			var proteinScale=parseInt($('.proteinS').val()) / parseInt($('.protein').val()) * 100;
+			proteinScale=proteinScale.toFixed(1)+'%';
+			protein=parseInt(protein).toFixed(0);
+			proteinS=parseInt(proteinS).toFixed(0);
+
+
+			// 碳水化合物
+			var carbohydrateS=$('.carbohydrateS').val();
+			var carbohydrate=$('.carbohydrate').val();
+			var carbohydrateScale=parseInt($('.carbohydrateS').val()) / parseInt($('.carbohydrate').val()) * 100;
+			carbohydrateScale=carbohydrateScale.toFixed(1)+'%';
+			console.log(carbohydrateScale);
+			carbohydrate=parseInt(carbohydrate).toFixed(0);
+			carbohydrateS=parseInt(carbohydrateS).toFixed(0);
+
+
+			//  盐
+			var yanS=$('.yanS').val();
+			var yan=$('.yan').val();
+			var yanScale=parseInt($('.yanS').val()) / parseInt($('.yan').val()) * 100;
+			yanScale=yanScale.toFixed(1)+'%';
+			console.log(yanScale);
+			var yanS=$('.yanS').val();
+			var yan=$('.yan').val();
+
+			$(function(){
+				chart1();
+			});
+			function chart1(){
+				option = {
+		        title: {
+		            text: '1212'
+		        },
+		        color:['#FFCA7B','#C47400'],
+		        tooltip: {},
+		        legend: {
+			        data: ['预算分配（Allocated Budget）']
+			    },
+		        radar: {
+			        name:{
+//			           	show: true,
+			           	formatter: null,
+			           	textStyle: {
+			             	//设置颜色
+			            	color:'#595959',
+			           	}
+			           	
+			        },
+				    splitNumber: 1,
+		            indicator: [
+		                { name: energyScale+' 能量\r\n('+energyS+'kcal/'+energy+'kcal)', max: energy},
+		                { name: fatScale+' 脂肪\r\n('+fatS+'g/'+fat+'g)', max: fat},
+		                { name: proteinScale+' 蛋白质\r\n('+proteinS+'g/'+protein+'g)', max: protein},
+		                { name: carbohydrateScale+' 碳水化合物\r\n('+carbohydrateS+'g/'+carbohydrate+'g)', max: carbohydrate},
+		                { name: yanScale+' 盐\r\n('+yanS+'g/'+yan+'g)', max: yan}
+		            ]
+		           
+		        },
+		        series: [{
+		            name: '1212',
+		            type: 'radar',
+		            areaStyle: {normal: {}},
+		            data : [
+		                {
+		                    value : [energyS, fatS, proteinS, carbohydrateS, yanS],
+		                    name : '实际212121开销'
+		                }
+		            ]
+		        }]
+		    };
+				                    
+				                    
+                    
+			
+				var myChart = echarts.init(document.getElementById('main'));
+			        myChart.setOption(option);
+			                    
+			}
+		    //指定图表的配置项和数据
+		  
+//		    var myChart=echarts.init(document.getElementById("main"));
+		   /* var myChart = echarts.init(document.getElementById('main'), "macarons");
+		    //使用刚指定的配置项和数据显示图表
+		    myChart.setOption(option);*/
+		    $('.scroll').height($(window).height());
+		    
+		</script>
+	</body>
+</html>

@@ -6,9 +6,6 @@
     <title>我的徒步</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
-    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
-    <META HTTP-EQUIV="Expires" CONTENT="0">
     <link rel="stylesheet" type="text/css" href="../../css/reset.css" />
     <link rel="stylesheet" type="text/css" href="../../css/style.css" />
     <link rel="stylesheet" href="../../css/css.css" />
@@ -79,12 +76,33 @@
         z-index: 10;
         font-size: 0.26rem;
     }
-
+    .order_tab{
+        width: 7.5rem;
+        height: 0.96rem;
+        position: fixed;
+        top: 0rem;
+    }
+    .order_tab li{
+        width: 50%;
+        height: 0.96rem;
+        text-align: center;
+        float: left;
+        font-size: 0.37rem;
+        line-height: 0.96rem;
+        color: #d6d6d6;
+        background-color: #77b356;
+    }
+    .order_tab li.active{
+        color: #ffffff;
+        background-color: #8cd665;
+    }
     .order_list {
-        margin-top: 0.98rem;
+    	margin-top: 0.96rem;
         width: 7.5rem;
     }
-
+	.order_list_ul2{
+		display: none;
+	}
     .order_list_ul li {
         height: auto;
         background-color: #ffffff;
@@ -105,7 +123,6 @@
         margin-left: 0.54rem;
         margin-right: 0.16rem;
     }
-
     .order_title span:nth-child(2) {
         float: left;
         display: inline-block;
@@ -195,10 +212,14 @@
 <body>
     <div class="outerScroller">
         <div class="scroll">
-            <header>
+            <!--<header>
                 <img class="back" src="../../images/back.png" alt="" />
                 <span>我的订单</span>
-            </header>
+            </header>-->
+            <ul class="order_tab">
+                <li class="active">个人订单</li>
+                <li>团队订单</li>
+            </ul>
             <div class="order_list">
                 <div class="swiper-container">
                     <div class="swiper-wrapper w">
@@ -206,11 +227,49 @@
                             <div class="init-loading list-group-item text-center" style="display: none;"><img src="../../images/loading.gif" /></div>
                             <div class="swiper-container2">
                                 <div class="swiper-slide list-group">
-                                    <ul class="order_list_ul">
+                                    <ul class="order_list_ul order_list_ul1">
                                         <li>
                                             <a href="javascript:;">
                                                 <div class="order_title">
-                                                    <img src="../../images/order_team.png" alt="">
+                                                	<img src="../../images/order_person.png" alt="">
+                                                    <span>中间美术馆</span>
+                                                    <img src="../../images/order_right.png" alt="">
+                                                    <span class="wait_take">待领取</span>
+                                                </div>
+                                                <div class="order_info">
+                                                    <p><span>个人姓名：</span><span>小安</span></p>
+                                                    <p><span>手机号码：</span><span>13718391141</span></p>
+                                                    <p><span>活动时间：</span><span>2017-10-15</span></p>
+                                                </div>
+                                                <div class="order_money">
+                                                    <p><span>付款</span><span>$512</span></p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="order_title">
+                                                	<img src="../../images/order_person.png" alt="">
+                                                    <span>中间美术馆</span>
+                                                    <img src="../../images/order_right.png" alt="">
+                                                    <span class="have_take">已领取</span>
+                                                </div>
+                                                <div class="order_info">
+                                                    <p><span>个人姓名：</span><span>小安</span></p>
+                                                    <p><span>手机号码：</span><span>13718391141</span></p>
+                                                    <p><span>活动时间：</span><span>2017-10-15</span></p>
+                                                </div>
+                                                <div class="order_money">
+                                                    <p><span>付款</span><span>$512</span></p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="order_list_ul order_list_ul2">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="order_title">
+                                                	<img src="../../images/order_team.png" alt="">
                                                     <span>中间美术馆</span>
                                                     <img src="../../images/order_right.png" alt="">
                                                     <span class="wait_take">待领取</span>
@@ -228,7 +287,7 @@
                                         <li>
                                             <a href="javascript:;">
                                                 <div class="order_title">
-                                                    <img src="../../images/order_person.png" alt="">
+                                                	<img src="../../images/order_team.png" alt="">
                                                     <span>中间美术馆</span>
                                                     <img src="../../images/order_right.png" alt="">
                                                     <span class="have_take">已领取</span>
@@ -260,8 +319,9 @@
     $('.back').click(function(){
         history.go(-1);
     })
-    $('.order_list').height($(window).height() - $('header').height());
-    $('.swiper-container,.w').height($(window).height() - $('header').height());
+    
+    $('.order_list').height($(window).height() -$('.order_tab').height());
+    $('.swiper-container,.w').height($(window).height()-$('.order_tab').height());
 
     var loadFlag = true;
     var oi = 0;
@@ -296,17 +356,17 @@
                         }
                         setTimeout(function() {
                             for (var i = 0; i < 3; i++) {
-                                $(".order_list .order_list_ul").eq(mySwiper2.activeIndex).append(`
+                                $(".order_list .order_list_ul1").eq(mySwiper2.activeIndex).append(`
 									<li>
 										<a href="javascript:;">
 											<div class="order_title">
-												<img src="../../images/order_team.png" alt="">
+												<img src="../../images/order_person.png" alt="">
 												<span>中间美术馆</span>
 												<img src="../../images/order_right.png" alt="">
 												<span class="wait_take">待领取</span>
 											</div>
 											<div class="order_info">
-												<p><span>领队名称：</span><span>小安</span></p>
+												<p><span>个人姓名：</span><span>小安</span></p>
 												<p><span>手机号码：</span><span>13718391141</span></p>
 												<p><span>活动时间：</span><span>2017-10-15</span></p>
 											</div>
@@ -318,7 +378,7 @@
 								`);
                             }
                             $(".loadtip p").hide();
-                            //									 $('.order_list li:nth-last-child(1)').css({'margin-bottom':'0.2rem'});
+//                          $('.order_list li:nth-last-child(1)').css({'margin-bottom':'0.2rem'});
                             mySwiper.update(); // 重新计算高度;
 
                         }, 800);
@@ -337,17 +397,17 @@
                         $('.init-loading').css('display','block');
                         setTimeout(function() {
                             for (var i = 0; i < 3; i++) {
-                                $(".order_list .order_list_ul").eq(mySwiper2.activeIndex).append(`
+                                $(".order_list .order_list_ul1").eq(mySwiper2.activeIndex).append(`
 									<li>
 										<a href="javascript:;">
 											<div class="order_title">
-												<img src="../../images/order_team.png" alt="">
+												<img src="../../images/order_person.png" alt="">
 												<span>中间美术馆</span>
 												<img src="../../images/order_right.png" alt="">
 												<span class="wait_take">待领取</span>
 											</div>
 											<div class="order_info">
-												<p><span>领队名称：</span><span>小安</span></p>
+												<p><span>个人姓名：</span><span>小安</span></p>
 												<p><span>手机号码：</span><span>13718391141</span></p>
 												<p><span>活动时间：</span><span>2017-10-15</span></p>
 											</div>
@@ -364,13 +424,223 @@
                     }
                 });
             }
-
-//				}else if(mySwiper.translate >= 0 && mySwiper.translate < 50){
-//					$(".init-loading").html('').hide();
-//				}
             return false;
         }
     });
+    
+
+    $('.order_tab li').click(function(){
+        var i=$('.order_tab li').index(this);
+        $('.order_tab li').eq(i).addClass('active').siblings().removeClass('active');
+        $('.order_list_ul').eq(i).show().siblings().hide(); 
+        if(i==0){
+            var mySwiper = new Swiper('.swiper-container', {
+                direction: 'vertical',
+                scrollbar: '.swiper-scrollbar',
+                slidesPerView: 'auto',
+                mousewheelControl: true,
+                freeMode: true,
+                onTouchMove: function(swiper) { //手动滑动中触发
+                    var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+                    var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+                },
+                onTouchEnd: function(swiper) {
+                    var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+                    var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+
+                    // 上拉加载
+                    if (mySwiper.translate <= _viewHeight - _contentHeight - 50 && mySwiper.translate < 0) {
+                        $.ajax({
+                            url: "www.baidu.com",
+                            type: "post",
+                            success: function(data) {
+
+                            },
+                            error: function() {
+                                $(".loadtip p").show();
+                                if (loadFlag) {
+                                    $(".loadtip p").html('正在加载...');
+                                } else {
+                                    $(".loadtip p").html('没有更多啦！');
+                                }
+                                setTimeout(function() {
+                                    for (var i = 0; i < 3; i++) {
+                                        $(".order_list .order_list_ul1").eq(mySwiper2.activeIndex).append(`
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <div class="order_title">
+                                                    	<img src="../../images/order_person.png" alt="">
+                                                        <span>中间美术馆</span>
+                                                        <img src="../../images/order_right.png" alt="">
+                                                        <span class="wait_take">待领取</span>
+                                                    </div>
+                                                    <div class="order_info">
+                                                        <p><span>个人姓名：</span><span>小安</span></p>
+                                                        <p><span>手机号码：</span><span>13718391141</span></p>
+                                                        <p><span>活动时间：</span><span>2017-10-15</span></p>
+                                                    </div>
+                                                    <div class="order_money">
+                                                        <p><span>付款</span><span>$512</span></p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        `);
+                                    }
+                                    $(".loadtip p").hide();
+                                    //                                   $('.order_list li:nth-last-child(1)').css({'margin-bottom':'0.2rem'});
+                                    mySwiper.update(); // 重新计算高度;
+
+                                }, 800);
+                            }
+                        });
+                    }
+                    //  刷新
+                    if (mySwiper.translate >= 50) {
+                        $.ajax({
+                            url: "",
+                            type: "post",
+                            success: function(data) {
+
+                            },
+                            error: function() {
+                                $('.init-loading').css('display','block');
+                                setTimeout(function() {
+                                    for (var i = 0; i < 3; i++) {
+                                        $(".order_list .order_list_ul1").eq(mySwiper2.activeIndex).append(`
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <div class="order_title">
+                                                    	<img src="../../images/order_person.png" alt="">
+                                                        <span>中间美术馆</span>
+                                                        <img src="../../images/order_right.png" alt="">
+                                                        <span class="wait_take">待领取</span>
+                                                    </div>
+                                                    <div class="order_info">
+                                                        <p><span>个人姓名：</span><span>小安</span></p>
+                                                        <p><span>手机号码：</span><span>13718391141</span></p>
+                                                        <p><span>活动时间：</span><span>2017-10-15</span></p>
+                                                    </div>
+                                                    <div class="order_money">
+                                                        <p><span>付款</span><span>$512</span></p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        `);
+                                    }
+                                       $('.init-loading').css('display', 'none');
+                                    mySwiper.update(); // 重新计算高度;
+                                }, 800);
+                            }
+                        });
+                    }
+                    return false;
+                }
+            });
+        }else if(i==1){
+            var mySwiper = new Swiper('.swiper-container', {
+                direction: 'vertical',
+                scrollbar: '.swiper-scrollbar',
+                slidesPerView: 'auto',
+                mousewheelControl: true,
+                freeMode: true,
+                onTouchMove: function(swiper) { //手动滑动中触发
+                    var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+                    var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+                },
+                onTouchEnd: function(swiper) {
+                    var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+                    var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+
+                    // 上拉加载
+                    if (mySwiper.translate <= _viewHeight - _contentHeight - 50 && mySwiper.translate < 0) {
+                        $.ajax({
+                            url: "www.baidu.com",
+                            type: "post",
+                            success: function(data) {
+
+                            },
+                            error: function() {
+                                $(".loadtip p").show();
+                                if (loadFlag) {
+                                    $(".loadtip p").html('正在加载...');
+                                } else {
+                                    $(".loadtip p").html('没有更多啦！');
+                                }
+                                setTimeout(function() {
+                                    for (var i = 0; i < 3; i++) {
+                                        $(".order_list .order_list_ul2").eq(mySwiper2.activeIndex).append(`
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <div class="order_title">
+                                                    	<img src="../../images/order_team.png" alt="">
+                                                        <span>中间美术馆</span>
+                                                        <img src="../../images/order_right.png" alt="">
+                                                        <span class="wait_take">待领取</span>
+                                                    </div>
+                                                    <div class="order_info">
+                                                        <p><span>领队姓名：</span><span>小安</span></p>
+                                                        <p><span>手机号码：</span><span>13718391141</span></p>
+                                                        <p><span>活动时间：</span><span>2017-10-15</span></p>
+                                                    </div>
+                                                    <div class="order_money">
+                                                        <p><span>付款</span><span>$512</span></p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        `);
+                                    }
+                                    $(".loadtip p").hide();
+                                    //                                   $('.order_list li:nth-last-child(1)').css({'margin-bottom':'0.2rem'});
+                                    mySwiper.update(); // 重新计算高度;
+
+                                }, 800);
+                            }
+                        });
+                    }
+                    //  刷新
+                    if (mySwiper.translate >= 50) {
+                        $.ajax({
+                            url: "",
+                            type: "post",
+                            success: function(data) {
+
+                            },
+                            error: function() {
+                                $('.init-loading').css('display','block');
+                                setTimeout(function() {
+                                    for (var i = 0; i < 3; i++) {
+                                        $(".order_list .order_list_ul2").eq(mySwiper2.activeIndex).append(`
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <div class="order_title">
+                                                    	<img src="../../images/order_team.png" alt="">
+                                                        <span>中间美术馆</span>
+                                                        <img src="../../images/order_right.png" alt="">
+                                                        <span class="wait_take">待领取</span>
+                                                    </div>
+                                                    <div class="order_info">
+                                                        <p><span>领队姓名：</span><span>小安</span></p>
+                                                        <p><span>手机号码：</span><span>13718391141</span></p>
+                                                        <p><span>活动时间：</span><span>2017-10-15</span></p>
+                                                    </div>
+                                                    <div class="order_money">
+                                                        <p><span>付款</span><span>$512</span></p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        `);
+                                    }
+                                       $('.init-loading').css('display', 'none');
+                                    mySwiper.update(); // 重新计算高度;
+                                }, 800);
+                            }
+                        });
+                    }
+                    return false;
+                }
+            });
+        }
+    })
     var mySwiper2 = new Swiper('.swiper-container2', {
         onTransitionEnd: function(swiper) {
             $('.w').css('transform', 'translate3d(0px, 0px, 0px)')

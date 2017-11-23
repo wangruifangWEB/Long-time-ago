@@ -1,50 +1,48 @@
 
-function getRunInfo(){
-    var session = wx.getStorageSync('3rdSession');
-    console.log(session);
-    wx.getWeRunData({
-        success(res) {
-            console.log(res);
-            console.log(session);
-            var yunencryptedData = res.encryptedData;
-            var yuniv = res.iv;
-            wx.request({
-                url: 'https://www.sqbqr.cn/index.php/Home/Wxprogram/yundong',
-                data: {
-                    'yunencryptedData': yunencryptedData,
-                    'yuniv': yuniv,
-                    "session3rd": session
-                },
-                header: {
-                    'content-type': 'application/json'
-                },
-                dataType: 'json',
-                method: 'GET',
-                success: (data) => {
-                    runData(data);
-                }
-            })
-        }
-    })
-}
-function runData(data) {
-    console.log(data);
+function getUserInfo(){
     var that = this;
-    console.log(data.data.stepInfoList)
-    var listLength = data.data.stepInfoList.length;
-    for (var i = 0; i < data.data.stepInfoList.length; i++) {
-        var werunData = data.data.stepInfoList[i].step;
-        var werunDay = data.data.stepInfoList[i].timestamp;
-        var weRunDataArr=[];
-        var weRunDayArr=[];
+    
+}
+function formatDate(time) {
+    var unixtime = time;
+    var unixTimestamp = new Date(unixtime * 1000);
+    var year = unixTimestamp.getFullYear();
+    var month = unixTimestamp.getMonth() + 1;
+    var date = unixTimestamp.getDate();
+    var day = unixTimestamp.getDay()
+    if (month < 10) {
+        month = '0' + month;
     }
-    wx.setStorageSync('weRunDataArr', weRunDataArr.push(werunData));
-    wx.setStorageSync('weRunDayArr', weRunDayArr.push(werunDay));
-    console.log(data);
-    var yunData = data;
-    wx.setStorageSync('yunData', data)
+    if (date < 10) {
+        date = '0' + date;
+    }
+    switch (day) {
+        case 0:
+            day = "周日";
+            break;
+        case 1:
+            day = "周一";
+            break;
+        case 2:
+            day = "周二";
+            break;
+        case 3:
+            day = "周三";
+            break;
+        case 4:
+            day = "周四";
+            break;
+        case 5:
+            day = "周五";
+            break;
+        case 6:
+            day = "周六";
+            break;
+    }
+    var toDay = year + '-' + month + '-' + date + day;
+    return toDay;
 }
 
 module.exports = {
-  getRunInfo: getRunInfo
+    formatDate: formatDate
 }

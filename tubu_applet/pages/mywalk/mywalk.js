@@ -1,14 +1,15 @@
 var wxCharts = require('../../utils/wxcharts.js');
-var app=getApp();
+var utils = require('../../utils/util.js');
+var app = getApp();
 var lineChart = null;
 var startPos = null;
-var columnChart = null;
+var ringChart = null;
 Page({
     data: {
         avatarUrl: '',
-        selected_day: false,
+        selected_day: true,
         selected_week: false,
-        selected_month: true,
+        selected_month: false,
         yunData: [],
         weRunDay: [],
         weRunDateMonth: '',
@@ -65,7 +66,7 @@ Page({
             title: '加载中...',
         })
         this.setData({
-            
+
         })
         this.getRunInfo();
     },
@@ -98,14 +99,9 @@ Page({
         }
         if (this.data.selected_month) {
             lineChart.scrollStart(e);
-
         }
         if (this.data.selected_day) {
-            columnChart.showToolTip(e, {
-                format: function (item, category) {
-                    return item.data
-                }
-            });
+            console.log(ringChart.getCurrentDataIndex(e));
         }
     },
     moveHandler: function (e) {
@@ -127,88 +123,38 @@ Page({
             date_week: [],
             data_week: [],
             date_today: [],
-            data_today: []
+            data_today: [],
+
         })
-        wx.checkSession({
-            success: function () {
-                // 查询是否授权
-                wx.getSetting({
-                    success(res) {
-                        if (!res.authSetting['scope.werun']) {
-                            that.getUserInfo();
-                        } else {
-                            wx.showLoading({
-                                title: '加载中...',
-                            })
-                            that.getUserInfo();
-                        }
+        var timer = null;
+        timer = setInterval(function () {
+            var session3rd = wx.getStorageSync('3rdSession');
+            if (session3rd == "") {
+                return;
+            } else {
+                clearInterval(timer);
+                that.setData({
+                    avatarUrl: wx.getStorageSync('userInfo').avatarUrl
+                })
+                wx.checkSession({
+                    success: function () {
+                        wx.getSetting({
+                            success(res) {
+                                if (!res.authSetting['scope.werun']) {
+                                    that.getRunInfo();
+                                } else {
+                                    that.getRunInfo();
+                                }
+                            }
+                        })
+                    },
+                    fail: function () {
+                        that.getRunInfo();
                     }
                 })
-            },
-            fail: function () {
-                that.getUserInfo();
             }
-        })
-    },
-    getUserInfo: function (data) {
-        var that = this;
-        wx.login({
-            success: function (res) {
-                var code = res.code;  //获取code
-                if (res.code) {
-                    wx.getUserInfo({  //得到rawData, signatrue, encryptData
-                        withCredentials: true,
-                        success: function (data) {
-                            wx.setStorageSync('userInfo', data.userInfo);
-                            var userInfo = wx.getStorageSync('userInfo');
-                            that.setData({
-                                avatarUrl: userInfo.avatarUrl
-                            })
-                            var rawData = data.rawData;
-                            var signature = data.signature;
-                            var encryptedData = data.encryptedData;
-                            var iv = data.iv;
-                            wx.request({
-                                url: app.globalData.globalUrl+"index.php/Home/Wxprogram/onLogin",
-                                data: {
-                                    "code": code,
-                                    "signature": signature,
-                                    "rawData": rawData,
-                                    'iv': iv,
-                                    "encryptedData": encryptedData
-                                },
-                                success: function (data) {
-                                    wx.setStorageSync('3rdSession', data.data);
-                                    var session3rd = wx.getStorageSync('3rdSession');
-                                    //  取运动数据
-                                    if (wx.getWeRunData) {
-                                        that.getRunInfo();
-                                    } else {
-                                        // 如果希望用户在最新版本的客户端上体验您的小程序，可以这样子提示
-                                        wx.showModal({
-                                            title: '提示',
-                                            content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
-                                        })
-                                        return;
-                                    }
-                                },
-                                fail: function () {
-                                    wx.showModal({
-                                        title: '提示',
-                                        content: '网络超时'
-                                    })
-                                }
-                            })
-                        },
-                        fail: function () {
-                            // 用户信息授权失败
-                            console.log('用户信息授权失败');
-                            that.userModal(data);
-                        }
-                    })
-                }
-            }
-        })
+        }, 1000);
+
     },
     getRunInfo: function () {
         var that = this;
@@ -218,7 +164,7 @@ Page({
                 var yunencryptedData = res.encryptedData;
                 var yuniv = res.iv;
                 wx.request({
-                    url: app.globalData.globalUrl+'index.php/Home/Wxprogram/yundong',
+                    url: app.globalData.globalUrl + 'index.php/Home/Wxprogram/yundong',
                     data: {
                         'yunencryptedData': yunencryptedData,
                         'yuniv': yuniv,
@@ -241,43 +187,7 @@ Page({
                 })
             },
             fail: function () {
-                return;
-            }
-        })
-    },
-    userModal: function (data) {
-        var that = this;
-        wx.showModal({
-            title: '警告',
-            content: '拒绝授权将无法使用微信部分功能,是否授权？',
-            success: (res) => {
-                if (res.confirm) {
-                    console.log("确定授权用户信息");
-                    that.userGetSetting();
-                } else {
-                    console.log("用户点击取消");
-                    that.getUserInfo();
-                }
-            }
-        })
-    },
-    userGetSetting: function () {
-        var that = this;
-        wx.openSetting({
-            success: function (res) {
-                if (res.authSetting["scope.userInfo"]) {
-                    console.log('同意授权');
-                    wx.getUserInfo({
-                        success: function (data) {
-                            that.getUserInfo();
-                            var session3rd = wx.getStorageSync('3rdSession');
-                            // console.log(session3rd);
-                            that.getRunInfo();
-                        }
-                    })
-                } else {
-                    that.getUserInfo();
-                }
+                that.runModal();
             }
         })
     },
@@ -285,7 +195,7 @@ Page({
         var that = this;
         wx.showModal({
             title: '警告',
-            content: '拒绝授权将无法使用微信计步功能,是否授权？',
+            content: '拒绝授权将无法使用微信计步功能,请授权',
             success: (res) => {
                 if (res.confirm) {
                     console.log("确定授权运动信息");
@@ -302,10 +212,9 @@ Page({
         wx.openSetting({
             success: function (res) {
                 if (res.authSetting["scope.werun"]) {
-                    console.log('微信运动授权成功');
-                    that.getUserInfo();
+                    // that.getRunInfo();
                 } else {
-                    that.getWeRun();
+                    that.getRunInfo();
                 }
             }
         })
@@ -316,7 +225,7 @@ Page({
         weRunDayArr = this.data.yundata;
         for (var i in weRunDayArr) {
             // 月份
-            this.data.weRunDay.push(this.formatDate(weRunDayArr[i].timestamp));
+            this.data.weRunDay.push(utils.formatDate(weRunDayArr[i].timestamp));
             this.setData({
                 weRunDateMonth: this.data.weRunDay[i].substring(5, 10),
                 weRunDateWeek: this.data.weRunDay[i].substring(10, 12),
@@ -324,10 +233,10 @@ Page({
             this.data.data_month.push(weRunDayArr[i].step);
             this.data.date_month.push(this.data.weRunDateMonth);
             this.data.date_week.push(this.data.weRunDateWeek);
-            
+
         }
         var dataMonth = this.data.data_month;
-        
+
         var total = dataMonth.reduce(function (a, b) {
             return a + b;
         }, 0);
@@ -345,11 +254,11 @@ Page({
 
         // 今天
         this.setData({
-            date_today: this.data.date_week.slice(-2),
-            data_today: this.data.data_month.slice(-2),
+            date_today: this.data.date_week.slice(-1),
+            data_today: this.data.data_month.slice(-1),
             data_day: this.data.data_month.slice(-1)
         })
-        
+        this.data.data_day = parseInt(this.data.data_day);
         if (this.data.selected_month) {
             this.data_month_process();
             wx.hideLoading();
@@ -387,69 +296,18 @@ Page({
             data: this.data.data_month
         }
     },
-    createSimulationDataToday: function () {
-        wx.showLoading({
-            title: '加载中...',
-        })
-        return {
-            categories: ['昨天', '今天'],
-            data: this.data.data_today
-        }
-    },
-    data_today_process: function () {
-      var windowWidth = 375;
-      try {
-        var res = wx.getSystemInfoSync();
-        windowWidth = res.windowWidth;
-      } catch (e) {
-        console.error('getSystemInfoSync failed!');
-        windowWidth = 375;
-      }
-      this.setData({
-        widthScale: parseInt(windowWidth) / parseInt(this.data.standardWidth)
-      })
-        var simulationData = this.createSimulationDataToday();
-        columnChart = new wxCharts({
-            canvasId: 'columnCanvas',
-            type: 'column',
-            categories: simulationData.categories,
-            animation: true,
-            legend: false,
-            series: [{
-                name: '步数',
-                data: simulationData.data
-            }],
-            xAxis: {
-                disableGrid: true,
-            },
-            yAxis: {
-                disabled: true,
-                min: 0,
-                max: 30000
-            },
-            width: windowWidth * 0.933,
-            height: (170 * this.data.widthScale).toFixed(0),
-            dataLabel: false,
-            dataPointShape: true,
-            extra: {
-                column: {
-                    width: 30
-                }
-            }
-        });
-    },
     data_week_process: function () {
-      var windowWidth = 375;
-      try {
-        var res = wx.getSystemInfoSync();
-        windowWidth = res.windowWidth;
-      } catch (e) {
-        console.error('getSystemInfoSync failed!');
-        windowWidth = 375;
-      }
-      this.setData({
-        widthScale: parseInt(windowWidth) / parseInt(this.data.standardWidth)
-      })
+        var windowWidth = 375;
+        try {
+            var res = wx.getSystemInfoSync();
+            windowWidth = res.windowWidth;
+        } catch (e) {
+            console.error('getSystemInfoSync failed!');
+            windowWidth = 375;
+        }
+        this.setData({
+            widthScale: parseInt(windowWidth) / parseInt(this.data.standardWidth)
+        })
         var simulationData = this.createSimulationData1();
         lineChart = new wxCharts({
             canvasId: 'lineCanvas',
@@ -479,17 +337,17 @@ Page({
         });
     },
     data_month_process: function () {
-      var windowWidth = 375;
-      try {
-        var res = wx.getSystemInfoSync();
-        windowWidth = res.windowWidth;
-      } catch (e) {
-        console.error('getSystemInfoSync failed!');
-        windowWidth = 375;
-      }
-      this.setData({
-        widthScale: parseInt(windowWidth) / parseInt(this.data.standardWidth)
-      })
+        var windowWidth = 375;
+        try {
+            var res = wx.getSystemInfoSync();
+            windowWidth = res.windowWidth;
+        } catch (e) {
+            console.error('getSystemInfoSync failed!');
+            windowWidth = 375;
+        }
+        this.setData({
+            widthScale: parseInt(windowWidth) / parseInt(this.data.standardWidth)
+        })
 
         var simulationData = this.createSimulationData();
         lineChart = new wxCharts({
@@ -520,43 +378,113 @@ Page({
             }
         });
     },
-    formatDate: function (time) {
-        var unixtime = time;
-        var unixTimestamp = new Date(unixtime * 1000);
-        var year = unixTimestamp.getFullYear();
-        var month = unixTimestamp.getMonth() + 1;
-        var date = unixTimestamp.getDate();
-        var day = unixTimestamp.getDay()
-        if (month < 10) {
-            month = '0' + month;
+
+    data_today_process: function () {
+        // wx.showLoading({
+        //     title: '加载中...',
+        // })
+        var windowWidth = 375;
+        try {
+            var res = wx.getSystemInfoSync();
+            windowWidth = res.windowWidth;
+        } catch (e) {
+            console.error('getSystemInfoSync failed!');
+            windowWidth = 375;
         }
-        if (date < 10) {
-            date = '0' + date;
+        this.setData({
+            widthScale: parseInt(windowWidth) / parseInt(this.data.standardWidth)
+        })
+        var circleX = 175 * (this.data.widthScale);
+        var circleY = 80 * (this.data.widthScale);
+        console.log(this.data.data_day);
+        var scaleCircle = Math.min(this.data.data_day / 4000, 1);
+        var context1 = wx.createCanvasContext('outerCanvas');
+        var context4 = wx.createCanvasContext('drawImage');
+        function drawAngle(startAngle, endAngle1) {
+            context1.setLineWidth(8);
+            context1.setStrokeStyle('#dfdfdf');
+            context1.setLineCap('round')
+            context1.beginPath();
+            context1.arc(circleX, circleY, 70, 0, 2 * Math.PI);
+            context1.stroke();
+            context1.save();
+            context1.restore();
+            context1.setLineWidth(8);
+            context1.setStrokeStyle('#82e34d');
+            context1.setLineCap('round');
+            context1.beginPath();
+            context1.arc(circleX, circleY, 70, startAngle, endAngle1, false);
+            context1.stroke();
+            context1.draw();
         }
-        switch (day) {
-            case 0:
-                day = "周日";
-                break;
-            case 1:
-                day = "周一";
-                break;
-            case 2:
-                day = "周二";
-                break;
-            case 3:
-                day = "周三";
-                break;
-            case 4:
-                day = "周四";
-                break;
-            case 5:
-                day = "周五";
-                break;
-            case 6:
-                day = "周六";
-                break;
+        var startAngle = 1.5 * Math.PI, endAngle1 = 1.5 * Math.PI, endAngle2 = Math.PI * 2 * scaleCircle + Math.PI * 1.5;
+        var that = this;
+        var timer = null, timer2 = null;
+        that.timeNumber();
+
+        timer = setInterval(function () {
+            if (endAngle1 <= endAngle2) {
+                drawAngle(startAngle, endAngle1);
+                endAngle1 = endAngle1 + 0.1;
+                var angle = endAngle1 - startAngle;
+                var X = circleX + Math.sin(angle) * 70 - 8;
+                var Y = 80 - Math.cos(angle) * 70 - 8;
+                drawImage(X, Y);
+                return;
+            } else {
+                clearInterval(timer);
+                drawAngle(startAngle, endAngle1);
+            }
+        }, 20)
+          
+        function drawImage(X, Y) {
+            context4.drawImage('/images/circle.png', X, Y, 15, 15);
+            wx.drawCanvas({
+                canvasId: 'imageCanvas',
+                actions: context4.getActions()
+            })
         }
-        var toDay = year + '-' + month + '-' + date + day;
-        return toDay;
+    },
+    timeNumber: function () {
+        var dataDay = this.data.data_day.toString();
+        var that = this;
+        var numbArr=[];
+        // for (var i = 0; i < that.data.data_day;i++){
+        //     if (i < that.data.data_day) {
+        //         var time2 = setInterval(function () {
+        //             i++;
+        //             that.setData({
+        //                 data_day: i
+        //             })
+        //         }, 1000)
+        //     }else{
+        //         clearInterval(time2);
+        //         return;
+        //     }
+        // }
+        // for (var i = 0; i < dataDay.length; i++) {
+        //     var numb = parseInt(dataDay[i]);
+        //     function increase(numb) {
+        //         console.log(numb);
+        //         for (var i = 0; i < numb; i++) {
+        //             var time2 = setInterval(function () {
+        //                 if (i < numb) {
+        //                     i++;
+        //                     numbArr.push(i);
+        //                     that.setData({
+        //                         data_day: numbArr
+        //                     })
+        //                     return;
+        //                 } else {
+        //                     clearInterval(time2);
+        //                     that.setData({
+        //                         data_day: numbArr
+        //                     })
+        //                 }
+        //             }, 3000)
+        //         }
+        //     }
+        //     increase(numb);
+        // };
     }
 });
