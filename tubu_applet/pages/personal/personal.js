@@ -91,50 +91,59 @@ Page({
     },
 
     onShow: function () {
-        var session3rd = wx.getStorageSync('3rdSession');
-        
-
         var that = this;
-        wx.request({
-            url: app.globalData.globalUrl + "/index.php/Home/Wxprogram/modify",
-            data: {
-                "session3rd": session3rd
-            },
-            method: 'get',
-            success: function (data) {
-                var data = data.data;
-                var url = app.globalData.globalUrl + 'Public';
-                that.dataVerify(data);
+        var timer=null;
+        timer=setInterval(function(){
+            var session3rd = wx.getStorageSync('3rdSession');
+            if (session3rd==""){
+                return
+            }else{
+                clearInterval(timer);
+                var session3rd = wx.getStorageSync('3rdSession');
 
-                that.setData({
-                    port_image: url + data.port_image,
-                    checkSex: data.sex,
-                    enrollNum: data.signup_num,
-                    joinNum: data.join_num,
-                    userInfo: data.uname,
-                    telInfo: data.telephone,
-                    cardInfo: data.idcards,
-                    ageInfo: data.age,
-                    statureInfo: data.height,
-                    nowWeightInfo: data.weight,
-                    aimWeightInfo: data.target_weight,
-                    quarterIndexValue: data.work_id,
-                    id: data.id
+
+                wx.request({
+                    url: app.globalData.globalUrl + "/index.php/Home/Wxprogram/modify",
+                    data: {
+                        "session3rd": session3rd
+                    },
+                    method: 'get',
+                    success: function (data) {
+                        var data = data.data;
+                        var url = app.globalData.globalUrl + 'Public';
+                        that.dataVerify(data);
+
+                        that.setData({
+                            port_image: url + data.port_image,
+                            checkSex: data.sex,
+                            enrollNum: data.signup_num,
+                            joinNum: data.join_num,
+                            userInfo: data.uname,
+                            telInfo: data.telephone,
+                            cardInfo: data.idcards,
+                            ageInfo: data.age,
+                            statureInfo: data.height,
+                            nowWeightInfo: data.weight,
+                            aimWeightInfo: data.target_weight,
+                            quarterIndexValue: data.work_id,
+                            id: data.id
+                        })
+
+                        that.checkSex(data);
+                        that.job(data);
+                        that.checkFormStatus();
+                    }
                 })
-                
-                that.checkSex(data);
-                that.job(data);
-                that.checkFormStatus();
-            }
-        })
 
-        this.scaleCountFn();
-        var personInfo = wx.getStorageSync('userInfo');
-        for (var i in personInfo) {
-            this.setData({
-                personInfo: personInfo
-            })
-        }
+                that.scaleCountFn();
+                var personInfo = wx.getStorageSync('userInfo');
+                for (var i in personInfo) {
+                    that.setData({
+                        personInfo: personInfo
+                    })
+                }
+            }
+        },1000)
     },
     onHide: function () {
         var that = this;
