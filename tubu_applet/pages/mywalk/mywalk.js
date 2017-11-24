@@ -40,7 +40,9 @@ Page({
             data_week: [],
             date_today: [],
             data_today: [],
-            disToday: true
+            disToday: true,
+            disWeek: false,
+            disMonth: false
         });
 
         wx.showLoading({
@@ -60,7 +62,9 @@ Page({
             data_week: [],
             date_today: [],
             data_today: [],
-            disWeek: true
+            disWeek: true,
+            disToday: false,
+            disMonth: false
         });
         wx.showLoading({
             title: '加载中...',
@@ -82,7 +86,9 @@ Page({
             data_week: [],
             date_today: [],
             data_today: [],
-            disMonth: true
+            disMonth: true,
+            disToday: false,
+            disWeek: false,
         });
         wx.showLoading({
             title: '加载中...',
@@ -212,7 +218,7 @@ Page({
         wx.openSetting({
             success: function (res) {
                 if (res.authSetting["scope.werun"]) {
-                    // that.getRunInfo();
+                    that.getRunInfo();
                 } else {
                     that.getRunInfo();
                 }
@@ -235,8 +241,7 @@ Page({
             this.data.date_week.push(this.data.weRunDateWeek);
 
         }
-        var dataMonth = this.data.data_month;
-
+        var dataMonth = this.data.data_month.slice(-31);
         var total = dataMonth.reduce(function (a, b) {
             return a + b;
         }, 0);
@@ -245,7 +250,11 @@ Page({
         this.setData({
             totalData: total
         })
-
+        // 月份
+        // this.setData({
+        //     date_week: this.data.date_month.slice(-31),
+        //     data_week: this.data.data_month.slice(-31)
+        // })
         // 星期
         this.setData({
             date_week: this.data.date_week.slice(-7),
@@ -292,8 +301,8 @@ Page({
             title: '加载中...',
         })
         return {
-            categories: this.data.date_month,
-            data: this.data.data_month
+            categories: this.data.date_month.slice(-31),
+            data: this.data.data_month.slice(-31)
         }
     },
     data_week_process: function () {
@@ -325,7 +334,7 @@ Page({
             yAxis: {
                 disabled: true,
                 min: 0,
-                max: 30000
+                max: 15000
             },
             width: windowWidth * 0.933,
             height: (170 * this.data.widthScale).toFixed(0),
@@ -348,7 +357,6 @@ Page({
         this.setData({
             widthScale: parseInt(windowWidth) / parseInt(this.data.standardWidth)
         })
-
         var simulationData = this.createSimulationData();
         lineChart = new wxCharts({
             canvasId: 'lineCanvas2',
@@ -366,7 +374,7 @@ Page({
             yAxis: {
                 disabled: true,
                 min: 0,
-                max: 30000
+                max: 15000
             },
             width: windowWidth * 0.933,
             height: (170 * this.data.widthScale).toFixed(0),
@@ -380,9 +388,9 @@ Page({
     },
 
     data_today_process: function () {
-        // wx.showLoading({
-        //     title: '加载中...',
-        // })
+        wx.showLoading({
+            title: '加载中...',
+        })
         var windowWidth = 375;
         try {
             var res = wx.getSystemInfoSync();
@@ -396,13 +404,13 @@ Page({
         })
         var circleX = 175 * (this.data.widthScale);
         var circleY = 80 * (this.data.widthScale);
-        var scaleCircle = Math.min(this.data.data_day / 4000, 1);
+        var scaleCircle = Math.min(this.data.data_day / 15000, 1);
         var context1 = wx.createCanvasContext('outerCanvas');
         var context4 = wx.createCanvasContext('drawImage');
         function drawAngle(startAngle, endAngle1) {
             context1.setLineWidth(8);
             context1.setStrokeStyle('#dfdfdf');
-            context1.setLineCap('round')
+            context1.setLineCap('round');
             context1.beginPath();
             context1.arc(circleX, circleY, 70, 0, 2 * Math.PI);
             context1.stroke();
@@ -421,33 +429,20 @@ Page({
         var timer = null, timer2 = null;
         // that.timeNumber();
 
-        // for (var i = 0; i < that.data.data_day; i++) {
-        //     console.log(i);
-        //     var time2 = setInterval(function () {
-        //         if (i < that.data.data_day) {
-        //             i++;
-        //             that.setData({
-        //                 data_day: i
-        //             })
-        //             return;
-        //         } else {
-        //             clearInterval(time2);
-        //             that.setData({
-        //                 data_day: i
-        //             })
-        //         }
-        //     }, 10)
-        // }
 
         timer = setInterval(function () {
             if (endAngle1 <= endAngle2) {
-                drawAngle(startAngle, endAngle1);
                 endAngle1 = endAngle1 + 0.1;
+                if (endAngle1 > Math.PI * 2 + Math.PI * 1.5) {
+                    endAngle1 = Math.PI * 2 + Math.PI * 1.5 ;
+                }
+                drawAngle(startAngle, endAngle1);
                 var angle = endAngle1 - startAngle;
                 var X = circleX + Math.sin(angle) * 70 - 8;
                 var Y = 80 - Math.cos(angle) * 70 - 8;
                 drawImage(X, Y);
                 return;
+                
             } else {
                 clearInterval(timer);
                 drawAngle(startAngle, endAngle1);
@@ -461,56 +456,5 @@ Page({
                 actions: context4.getActions()
             })
         }
-    },
-    timeNumber: function () {
-        var dataDay = this.data.data_day.toString();
-        var that = this;
-        var numbArr = [];
-        var time2 = null;
-        
-        // for (var i = 0; i < that.data.data_day; i++) {
-        //     console.log(i);
-        //     var time2 = setInterval(function () {
-        //         if (i < that.data.data_day) {
-        //             i++;
-        //             that.setData({
-        //                 data_day: i
-        //             })
-        //             return;
-        //         } else {
-        //             clearInterval(time2);
-        //             that.setData({
-        //                 data_day: i
-        //             })
-        //         }
-        //     }, 10)
-        // }
-        
-        
-
-        // for (var i = 0; i < dataDay.length; i++) {
-        //     var numb = parseInt(dataDay[i]);
-        //     function increase(numb) {
-        //         console.log(numb);
-        //         for (var i = 0; i < numb; i++) {
-        //             var time2 = setInterval(function () {
-        //                 if (i < numb) {
-        //                     i++;
-        //                     numbArr.push(i);
-        //                     that.setData({
-        //                         data_day: numbArr
-        //                     })
-        //                     return;
-        //                 } else {
-        //                     clearInterval(time2);
-        //                     that.setData({
-        //                         data_day: numbArr
-        //                     })
-        //                 }
-        //             }, 3000)
-        //         }
-        //     }
-        //     increase(numb);
-        // };
     }
 });
