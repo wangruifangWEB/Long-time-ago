@@ -396,13 +396,13 @@ Page({
         })
         var circleX = 175 * (this.data.widthScale);
         var circleY = 80 * (this.data.widthScale);
-        var scaleCircle = Math.min(this.data.data_day / 4000, 1);
+        var scaleCircle = Math.min(this.data.data_day / 10000, 1);
         var context1 = wx.createCanvasContext('outerCanvas');
         var context4 = wx.createCanvasContext('drawImage');
         function drawAngle(startAngle, endAngle1) {
             context1.setLineWidth(8);
             context1.setStrokeStyle('#dfdfdf');
-            context1.setLineCap('round')
+            context1.setLineCap('round');
             context1.beginPath();
             context1.arc(circleX, circleY, 70, 0, 2 * Math.PI);
             context1.stroke();
@@ -421,33 +421,20 @@ Page({
         var timer = null, timer2 = null;
         // that.timeNumber();
 
-        // for (var i = 0; i < that.data.data_day; i++) {
-        //     console.log(i);
-        //     var time2 = setInterval(function () {
-        //         if (i < that.data.data_day) {
-        //             i++;
-        //             that.setData({
-        //                 data_day: i
-        //             })
-        //             return;
-        //         } else {
-        //             clearInterval(time2);
-        //             that.setData({
-        //                 data_day: i
-        //             })
-        //         }
-        //     }, 10)
-        // }
 
         timer = setInterval(function () {
             if (endAngle1 <= endAngle2) {
-                drawAngle(startAngle, endAngle1);
                 endAngle1 = endAngle1 + 0.1;
+                if (endAngle1 > Math.PI * 2 + Math.PI * 1.5) {
+                    endAngle1 = Math.PI * 2 + Math.PI * 1.5 ;
+                }
+                drawAngle(startAngle, endAngle1);
                 var angle = endAngle1 - startAngle;
                 var X = circleX + Math.sin(angle) * 70 - 8;
                 var Y = 80 - Math.cos(angle) * 70 - 8;
                 drawImage(X, Y);
                 return;
+                
             } else {
                 clearInterval(timer);
                 drawAngle(startAngle, endAngle1);
@@ -461,56 +448,5 @@ Page({
                 actions: context4.getActions()
             })
         }
-    },
-    timeNumber: function () {
-        var dataDay = this.data.data_day.toString();
-        var that = this;
-        var numbArr = [];
-        var time2 = null;
-        
-        // for (var i = 0; i < that.data.data_day; i++) {
-        //     console.log(i);
-        //     var time2 = setInterval(function () {
-        //         if (i < that.data.data_day) {
-        //             i++;
-        //             that.setData({
-        //                 data_day: i
-        //             })
-        //             return;
-        //         } else {
-        //             clearInterval(time2);
-        //             that.setData({
-        //                 data_day: i
-        //             })
-        //         }
-        //     }, 10)
-        // }
-        
-        
-
-        // for (var i = 0; i < dataDay.length; i++) {
-        //     var numb = parseInt(dataDay[i]);
-        //     function increase(numb) {
-        //         console.log(numb);
-        //         for (var i = 0; i < numb; i++) {
-        //             var time2 = setInterval(function () {
-        //                 if (i < numb) {
-        //                     i++;
-        //                     numbArr.push(i);
-        //                     that.setData({
-        //                         data_day: numbArr
-        //                     })
-        //                     return;
-        //                 } else {
-        //                     clearInterval(time2);
-        //                     that.setData({
-        //                         data_day: numbArr
-        //                     })
-        //                 }
-        //             }, 3000)
-        //         }
-        //     }
-        //     increase(numb);
-        // };
     }
 });
