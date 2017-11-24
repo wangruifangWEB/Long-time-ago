@@ -2116,7 +2116,6 @@ Charts.prototype.scrollEnd = function (e) {
 
         this.scrollOption.currentOffset = currentOffset + distance;
         this.scrollOption.distance = 0;
-        console.log(this.scrollOption);
     }
 
 };

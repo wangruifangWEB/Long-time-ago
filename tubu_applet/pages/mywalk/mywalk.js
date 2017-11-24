@@ -40,7 +40,9 @@ Page({
             data_week: [],
             date_today: [],
             data_today: [],
-            disToday: true
+            disToday: true,
+            disWeek: false,
+            disMonth: false
         });
 
         wx.showLoading({
@@ -60,7 +62,9 @@ Page({
             data_week: [],
             date_today: [],
             data_today: [],
-            disWeek: true
+            disWeek: true,
+            disToday: false,
+            disMonth: false
         });
         wx.showLoading({
             title: '加载中...',
@@ -82,7 +86,9 @@ Page({
             data_week: [],
             date_today: [],
             data_today: [],
-            disMonth: true
+            disMonth: true,
+            disToday: false,
+            disWeek: false,
         });
         wx.showLoading({
             title: '加载中...',
@@ -212,7 +218,7 @@ Page({
         wx.openSetting({
             success: function (res) {
                 if (res.authSetting["scope.werun"]) {
-                    // that.getRunInfo();
+                    that.getRunInfo();
                 } else {
                     that.getRunInfo();
                 }
@@ -235,8 +241,7 @@ Page({
             this.data.date_week.push(this.data.weRunDateWeek);
 
         }
-        var dataMonth = this.data.data_month;
-
+        var dataMonth = this.data.data_month.slice(-31);
         var total = dataMonth.reduce(function (a, b) {
             return a + b;
         }, 0);
@@ -245,7 +250,11 @@ Page({
         this.setData({
             totalData: total
         })
-
+        // 月份
+        // this.setData({
+        //     date_week: this.data.date_month.slice(-31),
+        //     data_week: this.data.data_month.slice(-31)
+        // })
         // 星期
         this.setData({
             date_week: this.data.date_week.slice(-7),
@@ -292,8 +301,8 @@ Page({
             title: '加载中...',
         })
         return {
-            categories: this.data.date_month,
-            data: this.data.data_month
+            categories: this.data.date_month.slice(-31),
+            data: this.data.data_month.slice(-31)
         }
     },
     data_week_process: function () {
@@ -325,7 +334,7 @@ Page({
             yAxis: {
                 disabled: true,
                 min: 0,
-                max: 30000
+                max: 15000
             },
             width: windowWidth * 0.933,
             height: (170 * this.data.widthScale).toFixed(0),
@@ -348,7 +357,6 @@ Page({
         this.setData({
             widthScale: parseInt(windowWidth) / parseInt(this.data.standardWidth)
         })
-
         var simulationData = this.createSimulationData();
         lineChart = new wxCharts({
             canvasId: 'lineCanvas2',
@@ -366,7 +374,7 @@ Page({
             yAxis: {
                 disabled: true,
                 min: 0,
-                max: 30000
+                max: 15000
             },
             width: windowWidth * 0.933,
             height: (170 * this.data.widthScale).toFixed(0),
@@ -380,9 +388,9 @@ Page({
     },
 
     data_today_process: function () {
-        // wx.showLoading({
-        //     title: '加载中...',
-        // })
+        wx.showLoading({
+            title: '加载中...',
+        })
         var windowWidth = 375;
         try {
             var res = wx.getSystemInfoSync();
@@ -396,7 +404,7 @@ Page({
         })
         var circleX = 175 * (this.data.widthScale);
         var circleY = 80 * (this.data.widthScale);
-        var scaleCircle = Math.min(this.data.data_day / 10000, 1);
+        var scaleCircle = Math.min(this.data.data_day / 15000, 1);
         var context1 = wx.createCanvasContext('outerCanvas');
         var context4 = wx.createCanvasContext('drawImage');
         function drawAngle(startAngle, endAngle1) {
