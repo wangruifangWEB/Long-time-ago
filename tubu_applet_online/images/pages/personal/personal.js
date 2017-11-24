@@ -91,59 +91,50 @@ Page({
     },
 
     onShow: function () {
+        var session3rd = wx.getStorageSync('3rdSession');
+        
+
         var that = this;
-        var timer=null;
-        timer=setInterval(function(){
-            var session3rd = wx.getStorageSync('3rdSession');
-            if (session3rd==""){
-                return
-            }else{
-                clearInterval(timer);
-                var session3rd = wx.getStorageSync('3rdSession');
+        wx.request({
+            url: app.globalData.globalUrl + "/index.php/Home/Wxprogram/modify",
+            data: {
+                "session3rd": session3rd
+            },
+            method: 'get',
+            success: function (data) {
+                var data = data.data;
+                var url = app.globalData.globalUrl + 'Public';
+                that.dataVerify(data);
 
-
-                wx.request({
-                    url: app.globalData.globalUrl + "/index.php/Home/Wxprogram/modify",
-                    data: {
-                        "session3rd": session3rd
-                    },
-                    method: 'get',
-                    success: function (data) {
-                        var data = data.data;
-                        var url = app.globalData.globalUrl + 'Public';
-                        that.dataVerify(data);
-
-                        that.setData({
-                            port_image: url + data.port_image,
-                            checkSex: data.sex,
-                            enrollNum: data.signup_num,
-                            joinNum: data.join_num,
-                            userInfo: data.uname,
-                            telInfo: data.telephone,
-                            cardInfo: data.idcards,
-                            ageInfo: data.age,
-                            statureInfo: data.height,
-                            nowWeightInfo: data.weight,
-                            aimWeightInfo: data.target_weight,
-                            quarterIndexValue: data.work_id,
-                            id: data.id
-                        })
-
-                        that.checkSex(data);
-                        that.job(data);
-                        that.checkFormStatus();
-                    }
+                that.setData({
+                    port_image: url + data.port_image,
+                    checkSex: data.sex,
+                    enrollNum: data.signup_num,
+                    joinNum: data.join_num,
+                    userInfo: data.uname,
+                    telInfo: data.telephone,
+                    cardInfo: data.idcards,
+                    ageInfo: data.age,
+                    statureInfo: data.height,
+                    nowWeightInfo: data.weight,
+                    aimWeightInfo: data.target_weight,
+                    quarterIndexValue: data.work_id,
+                    id: data.id
                 })
-
-                that.scaleCountFn();
-                var personInfo = wx.getStorageSync('userInfo');
-                for (var i in personInfo) {
-                    that.setData({
-                        personInfo: personInfo
-                    })
-                }
+                
+                that.checkSex(data);
+                that.job(data);
+                that.checkFormStatus();
             }
-        },1000)
+        })
+
+        this.scaleCountFn();
+        var personInfo = wx.getStorageSync('userInfo');
+        for (var i in personInfo) {
+            this.setData({
+                personInfo: personInfo
+            })
+        }
     },
     onHide: function () {
         var that = this;

@@ -1,6 +1,6 @@
 App({
     globalData: {
-        globalUrl: 'https://www.buqiuren.com.cn/'
+        globalUrl: 'https://www.sqbqr.cn/'
     },
     onShow: function () {
         var that = this;

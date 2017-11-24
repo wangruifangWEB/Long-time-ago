@@ -26,8 +26,11 @@ Page({
         FP: false
     },
     touchHandler: function (e) {
-        console.log(radarChart.getCurrentDataIndex(e));
-        // console.log(radarChart);
+        radarChart.showToolTip(e, {
+            format: function (item, category) {
+                return item.data
+            }
+        });
     },
     onShow: function (e) {
         this.requestFn();

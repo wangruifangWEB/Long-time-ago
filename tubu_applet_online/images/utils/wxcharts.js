@@ -1796,6 +1796,7 @@ function drawCharts(type, opts, config, context) {
                 duration: duration,
                 onProcess: function onProcess(process) {
                     drawYAxisGrid(opts, config, context);
+                    
                     var _drawLineDataPoints = drawLineDataPoints(series, opts, config, context, process),
                         xAxisPoints = _drawLineDataPoints.xAxisPoints,
                         calPoints = _drawLineDataPoints.calPoints,
@@ -1891,6 +1892,7 @@ function drawCharts(type, opts, config, context) {
                 onProcess: function onProcess(process) {
                     _this.chartData.radarData = drawRadarDataPoints(series, opts, config, context, process);
                     drawLegend(opts.series, opts, config, context);
+                    drawToolTipBridge(opts, config, context, process);
                     drawCanvas(opts, context);
                 },
                 onAnimationFinish: function onAnimationFinish() {
@@ -2027,6 +2029,35 @@ Charts.prototype.showToolTip = function (e) {
     }
     if (this.opts.type === 'line' || this.opts.type === 'area') {
         var index = this.getCurrentDataIndex(e);
+        var currentOffset = this.scrollOption.currentOffset;
+        var opts = assign({}, this.opts, {
+            _scrollDistance_: currentOffset,
+            animation: false
+        });
+        if (index > -1) {
+            var seriesData = getSeriesDataItem(this.opts.series, index);
+            if (seriesData.length === 0) {
+                drawCharts.call(this, opts.type, opts, this.config, this.context);
+            } else {
+                var _getToolTipData = getToolTipData(seriesData, this.chartData.calPoints, index, this.opts.categories, option),
+                    textList = _getToolTipData.textList,
+                    offset = _getToolTipData.offset;
+
+                opts.tooltip = {
+                    textList: textList,
+                    offset: offset,
+                    option: option
+                };
+                drawCharts.call(this, opts.type, opts, this.config, this.context);
+            }
+        } else {
+            drawCharts.call(this, opts.type, opts, this.config, this.context);
+        }
+    }
+
+    if (this.opts.type === 'radar') {
+        var index = this.getCurrentDataIndex(e);
+        console.log(index);
         var currentOffset = this.scrollOption.currentOffset;
         var opts = assign({}, this.opts, {
             _scrollDistance_: currentOffset,
