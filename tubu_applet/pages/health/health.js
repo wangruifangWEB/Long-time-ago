@@ -26,8 +26,8 @@ Page({
         FP: false
     },
     touchHandler: function (e) {
-        // console.log(e)
-        console.log(radarChart);
+        console.log(radarChart.getCurrentDataIndex(e));
+        // console.log(radarChart);
     },
     onShow: function (e) {
         this.requestFn();
