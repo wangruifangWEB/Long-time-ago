@@ -250,11 +250,6 @@ Page({
         this.setData({
             totalData: total
         })
-        // 月份
-        // this.setData({
-        //     date_week: this.data.date_month.slice(-31),
-        //     data_week: this.data.data_month.slice(-31)
-        // })
         // 星期
         this.setData({
             date_week: this.data.date_week.slice(-7),
@@ -427,9 +422,6 @@ Page({
         var startAngle = 1.5 * Math.PI, endAngle1 = 1.5 * Math.PI, endAngle2 = Math.PI * 2 * scaleCircle + Math.PI * 1.5;
         var that = this;
         var timer = null, timer2 = null;
-        // that.timeNumber();
-
-
         timer = setInterval(function () {
             if (endAngle1 <= endAngle2) {
                 endAngle1 = endAngle1 + 0.1;
@@ -442,7 +434,6 @@ Page({
                 var Y = 80 - Math.cos(angle) * 70 - 8;
                 drawImage(X, Y);
                 return;
-                
             } else {
                 clearInterval(timer);
                 drawAngle(startAngle, endAngle1);

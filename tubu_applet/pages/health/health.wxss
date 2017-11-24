@@ -43,6 +43,16 @@ canvas{
     top: 240rpx;
     left: -70rpx;
 }
+.healthIndexValue{
+    width: 100rpx !important;
+    height: 50rpx;
+    position: absolute; 
+    line-height: 50rpx;
+    background-color: #d0ad65;
+    border-radius: 10rpx;
+    text-align: center;
+    color: #ffffff !important;
+}
 .BMI{
     margin: 32rpx auto 0;
     width: 624rpx;

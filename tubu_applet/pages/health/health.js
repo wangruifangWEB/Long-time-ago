@@ -23,11 +23,31 @@ Page({
         PS: false,
         ZC: false,
         PP: false,
-        FP: false
+        FP: false,
+        showHealthValue: false,
+        healthValue:''
     },
     touchHandler: function (e) {
-        console.log(radarChart.getCurrentDataIndex(e));
-        // console.log(radarChart);
+        // console.log(radarChart.getCurrentDataIndex(e));
+        var healthArrIndex = radarChart.getCurrentDataIndex(e);
+        var healthArr=[818,2,145,45,22];
+        var healthArrValue;
+        healthArrValue = healthArr[healthArrIndex];
+        console.log(healthArrValue);
+        console.log(radarChart);
+        console.log(e.changedTouches);
+        for (var i in e.changedTouches){
+            console.log(e.changedTouches[i].x);
+            console.log(e.changedTouches[i].y);
+            this.setData({
+                positionX: (e.changedTouches[i].x)*2,
+                positionY: (e.changedTouches[i].y)*2
+            })
+        }
+        this.setData({
+            showHealthValue:true,
+            healthValue:healthArrValue
+        })
     },
     onShow: function (e) {
         this.requestFn();

@@ -7,6 +7,7 @@
         <text class='carbohydrate'>{{carbohydrateScale}}碳水化合物\n{{145}}g/{{carbohydrate}}g</text>
         <text class='protein'>{{proteinScale}}蛋白质\n{{45}}g/{{protein}}g</text>
         <text class='fat'>{{fatScale}}脂肪\n{{22}}g/{{fat}}g</text>
+        <text class="healthIndexValue" wx:if="{{showHealthValue}}" style='left:{{positionX+40}}rpx;top:{{positionY+60}}rpx;'>{{healthValue}}</text>
     </view>
     <view class='BMI'>
         <view class='BMI_number'>
