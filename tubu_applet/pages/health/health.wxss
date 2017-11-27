@@ -8,14 +8,14 @@ page{
     margin: 0 auto 40rpx;
     position: relative;
 }
-canvas{
+.canvas{
     position: absolute;
     height: 600rpx;
-    width: 750rpx;
+    width: 500rpx;
     top: 80rpx;
     left: 118rpx;
 }
- .canvas_warp text{
+.canvas_warp text{
     display: block;
     position: absolute;
     text-align: center;
@@ -44,14 +44,16 @@ canvas{
     left: -70rpx;
 }
 .healthIndexValue{
-    width: 100rpx !important;
-    height: 50rpx;
+    width: 90rpx; 
+    height: 48rpx;
     position: absolute; 
-    line-height: 50rpx;
-    background-color: #d0ad65;
+    line-height: 48rpx;
+    background-color: #fac87f;
     border-radius: 10rpx;
     text-align: center;
-    color: #ffffff !important;
+    font-size: 26rpx;
+    font-weight: bold;
+    color: #ffffff;
 }
 .BMI{
     margin: 32rpx auto 0;

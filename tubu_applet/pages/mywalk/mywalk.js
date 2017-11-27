@@ -431,7 +431,7 @@ Page({
                 drawAngle(startAngle, endAngle1);
                 var angle = endAngle1 - startAngle;
                 var X = circleX + Math.sin(angle) * 70 - 8;
-                var Y = 80 - Math.cos(angle) * 70 - 8;
+                var Y = circleY - Math.cos(angle) * 70 - 8;
                 drawImage(X, Y);
                 return;
             } else {

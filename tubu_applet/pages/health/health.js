@@ -30,24 +30,67 @@ Page({
     touchHandler: function (e) {
         // console.log(radarChart.getCurrentDataIndex(e));
         var healthArrIndex = radarChart.getCurrentDataIndex(e);
-        var healthArr=[818,2,145,45,22];
+        var healthArr=[8180,2,145,45,22];
         var healthArrValue;
         healthArrValue = healthArr[healthArrIndex];
-        console.log(healthArrValue);
-        console.log(radarChart);
-        console.log(e.changedTouches);
+        var radarCenterX = radarChart.chartData.radarData.center.x;
+        var radarCenterY = radarChart.chartData.radarData.center.y;
+        var radarRadius = radarChart.chartData.radarData.radius;
+        var canvasLeft= (500 - 250 * this.data.widthScale) / 2;
+        // 80为画布top,118为画布left,48为text高，90为text宽
         for (var i in e.changedTouches){
-            console.log(e.changedTouches[i].x);
-            console.log(e.changedTouches[i].y);
+            var currentDataIndex=radarChart.getCurrentDataIndex(e);
             this.setData({
-                positionX: (e.changedTouches[i].x)*2,
-                positionY: (e.changedTouches[i].y)*2
+                showHealthValue: true,
+                healthValue: healthArrValue
             })
+            if (currentDataIndex==0){
+                var raderX = radarRadius * parseFloat(this.data.energyScale) / 100 * Math.cos(0 * Math.PI / 180);
+                var raderY = radarRadius * parseFloat(this.data.energyScale) / 100;
+                this.setData({
+                    positionX: canvasLeft * 2 * this.data.widthScale + radarCenterX - 45 * this.data.widthScale,
+                    positionY: (80 * 2 * this.data.widthScale + 15 + radarCenterY) - (raderY+24) * 2 * this.data.widthScale,
+                })
+            }else if (currentDataIndex == 1) {
+                // 斜边长度 radarRadius * energyScale;
+                // Cos∠A = 邻边 / 斜边, Sin∠A = 对边 / 斜边;
+                // 弧度 = 角度 * Math.PI / 180;js接收弧度，数学接收角度
+                // 15是画布内边距，为px
+                // 18是显铭给的
+                console.log(radarChart);
+                var raderX = radarRadius * parseFloat(this.data.saltScale) / 100 * Math.cos(18 * Math.PI / 180);
+                var raderY = radarRadius * parseFloat(this.data.saltScale) / 100 * Math.sin(18 * Math.PI / 180);
+                this.setData({
+                    positionX: canvasLeft * 2 * this.data.widthScale + radarCenterX + raderX * 2 * this.data.widthScale + 18,
+                    positionY: (80 * 2 * this.data.widthScale + 15 + radarCenterY) + (raderY - 12) * 2 * this.data.widthScale,
+                })
+            }else if (currentDataIndex == 2) {
+                var raderX = radarRadius * parseFloat(this.data.carbohydrateScale) / 100 * Math.cos(54 * Math.PI / 180);
+                var raderY = radarRadius * parseFloat(this.data.carbohydrateScale) / 100 * Math.sin(54 * Math.PI / 180);
+                this.setData({
+                    positionX: canvasLeft * 2 * this.data.widthScale + radarCenterX + raderX * 2 * this.data.widthScale + 18,
+                    positionY: (80 * 2 * this.data.widthScale + 15 + radarCenterY) + (raderY + 12) * 2 * this.data.widthScale,
+                })
+            }else if (currentDataIndex == 3) {
+                var raderX = radarRadius * parseFloat(this.data.proteinScale) / 100 * Math.cos(54 * Math.PI / 180);
+                var raderY = radarRadius * parseFloat(this.data.proteinScale) / 100 * Math.sin(54 * Math.PI / 180);
+                this.setData({
+                    positionX: (canvasLeft - 45) * 2 * this.data.widthScale + radarCenterX - raderX * 2 * this.data.widthScale - 18,
+                    positionY: (80 * 2 * this.data.widthScale + 15 + radarCenterY) + (raderY + 12) * 2 * this.data.widthScale,
+                })
+            }else if (currentDataIndex == 4) {
+                var raderX = radarRadius * parseFloat(this.data.fatScale) / 100 * Math.cos(18 * Math.PI / 180);
+                var raderY = radarRadius * parseFloat(this.data.fatScale) / 100 * Math.sin(18 * Math.PI / 180);
+                this.setData({
+                    positionX: (canvasLeft - 45) * 2 * this.data.widthScale + radarCenterX - raderX * 2 * this.data.widthScale - 18,
+                    positionY: (80 * 2 * this.data.widthScale + 15 + radarCenterY) + (raderY - 12) * 2 * this.data.widthScale,
+                })
+            } else if (currentDataIndex == -1){
+                this.setData({
+                    showHealthValue: false
+                })
+            }
         }
-        this.setData({
-            showHealthValue:true,
-            healthValue:healthArrValue
-        })
     },
     onShow: function (e) {
         this.requestFn();
