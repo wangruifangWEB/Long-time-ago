@@ -85,9 +85,20 @@
 			}
 			
 			.team_list_ul li {
+				position: relative;
 				height: auto;
 				background-color: #ffffff;
 				margin-bottom: 0.16rem;
+			}
+			.team_status{
+				position: absolute;
+				z-index: 10;
+				top: 0;
+				right: 0;
+			}
+			.team_status img{
+				width: 1.28rem;
+				height: 1.28rem;
 			}
 			.team_top {
 				height: 2rem;
@@ -96,15 +107,15 @@
 			
 			.team_left {
 				float: left;
-				width: 2.54rem;
+				width: 2.44rem;
 				height: 2rem;
 			}
 			
 			.team_left img {
-				width: 1.26rem;
-				height: 1.36rem;
-				margin-top: .3rem;
-				margin-left: .8rem;
+				width: 1.32rem;
+				height: 1.46rem;
+				margin-top: .32rem;
+				margin-left: .7rem;
 				display: block;
 			}
 			
@@ -115,23 +126,31 @@
 			.team_right p:nth-child(1) {
 				font-size: .32rem;
 				color: #4d4d4d;
+				padding-left: 0.64rem;
 				margin-top: .3rem;
+				margin-bottom: 0.15rem;
 				line-height: .31rem;
 				height: .31rem;
+				background-image: url(../../images/active_icon.png);
+				background-size: 0.44rem 0.28rem;
+				background-repeat: no-repeat;
+				background-position: 0 0;
 			}
 			
 			.team_right p:nth-child(2),
-			.team_right p:nth-child(3) {
-				font-size: .28rem;
+			.team_right p:nth-child(3),
+			.team_right p:nth-child(4) {
+				font-size: .26rem;
 				color: #4d4d4d;
 				height: .26rem;
 				line-height: .26rem;
-				margin-top: .26rem;
+				margin-top: .1rem;
 			}
 			
 			.team_right p:nth-child(2) span,
-			.team_right p:nth-child(3) span {
-				margin-left: .1rem;
+			.team_right p:nth-child(3) span,
+			.team_right p:nth-child(4) span{
+				margin-left: 0rem;
 			}
 			
 			.team_middle {
@@ -211,6 +230,7 @@
 														</div>
 														<div class="team_right">
 															<p>中国图书馆</p>
+															<p>团队名称：<span>天啦噜</span></p>
 															<p>活动地点：<span>石景山</span></p>
 															<p>活动时间：<span>2018-5-12</span></p>
 														</div>
@@ -230,6 +250,9 @@
 															<p>是否乘坐摆渡车：<span>是</span></p>
 														</div>
 													</div>
+													<div class="team_status">
+														<img src="../../images/wait_pay.png" alt="">
+													</div>
 												</a>
 											</li>
 
@@ -241,6 +264,7 @@
 														</div>
 														<div class="team_right">
 															<p>中国图书馆</p>
+															<p>团队名称：<span>天啦噜</span></p>
 															<p>活动地点：<span>石景山</span></p>
 															<p>活动时间：<span>2018-5-12</span></p>
 														</div>
@@ -259,6 +283,9 @@
 															<p>身份证号：<span>130926199501125596</span></p>
 															<p>是否乘坐摆渡车：<span>是</span></p>
 														</div>
+													</div>
+													<div class="team_status">
+														<img src="../../images/have_pay.png" alt="">
 													</div>
 												</a>
 											</li>
@@ -327,6 +354,7 @@
 														</div>
 														<div class="team_right">
 															<p>中国图书馆</p>
+															<p>团队名称：<span>天啦噜</span></p>
 															<p>活动地点：<span>石景山</span></p>
 															<p>活动时间：<span>2018-5-12</span></p>
 														</div>
@@ -345,6 +373,9 @@
 															<p>身份证号：<span>130926199501125596</span></p>
 															<p>是否乘坐摆渡车：<span>是</span></p>
 														</div>
+													</div>
+													<div class="team_status">
+														<img src="../../images/have_pay.png" alt="">
 													</div>
 												</a>
 											</li>
@@ -384,6 +415,7 @@
 														</div>
 														<div class="team_right">
 															<p>中国图书馆</p>
+															<p>团队名称：<span>天啦噜</span></p>
 															<p>活动地点：<span>石景山</span></p>
 															<p>活动时间：<span>2018-5-12</span></p>
 														</div>
@@ -402,6 +434,9 @@
 															<p>身份证号：<span>130926199501125596</span></p>
 															<p>是否乘坐摆渡车：<span>是</span></p>
 														</div>
+													</div>
+													<div class="team_status">
+														<img src="../../images/have_pay.png" alt="">
 													</div>
 												</a>
 											</li>
@@ -430,16 +465,6 @@
 				}
 
 			});
-//			$('.team_middle').toggle(function() {
-//				$(this).children('p').find('span').html('收起');
-//				$(this).siblings('.team_bottom').slideDown();
-//				$(this).children('p').children('img').attr('src', '../../images/totop.png');
-//			}, function() {
-//				$(this).children('p').find('span').html('名单查询');
-//				$(this).siblings('.team_bottom').slideUp();
-//				$(this).children('p').children('img').attr('src', '../../images/tobottom.png');
-//			});
-			
 			$('body').on('click','.team_middle',function(){
 				if($('.team_middle').hasClass('slide')){
 					$(this).children('p').find('span').html('收起');

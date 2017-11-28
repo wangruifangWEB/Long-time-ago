@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/mywalk/mywalk",
         "pages/health/health",
+        "pages/mywalk/mywalk",
         "pages/personal/personal"
     ],
     "window": {
