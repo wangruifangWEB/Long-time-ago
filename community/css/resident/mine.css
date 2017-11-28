@@ -1,0 +1,152 @@
+.mine_container{
+	width:7.5rem;
+	overflow: hidden;
+	background-color: #fff;
+}
+.mine_container_bg{
+	height:3.2rem;
+	background-image: url(../../images/resident/card-bg.png);
+	background-repeat: no-repeat;
+	background-size: 7.5rem 3.2rem;
+}
+.mine_container_bg_lf{
+	display: inline-block;
+	position: relative;
+}
+.mine_container_bg_lf img{
+	width:1.38rem;
+	height:1.38rem;
+	margin:.84rem 0 0 .40rem;
+}
+.mine_container_bg_lf p{
+	width: 3rem;
+	color:#fff;
+	line-height: .68rem;
+	font-size: .48rem;
+	font-family: PingFangSC-semibold;
+	display: inline-block;
+	margin:.84rem 0 0 .42rem;
+}
+.mine_container_bg_rt{
+	float: right;
+	padding:.84rem .4rem 0 0;
+	display: -webkit-inline-box;
+}
+.mine_container_bg_rt img{
+	width:.32rem;
+	height:.32rem;
+	margin-right:.16rem;
+}
+.mine_container_bg_rt p{
+	color:#fff;
+	font-size: .28rem;
+	font-family: PingFangSC-Medium;
+}
+.mine_container_bottom{
+	width:5.18rem;
+	height:.84rem;
+	line-height: .84rem;
+	background-color: #fff;
+	border-radius: .6rem;
+	margin:.5rem auto .84rem;
+	box-shadow: 0 .1rem .7rem rgba(17,67,134,0.5);	
+	z-index: 100;
+    position: absolute;
+    left: 50%;
+    margin-left: -2.59rem;
+}
+.mine_container_bottom div{
+	text-align: center;
+}
+.mine_container_bottom p{
+	display: inline-block;
+	color:#3a3a3a;
+	font-size: .24rem;
+	font-family: PingFangSC-Medium;
+	margin-right:.3rem;
+}
+.mine_container_bottom
+.mine_container_bottom_more{
+	margin-right:.6rem;
+}
+.mine_container_bottom_lf{
+	width:.51rem;
+	height：.42rem;
+	vertical-align: middle;
+	margin-right:.24rem;
+}
+.mine_container_bottom_rt{
+	width:.13rem;
+	height：.22rem;
+	vertical-align: middle;
+}
+.mine_list{
+	height:2.46rem;
+}
+.mine_list .mine_list_lf{
+	width:2.54rem;
+	height:.4rem;
+	padding:1.26rem 0 0 1.1rem;
+}
+.mine_list .mine_list_rt{
+	width:1.5rem;
+	height:1.52rem;
+	float: right;
+	padding:.74rem 1.38rem 0 0;
+}
+.mine_details{
+	background-color: #eee;
+}
+.mine_details ul{
+	margin-top:.16rem;
+	background-color: #fff;
+}
+.mine_details ul li{
+	height:1.36rem;
+}
+.mine_details li:last-child .mine_details_rt{
+	border-bottom: none;
+}
+.mine_details_lf{
+	width:.8rem;
+	height:.8rem;
+	padding:.32rem .32rem 0 .4rem;
+	float: left;
+}
+.mine_details_rt{
+	width:5.9rem;
+	height: 1.34rem;
+    display: table;
+	border-bottom:.01rem solid #eee;
+}
+.mine_details_rt span{
+	color:#3a3a3a;
+	font-size: .34rem;
+	font-family: PingFangSC-semibold;
+	padding-top:.52rem;
+	display: inline-block;
+}
+.mine_details_more{
+	width:.42rem;
+	height:.42rem;
+	padding: .46rem .4rem 0 0;
+	float: right;
+}
+/*翻页*/
+.box{
+	position: relative; 
+	transition: 1s; 
+	transform-style: preserve-3d; 
+}
+.page1{
+	position: absolute; 
+	top: 0;
+    backface-visibility: hidden;
+}
+.page2{
+	position: absolute; 
+	top: 0; 
+	transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
