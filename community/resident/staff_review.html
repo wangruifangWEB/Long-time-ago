@@ -22,31 +22,29 @@
 					</div>
 					
 					<ul>
-						<li>驳回</li>
-						<li>同意</li>
+						<li class="reject_btn">驳回</li>
+						<li class="agree_btn">同意</li>
 					</ul>
 				</div>
 			</div>
 			
-			<div class="sta_container_item">
+			<p class="agree_text">您已通过<span>XXX</span>加入<span>XXXX</span>自组织</p>
+			
+			<div class="sta_container_item sta_container_reject">
 				<span>今天 9:17</span>
-				<div class="sta_container_item_detail">
-					<p>申请加入自组织,申请加入自组织申请加入自组织</p>
-					<div>
-						<p>姓名<span>睿睿</span></p>
-						<p>性别<span>女</span></p>
-					</div>
-					
+				<div class="sta_container_item_reject">
+					<p>驳回理由补充</p>
+					<div contenteditable="true" class="reject_content"></div>
 					<ul>
-						<li>驳回</li>
-						<li>同意</li>
+						<li class="sure">确定</li>
 					</ul>
 				</div>
+				
 			</div>
 		</div>
-		
+		<script src="../js/resident/staff_review.js" type="text/javascript" charset="utf-8"></script>
 		<script>
-			$('body').height($(window).height())
+			$('body').height($(window).height());
 		</script>
 	</body>
 </html>

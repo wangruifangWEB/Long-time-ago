@@ -105,3 +105,33 @@
 .four_container_item_more span{
 	font-size: .22rem;
 }
+/*底部操作*/
+.msg_bottom{
+	width: 100%;
+	padding:1rem 0;
+}
+.msg_bottom li{
+	width:50%;
+	float: left;
+	text-align: -webkit-center;
+	display: inline-block;
+}
+.msg_bottom li p{
+	width:2.4rem;
+	height:.64rem;
+	line-height: .64rem;
+	font-family: PingFangSC-semibold;
+	font-size: .36rem;
+	border-radius: .3rem;
+	display: block;
+}
+.msg_bottom li:nth-child(1) p{
+	color:#3c7feb;
+	border:.04rem solid #3c7feb;
+	margin-left: .4rem;
+}
+.msg_bottom li:nth-child(2) p{
+	color:#ff1404;
+	border:.04rem solid #ff1404;
+	margin-right: .4rem;
+}

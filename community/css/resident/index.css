@@ -139,6 +139,10 @@ em,i{font-style:normal}
 	height:.22rem;
 	margin:.16rem 0 0 .16rem;
 }
+.four_container a{
+	display: inline-block;
+    margin-bottom: .32rem;
+}
 .four .four_container
 .four_container_item{
  	width:6.72rem;
