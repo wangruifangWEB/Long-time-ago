@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>消息</title>
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/resident/message.css" />
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.msg_bottom li:nth-child(1) p {
+			    color: #FF9300;
+			    border: .04rem solid #FF9300;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="msg_container">
+			<div class="msg_header">
+				<ul>
+					<li class="msg_header_left"><img src="../images/resident/message-select all.png" alt="" /></li>
+					<li class="msg_header_center">消息</li>
+					<li class="msg_header_right">
+						<p class="msg_header_right_cancel">取消</p>
+						<img src="../images/resident/message-management.png" alt="" />
+					</li>
+				</ul>
+			</div>
+			<div class="msg_list">
+				<div class="msg_list_item">
+					<div class="msg_list_item_left">
+						<img src="../images/resident/message-check box-normal.png" alt="" data="../images/resident/message-check box-selected.png" class="msg_icon"/>
+					</div>
+					<div class="msg_list_item_center">
+						<img src="../images/volunteer/message-dynamic.png" alt="" class="list_img"/>
+						<img src="../images/resident/message-unread.png" alt="" class="unread" />
+						<div>
+							<span>自组织动态</span>
+							<p>自组织动态的推送，xxx自组织第本周末有活动，请往这边走客官</p>
+						</div>
+					</div>
+					<div class="msg_list_remove">删除</div>
+				</div>
+				
+				<div class="msg_list_item">
+					<div class="msg_list_item_left">
+						<img src="../images/resident/message-check box-normal.png" alt="" data="../images/resident/message-check box-selected.png" class="msg_icon"/>
+					</div>
+					<div class="msg_list_item_center">
+						<img src="../images/volunteer/message-notice.png" alt="" class="list_img"/>
+						<img src="../images/resident/message-unread.png" alt="" class="unread" />
+						<div>
+							<span>消息通知</span>
+							<p>您申请的社区治安阻止已通过审核</p>
+						</div>
+					</div>
+					<div class="msg_list_remove">删除</div>
+				</div>
+				
+				<div class="msg_list_item">
+					<div class="msg_list_item_left">
+						<img src="../images/resident/message-check box-normal.png" alt="" data="../images/resident/message-check box-selected.png" class="msg_icon"/>
+					</div>
+					<div class="msg_list_item_center">
+						<img src="../images/volunteer/message-announcement.png" alt="" class="list_img"/>
+						<img src="../images/resident/message-unread.png" alt="" class="unread" />
+						<div>
+							<span>系统公告</span>
+							<p>本周五8:00-9:00进行维护，为您带来不便，请谅解</p>
+						</div>
+					</div>
+					<div class="msg_list_remove">删除</div>
+				</div>
+				
+			</div>
+			
+			<!-- 底部导航 -->
+			<ul class="nav_bottom clearfix">
+				<li>
+					<a href="index.html">
+						<img src="../images/resident/tabbar-index-normal.png" alt="" />
+						<span>首页</span>
+					</a>
+				</li>
+				<li>
+					<a href="message.html"> 
+						<img src="../images/volunteer/tabbar-index-selected.png" alt="" />
+						<span>信息</span>
+					</a>
+				</li>
+				<li>
+					<a href="mine.html">
+						<img src="../images/resident/tabbar-mine-selected.png" alt="" />
+						<span>我的</span>
+					</a>
+				</li>
+			</ul>
+			
+			<!--底部内容-->
+			<ul class="msg_bottom">
+				<li class="readed_btn"><p>标记为已读</p></li>
+				<li class="remove_btn"><p>删除</p></li>
+			</ul>
+		</div>
+		<script src="../js/resident/message.js"></script>
+	</body>
+</html>
