@@ -1,0 +1,71 @@
+.suc_container{
+	width:7.5rem;
+	overflow: hidden;
+	background-color: #fff;
+	margin:0 auto;
+	text-align: center;
+}
+.suc_container .suc_bg{
+	height:5.59rem;
+}
+.suc_container .suc_bg img{
+	width:7.5rem;
+	height:5.59rem;
+}
+.suc_container p{
+	color:#ff6781;
+	font-size: .48rem;
+	font-family: PingFangSC-semibold;
+	text-align: center;
+	margin-bottom:.96rem;
+}
+.suc_progress{
+	text-align: center;
+	padding:0 2rem;
+}
+.suc_progress li{
+	width:7.5rem;
+	color:#69697c;
+	font-size: .28rem;
+	font-family: PingFangSC-Medium;
+	margin-bottom: .64rem;
+	display: -webkit-inline-box;
+	position: relative;
+}
+.suc_progress li span{
+	width:.2rem;
+	height:.2rem;
+	border-radius: 50%;
+	border:.02rem solid #2F40E5;
+	margin-right:.72rem;
+	display:block;
+}
+.suc_progress li:nth-child(2) span{
+	background-color:#2F40E5;
+	margin-right:.60rem;
+}
+.suc_progress li i{
+	width:.001rem;
+	height:.65rem;
+	border: .01rem solid #2F40E5;
+	position: absolute;
+	top: .21rem;
+    left: .11rem;
+}
+.suc_progress li:last-child i{
+	border:none;
+}
+.suc_btn{
+	width:6.24rem;
+	height:1.46rem;
+	line-height: 1.16rem;
+	background: url(../../images/resident/complete-bg.png)no-repeat;
+	background-size: 6.24rem 1.46rem;
+	margin-top:.8rem;
+	display: inline-block;
+}
+.suc_btn button{
+	color:#fff;
+	font-size: .48rem;
+	font-family: PingFangSC-semibold;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>信息补全</title>
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/resident/personal_information.css" />
+		<link rel="stylesheet" href="../css/resident/mui.picker.min.css" />
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="per_container">
+			<form action="">
+				<div class="form_item">
+					<label for="teamName">自组织名称</label>
+					<div class="form_input">
+						<input type="text" name="teamName" placeholder="请输入名称" class="teamName"/>
+					</div>
+				</div>
+				
+				<div class="form_item">
+					<label for="teamType">自组织类型</label>
+					<div class="form_input">
+						<input type="text" name="teamType" placeholder="请输入" class="teamType"/>
+					</div>
+				</div>
+				
+				<div class="mui-input-row space_prve form_item">
+					<label for="teamArea">主管区域</label>
+					<div class="form_input">
+						<input type="text" name="teamArea" readonly placeholder="请选择" class="mui-btn mui-btn-block selectList teamArea" id='showArea'/>
+					</div>
+				</div>
+				
+				
+				<div class="mui-input-row space_prve form_item">
+					<label for="teamUit">主管单位</label>
+					<div class="form_input">
+						<input type="text" name="teamUit" readonly placeholder="请选择" class="mui-btn mui-btn-block selectList teamUit" id='showUit'/>
+					</div>
+				</div>
+			</form>
+			
+			<div class="next_step">
+				<button>下一步</button>
+			</div>
+		</div>
+		<script src="../js/resident/personal_information_perfect.js"></script>
+		<script src="../js/resident/mui.min.js"></script>
+		<script src="../js/resident/mui.picker.min.js"></script>
+		<script>
+			(function($, doc) {
+	            $.init();
+	            $.ready(function() {
+	                /**
+	                 * 获取对象属性的值
+	                 * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+	                 * @param {Object} obj 对象
+	                 * @param {String} param 属性名
+	                 */
+	                var _getParam = function(obj, param) {
+	                    return obj[param] || '';
+	                };
+	                // 主管区域
+	                var userPicker1 = new $.PopPicker();
+	                userPicker1.setData([{
+	                    value: '0',
+	                    text: '竹杆社区'
+	                }]);
+	                var showArea = doc.getElementById('showArea');
+	                showArea.addEventListener('tap', function(event) {
+	                    userPicker1.show(function(items) {
+	                    	var cont=items[0].text;
+							showArea.value = cont;
+	                        //返回 false 可以阻止选择框的关闭
+	                        //return false;
+	                    });
+	                }, false);
+	                
+	                 //主管单位
+	                 var userPicker2 = new $.PopPicker();
+		                userPicker2.setData([{
+		                    value: '0',
+		                    text: '1'
+		                },{
+		                    value: '0',
+		                    text: '2'
+		                },{
+		                    value: '0',
+		                    text: '3'
+		                }
+		                ]);
+		                var showUit = doc.getElementById('showUit');
+		                showUit.addEventListener('tap', function(event) {
+		                    userPicker2.show(function(items) {
+		                    	var cont=items[0].text;
+								showUit.value = cont;
+		                        //返回 false 可以阻止选择框的关闭
+		                        //return false;
+		                    });
+		                }, false);
+	                
+	            });
+	        })(mui, document);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,130 @@
+.per_container{
+	width:7.5rem;
+	overflow: hidden;
+	background-color: #fff;
+}
+/*表单样式*/
+.form_item{
+	padding:.32rem .32rem 0 .32rem;
+}
+.form_item label{
+	color:#3a3a3a;
+	font-size: .32rem;
+	font-family: PingFangSC-Medium;
+	margin:0 0 .24rem .32rem;
+	display: block;
+}
+.form_input input,[contenteditable]{
+	width:6.53rem;
+	height:.8rem;
+	line-height: .8rem;
+	border:.01rem solid #999;
+	border-radius: .4rem;
+	color:#3a3a3a;
+	caret-color: #3a3a3a; /* 光标颜色 */ 
+	font-size: .28rem;
+	font-family: PingFangSC-Medium;
+	outline: none;
+	cursor: pointer;
+	padding-left:.32rem;
+}
+input::-webkit-input-placeholder{ 
+	color: #abafbe;
+	font-size: .28rem;
+	font-family: PingFangSC-Regular;
+	text-shadow: none;
+	-webkit-text-fill-color: initial;
+	margin:0 .32rem;
+ }
+.form_item>div input.address,
+input.teamArea, input.teamUit,
+.form_gender select{
+	background-size: .18rem .13rem !important;
+	background: url(../../images/resident/drop_down.png);
+	background-repeat: no-repeat;
+	background-position: 6.3rem .4rem;
+}
+.form_item .textarea{
+	width:6.53rem;
+	height:1.96rem;
+	border:.01rem solid #999;
+	border-radius: .2rem;
+	padding-left:.32rem;
+	color:#abafbe;
+	font-size: .28rem;
+	font-family: PingFangSC-Regular;
+	outline: none;
+	cursor: pointer;
+}
+.form_detail_address{
+	display: none;
+}
+.form_gender{
+	overflow: hidden;
+}
+.form_phone{
+	padding-top:.15rem !important;
+}
+.form_gender select{
+	width:6.83rem;
+	height:.83rem;
+	line-height: .83rem;
+	border:.01rem solid #999;
+	border-radius: .4rem;
+	padding-left:.32rem;
+	color:#abafbe;
+	font-size: .28rem;
+	font-family: PingFangSC-Regular;
+	outline: none;
+	cursor: pointer;
+	appearance:none;  
+    -moz-appearance:none;  
+    -webkit-appearance:none;  
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);   /* 点击高亮的颜色*/
+    margin-bottom: .2rem;
+}
+/*下一步按钮样式*/
+.next_step{ 
+	width:7.5rem;
+	background: url(../../images/resident/next_step-bg.png);
+	background-repeat: no-repeat;
+	background-size: 6.24rem 1.46rem;
+	background-position: center;
+	margin-top:1.4rem;
+	display: inline-block;
+	text-align: center;
+}
+.next_step button{
+	width:6.24rem;
+	height:1.46rem;
+	color:#fff;
+	font-size: .28rem;
+	font-family: PingFangSC-semibold;
+	position: relative;
+    top: -.1rem;
+}
+/*验证错误样式*/
+.form_error{
+	color:#fe6b6b !important;
+	border:.01rem solid #fd8585 !important;
+	background:rgba(253,133,133,.2) !important;
+}
+/*插件重置*/
+.mui-poppicker{
+	border: none;
+}
+.mui-poppicker-body .mui-picker{
+	background-color: #fff;
+}
+.mui-poppicker-header{
+	background-color: #eee;
+}
+.mui-poppicker-body {
+    border-top: solid 1px #2a2a2a;
+}
+.mui-pciker-list li.highlight{
+	color: #CEAD69;
+}
+.mui-poppicker-header .mui-btn {
+   color: #3A3A3A;
+}

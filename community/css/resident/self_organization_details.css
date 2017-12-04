@@ -1,0 +1,85 @@
+body{
+	background-color: #eee;
+}
+.detail_container{
+	width:7.5rem;
+	overflow: hidden;
+	background-color: #fff;
+	padding-bottom: .48rem;
+}
+.four_container_item{
+	position:relative;
+	z-index:100;
+	box-shadow: 0 .1rem .2rem rgba(17,67,134,0.4);	
+	margin:.24rem auto .48rem;
+	border-radius: .1rem;
+}
+.four_container_item_more img {
+    margin: 0rem .24rem 0 .1rem;
+}
+.four_container_item_address{
+	padding-top:.16rem;
+}
+.four_container_item_address .addr div{
+    margin-top: .1rem;
+}
+/*详情描述*/
+.detail_list{
+	padding:0 .4rem;
+}
+.detail_list_top {
+	margin-bottom: .56rem;
+}
+.detail_list_top img{
+	width:.88rem;
+	height:.88rem;
+	margin-right:.24rem;
+}
+.detail_list_top div{
+	display: inline-block;
+	margin-top:.08rem;
+}
+.detail_list_top div p{
+	color:#3a3a3a;
+	font-size: .28rem;
+	font-family: PingFangSC-Medium;
+	margin-bottom:.32rem;
+}
+.detail_list_top div span{
+	color:#abafbe;
+	font-size: .24rem;
+	font-family: PingFangSC-Regular;
+}
+.detail_list_bottom li{
+	line-height: .56rem;
+	color:#3a3a3a;
+	font-size: .28rem;
+	font-family: PingFangSC-Medium;
+}
+.detail_list_bottom li:nth-child(2) span{
+	margin-left: .5rem;
+}
+.detail_list_bottom span{
+	color:#666;
+	font-size: .24rem;
+	margin-left:.24rem;
+}
+/*底部按钮*/
+.detail_bottom{
+	width:7.5rem;
+	height:1.38rem;
+	background-color: #fff;
+	position: fixed;
+	bottom: 0;
+}
+.detail_bottom button{
+	width:6.38rem;
+	height:.88rem;
+	color:#fff;
+	font-size: .32rem;
+	font-family: PingFangSC-semibold;
+	background-image: url(../../images/resident/details-button.png);
+	background-repeat: no-repeat;
+	background-size: 6.38rem .88rem;
+	margin:.24rem 0 .56rem .56rem;
+}

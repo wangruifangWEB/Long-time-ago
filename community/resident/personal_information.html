@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>完善个人信息</title>
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/resident/personal_information.css" />
+		<link rel="stylesheet" href="../css/resident/mui.picker.min.css" />
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="per_container">
+			<form action="">
+				<div class="form_item">
+					<label for="uname">姓名</label>
+					<div class="form_input">
+						<input type="text" name="uname" placeholder="输入姓名" class="uname"/>
+					</div>
+				</div>
+				
+				<div class="form_item">
+					<label  for="gender">性别</label>
+					<div class="form_input form_gender">
+						<select name="gender"> 
+							<option value="0">请选择</option> 
+							<option value="1">女</option> 
+							<option value="2">男</option> 
+						</select> 
+					</div>
+				</div>
+				
+				<div class="form_item form_phone">
+					<label for="phone">电话</label>
+					<div class="form_input">
+						<input type="text" name="phone" placeholder="请输入电话号码" class="phone"/>
+					</div>
+				</div>
+				
+				<div class="form_item">
+					<label for="email">邮箱</label>
+					<div class="form_input">
+						<input type="email" name="email" placeholder="请输入邮箱" class="email"/>
+					</div>
+				</div>
+				
+				<div class="form_item">
+					<label for="userId">身份证号</label>
+					<div class="form_input">
+						<input type="text" name="userId" placeholder="请输入身份证号" class="userId"/>
+					</div>
+				</div>
+				
+				<div class="mui-input-row space_prve form_item form_address">
+					<label for="address">住址</label>
+					<div class="form_input">
+						<input type="text" name="address" readonly placeholder="请选择" class="mui-btn mui-btn-block selectList address" id='showActive'/>
+					</div>
+				</div>
+				<div class="form_item form_detail_address">
+					<label for="detail_address">详细住址</label>
+					<div class="textarea" contenteditable="true" name="detail_address" class="detail_address">
+						请填写详细地址，不少于5个字。
+					</div>
+				</div>
+				
+			</form>
+			
+			<div class="next_step">
+				<button>下一步</button>
+			</div>
+		</div>
+		<script src="../js/resident/personal_information.js"></script>
+		<script src="../js/resident/mui.min.js"></script>
+		<script src="../js/resident/mui.picker.min.js"></script>
+		<script>
+			(function($, doc) {
+	            $.init();
+	            $.ready(function() {
+	                /**
+	                 * 获取对象属性的值
+	                 * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+	                 * @param {Object} obj 对象
+	                 * @param {String} param 属性名
+	                 */
+	                var _getParam = function(obj, param) {
+	                    return obj[param] || '';
+	                };
+	                // 所在区
+	                var userPicker = new $.PopPicker();
+	                userPicker.setData([{
+	                    value: '0',
+	                    text: '竹杆社区'
+	                }]);
+	                var showarea = doc.getElementById('showActive');
+	                showarea.addEventListener('tap', function(event) {
+	                    userPicker.show(function(items) {
+	                    	var cont=items[0].text;
+							showarea.value = cont;
+	                        //返回 false 可以阻止选择框的关闭
+	                        //return false;
+	                    });
+	                }, false);
+	                
+	            });
+	        })(mui, document);
+		</script>
+	</body>
+</html>

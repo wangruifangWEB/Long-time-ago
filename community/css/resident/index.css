@@ -1,6 +1,6 @@
 body,html{
 	background-color: #fff;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 .clearfix{
 	content: "";
@@ -36,8 +36,7 @@ em,i{font-style:normal}
 .second_list{
    	width: 100%;
     text-align: center;
-    background: #ffffff;
-    padding-bottom: .30rem;
+    background: #fff;
 }
 .second_list li{
     display:inline-block;
@@ -60,6 +59,15 @@ em,i{font-style:normal}
     font-size:.28rem;
     color:#abafbe;
    	font-family: PingFangSC-Regular;
+}
+.mui-slider-indicator .mui-indicator{
+	margin:0 !important;
+	box-shadow: none !important; 
+	opacity:.5;
+	background: #fff !important;
+}
+.mui-slider-indicator .mui-indicator.mui-active{
+	opacity:1;
 }
 /*自组织管理*/
 .three{
@@ -131,11 +139,15 @@ em,i{font-style:normal}
 	height:.22rem;
 	margin:.16rem 0 0 .16rem;
 }
+.four_container a{
+	display: inline-block;
+    margin-bottom: .32rem;
+}
 .four .four_container
 .four_container_item{
  	width:6.72rem;
  	height:2.8rem;
- 	background-image: url(../../images/manage/list-pic.png);
+ 	background-image: url(../../images/resident/list-pic.png);
  	background-repeat: no-repeat;
  	background-size: 6.72rem 2.8rem;
  	margin-bottom:.32rem;
@@ -152,47 +164,27 @@ em,i{font-style:normal}
 .four_container_item_address .addr{
 	width:2.9rem;
 	height:.43rem;
-	color:#50526b;
+	color:#fff;
 	border-radius:.24rem;
 	font-family: PingFangSC-Regular;
 	font-size: .24rem;
 	border:none;
 	outline: none;
 	background-color:rgba(255,255,255,0.3);
-	background-image: url(../../images/manage/list-location.png);
+	background-image: url(../../images/resident/list-location.png);
 	background-size: .2rem .27rem;
 	background-repeat: no-repeat;
-	background-position: .2rem .1rem;
+	background-position: .15rem .1rem;
 	text-align: -webkit-center;
 }
 .four_container_item_address .addr div{
 	margin-left:.3rem;
 }
-.four_container_item_address 
-input::-webkit-input-placeholder { /* WebKit browsers*/ 
-　　color:#50526b;font-size:.28rem;
-	font-family: PingFangSC-Regular;
-　　}
-.four_container_item_address
-input:-moz-placeholder {  /* Mozilla Firefox 4 to 18*/ 
-　　color:#000;font-size:.28rem;
-	font-family: PingFangSC-Regular;
-　　}
-.four_container_item_address
-input::-moz-placeholder {  /* Mozilla Firefox 19+*/ 
-　　color:#50526b;font-size:.28rem;
-	font-family: PingFangSC-Regular;
-　　}
-.four_container_item_address
-input:-ms-input-placeholder { /* Internet Explorer 10+*/ 
-　　color:#50526b;font-size:.24rem;
-	font-family: PingFangSC-Regular;
-}
 .four .four_container 
 .four_container_item_bottom{
 	width:100%;
 	position: absolute;
-    top: 2.32rem;
+    top: 2.24rem;
     text-align: -webkit-left;
 }
 .four .four_container 

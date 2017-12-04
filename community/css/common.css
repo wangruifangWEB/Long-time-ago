@@ -1,23 +1,39 @@
 /* 底部导航 */
 .nav_bottom{
-	border-top: solid 0.01rem #d8d8d8;
-	background-color: #ffffff;
+	background-color: #fff;
+	*zoom:1;
 	width: 100%;
 	height: .98rem;
 	position: fixed;
 	bottom: 0;
 	z-index: 100;
+	-webkit-transform: translateZ(0);
+	box-shadow: 0 0.04rem 0.7rem rgba(000,000,000,0.2);
 }
 .nav_bottom li{
 	width: 33.3%;
+	height:.98rem;
 	float: left;
+	background-color: #fff;
+}
+.nav_bottom li:nth-child(1) img{
+	width:.42rem;
+}
+.nav_bottom li:nth-child(2) img{
+	width:.48rem;
+}
+.nav_bottom li:nth-child(3) img{
+	width:.37rem;
+}
+.nav_bottom li a{
+	display: block;
 }
 .nav_bottom li img{
-	width: 0.37rem;
-	height: 0.42rem;
+	height:.42rem;
 	display: block;
 	margin: 0 auto;
 	margin-top: 0.1rem;
+	margin-bottom: .12rem;
 }
 .nav_bottom li span{
 	display: block;
@@ -31,4 +47,91 @@
 }
 .lf{
 	float:left;
+}
+/*列表公共样式*/
+.four_container_item{
+ 	width:6.72rem;
+ 	height:2.8rem;
+ 	background-image: url(../images/resident/list-pic.png);
+ 	background-repeat: no-repeat;
+ 	background-size: 6.72rem 2.8rem;
+ 	margin-bottom:.32rem;
+ 	position: relative;
+ }
+.four_container_item:last-child{
+	margin-bottom:0;
+}
+ .four_container_item_address{
+ 	margin:.16rem 0 0 .12rem;
+ 	display: flex;
+ }
+.four_container_item_address .addr{
+	width:2.9rem;
+	height:.43rem;
+	color:#fff;
+	border-radius:.24rem;
+	font-family: PingFangSC-Regular;
+	font-size: .24rem;
+	border:none;
+	outline: none;
+	background-color:rgba(255,255,255,0.3);
+	background-image: url(../images/resident/list-location.png);
+	background-size: .2rem .27rem;
+	background-repeat: no-repeat;
+	background-position: .15rem .1rem;
+	text-align: -webkit-center;
+}
+.four_container_item_address .addr div{
+	margin-left:.3rem;
+}
+.four_container_item_bottom{
+	width:100%;
+	position: absolute;
+    top: 2.24rem;
+    text-align: -webkit-left;
+}
+.four_container_item_bottom span{
+	color:#fff;
+	font-size: .28rem;
+	font-family: PingFangSC-Medium;
+	margin-left:.24rem;
+	display: inline-block;
+}
+.four_container_item_more img{
+	width:.26rem;
+	height:.26rem;
+	margin:.12rem .24rem 0 .1rem;
+}
+.four_container_item_more span{
+	font-size: .22rem;
+}
+/*底部操作*/
+.msg_bottom{
+	width: 100%;
+	padding:1rem 0;
+}
+.msg_bottom li{
+	width:50%;
+	float: left;
+	text-align: -webkit-center;
+	display: inline-block;
+}
+.msg_bottom li p{
+	width:2.4rem;
+	height:.64rem;
+	line-height: .64rem;
+	font-family: PingFangSC-semibold;
+	font-size: .36rem;
+	border-radius: .3rem;
+	display: block;
+}
+.msg_bottom li:nth-child(1) p{
+	color:#3c7feb;
+	border:.04rem solid #3c7feb;
+	margin-left: .4rem;
+}
+.msg_bottom li:nth-child(2) p{
+	color:#ff1404;
+	border:.04rem solid #ff1404;
+	margin-right: .4rem;
 }
