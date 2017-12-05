@@ -2,6 +2,7 @@
 var loadFlag1 = true;
 $('.tab_switch_cont_detail').height($(window).height()-$('.tab_switch_ul').height());
 $('#news .swiper-container,#news .w').height($(window).height()-$('.tab_switch_ul').height());
+var oi=0;
 var mySwiper1 = new Swiper('#news .swiper-container',{
 	direction: 'vertical',
 	scrollbar: '#news .swiper-scrollbar',
@@ -32,6 +33,7 @@ var mySwiper1 = new Swiper('#news .swiper-container',{
 
 				},
 				error:function(){
+					alert(oi)
 					if(loadFlag1){
 						$(".loadtip p").show();
 						setTimeout(function() {
@@ -51,6 +53,7 @@ var mySwiper1 = new Swiper('#news .swiper-container',{
 							$(".loadtip p").hide();
 							mySwiper1.update(); // 重新计算高度;
 						}, 800);
+						oi++;
 					}else{
 						$(".loadtip p").show();
 						$(".loadtip p").html('没有更多啦！');
