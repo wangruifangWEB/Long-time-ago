@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>审核</title>
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/resident/my_application.css" />
+		<link rel="stylesheet" href="../css/manage/audit.css" />
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="audit_header">
+			<ul>
+				<li class="active">待审核</li>
+				<li>已审核</li>
+			</ul>
+		</div>
+		<div class="audit_container clearfix">
+			<!--筛选与搜索-->
+			<ul class="shaixuan">
+				<li class="audit_search">
+					<img src="../images/manage/search.png" alt="" />
+					搜索
+				</li>
+				<li class="audit_filter">
+					<img src="../images/manage/filter.png" alt="" />
+					筛选
+				</li>
+			</ul>
+			<!--下拉框内容筛选-->
+			<div class="audit_drop_down_list">
+				<div>
+					<ul>
+						<li class="choiced">选中标签</li>
+						<li class="normal">通用标签</li>
+						<li class="losed">失效标签</li>
+						<li class="choiced">选中标签</li>
+						<li class="choiced">选中标签</li>
+						<li class="choiced">选中标签</li>
+					</ul>
+				</div>
+				<button>确定</button>
+			</div>
+			<!--下拉框内容之搜索-->
+			<div class="audit_down_input">
+				<input type="text" placeholder="志愿者申请"/>
+				<button>取消</button>
+			</div>
+				
+			<div class="audit_list">
+				<div class="tab_container_list show">
+					<div class="tab_container_item">
+						<p><i class="yellow"></i>志愿者申请</p>
+						<span class="tab_time">申请时间： 2017年12月1日</span>
+						<span class="wait_audit">待审核</span>
+					</div>
+				
+					<div class="tab_container_item">
+						<p><i class="blue"></i>创建自组织申请</p>
+						<span class="tab_time">申请时间： 2017年12月1日</span>
+						<span  class="wait_audit">待审核</span>
+					</div>
+				
+					<div class="tab_container_item">
+						<p><i class="green"></i>自组织入驻申请</p>
+						<span class="tab_time">申请时间： 2017年12月1日</span>
+						<span class="wait_audit">待审核</span>
+					</div>
+				</div>
+				
+				<div class="tab_container_list">
+					<div class="tab_container_item">
+						<p><i class="yellow"></i>志愿者申请</p>
+						<span class="tab_time">申请时间： 2017年12月1日</span>
+						<span>审核状态：通过</span>
+					</div>
+				
+					<div class="tab_container_item">
+						<p><i class="blue"></i>创建自组织申请</p>
+						<span class="tab_time">申请时间： 2017年12月1日</span>
+						<span>审核状态：通过</span>
+					</div>
+				
+				</div>
+				
+			</div>
+		</div>
+		
+		<script src="../js/manage/audit.js"></script>
+	</body>
+</html>

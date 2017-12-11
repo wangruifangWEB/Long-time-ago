@@ -1,0 +1,82 @@
+body{
+	background-color:#f6f7fa !important;
+}
+.ap_container{
+	width:7.5rem;
+	overflow:hidden;
+}
+.tab_header{
+	width:100%;/* 顶部滑动要用*/
+	top: :0;
+	position: fixed;
+	z-index:100;
+	overflow-x: scroll;  
+    overflow-y: hidden; 
+}
+.tab_header ul{
+	height:.76rem;
+	line-height:.76rem;
+	text-align:center;
+	background-color: #fff;
+	width:630px; 
+	position: relative; 
+	display: flex;
+}
+.tab_header li{
+	width:1.87rem;
+	float:left;
+	color:#3a3a3a;
+	font-size: .3rem;
+	font-family: PingFangSC-Regular;
+}
+.tab_header .active{
+	color:#3c7feb;
+	border-bottom: .04rem solid #3c7feb;
+}
+.tab_container{
+	margin-top:.99rem;
+}
+.tab_container_list{
+	display: none;
+}
+.tab_container_item{
+	height:1.9rem;
+	margin-top:.32rem;
+	background-color: #fff;
+}
+.tab_container_item i{
+	width:.24rem;
+	height:.24rem;
+	border-radius: 50%;
+	display: inline-block;
+	margin-right:.24rem;
+}
+.tab_container_item i.yellow{
+	background-color:#ff943e;
+}
+.tab_container_item i.blue{
+	background-color:#2f40e5;
+}
+.tab_container_item i.green{
+	background-color:#55cc7a;
+}
+.tab_container_item p{
+	color:#3a3a3a;
+	font-size: .34rem;
+	font-weight: bold;
+	font-family: PingFangSC-Medium;
+	padding:.3rem 0 .24rem .24rem;
+}
+.tab_container_item span{
+	color:#abafbe;
+	font-size: .28rem;
+	font-family: PingFangSC-Regular;
+	display: block;
+	margin-left:.4rem;
+}
+.tab_container_item .tab_time{
+	margin-bottom: .24rem;
+}
+.show{
+	display: block;
+}
