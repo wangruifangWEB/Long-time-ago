@@ -104,10 +104,12 @@ input.teamArea, input.teamUit,
     top: -.1rem;
 }
 /*验证错误样式*/
-.form_error{
-	color:#fe6b6b !important;
-	border:.01rem solid #fd8585 !important;
+input.form_error{
+	border:.01rem solid #fd8585;
 	background:rgba(253,133,133,.2) !important;
+}
+input.form_error::-webkit-input-placeholder{
+	color:#fe6b6b;
 }
 /*插件重置*/
 .mui-poppicker{

@@ -29,5 +29,33 @@
 			</ul>
 			<div class="remove_btn">删除成员</div>
 		</div>
+		<!--弹框-->
+		<div class="layer_mask">
+			<div class="layer">
+				<p>将从成员<span>某某</span>从自组织删除，是否确认？</p>
+				<ul>
+					<li class="cancel">取消</li>
+					<li class="agree">同意</li>
+				</ul>
+			</div>
+		</div>
+		<script>
+			//设置高度
+			$('.layer_mask').height($(window).height());
+			//点击删除
+			$('.remove_btn').click(function(){
+				$('.layer_mask').show();
+				//点击取消，隐藏遮罩
+				$('.cancel').click(function(){
+					$('.layer_mask').hide();
+				});
+				//点击确认
+				$('.agree').click(function(){
+					$('.layer_mask').hide();
+					//ajax
+					window.location.href="personnel_management.html";
+				});
+			});
+		</script>
 	</body>
 </html>

@@ -12,6 +12,8 @@ body{
 	z-index:100;
 	overflow-x: scroll;  
     overflow-y: hidden; 
+    /*新添加*/
+    background: #fff;
 }
 .tab_header ul{
 	height:.76rem;
@@ -19,7 +21,8 @@ body{
 	text-align:center;
 	background-color: #fff;
 	width:630px; 
-	position: relative; 
+	position: relative;
+	/*新添加*/ 
 	display: flex;
 }
 .tab_header li{
@@ -28,6 +31,8 @@ body{
 	color:#3a3a3a;
 	font-size: .3rem;
 	font-family: PingFangSC-Regular;
+	/*新添加*/
+	display: inline-table;
 }
 .tab_header .active{
 	color:#3c7feb;

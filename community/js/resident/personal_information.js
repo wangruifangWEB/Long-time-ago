@@ -34,10 +34,10 @@ $(function(){
 	//判断及验证
 	 function set_Reg(selector,reg,testReg,empty,erro){
         if($(testReg).val() == null){
-           $(selector).attr('placeholder','').val(empty).addClass('form_error');
+           $(selector).attr('placeholder',empty).addClass('form_error');
             return false;
         }else if (!reg.test($(testReg).val())) {
-            $(selector).attr('placeholder','').val(erro).addClass('form_error');
+            $(selector).attr('placeholder',erro).addClass('form_error');
             return false;
         }else{
             $(selector).removeClass('form_error');
@@ -47,7 +47,7 @@ $(function(){
 	 //输入不能为空
 	function set_Null(selector,test,empty){
         if($(test).val() == '' || $(test).val() == null){
-            $(selector).attr('placeholder','').val(empty).addClass('form_error');
+            $(selector).attr('placeholder',empty).addClass('form_error');
             return false;
         }else{
             $(selector).removeClass('form_error');
@@ -86,6 +86,10 @@ $(function(){
 	
 	$(userId).focus(function(){
 	  	$(userId).val('').removeClass('form_error');
+	});
+	
+	$(address).focus(function(){
+	  	$(address).val('').removeClass('form_error');
 	});
 });
 

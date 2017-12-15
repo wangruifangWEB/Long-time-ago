@@ -1,4 +1,3 @@
-
 function biglv() {
 	document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
 }
@@ -37,9 +36,9 @@ $.fn.toggle = function( fn ) {
 
 // tab切换
 $(function(){
-	$('.tab_switch_ul li').click(function(){
-		var i=$('.tab_switch_ul li').index(this);
-		$('.tab_switch_ul li').eq(i).addClass('active').siblings().removeClass('active');
-		$('.tab_switch_cont_detail').eq(i).show().siblings().hide();
-	})
+	$('.tab_header ul li').click(function(){
+		var i=$('.tab_header ul li').index(this);
+		$('.tab_header ul li').eq(i).addClass('active').siblings().removeClass('active');
+		$('.tab_container .tab_container_list').eq(i).show().siblings().hide();
+	});
 })
