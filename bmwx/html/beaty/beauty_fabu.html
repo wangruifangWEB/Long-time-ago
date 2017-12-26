@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 40px;">
+
+<head>
+    <meta charset="UTF-8">
+    <title>最美巴马</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/jquery-weui.css">
+    <link rel="stylesheet" href="../../css/beauty/beauty_fabu.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/fastclick.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/jquery-weui.min.js"></script>
+</head>
+
+<body ontouchstart>
+    <!-- <div class="fabu_title">发布动态</div> -->
+    <ul class="fabu_title">
+        <li class="fabu_title_on"><img src="../../img/update_pic_on.png" alt=""><span>发图片</span></li>
+        <li><img src="../../img/update_video.png" alt=""><span>发视频</span></li>
+    </ul>
+    <div class="tabbar">
+        <div class="tabbar_img tabbar_info">
+            <div class="fabu_img_info">
+                <img src="../../img/beauty_pic_icon.png" class="icon" alt="">
+                <p>上传图片</p>
+                <input type="file" id="uploadImg" accept="image/*" >
+                <div class="mask"></div>
+                <img class="fabuImg" id="fabuImg" src="" />
+            </div>
+        </div>
+        <div class="tabbar_video tabbar_info">
+            <ul>
+                <li class="fabu_video_info">
+                    <div class="fabu_shipin_info">
+                        <img src="../../img/beauty_pic_icon.png" class="icon" alt="">
+                        <p>上传视频</p>
+                        <input type="file" id="uploadVideo" accept="video/*" >
+                        <div class="mask"></div>
+                        <video class="fabuVideo" id="fabuVideo" src="" />
+                    </div>
+                </li>
+                <li class="fabu_video_info">
+                    <div class="fabu_poster_info">
+                        <img src="../../img/beauty_poster_icon.png" class="icon" alt="">
+                        <p>上传视频封面</p>
+                        <input type="file" id="uploadPoster" accept="image/*" >
+                        <div class="mask"></div>
+                        <img class="fabuPoster" id="fabuPoster" src="" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="fabu_text">
+        <p class="fabu_text_notice">说点什么吧</p>
+        <p class="fabu_text_cont" contenteditable="true"></p>
+    </div>
+    <div class="operate">
+        <button id="confirm">发布</button>
+    </div>
+</body>
+<script>
+$('.fabu_title li').on('click',function(){
+    var i=$('.fabu_title li').index(this);
+    $('.tabbar .tabbar_info').eq(i).show().siblings().hide();
+    $('.fabu_title li').eq(i).addClass('fabu_title_on').siblings().removeClass('fabu_title_on');
+    if(i==0){
+        $('.fabu_title li:nth-child(1) img').attr('src','../../img/update_pic_on.png');
+        $('.fabu_title li:nth-child(2) img').attr('src','../../img/update_video.png');
+    }else{
+        $('.fabu_title li:nth-child(1) img').attr('src','../../img/update_pic.png');
+        $('.fabu_title li:nth-child(2) img').attr('src','../../img/updata_video_on.png');
+    }
+})
+$('#confirm').on('click',function(){
+    var uploadVideo=$('#uploadVideo').val();
+    var uploadImg=$('#uploadImg').val();
+    var uploadPoster=$('#uploadPoster').val();
+    if((uploadPoster && !uploadVideo)||(!uploadPoster && uploadVideo)){
+        alert('请同时上传视频和封面图片');
+        return;
+    }
+})
+$('.fabu_text').on('click', function() {
+    $('.fabu_text .fabu_text_notice').hide();
+    $('.fabu_text .fabu_text_cont').show();
+    $('.fabu_text .fabu_text_cont').focus();
+})
+// 上传图片
+document.getElementById('uploadImg').onchange = function() {
+    var strsrc=getObjectURL(this.files[0]);
+    $('#fabuImg').css('display','block');
+    $('#fabuImg').attr('src',strsrc);
+    $('.fabu_img_info .icon').attr('src','../../img/beauty_fabu_tab_icon.png');
+    $('.fabu_img_info .icon').css({'width':'1.2rem','height':'1.2rem'});
+    $('.fabu_img_info div.mask').css('display','block');
+    $('.fabu_img_info p').html('改变内容');
+    $('.fabu_img_info p').css('color','#ffffff');
+}
+// 上传视频
+document.getElementById('uploadVideo').onchange = function() {
+    var strsrc=getObjectURL(this.files[0]);
+    $('#fabuVideo').css('display','block');
+    $('#fabuVideo').attr('src',strsrc);
+    $('.fabu_video_info .fabu_shipin_info .icon').attr('src','../../img/beauty_fabu_tab_icon.png');
+    $('.fabu_video_info .fabu_shipin_info .icon').css({'width':'1.2rem','height':'1.2rem','top':'2.1rem'});
+    $('.fabu_video_info .fabu_shipin_info div.mask').css('display','block');
+    $('.fabu_video_info .fabu_shipin_info p').html('改变视频内容');
+    $('.fabu_video_info .fabu_shipin_info p').css({'color':'#ffffff'});
+}
+// 上传poster
+document.getElementById('uploadPoster').onchange = function() {
+    var strsrc=getObjectURL(this.files[0]);
+    $('#fabuPoster').css('display','block');
+    $('#fabuPoster').attr('src',strsrc);
+    $('.fabu_video_info .fabu_poster_info .icon').attr('src','../../img/beauty_fabu_tab_icon.png');
+    $('.fabu_video_info .fabu_poster_info .icon').css({'width':'1.2rem','height':'1.2rem','top':'2.1rem'});
+    $('.fabu_video_info .fabu_poster_info div.mask').css('display','block');
+    $('.fabu_video_info .fabu_poster_info p').html('改变视频封面内容');
+    $('.fabu_video_info .fabu_poster_info p').css({'color':'#ffffff'});
+}
+
+
+
+function getObjectURL(file) {
+    var url = null ; 
+    if (window.createObjectURL!=undefined) { // basic
+        url = window.createObjectURL(file) ;
+    } else if (window.URL!=undefined) { // mozilla(firefox)
+        url = window.URL.createObjectURL(file) ;
+    } else if (window.webkitURL!=undefined) { // webkit or chrome
+        url = window.webkitURL.createObjectURL(file) ;
+    }
+    return url;
+}
+</script>
+
+</html>

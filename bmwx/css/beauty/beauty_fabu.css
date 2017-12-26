@@ -1,0 +1,224 @@
+body{
+	background-color: #ededed;
+	height: 100%;
+}
+/* tab */
+.fabu_title{
+	width: 18.75rem;
+	height: 1.8rem;
+	text-align: center;
+	line-height: 1.8rem;
+	background-color: #ffffff;
+	border-bottom: solid 1px #ededed;
+	padding-top: 0.15rem;
+	padding-bottom: 0.15rem;
+}
+
+.fabu_title li{
+	width: 9.32rem;
+	font-size: 0.8rem;
+	color: #585e58;
+	float: left;
+	border-right: solid 0.05rem #ededed;
+}
+
+.fabu_title li:nth-child(1) img{
+	width: 1.2rem;
+	height: 0.8rem;
+	margin-right: 0.7rem;
+	margin-top: 0.5rem;
+}
+.fabu_title li:nth-child(2) img{
+	width: 1.175rem;
+	margin-top: 0.375rem;
+	height: 0.9rem;
+	margin-right: 0.7rem;
+}
+.fabu_title_on{
+	color: #20a86a !important;
+}
+
+/* 发布图片 */
+.fabu_img_info{
+	height: 10.2rem;
+	width: 18.75rem;
+	background-color: #ffffff;
+	margin-bottom: 0.45rem;
+	position: relative;
+	overflow: hidden;
+}
+.fabu_img_info div.mask{
+	display: none;
+	width: 15.65rem;
+	height: 10.2rem;
+	background-color: #000000;
+	opacity: 0.2;
+	position: absolute;
+	top: 0.525rem;
+	left: -7.825rem;
+	margin-left: 50%;
+}
+.fabu_img_info img.icon{
+	position: absolute;
+	top: 4.925rem;
+	width: 1.35rem;
+	height: 0.975rem;
+	display: block;
+	left: -0.675rem;
+	margin-left: 50%;
+	z-index: 10;
+}
+.fabu_img_info p{
+	position: absolute;
+	top: 5.825rem;
+	height: 1.9rem;
+	line-height: 1.9rem;
+	font-size: 0.7rem;
+	color: #444444;
+	width: 18.75rem;
+	text-align: center;
+	z-index: 10;
+}
+.fabu_img_info input{
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 18.75rem;
+	height: 10.2rem;
+}
+.fabu_img_info .fabuImg{
+	width: 15.65rem;
+	height: auto;
+	margin: 0.525rem auto 0;
+}
+/* 发布视频 */
+.tabbar_video{
+	width: 18.75rem;
+	height: 10.35rem;
+	background-color: #ffffff;
+	margin-bottom: 0.45rem;
+	display: none;
+}
+.tabbar_video ul{
+	padding-left: 1.35rem;
+}
+.fabu_video_info{
+	margin-right: 1.05rem;
+	margin-top: 1.8rem;
+	width: 7.5rem;
+	height: 6.75rem;
+	float: left;
+	background-color: #eeeeee;
+}
+
+.fabu_video_info input{
+	position: absolute;
+	top: 0;
+	width: 7.5rem;
+	height: 6.75rem;
+	opacity: 0;
+	z-index: 100;
+}
+.fabu_video_info div.mask{
+	width: 7.5rem;
+	height: 6.75rem;
+	background-color: #000000;
+	opacity: 0.2;
+	position: absolute;
+	top: 0;
+	z-index: 10;
+}
+.fabu_shipin_info,.fabu_poster_info{
+	position: relative;
+	width: 7.5rem;
+	height: 6.75rem;
+	overflow: hidden;
+}
+.fabu_shipin_info img.icon{
+	width: 1.35rem;
+	height: 0.975rem;
+	position: absolute;
+	top: 2.325rem;
+	left: -0.675rem;
+	margin-left: 50%;
+	z-index: 101;
+}
+.fabu_shipin_info p{
+	text-align: center;
+	width: 7.5rem;
+	position: absolute;
+	top: 3.675rem;
+	z-index: 100;
+}
+.fabu_poster_info img.icon{
+	width: 1.2rem;
+	height: 0.75rem;
+	position: absolute;
+	top: 2.55rem;
+	left: -0.6rem;
+	margin-left: 50%;
+	z-index: 101;
+}
+.fabu_poster_info p{
+	text-align: center;
+	width: 7.5rem;
+	position: absolute;
+	top: 3.75rem;
+	z-index: 100;
+}
+.fabuVideo,.fabuPoster{
+	width: 7.5rem;
+	height: 6.75rem;
+	display: none;
+}
+
+
+
+
+.fabu_text{
+	min-height: 2.4rem;
+	width: 18.75rem;
+	background-color: #ffffff;
+}
+.fabu_text .fabu_text_notice{
+	font-size: 0.7rem;
+	color: #787878;
+	line-height: 2.4rem;
+	text-align: center;
+}
+.fabu_text .fabu_text_cont{
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+	display: none;
+	color: #444444;
+	min-height: 0.9rem;
+	font-size: 0.7rem;
+	padding-left: 1.35rem;
+	padding-right: 1.3rem;
+	line-height: 0.9rem;
+	border: none;
+	outline: none;
+	word-break: break-all;
+}
+/* 底部操作 */
+.operate{
+	position: fixed;
+	bottom: 0;
+	width: 18.75rem;
+	height: 1.5rem;
+	background-color: #ffffff;
+	padding-top: 0.675rem;
+	padding-bottom: 0.675rem;
+	box-shadow: 0.2rem 0 0.2rem rgba(48,48,48,0.08);
+}
+.operate button{
+	width: 18.75rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	color: #272b26;
+	font-size: 0.75rem;
+	float: left;
+}
+

@@ -1,0 +1,64 @@
+/* 插件 */
+.index_plugin{
+	overflow: auto;
+}
+/* 轮播 */
+.swiper-container{
+	margin-top: 2.4rem;
+	height: 9.0rem;
+    width: 18.75rem;
+}
+.swiper-container img{
+	height: 9.0rem;
+    width: 18.75rem;
+}
+
+/* 加载刷新 */
+.active_detail{
+	background-color: #f0f0f0;
+	width: 18.75rem;
+	margin-bottom: 2.85rem;
+}
+.list_info{
+	height: 4.7rem;
+	width: 18.75rem;
+	border-bottom: solid 1px #f0f0f0;
+	background-color: #ffffff;
+}
+.list_info .list_left{
+	width: 6.8rem;
+	float: left;
+}
+.list_info .list_left img{
+	width: 5.6rem;
+	height: 3.4rem;
+	margin-top: 0.65rem;
+	margin-left: 1.2rem;
+}
+.list_info .list_right{
+	width: 11.0rem;
+	float: left;
+	padding-left: 0.75rem;
+}
+.list_info .list_right .list_right_title{
+	margin-top: 0.575rem;
+	height: 1.3rem;
+	line-height: 1.3rem;
+	color: #333;
+	font-size: 0.7rem;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.list_info .list_right .list_right_add,.list_info .list_right .list_right_time{
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	color: #838784;
+	font-size: 0.6rem;
+	height: 1.2rem;
+	line-height: 1.2rem;
+}
+.list_info .list_right .list_right_time{
+	padding-bottom: 0.45rem;
+}

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>我的徒步</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+        <link rel="stylesheet" href="../../css/css.css" />
+        <link rel="stylesheet" href="../../css/mui.picker.all.css" />
+        <script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
+        <link rel="stylesheet" href="../../single_css/global.css">
+        <style>
+            body {
+                background-color: #ececec;
+                overflow: scroll;
+                font-family: PingFangSC-Regular;
+            }
+            
+            .swiper-container,
+            .w {
+                height: 100vh;
+            }
+            
+            .outerScroller {
+                width: 7.5rem;
+                margin: 0 auto;
+            }
+            
+            .scroll {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            header{
+                position: fixed;
+            }
+            header img{
+                width: 0.2rem;
+                height: 0.35rem;
+                position: absolute;
+                top: 0.32rem;
+                left: 0.6rem;
+                z-index: 100;
+            }
+            header span{
+                width: 100%;
+                height: 0.98rem;
+                font-size: 0.37rem;
+                color: #3c3c40;
+                line-height: 0.98rem;
+                display: block;
+                text-align: center;
+            }
+            .init-loading img {
+                width: .32rem;
+                height: .32rem;
+                display: block;
+                margin: 0.05rem auto;
+            }
+            .init-loading p {
+                width: 7.5rem; 
+                padding-top: 0.1rem;
+                padding-bottom: 0.16rem;
+                font-size: 0.18rem;
+                color: #737670;
+                font-family: 'PingFangSC-Regular';
+                display: block;
+                text-align: center;
+            }
+            
+            .loadtip p {
+                font-size: 0.22rem;
+                height: 0.4rem;
+                line-height: 0.4rem;
+                position: fixed;
+                bottom: 0;
+                width: 7.5rem;
+                text-align: center;
+                background-color: #ececec;
+                color: #737670;
+            }
+
+            .list_ul{
+                background-color: #ececec; 
+                width: 7.5rem !important;
+            }            
+            .list_li{
+                background-color: #ffffff;
+                margin-bottom: .24rem;
+                padding: 0.32rem 0.32rem;
+            }
+            .list_li .list_left{
+                float: left;
+                width: 2.4rem;
+                height: 1.48rem;
+                margin-right: 0.24rem;
+            }
+            .list_li .list_left img{
+                width: 2.4rem;
+                height: 1.48rem;
+                box-shadow: 0 0px 8px rgba(253, 102, 60, 0.22);
+            }
+            .list_right p.list_title{
+                color: #25233a;
+                font-size: .34rem;
+                height: 0.8rem;
+                line-height: .4rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                margin-bottom: 0.1rem;
+            }
+            .list_right p.list_add,.list_right p.list_time{
+                padding: 0;
+                margin: 0 !important;
+                line-height: 0.32rem;
+                font-size: 0.2rem;
+                height: 0.28rem;
+                color: #919191;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="outerScroller">
+            <div class="scroll">
+                
+                <div class="team_list" id="swiper">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper w">
+                            <div class="swiper-slide d">
+                                <div class="init-loading list-group-item text-center" style="display: none;">
+                                    <img src="../../images/loading.gif" />
+                                    <p>释放加载</p>
+                                </div>
+                                <div class="swiper-container2">
+                                    <div class="swiper-slide list-group">
+                                        <ul class="list_ul">
+                                            <li class="list_li">
+                                                <div class="list_left">
+                                                    <img src="../../images/nvf.png" alt="" />
+                                                </div>
+                                                <div class="list_right">
+                                                    <p class="list_title">走进通州,为北京三大球加油11为北京三大球加油11</p>
+                                                    <p class="list_time">时间：<span>2016.10.08</span></p>
+                                                    <p class="list_add">地点：<span>通州大运河</span></p>
+                                                </div>
+                                            </li>
+                                            <li class="list_li">
+                                                <div class="list_left">
+                                                    <img src="../../images/nvf.png" alt="" />
+                                                </div>
+                                                <div class="list_right">
+                                                    <p class="list_title">走进通州,为北京三大球加油11为北京三大球加油11</p>
+                                                    <p class="list_time">时间：<span>2016.10.08</span></p>
+                                                    <p class="list_add">地点：<span>通州大运河</span></p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="loadtip">   
+                            <p>正在加载中...</p>
+                        </div>
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+                </div>
+            </div>
+            <button class="showFresh">刷新成功！</button>
+            <button class="showLoad">没有更多数据了！</button>
+        </div>
+        <script>
+            $('.back').click(function(){
+                history.go(-1);
+            })
+            var teampage = 1;
+            $('.active_list').height($(window).height() - $('header').height());
+            $('.swiper-container,.w').height($(window).height() - $('header').height());
+            var loadFlag = true;
+            var oi = 0;
+            var mySwiper = new Swiper('.swiper-container', {
+                direction: 'vertical',
+                scrollbar: '.swiper-scrollbar',
+                slidesPerView: 'auto',
+                mousewheelControl: true,
+                freeMode: true,
+                onTouchMove: function(swiper) { //手动滑动中触发
+                    var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+                    var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+                    if(mySwiper.translate < 50 && mySwiper.translate > 0) {
+                        $("#swiper .init-loading").hide();
+                        $("#swiper .init-loading img").attr('src','../../images/loading.png');
+                        $("#swiper .init-loading p").html('下拉刷新');
+                    }else if(mySwiper.translate > 50 ){
+                        $("#swiper .init-loading").show();
+                        $("#swiper .init-loading img").attr('src','../../images/loading.png');
+                        $("#swiper .init-loading p").html('释放刷新');
+                    }
+                },
+                onTouchEnd: function(swiper) {
+                    var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+                    var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+                    // 上拉加载
+                    if(mySwiper.translate <= _viewHeight - _contentHeight - 50 && mySwiper.translate < 0) {
+                        var type = "teamadd";
+                        $("#swiper .loadtip p").show();
+                        $.ajax({
+                            type: "post",
+                            url: "https://"+window.location.host+"/index.php/Home/User/ajaxMyteam",
+                            data:{teampage:teampage,type:type},
+                            success: function(data){
+                                var listData= eval('(' + data + ')');
+                                if(listData==""){
+                                    $('.showLoad').fadeIn();
+                                    setInterval(function(){
+                                        $('.showLoad').fadeOut();
+                                    },1500)
+                                    $("#swiper .loadtip p").hide();
+                                }else{
+                                    for(var i=0;i<listData.length;i++){
+                                        $('.list_ul').append(`
+                                            <li class="list_li">
+                                                <div class="list_left">
+                                                    <img src="../../images/nvf.png" alt="" />
+                                                </div>
+                                                <div class="list_right">
+                                                    <p class="list_title">走进通州,为北京三大球加油11为北京三大球加油11</p>
+                                                    <p class="list_time">时间：<span>2016.10.08</span></p>
+                                                    <p class="list_add">地点：<span>通州大运河</span></p>
+                                                </div>
+                                            </li>
+                                        `)
+                                    }
+                                    
+                                    $("#swiper .loadtip p").hide();
+                                    mySwiper.update(); // 重新计算高度;
+                                    teampage++;  
+                                }
+                            },
+                            error: function() {
+                                alert("加载失败，请稍后重试！");
+                                $("#swiper .loadtip p").hide();
+                            }
+                        })
+                    }
+                    //  刷新
+                    if(mySwiper.translate >= 50) {
+                        var type = "teamload";
+                        $.ajax({
+                            type: "post",
+                            url: "https://"+window.location.host+"/index.php/Home/User/ajaxMyteam",
+                            data:{type:type},
+                            success: function(data){
+                                var listData= eval('(' + data + ')');
+                                console.log(listData);
+                                if(listData==""){
+                                    $('.showFresh').html('暂无数据！');
+                                    $('.showFresh').fadeIn();
+                                    setInterval(function(){
+                                        $('.showFresh').fadeOut();
+                                    },1500)
+                                    $("#swiper .init-loading").hide();
+                                }else{
+                                    $("#swiper .init-loading img").attr('src','../../images/loading.gif');
+                                    $("#swiper .init-loading p").html('刷新中...');
+                                    setTimeout(function(){
+                                        $(".list_ul").empty();
+                                        for (var i = 0; i < listData.length; i++) {
+                                            $('.list_ul').append(`
+                                                <li class="list_li">
+                                                    <div class="list_left">
+                                                        <img src="../../images/nvf.png" alt="" />
+                                                    </div>
+                                                    <div class="list_right">
+                                                        <p class="list_title">走进通州,为北京三大球加油11为北京三大球加油11</p>
+                                                        <p class="list_time">时间：<span>2016.10.08</span></p>
+                                                        <p class="list_add">地点：<span>通州大运河</span></p>
+                                                    </div>
+                                                </li>
+                                            `)
+                                        };
+                                    },500)
+                                }
+                            },
+                            error: function() {
+                                alert("加载失败，请稍后重试！");
+                                $('#swiper .init-loading').hide();
+                            }
+                        })
+                    }else if(mySwiper.translate >= 0 && mySwiper.translate < 50){
+                        $(".init-loading").hide();
+                    }
+                    return false;
+                }
+            });
+            var mySwiper2 = new Swiper('.swiper-container2', {
+                onTransitionEnd: function(swiper) {
+                    $('.swiper-container2 .swiper-slide-active').css('height', 'auto').siblings('.swiper-slide').css('height', '0px');
+                    mySwiper.update();
+                    $('.tab a').eq(mySwiper2.activeIndex).addClass('active').siblings('a').removeClass('active');
+                }
+
+            });
+            
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的徒步</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/css.css" />
+		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="../../single_css/global.css">
+		<style type="text/css">
+			body{
+				background-color: #EFEFF4;
+				height: 100%;
+				width: 7.5rem;
+			}
+			form{
+				width: 7.5rem;
+				background-color: #ffffff;
+				padding-bottom: 0.56rem; 
+			}
+			.ul_warp{
+				width: 7.5rem;
+				padding-top: 0.6rem;
+			}
+			.li_list{
+				display: flex;
+				height: 0.72rem;
+				margin-bottom: 0.6rem;
+			}
+			.li_list span{
+				display: block;
+				font-size: 0.32rem;
+				color: #444444;
+				height: 0.72rem;
+				line-height: 0.72rem;
+				padding-left: 0.6rem;
+				padding-right: 0.26rem;
+			}
+			.li_list .input_warp{
+				height: 0.68rem;
+				line-height: 0.68rem;
+				display: block;
+				border: 0.02rem solid #cccccc;
+				width: 4.26rem;
+				font-size: 0.28rem;
+			}
+			.li_list .input_warp input{
+				display: block;
+				height: 0.4rem;
+				line-height: 0.4rem;
+				margin-top: 0.14rem;
+				padding-left: 0.14rem;
+				display: block;
+				border: none;
+				outline: none;
+				color: #ababab;
+				width: 4.2rem;
+				font-size: 0.28rem;
+			}
+			.li_list img{
+				display: none;
+				width: 0.4rem;
+				height: 0.4rem;
+				margin-top: 0.1rem;
+				margin-left: 0.2rem;
+			}
+			.confirm{
+				font-size: 0.32rem;
+				color: #ffffff;
+				height: 0.82rem;
+				line-height: 0.82rem;
+				width: 4.26rem;
+				text-align: center;
+				background-color: #60d449;
+				margin: 0.72rem auto 0;
+				display: block;
+			}
+			.layer{
+				display: none;
+				padding: 0.24rem 0.48rem;
+				background-color: #000000;
+				opacity: 0.8;
+				font-size: 0.32rem;
+				color: #ffffff;
+				border:  none;
+				outline: none;
+				border-radius: 0.16rem;
+				transform: translate(-50%,-50%);
+				position: absolute;
+				bottom: 4.0rem;
+				left: 50%;
+			}
+		</style>
+	</head>	
+	<body>
+		<div class="outerScroller">
+			<div class="scroll">
+				<form action="">
+					<ul class="ul_warp">
+						<li class="li_list">
+							<span>真实姓名</span>
+							<div class="input_warp">
+								<input type="text" value="" name="user">
+							</div>
+							<img src="../../images/notice_error.png" alt="" >
+						</li>
+						<li class="li_list">
+							<span>电话号码</span>
+							<div class="input_warp">
+								<input type="text" value="" name="tel">
+							</div>
+							<img src="../../images/notice_error.png" alt="">
+						</li>
+						<li class="li_list">
+							<span>身份证号</span>
+							<div class="input_warp">
+								<input type="text" value="" name="idCard">
+							</div>
+							<img src="../../images/notice_success.png" alt="">
+						</li>
+					</ul>
+					<button class="confirm">确认申请</button>
+				</form>
+				
+			</div>
+		</div>
+		<div class="box-transparent"></div><br />
+		<button class="layer"></button>
+		<script type="text/javascript">
+			var reg_user=/^(((\s?[\u4e00-\u9fa5]+\s?)+)|([a-zA-Z]+\s?)+)$/;
+			var reg_tel=/^1[3|4|5|8][0-9]\d{4,8}$/;
+			var reg_idCard=/^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$|^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/;
+
+			$('input').each(function(){
+				$('input').focus(function(){
+					$(this).parent().siblings('img').hide();
+				})
+			})
+			$('.confirm').on('click',function(event) {
+				event.preventDefault();
+				if(!reg_user.test($('input[name=user]').val())){
+					
+					$('input[name=user]').parent().siblings('img').show().attr('src','../../images/notice_error.png');
+				}else{
+					$('input[name=user]').parent().siblings('img').show().attr('src','../../images/notice_success.png');
+				}
+				if(!reg_tel.test($('input[name="tel"]').val())){
+					$('input[name=tel]').parents('div').siblings('img').show().attr('src','../../images/notice_error.png');
+				}else{
+					$('input[name=tel]').parents('div').siblings('img').show().attr('src','../../images/notice_success.png');
+				}
+				if(!reg_idCard.test($('input[name="idCard"]').val())){
+					$('input[name=idCard]').parents('div').siblings('img').show().attr('src','../../images/notice_error.png');
+				}else{
+					$('input[name=idCard]').parents('div').siblings('img').show().attr('src','../../images/notice_success.png');
+				}
+				if((!reg_user.test($('input[name=user]').val()))||(!reg_tel.test($('input[name="tel"]').val()))||(!reg_idCard.test($('input[name="idCard"]').val()))){
+					$('.layer').html('信息输入错误');
+					$('.layer').fadeIn();
+					setTimeout(function(){
+						$('.layer').fadeOut();
+					},1500)
+					return false;
+				}
+				alert('提交成功');
+			})
+		</script>
+	</body>
+</html>

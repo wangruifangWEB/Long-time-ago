@@ -1,8 +1,8 @@
 {
     "pages": [
+        "pages/personal/personal",
         "pages/health/health",
-        "pages/mywalk/mywalk",
-        "pages/personal/personal"
+        "pages/mywalk/mywalk"
     ],
     "window": {
         "backgroundTextStyle": "light",

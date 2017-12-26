@@ -1,0 +1,55 @@
+body{
+	background-color: #e9e9e9;
+}
+.weui-search-bar__form input{
+	color: #bab9b9;
+}
+.weui-search-bar{
+	box-shadow: none;
+}
+/* 热门 */
+.search_warp{
+	background-color: #ffffff;
+}
+.search_title{
+	width: 16.5rem;
+	margin-top: 2.4rem;
+	height: 2.45rem;
+	line-height: 2.45rem;
+	padding-left: 2.25rem;
+	font-size: 0.7rem;
+	color: #444343;
+	border-top: solid 1px #e9e9e9;
+}
+.search_cont{
+	width: 17.55rem;
+	margin: 0 auto;
+
+}
+.search_cont .search_list{
+	border-top: solid 1px #e9e9e9;
+	line-height: 2.3rem;
+	height: 2.3rem;
+	padding-left: 1.65rem;
+	font-size: 0.7rem;
+}
+.search_cont .search_list img{
+	width: 0.85rem;
+	height: 0.85rem;
+	margin-top: 0.7rem;
+	margin-left: 0.45rem;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+　　color:#9b9999;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+　　color:#9b9999;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color:#9b9999;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+	color:#9b9999;
+}

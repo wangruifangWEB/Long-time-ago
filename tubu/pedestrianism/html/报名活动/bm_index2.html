@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="UTF-8">
 		<title>我的徒步</title>
@@ -9,83 +8,411 @@
 		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
 		<link rel="stylesheet" href="../../css/css.css" />
 		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/swiper.min.js"></script>
 		<script src="../../js/fontSize.js" type="text/javascript" charset="utf-8"></script>
-		<link rel="stylesheet" href="../../single_css/global.css">
-		<link rel="stylesheet" href="../../single_css/bm_index2.css">
-		<link rel="stylesheet" href="../../single_js/bm_index.js">
-		<style>
-			.bm_txt{
-				height: 0.88rem;
-			}
-			.bm_info{
-				width: 6.24rem;
-				height: 1.2rem;
-				padding-left: 0.16rem;
-				overflow: hidden;
+		<!--<link rel="stylesheet" href="../../single_css/global.css">-->
+		<style>	
+			body,html {
+				/*height: 100%;*/
+				background: #EFEFF4;
+				overflow-x: hidden;
+				font-family: PingFangSC-Medium;
+			}			
+			header {
+				width: 7.5rem;
+				margin-left: -3.75rem;
+				left: 50%;
+				position: fixed;
+				z-index: 100000;
+			}		
+			.center {
+				width: 7.5rem;
+				margin-left: -3.75rem;
+				left: 50%;
+				position: absolute;
+			}			
+			.outerScroller {
+				width: 7.5rem;	
 				margin: 0 auto;
-				background-color: #f6f6f6;
+			}			
+			.scroll {
+				position: relative;
+				overflow: hidden;
 			}
-			.bm_info li{
-				font-size: 0.26rem;
-				color: #595959 !important;
+			/* 报名信息 */
+			.bm_txt{
+				color:#595959;
+				height:1.06rem;
+				
+				/*line-height:.38rem;*/
+				font-family: PingFangSC-Light;
+				line-height:.37rem;
+				/*border:1px solid #fff;*/
+				background: none;
+				padding:0 .16rem;
+				padding-right: 0;
+				background: #f6f6f6;
+				box-shadow: none;
+				padding-top: 0.12rem;
+				padding-bottom: 0.12rem;
+				border-top: solid 0.01rem #d8d8d8;
+			}
+			.bm_txt li{
+				float:left;
 				height: 0.37rem;
 				line-height: 0.37rem;
-				color: #8e8e8e;
-				width: 6.08rem;
-				overflow: hidden;
-				text-overflow:ellipsis;
-				white-space: nowrap;
+				font-size: .26rem;	    	
 			}
+			.bmfy{
+				width: 3.2rem;
+				padding-bottom: 0.16rem;
+			}
+			.bm_txt li span{
+				color: #f69200;
+			}
+				
+			.zmtp_list {
+				width: 7.5rem;
+				padding: .24rem .69rem;
+				height: 6.24rem;
+				/*border:1px solid red;*/
+			}			
+			.zmtp_list ul li img {
+				width: 2rem;
+				height: 2rem;
+				float: left;
+				margin: 0 .06rem .06rem 0;
+			}			
+			.clearfloat {
+				content: '';
+				display: block;
+				clear: both;
+			}			
+				
+			/*简介*/		
+			.intro_portal {
+				width: 7.5rem;
+				height: 1.09rem;
+				/*margin-bottom: 0.16rem;*/
+				background-color: #F6F6F6;
+				border-bottom: 1px solid #E9E9E9;
+			}			
+			.intro_portal .title {
+				padding-left: 0.24rem;
+				padding-right: 0.24rem;
+				height: 0.77rem;
+			}			
+			.intro_portal .title span {
+				color: #25233A;
+				margin-top: 0.32rem;
+				font-size: 0.32rem;
+				line-height: 0.45rem;
+				height: 0.45rem;
+				float: left;
+				font-weight: bold;
+				font-family: PingFangSC-Medium, sans-serif;
+			}			
+			.intro_portal .title img {
+				float: left;
+				margin-right: 0.24rem;
+				width: 0.14rem;
+				height: 0.28rem;
+				margin-top: .41rem;
+			}			
+			.intro_addr {
+				width: 7.5rem;
+				line-height: .32rem;
+				border-bottom: #fff;
+				padding-top: .32rem;
+				background-color: #F6F6F6;
+				padding-bottom: .32rem;
+				padding-left: .24rem;
+			}	
+			.intro_addr span {
+				font-weight: bold;
+			}	
+			.intro_addr p {
+				color: #595959;
+				line-height: .45rem;
+				font-size: .32rem;
+				font-family: PingFangSC-Light, sans-serif;
+			}			
+			.intro_addr .intro_title {
+				color: #25233A;
+				font-size: .37rem;
+				line-height: .52rem;
+				margin-bottom: .05rem;
+				font-weight: bold;
+				font-family: PingFangSC-Medium, sans-serif;
+			}					
+			.itro_txt {
+				border-top: 1px solid #D8D8D8;
+				background-color: #F6F6F6;
+				padding: .24rem;
+			}			
+			.itro_txt p {
+				color: #25233A;
+				font-size: .32rem;
+				font-family: PingFangSC-Regular;
+				line-height: .48rem;
+			}	
+			#dingwei{
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: #F6F6F6;
+				width: 100%;
+			}								
+			.talk_message{
+				margin-top: .32rem;
+				/*top: 5.22rem;*/
+				width: 7.5rem;
+				/*left: 7.5rem;*/
+				background-color: #F6F6F6;
+				position: relative;
+				padding-top:.98rem;
+			}			
+			.talk_message_title {
+				width: 7.5rem;
+				height: 0.88rem;
+				position: relative;
+				padding-top: 0.24rem;
+				padding-bottom: 0.24rem;
+				box-shadow: 0 0.02rem 0.03rem #f6f6f6;
+				border-bottom: solid 1px #D8D8D8;
+			}			
+			.talk_message_ul {
+				width: 7.5rem;
+				height: auto;
+			}			
+			.talk_message_ul li:nth-child(1) {
+				border-bottom: none;
+			}			
+			.talk_message_list {
+				width: 7.5rem;
+				border-bottom: solid 1px #D8D8D8;
+				clear: both;
+			}			
+			.talk_message_list_left {
+				margin-left: 0.24rem;
+				width: 0.64rem;
+				height: 0.64rem;
+				border-radius: 50%;
+				margin-right: 0.25rem;
+				float: left;
+			}			
+			.talk_message_list_left img {
+				width: 0.64rem;
+				height: 0.64rem;
+			}			
+			.talk_message_list_right{
+				float: left;
+				padding-right: 0.24rem;
+				width: 6.37rem;
+				margin-bottom:0.24rem;
+			}			
+			.talk_message_list_right_name {
+				margin-top: 0.32rem;
+				height: 0.45rem;
+				line-height: 0.45rem;
+				font-family: PingFangSC-Medium;
+				color: #25233A;
+				font-size: 0.32rem;
+				font-weight: bold;
+			}			
+			.talk_message_list_right_detail {
+				margin-top: 0.16rem;
+				/*margin-bottom: 0.24rem;*/
+				color: #25233A;
+				font-size: 0.32rem;
+				line-height: 0.45rem;
+				font-family: PingFangSC-Regular;
+			}							
+			.bg123 {
+				z-index: 1000000;
+			}			
+			.footer {
+				width: 7.5rem;
+				left: 50%;
+				margin-left: -3.75rem;
+				z-index: 100;
+			}			
+			.botton_center li {
+				width: 50%;
+			}			
+			.botton_center a {
+				font-weight: bold;
+			}			
+			.bottom_border {
+				border-bottom: 1px solid #D8D8D8;
+				text-align: center;
+				z-index:10;
+			}			
+			.bottom_border li {
+				text-align: -webkit-center;
+				width: 3.74rem;
+				border: none;
+			}
+			.bottom_border li.on3{
+				width: 3.76rem;
+				text-align: -webkit-center;
+				background-image: url(../../images/alert_bg.png);
+				background-position: center left;
+				background-size: 0.03rem 0.98rem;
+				background-repeat: no-repeat;
+			}
+			.bottom_border span {
+				display: block;
+				color: #595959;
+				float: left;
+				margin-top: 0.2rem;
+				margin-left: .1rem;
+				font-size: .32rem;
+				font-family: PingFangSC-Light;
+				font-weight: none;
+				line-height: .45rem;
+			}			
+			.bottom_border li img {
+				display: block;
+				width: 0.48rem;
+				height: 0.48rem;
+				margin-top: 0.2rem;
+			}			
+			.on2 img {
+				float: left;
+				margin-left: 40%;
+			}			
+			.tab-nmb-hover {
+				position: fixed;
+				left: 0;
+				top: 0.98rem;
+				width: 100%;
+			}
+			/* 输入部分 */
+           	.read_cont{
+           		width: 7.5rem;
+           		position: fixed;
+           		z-index: 1000;
+           		background-color: #f6f6f6;
+           	}
+           	.soll{
+            	width: 7.02rem;
+            }
+			.read_cont .read_cont_detail{
+				width:7.5rem;
+				border: none;
+				resize: none;
+				background: #f6f6f6;
+				padding:.24rem .24rem;
+				overflow-x: hidden;
+				font-size: 0.32rem;
+				color: #25233a;
+				line-height: 0.45rem;
+				font-family: PingFangSCa-Regular;
+				height: 100%;
+			}
+			.talk_message_cont{
+				width: 7.5rem;
+				height: 0.88rem;
+				position: relative;
+				padding-top: 0.2rem;
+				padding-bottom: 0.2rem;
+				box-shadow: 0 0.02rem 0.03rem #f6f6f6;
+				border-bottom: solid 1px #D8D8D8;
+			}			
+			.talk_message_cont_return{
+				margin: 0 auto;
+				position: absolute;
+				left: 0.24rem;
+				width: 0.25rem;
+				height: 0.48rem;
+				background-image: url(../../images/return2.png);
+				background-position: 0 0;
+				background-repeat: no-repeat;
+				background-size: 0.25rem 0.48rem;
+			}			
+			.talk_message_cont_notice{
+				margin: 0 auto;
+				width: 0.48rem;
+				height: 0.48rem;
+				background-image: url(../../images/qr-d-1.png);
+				background-position: 0 0;
+				background-repeat: no-repeat;
+				background-size: 0.48rem 0.48rem;
+			}			
+			.talk_message_cont_send{
+				position: absolute;
+				width: 0.48rem;
+				height: 0.44rem;
+				right: .24rem;
+				top: 0.2rem;
+				background-image: url(../../images/send.png);
+				background-position: 0 0;
+				background-repeat: no-repeat;
+				background-size: 0.48rem 0.44rem;
+			}
+			/*回复  点赞 模块*/
+			.talk_message_list_right_huifu{
+				margin-top: 0.08rem;
+				color: #25233A;
+				font-size: 0.32rem;
+				line-height: 0.45rem;
+				font-family: PingFangSC-Regular;
+			}
+			.talk_message_list_right_huifu span{
+				color: #25233A;
+				font-size: 0.32rem;
+				font-weight: bold;
+				font-family: PingFangSC-Medium;
+			}
+			.talk_message_list_right 
+			.user_good,
+			.user_good_qx{
+				float:right;
+				margin-top: -.85rem;
+				margin-right: .39rem;
+			}
+			
+			.talk_message_list_right .user_good img{
+				margin-top: -0.4rem;
+			}
+			.talk_message_list_right span img{
+				width:.48rem;
+				height:.48rem;
+			}
+			.talk_message_list_right i{
+				font-size:.37rem;
+				font-family: PingFangSC-Medium;
+				color:#f69200;
+				left:.16rem;
+				position: relative;
+				top: -.05rem;
+			}		
 		</style>
-	</head>	
+	</head>
+
 	<body>
 		<div class="outerScroller">
 			<div class="scroll">
 				<header>
 					<div class="d-title">
 						<a href="#">
-							<img src="../../images/cd.png" alt="">
+							<img src="../../images/cd.png" alt="" />
 						</a>
-						<span>徒步活动</span>
+						<span>我的订阅</span>
 					</div>
 				</header>
-				<section class="zsec-bg zsec-bottom bm-bg">
-					<div class="z-boxbg z-boxbg2">
-						<ul>
-							<li>
-								<div class="z-boxl  z-box1-col">
-									<div class="z-boxl1">
-										<h4>
-											<p>北京市</p>
-											<p>奥林匹克森林公园</p>
-										</h4>
-										<h5>2017.04.19</h5>
-									</div>
-									<div class="z-boxl2">
-										<h2>1686</h2>
-										<p>报名人数</p>
-									</div>
-									<div class="z-boxl2">
-										<h2>354</h2>
-										<p>评论</p>
-									</div>
-								</div>
-								<div class="z-boxr">
-									<img class="z-boxr-bg" src="../../images/z-hu_03.jpg" alt="">
-								</div>
-							</li>
-						</ul>
+
+				<section class="zsec-bg">
+					<div class="z-bg">
+						<img src="../../images/wddy_bg.png" alt="" />
 					</div>
-					<div class="z-tab">
-						<div class="first">
-							<a href="#">个人报名</a>
-						</div>
-						<div class="second">
-							<a href="#" class="">团体报名</a>
-						</div>
+
+					<div class="intro_addr">
+						<p class="intro_title">走进通州，为北京三大球加油！</p>
+						<p>已报名人数：<span>68860</span></p>
 					</div>
-					<button class="download">下载模板</button>
-					<div class="bm_txt z-tab">
+					<div class="bm_txt">
 						<ul>
 							<li class="bmfy">报名费用：<span>50¥/人</span></li>
 							<li>(包含保险费用)</li>
@@ -93,37 +420,230 @@
 							<li>额定报名人数:<span>1000人</span></li>				
 						</ul>
 					</div>
-					<ul class="bm_info">
-						<li>渤海财产保险股份有限公司北京分公司</li>
-						<li>投保咨询电话：<span>82292277</span><span style="padding-left: 0.25rem">13581777077</span></li>
-						<li>咨询人：<span>所雅然</span></li>
-					</ul>
-					<div class="z-tabdivs">
-						<div class="z-dz">
-							追求，所以选择;因为选择，所以坚持;因为坚持，所以奋进。
-							 选择了，就要去坚持。 拉练对一个人来说，是痛苦的。炎炎的烈日，拥挤的交通，荒芜的道路，长途的距离，未知的环境等诸多因素      都会成为我们作出选择的心理障碍。很多时候，并不是因为事情难，我们不敢做，而是因为我们不敢做，事情才难的。能够作出选择，已经是跨出了一大步，很了不起。<</-->
-							追求，所以选择;因为选择，所以坚持;因为坚持，所以奋进。 选择了，就要去坚持。 拉练对一个人来说，是痛苦的。炎炎的烈日，拥挤的交通，荒芜的道路，长途的距离，未知的环境等诸多因素      都会成为我们作出选择的心理障碍。很多时候，并不是因为事情难，我们不敢做，而是因为我们不敢做，事情才难的。能够作出选择，已经是跨出了一大步，很了不起。
-							
-						</div>
-						
+					<div class="itro_txt">
+						<p>
+							因为追求，所以选择；因为选择，所以坚持；因为坚持，所以奋进。 选择了，就要去坚持。拉练对一个人来说，是及其拥挤的，拥挤的交通， 荒芜的道路，恶劣的环境等诸多因素，都会成为我们作出选择的心理障碍。 很多时候，并不是因为事情难，我们不敢做，而是因为我们不敢做，事情才难的， 能够作出选择，已经是跨越心理障碍了。。。 因为追求，所以选择；因为选择，所以坚持；因为坚持，所以奋进。 选择了，就要去坚持。拉练对一个人来说，是及其拥挤的，拥挤的交通， 荒芜的道路，恶劣的环境等诸多因素，都会成为我们作出选择的心理障碍。
+						</p>
+					</div>
+					<!-- 评论 -->
+					<div class="talk_message">
+						<ul class="bottom botton_center bottom_border" id="dingwei">
+							<li class="on2">
+								<img src="../../images/qr-d-1.png" alt="" data="../../images/qr-d-2.png"><span>(300)</span>
+							</li>
+							<li class="on3">
+								<img src="../../images/qr-c-1.png" alt="" data="../../images/qr-c-2.png">
+							</li>
+						</ul>
+
+						<ul class="talk_message_ul">
+							<li class="talk_message_list">
+								<div class="talk_message_list_left">
+									<img src="../../images/z-moon.png" alt="" />
+								</div>
+								<div class="talk_message_list_right">
+									<p class="talk_message_list_right_name">拔剑乌托邦</p>
+									<span class="user_good"><img src="../../images/pr-e-1.png" alt="" data="../../images/pr-e-3.png"/><i class="dianz" style="display:none">8</i></span>	
+									<p class="talk_message_list_right_detail">写的很好，遗憾未能参见！</p>
+									<p class="talk_message_list_right_huifu"><span>再见明月</span>回复<span>披剑乌托邦：</span>可惜，我也没去。</p>
+								</div>
+							</li>
+							<li class="talk_message_list">
+								<div class="talk_message_list_left">
+									<img src="../../images/z-moon.png" alt="" />
+								</div>
+								<div class="talk_message_list_right">
+									<p class="talk_message_list_right_name">再见流月</p>
+									<span class="user_good_qx"><img src="../../images/pr-e-3.png" alt="" data="../../images/pr-e-1.png"/><i class="dianz">8</i></span>	
+									<p class="talk_message_list_right_detail">写的很好，遗憾未能参见！</p>
+								</div>
+							</li>
+							<li class="talk_message_list">
+								<div class="talk_message_list_left">
+									<img src="../../images/z-moon.png" alt="" />
+								</div>
+								<div class="talk_message_list_right">
+									<p class="talk_message_list_right_name">我在乎么</p>
+									<p class="talk_message_list_right_detail">写的很好，遗憾未能参见！</p>
+								</div>
+							</li>
+							<li class="talk_message_list">
+								<div class="talk_message_list_left">
+									<img src="../../images/z-moon.png" alt="" />
+								</div>
+								<div class="talk_message_list_right">
+									<p class="talk_message_list_right_name">拔剑乌托邦</p>
+									<p class="talk_message_list_right_detail">写的很好，遗憾未能参见！</p>
+								</div>
+							</li>
+							<li class="talk_message_list">
+								<div class="talk_message_list_left">
+									<img src="../../images/z-moon.png" alt="" />
+								</div>
+								<div class="talk_message_list_right">
+									<p class="talk_message_list_right_name">拔剑乌托邦</p>
+									<p class="talk_message_list_right_detail">写的很好，遗憾未能参见！</p>
+								</div>
+							</li>
+							<li class="talk_message_list">
+								<div class="talk_message_list_left">
+									<img src="../../images/z-moon.png" alt="" />
+								</div>
+								<div class="talk_message_list_right">
+									<p class="talk_message_list_right_name">拔剑乌托邦</p>
+									<p class="talk_message_list_right_detail">写的很好，遗憾未能参见！</p>
+								</div>
+							</li>
+							<li class="talk_message_list">
+								<div class="talk_message_list_left">
+									<img src="../../images/z-moon.png" alt="" />
+								</div>
+								<div class="talk_message_list_right">
+									<p class="talk_message_list_right_name">拔剑乌托邦</p>
+									<p class="talk_message_list_right_detail">写的很好，遗憾未能参见！</p>
+								</div>
+							</li>
+							<li class="talk_message_list">
+								<div class="talk_message_list_left">
+									<img src="../../images/z-moon.png" alt="" />
+								</div>
+								<div class="talk_message_list_right">
+									<p class="talk_message_list_right_name">拔剑乌托邦</p>
+									<p class="talk_message_list_right_detail">写的很好，遗憾未能参见！</p>
+								</div>
+							</li>
+							<li class="talk_message_list">
+								<div class="talk_message_list_left">
+									<img src="../../images/z-moon.png" alt="" />
+								</div>
+								<div class="talk_message_list_right">
+									<p class="talk_message_list_right_name">拔剑乌托邦</p>
+									<p class="talk_message_list_right_detail">写的很好，遗憾未能参见！</p>
+								</div>
+							</li>
+							<li class="talk_message_list">
+								<div class="talk_message_list_left">
+									<img src="../../images/z-moon.png" alt="" />
+								</div>
+								<div class="talk_message_list_right">
+									<p class="talk_message_list_right_name">拔剑乌托邦</p>
+									<p class="talk_message_list_right_detail">写的很好，遗憾未能参见！</p>
+								</div>
+							</li>
+						</ul>
+						<div class="swiper-scrollbar"></div>
 					</div>
 				</section>
-				<div class="z-alert">
-					<ul>
+				
+				<footer class="footer">
+					<ul class="bottom botton_center">
 						<li>
-							<a href="#" class="active">徒步活动</a>
+							<a href="bm_model.html">下载团队报名模板</a>
 						</li>
 						<li>
-							<a href="#">最美徒步</a>
-						</li>
-						<li>
-							<a href="#">健康指导</a>
+							<a href="bm_choose.html" id="submit">报名</a>
 						</li>
 					</ul>
-				</div>
+				</footer>				
+				<div class="box-transparent"></div>
 			</div>
-		</div>
-		<div class="box-transparent"></div>
-		
+			
+			<div class="z-alert">
+					<ul>
+						<li>
+							<a href="#" class="active"><img src="../../images/list-a-1.png" alt="" class="nm" /><img src="../../images/list-a-2.png" class="zx" />徒步活动</a>
+						</li>
+						<li>
+							<a href="#"><img src="../../images/list-b-1.png" alt="" class="nm" /><img src="../../images/list-b-2.png" class="zx" />徒步活动</a>
+						</li>
+						<li>
+							<a href="#"><img src="../../images/list-c-1.png" alt="" class="nm" /><img src="../../images/list-c-2.png" class="zx" />徒步活动</a>
+						</li>
+						<li>
+							<a href="#"><img src="../../images/list-d-1.png" alt="" style="width: .32rem;height: .48rem;margin-left: 0.05rem;" class="nm" /><img src="../../images/list-d-2.png" class="zx" />徒步活动</a>
+						</li>
+					</ul>
+			</div>
+				
+			<div class="bg123">
+				<img src="../../images/xd-xw1.png" />
+			</div>
+					
+			<div class="read_cont">
+				<div class="talk_message_cont">
+					<div class="talk_message_cont_return"></div>
+					<div class="talk_message_cont_notice"></div>
+					<div class="talk_message_cont_send"></div>
+				</div>
+				<textarea class="read_cont_detail" id="textfocus" autofocus="autofocus"></textarea>
+			</div>
+			
+		<script>				
+			var winHeight=$(window).height();
+			$('.talk_message').height($(document).height()-winHeight-40);
+			$('.read_cont').height($(window).height()-$('header').height());
+			$('.read_cont').css('top',$(window).height());
+	
+			//固定信息编辑内容
+			$(function() {
+				var elm = $('#dingwei'); //需要定位的类名
+				var startPos = $(elm).offset().top-60;
+				$.event.add(window, "scroll", function() {
+					var p = $(window).scrollTop();
+					$(elm).css('position', ((p) > startPos) ? 'fixed' : 'absolute');
+					$(elm).css('top', ((p) > startPos) ? $("header").height() : '');
+				});
+			});
+			
+			$('.on2').click(function(){
+				$('.read_cont').animate({'top':'0.98rem'});
+				$('.read_cont').css('overflow-y','hidden');
+				document.getElementById("textfocus").focus();
+				$('.read_cont_detail').val('');
+			});
+			$('.talk_message_cont_send').click(function(){
+				$('.read_cont').animate({'top':winHeight});
+				$('.read_cont_detail').val('');
+			});
+			$('.talk_message_cont_return').click(function(){
+				$('.read_cont').animate({'top':winHeight});
+				$('.read_cont_detail').val('');
+			});
+			$('.intro_detail_portal_click').click(function(){
+				$('.intro_detail').animate({'left':'7.5rem'});
+			});
+			$('.talk_message_title .talk_message_title_close').click(function(){
+				$('.talk_hidden').css('display','block');
+				$('.talk_message').animate({'left':'7.5rem'});
+				$('.face-content').animate({'left':'7.5rem'});
+				$('.on2 img').attr('src','../../images/qr-d-1.png');
+				$('.on1 img').attr('src','../../images/pr-e-1.png');
+				$('.z-sr').animate({'left':'200%'});
+				$('.talk_hidden').animate({'left':'0'});
+			});
+	
+			//分享
+			$('.on3 img').click(function() {
+				$('.bg123').show();
+			});
+			$('.bg123').click(function() {
+				$(this).hide();
+			});
+			
+			//添加点赞
+			$('.user_good').toggle(function() { 
+				$(this).find('img').attr('src',$(this).find('img').attr('data'));
+				//$('i').css('display','block');
+			},function(){
+				$('.user_good img').attr('src','../../images/pr-e-1.png');
+			})
+			//取消点赞
+			$('.user_good_qx').toggle(function() { 
+				$(this).find('img').attr('src',$(this).find('img').attr('data'));
+			},function(){
+				$('.user_good_qx img').attr('src','../../images/pr-e-3.png');
+			})
+
+		</script>
 	</body>
 </html>

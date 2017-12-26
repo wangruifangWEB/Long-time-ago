@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 40px;">
+
+<head>
+    <meta charset="UTF-8">
+    <title>活动报名</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/jquery-weui.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/active/active_signUp.css">
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/fastclick.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/jquery-weui.min.js"></script>
+</head>
+
+<body ontouchstart>
+    <div class="index">
+        <form action="">
+            <ul class="list_base_info_warp">
+                <li class="list_base_info">
+                    <span></span>
+                    <input type="text" name="user" value="" placeholder="请输入姓名" />
+                </li>
+                <li class="list_base_info">
+                    <span></span>
+                    <div class="info_radio">
+                        <label for="male">男</label>
+                        <input type="radio" name="sex" id="male" value="1" />
+                        <img src="../../img/radio_checked.png" alt="">
+                    </div>
+                    <div class="info_radio">
+                        <label for="famale">女</label>
+                        <input type="radio" name="sex" id="famale" value="2" />
+                        <img src="../../img/radio_checked.png" alt="">
+                    </div>
+                </li>
+                <li class="list_base_info">
+                    <span></span>
+                    <input type="text" name="age" value="" placeholder="请输入年龄" />
+                </li>
+                <li class="list_base_info">
+                    <span></span>
+                    <input type="text" id="national" value="" placeholder="请选择国籍" />
+                </li>
+                <li class="list_base_info">
+                    <span></span>
+                    <input type="text" name="tel" value="" placeholder="请输入联系方式" />
+                </li>
+                <li class="list_base_info">
+                    <span></span>
+                    <input type="text" name="idCard" value="" placeholder="请输入身份证号或护照号" />
+                </li>
+            </ul>
+            <ul class="list_other_info_warp">
+                <li class="list_other_info">
+                    <span>接站信息</span>
+                    <p>请选择</p>
+                </li>
+                <li class="list_other_info">
+                    <span>类别</span>
+                    <div class="info_radio">
+                        <label for="mediaUser">媒体</label>
+                        <input type="radio" name="userType" id="mediaUser" value="1" />
+                        <img src="../../img/radio_checked.png" alt="">
+                    </div>
+                    <div class="info_radio">
+                        <label for="ordinaryUser">普通用户</label>
+                        <input type="radio" name="userType" id="ordinaryUser" value="2" />
+                        <img src="../../img/radio_checked.png" alt="">
+                    </div>
+                </li>
+                <li class="list_other_info">
+                    <span>酒店</span>
+                    <div class="info_radio">
+                        <label for="seniorHotel">高级</label>
+                        <input type="radio" name="hotelType" id="seniorHotel" value="2" />
+                        <img src="../../img/radio_checked.png" alt="">
+                    </div>
+                    <div class="info_radio">
+                        <label for="ordinaryHotel">普通</label>
+                        <input type="radio" name="hotelType" id="ordinaryHotel" value="1" />
+                        <img src="../../img/radio_checked.png" alt="">
+                    </div>
+                </li>
+            </ul>
+            <div class="remarks_info">
+                <p><span>备注</span><span class="remarks" contenteditable="true">请输入备注信息</span></p>
+            </div>
+            <div class="medical_report">
+                <label for="medical_report">请上传一份体检报告</label>
+                <input type="file" name="report" value="" id="medical_report">
+            </div>
+        </form>
+    </div>
+    <button class="next" id="next">下一步</button>
+<script>
+    $("#national").on('click',function(){
+        document.activeElement.blur();
+    })
+    $("#national").picker({
+        title: "请选择国籍",
+        toolbarCloseText:'完成',
+        cols: [
+            {
+              textAlign: 'center',
+              values: ['东亚','西亚','南亚']
+            },
+            {
+              textAlign: 'center',
+              values: ['中国']
+            }
+        ]
+    });
+    // 下一步定位
+    var winHeight = $(window).height();   //获取当前页面高度
+    $(window).resize(function(){
+       var thisHeight=$(this).height();
+        if(winHeight - thisHeight >50){
+             $('.next').css('position','static');
+        }else{
+            $('.next').css('position','fixed');
+        }
+    });
+    // 年龄
+    $('input[name=age]').blur(function(){
+        if(parseInt($('input[name=age]').val())>=50){
+            $('.medical_report').show();
+        }else{
+            $('.medical_report').hide();
+        }
+    })
+    // 性别
+    $('input[name="sex"]').change(function () {
+        if($('#male').is(':checked')){
+            $('#male').siblings('img').attr('src','../../img/radio_checked_on.png');
+            $('#famale').siblings('img').attr('src','../../img/radio_checked.png');
+        }
+        if($('#famale').is(':checked')){
+            $('#famale').siblings('img').attr('src','../../img/radio_checked_on.png');
+            $('#male').siblings('img').attr('src','../../img/radio_checked.png');
+        }
+    })
+    // 用户类型
+    $('input[name="userType"]').change(function () {
+        if($('#mediaUser').is(':checked')){
+            $('#mediaUser').siblings('img').attr('src','../../img/radio_checked_on.png');
+            $('#ordinaryUser').siblings('img').attr('src','../../img/radio_checked.png');
+        }
+        if($('#ordinaryUser').is(':checked')){
+            $('#ordinaryUser').siblings('img').attr('src','../../img/radio_checked_on.png');
+            $('#mediaUser').siblings('img').attr('src','../../img/radio_checked.png');
+        }
+    })
+    // 酒店类型
+    $('input[name="hotelType"]').change(function () {
+        if($('#seniorHotel').is(':checked')){
+            $('#seniorHotel').siblings('img').attr('src','../../img/radio_checked_on.png');
+            $('#ordinaryHotel').siblings('img').attr('src','../../img/radio_checked.png');
+        }
+        if($('#ordinaryHotel').is(':checked')){
+            $('#ordinaryHotel').siblings('img').attr('src','../../img/radio_checked_on.png');
+            $('#seniorHotel').siblings('img').attr('src','../../img/radio_checked.png');
+        }
+    })
+    // 备注
+    $('.remarks_info .remarks').click(function(){
+        if($('.remarks_info .remarks').html()=="请输入备注信息"){
+            $('.remarks_info .remarks').empty();
+        }
+    })
+
+    // 点击下一步
+    
+    $('#next').on('click',function(){
+        var user=$('input[name=user]').val();
+        var sex=$('input[name=sex]:checked').val();
+        var age=parseInt($('input[name=age]').val());
+        var national;
+        var tel=$('input[name=tel]').val();
+        var idCard=$('input[name=idCard]').val();
+        var station;
+        var userType=$('input[name=userType]:checked').val();
+        var hotelType=$('input[name=hotelType]:checked').val();
+        var remarks=$('.remarks_info .remarks').html();
+        var report=$('#medical_report').val();
+        
+        if(age>=50 && (!report)){
+            alert('请上传体检报告');
+        }
+        if(user==""||(!sex)||age==""||tel==""||idCard==""||(!userType)||(!hotelType)){
+            alert('请填写空白信息');
+        }else{
+            // ajax
+            if($('.remarks_info .remarks').html()=="请输入备注信息"){
+                $('.remarks_info .remarks').empty();
+            };
+        }
+    })
+
+</script>
+</body>
+</html>
+

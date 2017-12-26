@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 40px;">
+
+<head>
+    <meta charset="UTF-8">
+    <title>徒步活动</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/jquery-weui.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/active/active_detail.css">
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/fastclick.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/jquery-weui.min.js"></script>
+</head>
+
+<body ontouchstart>
+    <div class="active_title">
+        <p>巴马瑶族自治县旅游</p>
+    </div>
+    <div class="active_pic">
+        <img src="../../img/active_detail.jpg" alt="">
+    </div>
+    <div class="avtive_info">
+        <ul class="avtive_info_ul">
+            <li class="avtive_info_add"><img src="../../img/active_add.png" alt=""><span>河池市巴马瑶族自治县甲篆乡</span></li>
+            <li class="avtive_info_time"><img src="../../img/active_time.png" alt=""><span>昵称2018年2月4日</span></li>
+        </ul>
+        <div class="avtive_info_intro">
+            <p>
+                百魔洞又名百魔天坑，距离巴马长寿村约十分钟的车程。这是一处雄伟壮观的天然溶洞景观。钟乳石、石笋造型千奇百怪，气势恢宏的穿岩、神秘的天坑和缓缓流淌的盘阳河水又为其增添了一丝清秀的气息。步入百魔洞便能感受到这里空气与众不同的清新，据说是负氧离子含量更高所致。穿行在百魔洞中，孔雀迎宾、良田万顷、金山猴王、杜甫吟诗等精巧的钟乳石造型都让人一一叫绝，而且洞内有洞，洞洞相连，十分奇特。
+            </p>
+        </div>
+    </div>
+    <div class="commont_warp">
+        <ul class="commont_title">
+            <li class="commont_title_commont"><span>活动评论</span><span>516</span></li>
+            <!-- <li class="commont_title_like"><img src="../../img/active_like.png" alt=""><span>122</span></li> -->
+        </ul>
+        <div class="commont_info">
+            <div class="commont_info_left">
+                <img src="../../img/comment_pic.jpg" alt="">
+            </div>
+            <div class="commont_info_right">
+                <p class="commont_name">昵称</p>
+                <p class="commont_cont">21212sdjwduewiwudewiuhfwufewufiwuhfiwufiewfiewefbciewubckewjcbewfuewiufrifcbkdcnsk</p>
+            </div>
+        </div>
+        <button class="allCommont"><a href="javascript:;">查看全部评论</a></button>
+    </div>
+    <div class="operate">
+        <button class="active_signUp"><a href="javascript:;">活动报名</a></button>
+        <button class="active_commont">评论</button>
+
+        <div class="active_collect"><img src="../../img/active_collect.png" alt=""><span>收藏</span></div>
+    </div>
+<script>
+    $('.active_collect').click(function() {
+        if($('.active_collect').hasClass('has_collect')){
+            $('.active_collect img').attr('src','../../img/active_collect.png');
+            $('.active_collect span').html('收藏');
+            $('.active_collect').removeClass('has_collect');
+        }else{
+            $('.active_collect img').attr('src','../../img/active_collect_on.png');
+            $('.active_collect span').html('已收藏');
+            $('.active_collect').addClass('has_collect');
+        }
+    })
+</script>
+</body>
+</html>
+

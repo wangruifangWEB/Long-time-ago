@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>活动管理</title>
+		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=vdnOB8lPaXzmzCjXgQhY9N30HZjySmjy"></script>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				font-family: PingFangSC;
+			}
+			.btn{
+				color: #ffffff;
+				background-color: #5d9eee;
+				font-size: 16px;
+				border-radius: 30px;
+				padding: 10px 20px;
+				text-align: center;
+				bottom: 50px !important;
+				top: auto !important;
+				left: 0% !important;
+				right: 0% !important;
+				width: 100px;
+				display: block;
+				margin: 0 auto;
+				z-index: 100;
+				position: absolute;
+				outline: none;
+				border: none;
+			}
+			.BMap_stdMpZoom{
+				display: none;
+			}
+			.mask{
+				background-color: #000000;
+				opacity: 0.6;
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				top: 0;
+				left: 0;
+				display: none;
+				z-index: 150;
+			}
+			.layer_warp{
+				position: fixed;
+				padding-top: 70px;
+				display: none;
+				background-color: transparent;
+				transform: translate(-50%,-50%);
+				left: 50%;
+				top: 45%;
+				width: 85%;
+				z-index: 200;
+			}
+			.layer_warp img{
+				width: 25px;
+				height: 25px;
+				position: absolute;
+				top: 10px;
+				right: 15px;
+			}
+			.layer_warp .borderLine{
+				width: 1px;
+				height: 60px;
+				background-color: #ffffff;
+				position: absolute;
+				top: 35px;
+				right: 26px;
+
+			}
+			.layer{
+				border-radius: 16px;
+				padding-left: 20px;
+				padding-right: 20px;
+				padding-top: 45px;
+				padding-bottom: 120px;
+				background-color: #ffffff;
+			}
+			.layer li{
+				margin-top: 20px;
+				list-style: none;
+				margin-bottom: 20px;
+				height: 40px;
+				width: 100%;
+				display: flex;
+			}
+			.layer li span{
+				height: 40px;
+				line-height: 40px;
+				width: 30%;
+			}
+			.layer li .input_warp{
+				border: solid 1px #d8d8d8;
+				border-radius: 8px;
+				padding-top: 8px;
+				padding-bottom: 10px;
+				width: 70%;
+				overflow: hidden;
+			}
+			.layer li .input_warp input{
+				border: none;
+				outline: none;
+				font-size: 16px;
+				color: #333333;
+				padding-left: 10px;
+			}
+			input[readonly='readonly']{
+				color: #ababab !important;
+			}
+			.layer .btn{
+				/*bottom: 120px;*/
+			}
+			.hide{
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="ibox-content" style="width: 100%;height: 400px;">
+			<div id="allmap_a" style="display:block;width: 100%;height: 100%;">
+				<div id="l-map" style="width:100%;height:100%"></div>
+			</div>
+		</div>
+		<!-- <button class="btn" id="btn">确定</button> -->
+		<div class="mask" id="mask"></div>
+		<div class="layer_warp" id="layer_warp">
+			<div class="layer" id="layer">
+				<img src="../../images/del.png" alt="">
+				<span class="borderLine"></span>
+				<form action="">
+					<ul>
+						<li><span>活动地点</span><div class="input_warp"><input type="text" name="" class="active_address"></div></li>
+						<li><span>经度</span><div class="input_warp"><input type="text" name="" id="position_lng" readonly="readonly"></div></li>
+						<li><span>纬度</span><div class="input_warp"><input type="text" name="" id="position_lat" readonly="readonly"></div></li>
+					</ul>
+				</form>
+				<button class="btn" id="confirm">提交</button>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			$('.ibox-content').height($(window).height());
+			$('#confirm').click(function(event){
+				event.preventDefault();
+				if($('.active_address').val()==""){
+					$('.active_address').parent().css('border-color','#f00');
+					$('.active_address').focus();
+					return;
+				}
+				alert('地点：'+$('.active_address').val()+';\n经度：'+$('#position_lng').val()+';\n纬度：'+$('#position_lat').val());
+			})
+			$('.layer img').click(function(){
+				$('.mask').hide();
+				$('.layer_warp').hide();
+			})
+		</script>
+		
+		<script>
+			// 百度地图定位
+			// 百度地图API功能
+			map = new BMap.Map("l-map");
+			point = new BMap.Point(116.392398, 39.897445);
+			map.centerAndZoom(point, 12);
+
+			var position_lng;
+			var position_lat;
+			// 定义一个控件类,即function
+			function ZoomControl() {
+				// 默认停靠位置和偏移量
+				this.defaultAnchor = BMAP_ANCHOR_TOP_RIGHT;
+				this.defaultOffset = new BMap.Size(10, 10);
+			}
+			// 创建控件
+			var myZoomCtrl = new ZoomControl();
+			// 添加到地图当中
+			map.addControl(myZoomCtrl);
+
+
+			// 通过JavaScript的prototype属性继承于BMap.Control
+			ZoomControl.prototype = new BMap.Control();
+			ZoomControl.prototype.initialize = function(map) {
+				// 创建一个DOM元素
+				var div = document.createElement("div");
+				// 添加文字说明
+				div.appendChild(document.createTextNode("确定"));
+				// 设置样式
+				div.className = "btn hide";
+				div.id = "btn";
+				// 绑定事件,点击一次放大两级
+				// document.getElementById('btn').style.opacity="0";
+				div.onclick = function(e) {
+					// alert('定位经纬度：' + position_lng + "," + position_lat)
+					document.getElementById('layer_warp').style.display="block";
+					document.getElementById('mask').style.display="block";
+					document.getElementById('position_lng').value=position_lng;
+					document.getElementById('position_lat').value=position_lat;
+				}
+				// 添加DOM元素到地图中
+				map.getContainer().appendChild(div);
+				// 将DOM元素返回
+				return div;
+			}
+			
+			var geolocation = new BMap.Geolocation();
+			geolocation.getCurrentPosition(function(r){
+				if(this.getStatus() == BMAP_STATUS_SUCCESS){
+					document.getElementById('btn').style.display="block";
+					var mk = new BMap.Marker(r.point);
+					map.addOverlay(mk);
+					map.panTo(r.point);
+					mk.enableDragging(); // 可拖拽
+					position_lng=r.point.lng;
+					position_lat=r.point.lat;
+					mk.addEventListener('dragend', function(e) {
+						var pt = e.point;
+						position_lng = pt.lng;
+						position_lat = pt.lat;
+					})
+				}
+				else {
+					alert('failed'+this.getStatus());
+				}        
+			},{enableHighAccuracy: true})
+
+
+			// 创建控件
+			var myZoomCtrl = new ZoomControl();
+			// 添加到地图当中
+			map.addControl(myZoomCtrl);
+
+			// 添加带有定位的导航控件
+			var navigationControl = new BMap.NavigationControl({
+				// 靠左上角位置
+				anchor: BMAP_ANCHOR_TOP_LEFT,
+				// LARGE类型
+				type: BMAP_NAVIGATION_CONTROL_LARGE,
+			});
+
+			map.addControl(navigationControl);
+			// 添加定位控件
+			var geolocationControl = new BMap.GeolocationControl({
+				// 靠左上角位置
+				anchor: BMAP_ANCHOR_TOP_LEFT,
+				enableAutoLocation: true,
+				showAddressBar: false
+			});
+
+			geolocationControl.addEventListener("locationSuccess", function(e) {
+				// 定位成功事件
+				var address = '';
+				address += e.addressComponent.province;
+				address += e.addressComponent.city;
+				address += e.addressComponent.district;
+				address += e.addressComponent.street;
+				address += e.addressComponent.streetNumber;
+				// console.log(address);
+				form_lat = e.point.lat;
+				form_lng = e.point.lng;
+				form_address = address;
+
+				position_lng = form_lng;
+				position_lat = form_lat;
+				console.log(form_lat, form_lng, form_address)
+
+				var point = new BMap.Point(e.point.lng, e.point.lat);
+				var marker = new BMap.Marker(point); // 创建标注
+				map.clearOverlays();
+				map.addOverlay(marker); // 将标注添加到地图中
+				marker.enableDragging(); // 可拖拽
+				var geoc = new BMap.Geocoder();
+				marker.addEventListener('dragend', function(e) {
+					var pt = e.point;
+					// geoc.getLocation(pt, function(rs){
+					//     var addComp = rs.addressComponents;
+					position_lng = pt.lng;
+					position_lat = pt.lat;
+					console.log(pt)
+					// });
+				})
+			});
+			geolocationControl.addEventListener("locationError", function(e) {
+				// 定位失败事件
+				alert(e.message);
+			});
+			map.addControl(geolocationControl);
+		</script>
+	</body>
+</html>

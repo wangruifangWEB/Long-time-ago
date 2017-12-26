@@ -1,0 +1,181 @@
+body{
+	background-color: #f0f0f0;
+}
+.index{
+	padding-bottom: 6.6rem;
+}
+.list_base_info_warp{
+	width: 18.75rem;
+	height: auto;
+	background-color: #ffffff;
+}
+.list_base_info_warp .list_base_info{
+	height: 2.4rem;
+	width: 18.75rem;
+	clear: both;
+	border-bottom: solid 1px #f0e9e9;
+	overflow: hidden;
+}
+.list_base_info_warp .list_base_info:nth-last-child(1){
+	border-bottom: none;
+}
+.list_base_info_warp .list_base_info span{
+	background-color: #ecf456;
+	width: 1.0rem;
+	height: 1.0rem;
+	display: block;
+	margin-top: 0.7rem;
+	margin-left: 1.8rem;
+	margin-right: 1.35rem;
+	float: left;
+}
+.list_base_info_warp .list_base_info input{
+	margin-top: 0.7rem;
+	display: block;
+	height: 1rem;
+	overflow: hidden;
+	line-height: 1rem;
+	font-size: 0.75rem;
+	color: #878282;
+	outline: none;
+	border: none;
+	float: left;
+}
+.list_other_info_warp{
+	width: 18.75rem;
+	height: auto;
+}
+.list_other_info_warp .list_other_info{
+	height: 3rem;
+	background-color: #ffffff;
+	padding-left: 1.8rem;
+	line-height: 3rem;
+}
+.list_other_info_warp .list_other_info span{
+	color: #545252;
+	display: block;
+	width: 4.5rem;
+	float: left;
+}
+.list_other_info_warp .list_other_info label{
+	line-height: 3.0rem;
+}
+.list_other_info_warp .list_other_info img{
+	margin-top: 1.075rem;
+	float: left;
+}
+.list_other_info_warp .list_other_info:nth-child(1){
+	height: 2.05rem;
+	line-height: 2.05rem;
+	margin-bottom: 0.25rem;
+	margin-top: 0.2rem;
+}
+.list_other_info_warp .list_other_info:nth-child(1)  p{
+	color: #837b7b;
+}
+.list_other_info_warp .list_other_info:nth-child(2){
+	border-bottom: solid 1px #f0e9e9;
+}
+
+/* 单选 */
+.info_radio{
+	position: relative;
+	height: 100%;
+	float: left;
+}
+.info_radio input{
+	opacity: 0;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	z-index: 100;
+}
+.info_radio label{
+	float: left;
+	line-height: 2.4rem;
+	height: 2.4rem;
+	margin-right: 0.7rem;
+}
+.info_radio img{
+	float: left;
+	line-height: 2.4rem;
+	height: 2.4rem;
+	width: 0.95rem;
+	height: 0.95rem;
+	margin-top: 0.725rem;
+	margin-right: 1.35rem;
+}
+/* 备注 */
+.remarks_info{
+	width: 18.75rem;
+	height: auto;
+	min-height: 4.5rem;
+	background-color: #ffffff;
+	margin-top: 0.45rem;
+	position: relative;
+}
+.remarks_info span{
+	font-size: 0.75rem;
+	color: #545252;
+	display: inline-block;
+	width: 2.8rem;
+	position: absolute;
+	top: 0.75rem;
+	height: 1.0rem;
+	line-height: 1.0rem;
+}
+.remarks_info p{
+	padding-left: 1.8rem;
+	padding-top: 0.75rem;
+	height: auto;
+	min-height: 4.5rem;
+	padding-bottom: 0.75rem;
+	word-break: break-all;
+}
+.remarks_info p span.remarks{
+	width: 16.95rem;
+	font-size: 0.75rem;
+	color: #878282;
+	line-height: 1.0rem;
+	text-indent: 2.8rem;
+	outline: none;
+	border: none;
+	min-height: 4.5rem;
+}
+.medical_report{
+	display: block;
+	width: 18.75rem;
+	height: 3.0rem;
+	overflow: hidden;
+	position: relative;
+	z-index: 10;
+}
+.medical_report label{
+	width: 18.75rem;
+	text-align: center;
+	color: #4b82ff;
+	font-size: 0.7rem;
+	padding-top: 1.2rem;
+	display: block;
+	text-decoration: underline;
+}
+.medical_report input{
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* 下一步 */
+.next{
+	width: 18.75rem;
+	height: 2.85rem;
+	position: fixed;
+	bottom: 0;
+	z-index: 100;
+	font-size: 0.85rem;
+	color: #363636;
+	background-color: #ffffff;
+	box-shadow: -0.1rem 0 0.2rem rgba(48,48,48,0.05);
+}
