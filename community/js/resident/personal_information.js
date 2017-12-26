@@ -91,5 +91,11 @@ $(function(){
 	$(address).focus(function(){
 	  	$(address).val('').removeClass('form_error');
 	});
+	
+	//添加select的选中颜色
+	$(".form_gender select").change(function(){
+		$(this).css("color","#3A3A3A");
+	});
 });
 
+ 

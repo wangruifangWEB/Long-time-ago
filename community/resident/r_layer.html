@@ -18,9 +18,9 @@
 			background: rgba(0,0,0,.2);
 			z-index: 100;
 			display: none;
-			top: 0;
+			top: 0; 
 			left: 0; 
-		}
+		} 
 		.reveal-modal{
 			visibility: hidden; 
 			width: 500px;
@@ -42,12 +42,12 @@
 			height:6.95rem;
 			border-radius: .16rem;
 			text-align: center;
-			background-image: url(../images/resident/v_layer_bg.png);
+			background-image: url(../images/resident/m_layer_bg.png);
 			background-repeat: no-repeat;
 			background-size: contain;
 	    }
 	    .reveal-modal p{
-	    	color:#3A3A3A;
+	    	color:#3A3A3A; 
 			line-height: .62rem;
 			font-size: .36rem;
 			font-weight: bold;
@@ -87,20 +87,20 @@
 	<body>
 		<a href="javascript:;" class="big-link" data-reveal-id="myModal"></a>
 	   <!-- 弹框 -->
-		<div id="myModal" class="reveal-modal">
+        <div id="myModal" class="reveal-modal">
         	<img src="../images/resident/layer_close.png" alt="" class="close_layer"/>
-	        <p>志愿者申请须知</p>
-	        <a href="javascript:;">已阅读《志愿者须知》</a>
+	        <p>自组织申请须知</p>
+	        <a href="javascript:;">已阅读《自组织须知》</a>
 			<ul>
 				<li class="agree">同意</li>
 			</ul>
 	    </div>
 	    <script type="text/javascript">
-	    	//获取window高度
+		    //获取window高度
 		    var wHeight=$(window).height();
 	    	//关闭动画效果
 	    	function layerAnimate(){
-	    		$(".reveal-modal").animate({
+	    		$(".reveal-modal").animate({ 
 					top:wHeight+$('.reveal-modal').height()
 				},600,function(){
 					$(".reveal-modal").hide();

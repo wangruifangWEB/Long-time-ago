@@ -22,11 +22,11 @@
 			left: 0; 
 		}
 		.reveal-modal{
-			visibility: hidden; 
+			visibility: hidden;  
 			width: 500px;
 	        height: 400px; 
 			left: 50%;
-	        top: 50%;
+	        top: 50%; 
 	        transform: translateX(-50%) translateY(-50%);
 			position: absolute;
 			z-index: 101;
@@ -42,7 +42,7 @@
 			height:6.95rem;
 			border-radius: .16rem;
 			text-align: center;
-			background-image: url(../images/resident/m_layer_bg.png);
+			background-image: url(../images/resident/v_layer_bg.png);
 			background-repeat: no-repeat;
 			background-size: contain;
 	    }
@@ -87,16 +87,16 @@
 	<body>
 		<a href="javascript:;" class="big-link" data-reveal-id="myModal"></a>
 	   <!-- 弹框 -->
-        <div id="myModal" class="reveal-modal">
+		<div id="myModal" class="reveal-modal">
         	<img src="../images/resident/layer_close.png" alt="" class="close_layer"/>
 	        <p>志愿者申请须知</p>
-	        <a href="javascript:;">已阅读《志愿者须知》</a>
+	        <a href="r_knowledge.html">已阅读《志愿者须知》</a>
 			<ul>
 				<li class="agree">同意</li>
 			</ul>
 	    </div>
 	    <script type="text/javascript">
-		    //获取window高度
+	    	//获取window高度
 		    var wHeight=$(window).height();
 	    	//关闭动画效果
 	    	function layerAnimate(){
