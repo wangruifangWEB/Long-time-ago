@@ -34,23 +34,23 @@ $(function(){
 	//判断及验证
 	 function set_Reg(selector,reg,testReg,empty,erro){
         if($(testReg).val() == null){
-           $(selector).attr('placeholder',empty).addClass('form_error');
+           $(selector).attr('placeholder','').val(empty).addClass('form_error light');
             return false;
         }else if (!reg.test($(testReg).val())) {
-            $(selector).attr('placeholder',erro).addClass('form_error');
+            $(selector).attr('placeholder','').val(erro).addClass('form_error light');
             return false;
         }else{
-            $(selector).removeClass('form_error');
+            $(selector).removeClass('form_error light');
             return true;
         }
     }
 	 //输入不能为空
 	function set_Null(selector,test,empty){
         if($(test).val() == '' || $(test).val() == null){
-            $(selector).attr('placeholder',empty).addClass('form_error');
+            $(selector).attr('placeholder','').val(empty).addClass('form_error light');
             return false;
         }else{
-            $(selector).removeClass('form_error');
+            $(selector).removeClass('form_error light');
             return true;
         }
     }
@@ -73,29 +73,19 @@ $(function(){
 	 
 	 //鼠标再次进入去掉错误提示样式
 	  $(uname).focus(function(){
-	  	$(uname).val('').removeClass('form_error');
+	  	$(uname).val('').removeClass('form_error light');
 	});
 	
 	 $(phone).focus(function(){
-	  	$(phone).val('').removeClass('form_error');
+	  	$(phone).val('').removeClass('form_error light');
 	});
 	
 	$(email).focus(function(){
-	  	$(email).val('').removeClass('form_error');
+	  	$(email).val('').removeClass('form_error light');
 	});
 	
 	$(userId).focus(function(){
-	  	$(userId).val('').removeClass('form_error');
-	});
-	
-	$(address).focus(function(){
-	  	$(address).val('').removeClass('form_error');
-	});
-	
-	//添加select的选中颜色
-	$(".form_gender select").change(function(){
-		$(this).css("color","#3A3A3A");
+	  	$(userId).val('').removeClass('form_error light');
 	});
 });
 
- 

@@ -1,0 +1,102 @@
+.apply_succ_container{
+	width:7.5rem;
+}
+.apply_succ_bg{
+	width:7.5rem;
+	height:5.48rem;
+	margin-bottom: .64rem;
+}
+.apply_succ_title{
+	color:#ff9100;
+	font-size: .48rem;
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: .64rem;
+	font-family: PingFangSC-semibold;
+}
+.apply_succ_btn{
+	width:6.24rem;
+	height:1.46rem;
+	line-height: 1.26rem;
+	background-size:6.24rem 1.46rem;
+	background-image: url(../../images/manage/return.png);
+	background-repeat: no-repeat;
+	text-align: center;
+	margin: 0 auto;
+}
+.apply_succ_btn button{
+	color:#fff;
+	font-size: .36rem;
+	font-family: PingFangSC-semibold;
+}
+.apply_succ_continue{
+	background-color:#F6F7FA;
+	width:7.5rem;
+	height:.96rem;
+	line-height: .96rem;
+	text-align: center;
+}
+.apply_succ_continue p{
+	color:#3A3A3A;
+	font-family: PingFangSC-Medium;;
+	font-size: .36rem;
+	display: -webkit-inline-box;
+	margin:0 .2rem;
+}
+.apply_succ_continue span{
+	width:1.26rem;
+	height:.02rem;
+	background-color: #E5E5E5;
+	display: -webkit-inline-box;
+	margin-bottom: .1rem;
+}
+/*列表*/
+.tab_container_item{
+	height:1.7rem;
+	margin:.32rem 0 .32rem 0;
+	background-color: #fff;
+}
+.tab_container_item i{
+	width:.24rem;
+	height:.24rem;
+	border-radius: 50%;
+	display: inline-block;
+	margin-right:.24rem;
+}
+.tab_container_item i.yellow{
+	background-color:#ff943e;
+}
+.tab_container_item i.blue{
+	background-color:#2f40e5;
+}
+.tab_container_item i.green{
+	background-color:#55cc7a;
+}
+.tab_container_item p{
+	color:#3a3a3a;
+	font-size: .34rem;
+	font-weight: bold;
+	font-family: PingFangSC-Medium;
+	padding:.3rem 0 .24rem .24rem;
+}
+.tab_container_item>div{
+	width:6.3rem;
+	margin-left:.7rem;
+	padding-bottom: .32rem;
+	border-bottom: .01rem solid #ddd;
+}
+.tab_container_list .boder_none{
+	border-bottom:none;
+}
+.tab_container_item span{
+	color:#abafbe;
+	font-size: .28rem;
+	font-family: PingFangSC-Regular;
+	display: block;
+}
+.tab_container_item .col{
+	color:#FF0000;
+}
+.tab_container_item .tab_time{
+	margin-bottom: .24rem;
+}

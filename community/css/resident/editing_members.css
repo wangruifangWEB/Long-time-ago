@@ -4,6 +4,7 @@ body{
 .edit_container{
 	width:7.5rem;
 	overflow: hidden;
+	position: absolute;
 }
 .edit_header{
 	height:.96rem;
@@ -61,4 +62,50 @@ body{
 	margin-top: .64rem;
 	text-align: center;
 	background-color: #fff;
+}
+/*弹框样式*/
+.layer_mask{
+	width:7.5rem;
+	background: rgba(0,0,0,.2);
+	z-index:100;
+	position:relative;
+	display: none;
+}
+.layer{
+	width:5.48rem;
+	height:3.2rem;
+	background-color: #fff;
+	border-radius: .16rem;
+	top:50%;
+	left:50%;
+	transform: translateX(-50%) translateY(-50%);
+	position: absolute;
+}
+.layer p{
+	color:#000;
+	height:1.8rem;
+	line-height: .62rem;
+	font-size: .4rem;
+	font-weight: bold;
+	margin-top:.32rem;
+	font-family: PingFangSC-semibold; 
+	border-bottom: .01rem solid #ddd;
+	text-align: left;
+	padding-left:.24rem;
+}
+.layer ul{
+	margin-top:.24rem;
+	text-align: center;
+}
+.layer ul li{
+	width:49%;
+	height:.6rem;
+	line-height: .6rem;
+	color:#3253ff;
+	font-size: .36rem;
+	font-family: PingFangSC-Medium;
+	float: left;
+}
+.layer ul li:nth-child(1){
+	border-right:.01rem solid #ddd;
 }

@@ -10,7 +10,7 @@ $(function(){
 	 //输入不能为空
 	function set_Null(selector,test,empty){
         if($(test).val() == '' || $(test).val() == null){
-            $(selector).attr('placeholder','').val(empty).addClass('form_error');
+            $(selector).attr('placeholder',empty).addClass('form_error');
             return false;
         }else{
             $(selector).removeClass('form_error');
@@ -28,7 +28,7 @@ $(function(){
 	 	
 	 	if(teamName_msg && teamType_msg && teamArea_msg && teamUit_msg){
 	 		//验证通过跳转页面
-	 		window.location.href='success.html';
+	 		window.location.href='application_success.html';
 	 		return true;
 	 	}else{
 	 		return false;

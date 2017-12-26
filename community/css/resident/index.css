@@ -1,6 +1,6 @@
 body,html{
 	background-color: #fff;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 .clearfix{
 	content: "";
@@ -123,7 +123,7 @@ em,i{font-style:normal}
 .four_container_header_right{
 	float: right;
 	display: flex;
-    padding: .16rem .4rem .24rem 0;
+    padding: .16rem .4rem 0 0;
 }
 .four .four_container 
 .four_container_header_right span{

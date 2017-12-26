@@ -1,0 +1,44 @@
+body{
+	background-color: #F6F7FA !important;
+}
+/*编辑框*/
+.audit_sugg{
+	width:6.86rem;
+	height:4.7rem;
+	line-height: .42rem;
+	color:#abafbe;
+	font-size: .28rem;
+	outline: none;
+	cursor: pointer;
+	overflow: hidden;
+	font-family: PingFangSC-Medium;
+	background-color: #fff;
+	border-bottom:.01rem solid #ddd;
+	position: relative;
+	padding:.32rem;
+}
+.audit_sugg span{
+	position:absolute;
+	bottom:.36rem;
+	right:.69rem;
+}
+/*底部样式*/
+.footer{
+	width:7.5rem;
+	height:1.4rem;
+	line-height: 1.4rem;
+	position: fixed;
+	bottom:0;
+	background-color: #fff;
+	text-align: center;
+}
+.footer button{
+	width:6.7rem;
+	height:1.22rem;
+	color:#fff;
+	font-size:.32rem;
+	font-family: PingFangSC-semibold;
+	background-image: url(../../images/manage/details-button.png);
+ 	background-repeat: no-repeat;
+ 	background-size: 6.7rem 1.22rem;
+}	
