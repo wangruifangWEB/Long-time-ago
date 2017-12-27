@@ -56,7 +56,12 @@
 	padding: 0;
 	height: 2.0rem;
 }
-
+.swiper-slide{
+            overflow: auto;
+        }
+        .swiper-container{
+            margin-bottom: 2.85rem;
+        }
 /* 发布 */
 .fabu_btn{
 	position: fixed;
