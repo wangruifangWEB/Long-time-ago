@@ -15,21 +15,52 @@ body{
 	clear: both;
 	border-bottom: solid 1px #f0e9e9;
 	overflow: hidden;
+	position: relative;
 }
 .list_base_info_warp .list_base_info:nth-last-child(1){
 	border-bottom: none;
 }
-.list_base_info_warp .list_base_info span{
-	background-color: #ecf456;
-	width: 1.0rem;
-	height: 1.0rem;
-	display: block;
-	margin-top: 0.7rem;
-	margin-left: 1.8rem;
-	margin-right: 1.35rem;
-	float: left;
+.list_base_info_warp .list_base_info .user_icon{
+	width: 0.95rem;
+	height: 0.85rem;
+	position: absolute;
+	top: 0.75rem;
+	left: 1.85rem;
 }
+.list_base_info_warp .list_base_info .sex_icon,.list_base_info_warp .list_base_info .age_icon,.list_base_info_warp .list_base_info .nation_icon{
+	width: 0.95rem;
+	height: 0.95rem;
+	position: absolute;
+	top: 0.725rem;
+	left: 1.85rem;
+}
+.list_base_info_warp .list_base_info .tel_icon{
+	width: 0.75rem;
+	height: 1.05rem;
+	position: absolute;
+	top: 0.65rem;
+	left: 1.95rem;
+}
+.list_base_info_warp .list_base_info .idCard_icon{
+	width: 1.05rem;
+	height: 0.8rem;
+	position: absolute;
+	top: 0.8rem;
+	left: 1.8rem;
+}
+.info_radio_warp{
+	position: absolute;
+	left: 4.15rem;
+}
+.info_radio_warp .info_radio input[type='radio']{
+	left: 0;
+}
+
+
+
 .list_base_info_warp .list_base_info input{
+	position: absolute;
+	left: 4.15rem;
 	margin-top: 0.7rem;
 	display: block;
 	height: 1rem;
@@ -52,7 +83,8 @@ body{
 	line-height: 3rem;
 }
 .list_other_info_warp .list_other_info span{
-	color: #545252;
+	color: #2a2b2a;
+	font-size: 0.75rem;
 	display: block;
 	width: 4.5rem;
 	float: left;
@@ -117,7 +149,7 @@ body{
 }
 .remarks_info span{
 	font-size: 0.75rem;
-	color: #545252;
+	color: #2a2b2a;
 	display: inline-block;
 	width: 2.8rem;
 	position: absolute;
@@ -144,7 +176,7 @@ body{
 	min-height: 4.5rem;
 }
 .medical_report{
-	display: block;
+	display: none;
 	width: 18.75rem;
 	height: 3.0rem;
 	overflow: hidden;
