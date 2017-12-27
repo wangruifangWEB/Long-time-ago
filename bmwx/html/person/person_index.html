@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../css/active/active_index.css">
     <link rel="stylesheet" href="../../css/global.css">
     <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/fastclick.js" type="text/javascript" charset="utf-8"></script>
     <script src="../../js/common.js"></script>
     <script type='text/javascript' src='../../js/swiper.js' charset='utf-8'></script>
     <script src="../../js/jquery-weui.min.js"></script>
@@ -17,103 +18,23 @@
 
 <body ontouchstart>
     
-    <div class="index_plugin">
-        <div class="swiper-container" data-space-between='10' data-pagination='.swiper-pagination' data-autoplay="1000">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="../../img/banner.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="../../img/banner.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="../../img/banner.jpg" alt=""></div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-        <div class="active_detail weui-tab__bd-item">
-            <div class="content-padded">
-                <ul class="list_warp">
-                    <li class="list_info">
-                        <a href="javascript:;">
-                            <div class="list_left">
-                                <img src="../../img/active_list_img.jpg" alt="">
-                            </div>
-                            <div class="list_right">
-                                <p class="list_right_title">巴马瑶族自治县，长寿之乡长寿之乡长寿之乡</p>
-                                <p class="list_right_add">活动地点：</p>
-                                <p class="list_right_time">活动时间：</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list_info">
-                        <a href="beauty_index.html">
-                            <div class="list_left">
-                                <img src="../../img/active_list_img.jpg" alt="">
-                            </div>
-                            <div class="list_right">
-                                <p class="list_right_title">巴马瑶族自治县，长寿之乡长寿之乡长寿之乡</p>
-                                <p class="list_right_add">活动地点：</p>
-                                <p class="list_right_time">活动时间：</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list_info">
-                        <a href="../active/active_index.html">
-                            <div class="list_left">
-                                <img src="../../img/active_list_img.jpg" alt="">
-                            </div>
-                            <div class="list_right">
-                                <p class="list_right_title">巴马瑶族自治县，长寿之乡长寿之乡长寿之乡</p>
-                                <p class="list_right_add">活动地点：</p>
-                                <p class="list_right_time">活动时间：</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list_info">
-                        <a href="javascript:;">
-                            <div class="list_left">
-                                <img src="../../img/active_list_img.jpg" alt="">
-                            </div>
-                            <div class="list_right">
-                                <p class="list_right_title">巴马瑶族自治县，长寿之乡长寿之乡长寿之乡</p>
-                                <p class="list_right_add">活动地点：</p>
-                                <p class="list_right_time">活动时间：</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list_info">
-                        <a href="javascript:;">
-                            <div class="list_left">
-                                <img src="../../img/active_list_img.jpg" alt="">
-                            </div>
-                            <div class="list_right">
-                                <p class="list_right_title">巴马瑶族自治县，长寿之乡长寿之乡长寿之乡</p>
-                                <p class="list_right_add">活动地点：</p>
-                                <p class="list_right_time">活动时间：</p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="weui-loadmore">
-                <i class="weui-loading"></i>
-                <span class="weui-loadmore__tips">正在加载</span>
-            </div>
-        </div>
-    </div>
-    
+   
     <div class="weui-tabbar">
-        <a href="javascript:;" class="weui-tabbar__item tabbar_beauty">
+        <a href="../beaty/beauty_index.html" class="weui-tabbar__item tabbar_beauty">
             <div class="weui-tabbar__icon">
                 <img src="../../img/beauty.png" alt="">
             </div>
             <p class="weui-tabbar__label">最美评选</p>
         </a>
-        <a href="javascript:;" class="weui-tabbar__item tabbar_active">
+        <a href="../active/active_index.html" class="weui-tabbar__item tabbar_active">
             <div class="weui-tabbar__icon">
-                <img src="../../img/active_on.png" alt="">
+                <img src="../../img/active.png" alt="">
             </div>
             <p class="weui-tabbar__label">徒步活动</p>
         </a>
         <a href="javascript:;" class="weui-tabbar__item tabbar_person">
             <div class="weui-tabbar__icon">
-                <img src="../../img/person.png" alt="">
+                <img src="../../img/person_on.png" alt="">
             </div>
             <p class="weui-tabbar__label">个人中心</p>
         </a>
