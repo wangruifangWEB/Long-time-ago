@@ -135,7 +135,7 @@
             </div>
             <p class="weui-tabbar__label">徒步活动</p>
         </a>
-        <a href="../person/person_index.html" class="weui-tabbar__item tabbar_person">
+        <a href="../person/person_center.html" class="weui-tabbar__item tabbar_person">
             <div class="weui-tabbar__icon">
                 <img src="../../img/person.png" alt="">
             </div>
@@ -144,8 +144,7 @@
     </div>
 </body>
 <script>
-$('.weui-tab__bd').height($(window).height() - $('.weui-navbar').height());
-$('.swiper-container').height($(window).height() - $('.weui-tabbar').height());
+$('.swiper-container').height($(window).height());
 var mySwiper = new Swiper('.swiper-container', {
     paginationClickable: true,
     onSlideChangeEnd:function(swiper){
