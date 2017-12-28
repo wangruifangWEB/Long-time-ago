@@ -1,0 +1,50 @@
+.activety_container .activety_item div{
+	position: relative;
+}
+.activety_container .activety_item div a{
+	color: #8C8C8C;
+    font-size: 0.65rem;
+    font-family: PingFangSC-Regular;
+}
+.activety_container .activety_item div a img{
+	width:0.75rem;
+	height:0.75rem;
+	margin:0 0.25rem 0 0;
+}
+.activety_item .activety_item_left{
+	width:1.55rem;
+	position: absolute;
+	z-index: 100;
+	left:-1.5rem;
+}
+.activety_item .activety_item_left img{
+	width:.7rem;
+	height:.7rem;
+	padding-top: .8rem;
+    margin-left: .7rem;
+}
+.activety_item .activety_item_right{
+	left:-1.5rem;
+}
+.activety_container button{
+	width:5.25rem;
+	height:1.45rem;
+	line-height: 1.45rem;
+	position:fixed;
+	bottom:1.6rem;
+	color:#AE9257;
+	text-align: center;
+	font-size: 0.85rem;
+	margin-left: 6.75rem;
+	border-radius: 0.725rem;
+	font-family: PingFangSC-Medium;
+	border: 0.025rem solid #AE9257;
+}
+.activety_item .activety_item_right{
+	margin-top:0 !important;
+}
+/*删除*/
+.activety_container .remove_style{
+	color:#fff;
+	background-color: #FF0000;
+}
