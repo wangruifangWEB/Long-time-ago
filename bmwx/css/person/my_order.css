@@ -10,7 +10,7 @@
 }
 /*列表样式*/
 .beauty_pic_list{
-	height: 7.95rem;
+	height: 7.85rem;
 	margin-bottom:0;
 	border-bottom: 0.025rem solid #ddd;
 }
@@ -48,7 +48,7 @@
 	vertical-align: middle;
 }
 .pic_list_right ul li:nth-child(3){
-	margin-bottom: .75rem;
+	margin-bottom: .5rem;
 }
 .pic_list_right ul li:nth-child(2) img,
 .pic_list_right ul li:nth-child(3) img{
@@ -111,4 +111,11 @@
 .weui-infinite-scroll{
 	text-align: center;
     margin-top: 1rem;
+}
+.tab1,.tab2,.tab3,.tab4,.tab5{
+	margin-top:0;
+}
+/*重置swiper样式*/
+.swiper-slide{
+    overflow: auto;
 }
