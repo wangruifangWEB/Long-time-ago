@@ -17,6 +17,27 @@ body{
 	overflow: hidden;
 	position: relative;
 }
+.list_base_info_warp .list_base_info .user_detail_warp{
+	position: absolute;
+	left: 3.5rem;
+	margin-top: 0.7rem;
+	height: 1rem;
+	line-height: 1rem;
+}
+.list_base_info_warp .list_base_info .user_detail{
+	width: 7.125rem;
+	float: left;
+	position: relative;
+}
+.list_base_info_warp .list_base_info .user_detail input{
+	left: 1.2rem;
+	margin-top: 0;
+	width: 5.25rem;
+}
+.list_base_info_warp .list_base_info .user_detail span,.list_base_info_warp .list_base_info .user_detail input{
+	float: left;
+}
+
 .list_base_info_warp .list_base_info:nth-last-child(1){
 	border-bottom: none;
 }
@@ -50,7 +71,7 @@ body{
 }
 .info_radio_warp{
 	position: absolute;
-	left: 4.15rem;
+	left: 3.5rem;
 }
 .info_radio_warp .info_radio input[type='radio']{
 	left: 0;
@@ -60,14 +81,15 @@ body{
 
 .list_base_info_warp .list_base_info input{
 	position: absolute;
-	left: 4.15rem;
+	width: 14.25rem;
+	left: 3.5rem;
 	margin-top: 0.7rem;
 	display: block;
 	height: 1rem;
 	overflow: hidden;
 	line-height: 1rem;
 	font-size: 0.75rem;
-	color: #878282;
+	color: #5a5959;
 	outline: none;
 	border: none;
 	float: left;
@@ -128,6 +150,7 @@ body{
 	line-height: 2.4rem;
 	height: 2.4rem;
 	margin-right: 0.7rem;
+	color: #5a5959;
 }
 .info_radio img{
 	float: left;
@@ -154,11 +177,11 @@ body{
 	width: 2.8rem;
 	position: absolute;
 	top: 0.75rem;
-	height: 1.0rem;
 	line-height: 1.0rem;
 }
 .remarks_info p{
 	padding-left: 1.8rem;
+	padding-right: 1.0rem;
 	padding-top: 0.75rem;
 	height: auto;
 	min-height: 4.5rem;
@@ -166,7 +189,7 @@ body{
 	word-break: break-all;
 }
 .remarks_info p span.remarks{
-	width: 16.95rem;
+	width: 15.95rem;
 	font-size: 0.75rem;
 	color: #878282;
 	line-height: 1.0rem;
@@ -207,7 +230,21 @@ body{
 	bottom: 0;
 	z-index: 100;
 	font-size: 0.85rem;
-	color: #363636;
-	background-color: #ffffff;
+	color: #ffffff;
+	background-color: #05a610;
 	box-shadow: -0.1rem 0 0.2rem rgba(48,48,48,0.05);
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+　　color:#878282;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+　　color:#878282;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color:#878282;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+	color:#878282;
 }
