@@ -39,7 +39,7 @@
                         <p>上传视频</p>
                         <input type="file" id="uploadVideo" accept="video/*" >
                         <div class="mask"></div>
-                        <video class="fabuVideo" id="fabuVideo" src="" />
+                        <video class="fabuVideo" id="fabuVideo" src="" oncanplaythrough="videoTime(this)" />
                     </div>
                 </li>
                 <li class="fabu_video_info">
@@ -79,6 +79,10 @@ $('#confirm').on('click',function(){
     var uploadVideo=$('#uploadVideo').val();
     var uploadImg=$('#uploadImg').val();
     var uploadPoster=$('#uploadPoster').val();
+    if(time>180){
+        alert('视频长度不得超过180秒');
+        return;
+    }
     if((uploadPoster && !uploadVideo)||(!uploadPoster && uploadVideo)){
         alert('请同时上传视频和封面图片');
         return;
@@ -102,6 +106,7 @@ document.getElementById('uploadImg').onchange = function() {
 }
 // 上传视频
 document.getElementById('uploadVideo').onchange = function() {
+    
     var strsrc=getObjectURL(this.files[0]);
     $('#fabuVideo').css('display','block');
     $('#fabuVideo').attr('src',strsrc);
@@ -110,6 +115,10 @@ document.getElementById('uploadVideo').onchange = function() {
     $('.fabu_video_info .fabu_shipin_info div.mask').css('display','block');
     $('.fabu_video_info .fabu_shipin_info p').html('改变视频内容');
     $('.fabu_video_info .fabu_shipin_info p').css({'color':'#ffffff'});
+}
+var time;
+function videoTime(){
+    time=Math.floor(document.getElementById('fabuVideo').duration);
 }
 // 上传poster
 document.getElementById('uploadPoster').onchange = function() {
