@@ -23,7 +23,7 @@
 	width:auto;
 }
 .pic_list_right{
-	width:auto;
+	width:13rem;
 }
 .pic_list_right .pic_title{
 	color:#3A3A3A;
@@ -34,7 +34,7 @@
 	font-family: PingFangSC-Semibold;
 }
 .pic_list_right ul li{
-	margin-bottom: 0.45rem;
+	margin-bottom: 0.225rem;
 }
 .pic_list_right ul li span{
 	color:#8C8C8C;
@@ -48,11 +48,12 @@
 	vertical-align: middle;
 }
 .pic_list_right ul li:nth-child(3){
-	margin-bottom: .5rem;
+	margin-bottom: 0.725rem;
 }
 .pic_list_right ul li:nth-child(2) img,
 .pic_list_right ul li:nth-child(3) img{
-	width:0.65rem;
+	width:.65rem;
+	height:.65rem;
 }
 /*付款信息*/
 .pic_list_right .pic_pay{
@@ -60,12 +61,12 @@
 	line-height: 1.2rem;
 	display: inline;
 	margin-left:4.8rem;
-}
-.pic_list_right .pic_pay span{
 	color:#FF0000;
 	font-size: 0.65rem;
 	font-family: PingFangSC-Medium;
-	margin-right:0.25rem;
+}
+.pic_list_right .pic_pay span{
+	margin-right:0.6rem;
 }
 .pic_list_right .pic_pay .blank{
 	color:#3A3A3A;
@@ -88,7 +89,7 @@
 .pic_list_right .pic_pay .payed{
 	color:#8C8C8C;
 	border:0.025rem solid #8C8C8C;
-	margin:0 .6rem;
+	margin-right: .6rem;
 }
 .pic_list_right .pic_receive{
 	color:#027F48;
@@ -97,7 +98,7 @@
 	float: right;
 	position: relative;
 	top:-1.2rem;
-	right:1.05rem;
+	right:.4rem;
 }
 .pic_list_right .pic_receive img{
 	width:0.4rem;
@@ -107,15 +108,109 @@
 }
 .pic_list_right .pic_received{
 	color:#8C8C8C;
+	right:.4rem;
 }
 .weui-infinite-scroll{
 	text-align: center;
     margin-top: 1rem;
 }
 .tab1,.tab2,.tab3,.tab4,.tab5{
-	margin-top:0;
+	margin-top:1rem;
 }
 /*重置swiper样式*/
 .swiper-slide{
-    overflow: auto;
+    overflow: scroll;
+    -webkit-overflow-scrolling:touch;  
 }
+.swiper-container {
+	margin-bottom: 0;
+}
+/*团队样式*/
+.tab_common{
+	height:10.15rem;
+}
+.tab_common .tab_common_left img{
+	width:5.15rem;
+	height:5.15rem;
+	margin:0.8rem 0.85rem 0 1.05rem;
+}
+.tab_common .tab_common_right{
+	width:10.95rem;
+}
+.tab_common .tab_common_right .pic_pay{
+	margin-left: 0;
+}
+.tab_common .tab_common_right ul li:nth-child(1) img,
+.tab_common .tab_common_right ul li:nth-child(3) img,
+.tab_common .tab_common_right ul li:nth-child(4) img{
+	width:.65rem;
+	height:.65rem;
+}
+.tab_common .tab_common_right .pic_title img{
+	width:0.8rem;
+	height:0.775rem;
+	margin-right: 0.6rem;
+	vertical-align: middle;
+}
+.tab_common .tab_common_right ul li div{
+	color:#8C8C8C;
+	height:0.8rem;
+	line-height: .8rem;
+	display: inline-flex;
+	font-size:0.55rem;
+	font-family: PingFangSC-Regular;
+	position: relative;
+	top:-.2rem;
+}
+.tab_common .tab_common_right ul li{
+	height:0.65rem;
+	line-height: .65rem;
+	margin-bottom: 0.225rem;
+	display: flex;
+}
+.tab_common .tab_common_right ul li span{
+	margin-right: 0.5rem;
+	position:relative;
+	top:.06rem;
+}
+.tab_common .tab_common_right ul li em{
+	color:#fff;
+	width:0.8rem;
+	height:0.8rem;
+	line-height: .8rem;
+	border-radius: 50%;
+	display: block;
+	font-size:0.55rem;
+	background-color: #006538;
+	margin-right: 0.1rem;
+	text-align: center;
+	-webkit-text-size-adjust:none;
+}
+.tab_common .tab_common_right .pic_pay span{
+	float: right;
+	margin:0.325rem 0 0.875rem 0;
+}
+.tab_common .tab_common_right .pic_pay button{
+    display: table;
+    float: right;
+}
+.tab_common .tab_common_right .pic_pay .talk{
+	color:#AE9257;
+	border:0.025rem solid #AE9257;
+	margin-left: 0.6rem;
+}
+.tab_common .tab_common_right .pic_pay .talked{
+	margin-left: 0.6rem;
+}
+.tab_common .tab_common_right .pic_receive{
+	right:0;
+}
+.tab_common .tab_common_right .pic_payed{
+	color:#8C8C8C;
+	display: block;
+}
+.tab_common .tab_common_right .pic_payed button{
+	color:#8C8C8C;
+	border:0.025rem solid #8C8C8C;
+}
+

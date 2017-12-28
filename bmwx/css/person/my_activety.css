@@ -1,0 +1,138 @@
+/*header*/
+.activety_header{
+	width:18.75rem;
+	height:2.25rem;
+	overflow-x: hidden;
+	position: fixed;
+	background-color: #fff;
+	z-index:100;
+}
+.activety_header ul{
+	width:18.75rem;
+	height:2.25rem;
+	line-height: 2.25rem;
+	padding:0 1.7rem;
+	border-bottom: 0.025rem solid #ddd;
+	position: fixed;
+}
+.activety_header ul li{
+	width:31%;
+	color: #3A3A3A;
+	font-size: 0.7rem;
+	font-family: PingFangSC-Regular;
+	display: inline-block;
+}
+.activety_header ul li img{
+	width:0.5rem;
+	height: 0.3rem;
+	vertical-align: middle;
+	margin-left: 0.4rem;
+}
+/*下拉框*/
+.header_down_container{
+	position: absolute;
+	overflow-x: hidden;
+}
+.header_list{
+	width:18.75rem;
+	background: rgba(000,000,000,.2);
+	display: none;
+	margin-top:2.25rem;
+}
+.header_list ul{
+	width:18.75rem;
+	/*height:12.5rem;*/
+	background-color: #fff;
+}
+.header_list ul li{
+	color:#8C8C8C;
+	width:18.75rem;
+	height:2.25rem;
+	line-height: 2.25rem;
+	font-size: 0.65rem;
+	padding-left:0.85rem;
+	font-family: PingFangSC-Regular;
+	border-bottom:0.05rem solid #ddd;
+}
+/*地区模块*/
+.header_list ul li:last-child{
+	border-bottom:none;
+	padding:0 1.6rem;
+	margin-top:0.75rem;
+	padding-bottom: 1.6rem;
+}
+.header_list_area ul li:last-child{
+	padding-bottom: .8rem;
+}
+.header_list ul li button{
+	width:6.25rem;
+	height:1.475rem;
+	border-radius: 0.75rem;
+	font-size: 0.75rem;
+	font-family: PingFangSC-Regular;
+}
+.header_list ul li .screen_cancel{
+	color:#8C8C8C;
+	margin-right:3.1rem;
+	background-color: #F5F5F5;
+}
+.header_list ul li .screen_sure{
+	color:#fff;
+	background-color: #006538;
+}
+/*内容列表*/
+.activety_container .activety_item{
+	width:18.75rem;
+	height:5.55rem;
+	border-bottom: 0.025rem solid #ddd;
+}
+.activety_container .activety_item img{
+	width:4.025rem;
+	height:4.05rem;
+	margin:0.75rem 0.8rem 0 1.05rem;
+	float: left;
+}
+.activety_container .activety_item div{
+	float: left;
+	margin-top:0.7rem;
+}
+.activety_container .activety_item div p{
+	color:#3A3A3A;
+	font-size: 0.85rem;
+	font-weight: bold;
+	font-family: PingFangSC-Semibold;
+}
+.activety_container .activety_item div span{
+	margin:0.65rem 0;
+	display: block;
+	color:#8C8C8C;
+	font-size: 0.65rem;
+	font-family: PingFangSC-Regular;
+}
+.activety_container .activety_item div i{
+	font-style: normal;
+	margin-right:0.65rem;
+}
+.activety_container .activety_item div em{
+	color:#AE9257;
+	width:4.5rem;
+	height:1.2rem;
+	line-height: 1.2rem;
+	display: table;
+	font-size: 0.65rem;
+	text-align: center;
+	border:0.05rem solid #AE9257;
+	font-family: PingFangSC-Medium;
+}
+/*上拉加载*/
+.weui-tab{
+	background-color: #fff;
+}
+.weui-tab__bd{
+	overflow: auto;
+}
+.tab1{
+	padding-top:1rem;
+	overflow: scroll;
+    -webkit-overflow-scrolling:touch;  
+}
