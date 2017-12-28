@@ -21,7 +21,16 @@
             <ul class="list_base_info_warp">
                 <li class="list_base_info">
                     <img src="../../img/user_icon.png" alt="" class="user_icon">
-                    <input type="text" name="user" value="" placeholder="请输入姓名" />
+                    <!-- <input type="text" name="user" value="" placeholder="请输入姓名" /> -->
+                    <div class="user_detail_warp">
+                        <div class="user_detail">
+                            <span>姓</span><input type="text" value="" name="user_xing" placeholder="请输入姓氏">
+                        </div>
+                        <div class="user_detail">
+                            <span>名</span><input type="text" value="" name="user_ming" placeholder="请输入名字">
+                        </div>
+                    </div>
+                    
                 </li>
                 <li class="list_base_info">
                     <img src="../../img/sex_icon.png" alt="" class="sex_icon">
@@ -41,7 +50,7 @@
                 </li>
                 <li class="list_base_info">
                     <img src="../../img/age_icon.png" alt="" class="age_icon">
-                    <input type="text" name="age" value="" placeholder="请输入年龄" />
+                    <input type="text" name="age" value="" placeholder="请输入年龄（大于50周岁请上传体检报告）" />
                 </li>
                 <li class="list_base_info">
                     <img src="../../img/nation_icon.png" alt="" class="nation_icon">
@@ -89,7 +98,7 @@
                 </li>
             </ul>
             <div class="remarks_info">
-                <p><span>备注</span><span class="remarks" contenteditable="true">请输入备注信息</span></p>
+                <p><span>备注</span><span class="remarks" contenteditable="true" oninput="num_count()">请输入备注信息</span></p>
             </div>
             <div class="medical_report">
                 <label for="medical_report">请上传一份体检报告</label>
@@ -134,6 +143,7 @@
             $('.medical_report').hide();
         }
     })
+
     // 性别
     $('input[name="sex"]').change(function () {
         if($('#male').is(':checked')){
@@ -171,13 +181,21 @@
     $('.remarks_info .remarks').click(function(){
         if($('.remarks_info .remarks').html()=="请输入备注信息"){
             $('.remarks_info .remarks').empty();
+            $('.remarks_info .remarks').trigger('focus');
         }
     })
+    function num_count(){
+        // console.log();
+        $('.remarks_info').height($('.remarks').outerHeight()+30)
+    }
 
     // 点击下一步
     
     $('#next').on('click',function(){
-        var user=$('input[name=user]').val();
+        alert($('.remarks_info .remarks').html());
+        // var user=$('input[name=user]').val();
+        var user_xing=$('input[name=user_xing]').val();
+        var user_ming=$('input[name=user_ming]').val();
         var sex=$('input[name=sex]:checked').val();
         var age=parseInt($('input[name=age]').val());
         var national;
@@ -192,7 +210,7 @@
         if(age>=50 && (!report)){
             alert('请上传体检报告');
         }
-        if(user==""||(!sex)||age==""||tel==""||idCard==""||(!userType)||(!hotelType)){
+        if(user_xing==""||(user_ming=="")||(!sex)||age==""||tel==""||idCard==""||(!userType)||(!hotelType)){
             alert('请填写空白信息');
         }else{
             // ajax

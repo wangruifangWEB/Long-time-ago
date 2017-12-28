@@ -42,26 +42,17 @@
 	margin-left: -0.825rem;
 }
 
-.weui-tab__bd{
-	overflow: auto;
-}
-.weui-tab__bd-item{
-	background-color: #f0f0f0;
-	overflow: auto;
-}
-.weui-navbar + .weui-tab__bd{
-	padding-top: 2.0rem;
-}
 .weui-pull-to-refresh__layer{
 	padding: 0;
 	height: 2.0rem;
 }
 .swiper-slide{
-            overflow: auto;
-        }
-        .swiper-container{
-            margin-bottom: 2.85rem;
-        }
+    overflow: scroll;
+    -webkit-overflow-scrolling:touch;  
+}
+.swiper-container{
+    margin-bottom: 2.85rem;
+}
 /* 发布 */
 .fabu_btn{
 	position: fixed;

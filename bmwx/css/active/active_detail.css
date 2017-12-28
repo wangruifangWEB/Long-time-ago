@@ -75,7 +75,7 @@ body{
 	word-break:break-all;
 	padding-left: 0.85rem;
 	font-size: 0.75rem;
-	color: #545252;
+	color: #5a5959;
 	line-height: 1.0rem;
 }
 
@@ -168,6 +168,7 @@ body{
 .allCommont a{
 	color: #84b039;
 }
+
 /* 底部操作信息 */
 .operate{
 	position: fixed;
@@ -175,46 +176,54 @@ body{
 	background-color: #f0f0f0;
 	height: 2.85rem;
 	width: 18.75rem;
+	z-index: 10;
 }
 .active_signUp{
-	width: 5.3rem;
+	width: 6.2rem;
 	height: 1.85rem;
 	background-color: #40c046;
-	font-size: 0.8rem;
+	font-size: 0.8rem;212
 	color: #ffffff;
 	border-radius: 0.2rem;
 	margin-top: 0.5rem;
 	margin-left: 0.9rem;
 	border: none;
 	outline: none;
+	float: left;
 }
 .active_signUp a{
 	color: #ffffff;
 }
 .active_commont{
-	border: none;
-	outline: none;
-	margin-top: 0.5rem;
+	padding-left: 1.65rem;
+	width: 4.85rem;
+	float: left;
+}
+.active_commont span{
 	font-size: 0.8rem;
 	color: #363636;
+	line-height: 2.85rem;
+	height: 2.85rem;
 }
-.active_commont{
-	margin-left: 2.5rem;
+.active_commont img{
+	width: 1.2rem;
+	height: 1.0rem;
+	margin-top: 0.925rem;
+	margin-right: 0.45rem;
 }
+
 .active_collect{
-	width: 4.5rem;
-	float: right;
-	margin-top: 0.5rem;
-	margin-right: 1.05rem;
+	float: left;
 }
 .active_collect span{
 	font-size: 0.8rem;
 	color: #363636;
-	line-height: 1.85rem;
+	line-height: 2.85rem;
+	height: 2.85rem;
 }
 .active_collect img{
-	width: 1.5rem;
-	height: 1.5rem;
-	margin-top: 0.175rem;
-	margin-right: 0.25rem;
+	width: 1.1rem;
+	height: 1.05rem;
+	margin-top: 0.9rem;
+	margin-right: 0.45rem;
 }
