@@ -25,7 +25,7 @@
         </div>
         <div class="swiper-container">
             <div class="swiper-wrapper beauty_tab_warp">
-                <div class="swiper-slide beauty_pic_tab weui-tab__bd-item--active weui-pull-to-refresh">
+                <div class="swiper-slide beauty_pic_tab weui-pull-to-refresh">
                     <div class="weui-pull-to-refresh__layer">
                         <div class='weui-pull-to-refresh__arrow'></div>
                         <div class='weui-pull-to-refresh__preloader'></div>
@@ -258,11 +258,11 @@
         <a href="../../html/beaty/beauty_fabu.html"><img src="../../img/fabu_btn.png" alt=""></a>
     </div>
     <div class="weui-tabbar">
-        <a href="beauty_index.html" class="weui-tabbar__item tabbar_beauty">
+        <a href="beauty_index.html" class="weui-tabbar__item weui-bar__item--on tabbar_beauty">
             <div class="weui-tabbar__icon">
                 <img src="../../img/beauty_on.png" alt="">
             </div>
-            <p class="weui-tabbar__label">最美评选</p>
+            <p class="weui-tabbar__label">最美巴马</p>
         </a>
         <a href="../active/active_index.html" class="weui-tabbar__item tabbar_active">
             <div class="weui-tabbar__icon">
@@ -280,15 +280,10 @@
 </body>
 <script>
 $('.swiper-container').height($(window).height());
-<<<<<<< HEAD
-=======
-// 切换
->>>>>>> 35c3b8ac2770dbb378caf00506b6d6488f811611
 var mySwiper = new Swiper('.swiper-container', {
     paginationClickable: true,
     onSlideChangeEnd:function(swiper){
         var index=swiper.activeIndex;
-        console.log(index);
         $('.weui-navbar .weui-navbar__item').eq(index).addClass('weui-bar__item--on').siblings().removeClass('weui-bar__item--on');
     }
 })
@@ -307,7 +302,6 @@ $('.beauty_pic_tab').pullToRefresh().on('pull-to-refresh', function(done) {
     }, 1000)
 })
 $('.beauty_pic_tab').infinite().on("infinite", function() {
-    $('.beauty_pic_tab').infinite();
     setTimeout(function() {
         $(".content-padded .beauty_pic_warp").append(`
             <li class="beauty_pic_list">
@@ -339,7 +333,6 @@ $('.beauty_video_tab').pullToRefresh().on('pull-to-refresh', function(done) {
     }, 1000)
 })
 $('.beauty_video_tab').infinite().on("infinite", function() {
-    $('.beauty_video_tab').infinite();
     setTimeout(function() {
         $(".content-padded .beauty_video_warp").append(`
             <li class="beauty_pic_list">
@@ -369,7 +362,6 @@ $('.beauty_rank_tab').pullToRefresh().on('pull-to-refresh', function(done) {
     }, 1000)
 })
 $('.beauty_rank_tab').infinite().on("infinite", function() {
-    $('.beauty_rank_tab').infinite();
     setTimeout(function() {
         $(".content-padded .beauty_rank_warp").append(`
             <li class="beauty_pic_list">
