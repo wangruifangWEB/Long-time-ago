@@ -40,15 +40,23 @@
 	border-radius: 0.075rem;
 	left: 50%;
 	margin-left: -0.825rem;
+	z-index: 1000;
 }
-
 .weui-pull-to-refresh__layer{
 	padding: 0;
 	height: 2.0rem;
+	position: absolute;
+	top: 0.25rem;
+	width: 5.0rem;
+	left: -2.5rem;
+	margin-top: 0.2rem;
+	margin-left: 50%;
+
 }
 .swiper-slide{
     overflow: scroll;
-    -webkit-overflow-scrolling:touch;  
+    -webkit-overflow-scrolling:touch; 
+    margin-top: 0;
 }
 .swiper-container{
     margin-bottom: 2.85rem;
@@ -77,11 +85,13 @@
 	display: block;
 }
 
-
-/* tabbar_content */
-.beauty_pic_tab,.beauty_video_tab,.beauty_rank_tab{
-	margin-top: 0;
+/* tabbar content */
+.beauty_pic_warp,.beauty_video_warp,.beauty_rank_warp{
+	position: absolute;
+	top: 2rem;
+	width: 18.75rem;
 }
+
 /* 最美图片 */
 .beauty_pic_warp{
 	width: 18.75rem;
