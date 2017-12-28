@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 40px;">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我的活动</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/jquery-weui.css">
+    <link rel="stylesheet" href="../../css/person/my_activety.css">
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/fastclick.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/jquery-weui.min.js"></script>
+    <script src="../../js/swiper.js"></script>
+</head>
+
+<body ontouchstart>
+    <div class="weui-tab">
+    	<!--顶部切换-->
+		<div class="activety_header">
+			<ul>
+				<li>日期<img src="../../img/active_drop_down.png" alt="" /></li>
+				<li>地区<img src="../../img/active_drop_down.png" alt="" /></li>
+				<li>筛选排序<img src="../../img/active_drop_down.png" alt="" /></li>
+			</ul>
+		</div>
+		
+		<!--下拉内容-->
+		<div class="header_down_container">
+			<div class="header_list">
+				<ul>
+					<li>近一周</li>
+					<li>近一个月</li>
+					<li>近半年</li>
+					<li>全部</li>
+					<li>
+						<button class="screen_cancel">取消</button>
+						<button class="screen_sure">确定</button>
+					</li>
+				</ul>
+			</div>
+			<div class="header_list header_list_area">
+				<ul>
+					<li>巴马镇</li>
+					<li>燕洞乡</li>
+					<li>甲篆乡</li>
+					<li>那社乡</li>
+					<li>所略乡</li>
+					<li>局桑乡</li>
+					<li>西山乡</li>
+					<li>平洞乡</li>
+					<li>东山乡</li>
+					<li>凤凰乡</li>
+					<li>百林乡</li>
+					<li>那桃乡</li>
+					<li>
+						<button class="screen_cancel">取消</button>
+						<button class="screen_sure">确定</button>
+					</li>
+				</ul>
+			</div>
+			<div class="header_list">
+				<ul>
+					<li>综合排序</li>
+					<li>按人气排序</li>
+					<li>按时间排序</li>
+					<li>
+						<button class="screen_cancel">取消</button>
+						<button class="screen_sure">确定</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+			
+        <div class="tab1">
+            <div class="content-padded">
+                <ul class="activety_container tab1">
+                    <div class="activety_item">
+						<img src="../../img/activety_pic.png" alt="" />
+						<div>
+							<p>巴马徒步</p>
+							<span><i>2018-1-1</i>广西壮族自治区</span>
+							<em>地点打卡</em>
+						</div>
+					</div>
+					<div class="activety_item">
+						<img src="../../img/activety_pic.png" alt="" />
+						<div>
+							<p>巴马徒步</p>
+							<span><i>2018-1-1</i>广西壮族自治区</span>
+							<em>地点打卡</em>
+						</div>
+					</div>
+					<div class="activety_item">
+						<img src="../../img/activety_pic.png" alt="" />
+						<div>
+							<p>巴马徒步</p>
+							<span><i>2018-1-1</i>广西壮族自治区</span>
+							<em>地点打卡</em>
+						</div>
+					</div>
+					<div class="activety_item">
+						<img src="../../img/activety_pic.png" alt="" />
+						<div>
+							<p>巴马徒步</p>
+							<span><i>2018-1-1</i>广西壮族自治区</span>
+							<em>地点打卡</em>
+						</div>
+					</div>
+					<div class="activety_item">
+						<img src="../../img/activety_pic.png" alt="" />
+						<div>
+							<p>巴马徒步</p>
+							<span><i>2018-1-1</i>广西壮族自治区</span>
+							<em>地点打卡</em>
+						</div>
+					</div>
+                    <div class="activety_item">
+						<img src="../../img/activety_pic.png" alt="" />
+						<div>
+							<p>巴马徒步</p>
+							<span><i>2018-1-1</i>广西壮族自治区</span>
+							<em>地点打卡</em>
+						</div>
+					</div>
+                </ul>
+            </div>
+            <div class="weui-infinite-scroll">
+                <div class="infinite-preloader"></div>
+                <!-- 正在加载... -->
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+//设置滚动加载高度
+$(".weui-tab").height($(window).height());
+//设置遮罩层高度
+$(".header_list").height($(window).height());
+$(".activety_header ul li").click(function(){
+	var i=$(".activety_header ul li").index(this);
+	$(".header_down_container .header_list").eq(i).siblings().hide();
+	$(".header_down_container .header_list").eq(i).slideToggle();
+	
+	//点击取消
+	$(".screen_cancel").click(function(){
+		$(".header_down_container .header_list").eq(i).slideUp();
+	});
+	//点击确定
+	$(".screen_sure").click(function(){
+		$(".header_down_container .header_list").eq(i).slideUp();
+		//请求符合条件的信息
+		$.ajax({
+			url:'',
+			type:'',
+			success:function(data){
+	
+			},
+			error:function(){
+				
+			}
+		});
+	});
+});
+//上拉加载
+$(".tab1").height($(window).height());
+$('.tab1').infinite().on("infinite", function() {
+    setTimeout(function() {
+        $(".content-padded .tab1").append(`
+            <div class="activety_item">
+				<img src="../../img/activety_pic.png" alt="" />
+				<div>
+					<p>巴马徒步</p>
+					<span><i>2018-1-1</i>广西壮族自治区</span>
+					<em>地点打卡</em>
+				</div>
+			</div>
+        `);
+    }, 300);
+});
+
+</script>
+
+</html>
