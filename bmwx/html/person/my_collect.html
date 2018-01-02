@@ -14,92 +14,111 @@
 	    <script src="../../js/common.js"></script>
 	</head>
 	<body>
-		<div class="activety_container">
-            <div class="activety_item">
-            	<div class="activety_item_left"><img src="../../img/radio_checked.png" alt="" /></div>
-				<div class="activety_item_right">
-					<img src="../../img/activety_pic.png" alt="" />
-					<div>
-						<p>巴马徒步</p>
-						<span><i>2018-1-1</i>广西壮族自治区</span>
-						<a href="javascript:;">
-							<img src="../../img/collection.png" alt="" />
-							22人收藏
-						</a>
+		<div class="activety_box">
+			<div class="activety_container">
+	            <div class="activety_item">
+	            	<div class="activety_item_left"><img src="../../img/collect_noselect.png" alt="" /></div>
+					<div class="activety_item_right">
+						<img src="../../img/activety_pic.png" alt="" />
+						<div>
+							<p>巴马徒步</p>
+							<span><i>2018-1-1</i>广西壮族自治区</span>
+							<a href="javascript:;">
+								<img src="../../img/collection.png" alt="" />
+								22人收藏
+							</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			
-			<div class="activety_item">
-            	<div class="activety_item_left"><img src="../../img/radio_checked.png" alt="" /></div>
-				<div class="activety_item_right">
-					<img src="../../img/activety_pic.png" alt="" />
-					<div>
-						<p>巴马徒步</p>
-						<span><i>2018-1-1</i>广西壮族自治区</span>
-						<a href="javascript:;">
-							<img src="../../img/collection.png" alt="" />
-							22人收藏
-						</a>
+				
+				<div class="activety_item">
+	            	<div class="activety_item_left"><img src="../../img/collect_noselect.png" alt="" /></div>
+					<div class="activety_item_right">
+						<img src="../../img/activety_pic.png" alt="" />
+						<div>
+							<p>巴马徒步</p>
+							<span><i>2018-1-1</i>广西壮族自治区</span>
+							<a href="javascript:;">
+								<img src="../../img/collection.png" alt="" />
+								22人收藏
+							</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			
-			<div class="activety_item">
-            	<div class="activety_item_left"><img src="../../img/radio_checked.png" alt="" /></div>
-				<div class="activety_item_right">
-					<img src="../../img/activety_pic.png" alt="" />
-					<div>
-						<p>巴马徒步</p>
-						<span><i>2018-1-1</i>广西壮族自治区</span>
-						<a href="javascript:;">
-							<img src="../../img/collection.png" alt="" />
-							22人收藏
-						</a>
+				
+				<div class="activety_item">
+	            	<div class="activety_item_left"><img src="../../img/collect_noselect.png" alt="" /></div>
+					<div class="activety_item_right">
+						<img src="../../img/activety_pic.png" alt="" />
+						<div>
+							<p>巴马徒步</p>
+							<span><i>2018-1-1</i>广西壮族自治区</span>
+							<a href="javascript:;">
+								<img src="../../img/collection.png" alt="" />
+								22人收藏
+							</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			<button class="remove">编辑</button>
-        </div>
+	        </div>
+	        
+	        <!--操作按钮-->
+			<div class="bottom_btn"><button class="remove">编辑</button></div>
+		</div>
+		
         
         <script>
-        	$(".remove").toggle(function(){
-        		$(".remove").html("删除").addClass("remove_style");
-        		$(".activety_item_left,.activety_item_right").animate({"left":'0'},300);
-        		//选中
-        		$(".activety_item_left img").toggle(function(){
-        			var that=this;
-        			$(that).attr("src","../../img/radio_checked_on.png");
-        			$(that).addClass("choiced").siblings().removeClass("choiced");
-	        			
-        		},function(){ 
-        			$(this).attr("src","../../img/radio_checked.png");
-        			$(this).removeClass("choiced");
-        		});
-        	},function(){
-        		if(!$(".activety_item_left img").hasClass("choiced")){
-        			//按钮是编辑状态
-        			$(".remove").html("编辑").removeClass("remove_style");
-        			$(".activety_item_left,.activety_item_right").animate({"left":'-1.5rem'},300);
-        		}else{
-        			//按钮是删除状态
-        			$.ajax({
-						url:'',
-						type:'',
-						success:function(data){
-				
-						},
-						error:function(){
-							$('.choiced').css('opacity',0);
-							console.log($('.choiced').parent().parent());
-							$('.choiced').parent().parent().animate({"left":'18.75rem'},500,function(){
-							 	$('.choiced').parent().parent().remove();
-							});
-						}
-					});
-	        	}
+        	$(function(){
+        		//判断显示个数给按钮添加定位
+				if($(".activety_container .activety_item").length>=6){
+					$(".activety_box button").css("position","static");
+				}
+        		$(".remove").toggle(function(){
+	        		$(".remove").html("删除").addClass("remove_style");
+	        		$(".activety_item_left,.activety_item_right").animate({"left":'0'},300);
+	        		//选中
+	        		$(".activety_item_left img").toggle(function(){
+	        			var that=this;
+	        			$(that).attr("src","../../img/collect_selected.png");
+	        			$(that).addClass("choiced").siblings().removeClass("choiced");
+		        			
+	        		},function(){ 
+	        			$(this).attr("src","../../img/collect_noselect.png");
+	        			$(this).removeClass("choiced");
+	        		});
+	        	},function(){
+	        		if(!$(".activety_item_left img").hasClass("choiced")){
+	        			//按钮是编辑状态
+	        			$(".remove").html("编辑").removeClass("remove_style");
+	        			$(".activety_item_left,.activety_item_right").animate({"left":'-1.7rem'},300);
+	        		}else{
+	        			//按钮是删除状态
+	        			$.ajax({
+							url:'',
+							type:'',
+							success:function(data){
+					
+							},
+							error:function(){
+								$('.choiced').css('opacity',0);
+								$(".choiced").parent().parent().animate({"left":'18.75rem'});
+								$('.choiced').parent().parent().delay(100).slideUp("800",function(){
+									$('.choiced').parent().parent().remove();
+									//如果消息删空，则隐藏操作按钮
+									if($(".activety_container .activety_item").length === 0){
+										$(".bottom_btn").hide();
+									}
+								});
+								//判断显示个数给按钮添加定位
+								if($(".activety_container .activety_item").length<6){
+									$(".activety_box button").css("position","fixed");
+								}
+							}
+						});
+		        	}
+	        	});
+	        	
         	});
-        	
         </script>
 	</body>
 </html>
