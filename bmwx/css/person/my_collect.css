@@ -1,3 +1,6 @@
+.activety_container .activety_item{
+	position: relative;
+}
 .activety_container .activety_item div{
 	position: relative;
 }
@@ -47,4 +50,5 @@
 .activety_container .remove_style{
 	color:#fff;
 	background-color: #FF0000;
+	border:none;
 }
