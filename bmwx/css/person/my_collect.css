@@ -4,6 +4,9 @@
 .activety_container .activety_item{
 	position: relative;
 }
+.activety_container .activety_item:last-child{
+	border-bottom: none;
+}
 .activety_container .activety_item div{
 	position: relative;
 }
@@ -15,10 +18,13 @@
     font-size: 0.65rem;
     font-family: PingFangSC-Regular;
 }
+.activety_container .activety_item div p{
+	width:10.95rem;
+}
 .activety_container .activety_item div a img{
 	width:0.75rem;
 	height:0.75rem;
-	margin:0 0.25rem 0 0;
+	margin:-.1rem 0.25rem 0 0;
 }
 .activety_item .activety_item_left{
 	width:1.55rem;
@@ -34,11 +40,6 @@
 }
 .activety_item .activety_item_right{
 	left:-1.5rem;
-}
-.activety_box button{
-	width:5.25rem;
-	height:1.45rem;
-	line-height: 1.45rem;
 }
 .activety_box button{
 	width:5.25rem;
@@ -67,3 +68,4 @@
 	background-color: #FF0000;
 	border:none;
 }
+
