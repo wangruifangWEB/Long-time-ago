@@ -28,7 +28,7 @@
         </div>
         <div class="swiper-container">
             <div class="swiper-wrapper beauty_tab_warp">
-                <div class="swiper-slide beauty_pic_tab weui-tab__bd-item--active tab1">
+                <div class="swiper-slide beauty_pic_tab tab1">
                     <div class="content-padded">
                         <ul class="beauty_pic_warp tab1">
                             <li class="beauty_pic_list">
@@ -617,7 +617,8 @@ var mySwiper = new Swiper('.swiper-container', {
 });
 $('.weui-navbar .weui-navbar__item').on('click',function(){
     var index=$('.weui-navbar .weui-navbar__item').index(this);
-    var transformX=$(window).width()*(-index);
+    var windowWidth=Math.min($(window).width(),750);
+    var transformX=windowWidth*(-index);
     $('.weui-navbar .weui-navbar__item').eq(index).addClass('weui-bar__item--on').siblings().removeClass('weui-bar__item--on');
     $('.beauty_tab_warp').css({'transition-duration': '0ms','transform':'translate3d('+transformX+'px,0px,0px)'});
 });

@@ -289,7 +289,8 @@ var mySwiper = new Swiper('.swiper-container', {
 })
 $('.weui-navbar .weui-navbar__item').on('click',function(){
     var index=$('.weui-navbar .weui-navbar__item').index(this);
-    var transformX=$(window).width()*(-index);
+    var windowWidth=Math.min($(window).width(),750);
+    var transformX=windowWidth*(-index);
     $('.weui-navbar .weui-navbar__item').eq(index).addClass('weui-bar__item--on').siblings().removeClass('weui-bar__item--on');
     $('.beauty_tab_warp').css({'transition-duration': '0ms','transform':'translate3d('+transformX+'px,0px,0px)'});
 })

@@ -134,5 +134,6 @@
 .tab1{
 	padding-top:1rem;
 	overflow: scroll;
+	overflow-x: hidden;
     -webkit-overflow-scrolling:touch;  
 }

@@ -1,8 +1,14 @@
+.activety_container{
+	overflow-x: hidden;
+}
 .activety_container .activety_item{
 	position: relative;
 }
 .activety_container .activety_item div{
 	position: relative;
+}
+.activety_warp{
+	margin-bottom: 4.0rem;
 }
 .activety_container .activety_item div a{
 	color: #8C8C8C;
@@ -29,12 +35,21 @@
 .activety_item .activety_item_right{
 	left:-1.5rem;
 }
+.remove_warp{
+	width: 18.75rem;
+	height: 4rem;
+	background-color: #ffffff;
+	position:fixed;
+	z-index: 100;
+
+	bottom: 0;
+	/*bottom:1.6rem;*/
+}
 .activety_container button{
 	width:5.25rem;
 	height:1.45rem;
 	line-height: 1.45rem;
-	position:fixed;
-	bottom:1.6rem;
+	margin-top: 0.95rem;
 	color:#AE9257;
 	text-align: center;
 	font-size: 0.85rem;
