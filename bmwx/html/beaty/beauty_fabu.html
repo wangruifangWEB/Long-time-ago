@@ -21,48 +21,52 @@
         <li class="fabu_title_on"><img src="../../img/update_pic_on.png" alt=""><span>发图片</span></li>
         <li><img src="../../img/update_video.png" alt=""><span>发视频</span></li>
     </ul>
-    <div class="tabbar">
-        <div class="tabbar_img tabbar_info">
-            <div class="fabu_img_info">
-                <img src="../../img/beauty_pic_icon.png" class="icon" alt="">
-                <p>上传图片</p>
-                <input type="file" id="uploadImg" accept="image/*" >
-                <div class="mask"></div>
-                <img class="fabuImg" id="fabuImg" src="" />
+    <div class="tabbar_warp">
+        <div class="tabbar">
+            <div class="tabbar_img tabbar_info">
+                <div class="fabu_img_info">
+                    <img src="../../img/beauty_pic_icon.png" class="icon" alt="">
+                    <p>上传图片</p>
+                    <input type="file" id="uploadImg" accept="image/*" >
+                    <div class="mask"></div>
+                    <img class="fabuImg" id="fabuImg" src="" />
+                </div>
+            </div>
+            <div class="tabbar_video tabbar_info">
+                <ul>
+                    <li class="fabu_video_info">
+                        <div class="fabu_shipin_info">
+                            <img src="../../img/beauty_pic_icon.png" class="icon" alt="">
+                            <p>上传视频</p>
+                            <input type="file" id="uploadVideo" accept="video/*" >
+                            <div class="mask"></div>
+                            <video class="fabuVideo" id="fabuVideo" src="" oncanplaythrough="videoTime(this)" />
+                        </div>
+                    </li>
+                    <li class="fabu_video_info">
+                        <div class="fabu_poster_info">
+                            <img src="../../img/beauty_poster_icon.png" class="icon" alt="">
+                            <p>上传视频封面</p>
+                            <input type="file" id="uploadPoster" accept="image/*" >
+                            <div class="mask"></div>
+                            <img class="fabuPoster" id="fabuPoster" src="" />
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="tabbar_video tabbar_info">
-            <ul>
-                <li class="fabu_video_info">
-                    <div class="fabu_shipin_info">
-                        <img src="../../img/beauty_pic_icon.png" class="icon" alt="">
-                        <p>上传视频</p>
-                        <input type="file" id="uploadVideo" accept="video/*" >
-                        <div class="mask"></div>
-                        <video class="fabuVideo" id="fabuVideo" src="" oncanplaythrough="videoTime(this)" />
-                    </div>
-                </li>
-                <li class="fabu_video_info">
-                    <div class="fabu_poster_info">
-                        <img src="../../img/beauty_poster_icon.png" class="icon" alt="">
-                        <p>上传视频封面</p>
-                        <input type="file" id="uploadPoster" accept="image/*" >
-                        <div class="mask"></div>
-                        <img class="fabuPoster" id="fabuPoster" src="" />
-                    </div>
-                </li>
-            </ul>
+        <div class="fabu_text">
+            <p class="fabu_text_notice">说点什么吧</p>
+            <p class="fabu_text_cont" contenteditable="true"></p>
         </div>
     </div>
-    <div class="fabu_text">
-        <p class="fabu_text_notice">说点什么吧</p>
-        <p class="fabu_text_cont" contenteditable="true"></p>
-    </div>
+    
     <div class="operate">
         <button id="confirm">发布</button>
     </div>
 </body>
 <script>
+$('.tabbar_warp').height($('.tabbar').outerHeight()+$('.fabu_text').outerHeight() + 30+'px');
 $('.fabu_title li').on('click',function(){
     var i=$('.fabu_title li').index(this);
     $('.tabbar .tabbar_info').eq(i).show().siblings().hide();

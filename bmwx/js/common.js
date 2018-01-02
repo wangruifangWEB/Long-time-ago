@@ -1,9 +1,10 @@
 $(function() {
     FastClick.attach(document.body);
-    var w=document.documentElement.clientWidth;
+    var w=Math.min(document.documentElement.clientWidth,750);
 	var a=$("html").css("font-size");
 	var ws=(w*4/75).toFixed(5)+"px";
 	$("html").css({"font-size":ws});
+
 });
 
 //toggle 兼容处理
