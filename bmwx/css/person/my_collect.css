@@ -1,6 +1,14 @@
-.activety_container .activety_item,
+.activety_container{
+	overflow-x: hidden;
+}
+.activety_container .activety_item{
+	position: relative;
+}
 .activety_container .activety_item div{
 	position: relative;
+}
+.activety_warp{
+	margin-bottom: 4.0rem;
 }
 .activety_container .activety_item div a{
 	color: #8C8C8C;
@@ -31,6 +39,12 @@
 	width:5.25rem;
 	height:1.45rem;
 	line-height: 1.45rem;
+}
+.activety_box button{
+	width:5.25rem;
+	height:1.45rem;
+	line-height: 1.45rem;
+	margin-top: 0.95rem;
 	color:#AE9257;
 	text-align: center;
 	font-size: 0.85rem;

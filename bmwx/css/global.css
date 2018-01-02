@@ -1,5 +1,8 @@
 body{
 	font-family: PingFangSC-Regular;
+	margin: 0 auto;
+	display: block;
+	width: 18.75rem;
 }
 input{
 	-webkit-appearance: none;

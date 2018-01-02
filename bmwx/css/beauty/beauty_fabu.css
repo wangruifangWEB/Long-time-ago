@@ -21,6 +21,9 @@ body{
 	float: left;
 	border-right: solid 0.05rem #ededed;
 }
+.fabu_title li:nth-child(2){
+	border-right: none;
+}
 
 .fabu_title li:nth-child(1) img{
 	width: 1.2rem;
@@ -38,6 +41,12 @@ body{
 	color: #20a86a !important;
 }
 
+.tabbar_warp{
+	overflow-y: scroll;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling:touch; 
+	margin-bottom: 2.85rem;
+}
 /* 发布图片 */
 .fabu_img_info{
 	height: 10.2rem;
@@ -45,7 +54,7 @@ body{
 	background-color: #ffffff;
 	margin-bottom: 0.45rem;
 	position: relative;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 .fabu_img_info div.mask{
 	display: none;
