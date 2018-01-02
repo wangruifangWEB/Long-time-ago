@@ -29,6 +29,7 @@
 		
 		<!--下拉内容-->
 		<div class="header_down_container">
+			<div class="header_layer"></div>
 			<div class="header_list">
 				<ul>
 					<li>近一周</li>
@@ -138,18 +139,25 @@
 //设置滚动加载高度
 $(".weui-tab").height($(window).height());
 //设置遮罩层高度
-$(".header_list").height($(window).height());
-$(".activety_header ul li").click(function(){
+$(".header_layer").height($(window).height());
+$(".activety_header ul li").toggle(function(){
+	//获取当前下标
 	var i=$(".activety_header ul li").index(this);
 	$(".header_down_container .header_list").eq(i).siblings().hide();
-	$(".header_down_container .header_list").eq(i).slideToggle();
-	
+	//当前下拉列表显示
+	$(".header_down_container .header_list").eq(i).slideDown();
+	//禁止页面滚动
+	$("body").css({overflow:"hidden"});
+	//遮罩层显示
+	$(".header_layer").show();
 	//点击取消
 	$(".screen_cancel").click(function(){
+		$(".header_layer").hide();
 		$(".header_down_container .header_list").eq(i).slideUp();
 	});
 	//点击确定
 	$(".screen_sure").click(function(){
+		$(".header_layer").hide();
 		$(".header_down_container .header_list").eq(i).slideUp();
 		//请求符合条件的信息
 		$.ajax({
@@ -163,6 +171,10 @@ $(".activety_header ul li").click(function(){
 			}
 		});
 	});
+},function(){
+	var i=$(".activety_header ul li").index(this);
+	$(".header_layer").hide();
+	$(".header_down_container .header_list").eq(i).slideUp();
 });
 //上拉加载
 $(".tab1").height($(window).height());

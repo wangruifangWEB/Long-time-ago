@@ -34,14 +34,19 @@
 	overflow-x: hidden;
 }
 .header_list{
+	display: none;
+	position: relative;
+	margin-top:2.25rem;
+}
+.header_layer{
 	width:18.75rem;
 	background: rgba(000,000,000,.2);
-	display: none;
 	margin-top:2.25rem;
+	position: fixed;
+	display: none;
 }
 .header_list ul{
 	width:18.75rem;
-	/*height:12.5rem;*/
 	background-color: #fff;
 }
 .header_list ul li{
