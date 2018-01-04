@@ -1,0 +1,92 @@
+body{
+	background-color: #F0F0F0 !important;
+}
+.msg_container{
+	width:18.75rem;
+	margin-top:0.95rem;
+}
+.msg_list{
+	width:18.75rem;
+	background-color: #fff;
+	overflow: hidden;
+}
+.msg_list .msg_item{
+	width:27.77rem;
+	height:2.8rem;
+	color: #2A2A2A;
+    font-size: 0.85rem;
+    line-height: 2.8rem;
+	margin-left:1.02rem;
+    font-family: PingFangSC-Regular;
+    border-bottom: 0.025rem solid #ddd;
+}
+.msg_list .msg_item span{
+	float:left;
+}
+.msg_list .msg_change{
+	position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+.msg_list .msg_change input{
+ 	position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    -ms-filter: 'alpha(opacity=0)';
+ }
+.msg_list .msg_item:last-child{
+	border-bottom: none;
+}
+.msg_list .msg_item .msg_header{
+	width:2rem;
+	height:2rem;
+	margin-top:0.45rem;
+    margin-left: 13rem;
+    border-radius: 0.25rem;
+}
+.msg_list .msg_item input{
+	width: 20rem;
+    height: 2rem;
+    border:none;
+    outline: none;
+    color: #2A2A2A;
+    font-size: 0.85rem;
+    margin-left:1rem;
+    margin-top: .4rem;
+    font-family: PingFangSC-Regular;
+}
+.msg_list .msg_item .gander {
+	 margin-left:2.8rem;
+}
+.msg_list .msg_item .more{
+	float: left;
+	background-image: url(../../img/person_more.png);
+	background-repeat: no-repeat;
+	background-size:0.325rem 0.625rem;
+	background-position: 11.6rem .8rem;
+}
+.msg_list .msg_item .num_bg{
+	float: left;
+	background-image: url(../../img/msg_add.png);
+	background-repeat: no-repeat;
+	background-size:0.925rem 0.925rem;
+	background-position: 11.2rem .6rem;
+}
+/*操作按钮*/
+.msg_container .sure{
+	width:18.75rem;
+	height:2.35rem;
+	color:#fff;
+	font-size: 0.85rem;
+	margin-top:1rem;
+	background-color:#65B903;
+	font-family: PingFangSC-Regular;
+}
+/*验证错误样式*/
+input.form_error{
+	color:#fe6b6b;
+}
+input.form_error::-webkit-input-placeholder{
+	color:#fe6b6b;
+}
