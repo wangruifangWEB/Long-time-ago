@@ -5,7 +5,7 @@
 	overflow-x: hidden;
 	position: fixed;
 	background-color: #fff;
-	z-index:100;
+	z-index:1000;
 }
 .activety_header ul{
 	width:18.75rem;
@@ -36,7 +36,7 @@
 .header_list{
 	display: none;
 	position: relative;
-	margin-top:2.25rem;
+	z-index:100;
 }
 .header_layer{
 	width:18.75rem;
@@ -130,14 +130,21 @@
 	font-family: PingFangSC-Medium;
 }
 /*上拉加载*/
-.weui-tab{
-	background-color: #fff;
+.beauty_pic_tab {
+	overflow: scroll;
 }
-.weui-tab__bd{
-	overflow: auto;
+.weui-pull-to-refresh__layer{
+	padding: 0;
+	height: 2.25rem;
+	position: relative;
+	top: 0.25rem;
+	width: 5.0rem;
+	left: -2.5rem;
+	margin-top: 0.2rem;
+	margin-left: 50%;
 }
 .tab1{
-	padding-top:1rem;
+	margin-top:0;
 	overflow: scroll;
 	overflow-x: hidden;
     -webkit-overflow-scrolling:touch;  

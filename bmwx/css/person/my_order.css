@@ -1,3 +1,6 @@
+body{
+	-webkit-overflow-scrolling:touch; 
+}
 /*头部重置样式*/
 .weui-navbar__item{
 	width:3.67rem;
@@ -110,21 +113,14 @@
 	color:#8C8C8C;
 	right:.4rem;
 }
-.weui-infinite-scroll{
-	text-align: center;
-    margin-top: 1rem;
-}
-.tab1,.tab2,.tab3,.tab4,.tab5{
-	/*margin-top:1rem;*/
-}
 /*重置swiper样式*/
 .swiper-slide{
     overflow: scroll;
-    -webkit-overflow-scrolling:touch;  
     overflow-x: hidden;
+    -webkit-overflow-scrolling:touch; 
 }
 .swiper-container {
-	margin-bottom: 0;
+	margin-bottom: 0rem;
 }
 /*团队样式*/
 .tab_common{

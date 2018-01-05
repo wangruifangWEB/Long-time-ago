@@ -1,3 +1,9 @@
+body{
+	-webkit-overflow-scrolling:touch; 
+}
+.beauty_pic_tab {
+	overflow: scroll;
+}
 .activety_container{
 	overflow-x: hidden;
 }
@@ -42,7 +48,7 @@
 	left:-1.5rem;
 }
 /*操作按钮*/
-.activety_box button{
+.beauty_pic_tab button{
 	width:5.25rem;
 	height:1.45rem;
 	line-height: 1.45rem;
@@ -57,16 +63,16 @@
 	font-family: PingFangSC-Medium;
 	border: 0.025rem solid #AE9257;
 }
-.activety_box .bottom_btn{
+.beauty_pic_tab .bottom_btn{
 	margin:1.6rem 0;
 }
 .activety_item .activety_item_right{
 	margin-top:0 !important;
 }
 /*删除*/
-.activety_box .remove_style{
+.beauty_pic_tab .remove_style{
 	color:#fff;
 	background-color: #FF0000;
 	border:none;
 }
-
+/*上拉加载*/
