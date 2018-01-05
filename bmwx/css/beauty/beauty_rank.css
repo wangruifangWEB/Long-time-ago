@@ -1,0 +1,142 @@
+body{
+	background-color: #f0f0f0;
+}
+.beauty_title{
+	width: 18.75rem;
+	height: 2.0rem;
+	background-color: #ffffff;
+	border-bottom: 1px solid #ededed;
+	position: fixed;
+	top: 0;
+	font-weight: bold;
+	z-index: 100;
+}
+.beauty_title p{
+	text-align: center;
+	line-height: 2.0rem;
+	height: 2.0rem;
+	color: #59675c;
+	font-size: 0.8rem;
+}
+
+/* 排行榜 */
+.rank_warp{
+	margin-top: 0;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+.rank_ul{
+	margin-top: -0.5rem;
+	width: 18.75rem;
+	height: auto;
+	background-color: #ffffff;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+.rank_list{
+	width: 18.75rem;
+	height: 7.65rem;
+	border-bottom: solid 1px #ededed;
+}
+.rank_list a{
+	width: 18.75rem;
+	height: 7.65rem;
+	display: block;
+}
+.rank_list_left{
+	float: left;
+	width: 9.8rem;
+	height: 7.65rem;
+}
+.rank_list_left img{
+	width: 8.25rem;
+	height: 5.8rem;
+	margin-top: 0.925rem;
+	margin-left: 1.05rem;
+}
+.rank_list_right{
+	width: 8.0rem;
+	height: 7.65rem;
+	float: left;
+}
+.rank_list_right_title{
+	margin-top: 0.9rem;
+	color: #343434;
+	font-size: 0.8rem;
+	line-height: 1.0rem;
+	height: 2.0rem;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+.rank_list_right_user{
+	margin-top: 0.75rem;
+}
+.rank_list_right_user img{
+	border-radius: 50%;
+	width: 1.5rem;
+	height: 1.5rem;
+	border: solid 1px #074a09;
+	margin-right: 0.5rem;
+	float: left;
+}
+.rank_list_right_user span{
+	font-size: 0.7rem;
+	color: #555b53;
+	height: 1.5rem;
+	width: 5.5rem;
+	line-height: 1.5rem;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	display: block;
+	float: left;
+	word-break: break-all;
+}
+.rank_list_right_operate{
+
+}
+.rank_list_right_like{
+	float: left;
+}
+.rank_list_right_like img{
+	margin-left: 0.175rem;
+	margin-top: 0.85rem;
+	width: 0.65rem;
+	height: 0.6rem;
+	margin-right: 0.35rem;
+}
+.rank_list_right_like span{
+	display: inline-block;
+	margin-top: 0.85rem;
+	height: 0.6rem;
+	font-size: 0.7rem;
+	color: #939292;
+}
+.rank_list_right_operate button{
+	margin-top: 0.55rem;
+	float: right;
+	display: block;
+	padding-left: 0.4rem;
+	padding-right: 0.4rem;
+	border: #9b9b9b solid 1px;
+	color: #9b9b9b;
+	height: 0.9rem;
+	line-height: 0.9rem;
+	border-radius: 0.1rem;
+}
+.rank_list_right_operate button.first{
+	border: #e6472d solid 1px;
+	color: #e6472d;
+}
+.rank_list_right_operate button.second{
+	border: #38c7e1 solid 1px;
+	color: #38c7e1;
+}
+.rank_list_right_operate button.third{
+	border: #eeb92c solid 1px;
+	color: #eeb92c;
+}

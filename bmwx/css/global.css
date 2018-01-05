@@ -91,3 +91,14 @@ input{
 	background-color: transparent;
 	width: 12.1rem;
 }
+
+
+/* 加载 */
+.weui-loadmore__tips{
+	text-align: center;
+	width: 18.75rem;
+	display: block;
+	height: 1rem;
+	line-height: 1rem;
+	font-size: 0.7rem;
+}

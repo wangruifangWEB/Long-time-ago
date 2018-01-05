@@ -1,0 +1,143 @@
+body{
+	background-color: #f0f0f0;
+}
+.index{
+	margin-bottom: 3.5rem;
+}
+.active_title{
+	width: 18.75rem;
+	height: 2.4rem;
+	position: fixed;
+	top: 0;
+	background-color: #ffffff;
+	border: solid 1px #f0f0f0;
+}
+.active_title p{
+	color: #59675c;
+	font-size: 0.85rem;
+	line-height: 2.4rem;
+	text-align: center;
+}
+.active_download{
+	margin-top: 2.4rem;
+	width: 18.75rem;
+	height: 7.85rem;
+	background-color: #ffffff;
+	margin-bottom: 0.45rem;
+}
+.active_notice{
+	width: 16.6rem;
+	padding-left: 1.15rem;
+	padding-right: 1.0rem;
+	padding-top: 1.05rem;
+	line-height: 1.0rem;
+	font-size: 0.75rem;
+	color: #4c4c4c;
+	padding-bottom: 1.35rem;
+}
+.active_download .download{
+	width: 15.0rem;
+	height: 2.1rem;
+	background-color: #11d597;
+	text-align: center;
+	line-height: 2.1rem;
+	color: #ffffff;
+	font-size: 0.75rem;
+	border-radius: 0.15rem;
+	box-shadow: 0 0.125rem 0.325rem rgba(4,130,16,0.13);
+	margin: 0 auto 1.35rem;
+	display: block;
+}
+
+/*  */
+.active_upload{
+	width: 18.75rem;
+	height: 8.5rem;
+	background-color: #ffffff;
+	position: relative;
+}
+.active_upload input{
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 1.8rem;
+	width: 5.0rem;
+}
+.choose_label{
+	position: relative;
+	margin-top: 0.3rem;
+	width: 10.6rem;
+	height: 1.8rem;
+	background-color: #ebebeb;
+	margin-left: 1.95rem;
+	display: block;
+	float: left;
+}
+.choose_label label{
+	margin-top: 0.25rem;
+	width: 3.75rem;
+	margin-left: 0.45rem;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	text-align: center;
+	border: 1px solid #bababa;
+	background-color: #ffffff;
+	font-size: 0.7rem;
+	color: #737373;
+	display: block;
+	float: left;
+}
+.choose_label span{
+	margin-left: 1.3rem;
+	width: 4.5rem;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	word-break: break-all;
+	color: #737373;
+	font-size: 0.7rem;
+	display: block;
+	float: left;
+	height: 1.8rem;
+	line-height: 1.8rem;
+}
+.upload_file{
+	display: block;
+	float: left;
+	width: 3.9rem;
+	height: 1.5rem;
+	text-align: center;
+	line-height: 1.5rem;
+	color: #ffffff;
+	background-color: #11d597;
+	font-size: 0.75rem;
+	margin-left: 0.35rem;
+	margin-top: 0.45rem;
+}
+
+/* 底部操作按钮 */
+.operate{
+	width: 18.75rem;
+	height: 2.85rem;
+	position: fixed;
+	bottom: 0;
+	z-index: 100;
+	box-shadow: 0.15rem 0 0.15rem rgba(16,60,5,0.09);
+}
+.operate li{
+	float: left;
+	width: 9.375rem;
+	text-align: center;
+	line-height: 2.85rem;
+	height: 2.85rem;
+	font-size: 0.85rem;
+}
+.operate li:nth-child(1){
+	color: #272b26;
+	background-color: #ffffff;
+}
+.operate li:nth-child(2){
+	color: #ffffff;
+	background-color: #05a610;
+}

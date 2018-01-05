@@ -1,0 +1,100 @@
+body{
+	background-color: #f0f0f0;
+	height: 100%;
+}
+.index{
+	margin-bottom: 2.85rem;
+}
+.active_title{
+	width: 18.75rem;
+	height: 2.4rem;
+	position: fixed;
+	top: 0;
+	background-color: #ffffff;
+	border: solid 1px #f0e9e9;
+}
+.active_title p{
+	color: #59675c;
+	font-size: 0.85rem;
+	line-height: 2.4rem;
+	text-align: center;
+}
+.signUp_form{
+	margin-top: 2.7rem;
+	width: 18.75rem;
+	height: auto;
+}
+.signUp_list{
+	width: 18.75rem;
+	height: 2.4rem;
+	background-color: #ffffff;
+	border-bottom: solid 1px #f0e9e9;
+}
+.signUp_list:nth-child(1){
+	margin-bottom: 0.3rem;
+}
+.signUp_list label{
+	padding-left: 1.5rem;
+	padding-right: 1.15rem;
+	line-height: 2.4rem;
+	font-size: 0.75rem;
+	color: #2a2b2a;
+}
+.signUp_list input{
+	margin-top: 0.7rem;
+	margin-bottom: 0.7rem;
+	height: 1.0rem;
+	line-height: 1.0rem;
+	font-size: 0.75rem;
+	color: #5a5959;
+	border: none;
+	outline: none;
+}
+.notice{
+	padding-top: 0.9rem;
+	padding-bottom: 0.9rem;
+	height: 1.0rem;
+}
+.notice img{
+	margin-left: 5.05rem;
+	margin-right: 0.6rem;
+	width: 0.95rem;
+	height: 0.95rem;
+}
+.notice span{
+	font-size: 0.75rem;
+	color: #4c4c4c;
+	line-height: 0.95rem;
+	height: 0.95rem;
+}
+.notice span a{
+	color: #4b82ff;
+}
+.operate{
+	width: 18.75rem;
+	height: 2.85rem;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	line-height: 2.85rem;
+	background-color: #05a610;
+	font-size: 0.85rem;
+	color: #ffffff;
+}
+
+
+
+
+::-webkit-input-placeholder { /* WebKit browsers */
+　　color:#878282;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+　　color:#878282;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color:#878282;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+	color:#878282;
+}

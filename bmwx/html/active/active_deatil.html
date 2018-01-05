@@ -25,7 +25,12 @@
     <div class="avtive_info">
         <ul class="avtive_info_ul">
             <li class="avtive_info_add"><img src="../../img/active_add.png" alt=""><span>河池市巴马瑶族自治县甲篆乡</span></li>
-            <li class="avtive_info_time"><img src="../../img/active_time.png" alt=""><span>昵称2018年2月4日</span></li>
+            <li class="avtive_info_time"><img src="../../img/active_time.png" alt=""><span>2018年2月4日-2018年10月25日</span></li>
+        </ul>
+        <ul class="sign_info_ul">
+            <li class="sign_info_fee">报名费用：<span>1000/人</span></li>
+            <li class="sign_info_time">报名时间：<span>2018年2月4日-2018年10月25日</span></li>
+            <li class="sign_info_count"><p>预计人数：<span>10000</span></p><p>实际报名人数：<span>15000</span></p></li>
         </ul>
         <div class="avtive_info_intro">
             <p>
@@ -50,11 +55,37 @@
         <button class="allCommont"><a href="javascript:;">查看全部评论</a></button>
     </div>
     <div class="operate">
-        <button class="active_signUp"><a href="javascript:;">活动报名</a></button>
+        <button class="active_signUp">活动报名</button>
         <div class="active_commont"><img src="../../img/active_commont.png" alt=""><span>评论</span></div>
         <div class="active_collect"><img src="../../img/active_collect.png" alt=""><span>收藏</span></div>
     </div>
+    <div class="mask"></div>
+    <ul class="signUp_detail">
+        <li class="signUp_detail_list">
+            <a href="active_signUp.html">
+                <img src="../../img/person_signUp.png" alt="">
+                <p>个人</p>
+            </a>
+        </li>
+        <li class="signUp_detail_list">
+            <a href="team_signUp.html">
+                <img src="../../img/team_signUp.png" alt="">
+                <p>团队</p>
+            </a>
+        </li>
+    </ul>
 <script>
+    $('.active_signUp').click(function(){
+        $('.mask').css({'height':$(document.body).height(),'overflow-y':'hidden'});
+        $('body').css({'height':$(document.body).height(),'overflow-y':'hidden'});
+        $('.mask').show();
+        $('.signUp_detail').show();
+    })
+    $('.mask').on('click',function(){
+        $('body').css({'height':$(document.body).height(),'overflow-y':'auto'});
+        $('.mask').hide();
+        $('.signUp_detail').hide();
+    })
     $('.active_collect').click(function() {
         if($('.active_collect').hasClass('has_collect')){
             $('.active_collect img').attr('src','../../img/active_collect.png');

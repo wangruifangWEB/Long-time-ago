@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 40px;">
+
+<head>
+    <meta charset="UTF-8">
+    <title>团队报名</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/jquery-weui.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/active/team_signUp.css">
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/fastclick.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/jquery-weui.min.js"></script>
+</head>
+
+<body ontouchstart>
+    <div class="index">
+        <div class="active_title">
+            <p>团队组建</p>
+        </div>
+        <form action="" class="signUp_form">
+            <ul class="signUp_ul">
+                <li class="signUp_list">
+                    <label for="">团队名称</label>
+                    <input type="text" name="teamName" placeholder="请输入团队名称" value="" >
+                </li>
+                <li class="signUp_list">
+                    <label for="">领队姓名</label>
+                    <input type="text" name="teamUser" placeholder="请输入领队姓名" value="" >
+                </li>
+                <li class="signUp_list">
+                    <label for="">联系方式</label>
+                    <input type="tel" name="teamTel" placeholder="请输入联系方式" value="">
+                </li>
+                <li class="signUp_list">
+                    <label for="">身份证号</label>
+                    <input type="text" name="teamCard" placeholder="请输入身份证号" value="">
+                </li>
+            </ul>
+        </form>
+        <div class="notice redio_on">
+            <img src="../../img/radio_checked_on.png" alt="">
+            <span>我已阅读<a href="javascript:;">《报名须知》</a></span>
+        </div>
+    </div>
+    <button class="operate" id="next">下一步</button>
+<script>
+    // 下一步定位
+    var winHeight = $(window).height();   //获取当前页面高度
+    $(window).resize(function(){
+       var thisHeight=$(this).height();
+        if(winHeight - thisHeight >50){
+            $('.operate').css('position','static');
+        }else{
+            $('.operate').css('position','fixed');
+        }
+    });
+
+    // 是否同意
+    $('.notice img').on('click',function(){
+        if($('.notice').hasClass('redio_on')){
+            $('.notice img').attr('src','../../img/radio_checked.png');
+            $('.notice').removeClass('redio_on');
+        }else{
+            $('.notice img').attr('src','../../img/radio_checked_on.png');
+            $('.notice').addClass('redio_on');
+        }
+    })
+
+    //  下一步
+    $('#next').on('click',function(){
+        if(!($('.notice').hasClass('redio_on'))){
+            alert('您还没有同意');
+            return;
+        }
+        var teamName=$('input[name=teamName]').val();
+        var teamUser=$('input[name=teamUser]').val();
+        var teamTel=$('input[name=teamTel]').val();
+        var teamCard=$('input[name=teamCard]').val();
+        if(teamName=="" || teamUser=="" || teamTel=="" || teamCard==""){
+            alert('请完善信息');
+        }else{
+            // ajax
+            window.location.href="team_template.html";
+            $.ajax({
+                url:'',
+                type:'',
+                success: function(){
+
+                }
+            })
+        }
+    })
+</script>
+</body>
+</html>
+

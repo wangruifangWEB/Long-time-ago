@@ -66,6 +66,15 @@
     </div>
 </body>
 <script>
+var winHeight = $(window).height();   //获取当前页面高度
+$(window).resize(function(){
+   var thisHeight=$(this).height();
+    if(winHeight - thisHeight >50){
+        $('.operate').css('position','static');
+    }else{
+        $('.operate').css('position','fixed');
+    }
+});
 $('.tabbar_warp').height($('.tabbar').outerHeight()+$('.fabu_text').outerHeight() + 30+'px');
 $('.fabu_title li').on('click',function(){
     var i=$('.fabu_title li').index(this);
@@ -135,8 +144,6 @@ document.getElementById('uploadPoster').onchange = function() {
     $('.fabu_video_info .fabu_poster_info p').html('改变视频封面内容');
     $('.fabu_video_info .fabu_poster_info p').css({'color':'#ffffff'});
 }
-
-
 
 function getObjectURL(file) {
     var url = null ; 

@@ -23,7 +23,14 @@
             <input type="text" value="" placeholder="搜索关键词" readonly />
         </div>
     </div>
-    <div class="index_plugin">
+    <div class="index_plugin weui-pull-to-refresh">
+        <div class="weui-pull-to-refresh__layer">
+            <div class='weui-pull-to-refresh__arrow'></div>
+            <div class='weui-pull-to-refresh__preloader'></div>
+            <div class="down">下拉刷新</div>
+            <div class="up">释放刷新</div>
+            <div class="refresh">正在刷新</div>
+        </div>
         <div class="swiper-container" data-space-between='10' data-pagination='.swiper-pagination' data-autoplay="1000">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img src="../../img/banner.jpg" alt=""></div>
@@ -38,7 +45,8 @@
                     <li class="list_info">
                         <a href="javascript:;">
                             <div class="list_left">
-                                <img src="../../img/active_list_img.jpg" alt="">
+                                <img class="pic_img" src="../../img/active_list_img.jpg" alt="">
+                                <img class="pic_icon" src="../../img/active_ing.png" alt="">
                             </div>
                             <div class="list_right">
                                 <p class="list_right_title">巴马瑶族自治县，长寿之乡长寿之乡长寿之乡</p>
@@ -50,7 +58,8 @@
                     <li class="list_info">
                         <a href="javascript:;">
                             <div class="list_left">
-                                <img src="../../img/active_list_img.jpg" alt="">
+                                <img class="pic_img" src="../../img/active_list_img.jpg" alt="">
+                                <img class="pic_icon" src="../../img/active_over.png" alt="">
                             </div>
                             <div class="list_right">
                                 <p class="list_right_title">巴马瑶族自治县，长寿之乡长寿之乡长寿之乡</p>
@@ -62,7 +71,8 @@
                     <li class="list_info">
                         <a href="javascript:;">
                             <div class="list_left">
-                                <img src="../../img/active_list_img.jpg" alt="">
+                                <img class="pic_img" src="../../img/active_list_img.jpg" alt="">
+                                <img class="pic_icon" src="../../img/active_over.png" alt="">
                             </div>
                             <div class="list_right">
                                 <p class="list_right_title">巴马瑶族自治县，长寿之乡长寿之乡长寿之乡</p>
@@ -74,7 +84,8 @@
                     <li class="list_info">
                         <a href="javascript:;">
                             <div class="list_left">
-                                <img src="../../img/active_list_img.jpg" alt="">
+                                <img class="pic_img" src="../../img/active_list_img.jpg" alt="">
+                                <img class="pic_icon" src="../../img/active_over.png" alt="">
                             </div>
                             <div class="list_right">
                                 <p class="list_right_title">巴马瑶族自治县，长寿之乡长寿之乡长寿之乡</p>
@@ -86,7 +97,34 @@
                     <li class="list_info">
                         <a href="javascript:;">
                             <div class="list_left">
-                                <img src="../../img/active_list_img.jpg" alt="">
+                                <img class="pic_img" src="../../img/active_list_img.jpg" alt="">
+                                <img class="pic_icon" src="../../img/active_over.png" alt="">
+                            </div>
+                            <div class="list_right">
+                                <p class="list_right_title">巴马瑶族自治县，长寿之乡长寿之乡长寿之乡</p>
+                                <p class="list_right_add">活动地点：</p>
+                                <p class="list_right_time">活动时间：</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list_info">
+                        <a href="javascript:;">
+                            <div class="list_left">
+                                <img class="pic_img" src="../../img/active_list_img.jpg" alt="">
+                                <img class="pic_icon" src="../../img/active_over.png" alt="">
+                            </div>
+                            <div class="list_right">
+                                <p class="list_right_title">巴马瑶族自治县，长寿之乡长寿之乡长寿之乡</p>
+                                <p class="list_right_add">活动地点：</p>
+                                <p class="list_right_time">活动时间：</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list_info">
+                        <a href="javascript:;">
+                            <div class="list_left">
+                                <img class="pic_img" src="../../img/active_list_img.jpg" alt="">
+                                <img class="pic_icon" src="../../img/active_over.png" alt="">
                             </div>
                             <div class="list_right">
                                 <p class="list_right_title">巴马瑶族自治县，长寿之乡长寿之乡长寿之乡</p>
@@ -135,6 +173,12 @@ $(".swiper-container").swiper({
     loop: true,
     autoplay: 3000
 });
+$('.index_plugin').pullToRefresh().on('pull-to-refresh', function(done) {
+    var self = this;
+    setTimeout(function() {
+        $(self).pullToRefreshDone();
+    }, 1000)
+})
 $('.index_plugin').infinite().on("infinite", function() {
     setTimeout(function() {
         $(".content-padded .list_warp").append(`

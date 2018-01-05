@@ -1,3 +1,6 @@
+body{
+	position: relative;
+}
 .weui-tab{
 	background-color: #f0f0f0;
 	height: auto;
@@ -64,7 +67,7 @@
 }
 /* 发布 */
 .fabu_btn{
-	position: fixed;
+	position: absolute;
 	right: 0.6rem;
 	bottom: 3.55rem;
 	width: 2.4rem;
@@ -73,6 +76,7 @@
 	border-radius: 50%;
 	box-shadow: 0 0 0.25rem rgba(10,112,17,0.34);
 	opacity: 0.7;
+	z-index: 100;
 }
 .fabu_btn a{
 	width: 2.4rem;
@@ -137,6 +141,9 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	word-break: break-all;
+	white-space: nowrap;
+	display: block;
+	padding-right: 1.0rem;
 	padding-top: 0.25rem;
 	padding-bottom: 0.25rem;
 	height: 1.2rem;
@@ -218,6 +225,11 @@
 	color: #7e817c;
 	font-size: 0.7rem;
 	margin-bottom: 0.45rem;
+	padding-right: 1.0rem;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	word-break: break-all;
 }
 .rank_list_right .rank_list img{
 	width: 0.9rem;

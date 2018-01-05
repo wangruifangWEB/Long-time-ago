@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 40px;">
+
+<head>
+    <meta charset="UTF-8">
+    <title>团队报名</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/jquery-weui.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/active/team_template.css">
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/fastclick.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/jquery-weui.min.js"></script>
+</head>
+
+<body ontouchstart>
+    <div class="index">
+        <div class="active_title">
+            <p>下载模板</p>
+        </div>
+        <div class="active_download">
+            <p class="active_notice">团队报名需要您下载模板文件。根据模板文件的要求，在模板文件里填写团队成员信息。</p>
+            <button class="download">请点击下载模板文件</button>
+        </div>
+        <div class="active_upload">
+            <p class="active_notice">完成团队报名信息填写之后，上面的「上传文件」按钮，长传刚才写过的模板文件。完成上传后，点击下一步</p>
+            <div class="choose_label">
+                <label for="upload">选择文件</label>
+                <input type="file" name="" value="" id="upload" onchange="chooseFile()" class="upload_input">
+                <span>未选择文件</span>
+            </div>
+            <button class="upload_file" id="uploadFile">上传文件</button>
+        </div>
+    </div>
+    <ul class="operate">
+        <li><a href="team_signUp.html">上一步</a></li>
+        <li id="next">下一步</li>
+    </ul>
+<script>
+    function chooseFile(){
+        var file=$('#upload').val();
+        var index=file.lastIndexOf("\\");
+        var fileName=file.substring(index+1);
+        $('.choose_label span').html(fileName);
+    }
+    // 文件上传
+    $('#uploadFile').on('click',function(){
+        var file=$('#upload').val();
+        if(!file){
+            alert('您还没有选择文件');
+            return;
+        }else{
+            $.ajax({
+                url:'',
+                type:'',
+                success: function(){
+
+                }
+            })
+        }
+    })
+    // 下一步
+    $('#next').on('click',function(){
+        
+    })
+</script>
+</body>
+</html>
+

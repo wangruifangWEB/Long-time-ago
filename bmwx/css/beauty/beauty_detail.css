@@ -1,0 +1,255 @@
+body{
+	background-color: #f0f0f0;
+}
+.beauty_title{
+	width: 18.75rem;
+	height: 2rem;
+	background-color: #ffffff;
+	border-bottom: 1px solid #ededed;
+	/*position: fixed;
+	top: 0;*/
+}
+.beauty_title p{
+	text-align: center;
+	line-height: 2rem;
+	height: 2rem;
+	color: #59675c;
+	font-size: 0.8rem;
+}
+.beauty_pic{
+	width: 18.75rem;
+	/*height: 11.1rem;*/
+	/*margin-top: 2.0rem;*/
+	background-color: #ffffff;
+}
+.beauty_pic .beauty_pic_title{
+	font-weight: bold;
+	padding-left: 2.6rem;
+	padding-right: 2.5rem;
+	color: #373a36;
+	font-size: 0.8rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.3rem;
+}
+.beauty_pic .beauty_pic_img{
+	height: auto;
+	width: 14.6rem;
+	margin: 0 auto;
+	display: block;
+}
+/* 活动信息 */
+.beauty_info{
+	width: 18.75rem;
+	height: auto;
+	background-color: #ffffff;
+	margin-bottom: 0.45rem;
+}
+.beauty_info_ul{
+	margin: 0 auto;
+	width: 18.75rem;
+	height: auto;
+}
+.beauty_info_add{
+	padding-top: 0.65rem;
+	height: 0.85rem;
+	display: flex;
+}
+.beauty_info_add img{
+	width: 0.55rem;
+	height: 0.85rem;
+	margin-left: 2.225rem;
+	margin-right: 0.9rem;
+}
+.beauty_info_time{
+	padding-top: 0.3rem;
+	padding-bottom: 0.5rem;
+	height: 0.85rem;
+	display: flex;
+}
+.beauty_info_time img{
+	width: 0.85rem;
+	height: 0.85rem;
+	margin-left: 2.075rem;
+	margin-right: 0.75rem;
+}
+.beauty_info_time span,.beauty_info_add span{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	padding-right: 1.0rem;
+	word-break: break-all;
+	font-size: 0.7rem;
+	color: #373a36;
+	height: 0.85rem;
+	line-height: 0.85rem;
+}
+.beauty_info_intro{
+	height: 2.0rem;
+	display: flex;
+}
+.beauty_info_intro img{
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 50%;
+	border: solid 1px #074a09;
+	margin-right: 0.45rem;
+	margin-left: 2.075rem;
+}
+.beauty_info_intro span{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	word-break: break-all;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	font-size: 0.7rem;
+	color: #555b53;
+	padding-right: 0.7rem;
+}
+
+
+
+/* 评论 */
+.commont_warp{
+	width: 18.75rem;
+	height: auto;
+	background-color: #ffffff;
+	padding-bottom: 2.6rem;
+	margin-bottom: 2.85rem;
+	margin-top: 0;
+	z-index: 1000;
+}
+.commont_title{
+	width: 18.75rem;
+	border-bottom: solid 1px #ececec;
+	height: 2.5rem;
+	background-color: #ffffff;
+	overflow: hidden; 
+}
+.commont_title_commont{
+	float: left;
+	line-height: 2.5rem;
+}
+.commont_title_commont span{
+	float: left;
+	display: block;
+	height: 0.7rem;
+	color: #0c2a03;
+	font-size: 0.7rem;
+	margin-right: 0.6rem;
+}
+.commont_title_commont span.line{
+	width: 0.15rem;
+	height: 0.7rem;
+	background-color: #1eb04e;
+	margin-left: 1.05rem;
+	margin-right: 0.25rem;
+	margin-top: 0.85rem;
+}
+
+.commont_title_like span{
+	padding-right: 1.05rem;
+	color: #555b53;
+	font-size: 0.7rem;
+}
+.commont_title_like{
+	padding-right: 0.45rem;
+	float: right;
+	line-height: 2.5rem;
+}
+.commont_title_like img{
+	width: 0.775rem;
+	height: 0.75rem;
+	margin-top: 0.825rem;
+	margin-right: 0.35rem;
+}
+/* 评论内容 */
+.commont_info_list{
+	min-height: 3.1rem;
+	height: auto;
+	width: 18.75rem;
+	background-color: #ffffff;
+}
+.commont_info_left{
+	width: 4.5rem;
+	height: auto;
+	float: left;
+}
+.commont_info_left img{
+	width: 2.4rem;
+	height: 2.4rem;
+	margin-top: 0.7rem;
+	margin-left: 1.2rem;
+	margin-right: 0.45rem;
+}
+.commont_info_right{
+	padding-left: 0.45rem;
+	width: 12.55rem;
+	height: auto;
+	padding-top: 0.6rem;
+	padding-bottom: 1.0rem;
+	padding-right: 1.05rem;
+	border-bottom: solid 1px #f0f0f0;
+	float: left;
+}
+.commont_info_right .commont_name{
+	height: 0.95rem;
+	line-height: 0.95rem;
+	color: #423737;
+	font-size: 0.7rem;
+}
+.commont_info_right .commont_cont{
+	font-size: 0.75rem;
+	line-height: 0.85rem;
+	color: #5a5959;
+	font-size: 0.65rem;
+	word-break:break-all;
+}
+
+
+
+/* 底部操作信息 */
+.operate{
+	position: fixed;
+	bottom: 0;
+	background-color: #ffffff;
+	border-top: solid 1px #ebe9e9;
+	height: 2.85rem;
+	width: 18.75rem;
+	z-index: 10;
+}
+.beauty_commont{
+	float: left;
+	margin-left: 1.05rem;
+	margin-top: 0.575rem;
+	margin-bottom: 0.6rem;
+	color: #7e817c;
+	background-color: #f5f5f5;
+	width: 12.0rem;
+	border: solid 1px #d2a850;
+	font-size: 0.75rem;
+	line-height: 1.0rem;
+	padding-top: 0.325rem;
+	padding-bottom: 0.325rem;
+	padding-left: 0.45rem; 
+}
+
+.beauty_collect{
+	float: left;
+	position: absolute;
+	right: 0.5rem;
+	left: 14.25rem;
+	bottom: 0;
+}
+.beauty_collect span{
+	font-size: 0.8rem;
+	color: #7e817c;
+	line-height: 2.85rem;
+	height: 2.85rem;
+}
+.beauty_collect img{
+	width: 1.1rem;
+	height: 1.05rem;
+	margin-top: 0.9rem;
+	margin-right: 0.45rem;
+}

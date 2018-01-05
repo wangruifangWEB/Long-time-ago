@@ -12,6 +12,7 @@ body{
 	height: 2.5rem;
 	color: #1d1f1e;
 	font-size: 0.8rem;
+	font-weight: bold;
 }
 .active_pic{
 	width: 18.75rem;
@@ -40,10 +41,15 @@ body{
 .avtive_info li{
 	height: 1.25rem;
 	line-height: 1.25rem;
+	display: flex; 	
 }
 .avtive_info li span{
 	font-size: 0.8rem;
 	color: #474747;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	word-break: break-all;
 }
 .avtive_info_add{
 	padding-top: 0.725rem;
@@ -77,6 +83,37 @@ body{
 	font-size: 0.75rem;
 	color: #5a5959;
 	line-height: 1.0rem;
+}
+
+/* 报名信息 */
+.sign_info_ul{
+	width: 17.25rem;
+	margin: 0 auto;
+	height: auto;
+	border-bottom: solid 1px #f0f0f0;
+}
+.sign_info_ul li{
+	width: 17.25rem;
+	color: #2a2b2a;
+	font-size: 0.75rem;
+	padding-left: 0.85rem;
+	height: 1.65rem;
+	line-height: 1.65rem;
+}
+.sign_info_time{
+	margin-top: -0.05rem;
+	margin-bottom: -0.05rem;
+}
+.sign_info_ul li span{
+	font-size: 0.75rem;
+	color: #4286c0;
+}
+.sign_info_count{
+	position: relative;
+}
+.sign_info_count p:nth-child(2){
+	position: absolute;
+	left: 7.95rem;
 }
 
 /* 评论 */
@@ -144,6 +181,10 @@ body{
 	line-height: 0.95rem;
 	color: #423737;
 	font-size: 0.75rem;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	word-break: break-all;
 }
 .commont_info_right .commont_cont{
 	font-size: 0.75rem;
@@ -190,8 +231,6 @@ body{
 	border: none;
 	outline: none;
 	float: left;
-}
-.active_signUp a{
 	color: #ffffff;
 }
 .active_commont{
@@ -226,4 +265,53 @@ body{
 	height: 1.05rem;
 	margin-top: 0.9rem;
 	margin-right: 0.45rem;
+}
+
+
+/* 蒙版 */
+.mask{
+	width: 18.75rem;
+	height: 100%;
+	background-color: #000000;
+	position: fixed;
+	top: 0;
+	opacity: 0.2;
+	z-index: 100;
+	display: none;
+}
+.signUp_detail{
+	width: 12.6rem;
+	height: 6.5rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	background-color: #ffffff;
+	position: absolute;
+	margin-top: -3.25rem;
+	margin-left: -6.3rem;
+	left: 50%;
+	top: 50%;
+	z-index: 150;
+	display: none;
+}
+.signUp_detail_list,.signUp_detail_list a{
+	width: 6.27rem;
+	height: 6.5rem;
+	float: left;
+	display: block;
+}
+.signUp_detail_list img{
+	width: 4.0rem;
+	height: 4.0rem;
+	margin-top: 0.95rem;
+	margin-left: 1.15rem;
+}
+.signUp_detail_list p{
+	text-align: center;
+	padding-top: 0.75rem;
+	color: #363c34;
+	font-size: 0.75rem;
+	font-weight: bold;
+}
+.signUp_detail_list:nth-child(1){
+	border-right: solid 0.05rem #f4f4f4;
 }
