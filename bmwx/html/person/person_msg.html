@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 40px;">
+	<head>
+		<meta charset="UTF-8">
+		<title>徒步护照</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <link rel="stylesheet" href="../../css/reset.css">
+	    <link rel="stylesheet" href="../../css/jquery-weui.css">
+	    <link rel="stylesheet" href="../../css/person/person_msg.css">
+	    <script src="../../js/jquery.min.js"></script>
+	    <script src="../../js/fastclick.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="../../js/common.js"></script>
+	    <script src="../../js/jquery-weui.min.js"></script>
+	</head>
+	<body>
+		<div class="msg_container">
+			<form action="">
+				<div class="msg_list">
+					<div class="msg_item msg_change">
+						<span>头像</span>
+						<input type="file" id="uploadImg" accept="image/*" >
+	                    <img class="msg_header" id="headerImg" src="../../img/msg_pic.png" id="uploadImg"/>
+					</div>
+					
+					<div class="msg_item">
+						<span>联系电话</span>
+						<input type="number" class="num_bg tel"/>
+					</div>
+					
+					<div class="msg_item">
+						<span>性别</span>
+						<input type="text" class="gander more" id="gander"/>
+					</div>
+					
+					<div class="msg_item">
+						<span>出生日期</span>
+						<input type="text" id='datetime-picker' class="more date_birth" />
+					</div>
+					
+					<div class="msg_item">
+						<span>身份证号</span>
+						<input type="number" class="num_bg Ic"/>
+					</div>
+					
+					<div class="msg_item">
+						<span>工作行业</span>
+						<input type="text" id="job_type" class="more Work_industry"/>
+					</div>
+					
+					<div class="msg_item">
+						<span>工作岗位</span>
+						<input type="text" id="job" class="more work_post"/>
+					</div>
+					
+					<div class="msg_item">
+						<span>个人健康</span>
+						<input type="text" id="health" class="more helath"/>
+					</div>
+				</div>
+				
+			</form>
+			<!--操作按钮-->
+			<button class="sure">确定</button>
+		</div>
+		<script src="../../js/person/person_msg.js"></script>
+		<script>
+			//上传头像
+			document.getElementById('uploadImg').onchange = function() {
+			    var strsrc=getObjectURL(this.files[0]);
+			    $('#headerImg').attr('src',strsrc);
+			}
+			
+			//出生日期
+			$("#datetime-picker").datetimePicker({
+				 title: "请选择出生年月",
+				toolbarCloseText:'完成'
+			});
+			 
+		    //性别选择
+		    $("#gander").picker({
+		        title: "请选择性别",
+		        toolbarCloseText:'完成',
+		        cols: [
+		            {
+		              textAlign: 'center',
+		              values: ['女','男']
+		            }
+		        ]
+		    });
+		    
+		    //工作行业选择
+		    $("#job_type").picker({
+		        title: "请选择工作行业",
+		        toolbarCloseText:'完成',
+		        cols: [
+		            {
+		              textAlign: 'center',
+		              values: ['医学','建筑','商业','技术']
+		            }
+		        ]
+		    });
+		    
+		    //工作岗位选择
+		    $("#job").picker({
+		        title: "请选择工作岗位",
+		        toolbarCloseText:'完成',
+		        cols: [
+		            {
+		              textAlign: 'center',
+		              values: ['医生','建造师','商人']
+		            }
+		        ]
+		    });
+		    
+		    //个人健康状态选择
+		    $("#health").picker({
+		        title: "请选择健康状态",
+		        toolbarCloseText:'完成',
+		        cols: [
+		            {
+		              textAlign: 'center',
+		              values: ['优','良','健康']
+		            }
+		        ]
+		    });
+		</script>
+	</body>
+</html>

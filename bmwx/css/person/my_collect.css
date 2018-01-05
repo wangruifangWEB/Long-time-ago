@@ -1,8 +1,17 @@
+body{
+	-webkit-overflow-scrolling:touch; 
+}
+.beauty_pic_tab {
+	overflow: scroll;
+}
 .activety_container{
 	overflow-x: hidden;
 }
 .activety_container .activety_item{
 	position: relative;
+}
+.activety_container .activety_item:last-child{
+	border-bottom: none;
 }
 .activety_container .activety_item div{
 	position: relative;
@@ -15,37 +24,31 @@
     font-size: 0.65rem;
     font-family: PingFangSC-Regular;
 }
+.activety_container .activety_item div p{
+	width:10.95rem;
+}
 .activety_container .activety_item div a img{
 	width:0.75rem;
 	height:0.75rem;
-	margin:0 0.25rem 0 0;
+	margin:-.1rem 0.25rem 0 0;
 }
 .activety_item .activety_item_left{
 	width:1.55rem;
 	position: absolute;
 	z-index: 100;
-	left:-1.5rem;
+	left:-1.7rem;
 }
 .activety_item .activety_item_left img{
-	width:.7rem;
-	height:.7rem;
+	width:1rem;
+	height:1rem;
 	padding-top: .8rem;
     margin-left: .7rem;
 }
 .activety_item .activety_item_right{
 	left:-1.5rem;
 }
-.remove_warp{
-	width: 18.75rem;
-	height: 4rem;
-	background-color: #ffffff;
-	position:fixed;
-	z-index: 100;
-
-	bottom: 0;
-	/*bottom:1.6rem;*/
-}
-.activety_container button{
+/*操作按钮*/
+.beauty_pic_tab button{
 	width:5.25rem;
 	height:1.45rem;
 	line-height: 1.45rem;
@@ -55,15 +58,21 @@
 	font-size: 0.85rem;
 	margin-left: 6.75rem;
 	border-radius: 0.725rem;
+	bottom:1.55rem;
+	position: fixed;
 	font-family: PingFangSC-Medium;
 	border: 0.025rem solid #AE9257;
+}
+.beauty_pic_tab .bottom_btn{
+	margin:1.6rem 0;
 }
 .activety_item .activety_item_right{
 	margin-top:0 !important;
 }
 /*删除*/
-.activety_container .remove_style{
+.beauty_pic_tab .remove_style{
 	color:#fff;
 	background-color: #FF0000;
 	border:none;
 }
+/*上拉加载*/

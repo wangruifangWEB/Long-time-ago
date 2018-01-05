@@ -1,0 +1,50 @@
+/*背景图设置*/
+.pass_container{
+	overflow: hidden;
+}
+.pass_container .passport_bg{
+	width:18.75rem;
+	height:30.15rem;
+	background-image:url("../../img/passport_bg.png");
+	background-repeat: no-repeat;
+	background-size:18.75rem 30.15rem;
+}
+.pass_container .passport_details{
+	padding:3.4rem 2.5rem 4.6rem 2.3rem;
+}
+.pass_container .passport_details img{
+	width:5.3rem;
+	height:6.4rem;
+}
+.pass_container .passport_details ul{
+    display: inline-table;
+   	margin:0 0 1.05rem 0.95rem;
+}
+.pass_container .passport_details ul li{
+	color:#006538;
+	font-size: 0.8rem;
+	margin-bottom:1.05rem;
+	font-family: PingFangSC-Regular;
+}
+.pass_container .passport_details ul span{
+	color:#2A2A2A;
+	display: table;
+	margin-top:1.05rem;
+	margin-left:.22rem;
+}
+.pass_container .passport_ziliao{
+	color:#006538;
+	font-size: 0.8rem;
+	margin-bottom:1.05rem;
+	font-family: PingFangSC-Regular;
+} 
+.pass_container .passport_ziliao span{
+	color:#2A2A2A;
+	margin-left:1.35rem;
+}
+.pass_container .passport_details .passport_bottom{
+	width:8.1rem;
+	height:8.1rem;
+	margin-left:3.15rem;
+	margin-top:0.65rem;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 40px;">
+	<head>
+		<meta charset="UTF-8">
+		<title>个人健康</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <link rel="stylesheet" href="../../css/reset.css">
+	    <link rel="stylesheet" href="../../css/global.css">
+	    <link rel="stylesheet" href="../../css/person/person_healthy.css">
+	    <script src="../../js/jquery.min.js"></script>
+	    <script src="../../js/fastclick.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="../../js/common.js"></script>
+	</head>
+	<body>
+		<div class="health_container">
+			<form action="">
+				<div class="health_item">
+					<label for="height">身高&nbsp;&nbsp;(cm)</label>
+					<input type="text" placeholder="请输入身高" class="height"/>
+				</div>
+				
+				<div class="health_item">
+					<label for="weight">体重&nbsp;&nbsp;(kg)</label>
+					<input type="text" placeholder="请输入体重" class="weight"/>
+				</div>
+				
+				<div class="health_item">
+					<label for="target_weight">目标体重&nbsp;&nbsp;(kg)</label>
+					<input type="text" placeholder="请输入目标体重" class="target_weight"/>
+				</div>
+				
+				<button class="sure">确定</button>
+			</form>
+		</div>
+		
+		<script>
+			$(function(){
+				var Height=$(".height");
+				var Weight=$(".weight");
+				var targetWeight=$(".target_weight");
+				var numReg=/^[0-9]+.?[0-9]*$/;
+				var empty='输入不能为空！';
+				var entryError='必须输入数字';
+				//确定提交
+				$(".sure").click(function(e){
+					e.preventDefault();
+					//获取用户输入值
+					var userHeight=Height.val();
+					var userWeight=Weight.val();
+					var TargetWeight=targetWeight.val();
+					//验证输入通过向下执行，否则false
+					var heightReg=set_Reg(Height,numReg,Height,empty,entryError);
+					var weightReg=set_Reg(Weight,numReg,Weight,empty,entryError);
+					var targetWeightReg=set_Reg(targetWeight,numReg,targetWeight,empty,entryError);
+					if(heightReg && weightReg && targetWeightReg){
+						return true;
+							$.ajax({
+								type:"get",
+								url:"",
+								async:true,
+								success:function(){
+									
+								},
+								error:function(){
+									
+								}
+							});
+					}else{
+						return false;
+					}
+				});
+				
+				//判断及验证
+				 function set_Reg(selector,reg,testReg,empty,erro){
+			        if($(testReg).val() == null || $(testReg).val() == ''){
+			           $(selector).attr('placeholder',empty).addClass('form_error');
+			            return false;
+			        }else if (!reg.test($(testReg).val())) {
+			            $(selector).attr('placeholder',erro).val('').addClass('form_error');
+			            return false;
+			        }else{
+			            $(selector).removeClass('form_error');
+			            return true;
+			        }
+			    }
+				 
+				 //鼠标再次进入去掉错误提示样式
+				Height.focus(function(){
+				  	Height.attr('placeholder','').removeClass('form_error');
+				});
+				
+				 Weight.focus(function(){
+				  	Weight.attr('placeholder','').removeClass('form_error');
+				});
+				
+				targetWeight.focus(function(){
+				  	targetWeight.attr('placeholder','').removeClass('form_error');
+				});
+			});
+		</script>
+	</body>
+</html>

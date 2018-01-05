@@ -1,0 +1,61 @@
+body{
+	background-color: #F0F0F0 !important;
+}
+.health_container{
+	overflow: hidden;
+	margin:0.75rem 0 0.5rem 0;
+}
+.health_container .health_item{
+	width:18.75rem;
+	height:2.25rem;
+	line-height: 2.25rem;
+	overflow: hidden;
+	background-color: #fff;
+	padding-left: 1.05rem;
+	border-bottom: 0.025rem solid #ddd;
+}
+.health_container .health_item label{
+	color:#2A2A2A;
+	font-size: 0.85rem;
+	margin-right: 1rem;
+	font-family: PingFangSC-Regular;
+}
+.health_container .health_item input{
+	width:10rem;
+	height:100%;
+	border:none;
+	outline: none;
+	color:#2A2A2A;
+	font-size: 0.85rem;
+	font-family: PingFangSC-Regular;
+}
+/*设置placeholder颜色*/
+input::-webkit-input-placeholder{
+　　color: #8C8C8C;
+}
+input:-moz-placeholder{
+　	color:#8C8C8C;
+}
+input::-moz-placeholder{
+　　color:#8C8C8C;
+}
+input:-ms-input-placeholder{
+　　color:#8C8C8C;
+}
+/*提交按钮*/
+.health_container .sure{
+	width:18.75rem;
+	height:2.35rem;
+	color:#fff;
+	font-size: 0.85rem;
+	margin-top:1rem;
+	background-color:#65B903;
+	font-family: PingFangSC-Regular;
+}
+/*验证错误样式*/
+input.form_error{
+	color:#fe6b6b;
+}
+input.form_error::-webkit-input-placeholder{
+	color:#fe6b6b;
+}
