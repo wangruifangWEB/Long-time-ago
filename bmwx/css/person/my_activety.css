@@ -37,6 +37,7 @@
 	display: none;
 	position: relative;
 	z-index:100;
+	margin-top:2.25rem;
 }
 .header_layer{
 	width:18.75rem;
