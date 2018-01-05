@@ -731,24 +731,29 @@ body {
   margin-top: 10px;
 }
 .weui-pull-to-refresh {
-  margin-top: -50px;
+  margin-top: -2.5rem;
   -webkit-transition: -webkit-transform .4s;
   transition: -webkit-transform .4s;
   transition: transform .4s;
   transition: transform .4s, -webkit-transform .4s;
 }
 .weui-pull-to-refresh.refreshing {
-  -webkit-transform: translate3d(0, 50px, 0);
-          transform: translate3d(0, 50px, 0);
+  -webkit-transform: translate3d(0, 2.5rem, 0);
+          transform: translate3d(0, 2.5rem, 0);
 }
 .weui-pull-to-refresh.touching {
   -webkit-transition-duration: 0s;
           transition-duration: 0s;
 }
-.weui-pull-to-refresh__layer {
+/*.weui-pull-to-refresh__layer {
   height: 30px;
   line-height: 30px;
   padding: 10px;
+  text-align: center;
+}*/
+.weui-pull-to-refresh__layer {
+  height: 2.5rem;
+  line-height: 2.5rem;
   text-align: center;
 }
 .weui-pull-to-refresh__layer .down {
