@@ -280,7 +280,7 @@
 </body>
 <script>
 $('.swiper-container').height($(window).height());
-
+$('.swiper-slide').width(Math.min($(window).width(),750));
 var mySwiper = new Swiper('.swiper-container', {
     paginationClickable: true,
     onSlideChangeEnd:function(swiper){

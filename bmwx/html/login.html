@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 40px;">
+
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/jquery-weui.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/fastclick.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/jquery-weui.min.js"></script>
+    <style>
+        body{
+            background-color: #ffffff;
+        }
+        ul{
+            width: 18.75rem;
+            height: auto;
+            margin-top: 5.25rem;
+        }
+        li.normal_li{
+            margin: 0 auto 0.6rem;
+            width: 13.6rem;
+            border: solid 0.05rem #ecdfc3;
+            position: relative;
+            height: 1.9rem;
+        }
+        li.normal_li input{
+            padding-left: 0.6rem;
+            padding-top: 0.475rem;
+            padding-bottom: 0.475rem;
+            height: 0.9rem;
+            line-height: 0.9rem;
+            width: 13.0rem;
+            border: none;
+            outline: none;
+            font-size: 0.7rem;
+            color: #5a5959;
+        }
+        li.normal_li img{
+            position: absolute;
+            top: 0.475rem;
+            right: 0.6rem;
+            width: 0.9rem;
+            height: 0.9rem;
+        }
+        li.special_li{
+            width: 13.6rem;
+            height: 1.85rem;
+            margin: 0 auto 0.6rem;
+        }
+        li.special_li input{
+            width: 6.7rem;
+            height: 0.9rem;
+            line-height: 0.9rem;
+            display: block;
+            float: left;
+            border: solid 0.05rem #ecdfc3;
+            padding-top: 0.475rem;
+            padding-bottom: 0.475rem;
+            margin-right: 0.45rem;
+            padding-left: 0.6rem;
+            outline: none;
+            font-size: 0.7rem;
+            color: #5a5959;
+            border-radius: 0;
+        }
+        li.special_li button{
+            width: 5.7rem;
+            height: 1.85rem;
+            border-radius: 0.975rem;
+            background-color: #288f08;
+            line-height: 1.85rem;
+            text-align: center;
+            color: #ffffff;
+            font-size: 0.7rem;
+            float: right;
+            display: block;
+        }
+        li.special_li button.disabled{
+            background-color: #b7b7b7;
+            pointer-events: none;
+        }
+        .register{
+            display: block;
+            margin:1.5rem auto;
+            width: 9.75rem;
+            height: 3.0rem;
+            text-align: center;
+            line-height: 3.0rem;
+            font-size: 0.95rem;
+            color: #ffffff;
+            border-radius: 1.5rem;
+            background-color: #288f08;
+        }
+        .normal_li.pwd_li img{
+            position: absolute;
+            width: 1.2rem;
+            height: 0.6rem;
+            top: 0.625rem;
+            right: 0.5rem;
+        }
+        ::-webkit-input-placeholder { /* WebKit browsers */
+        　　color:#878282;
+        }
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        　　color:#878282;
+        }
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color:#878282;
+        }
+        :-ms-input-placeholder { /* Internet Explorer 10+ */
+            color:#878282;
+        }
+    </style>
+</head>
+
+<body ontouchstart>
+    <!-- <form action=""> -->
+        <ul>
+            <li class="normal_li">
+                <input type="text" id="national" placeholder="请选择您的国家" />
+                <img src="../img/register_slide_down.png" alt="">
+            </li>
+            <li class="special_li">
+                <input type="text" name="tel" placeholder="请输入手机号" />
+                <button class="getMessage">点击获取验证码</button>
+            </li>
+            <li class="normal_li">
+                <input type="text" name="message" placeholder="请输入短信验证码" />
+            </li>
+            <li class="normal_li pwd_li">
+                <input type="password" name="pwd" placeholder="请输入6-12位登录密码" />
+                <img src="../img/password_on.png" alt="" class="password_on">
+            </li>
+            <li class="normal_li pwd_li">
+                <input type="password" name="repwd" placeholder="请再次输入登录密码" />
+                <img src="../img/password_on.png" alt="" class="password_on">
+            </li>
+        </ul>
+    <!-- </form> -->
+    <button class="register">登录</button>
+</body>
+<script>
+$("#national").on('click',function(){
+    document.activeElement.blur();
+})
+$("#national").picker({
+    title: "请选择国籍",
+    toolbarCloseText:'完成',
+    cols: [
+        {
+          textAlign: 'center',
+          values: ['中国','美国','韩国']
+        }
+    ]
+});
+$('.getMessage').on('click',function(){
+    if($('input[name=tel]').val()==""){
+        alert('请填写手机号');
+        return;
+    }else{
+        time(this);
+    }
+})
+var num=5;
+function time(btn){
+    if(num==0){
+        $('.getMessage').removeClass('disabled');
+        $('.getMessage').html('重新获取验证码');
+        num=5;
+    }else{
+        $('.getMessage').html('获取验证码('+num+'s)');
+        $('.getMessage').addClass('disabled');
+        num--;
+        setTimeout(function(){
+            time(num);    
+        },1000)
+    }
+} 
+
+$('.pwd_li img').on('click',function(){
+    var i=$('.pwd_li img').index(this);
+    if($('.pwd_li').eq(i).children('img').hasClass('password_on')){
+        $('.pwd_li').eq(i).children('img').addClass('password').removeClass('password_on');
+        $('.pwd_li').eq(i).children('img').attr('src','../img/password.png');
+        $('.pwd_li').eq(i).children('input').attr('type','text');
+    }else{
+        $('.pwd_li').eq(i).children('img').addClass('password_on').removeClass('password');
+        $('.pwd_li').eq(i).children('img').attr('src','../img/password_on.png');
+        $('.pwd_li').eq(i).children('input').attr('type','password');
+    }
+})
+
+$('.register').on('click',function(){
+    alert($('#national').val());
+    var national=$('#national').val();
+    var tel=$('input[name=tel]').val();
+    var message=$('input[name=message]').val();
+    var pwd=$('input[name=pwd]').val();
+    var repwd=$('input[name=repwd]').val();
+    // alert(national+'<br />'+tel+'<br />'+message+'<br />'+pwd+'<br />'+repwd);
+    if(pwd.length>12||pwd.length<6){
+        alert('请输入6-12位密码');
+        return;
+    }
+    if(pwd != repwd){
+        alert('两次密码输入不一致');
+        return;
+    }
+})
+</script>
+
+</html>

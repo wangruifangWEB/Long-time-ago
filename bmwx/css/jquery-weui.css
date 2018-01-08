@@ -745,17 +745,17 @@ body {
   -webkit-transition-duration: 0s;
           transition-duration: 0s;
 }
-/*.weui-pull-to-refresh__layer {
+.weui-pull-to-refresh__layer {
   height: 30px;
   line-height: 30px;
   padding: 10px;
   text-align: center;
-}*/
-.weui-pull-to-refresh__layer {
+}
+/*.weui-pull-to-refresh__layer {
   height: 2.5rem;
   line-height: 2.5rem;
   text-align: center;
-}
+}*/
 .weui-pull-to-refresh__layer .down {
   display: inline-block;
 }
