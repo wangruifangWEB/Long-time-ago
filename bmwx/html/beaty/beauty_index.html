@@ -17,6 +17,22 @@
 </head>
 
 <body ontouchstart>
+    <div class="choose">
+        <div class="choose_btn">
+            <span>全部</span>
+            <img src="../../img/beauty_choose.png" alt="">
+        </div>
+        <div class="choose_warp">
+            <ul>
+                <li class="choose_list active" id="all_user"><label for="all">全部</label><input type="radio" id="all" value="all" name="media" checked/></li>
+                <li class="choose_list" id="media_user"><label for="media">媒体</label><input type="radio" id="media" value="media" name="media"/></li>
+                <li class="choose_list" id="origin_user"><label for="origin">普通</label><input type="radio" id="origin" value="origin" name="media"/></li>
+            </ul>
+            <button class="cancle">取消</button>
+            <button class="confirm">确定</button>
+        </div>
+    </div>
+    <div class="mask"></div>
     <div class="weui-tab">
         <div class="weui-navbar">
             <div class="weui-navbar__item weui-bar__item--on">图片<span></span></div>
@@ -252,7 +268,6 @@
                 </div>
             </div>
         </div>
-        
     </div>
     <div class="fabu_btn">
         <a href="../../html/beaty/beauty_fabu.html"><img src="../../img/fabu_btn.png" alt=""></a>
@@ -279,6 +294,26 @@
     </div>
 </body>
 <script>
+// 全部模块
+$('.choose_btn').on('click',function(){
+    $('.mask').show();
+    $('.choose_warp').show();
+    $('body').css({'overflow-y':'hidden'});
+})
+$('.choose_warp ul li').click(function(){
+    var i=$('.choose_warp ul li').index(this);
+    $('.choose_warp ul li').eq(i).addClass('active').siblings().removeClass('active');
+})
+$('.confirm').on('click',function(){
+    alert($('input[name=media]:checked').val());
+})
+$('.cancle').on('click',function(){
+    $('.mask').hide();
+    $('.choose_warp').hide();
+    $('body').css({'overflow-y':'scroll'});
+})
+
+// 加载刷新
 $('.swiper-container').height($(window).height());
 $('.swiper-slide').width(Math.min($(window).width(),750));
 var mySwiper = new Swiper('.swiper-container', {
