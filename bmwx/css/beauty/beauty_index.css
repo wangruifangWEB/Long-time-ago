@@ -230,10 +230,6 @@ body{
 	color: #373a36;
 }
 .pic_list_right .pic_list_author{
-	overflow: hidden;
-	text-overflow: ellipsis;
-	word-break: break-all;
-	white-space: nowrap;
 	display: block;
 	padding-right: 1.0rem;
 	padding-top: 0.25rem;
@@ -242,6 +238,22 @@ body{
 	line-height: 1.2rem;
 	color: #7e817c;
 	font-size: 0.7rem;
+}
+.pic_list_author span{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	white-space: nowrap;
+	max-width: 6rem;
+	display: block;
+	float: left;
+}
+.pic_list_author img{
+	width: 1.2rem;
+	height: 0.7rem;
+	margin-left: 0.45rem;
+	margin-top: 0.25rem;
+	float: left;
 }
 .pic_list_right .pic_list_oprate{
 
@@ -310,6 +322,12 @@ body{
 	line-height: 1.4rem;
 	color: #373a36;
 	font-size: 0.8rem;
+}
+.rank_list_right .rank_list_title img{
+	width: 1.2rem;
+	height: 0.7rem;
+	margin-left: 0.45rem;
+	margin-top: 0.3rem;
 }
 .rank_list_right .rank_list{
 	height: 0.9rem;
