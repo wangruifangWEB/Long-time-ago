@@ -1,5 +1,6 @@
 body{
 	background-color: #f0f0f0;
+	position: relative;
 }
 .active_title{
 	width: 18.75rem;
@@ -128,6 +129,7 @@ body{
 	width: 18.75rem;
 	border-bottom: solid 1px #f0f0f0;
 	height: 2.5rem;
+	position: relative;
 }
 .commont_title_commont{
 	padding-left: 1.05rem;
@@ -139,6 +141,21 @@ body{
 	padding-right: 0.6rem;
 	color: #0c2a03;
 	font-size: 0.7rem;
+}
+.active_signUp{
+	position: absolute;
+	right: 1.05rem;
+	top: 0.5rem;
+	width: 4.2rem;
+	display: block;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	background-color: #40c046;
+	font-size: 0.7rem;
+	color: #ffffff;
+	border: none;
+	outline: none;
+	color: #ffffff;
 }
 /*.commont_title_like{
 	padding-right: 0.45rem;
@@ -219,20 +236,7 @@ body{
 	width: 18.75rem;
 	z-index: 10;
 }
-.active_signUp{
-	width: 6.2rem;
-	height: 1.85rem;
-	background-color: #40c046;
-	font-size: 0.8rem;212
-	color: #ffffff;
-	border-radius: 0.2rem;
-	margin-top: 0.5rem;
-	margin-left: 0.9rem;
-	border: none;
-	outline: none;
-	float: left;
-	color: #ffffff;
-}
+
 .active_commont{
 	padding-left: 1.65rem;
 	width: 4.85rem;
@@ -285,13 +289,17 @@ body{
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
 	background-color: #ffffff;
-	position: absolute;
+	/*position: absolute;
 	margin-top: -3.25rem;
 	margin-left: -6.3rem;
 	left: 50%;
-	top: 50%;
+	top: 50%;*/
 	z-index: 150;
 	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translateX(-50%) translateY(-50%);
 }
 .signUp_detail_list,.signUp_detail_list a{
 	width: 6.27rem;

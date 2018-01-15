@@ -348,6 +348,7 @@ $('.confirm').on('click',function(){
     $('.mask').hide();
     $('.choose_warp').hide();
     $('body').css({'overflow-y':'scroll'});
+    $('.choose_btn span').html($('input[name=media]:checked').siblings('label').html());
 })
 $('.cancle').on('click',function(){
     $('.mask').hide();
