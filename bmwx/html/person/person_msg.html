@@ -2,7 +2,7 @@
 <html lang="en" style="font-size: 40px;">
 	<head>
 		<meta charset="UTF-8">
-		<title>徒步护照</title>
+		<title>个人信息</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 	    <link rel="stylesheet" href="../../css/reset.css">
 	    <link rel="stylesheet" href="../../css/jquery-weui.css">
@@ -17,52 +17,62 @@
 			<form action="">
 				<div class="msg_list">
 					<div class="msg_item msg_change">
-						<span>头像</span>
+						<label>会员</label>
 						<input type="file" id="uploadImg" accept="image/*" >
 	                    <img class="msg_header" id="headerImg" src="../../img/msg_pic.png" id="uploadImg"/>
 					</div>
 					
 					<div class="msg_item">
-						<span>联系电话</span>
-						<input type="number" class="num_bg tel"/>
+						<label>姓</label>
+						<input type="text" class="more num_bg" />
 					</div>
 					
 					<div class="msg_item">
-						<span>性别</span>
-						<input type="text" class="gander more" id="gander"/>
+						<label>名</label>
+						<input type="text" class="more num_bg"/>
+					</div>
+					
+					<div class="msg_item placeJump">
+						<label>联系电话</label>
+						<input type="number" class="more placeJump"/>
+						<a href="replace_phone.html"><img src="../../img/person_more.png" alt="" /></a>
 					</div>
 					
 					<div class="msg_item">
-						<span>出生日期</span>
-						<input type="text" id='datetime-picker' class="more date_birth" />
+						<label>性别</label>
+						<input type="text" class="gander more placeChange" id="gander" placeholder="请选择"/>
 					</div>
 					
 					<div class="msg_item">
-						<span>身份证号</span>
-						<input type="number" class="num_bg Ic"/>
+						<label>出生日期</label>
+						<input type="number more" id='datetime-picker' class="more date_birth placeChange" placeholder="请选择"/>
+					</div>
+					
+					<div class="msg_item placeJump">
+						<label>身份证号</label>
+						<input type="number" class="more placeJump"/>
+						<a href="bind_passport.html"><img src="../../img/person_more.png" alt="" /></a>
 					</div>
 					
 					<div class="msg_item">
-						<span>工作行业</span>
+						<label>工作行业</label>
 						<input type="text" id="job_type" class="more Work_industry"/>
 					</div>
 					
 					<div class="msg_item">
-						<span>工作岗位</span>
+						<label>工作岗位</label>
 						<input type="text" id="job" class="more work_post"/>
 					</div>
 					
 					<div class="msg_item">
-						<span>个人健康</span>
+						<label>个人健康</label>
 						<input type="text" id="health" class="more helath"/>
 					</div>
 				</div>
 				
 			</form>
-			<!--操作按钮-->
-			<button class="sure">确定</button>
 		</div>
-		<script src="../../js/person/person_msg.js"></script>
+		<!--<script src="../../js/person/person_msg.js"></script>-->
 		<script>
 			//上传头像
 			document.getElementById('uploadImg').onchange = function() {
@@ -123,6 +133,19 @@
 		            }
 		        ]
 		    });
+		    
+		//获取头像函数
+		function getObjectURL(file) {
+		    var url = null ; 
+		    if (window.createObjectURL!=undefined) { // basic
+		        url = window.createObjectURL(file) ;
+		    } else if (window.URL!=undefined) { // mozilla(firefox)
+		        url = window.URL.createObjectURL(file) ;
+		    } else if (window.webkitURL!=undefined) { // webkit or chrome
+		        url = window.webkitURL.createObjectURL(file) ;
+		    }
+		    return url;
+		}
 		</script>
 	</body>
 </html>

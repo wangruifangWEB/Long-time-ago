@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 40px;">
+	<head>
+		<meta charset="UTF-8">
+		<title>绑定证件</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <link rel="stylesheet" href="../../css/reset.css">
+	    <link rel="stylesheet" href="../../css/jquery-weui.css">
+	    <link rel="stylesheet" href="../../css/person/bind_passport.css">
+	    <script src="../../js/jquery.min.js"></script>
+	    <script src="../../js/fastclick.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="../../js/common.js"></script>
+	    <script src="../../js/jquery-weui.min.js"></script>
+	</head>
+	<body>
+		<div class="msg_container">
+			<p class="msg_title">绑定身份有效证件</p>
+			<form action="">
+				<div class="msg_list">
+					<div class="msg_item">
+						<label class="area_name">地区</label>
+						<input type="text" id="area" class="more area" placeholder="中国大陆"/>
+					</div>
+					
+					<div class="msg_item">
+						<label>证件类型</label>
+						<input type="text" id="type" class="more" placeholder="身份证"/>
+					</div>
+					
+					<div class="msg_item">
+						<label class="passport_num">证件号</label>
+						<input type="number" placeholder="请输入正确的证件号码" class="passport"/>
+					</div>
+				</div>
+				
+			</form>
+			<!--操作按钮-->
+			<button class="sure"><a href="person_msg.html">确定</a></button>
+		</div>
+		<script>
+		    //地区选择
+		    $("#area").picker({
+		        title: "请选择地区",
+		        toolbarCloseText:'完成',
+		        cols: [
+		            {
+		              textAlign: 'center',
+		              values: ['中国','美国','英国','韩国']
+		            }
+		        ]
+		    });
+		    
+		    //证件类型选择
+		    $("#type").picker({
+		        title: "请选择证件类型",
+		        toolbarCloseText:'完成',
+		        cols: [
+		            {
+		              textAlign: 'center',
+		              values: ['身份证','身份证']
+		            }
+		        ]
+		    });
+		</script>
+	</body>
+</html>

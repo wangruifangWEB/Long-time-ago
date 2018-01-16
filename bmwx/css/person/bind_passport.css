@@ -3,13 +3,20 @@ body{
 }
 .msg_container{
 	width:18.75rem;
-	margin-top:0.95rem;
+	text-align: center;
 	overflow-x: hidden;
 }
 .msg_list{
 	width:18.75rem;
-	background-color: #fff;
 	overflow: hidden;
+}
+.msg_title{
+	color: #7e7e7e;
+	height:2.5rem;
+	line-height:2.5rem;
+    font-size: 0.85rem;
+    text-align: center;
+    font-family: PingFangSC-Regular;
 }
 .msg_list .msg_item{
 	width:27.77rem;
@@ -17,7 +24,9 @@ body{
 	color: #2A2A2A;
     font-size: 0.85rem;
     line-height: 2.8rem;
-	margin-left:1.02rem;
+	padding-left:1.02rem;
+	margin-bottom: 0.45rem;
+	background-color: #fff;
     font-family: PingFangSC-Regular;
     border-bottom: 0.025rem solid #ddd;
 }
@@ -62,43 +71,39 @@ body{
 }
 .msg_list .msg_item .more{
 	float: left;
-	background-image: url(../../img/person_more.png);
+	background-image: url(../../img/pull.png);
 	background-repeat: no-repeat;
-	background-size:0.325rem 0.625rem;
+	background-size:0.6rem 0.3rem;
 	background-position: 11.6rem .8rem;
 }
-.msg_list .msg_item .num_bg{
-	background-position: 14.2rem .6rem;
+.msg_list .msg_item .area{
+	background-position: 11.5rem .8rem;
 }
-.msg_list .placeJump input.placeJump{
-	width:10rem;
+.msg_list .msg_item .area_name{
+	margin-right:1.8rem;
 }
-.msg_list .placeJump img{
-	width:0.325rem;
-	height: 0.625rem;
-	margin-left:1.5rem;
-	vertical-align: middle;
+.msg_list .msg_item .passport_num{
+	margin-right: -2.8rem;
 }
-input.placeChange::-webkit-input-placeholder{
+.msg_list .msg_item .passport{
+	margin-top: .1rem;
+}
+input::-webkit-input-placeholder{
 	color:#8C8C8C;
-	text-align: center;
-	font-size: 0.75rem;
+	font-size: 0.85rem;
 	padding-right:0.75rem;
 }
 /*操作按钮*/
 .msg_container .sure{
-	width:18.75rem;
-	height:2.35rem;
+	width:6.55rem;
+	height:2.4rem;
 	color:#fff;
 	font-size: 0.85rem;
-	margin-top:1rem;
+	margin-top:3.2rem;
 	background-color:#65B903;
+	border-radius: 0.375rem;
 	font-family: PingFangSC-Regular;
 }
-/*验证错误样式*/
-input.form_error{
-	color:#fe6b6b;
-}
-input.form_error::-webkit-input-placeholder{
-	color:#fe6b6b;
+.msg_container .sure a{
+	color:#fff;
 }

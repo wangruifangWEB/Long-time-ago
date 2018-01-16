@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 40px;">
+	<head>
+		<meta charset="UTF-8">
+		<title>验证手机号</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <link rel="stylesheet" href="../../css/reset.css">
+	    <link rel="stylesheet" href="../../css/jquery-weui.css">
+	    <link rel="stylesheet" href="../../css/person/bind_passport.css">
+	    <link rel="stylesheet" href="../../css/person/bind_phone.css">
+	    <script src="../../js/jquery.min.js"></script>
+	    <script src="../../js/fastclick.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="../../js/common.js"></script>
+	    <script src="../../js/jquery-weui.min.js"></script>
+	    <style>
+	    	.msg_container .msg_item{
+	    		margin-bottom:.45rem;
+	    		margin-top: 0;
+	    	}
+	    	.msg_container .msg_phone{
+	    		margin-bottom: 2.5rem;
+	    	}
+	    	.msg_container .sure a{
+	    		color:#fff;
+	    	}
+	    </style>
+	</head>
+	<body>
+		<div class="msg_container">
+			<p class="msg_title">验证原始手机号</p>
+			<form action="">
+				<div class="msg_list">
+					<div class="msg_item">
+						<label class="area_name">地区</label>
+						<input type="text" id="area" class="more area" placeholder="中国大陆"/>
+					</div>
+					
+					<div class="msg_item msg_phone">
+						<label>+086 <i></i></label>
+						<input type="number" placeholder="请输入原绑定手机号"/>
+						<p></p>
+					</div>
+					
+					<div class="msg_item phone_vali">
+						<input type="number" placeholder="手机验证码" class="passport"/>
+						<button class="send_vali">点击获取</button>
+					</div>
+				</div>
+				
+			</form>
+			<!--操作按钮-->
+			<button class="sure"><a href="bind_phone.html">下一步</a></button>
+		</div>
+		<script>
+		    //地区选择
+		    $("#area").picker({
+		        title: "请选择地区",
+		        toolbarCloseText:'完成',
+		        cols: [
+		            {
+		              textAlign: 'center',
+		              values: ['中国','美国','英国','韩国']
+		            }
+		        ]
+		    });
+		    
+		    //证件类型选择
+		    $("#type").picker({
+		        title: "请选择证件类型",
+		        toolbarCloseText:'完成',
+		        cols: [
+		            {
+		              textAlign: 'center',
+		              values: ['身份证','身份证']
+		            }
+		        ]
+		    });
+		    //点击发送验证
+		    $(".send_vali").click(function(e){
+		    	e.preventDefault();
+		    	$(this).addClass("clicked");
+		    });
+		    //验证
+		    $(".msg_phone input").blur(function(){
+		    	var userInput=$(this).val();
+		    	console.log(userInput);
+		    	if(userInput == '' || userInput == null){
+		    		$(this).siblings('p').html("请输入手机号");
+		    	}
+		    });
+		</script>
+	</body>
+</html>

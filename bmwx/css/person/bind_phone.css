@@ -1,0 +1,50 @@
+.msg_container{
+	width:18.75rem;
+	overflow-x: hidden;
+}
+.msg_container .msg_list{
+	background-color: #F0F0F0 !important;
+}
+.msg_container .msg_item{
+	margin-top:0.45rem;
+	padding-left: 1.02rem;
+	margin-left:0;
+	background-color: #fff;
+}
+.msg_container .msg_phone i{
+	height:1.025rem;
+	position: relative;
+	top: .2rem;
+	left:1rem;
+	display: inline-block;
+	border-right:0.075rem solid #eee;
+}
+.msg_container .msg_phone input{
+	margin-left: -11.3rem;
+    width: 10rem;
+    margin-top: 0;
+}
+.msg_list .phone_vali{
+	margin-left: -2.2rem;
+	margin-top:2.475rem;
+}
+.msg_list .phone_vali button{
+	color:#fff;
+	width:4.05rem;
+	height:1.65rem;
+	right: 7.875rem;
+	position: relative;
+	border-radius:0.75rem;
+	background-color: #65B903;
+}
+.msg_container .sure{
+	margin-top:3.6rem;
+}
+.phone_vali button.clicked{
+	color:#2A2A2A;
+	background-color: #eee;
+}
+.msg_list .msg_phone p{
+	color:#FF0000;
+	text-align: left;
+}

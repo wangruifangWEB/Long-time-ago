@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 40px;">
+	<head>
+		<meta charset="UTF-8">
+		<title>联系电话</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <link rel="stylesheet" href="../../css/reset.css">
+	    <link rel="stylesheet" href="../../css/jquery-weui.css">
+	    <link rel="stylesheet" href="../../css/person/bind_passport.css">
+	    <link rel="stylesheet" href="../../css/person/bind_phone.css">
+	    <script src="../../js/jquery.min.js"></script>
+	    <script src="../../js/fastclick.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="../../js/common.js"></script>
+	    <script src="../../js/jquery-weui.min.js"></script>
+	    <style>
+	    	.msg_container{
+	    		text-align: left;
+	    	}
+	    	.msg_list .msg_item{
+	    		margin-top: .45rem;
+	    	}
+	    	.msg_list .area_name{
+	    		color:#999;
+	    	} 
+	    	.msg_container .sure{
+	    		position: relative;
+    			left: 50%;
+    			top:50%;
+    			transform: translateX(-50%) translateY(-50%);
+	    	}
+	    	.msg_container .sure a{
+	    		color:#fff;
+	    	}
+	    	.msg_list .msg_phone em{
+	    		margin-left:1.75rem;
+	    	}
+	    </style>
+	</head>
+	<body>
+		<div class="msg_container">
+			<div class="msg_list">
+				<div class="msg_item">
+					<span class="area_name">改绑手机号成功</span>
+				</div>
+				
+				<div class="msg_item msg_phone">
+					<span>+086 <i></i></span>
+					<em>18336607930</em>
+				</div>
+			</div>
+			<!--操作按钮-->
+			<button class="sure"><a href="person_msg.html">确定</a></button>
+		</div>
+		<script>
+		    //地区选择
+		    $("#area").picker({
+		        title: "请选择地区",
+		        toolbarCloseText:'完成',
+		        cols: [
+		            {
+		              textAlign: 'center',
+		              values: ['中国','美国','英国','韩国']
+		            }
+		        ]
+		    });
+		    
+		    //证件类型选择
+		    $("#type").picker({
+		        title: "请选择证件类型",
+		        toolbarCloseText:'完成',
+		        cols: [
+		            {
+		              textAlign: 'center',
+		              values: ['身份证','身份证']
+		            }
+		        ]
+		    });
+		    //点击发送验证
+		    $(".send_vali").click(function(e){
+		    	e.preventDefault();
+		    	$(this).addClass("clicked");
+		    });
+		    //验证
+		    $(".msg_phone input").blur(function(){
+		    	var userInput=$(this).val();
+		    	console.log(userInput);
+		    	if(userInput == '' || userInput == null){
+		    		$(this).siblings('p').html("请输入手机号");
+		    	}
+		    });
+		</script>
+	</body>
+</html>
