@@ -16,17 +16,17 @@
 			<form action="">
 				<div class="health_item">
 					<label for="height">身高&nbsp;&nbsp;(cm)</label>
-					<input type="text" placeholder="请输入身高" class="height"/>
+					<input type="text" placeholder="请输入身高" class="height" id="height" />
 				</div>
 				
 				<div class="health_item">
 					<label for="weight">体重&nbsp;&nbsp;(kg)</label>
-					<input type="text" placeholder="请输入体重" class="weight"/>
+					<input type="text" placeholder="请输入体重" class="weight" id="weight" />
 				</div>
 				
 				<div class="health_item">
 					<label for="target_weight">目标体重&nbsp;&nbsp;(kg)</label>
-					<input type="text" placeholder="请输入目标体重" class="target_weight"/>
+					<input type="text" placeholder="请输入目标体重" class="target_weight" id="target_weight" />
 				</div>
 				
 				<button class="sure">确定</button>
@@ -71,7 +71,7 @@
 				});
 				
 				//判断及验证
-				 function set_Reg(selector,reg,testReg,empty,erro){
+				function set_Reg(selector,reg,testReg,empty,erro){
 			        if($(testReg).val() == null || $(testReg).val() == ''){
 			           $(selector).attr('placeholder',empty).addClass('form_error');
 			            return false;
@@ -83,7 +83,7 @@
 			            return true;
 			        }
 			    }
-				 
+				
 				 //鼠标再次进入去掉错误提示样式
 				Height.focus(function(){
 				  	Height.attr('placeholder','').removeClass('form_error');
