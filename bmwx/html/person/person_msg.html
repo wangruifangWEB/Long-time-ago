@@ -22,36 +22,38 @@
 	                    <img class="msg_header" id="headerImg" src="../../img/msg_pic.png" id="uploadImg"/>
 					</div>
 					
-					<div class="msg_item">
+					<div class="msg_item placeJump">
 						<label class="genderName">姓</label>
-						<input type="text" class="more num_bg" />
+						<input type="text" class="placeJump" />
+						<img src="../../img/person_more.png" alt="" />
 					</div>
 					
-					<div class="msg_item">
+					<div class="msg_item placeJump">
 						<label class="genderName">名</label>
-						<input type="text" class="more num_bg"/>
+						<input type="text" class="placeJump"/>
+						<img src="../../img/person_more.png" alt="" />
 					</div>
 					
 					<div class="msg_item placeJump">
 						<label>联系电话</label>
-						<input type="number" class="more placeJump"/>
-						<a href="replace_phone.html"><img src="../../img/person_more.png" alt="" /></a>
+						<input type="number" class="placeJump contactTel" readonly="readonly" value="13691392904"/>
+						<a href="bind_phone.html"><img src="../../img/person_more.png" alt="" /></a>
 					</div>
 					
 					<div class="msg_item">
 						<label>性别</label>
-						<input type="text" class="gander more placeChange" id="gander" placeholder="请选择"/>
+						<input type="text" class="gander more" id="gander" placeholder="请选择"/>
 					</div>
 					
 					<div class="msg_item">
 						<label>出生日期</label>
-						<input type="number more" id='datetime-picker' class="more date_birth placeChange" placeholder="请选择"/>
+						<input type="number more" id='datetime-picker' class="more date_birth" placeholder="请选择"/>
 					</div>
 					
 					<div class="msg_item placeJump">
 						<label>身份证号</label>
-						<input type="number" class="more placeJump"/>
-						<a href="bind_passport.html"><img src="../../img/person_more.png" alt="" /></a>
+						<input type="number" class="placeJump" readonly="readonly"/>
+						<a href="bind_ID.html"><img src="../../img/person_more.png" alt="" /></a>
 					</div>
 					
 					<div class="msg_item">
@@ -64,15 +66,15 @@
 						<input type="text" id="job" class="more work_post"/>
 					</div>
 					
-					<div class="msg_item">
+					<div class="msg_item placeJump">
 						<label>个人健康</label>
-						<input type="text" id="health" class="more helath"/>
+						<input type="text" class="placeJump" readonly="readonly"/>
+						<a href="person_healthy.html"><img src="../../img/person_more.png" alt="" /></a>
 					</div>
 				</div>
 				
 			</form>
 		</div>
-		<!--<script src="../../js/person/person_msg.js"></script>-->
 		<script>
 			//上传头像
 			document.getElementById('uploadImg').onchange = function() {
@@ -122,18 +124,6 @@
 		        ]
 		    });
 		    
-		    //个人健康状态选择
-		    $("#health").picker({
-		        title: "请选择健康状态",
-		        toolbarCloseText:'完成',
-		        cols: [
-		            {
-		              textAlign: 'center',
-		              values: ['优','良','健康']
-		            }
-		        ]
-		    });
-		    
 		//获取头像函数
 		function getObjectURL(file) {
 		    var url = null ; 
@@ -146,6 +136,18 @@
 		    }
 		    return url;
 		}
+		$(function(){
+			//点击联系电话判断状态选择不同的跳转页面
+			$(".contactTel").click(function(){
+				var contactTel=$(".contactTel").val();
+				console.log(contactTel);
+				if(contactTel == '' || contactTel == null){
+					window.location.href="bind_phone.html";
+				}else{
+					window.location.href="binding.html";
+				}
+			})
+		});
 		</script>
 	</body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en" style="font-size: 40px;">
 	<head>
 		<meta charset="UTF-8">
-		<title>验证手机号</title>
+		<title>联系电话</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 	    <link rel="stylesheet" href="../../css/reset.css">
 	    <link rel="stylesheet" href="../../css/jquery-weui.css">
@@ -13,43 +13,43 @@
 	    <script src="../../js/common.js"></script>
 	    <script src="../../js/jquery-weui.min.js"></script>
 	    <style>
-	    	.msg_container .msg_item{
-	    		margin-bottom:.45rem;
-	    		margin-top: 0;
+	    	.msg_container{
+	    		text-align: left;
 	    	}
-	    	.msg_container .msg_phone{
-	    		margin-bottom: 2.5rem;
+	    	.msg_list .msg_item{
+	    		margin-top: .45rem;
+	    	}
+	    	.msg_list .area_name{
+	    		color:#999;
+	    	} 
+	    	.msg_container .sure{
+	    		position: relative;
+    			left: 50%;
+    			top:50%;
+    			transform: translateX(-50%) translateY(-50%);
 	    	}
 	    	.msg_container .sure a{
 	    		color:#fff;
+	    	}
+	    	.msg_list .msg_phone em{
+	    		margin-left:1.75rem;
 	    	}
 	    </style>
 	</head>
 	<body>
 		<div class="msg_container">
-			<p class="msg_title">验证原始手机号</p>
-			<form action="">
-				<div class="msg_list">
-					<div class="msg_item">
-						<label class="area_name">地区</label>
-						<input type="text" id="area" class="more area" placeholder="中国大陆"/>
-					</div>
-					
-					<div class="msg_item msg_phone">
-						<label>+086 <i></i></label>
-						<input type="number" placeholder="请输入原绑定手机号"/>
-						<p></p>
-					</div>
-					
-					<div class="msg_item phone_vali">
-						<input type="number" placeholder="手机验证码" class="passport"/>
-						<button class="send_vali">点击获取</button>
-					</div>
+			<div class="msg_list">
+				<div class="msg_item">
+					<span class="area_name">已绑定手机号</span>
 				</div>
 				
-			</form>
+				<div class="msg_item msg_phone">
+					<span>+086 <i></i></span>
+					<em>18336607930</em>
+				</div>
+			</div>
 			<!--操作按钮-->
-			<button class="sure">下一步</button>
+			<button class="sure"><a href="vali_tel.html">更换手机号</a></button>
 		</div>
 		<script>
 		    //地区选择
@@ -81,21 +81,13 @@
 		    	$(this).addClass("clicked");
 		    });
 		    //验证
-		    var userInput=$(".msg_phone input").val();
 		    $(".msg_phone input").blur(function(){
+		    	var userInput=$(this).val();
+		    	console.log(userInput);
 		    	if(userInput == '' || userInput == null){
 		    		$(this).siblings('p').html("请输入手机号");
-		    		return false;
 		    	}
 		    });
-			$(".sure").click(function(){
-				if(userInput == '' || userInput == null){
-		    		$(this).siblings('p').html("请输入手机号");
-		    		return false;
-		    	}
-				return true;
-				window.location.href="bind_phone.html";
-			})
 		</script>
 	</body>
 </html>
