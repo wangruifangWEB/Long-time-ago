@@ -49,7 +49,7 @@
 				
 			</form>
 			<!--操作按钮-->
-			<button class="sure"><a href="bind_phone.html">下一步</a></button>
+			<button class="sure">下一步</button>
 		</div>
 		<script>
 		    //地区选择
@@ -81,13 +81,21 @@
 		    	$(this).addClass("clicked");
 		    });
 		    //验证
+		    var userInput=$(".msg_phone input").val();
 		    $(".msg_phone input").blur(function(){
-		    	var userInput=$(this).val();
-		    	console.log(userInput);
 		    	if(userInput == '' || userInput == null){
 		    		$(this).siblings('p').html("请输入手机号");
+		    		return false;
 		    	}
 		    });
+			$(".sure").click(function(){
+				if(userInput == '' || userInput == null){
+		    		$(this).siblings('p').html("请输入手机号");
+		    		return false;
+		    	}
+				return true;
+				window.location.href="bind_phone.html";
+			})
 		</script>
 	</body>
 </html>

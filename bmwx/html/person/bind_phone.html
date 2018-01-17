@@ -61,11 +61,21 @@
 		            }
 		        ]
 		    });
-		    //点击发送验证
-		    $(".send_vali").click(function(e){
-		    	e.preventDefault();
-		    	$(this).addClass("clicked");
+		    var userInput=$(".msg_phone input").val();
+		    $(".msg_phone input").blur(function(){
+		    	if(userInput == '' || userInput == null){
+		    		$(this).siblings('p').html("请输入手机号");
+		    		return false;
+		    	}
 		    });
+			$(".sure").click(function(){
+				if(userInput == '' || userInput == null){
+		    		$(this).siblings('p').html("请输入手机号");
+		    		return false;
+		    	}
+				
+				window.location.href="bind_phone.html";
+			})
 		</script>
 	</body>
 </html>

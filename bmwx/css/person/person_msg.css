@@ -24,6 +24,9 @@ body{
 .msg_list .msg_item label{
 	float:left;
 }
+.msg_list .msg_item .genderName{
+	margin-right: 2.4rem;
+}
 .msg_list .msg_change{
 	position: relative;
     display: inline-block;
